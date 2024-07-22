@@ -21,3 +21,15 @@ To uphold our "Back to Basics" approach, our project will be written in C++ with
 - Discord group chat as our communication platform
 - GitHub Project board for tracking issues, bugs and the project's development
 - We have arranged two two hour meeting times dedicated to peer programming and project organization 
+
+## Project Schedule
+
+TBD
+
+## Similar Applications
+
+Run it Once
+
+## Customer Interest
+
+Anyone who plays poker, from learning, to fine tuning high-level skills.
