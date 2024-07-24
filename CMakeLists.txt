@@ -7,8 +7,12 @@ project(${PROJECT_NAME})
 # Define the source path variable 
 set(SRC_PATH src)
 
-# Get all source files in the source path
+# Defining the file used to run the program 
+set(MAIN_FILE main.cpp)
+
+# Get all source and header files in the source path
 file(GLOB_RECURSE SRC_FILES ${SRC_PATH}/*.cpp)
+file(GLOB_RECURSE HEADER_FILES ${SRC_PATH}/*.hpp)
 
 # Defining the executable target and adding all source files
-add_executable(${PROJECT_NAME} ${SRC_FILES})
+add_executable(${PROJECT_NAME} ${MAIN_FILE} ${SRC_FILES} ${HEADER_FILES})

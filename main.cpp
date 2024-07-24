@@ -6,10 +6,10 @@
 #include <random>
 #include <ctime>
 
-#include "Card.hpp"
-#include "Deck.hpp"
-#include "Player.hpp"
-#include "Game.hpp"
+#include "src/Card.hpp"
+#include "src/Deck.hpp"
+#include "src/Player.hpp"
+#include "src/Game.hpp"
 
 // A main method for testing the classes
 int main() {

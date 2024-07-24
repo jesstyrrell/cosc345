@@ -1,36 +1,29 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <random>
-#include <ctime>
+#include <algorithm> // For std::shuffle
+#include <random>    // For std::default_random_engine
+#include <ctime>     // For time()
 
-#include "Card.hpp"
+#include "Deck.hpp"
 
-class Deck {
-    private:
-        std::vector<Card> cards;
+using namespace std;
 
-    public:
-        Deck() {
-            std::string suits[] = {"Hearts", "Diamonds", "Clubs", "Spades"};
-            std::string ranks[] = {"2", "3", "4", "5", "6", "7", "8", "9", "10",
-                                "Jack", "Queen", "King", "Ace"};
+Deck::Deck() {
+    string suits[] = {"Hearts", "Diamonds", "Clubs", "Spades"};
+    string ranks[] = {"2", "3", "4", "5", "6", "7", "8", "9", "10",
+                      "Jack", "Queen", "King", "Ace"};
 
-            for (std::string suit : suits) {
-                for (std::string rank : ranks) {
-                    cards.push_back(Card(suit, rank));
-                }
-            }
+    for (const string& suit : suits) {
+        for (const string& rank : ranks) {
+            cards.push_back(Card(suit, rank));
         }
+    }
+}
 
-        void shuffle() {
-            std::shuffle(cards.begin(), cards.end(), std::default_random_engine(time(0)));
-        }
+void Deck::shuffle() {
+    std::shuffle(cards.begin(), cards.end(), default_random_engine(time(0)));
+}
 
-        Card deal() {
-            Card card = cards.back();
-            cards.pop_back();
-            return card;
-        }
-
-};
+Card Deck::deal() {
+    Card card = cards.back();
+    cards.pop_back();
+    return card;
+}

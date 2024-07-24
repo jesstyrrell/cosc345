@@ -1,55 +1,42 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <random>
-#include <ctime>
+#include "Player.hpp"
 
-#include "Card.hpp"
+using namespace std;
 
-class Player {
-    private:
-        std::string name;
-        std::vector<Card> hand;
-        int stack;
+Player::Player(string name, int stack) {
+    this->name = name;
+    this->stack = stack;
+}
 
-    public:
+void Player::bet(int amount) {
+    this->stack -= amount;
+}
 
-        Player(std::string name, int stack) {
-            this->name = name;
-            this->stack = stack;
-        }
-        
-        void bet(int amount) {
-            this->stack -= amount;
-        }
+void Player::win(int amount) {
+    this->stack += amount;
+}
 
-        void win(int amount) {
-            this->stack += amount;
-        }
+int Player::get_stack() {
+    return this->stack;
+}
 
-        int get_stack() {
-            return this->stack;
-        }
+string Player::get_name() {
+    return this->name;
+}
 
-        std::string get_name() {
-            return this->name;
-        }
+vector<Card> Player::get_hand() {
+    return this->hand;
+}
 
-        std::vector<Card> get_hand() {
-            return this->hand;
-        }
+void Player::add_card_to_hand(Card card) {
+    this->hand.push_back(card);
+}
 
-        void add_card_to_hand(Card card) {
-            this->hand.push_back(card);
-        }
+void Player::clear_hand() {
+    this->hand.clear();
+}
 
-        void clear_hand() {
-            this->hand.clear();
-        }
-
-        void show_hand() {
-            for (Card card : hand) {
-                std::cout << card.get_rank() << " of " << card.get_suit() << std::endl;
-            }
-        }
-};
+void Player::show_hand() {
+    for (Card card : hand) {
+        cout << card.get_rank() << " of " << card.get_suit() << endl;
+    }
+}
