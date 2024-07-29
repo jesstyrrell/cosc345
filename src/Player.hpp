@@ -25,4 +25,5 @@ class Player {
         void add_card_to_hand(Card card);
         void clear_hand();
         void show_hand();
+        bool static test_player();
 };

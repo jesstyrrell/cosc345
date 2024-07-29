@@ -11,8 +11,42 @@
 #include "src/Player.hpp"
 #include "src/Game.hpp"
 
+bool uniTest() {
+    bool pass[4] = { 0 }; 
+
+    pass[0] = Card::test_card();
+    pass[1] = Deck::test_deck();
+    pass[2] = Game::test_game();
+    pass[3] = Player::test_player();
+
+    bool allPassed = pass[0] && pass[1] && pass[2] && pass[3]; 
+
+    // Checking if
+    if (allPassed) {
+        std::cout << "Unit tests passed" << std::endl;
+        return allPassed; 
+    }
+    
+    // Printing 
+    std::cout << "Unit tests failed" << std::endl;
+    std::cout << "Card test: " << pass[0] << std::endl;
+    std::cout << "Deck test: " << pass[1] << std::endl;
+    std::cout << "Game test: " << pass[2] << std::endl;
+    std::cout << "Player test: " << pass[3] << std::endl;
+    return allPassed;
+
+}
+
 // A main method for testing the classes
 int main() {
+
+    if (uniTest() == false) {
+        return 0;
+    }
+
+    return 1; 
+
+
     Player player1 = Player("Jess", 1000);
     Player player2 = Player("James", 1000);
     Player player3 = Player("Corban", 1000);

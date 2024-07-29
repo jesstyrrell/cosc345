@@ -19,6 +19,7 @@ class Game {
 
     public:
         Game(vector<Player*>& players);
+        void add_player(Player *player);
         void deal_hands();
         void deal_flop();
         void deal_turn();
@@ -26,4 +27,5 @@ class Game {
         void show_community_cards();
         void show_player_hands();
         vector<Player*> get_players();
+        bool static test_game();
 };

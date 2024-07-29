@@ -14,4 +14,6 @@ class Deck {
         Deck();
         void shuffle();
         Card deal();
+        vector<Card> get_cards();
+        bool static test_deck();
 };
