@@ -34,3 +34,20 @@ string Card::get_suit() {
 string Card::get_rank() {
     return rank;
 }
+
+/**
+ * A static method to test the Card class.
+ */
+bool Card::test_card() {
+    Card card = Card("Hearts", "Ace");
+
+    if (card.get_suit() != "Hearts") {
+        return false;
+    }
+
+    if (card.get_rank() != "Ace") {
+        return false;
+    }
+
+    return true;
+}

@@ -17,4 +17,5 @@ class Card{
         Card(std::string suit, std::string rank);
         std::string get_suit();
         std::string get_rank();
+        static bool test_card();
 };
