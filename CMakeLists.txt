@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.5)
 
+# Supresses "warning: range-based for loop is a C++11 extension [-Wc++11-extensions]"
+add_definitions(-w)
+
 # Setting the project name to be used as the target name and the name of the executable
 set(PROJECT_NAME PokerGame)
 project(${PROJECT_NAME})
