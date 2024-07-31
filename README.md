@@ -1,35 +1,79 @@
-# Assignment 1
 
-## Team Members
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+    <h1 align="center">Poker CLI</h1>
+    <h6 align="center">July 2024 - October 2024</h6>
 
-- James Robiony-Rogers
-- Jess Tyrrell
-- Corban Surtees
+  <p align="center">
+   A bare-bones playable poker game engin written in C++ and designed for Windows terminal-based environments.
+  </p>
+</p>
 
-## The Project
+___
 
- Our project aims to create a robust poker training application designed for Windows terminal-based environments using C++. The app offers a variety of game modes, including Training and Challenge modes, allowing users to practice against AI opponents of varying difficulty levels. It features educational resources analytics and feedback to help players improve their skills and track their progress.
 
-## "Back to Basics" Approach
+## Overview 
+Our motivation behind StuCal stemmed from the inconvenience of regularly checking our eVision timetables for our next classes. 
 
-To uphold our "Back to Basics" approach, our project will be written in C++ without external libraries. We'll interact solely through the terminal for user input and output, without any graphical user interface (GUI). Our project scope is intentionally narrow, with provisions for potential expansions based on available time and resources.
+Recognising this tedious process, we came up with the idea of integrating our class schedules into our everyday calendar apps and providing extra features dedicated to students. 
 
-## Project Development
 
-- Object oriented design allowing for the underlying code to be easily ported to any GUI
-- Visual Studio Code for our development environment
-- Discord group chat as our communication platform
-- GitHub Project board for tracking issues, bugs and the project's development
-- We have arranged two two hour meeting times dedicated to peer programming and project organization 
+## Built With
+
+* **Languages** [C++]()
+<br>
+
+## File Tree 
+- `_docs` - Contains all the documentation and assignments for the project
+  - [`_docs/Assignment01.md` - Link to Formal Project Report](./_docs/Assignment01.md)
+- `build` - Contains the compiled code 
+- `src` - Contains the source code for the project 
+- `main.cpp` - The main file for the project
+
+
+### Running Locally
+
+1. Run the following command in the terminal to compile the code:
+```sh
+cmake build 
+```
+2. Run the following command in the terminal to run the code:
+```sh
+./build/PokerGame
+```
+
+<!-- USAGE EXAMPLES -->
+## View Project
+
+<div align="center">
+   <img style="width: 100%" src="./_docs/ProjectScreenshot.png">
+</div>
 
 ## Project Schedule
 
-TBD
 
-## Similar Applications
 
-Run it Once
 
-## Customer Interest
 
-Anyone who plays poker, from learning, to fine tuning high-level skills.
+
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/jamisbuggerlugs/Spaced-Repitition-Software-Website.svg?style=flat-square
+[contributors-url]: https://github.com/JamisBuggerlugs/Spaced-Repitition-Software-Website/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/JamisBuggerlugs/Spaced-Repitition-Software-Website.svg?style=flat-square
+[forks-url]: https://github.com/JamisBuggerlugs/Spaced-Repitition-Software-Website/network/members
+[stars-shield]: https://img.shields.io/github/stars/JamisBuggerlugs/Spaced-Repitition-Software-Website.svg?style=flat-square
+[stars-url]: https://github.com/JamisBuggerlugs/Spaced-Repitition-Software-Website/stargazers
+[issues-shield]: https://img.shields.io/github/issues/JamisBuggerlugs/Spaced-Repitition-Software-Website.svg?style=flat-square
+[issues-url]: https://github.com/JamisBuggerlugs/Spaced-Repitition-Software-Website/issues
+[license-shield]: https://img.shields.io/github/license/JamisBuggerlugs/Spaced-Repitition-Software-Website.svg?style=flat-square
+[license-url]: https://github.com/JamisBuggerlugs/Spaced-Repitition-Software-Website/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/james-robiony-rogers-447b28237/
+[product-screenshot]: imgs/readme-assets/desktop-home-light.png
+
+
