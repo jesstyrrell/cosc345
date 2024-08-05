@@ -52,6 +52,9 @@ cmake build
 
 ## Project Schedule
 
+<div align="center">
+   <img style="width: 100%" src="./_docs/ProjectSchedule.png">
+</div>
 
 
 
