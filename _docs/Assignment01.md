@@ -20,7 +20,7 @@ To uphold our "Back to Basics" approach, our project will be written in C++ with
 - Visual Studio Code for our development environment
 - Discord group chat as our communication platform
 - GitHub Project board for tracking issues, bugs and the project's development
-- We have arranged two two hour meeting times dedicated to peer programming and project organization 
+- We have arranged a couple two hour meeting times every week dedicated to peer programming and project organization 
 
 ## Project Schedule
 
@@ -28,8 +28,15 @@ TBD
 
 ## Similar Applications
 
-Run it Once
+### Poker Trainer https://pokertrainer.se/
+
+Poker Trainer offers a dynamic, exercise-based training system tailored to players of all skill levels. This empowers users to choose specific areas they want to master.
+
+
+### Run it Once https://www.runitonce.com/
+
+Run It Once delivers top-tier poker training with a focus on expert guidance and actionable strategies. Featuring videos from professional players and a robust library of hand analyses, it provides insights into advanced tactics and thought processes.
 
 ## Customer Interest
 
-Anyone who plays poker, from learning, to fine tuning high-level skills.
+Anyone who plays poker, from learning, to fine tuning high-level skills would benefit from using Run It Twice. Utilizing AI, we deliver skill-focused training that replicates the real poker experience, while providing targeted practice. By tracking detailed statistics, we can precisely gauge when users have achieved their desired level of proficiency.
