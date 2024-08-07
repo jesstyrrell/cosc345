@@ -56,6 +56,18 @@ cmake build
    <img style="width: 100%" src="./_docs/ProjectSchedule.png">
 </div>
 
+<!-- Collapsible container -->
+<details>
+  <summary>Embedded Gantt Chart with <a href="https://sharing.clickup.com/9016454981/g/h/8cprbu5-396/da09794ac7698a4">ClickUp</a></summary>
+  
+   <iframe class="clickup-embed" src="https://sharing.clickup.com/9016454981/g/h/8cprbu5-396/da09794ac7698a4" onwheel="" width="100%" height="700px" style="background: transparent; border: 1px solid #ccc;"></iframe>
+
+</details>
+
+
+
+
+
 
 
 
