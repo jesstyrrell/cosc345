@@ -38,5 +38,5 @@ jobs:
       run: ctest -C ${{env.BUILD_TYPE}}
 
     - name: Run 
-      run: build\cosc345\Release\PokerGame.exe
+      run: build\PokerGame.exe
 
