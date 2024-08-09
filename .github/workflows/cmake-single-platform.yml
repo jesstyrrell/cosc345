@@ -38,5 +38,5 @@ jobs:
       run: ctest -C ${{env.BUILD_TYPE}}
 
     - name: Run 
-      run: ls -la ${{github.workspace}}/build
+      run: ls ${{github.workspace}}/build
 
