@@ -41,10 +41,10 @@ bool uniTest() {
 int main() {
 
     if (uniTest() == false) {
-        return 0;
+        return false;
     }
 
-    return 1; 
+    return true; 
 
 
     Player player1 = Player("Jess", 1000);
@@ -88,5 +88,5 @@ int main() {
     }
 
 
-    return 0;
+    return true;
 }
