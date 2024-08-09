@@ -38,5 +38,5 @@ jobs:
       run: ctest -C ${{env.BUILD_TYPE}}
 
     - name: Run 
-      run: ls ${{github.workspace}}/build
+      run: ls ${{github.workspace}}/build/x64 && ls ${{github.workspace}}/build/Release
 
