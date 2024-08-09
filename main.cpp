@@ -5,13 +5,14 @@
 #include <string>
 #include <random>
 #include <ctime>
+#include <cstdlib> 
 
 #include "src/Card.hpp"
 #include "src/Deck.hpp"
 #include "src/Player.hpp"
 #include "src/Game.hpp"
 
-bool uniTest() {
+bool uniTest(int argc, char* argv[]) {
     bool pass[4] = { 0 }; 
 
     pass[0] = Card::test_card();
@@ -21,9 +22,17 @@ bool uniTest() {
 
     bool allPassed = pass[0] && pass[1] && pass[2] && pass[3]; 
 
-    // Checking if
+    
     if (allPassed) {
         std::cout << "Unit tests passed" << std::endl;
+
+        // Exiting the program if the tests passed and is running in CI
+        if (argc > 1) {
+            if (strcmp(argv[1], "-ci") == 0) {
+                exit(0); 
+            }
+        }
+        
         return allPassed; 
     }
     
@@ -33,18 +42,15 @@ bool uniTest() {
     std::cout << "Deck test: " << pass[1] << std::endl;
     std::cout << "Game test: " << pass[2] << std::endl;
     std::cout << "Player test: " << pass[3] << std::endl;
-    return allPassed;
-
+    
+    // Exiting the program if the tests failed
+    exit(0);
 }
 
 // A main method for testing the classes
-int main() {
+int main(int argc, char* argv[]) {
 
-    if (uniTest() == false) {
-        return 0;
-    }
-
-    return 1; 
+    uniTest(argc, argv); 
 
 
     Player player1 = Player("Jess", 1000);
