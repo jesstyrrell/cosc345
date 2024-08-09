@@ -38,5 +38,5 @@ jobs:
       run: ctest -C ${{env.BUILD_TYPE}}
 
     - name: Run 
-      run: build\PokerGame.exe
+      run: ls -la ${{github.workspace}}/build
 
