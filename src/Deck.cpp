@@ -24,8 +24,13 @@ vector<Card> Deck::get_cards() {
 }
 
 void Deck::shuffle() {
-    std::shuffle(cards.begin(), cards.end(), default_random_engine(time(0)));
-}
+    // Create a random device and use it to seed the Mersenne Twister engine
+    random_device rd;
+    mt19937 g(rd());
+        
+    // Shuffle the deck
+    std::shuffle(cards.begin(), cards.end(), g);
+    }
 
 Card Deck::deal() {
     Card card = cards.back();

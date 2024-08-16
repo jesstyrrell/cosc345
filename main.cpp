@@ -11,6 +11,7 @@
 #include "src/Deck.hpp"
 #include "src/Player.hpp"
 #include "src/Game.hpp"
+#include "src/HandEvaluator.hpp"
 #include "src/GUI.hpp"
 
 using namespace std;
@@ -69,58 +70,86 @@ int main(int argc, char* argv[]) {
     // Initiate a game with all the players 
     Game game = Game(playerPointers); // i swear you have to pass a pointer, but also its a list of two players
 
-    game.playHand();
+    // Play a hand
+    // game.playHand();
     
     
-    // // Game loop 
-    // while (true) {
+    // Game loop 
+    while (false) {
 
-    //     // Deal hands for all players 
-    //     game.deal_hands();
+        // Deal hands for all players 
+        game.deal_hands();
 
-    //     // Deal flop
-    //     game.deal_flop();
+        // Deal flop
+        game.deal_flop();
 
-    //     // Betting commences for each player at the table
-    //     for (Player* currentPlayer : game.get_players()) {
+        // Betting commences for each player at the table
+        for (Player* currentPlayer : game.get_players()) {
 
-    //         GUI::displayPlayerStack(currentPlayer);
+            GUI::displayPlayerStack(currentPlayer);
 
-    //         string move = GUI::getUserMove();
+            string move = GUI::getUserMove();
 
-    //         game.makeMoveForUser(move, currentPlayer, 0, 0);
+            game.makeMoveForUser(move, currentPlayer, 0, 0);
 
-    //         // GUI::clearScreen();
-    //     }
+            // GUI::clearScreen();
+        }
         
-    // }
+    }
 
-    // game.deal_flop();
-    // game.deal_turn();
-    // game.deal_river();
-    // std::cout << "--------------" << std::endl;
-    // // Print the stack of each player 
-    // for (Player* player : game.get_players()) {
-    //     std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
-    //     std::cout << "    -----    " << std::endl;
-    // }
-    // player1.bet(100);
-    // player2.bet(200);
-    // player3.bet(300);
-    // for (Player* player : game.get_players()) {
-    //     std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
-    //     std::cout << "    -----    " << std::endl;
-    // }
+    game.deal_flop();
+    game.deal_turn();
+    game.deal_river();
+    std::cout << "--------------" << std::endl;
+    // Print the stack of each player 
+    for (Player* player : game.get_players()) {
+        std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
+        std::cout << "    -----    " << std::endl;
+    }
+    player1.bet(100);
+    player2.bet(200);
+    player3.bet(300);
+    for (Player* player : game.get_players()) {
+        std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
+        std::cout << "    -----    " << std::endl;
+    }
 
-    // player1.win(1000);
-    // player2.win(2000);
-    // player3.win(3000);
+    player1.win(1000);
+    player2.win(2000);
+    player3.win(3000);
 
-    // for (Player* player : game.get_players()) {
-    //     std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
-    //     std::cout << "    -----    " << std::endl;
-    // }
+    for (Player* player : game.get_players()) {
+        std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
+        std::cout << "    -----    " << std::endl;
+    }
 
+
+    // Create an instance of HandEvaluator
+    HandEvaluator evaluator;
+
+    Deck deck;
+    deck.shuffle();
+    deck.shuffle();
+    deck.shuffle();
+    deck.shuffle();
+
+    std::vector<Card> hand;
+    hand.push_back(deck.deal());
+    hand.push_back(deck.deal());
+    
+    std::vector<Card> communityCards;
+    communityCards.push_back(deck.deal());
+    communityCards.push_back(deck.deal());
+    communityCards.push_back(deck.deal());
+    communityCards.push_back(deck.deal());
+    communityCards.push_back(deck.deal());
+
+    int numPlayers = 1;
+
+    float probability = evaluator.evaluateHand(hand, communityCards, deck, numPlayers);
+
+    // Output the result
+    std::cout << "Winning Probability: " << probability * 100 << "%" << std::endl;
 
     return 0;
 }
