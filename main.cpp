@@ -72,7 +72,7 @@ int main(int argc, char* argv[]) {
     
     
     // Game loop 
-    while (true) {
+    while (false) {
 
         // Deal hands for all players 
         game.deal_hands();

@@ -14,10 +14,10 @@ float HandEvaluator::evaluateHand(vector<Card> hand, vector<Card> communityCards
 	for (int iteration = 0; iteration < 100; iteration++) {
 		bool win = true;
 		Deck deckCopy(deck);
-		deck.shuffle();
+		deckCopy.shuffle();
 		for (int player = 0; player < numPlayers; player++) {
 			vector<Card> otherHand;
-			for (int i = 0; i < 2; i++) { otherHand.push_back(deck.deal()); }
+			for (int i = 0; i < 2; i++) { otherHand.push_back(deckCopy.deal()); }
 			bool win = compareHands(hand, otherHand, communityCards);
 		}
 		
@@ -39,7 +39,8 @@ float HandEvaluator::evaluateHand(vector<Card> hand, vector<Card> communityCards
 bool HandEvaluator::compareHands(vector<Card> hand, vector<Card> opponentHand, vector<Card> communityCards) {
 	if (checkPair(hand, communityCards) != checkPair(opponentHand, communityCards)) {
 		return checkPair(hand, communityCards) > checkPair(opponentHand, communityCards);
-	} else
+	}
+
 }
 
 int HandEvaluator::checkPair(vector<Card> hand, vector<Card> communityCards) {
