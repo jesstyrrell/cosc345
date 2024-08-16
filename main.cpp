@@ -68,57 +68,58 @@ int main(int argc, char* argv[]) {
 
     // Initiate a game with all the players 
     Game game = Game(playerPointers); // i swear you have to pass a pointer, but also its a list of two players
+
+    game.playHand();
     
     
-    // Game loop 
-    while (true) {
+    // // Game loop 
+    // while (true) {
 
-        // Deal hands for all players 
-        game.deal_hands();
+    //     // Deal hands for all players 
+    //     game.deal_hands();
 
-        // Deal flop
-        game.deal_flop();
+    //     // Deal flop
+    //     game.deal_flop();
 
-        // Betting commences for each player at the table
-        for (Player* currentPlayer : game.get_players()) {
+    //     // Betting commences for each player at the table
+    //     for (Player* currentPlayer : game.get_players()) {
 
-            GUI::displayPlayerStack(currentPlayer);
+    //         GUI::displayPlayerStack(currentPlayer);
 
-            string move = GUI::getUserMove();
+    //         string move = GUI::getUserMove();
 
-            game.makeMoveForUser(move, currentPlayer);
+    //         game.makeMoveForUser(move, currentPlayer, 0, 0);
 
-            // GUI::clearScreen();
-        }
+    //         // GUI::clearScreen();
+    //     }
         
-    }
+    // }
 
+    // game.deal_flop();
+    // game.deal_turn();
+    // game.deal_river();
+    // std::cout << "--------------" << std::endl;
+    // // Print the stack of each player 
+    // for (Player* player : game.get_players()) {
+    //     std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
+    //     std::cout << "    -----    " << std::endl;
+    // }
+    // player1.bet(100);
+    // player2.bet(200);
+    // player3.bet(300);
+    // for (Player* player : game.get_players()) {
+    //     std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
+    //     std::cout << "    -----    " << std::endl;
+    // }
 
-    game.deal_flop();
-    game.deal_turn();
-    game.deal_river();
-    std::cout << "--------------" << std::endl;
-    // Print the stack of each player 
-    for (Player* player : game.get_players()) {
-        std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
-        std::cout << "    -----    " << std::endl;
-    }
-    player1.bet(100);
-    player2.bet(200);
-    player3.bet(300);
-    for (Player* player : game.get_players()) {
-        std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
-        std::cout << "    -----    " << std::endl;
-    }
+    // player1.win(1000);
+    // player2.win(2000);
+    // player3.win(3000);
 
-    player1.win(1000);
-    player2.win(2000);
-    player3.win(3000);
-
-    for (Player* player : game.get_players()) {
-        std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
-        std::cout << "    -----    " << std::endl;
-    }
+    // for (Player* player : game.get_players()) {
+    //     std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
+    //     std::cout << "    -----    " << std::endl;
+    // }
 
 
     return 0;

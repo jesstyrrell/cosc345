@@ -10,7 +10,7 @@ using namespace std;
 Deck::Deck() {
     string suits[] = {"Hearts", "Diamonds", "Clubs", "Spades"};
     string ranks[] = {"2", "3", "4", "5", "6", "7", "8", "9", "10",
-                      "Jack", "Queen", "King", "Ace"};
+                      "J", "Q", "K", "A"};
 
     for (const string& suit : suits) {
         for (const string& rank : ranks) {

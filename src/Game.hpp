@@ -14,6 +14,7 @@ class Game {
         Deck deck;
         vector<Player*> players;
         vector<Card> community_cards;
+        vector<int> currentBets;
 
         const int BIG_BLIND = 10;
         const int SMALL_BLIND = 5;
@@ -33,10 +34,14 @@ class Game {
         void deal_turn();
         void deal_river();
 
+        void awardPot(Player *player);
+
         vector<Player*> get_players();
 
         void playHand(); 
-        void makeMoveForUser(std::string move, Player *player);
+        int makeMoveForUser(std::string move, Player *player, int playerIndex, int largestBet);
+
+        void bettingRound(vector<bool>& inGame, int largestBet, int numPlayers, Player *largestBetPlayer, bool preflop);
 
 
         bool static test_game();
