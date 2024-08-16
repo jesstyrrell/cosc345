@@ -29,4 +29,5 @@ class Player {
         void show_hand();
         bool static test_player();
         int get_current_bet();
+        void reset_current_bet();
 };

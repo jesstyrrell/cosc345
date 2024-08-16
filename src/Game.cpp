@@ -204,22 +204,28 @@ void Game::playHand() {
     this->bettingRound(inGame, largestBet, numPlayers, largestBetPlayer, true);
     this->deal_flop();
     GUI::displayCommunityCards(community_cards);
+    resetPlayerBets();
+
     // Perform the flop betting round
-    
     largestBetPlayer = nullptr;
     this->bettingRound(inGame, largestBet, numPlayers, largestBetPlayer, false);
     this->deal_turn();
     GUI::displayCommunityCards(community_cards);
+    resetPlayerBets();
+
 
     // Perform the turn betting round
     largestBetPlayer = nullptr;
     this->bettingRound(inGame, largestBet, numPlayers, largestBetPlayer, false);
     this->deal_river();
     GUI::displayCommunityCards(community_cards);
+    resetPlayerBets();
 
     // Perform the river betting round
     largestBetPlayer = nullptr;
     this->bettingRound(inGame, largestBet, numPlayers, largestBetPlayer, false);
+    resetPlayerBets();
+
     // Go to showdown
     // TODO: find winner (hand evaluator)
     // Award the pot to the winner
@@ -308,6 +314,12 @@ Move Game::getCurrentMove(std::string move) {
             return Move::FOLD;
         default:
             return Move::FOLD;
+    }
+}
+
+void Game::resetPlayerBets() {
+    for (Player* player : this->get_players()) {
+        player->reset_current_bet();
     }
 }
 

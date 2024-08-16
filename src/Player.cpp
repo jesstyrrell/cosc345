@@ -52,6 +52,10 @@ void Player::show_hand() {
     }
 }
 
+void Player::reset_current_bet() {
+    this->current_bet = 0;
+}
+
 bool Player::test_player() {
     Player player = Player("Jess", 1000);
     Card AceOfHearts = Card("Hearts", "A");
