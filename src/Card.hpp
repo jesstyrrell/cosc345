@@ -9,7 +9,7 @@
  * `Card card = Card("Hearts", "Ace");`
  */
 class Card{
-    private:
+    public:
         std::string suit;
         std::string rank;
 
@@ -17,5 +17,6 @@ class Card{
         Card(std::string suit, std::string rank);
         std::string get_suit();
         std::string get_rank();
+        std::string get_card();
         static bool test_card();
 };

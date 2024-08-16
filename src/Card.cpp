@@ -35,6 +35,10 @@ string Card::get_rank() {
     return rank;
 }
 
+string Card::get_card() {
+    return rank + " of " + suit;
+}
+
 /**
  * A static method to test the Card class.
  */

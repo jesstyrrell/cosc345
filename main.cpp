@@ -11,6 +11,7 @@
 #include "src/Deck.hpp"
 #include "src/Player.hpp"
 #include "src/Game.hpp"
+#include "src/HandEvaluator.hpp"
 
 bool uniTest(int argc, char* argv[]) {
     bool pass[4] = { 0 }; 
@@ -93,6 +94,33 @@ int main(int argc, char* argv[]) {
         std::cout << "    -----    " << std::endl;
     }
 
+
+    // Create an instance of HandEvaluator
+    HandEvaluator evaluator;
+
+    Deck deck;
+    deck.shuffle();
+    deck.shuffle();
+    deck.shuffle();
+    deck.shuffle();
+
+    std::vector<Card> hand;
+    hand.push_back(deck.deal());
+    hand.push_back(deck.deal());
+    
+    std::vector<Card> communityCards;
+    communityCards.push_back(deck.deal());
+    communityCards.push_back(deck.deal());
+    communityCards.push_back(deck.deal());
+    communityCards.push_back(deck.deal());
+    communityCards.push_back(deck.deal());
+
+    int numPlayers = 1;
+
+    float probability = evaluator.evaluateHand(hand, communityCards, deck, numPlayers);
+
+    // Output the result
+    std::cout << "Winning Probability: " << probability * 100 << "%" << std::endl;
 
     return 0;
 }
