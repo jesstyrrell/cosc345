@@ -8,11 +8,13 @@ Player::Player(string name, int stack) {
 }
 
 void Player::bet(int amount) {
-    this->stack -= amount;
+    this->stack -= amount - this->current_bet;
+    this->current_bet = amount;
 }
 
 int Player::deduct_blind(int amount) {
     this->stack -= amount;
+    this->current_bet = amount;
     return amount;
 }
 
@@ -40,6 +42,10 @@ void Player::clear_hand() {
     this->hand.clear();
 }
 
+int Player::get_current_bet() {
+    return this->current_bet;
+}
+
 void Player::show_hand() {
     for (Card card : hand) {
         cout << card.get_rank() << " of " << card.get_suit() << endl;
@@ -48,8 +54,8 @@ void Player::show_hand() {
 
 bool Player::test_player() {
     Player player = Player("Jess", 1000);
-    Card AceOfHearts = Card("Hearts", "Ace");
-    Card AceOfSpades = Card("Spades", "Ace");
+    Card AceOfHearts = Card("Hearts", "A");
+    Card AceOfSpades = Card("Spades", "A");
 
     player.add_card_to_hand(AceOfHearts);
     player.add_card_to_hand(AceOfSpades);
@@ -60,11 +66,11 @@ bool Player::test_player() {
         return false;
     }
 
-    if (player.get_hand()[0].get_suit() != "Hearts" || player.get_hand()[0].get_rank() != "Ace") {
+    if (player.get_hand()[0].get_suit() != "Hearts" || player.get_hand()[0].get_rank() != "A") {
         cout << "Card is not correct" << endl;
         return false;
     }
-    if (player.get_hand()[1].get_suit() != "Spades" || player.get_hand()[1].get_rank() != "Ace") {
+    if (player.get_hand()[1].get_suit() != "Spades" || player.get_hand()[1].get_rank() != "A") {
         cout << "Card is not correct" << endl;
         return false;
     }

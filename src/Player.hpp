@@ -13,6 +13,7 @@ class Player {
         string name;
         vector<Card> hand;
         int stack;
+        int current_bet = 0;
 
     public:
         Player(string name, int stack);
@@ -27,4 +28,5 @@ class Player {
         void clear_hand();
         void show_hand();
         bool static test_player();
+        int get_current_bet();
 };
