@@ -12,6 +12,9 @@
 #include "src/Player.hpp"
 #include "src/Game.hpp"
 #include "src/HandEvaluator.hpp"
+#include "src/GUI.hpp"
+
+using namespace std;
 
 bool uniTest(int argc, char* argv[]) {
     bool pass[4] = { 0 }; 
@@ -30,7 +33,7 @@ bool uniTest(int argc, char* argv[]) {
         // Exiting the program if the tests passed and is running in CI
         if (argc > 1) {
             if (strcmp(argv[1], "-ci") == 0) {
-                exit(0); 
+                exit(1); 
             }
         }
         
@@ -64,13 +67,37 @@ int main(int argc, char* argv[]) {
     playerPointers.push_back(&player2);
     playerPointers.push_back(&player3);
 
+    // Initiate a game with all the players 
     Game game = Game(playerPointers); // i swear you have to pass a pointer, but also its a list of two players
-    game.deal_hands();
-    game.show_player_hands();
+    
+    
+    // Game loop 
+    while (true) {
+
+        // Deal hands for all players 
+        game.deal_hands();
+
+        // Deal flop
+        game.deal_flop();
+
+        // Betting commences for each player at the table
+        for (Player* currentPlayer : game.get_players()) {
+
+            GUI::displayPlayerStack(currentPlayer);
+
+            string move = GUI::getUserMove();
+
+            game.makeMoveForUser(move, currentPlayer);
+
+            // GUI::clearScreen();
+        }
+        
+    }
+
+
     game.deal_flop();
     game.deal_turn();
     game.deal_river();
-    game.show_community_cards();
     std::cout << "--------------" << std::endl;
     // Print the stack of each player 
     for (Player* player : game.get_players()) {

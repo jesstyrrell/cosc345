@@ -18,6 +18,7 @@ class Player {
         Player(string name, int stack);
         
         void bet(int amount);
+        int deduct_blind(int amount);
         void win(int amount);
         int get_stack();
         string get_name();

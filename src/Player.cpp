@@ -11,6 +11,11 @@ void Player::bet(int amount) {
     this->stack -= amount;
 }
 
+int Player::deduct_blind(int amount) {
+    this->stack -= amount;
+    return amount;
+}
+
 void Player::win(int amount) {
     this->stack += amount;
 }

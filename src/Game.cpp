@@ -1,4 +1,7 @@
 #include "Game.hpp"
+#include "GUI.hpp"
+
+using namespace std;
 
 Game::Game(std::vector<Player*>& players) {
     this->players = players;
@@ -34,25 +37,36 @@ void Game::deal_river() {
     community_cards.push_back(deck.deal()); // Deal 1 card for the river
 }
 
-void Game::show_community_cards() {
-    for (Card card : community_cards) {
-        std::cout << card.get_rank() << " of " << card.get_suit() << std::endl;
-    }
-}
-
-void Game::show_player_hands() {
-    for (Player* player : players) {
-        std::cout << player->get_name() << "'s hand: " << std::endl;
-        for (Card card : player->get_hand()) {
-            std::cout << card.get_rank() << " of " << card.get_suit() << std::endl;
-        }
-        std::cout << "--------------" << std::endl;
-    }
-}
-
 std::vector<Player*> Game::get_players() {
     return players;
 }
+
+/**
+ * Perform a move for a user based on the provided move string
+ * @param move: string - The move to perform received from the user input
+ * @param player: Player* - The player object to perform the move for
+ * @param pot: int - The current pot size
+ */
+void Game::makeMoveForUser(string move, Player* player) {
+
+    Move currentMove = getCurrentMove(move);
+
+    int betSizing = (currentMove == Move::RAISE) ? GUI::getBetSizing() : 0;
+
+    // Perform correct move on the player's object
+    switch (currentMove) {
+        case Move::CALL:
+            player->bet(0);
+            break;
+        case Move::RAISE:
+            player->bet(betSizing);
+            break;
+        case Move::FOLD:
+            player->clear_hand();
+            break;
+    }
+}
+
 
 bool Game::test_game() {
     vector<Player*> players;
@@ -145,4 +159,70 @@ bool Game::test_game() {
     // }
 
     return true;
+}
+
+void Game::playHand() {
+
+    // Deal cards out to the table 
+    this->deal_hands();
+
+    // Add small and big blinds to the pot
+    Player *bigBlindPlayer = this->get_players()[button + 2 % this->get_players().size()];
+    Player *smallBlindPlayer = this->get_players()[button + 1 % this->get_players().size()];
+
+    // Extract blinds from the players and add them to the pot
+    this->addBlindsToPot(bigBlindPlayer, smallBlindPlayer);
+
+
+
+    // Iterate over all players starting at the button + 3
+    int firstToAct = button + 3 % this->get_players().size();
+
+    int largestBet = BIG_BLIND;
+    Player *largestBetPlayer = bigBlindPlayer;
+
+    // Betting commences for each player at the table
+    for (Player* currentPlayer : this->get_players()) {
+
+        GUI::displayPlayerStack(currentPlayer);
+
+        string move = GUI::getUserMove();
+
+        makeMoveForUser(move, currentPlayer);
+
+        // GUI::clearScreen();
+    }
+
+    this->deal_flop();
+}
+
+/**
+ * Private method used for converting a string move to a Move enum
+ * @param move: string - The move to convert
+ * @return Move - The converted move
+ */
+Move Game::getCurrentMove(std::string move) {
+
+    // Strip the move of any whitespace
+    move.erase(remove_if(move.begin(), move.end(), ::isspace), move.end());
+
+    switch (move[0]) {
+        case 'a': 
+            return Move::CHECK;
+        case 'c':
+            return Move::CALL;
+        case 'r':
+            return Move::RAISE;
+        case 'f':
+            return Move::FOLD;
+     
+        default:
+            return Move::FOLD;
+    }
+}
+
+
+void Game::addBlindsToPot(Player *bigBlindPlayer, Player *smallBlindPlayer) {
+    this->pot += bigBlindPlayer->deduct_blind(BIG_BLIND);
+    this->pot += smallBlindPlayer->deduct_blind(SMALL_BLIND);
 }
