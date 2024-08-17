@@ -33,7 +33,7 @@ bool uniTest(int argc, char* argv[]) {
         // Exiting the program if the tests passed and is running in CI
         if (argc > 1) {
             if (strcmp(argv[1], "-ci") == 0) {
-                exit(1); 
+                exit(0); 
             }
         }
         
@@ -48,7 +48,7 @@ bool uniTest(int argc, char* argv[]) {
     std::cout << "Player test: " << pass[3] << std::endl;
     
     // Exiting the program if the tests failed
-    exit(0);
+    exit(1);
 }
 
 // A main method for testing the classes
