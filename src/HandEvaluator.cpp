@@ -5,23 +5,27 @@ using namespace std;
 HandEvaluator::HandEvaluator() {
 	suits = { "Hearts", "Diamonds", "Clubs", "Spades" };
 	ranks = { "2", "3", "4", "5", "6", "7", "8", "9", "10",
-					  "Jack", "Queen", "King", "Ace" };
+					  "J", "Q", "K", "A" };
 }
 
 
 float HandEvaluator::evaluateHand(vector<Card> hand, vector<Card> communityCards, Deck deck, int numPlayers) {
 	
-	for (int iteration = 0; iteration < 100; iteration++) {
+	int iterations = 1000;
+	int wins = 0;
+	for (int iteration = 0; iteration < iterations; iteration++) {
 		bool win = true;
 		Deck deckCopy(deck);
 		deckCopy.shuffle();
 		for (int player = 0; player < numPlayers; player++) {
+			if (!win) { continue; }
 			vector<Card> otherHand;
 			for (int i = 0; i < 2; i++) { otherHand.push_back(deckCopy.deal()); }
-			bool win = compareHands(hand, otherHand, communityCards);
+			win = compareHands(hand, otherHand, communityCards);
 		}
-		
+		if (win) { wins++; }
 	}
+	cout << 100 * (1.0f*wins / iterations) << "%" << endl;
 
 
 	cout << "Hand: " << endl;
@@ -37,10 +41,71 @@ float HandEvaluator::evaluateHand(vector<Card> hand, vector<Card> communityCards
 }
 
 bool HandEvaluator::compareHands(vector<Card> hand, vector<Card> opponentHand, vector<Card> communityCards) {
-	if (checkPair(hand, communityCards) != checkPair(opponentHand, communityCards)) {
-		return checkPair(hand, communityCards) > checkPair(opponentHand, communityCards);
+	int handScore = checkPair(hand, communityCards);
+	int opponentScore = checkPair(opponentHand, communityCards);
+	if (handScore != opponentScore) {
+		// Pairs are different, return true if hand is better pair
+		return handScore > opponentScore;
 	}
 
+	vector<Card> handAndCommunityCards;
+	vector<Card> opponentAndCommunityCards;
+	vector<int> trimmedHand;
+	vector<int> trimmedOpponentHand;
+	for (Card card : hand) { handAndCommunityCards.push_back(card); }
+	for (Card card : communityCards) { handAndCommunityCards.push_back(card); }
+	for (Card card : opponentHand) { opponentAndCommunityCards.push_back(card); }
+	for (Card card : communityCards) { opponentAndCommunityCards.push_back(card); }
+
+	if (handScore != -1) {
+		// Pairs are the same, remove the pairs from cards.
+
+		string handPairRank = ranks[handScore];
+		string opponentPairRank = ranks[opponentScore];
+
+		// remove the paired cards
+		int removedCards = 0;
+		for (Card card : handAndCommunityCards) {
+			if (card.get_rank() != handPairRank && removedCards < 2) {
+				trimmedHand.push_back(getRankValue(card.get_rank()));
+			}
+		}
+
+		removedCards = 0;
+		for (Card card : opponentAndCommunityCards) {
+			if (card.get_rank() != handPairRank && removedCards < 2) {
+				trimmedOpponentHand.push_back(getRankValue(card.get_rank()));
+			}
+		}
+
+		// sort the scores for the 5 remaining cards
+		std::sort(trimmedHand.begin(), trimmedHand.end(), std::greater<int>());
+		std::sort(trimmedOpponentHand.begin(), trimmedOpponentHand.end(), std::greater<int>());
+
+		// check the next 3 highest cards and return the winner if they are different
+		for (int i = 0; i < 3; i++) {
+			if (trimmedHand[i] != trimmedOpponentHand[i]) {
+				return trimmedHand[i] > trimmedOpponentHand[i];
+			}
+		}
+		// draw as all top 3 cards are the same
+		return false;
+	}
+	// High Card Check
+	vector<int> handValues;
+	vector<int> opponentHandValues;
+	for (Card card : hand) { handValues.push_back(getRankValue(card.get_rank())); }
+	for (Card card : opponentHand) { opponentHandValues.push_back(getRankValue(card.get_rank())); }
+	std::sort(handValues.begin(), handValues.end(), std::greater<int>());
+	std::sort(opponentHandValues.begin(), opponentHandValues.end(), std::greater<int>());
+	for (int i = 0; i < 2; i++) {
+		if (handValues[i] != opponentHandValues[i]) {
+			return handValues[i] > opponentHandValues[i];
+		}
+	}
+
+	// draw
+	return false;
 }
 
 int HandEvaluator::checkPair(vector<Card> hand, vector<Card> communityCards) {
