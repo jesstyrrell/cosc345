@@ -19,7 +19,7 @@ Deck::Deck() {
     }
 }
 
-vector<Card> Deck::get_cards() {
+vector<Card> Deck::get_cards() { 
     return cards;
 }
 
