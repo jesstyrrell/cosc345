@@ -16,4 +16,8 @@ class Deck {
         Card deal();
         vector<Card> get_cards();
         bool static test_deck();
+
+        // Helper functions for evaluating cards
+        Card find_card(string rank, string suit);
+        void remove_card(Card card);
 };
