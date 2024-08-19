@@ -17,5 +17,9 @@ set(MAIN_FILE main.cpp)
 file(GLOB_RECURSE SRC_FILES ${SRC_PATH}/*.cpp)
 file(GLOB_RECURSE HEADER_FILES ${SRC_PATH}/*.hpp)
 
+# Setting the C++ standard to be used
+set(CMAKE_CXX_STANDARD 17)  # or 20 for C++20
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 # Defining the executable target and adding all source files
 add_executable(${PROJECT_NAME} ${MAIN_FILE} ${SRC_FILES} ${HEADER_FILES})

@@ -2,11 +2,7 @@
 
 using namespace std;
 
-HandEvaluator::HandEvaluator() {
-	suits = { "Hearts", "Diamonds", "Clubs", "Spades" };
-	ranks = { "2", "3", "4", "5", "6", "7", "8", "9", "10",
-					  "Jack", "Queen", "King", "Ace" };
-}
+HandEvaluator::HandEvaluator() {}
 
 
 float HandEvaluator::evaluateHand(vector<Card> hand, vector<Card> communityCards, Deck deck, int numPlayers) {
