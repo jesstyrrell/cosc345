@@ -3,31 +3,12 @@
 using namespace std;
 
 HandEvaluator::HandEvaluator() {
-	suits = { "Hearts", "Diamonds", "Clubs", "Spades" };
-	ranks = { "2", "3", "4", "5", "6", "7", "8", "9", "10",
-					  "J", "Q", "K", "A" };
+
 }
 
 
 float HandEvaluator::evaluateHand(vector<Card> hand, vector<Card> communityCards, Deck deck, int numPlayers) {
 	
-	int iterations = 1000;
-	int wins = 0;
-	for (int iteration = 0; iteration < iterations; iteration++) {
-		bool win = true;
-		Deck deckCopy(deck);
-		deckCopy.shuffle();
-		for (int player = 0; player < numPlayers; player++) {
-			if (!win) { continue; }
-			vector<Card> otherHand;
-			for (int i = 0; i < 2; i++) { otherHand.push_back(deckCopy.deal()); }
-			win = compareHands(hand, otherHand, communityCards);
-		}
-		if (win) { wins++; }
-	}
-	cout << 100 * (1.0f*wins / iterations) << "%" << endl;
-
-
 	cout << "Hand: " << endl;
 	for (Card c : hand) { cout << c.get_card() << endl; }
 	cout << "Community Cards: " << endl;
@@ -37,7 +18,24 @@ float HandEvaluator::evaluateHand(vector<Card> hand, vector<Card> communityCards
 	if (pairIndex != -1) { cout << "\npair of " << ranks[pairIndex] << endl; }
 	else { cout << "\nno pair found " << endl; }
 
-	return 0.0f;
+	int iterations = 10000;
+	int wins = 0;
+	for (int iteration = 0; iteration < iterations; iteration++) {
+		bool win = true;
+		Deck deckCopy(deck);
+		deckCopy.shuffle();
+		for (int player = 0; player < numPlayers; player++) {
+			if (!win) { continue; }
+			// create random hand for opponent
+			vector<Card> otherHand;
+			for (int i = 0; i < 2; i++) { otherHand.push_back(deckCopy.deal()); }
+			// check if we beat opponent's hand
+			win = compareHands(hand, otherHand, communityCards);
+		}
+		if (win) { wins++; }
+	}
+
+	return 1.0f * wins / iterations;
 }
 
 bool HandEvaluator::compareHands(vector<Card> hand, vector<Card> opponentHand, vector<Card> communityCards) {
@@ -94,11 +92,12 @@ bool HandEvaluator::compareHands(vector<Card> hand, vector<Card> opponentHand, v
 	// High Card Check
 	vector<int> handValues;
 	vector<int> opponentHandValues;
-	for (Card card : hand) { handValues.push_back(getRankValue(card.get_rank())); }
-	for (Card card : opponentHand) { opponentHandValues.push_back(getRankValue(card.get_rank())); }
+	for (Card card : handAndCommunityCards) { handValues.push_back(getRankValue(card.get_rank())); }
+	for (Card card : opponentAndCommunityCards) { opponentHandValues.push_back(getRankValue(card.get_rank())); }
 	std::sort(handValues.begin(), handValues.end(), std::greater<int>());
 	std::sort(opponentHandValues.begin(), opponentHandValues.end(), std::greater<int>());
-	for (int i = 0; i < 2; i++) {
+	// check hand for high cards
+	for (int i = 0; i < 5; i++) {
 		if (handValues[i] != opponentHandValues[i]) {
 			return handValues[i] > opponentHandValues[i];
 		}

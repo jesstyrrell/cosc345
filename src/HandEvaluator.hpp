@@ -12,8 +12,9 @@ using namespace std;
 
 class HandEvaluator {
 private:
-    vector<string> suits;
-    vector<string> ranks;
+    vector<string> suits = { "Hearts", "Diamonds", "Clubs", "Spades" };
+    vector<string> ranks = { "2", "3", "4", "5", "6", "7", "8", "9", "10",
+                      "J", "Q", "K", "A" };
 
 
 public:

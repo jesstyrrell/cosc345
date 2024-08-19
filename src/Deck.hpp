@@ -16,4 +16,5 @@ class Deck {
         Card deal();
         vector<Card> get_cards();
         bool static test_deck();
+        bool remove_card(string card);
 };
