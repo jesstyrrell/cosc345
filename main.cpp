@@ -88,7 +88,7 @@ int main(int argc, char* argv[]) {
 
             GUI::displayPlayerStack(currentPlayer);
 
-            string move = GUI::getUserMove();
+            string move = GUI::getUserMove(true, true);
 
             game.makeMoveForUser(move, currentPlayer, 0, 0);
 
