@@ -69,7 +69,7 @@ int Game::makeMoveForUser(string move, Player* player, int playerIndex, int larg
             return largestBet;
         }
         case Move::RAISE: {
-            int raiseAmount = GUI::getBetSizing();
+            int raiseAmount = GUI::getBetSizing(SMALL_BLIND, player->get_stack() + player->get_current_bet());
             player->bet(raiseAmount);
             return raiseAmount;
         }
@@ -83,7 +83,6 @@ int Game::makeMoveForUser(string move, Player* player, int playerIndex, int larg
     }
     
 }
-
 
 bool Game::test_game() {
     vector<Player*> players;
@@ -228,7 +227,7 @@ void Game::playHand() {
 
     // Go to showdown
     // TODO: find winner (hand evaluator)
-    // Award the pot to the winner
+    // Award the pot to the winner and announce the winner 
 }
 
 void Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers, Player *largestBetPlayer, bool preflop) {
@@ -260,8 +259,11 @@ void Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers, Pl
         // If the player is still in the game
         if (inGame[currentPlayer]) {
             GUI::displayPlayerStack(this->get_players()[currentPlayer]);
+            // Check if the player can check and raise
+            bool canCheck = largestBet == this->get_players()[currentPlayer]->get_current_bet();
+            bool canRaise = this->get_players()[currentPlayer]->get_stack() > largestBet;
             // Get the player's move
-            string move = GUI::getUserMove();
+            string move = GUI::getUserMove(canCheck, canRaise);
 
             // Perform the move for the player
             int betSize = makeMoveForUser(move, this->get_players()[currentPlayer], currentPlayer, largestBet);
@@ -322,7 +324,6 @@ void Game::resetPlayerBets() {
         player->reset_current_bet();
     }
 }
-
 
 void Game::addBlindsToPot(Player *bigBlindPlayer, Player *smallBlindPlayer) {
     this->pot += bigBlindPlayer->deduct_blind(BIG_BLIND);
