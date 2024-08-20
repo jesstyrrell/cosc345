@@ -8,6 +8,7 @@
 #include "Card.hpp"
 
 enum Move { CHECK, CALL, RAISE, FOLD };
+enum Stage { PREFLOP, FLOP, TURN, RIVER };
 
 class Game {
     private:
@@ -20,6 +21,8 @@ class Game {
         const int SMALL_BLIND = 5;
         int pot = 0;
         int button = 0; 
+
+        Stage currentStage = PREFLOP;
         
         Move getCurrentMove(std::string move);
 
@@ -28,6 +31,9 @@ class Game {
     public:
         Game(vector<Player*>& players);
         void add_player(Player *player);
+
+        void deal();
+        void nextStage();
 
         void deal_hands();
         void deal_flop();
@@ -39,11 +45,16 @@ class Game {
         vector<Player*> get_players();
 
         void resetPlayerBets();
+        void resetPlayerHands();
 
         void playHand(); 
         int makeMoveForUser(std::string move, Player *player, int playerIndex, int largestBet);
 
-        void bettingRound(vector<bool>& inGame, int largestBet, int numPlayers, Player *largestBetPlayer, bool preflop);
+        bool bettingRound(vector<bool>& inGame, int largestBet, int numPlayers);
+
+        Player* get_final_winner(vector<bool>& inGame);
+
+
 
 
         bool static test_game();
