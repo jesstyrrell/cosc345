@@ -3,6 +3,10 @@
 
 using namespace std;
 
+/**
+ * Constructor for the Game class
+ * @param players: vector<Player*>& - A vector of pointers to the players in the game
+ */
 Game::Game(std::vector<Player*>& players) {
     this->players = players;
     this->deck = Deck();
@@ -41,6 +45,10 @@ std::vector<Player*> Game::get_players() {
     return players;
 }
 
+/**
+ * Award the pot to the winner of the hand
+ * @param winner: Player* - The player object who won the hand
+ */
 void Game::awardPot(Player* winner) {
     winner->win(this->pot);
     this->pot = 0;
@@ -85,6 +93,11 @@ int Game::makeMoveForUser(string move, Player* player, int playerIndex, int larg
     
 }
 
+/**
+ * Static method to test the Game class
+ * 
+ * @return bool - Whether the tests passed
+ */
 bool Game::test_game() {
     vector<Player*> players;
     Player player1 = Player("Jess", 1000);
@@ -178,6 +191,9 @@ bool Game::test_game() {
     return true;
 }
 
+/**
+ * Deal cards to the table based on the current stage of the game
+ */
 void Game::deal(){
     // Check the game stage and deal the appropriate cards
     switch (currentStage) {
@@ -199,6 +215,9 @@ void Game::deal(){
     this->nextStage();
 }
 
+/** 
+ * Move to the next stage of the game
+ */
 void Game::nextStage(){
     // Check the game stage and move to the next stage
     switch (currentStage) {
@@ -217,14 +236,12 @@ void Game::nextStage(){
     }
 }   
 
+/**
+ * Play a hand of poker
+ * 
+ * Called in main.cpp to play a hand of poker
+ */
 void Game::playHand() {
-
-    // TESTING: print if the stage is preflop
-    if (currentStage == Stage::PREFLOP) {
-        cout << "Preflop stage yay" << endl;
-    } else {
-        cout << "Not preflop stage we failed" << endl;
-    }
 
     // Deal cards out to the table 
     this->deal();
@@ -297,12 +314,8 @@ Player* Game::get_final_winner(vector<bool>& inGame) {
  * @param preflop: bool - Whether the betting round is pre-flop or not
  * @return bool - whether the entire hand should be ended
  */
-
 bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
     int currentPlayer;
-
-    // TESTING: print that this method has been called 
-    cout << "Betting round has been called" << endl;
     
     if(currentStage == Stage::FLOP){   // UTG is first to act if pre-flop
         currentPlayer = button + 3 % numPlayers;
