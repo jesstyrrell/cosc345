@@ -62,8 +62,11 @@ int Game::makeMoveForUser(string move, Player* player, int playerIndex, int larg
     // Perform correct move on the player's object
     switch (currentMove) {
         case Move::CALL: {
-
             int callAmount = largestBet - player->get_current_bet();
+            // Check the call amount is less than the player's stack
+            if (callAmount > player->get_stack()) {
+                callAmount = player->get_stack();
+            }
             this->pot += callAmount;
             player->bet(callAmount);
             return largestBet;
@@ -318,11 +321,14 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
         // If the player is still in the game
         if (inGame[currentPlayer]) {
             GUI::displayPlayerStack(this->get_players()[currentPlayer]);
-            // Check if the player can check and raise
+            // Check if the player can perform each action
             bool canCheck = largestBet == this->get_players()[currentPlayer]->get_current_bet();
             bool canRaise = this->get_players()[currentPlayer]->get_stack() > largestBet;
+            // A player can only fold or call if they are not the largest better 
+            bool canFold = this->get_players()[currentPlayer] != largestBetPlayer;
+            bool canCall = canFold;
             // Get the player's move
-            string move = GUI::getUserMove(canCheck, canRaise);
+            string move = GUI::getUserMove(canCheck, canRaise, canFold, canCall);
 
             // Perform the move for the player
             int betSize = makeMoveForUser(move, this->get_players()[currentPlayer], currentPlayer, largestBet);

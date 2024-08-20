@@ -11,7 +11,7 @@ class GUI {
         static void clearScreen();
 
         // Methods performed on the user
-        static string getUserMove(bool canCheck, bool canRaise);
+        static string getUserMove(bool canCheck, bool canRaise, bool canFold, bool canCall);
         static int getBetSizing(int minBet, int maxBet);
 
         // Methods performed on all players

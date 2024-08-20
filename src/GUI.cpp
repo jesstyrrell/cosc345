@@ -19,12 +19,39 @@ void GUI::clearScreen() {
 /**
  * Get user move from the terminal
  */
-string GUI::getUserMove(bool canCheck, bool canRaise) {
+string GUI::getUserMove(bool canCheck, bool canRaise, bool canFold, bool canCall) {
     // Get user move 
-    // TODO: Add input validation
+    // TODO: Test input validation
+
+    // Create message to user based on possible actions
+    // TODO: format nicely
+    string message = "Enter your move: (";
+    if (canFold) {
+        message += "fold = f";
+    }
+    if (canCall) {
+        message += ", call = c";
+    }
+    if (canCheck) {
+        message += ", check = a";
+    }
+    if (canRaise) {
+        message += ", raise = r";
+    }
+    message += ") ";
+
+
     std::string move; 
-    std::cout << "Enter your move: (fold = f, check = a, call = c, raise = r) ";
+    std::cout << message;
     std::cin >> move; 
+    while((move == "f" && !canFold) || 
+          (move == "a" && !canCheck) || 
+          (move == "c" && !canCall) || 
+          (move == "r" && !canRaise)) {
+        std::cout << "Invalid move. Please enter a valid move: ";
+        std::cin >> move; 
+    }
+
     return move; 
 }
 
@@ -37,10 +64,14 @@ string GUI::getUserMove(bool canCheck, bool canRaise) {
 
 int GUI::getBetSizing(int minBet, int maxBet) {
     // Get user bet size
-    // TODO: Ensure bet size is within minBet and maxBet
+    // TODO: Test bet sizing input validation
     int bet_sizing; 
     std::cout << "Enter your bet sizing: ";
     std::cin >> bet_sizing; 
+    while (bet_sizing < minBet || bet_sizing > maxBet) {
+        std::cout << "Invalid bet size. Please enter a valid bet size: ";
+        std::cin >> bet_sizing; 
+    }
     return bet_sizing; 
 }
 
