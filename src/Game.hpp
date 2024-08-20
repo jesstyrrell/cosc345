@@ -48,7 +48,7 @@ class Game {
         void resetPlayerHands();
 
         void playHand(); 
-        int makeMoveForUser(std::string move, Player *player, int playerIndex, int largestBet);
+        int makeMoveForUser(const std::string& move, Player *player, int playerIndex, int largestBet);
 
         bool bettingRound(vector<bool>& inGame, int largestBet, int numPlayers);
 

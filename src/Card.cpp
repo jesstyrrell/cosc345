@@ -15,7 +15,7 @@ using namespace std;
  * @param suit The suit of the card (e.g., "Hearts").
  * @param rank The rank of the card (e.g., "Ace").
  */
-Card::Card(string suit, string rank) : suit(suit), rank(rank) {}
+Card::Card(const std::string& suit, const std::string& rank) : suit(suit), rank(rank) {}
 
 /**
  * Getter for the suit of the card.

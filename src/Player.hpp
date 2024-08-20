@@ -16,7 +16,7 @@ class Player {
         int current_bet = 0;
 
     public:
-        Player(string name, int stack);
+        Player(const std::string& name, int stack);
         
         void bet(int amount);
         int deduct_blind(int amount);
