@@ -43,6 +43,7 @@ std::vector<Player*> Game::get_players() {
 
 void Game::awardPot(Player* winner) {
     winner->win(this->pot);
+    this->pot = 0;
 }
 
 /**
@@ -63,13 +64,13 @@ int Game::makeMoveForUser(string move, Player* player, int playerIndex, int larg
         case Move::CALL: {
 
             int callAmount = largestBet - player->get_current_bet();
-
+            this->pot += callAmount;
             player->bet(callAmount);
-            
             return largestBet;
         }
         case Move::RAISE: {
             int raiseAmount = GUI::getBetSizing(SMALL_BLIND, player->get_stack() + player->get_current_bet());
+            this->pot += raiseAmount - player->get_current_bet();
             player->bet(raiseAmount);
             return raiseAmount;
         }
@@ -177,10 +178,56 @@ bool Game::test_game() {
     return true;
 }
 
+void Game::deal(){
+    // Check the game stage and deal the appropriate cards
+    switch (currentStage) {
+        case PREFLOP:
+            this->deal_hands();
+            break;
+        case FLOP:
+            this->deal_flop();
+            break;
+        case TURN:
+            this->deal_turn();
+            break;
+        case RIVER:
+            this->deal_river();
+            break;
+    }
+
+    // Move to the next stage
+    this->nextStage();
+}
+
+void Game::nextStage(){
+    // Check the game stage and move to the next stage
+    switch (currentStage) {
+        case PREFLOP:
+            currentStage = FLOP;
+            break;
+        case FLOP:
+            currentStage = TURN;
+            break;
+        case TURN:
+            currentStage = RIVER;
+            break;
+        case RIVER:
+            currentStage = PREFLOP;
+            break;
+    }
+}   
+
 void Game::playHand() {
 
+    // TESTING: print if the stage is preflop
+    if (currentStage == PREFLOP) {
+        cout << "Preflop stage yay" << endl;
+    } else {
+        cout << "Not preflop stage we failed" << endl;
+    }
+
     // Deal cards out to the table 
-    this->deal_hands();
+    this->deal();
 
     // Store the number of players in the hand 
     int numPlayers = this->get_players().size();
@@ -198,39 +245,48 @@ void Game::playHand() {
     int largestBet = BIG_BLIND;
     Player *largestBetPlayer = bigBlindPlayer;
 
-
-    // Perform the pre-flop betting round
-    this->bettingRound(inGame, largestBet, numPlayers, largestBetPlayer, true);
-    this->deal_flop();
-    GUI::displayCommunityCards(community_cards);
-    resetPlayerBets();
-
-    // Perform the flop betting round
-    largestBetPlayer = nullptr;
-    this->bettingRound(inGame, largestBet, numPlayers, largestBetPlayer, false);
-    this->deal_turn();
-    GUI::displayCommunityCards(community_cards);
-    resetPlayerBets();
-
-
-    // Perform the turn betting round
-    largestBetPlayer = nullptr;
-    this->bettingRound(inGame, largestBet, numPlayers, largestBetPlayer, false);
-    this->deal_river();
-    GUI::displayCommunityCards(community_cards);
-    resetPlayerBets();
-
-    // Perform the river betting round
-    largestBetPlayer = nullptr;
-    this->bettingRound(inGame, largestBet, numPlayers, largestBetPlayer, false);
-    resetPlayerBets();
-
+    // A loop for the 4 possible betting rounds
+    for(int i = 0; i < 4; i ++){
+        if(i > 0) largestBetPlayer = nullptr;
+        if(this->bettingRound(inGame, largestBet, numPlayers, largestBetPlayer, i == 0)){
+            this->awardPot(this->get_final_winner(inGame));
+            return;
+        }
+        this->deal();
+        GUI::displayCommunityCards(community_cards);
+        resetPlayerBets();
+    }
+    
     // Go to showdown
     // TODO: find winner (hand evaluator)
     // Award the pot to the winner and announce the winner 
+    // For now randomly pick a winner \_(ツ)_/¯
+    Player *winner = this->get_players()[rand() % numPlayers];
+    this->awardPot(winner);
 }
 
-void Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers, Player *largestBetPlayer, bool preflop) {
+/**
+ * Get the final winner of the hand- given that there is only one player left 
+ * @param inGame: vector<bool>& - A vector of booleans corresponding to the players in the game
+ * @return Player* - The final winner of the hand
+ */
+Player* Game::get_final_winner(vector<bool>& inGame) {
+    Player *winner = this->get_players()[find(inGame.begin(), inGame.end(), true) - inGame.begin()];  
+            this->awardPot(winner);
+                return winner;
+}
+
+/**
+ * Perform a betting round for the players in the game
+ * @param inGame: vector<bool>& - A vector of booleans corresponding to the players in the game
+ * @param largestBet: int - The current largest bet in the game
+ * @param numPlayers: int - The number of players in the game
+ * @param largestBetPlayer: Player* - The player who made the largest bet
+ * @param preflop: bool - Whether the betting round is pre-flop or not
+ * @return bool - whether the entire hand should be ended
+ */
+
+bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers, Player *largestBetPlayer, bool preflop) {
     int currentPlayer;
 
     //TESTING: print that this method has been called 
@@ -250,10 +306,8 @@ void Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers, Pl
 
         // End the betting round if there is only one player left in the game
         if (count(inGame.begin(), inGame.end(), true) == 1) {
-            // TODO: Award the pot to the winner should be done in the playHand method as returning there will stop hand 
-            Player *winner = this->get_players()[find(inGame.begin(), inGame.end(), true) - inGame.begin()];  
-            this->awardPot(winner);
-            return;
+            // TODO: Award the pot to the winner should be done in the playHand method as returning there will stop hand
+            return true;
         }
 
         // If the player is still in the game
@@ -290,7 +344,7 @@ void Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers, Pl
         // If we have looped back to the player who made the largest bet, break
         // TODO: This does not work pre-flop if noone raises - the BB should be able to check
         if (this->get_players()[currentPlayer] == largestBetPlayer) {
-            break;
+            return false;
         }
     }
 }
