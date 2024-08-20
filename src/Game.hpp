@@ -45,6 +45,7 @@ class Game {
         vector<Player*> get_players();
 
         void resetPlayerBets();
+        void resetPlayerHands();
 
         void playHand(); 
         int makeMoveForUser(std::string move, Player *player, int playerIndex, int largestBet);

@@ -56,9 +56,6 @@ int Game::makeMoveForUser(string move, Player* player, int playerIndex, int larg
 
     Move currentMove = getCurrentMove(move);
 
-    // TODO: If the player is raising, we need to check that the bet sizing is greater than the current bet plus minimum raise 
-    // Also need to check that the player has enough money to make the bet
-
     // Perform correct move on the player's object
     switch (currentMove) {
         case Move::CALL: {
@@ -258,6 +255,7 @@ void Game::playHand() {
             return;
         }
         this->deal();
+        largestBet = 0;
         GUI::displayCommunityCards(community_cards);
         resetPlayerBets();
     }
@@ -265,11 +263,18 @@ void Game::playHand() {
     // Go to showdown
     // TODO: find winner (hand evaluator)
     // Award the pot to the winner and announce the winner 
-    // For now randomly pick a winner \_(ツ)_/¯
+    // For now randomly pick a winner 
     Player *winner = this->get_players()[rand() % numPlayers];
     this->awardPot(winner);
-    
+
+    // TESTING: print who won the hand 
+    cout << winner->get_name() << " won the hand" << endl;
+
+    // Move the button 
     this->button = (this->button + 1) % numPlayers;
+    // Reset all hands 
+    this->resetPlayerHands();
+
 }
 
 /**
@@ -320,12 +325,13 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
 
         // If the player is still in the game
         if (inGame[currentPlayer]) {
+            GUI::displayPlayerHand(this->get_players()[currentPlayer]);
             GUI::displayPlayerStack(this->get_players()[currentPlayer]);
             // Check if the player can perform each action
             bool canCheck = largestBet == this->get_players()[currentPlayer]->get_current_bet();
             bool canRaise = this->get_players()[currentPlayer]->get_stack() > largestBet;
             // A player can only fold or call if they are not the largest better 
-            bool canFold = this->get_players()[currentPlayer] != largestBetPlayer;
+            bool canFold = this->get_players()[currentPlayer]->get_current_bet() != largestBet;
             bool canCall = canFold;
             // Get the player's move
             string move = GUI::getUserMove(canCheck, canRaise, canFold, canCall);
@@ -386,6 +392,13 @@ Move Game::getCurrentMove(std::string move) {
 void Game::resetPlayerBets() {
     for (Player* player : this->get_players()) {
         player->reset_current_bet();
+    }
+    
+}
+
+void Game::resetPlayerHands(){
+    for (Player* player : this->get_players()) {
+        player->clear_hand();
     }
 }
 
