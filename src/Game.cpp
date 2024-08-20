@@ -60,7 +60,7 @@ void Game::awardPot(Player* winner) {
  * @param player: Player* - The player object to perform the move for
  * @param pot: int - The current pot size
  */
-int Game::makeMoveForUser(string move, Player* player, int playerIndex, int largestBet) {
+int Game::makeMoveForUser(const std::string& move, Player* player, int playerIndex, int largestBet) {
 
     Move currentMove = getCurrentMove(move);
 

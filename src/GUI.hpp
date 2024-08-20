@@ -15,8 +15,8 @@ class GUI {
         static int getBetSizing(int minBet, int maxBet);
 
         // Methods performed on all players
-        static void displayAllPlayerHands(std::vector<Player*> players);
-        static void displayCommunityCards(std::vector<Card> community_cards);
+        static void displayAllPlayerHands(const std::vector<Player*>& players);
+        static void displayCommunityCards(const std::vector<Card>& community_cards);
         
         // Methods performed on a single player 
         static void displayPlayerStack(Player *player);

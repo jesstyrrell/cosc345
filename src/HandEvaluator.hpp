@@ -18,11 +18,11 @@ private:
 public:
     HandEvaluator();
 
-    float evaluateHand(vector<Card> hand, vector<Card> communityCards, Deck deck, int numPlayers);
+    float evaluateHand(const vector<Card>& hand, const vector<Card>& communityCards, Deck deck, int numPlayers);
 
-    bool compareHands(vector<Card> hand, vector<Card> opponentHand, vector<Card> communityCards);
+    bool compareHands(const vector<Card>& hand, const vector<Card>& opponentHand, const vector<Card>& communityCards);
 
-    int checkPair(vector<Card> hand, vector<Card> communityCards);
+    int checkPair(const vector<Card>& hand, const vector<Card>& communityCards);
 
     int getRankValue(string rank);
 };

@@ -80,7 +80,7 @@ int GUI::getBetSizing(int minBet, int maxBet) {
  * 
  * @param community_cards: vector<Card> - Community cards to display
  */
-void GUI::displayCommunityCards(std::vector<Card> community_cards) {
+void GUI::displayCommunityCards(const std::vector<Card>& community_cards) {
     // Display community cards
     for (Card card : community_cards) {
         std::cout << card.get_rank() << " of " << card.get_suit() << std::endl;
@@ -92,10 +92,10 @@ void GUI::displayCommunityCards(std::vector<Card> community_cards) {
  * 
  * @param players: vector<Player*> - Players to display hands for
  */
-void GUI::displayAllPlayerHands(std::vector<Player*> players) {
+void GUI::displayAllPlayerHands(const std::vector<Player*>& players) {
     for (Player* player : players) {
         std::cout << player->get_name() << "'s hand: " << std::endl;
-        for (Card card : player->get_hand()) {
+        for (Card& card : player->get_hand()) {
             std::cout << card.get_rank() << " of " << card.get_suit() << std::endl;
         }
         std::cout << "--------------" << std::endl;

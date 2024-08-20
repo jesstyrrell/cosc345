@@ -5,7 +5,7 @@ using namespace std;
 HandEvaluator::HandEvaluator() {}
 
 
-float HandEvaluator::evaluateHand(vector<Card> hand, vector<Card> communityCards, Deck deck, int numPlayers) {
+float HandEvaluator::evaluateHand(const vector<Card>& hand, const vector<Card>& communityCards, Deck deck, int numPlayers) {
 	
 	for (int iteration = 0; iteration < 100; iteration++) {
 		bool win = true;
@@ -32,14 +32,14 @@ float HandEvaluator::evaluateHand(vector<Card> hand, vector<Card> communityCards
 	return 0.0f;
 }
 
-bool HandEvaluator::compareHands(vector<Card> hand, vector<Card> opponentHand, vector<Card> communityCards) {
+bool HandEvaluator::compareHands(const vector<Card>& hand, const vector<Card>& opponentHand, const vector<Card>& communityCards) {
 	if (checkPair(hand, communityCards) != checkPair(opponentHand, communityCards)) {
 		return checkPair(hand, communityCards) > checkPair(opponentHand, communityCards);
 	}
 
 }
 
-int HandEvaluator::checkPair(vector<Card> hand, vector<Card> communityCards) {
+int HandEvaluator::checkPair(const vector<Card>& hand, const vector<Card>& communityCards) {
 	int highestRank = -1;
 	vector<Card> allCards;
 	for (Card card : hand) { allCards.push_back(card); }
