@@ -64,16 +64,7 @@ cmake build
 
 </details>
 
-
-
-
-
-
-
-
-
-
-
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/5b3df76e50bf4d26b4c0499267e42c59)](https://app.codacy.com/gh/jtyrrell2/cosc345/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
