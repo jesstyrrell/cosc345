@@ -49,8 +49,7 @@ class Game {
         void playHand(); 
         int makeMoveForUser(std::string move, Player *player, int playerIndex, int largestBet);
 
-        bool bettingRound(vector<bool>& inGame, int largestBet, int numPlayers, Player *largestBetPlayer, bool preflop);
-        void playBetRound(vector<bool>& inGame, int largestBet, int numPlayers, Player *largestBetPlayer, bool preflop);
+        bool bettingRound(vector<bool>& inGame, int largestBet, int numPlayers);
 
         Player* get_final_winner(vector<bool>& inGame);
 

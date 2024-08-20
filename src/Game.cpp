@@ -202,17 +202,17 @@ void Game::deal(){
 void Game::nextStage(){
     // Check the game stage and move to the next stage
     switch (currentStage) {
-        case PREFLOP:
-            currentStage = FLOP;
+        case Stage::PREFLOP:
+            currentStage = Stage::FLOP;
             break;
-        case FLOP:
-            currentStage = TURN;
+        case Stage::FLOP:
+            currentStage = Stage::TURN;
             break;
-        case TURN:
-            currentStage = RIVER;
+        case Stage::TURN:
+            currentStage = Stage::RIVER;
             break;
-        case RIVER:
-            currentStage = PREFLOP;
+        case Stage::RIVER:
+            currentStage = Stage::PREFLOP;
             break;
     }
 }   
@@ -220,7 +220,7 @@ void Game::nextStage(){
 void Game::playHand() {
 
     // TESTING: print if the stage is preflop
-    if (currentStage == PREFLOP) {
+    if (currentStage == Stage::PREFLOP) {
         cout << "Preflop stage yay" << endl;
     } else {
         cout << "Not preflop stage we failed" << endl;
@@ -243,13 +243,15 @@ void Game::playHand() {
     this->addBlindsToPot(bigBlindPlayer, smallBlindPlayer);
 
     int largestBet = BIG_BLIND;
-    Player *largestBetPlayer = bigBlindPlayer;
+    // Player *largestBetPlayer = bigBlindPlayer;
 
     // A loop for the 4 possible betting rounds
     for(int i = 0; i < 4; i ++){
-        if(i > 0) largestBetPlayer = nullptr;
-        if(this->bettingRound(inGame, largestBet, numPlayers, largestBetPlayer, i == 0)){
+        if(this->bettingRound(inGame, largestBet, numPlayers)){
             this->awardPot(this->get_final_winner(inGame));
+            this->currentStage = PREFLOP;
+            this->button = (this->button + 1) % numPlayers;
+
             return;
         }
         this->deal();
@@ -263,6 +265,8 @@ void Game::playHand() {
     // For now randomly pick a winner \_(ツ)_/¯
     Player *winner = this->get_players()[rand() % numPlayers];
     this->awardPot(winner);
+    
+    this->button = (this->button + 1) % numPlayers;
 }
 
 /**
@@ -286,13 +290,13 @@ Player* Game::get_final_winner(vector<bool>& inGame) {
  * @return bool - whether the entire hand should be ended
  */
 
-bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers, Player *largestBetPlayer, bool preflop) {
+bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
     int currentPlayer;
 
-    //TESTING: print that this method has been called 
+    // TESTING: print that this method has been called 
     cout << "Betting round has been called" << endl;
     
-    if(preflop){   // UTG is first to act if pre-flop
+    if(currentStage == Stage::FLOP){   // UTG is first to act if pre-flop
         currentPlayer = button + 3 % numPlayers;
     } else {    // Otherwise, the player to the left of the button is first to act
         currentPlayer = button + 1 % numPlayers;
@@ -301,12 +305,13 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers, Pl
         }
     }
 
+    Player* largestBetPlayer = this->get_players()[currentPlayer];
+
     // Loop for the betting round 
     while(true) {
 
         // End the betting round if there is only one player left in the game
         if (count(inGame.begin(), inGame.end(), true) == 1) {
-            // TODO: Award the pot to the winner should be done in the playHand method as returning there will stop hand
             return true;
         }
 
@@ -342,7 +347,6 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers, Pl
         currentPlayer = (currentPlayer + 1) % numPlayers;
 
         // If we have looped back to the player who made the largest bet, break
-        // TODO: This does not work pre-flop if noone raises - the BB should be able to check
         if (this->get_players()[currentPlayer] == largestBetPlayer) {
             return false;
         }

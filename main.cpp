@@ -77,6 +77,14 @@ int main(int argc, char* argv[]) {
     for (Player* player : playerPointers) {
         std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
     }
+
+    // Play a hand
+    game.playHand();
+
+    // TESTING: Display stack sizes of all players
+    for (Player* player : playerPointers) {
+        std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
+    }
     
 
     // // Create an instance of HandEvaluator
