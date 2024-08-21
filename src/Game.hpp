@@ -46,6 +46,7 @@ class Game {
 
         void resetPlayerBets();
         void resetPlayerHands();
+        void resetCommunityCards();
 
         void playHand(); 
         int makeMoveForUser(const std::string& move, Player *player, int playerIndex, int largestBet);

@@ -47,7 +47,8 @@ string GUI::getUserMove(bool canCheck, bool canRaise, bool canFold, bool canCall
     while((move == "f" && !canFold) || 
           (move == "a" && !canCheck) || 
           (move == "c" && !canCall) || 
-          (move == "r" && !canRaise)) {
+          (move == "r" && !canRaise) ||
+          (move != "f" && move != "a" && move != "c" && move != "r")) {
         std::cout << "Invalid move. Please enter a valid move: ";
         std::cin >> move; 
     }

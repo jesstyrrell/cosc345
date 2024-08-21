@@ -1,5 +1,8 @@
 #include "Game.hpp"
 #include "GUI.hpp"
+#include <algorithm>
+#include <iostream>
+#include <ctime>
 
 using namespace std;
 
@@ -262,14 +265,13 @@ void Game::playHand() {
     int largestBet = BIG_BLIND;
     // Player *largestBetPlayer = bigBlindPlayer;
 
+    Player* winner = nullptr;
+
     // A loop for the 4 possible betting rounds
     for(int i = 0; i < 4; i ++){
         if(this->bettingRound(inGame, largestBet, numPlayers)){
-            this->awardPot(this->get_final_winner(inGame));
-            this->currentStage = PREFLOP;
-            this->button = (this->button + 1) % numPlayers;
-
-            return;
+            winner = this->get_final_winner(inGame);
+            break;
         }
         this->deal();
         largestBet = 0;
@@ -281,16 +283,30 @@ void Game::playHand() {
     // TODO: find winner (hand evaluator)
     // Award the pot to the winner and announce the winner 
     // For now randomly pick a winner 
-    Player *winner = this->get_players()[rand() % numPlayers];
+    // If winner is a null pointer, randomly pick and winner 
+
+    if(winner == nullptr){
+        srand(static_cast<unsigned int>(time(0)));
+        for(int i = 0; i < 30; i++){
+        winner = this->get_players()[rand() % numPlayers];
+        // print the winners name 
+        cout << "Randomly picked winner: " << winner->get_name() << "\n" << endl;
+        }
+    }
     this->awardPot(winner);
 
     // TESTING: print who won the hand 
-    cout << winner->get_name() << " won the hand" << endl;
+    cout << winner->get_name() << " won the hand \n" << endl;
 
     // Move the button 
     this->button = (this->button + 1) % numPlayers;
     // Reset all hands 
     this->resetPlayerHands();
+    // Reset the community cards
+    this->resetCommunityCards();
+    // Reset the game stage
+    this->currentStage = PREFLOP;
+
 
 }
 
@@ -413,6 +429,10 @@ void Game::resetPlayerHands(){
     for (Player* player : this->get_players()) {
         player->clear_hand();
     }
+}
+
+void Game::resetCommunityCards(){
+    this->community_cards.clear();
 }
 
 void Game::addBlindsToPot(Player *bigBlindPlayer, Player *smallBlindPlayer) {
