@@ -68,12 +68,26 @@ int GUI::getBetSizing(int minBet, int maxBet) {
     // TODO: Test bet sizing input validation
     int bet_sizing; 
     std::cout << "Enter your bet sizing: ";
-    std::cin >> bet_sizing; 
-    while (bet_sizing < minBet || bet_sizing > maxBet) {
-        std::cout << "Invalid bet size. Please enter a valid bet size: ";
-        std::cin >> bet_sizing; 
+    while (true) {
+        std::cin >> bet_sizing;
+
+        // Check if the input is valid
+        if (std::cin.fail()) {
+            std::cin.clear(); // Clear the error state
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard invalid input
+            std::cout << "Invalid input. Please enter a valid integer bet size: ";
+            continue;
+        }
+
+        // Check if the bet is within the valid range
+        if (bet_sizing >= minBet && bet_sizing <= maxBet) {
+            break; // Valid bet size
+        }
+
+        std::cout << "Invalid bet size. Please enter a bet size between " << minBet << " and " << maxBet << ": ";
     }
-    return bet_sizing; 
+
+    return bet_sizing;
 }
 
 /** 
