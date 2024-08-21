@@ -57,9 +57,9 @@ int main(int argc, char* argv[]) {
     uniTest(argc, argv); 
 
 
-    Player player1 = Player("Jess", 1000);
-    Player player2 = Player("James", 1000);
-    Player player3 = Player("Corban", 1000);
+    HumanPlayer player1 = HumanPlayer("Jess", 1000);
+    HumanPlayer player2 = HumanPlayer("James", 1000);
+    RandomPlayer player3 = RandomPlayer("Corban", 1000);
     // Create a vector of pointers 
     std::vector<Player*> playerPointers;
 

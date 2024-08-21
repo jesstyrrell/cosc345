@@ -80,7 +80,7 @@ int Game::makeMoveForUser(const std::string& move, Player* player, int playerInd
             return largestBet;
         }
         case Move::RAISE: {
-            int raiseAmount = GUI::getBetSizing(SMALL_BLIND, player->get_stack() + player->get_current_bet());
+            int raiseAmount = player->getBetSizing(SMALL_BLIND, player->get_stack() + player->get_current_bet());
             this->pot += raiseAmount - player->get_current_bet();
             player->bet(raiseAmount);
             return raiseAmount;
@@ -103,8 +103,8 @@ int Game::makeMoveForUser(const std::string& move, Player* player, int playerInd
  */
 bool Game::test_game() {
     vector<Player*> players;
-    Player player1 = Player("Jess", 1000);
-    Player player2 = Player("James", 1000);
+    HumanPlayer player1 = HumanPlayer("Jess", 1000);
+    RandomPlayer player2 = RandomPlayer("James", 1000);
 
     players.push_back(&player1);
     players.push_back(&player2);
@@ -179,7 +179,7 @@ bool Game::test_game() {
     }
 
     // Checking add_player
-    Player player3 = Player("Corban", 1000);
+    HumanPlayer player3 = HumanPlayer("Corban", 1000);
     game.add_player(&player3);
     if (game.get_players().size() != 3) {
         std::cout << "Game does not have 3 players" << std::endl;
@@ -354,8 +354,9 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
 
         // If the player is still in the game
         if (inGame[currentPlayer]) {
-            GUI::displayPlayerHand(this->get_players()[currentPlayer]);
-            GUI::displayPlayerStack(this->get_players()[currentPlayer]);
+            Player* player = this->get_players()[currentPlayer];
+            GUI::displayPlayerHand(player);
+            GUI::displayPlayerStack(player);
             // Check if the player can perform each action
             bool canCheck = largestBet == this->get_players()[currentPlayer]->get_current_bet();
             bool canRaise = this->get_players()[currentPlayer]->get_stack() > largestBet;
@@ -363,7 +364,7 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
             bool canFold = this->get_players()[currentPlayer]->get_current_bet() != largestBet;
             bool canCall = canFold;
             // Get the player's move
-            string move = GUI::getUserMove(canCheck, canRaise, canFold, canCall);
+            string move = player->getMove(canCheck, canRaise, canFold, canCall);
 
             // Perform the move for the player
             int betSize = makeMoveForUser(move, this->get_players()[currentPlayer], currentPlayer, largestBet);
