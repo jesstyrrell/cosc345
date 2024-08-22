@@ -134,15 +134,32 @@ int main(int argc, char* argv[]) {
     deck.shuffle();
 
     std::vector<Card> hand;
+    Card c1 = deck.find_card("9", "Clubs");
+    Card c2 = deck.find_card("A", "Spades");
+    deck.remove_card(c1);
+    deck.remove_card(c2);
+    hand.push_back(c1);
+    hand.push_back(c2);/*
     hand.push_back(deck.deal());
-    hand.push_back(deck.deal());
+    hand.push_back(deck.deal());*/
+    deck.shuffle();
     
     std::vector<Card> communityCards;
-    communityCards.push_back(deck.deal());
-    communityCards.push_back(deck.deal());
-    communityCards.push_back(deck.deal());
-    communityCards.push_back(deck.deal());
-    communityCards.push_back(deck.deal());
+    Card c3 = deck.find_card("2", "Hearts");
+    Card c4 = deck.find_card("3", "Clubs");
+    Card c5 = deck.find_card("7", "Diamonds");
+    Card c6 = deck.find_card("J", "Spades");
+    Card c7 = deck.find_card("J", "Diamonds");
+    deck.remove_card(c3);
+    deck.remove_card(c4);
+    deck.remove_card(c5);
+    deck.remove_card(c6);
+    deck.remove_card(c7);
+    communityCards.push_back(c3);
+    communityCards.push_back(c4);
+    communityCards.push_back(c5);
+    communityCards.push_back(c6);
+    communityCards.push_back(c7);
 
     int numPlayers = 1;
 
