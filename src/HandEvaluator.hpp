@@ -23,7 +23,7 @@ private:
 public:
     HandEvaluator();
 
-    float evaluateHand(vector<Card> hand, vector<Card> communityCards, Deck deck, int numPlayers);
+    vector<bool> evaluateTable(vector<vector<Card>> hands, vector<Card> communityCards);
 
     int compareHands(vector<Card> hand, vector<Card> opponentHand, vector<Card> communityCards);
 

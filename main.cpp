@@ -12,6 +12,7 @@
 #include "src/Player.hpp"
 #include "src/Game.hpp"
 #include "src/HandEvaluator.hpp"
+#include "src/EquityCalculator.hpp"
 #include "src/GUI.hpp"
 
 using namespace std;
@@ -125,7 +126,7 @@ int main(int argc, char* argv[]) {
 
 
     // Create an instance of HandEvaluator
-    HandEvaluator evaluator;
+    EquityCalculator equityCalculator;
 
     Deck deck;
     deck.shuffle();
@@ -143,6 +144,8 @@ int main(int argc, char* argv[]) {
     hand.push_back(deck.deal());
     hand.push_back(deck.deal());*/
     deck.shuffle();
+
+
     
     std::vector<Card> communityCards;
     Card c3 = deck.find_card("2", "Hearts");
@@ -161,12 +164,33 @@ int main(int argc, char* argv[]) {
     communityCards.push_back(c6);
     communityCards.push_back(c7);
 
-    int numPlayers = 1;
 
-    float probability = evaluator.evaluateHand(hand, communityCards, deck, numPlayers);
+    std::vector<Card> hand2;
+    hand2.push_back(deck.deal());
+    hand2.push_back(deck.deal());
+    deck.shuffle();
+    
+    std::vector<Card> hand3;
+    hand3.push_back(deck.deal());
+    hand3.push_back(deck.deal());
+    deck.shuffle();
+    std::vector<std::vector<Card>> hands = { hand, hand2, hand3 };
 
+    int numPlayers = 3;
+
+    vector<float> probabilities = equityCalculator.evaluateHand(hand, communityCards, deck, numPlayers);
+    float winProbability = probabilities[0];
+    float drawProbability = probabilities[1];
+    float loseProbability = probabilities[2];
+    
     // Output the result
-    std::cout << "Winning Probability: " << probability * 100 << "%" << std::endl;
+    std::cout << "Winning Probability: " << winProbability * 100 << "%" << std::endl;
+    std::cout << "Drawing Probability: " << drawProbability * 100 << "%" << std::endl;
+    std::cout << "Losing Probability: " << loseProbability * 100 << "%" << std::endl;
+
+    HandEvaluator evaluator;
+    std::vector<bool> results = evaluator.evaluateTable(hands, communityCards);
+
 
     return 0;
 }

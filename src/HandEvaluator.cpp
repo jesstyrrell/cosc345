@@ -6,47 +6,18 @@ HandEvaluator::HandEvaluator() {
 
 }
 
+vector<bool> HandEvaluator::evaluateTable(vector<vector<Card>> hands, vector<Card> communityCards) {
+	vector<bool> results;
+	for (int i = 0; i < hands.size(); i++) { results.push_back(true); }
 
-float HandEvaluator::evaluateHand(vector<Card> hand, vector<Card> communityCards, Deck deck, int numPlayers) {
-	
-	cout << "Hand: " << endl;
-	for (Card c : hand) { cout << c.get_card() << endl; }
-	cout << "Community Cards: " << endl;
-	for (Card c : communityCards) { cout << c.get_card() << endl; }
-
-	int iterations = 10000;
-	int wins = 0;
-	int draws = 0;
-	int losses = 0;
-	for (int iteration = 0; iteration < iterations; iteration++) {
-		bool lose = false;
-		bool draw = false;
-		Deck deckCopy(deck);
-		deckCopy.shuffle();
-		for (int player = 0; player < numPlayers; player++) {
-			if (lose) { continue; }
-			// create random hand for opponent
-			vector<Card> otherHand;
-			for (int i = 0; i < 2; i++) { otherHand.push_back(deckCopy.deal()); }
-			// check if we beat opponent's hand
-			int outcome = compareHands(hand, otherHand, communityCards);
-			lose = outcome == LOSE;
-			if (!draw) {
-				draw = outcome == DRAW;
-			}
-			if (lose || draw) {
-				compareHands(hand, otherHand, communityCards);
-			}
-			if (outcome = DRAW) { cout << "DRAW!!!!" << endl; }
+	for (int i = 0; i < hands.size(); i++) {
+		for (int j = i + 1; j < hands.size(); j++) {
+			int result = compareHands(hands[i], hands[j], communityCards);
+			if (result == WIN) { results[j] = false; }
+			else if (result == LOSE) { results[i] = false; }
 		}
-		if (lose) { losses++; continue; }
-		if (draw) { draws++; continue; }
-		wins++;
 	}
-
-	cout << "Probability of Draw " << 100.0f * draws / iterations << "%" << endl;
-
-	return 1.0f * wins / iterations;
+	return results;
 }
 
 int HandEvaluator::compareHands(vector<Card> hand, vector<Card> opponentHand, vector<Card> communityCards) {
