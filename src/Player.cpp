@@ -2,7 +2,7 @@
 
 using namespace std;
 
-Player::Player(string name, int stack) {
+Player::Player(const std::string& name, int stack) {
     this->name = name;
     this->stack = stack;
 }

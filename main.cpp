@@ -72,125 +72,48 @@ int main(int argc, char* argv[]) {
     Game game = Game(playerPointers); // i swear you have to pass a pointer, but also its a list of two players
 
     // Play a hand
-    // game.playHand();
-    
-    
-    // Game loop 
-    while (false) {
+    game.playHand();
 
-        // Deal hands for all players 
-        game.deal_hands();
-
-        // Deal flop
-        game.deal_flop();
-
-        // Betting commences for each player at the table
-        for (Player* currentPlayer : game.get_players()) {
-
-            GUI::displayPlayerStack(currentPlayer);
-
-            string move = GUI::getUserMove();
-
-            game.makeMoveForUser(move, currentPlayer, 0, 0);
-
-            // GUI::clearScreen();
-        }
-        
-    }
-
-    game.deal_flop();
-    game.deal_turn();
-    game.deal_river();
-    std::cout << "--------------" << std::endl;
-    // Print the stack of each player 
-    for (Player* player : game.get_players()) {
+    // TESTING: Display stack sizes of all players
+    for (Player* player : playerPointers) {
         std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
-        std::cout << "    -----    " << std::endl;
     }
-    player1.bet(100);
-    player2.bet(200);
-    player3.bet(300);
-    for (Player* player : game.get_players()) {
+
+    // Play a hand
+    game.playHand();
+
+    // TESTING: Display stack sizes of all players
+    for (Player* player : playerPointers) {
         std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
-        std::cout << "    -----    " << std::endl;
     }
-
-    player1.win(1000);
-    player2.win(2000);
-    player3.win(3000);
-
-    for (Player* player : game.get_players()) {
-        std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
-        std::cout << "    -----    " << std::endl;
-    }
-
-
-    // Create an instance of HandEvaluator
-    EquityCalculator equityCalculator;
-
-    Deck deck;
-    deck.shuffle();
-    deck.shuffle();
-    deck.shuffle();
-    deck.shuffle();
-
-    std::vector<Card> hand;
-    Card c1 = deck.find_card("9", "Clubs");
-    Card c2 = deck.find_card("A", "Spades");
-    deck.remove_card(c1);
-    deck.remove_card(c2);
-    hand.push_back(c1);
-    hand.push_back(c2);/*
-    hand.push_back(deck.deal());
-    hand.push_back(deck.deal());*/
-    deck.shuffle();
-
-
     
-    std::vector<Card> communityCards;
-    Card c3 = deck.find_card("2", "Hearts");
-    Card c4 = deck.find_card("3", "Clubs");
-    Card c5 = deck.find_card("7", "Diamonds");
-    Card c6 = deck.find_card("J", "Spades");
-    Card c7 = deck.find_card("J", "Diamonds");
-    deck.remove_card(c3);
-    deck.remove_card(c4);
-    deck.remove_card(c5);
-    deck.remove_card(c6);
-    deck.remove_card(c7);
-    communityCards.push_back(c3);
-    communityCards.push_back(c4);
-    communityCards.push_back(c5);
-    communityCards.push_back(c6);
-    communityCards.push_back(c7);
 
+    // // Create an instance of HandEvaluator
+    // HandEvaluator evaluator;
 
-    std::vector<Card> hand2;
-    hand2.push_back(deck.deal());
-    hand2.push_back(deck.deal());
-    deck.shuffle();
+    // Deck deck;
+    // deck.shuffle();
+    // deck.shuffle();
+    // deck.shuffle();
+    // deck.shuffle();
+
+    // std::vector<Card> hand;
+    // hand.push_back(deck.deal());
+    // hand.push_back(deck.deal());
     
-    std::vector<Card> hand3;
-    hand3.push_back(deck.deal());
-    hand3.push_back(deck.deal());
-    deck.shuffle();
-    std::vector<std::vector<Card>> hands = { hand, hand2, hand3 };
+    // std::vector<Card> communityCards;
+    // communityCards.push_back(deck.deal());
+    // communityCards.push_back(deck.deal());
+    // communityCards.push_back(deck.deal());
+    // communityCards.push_back(deck.deal());
+    // communityCards.push_back(deck.deal());
 
-    int numPlayers = 3;
+    // int numPlayers = 1;
 
-    vector<float> probabilities = equityCalculator.evaluateHand(hand, communityCards, deck, numPlayers);
-    float winProbability = probabilities[0];
-    float drawProbability = probabilities[1];
-    float loseProbability = probabilities[2];
-    
-    // Output the result
-    std::cout << "Winning Probability: " << winProbability * 100 << "%" << std::endl;
-    std::cout << "Drawing Probability: " << drawProbability * 100 << "%" << std::endl;
-    std::cout << "Losing Probability: " << loseProbability * 100 << "%" << std::endl;
+    // float probability = evaluator.evaluateHand(hand, communityCards, deck, numPlayers);
 
-    HandEvaluator evaluator;
-    std::vector<bool> results = evaluator.evaluateTable(hands, communityCards);
+    // // Output the result
+    // std::cout << "Winning Probability: " << probability * 100 << "%" << std::endl;
 
-
-    return 0;
+    // return 0;
 }

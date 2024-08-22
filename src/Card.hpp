@@ -14,7 +14,7 @@ class Card{
         std::string rank;
 
     public:
-        Card(std::string suit, std::string rank);
+        Card(const std::string& suit, const std::string& rank);
         std::string get_suit();
         std::string get_rank();
         std::string get_card();
