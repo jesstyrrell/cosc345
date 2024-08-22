@@ -80,7 +80,7 @@ int Game::makeMoveForUser(const std::string& move, Player* player, int playerInd
             return largestBet;
         }
         case Move::RAISE: {
-            int raiseAmount = GUI::getBetSizing(SMALL_BLIND, player->get_stack() + player->get_current_bet());
+            int raiseAmount = GUI::getBetSizing(SMALL_BLIND + largestBet, player->get_stack() + player->get_current_bet());
             this->pot += raiseAmount - player->get_current_bet();
             player->bet(raiseAmount);
             return raiseAmount;
