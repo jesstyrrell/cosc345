@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <iostream>
 #include <ctime>
+#include "HandEvaluator.hpp"
 
 using namespace std;
 
@@ -52,8 +53,9 @@ std::vector<Player*> Game::get_players() {
  * Award the pot to the winner of the hand
  * @param winner: Player* - The player object who won the hand
  */
-void Game::awardPot(Player* winner) {
-    winner->win(this->pot);
+void Game::awardPot(Player* winner, int numWinners) {
+    // TODO: Test that the pot is split correctly (if there are multiple winners)
+    winner->win(this->pot/numWinners);
     this->pot = 0;
 }
 
@@ -273,7 +275,10 @@ void Game::playHand() {
             winner = this->get_final_winner(inGame);
             break;
         }
-        this->deal();
+        if(i != 3){
+            this->deal();
+        }
+        
         largestBet = 0;
         GUI::displayCommunityCards(community_cards);
         resetPlayerBets();
@@ -281,22 +286,33 @@ void Game::playHand() {
     
     // Go to showdown
     // TODO: find winner (hand evaluator)
-    // Award the pot to the winner and announce the winner 
-    // For now randomly pick a winner 
-    // If winner is a null pointer, randomly pick and winner 
+
 
     if(winner == nullptr){
-        srand(static_cast<unsigned int>(time(0)));
-        for(int i = 0; i < 30; i++){
-        winner = this->get_players()[rand() % numPlayers];
-        // print the winners name 
-        cout << "Randomly picked winner: " << winner->get_name() << "\n" << endl;
-        }
+
+        vector<Player*> winners = this->getWinner(this->get_players(), this->community_cards, inGame);
+
+        // TESTING: print the type of winners[0]
+
+        // If the length of the winners is 1, award the pot to the winner
+        if (winners.size() == 1) {
+            this->awardPot(winners[0], 1);
+            cout << winners[0]->get_name() << " won the hand \n" << endl;
+        } else {
+            int numWinners = winners.size();
+            // loop through the winners and award the pot to each winner
+            for (Player* eachWinner : winners) {
+                this->awardPot(eachWinner, numWinners);
+                cout << eachWinner->get_name() << " won the hand \n" << endl;
+            }
+        } 
+    } else {
+        this->awardPot(winner, 1);
+        cout << winner->get_name() << " won the hand \n" << endl;
     }
-    this->awardPot(winner);
 
     // TESTING: print who won the hand 
-    cout << winner->get_name() << " won the hand \n" << endl;
+    
 
     // Move the button 
     this->button = (this->button + 1) % numPlayers;
@@ -317,8 +333,7 @@ void Game::playHand() {
  */
 Player* Game::get_final_winner(vector<bool>& inGame) {
     Player *winner = this->get_players()[find(inGame.begin(), inGame.end(), true) - inGame.begin()];  
-            this->awardPot(winner);
-                return winner;
+    return winner;
 }
 
 /**
@@ -439,3 +454,34 @@ void Game::addBlindsToPot(Player *bigBlindPlayer, Player *smallBlindPlayer) {
     this->pot += bigBlindPlayer->deduct_blind(BIG_BLIND);
     this->pot += smallBlindPlayer->deduct_blind(SMALL_BLIND);
 }
+
+vector<Player*> Game::getWinner(vector<Player*> players, vector<Card> community_cards, vector<bool> inGame){
+    vector<Player*> winners;
+    vector<vector<Card>> playerHands;
+    vector<Player*> playersInGame;
+
+    HandEvaluator handEvaluator = HandEvaluator();
+
+    for(int i = 0; i < players.size(); i++){
+        if(inGame[i]){
+            vector<Card> playerHand = players[i]->get_hand();
+            // print the length of the player hand
+            cout << playerHand.size() << endl;
+            playerHands.push_back(playerHand);
+            playersInGame.push_back(players[i]);
+        }
+    }
+
+    vector<bool> winningIndex = handEvaluator.evaluateTable(playerHands, community_cards);
+
+   
+    for(int i = 0; i < winningIndex.size(); i++){
+        if(winningIndex[i]){
+            winners.push_back(playersInGame[i]);
+            // print the name of the winner
+            cout << playersInGame[i]->get_name() << endl;
+        }
+    }
+    return winners;
+}
+
