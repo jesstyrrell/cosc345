@@ -23,17 +23,17 @@ private:
 public:
     HandEvaluator();
 
-    vector<bool> evaluateTable(vector<vector<Card>> hands, vector<Card> communityCards);
+    vector<bool> evaluateTable(const vector<vector<Card>>& hands, vector<Card> communityCards);
 
-    int compareHands(vector<Card> hand, vector<Card> opponentHand, vector<Card> communityCards);
+    int compareHands(vector<Card> hand, vector<Card> opponentHand, const vector<Card>& communityCards);
 
     vector<int> checkForPairs(vector<Card> handAndCommunityCards);
-    int checkOfAKind(vector<Card> handAndCommunityCards, int numOfAKind);
-    vector<int> checkForFlush(vector<Card> handAndCommunityCards);
-    int checkForStraight(vector<Card> handAndCommunityCards);
+    int checkOfAKind(const vector<Card>& handAndCommunityCards, int numOfAKind);
+    vector<int> checkForFlush(const vector<Card>& handAndCommunityCards);
+    int checkForStraight(const vector<Card>& handAndCommunityCards);
 
-    int checkHighCard(vector<Card> handAndCommunityCards, vector<Card> opponentAndCommunityCards, int amountToCheck);
-    int checkThreeTopCards(vector<Card> handAndCommunityCards, vector<Card> opponentAndCommunityCards, int pairValue);
+    int checkHighCard(const vector<Card>& handAndCommunityCards, vector<Card> opponentAndCommunityCards, int amountToCheck);
+    int checkThreeTopCards(const vector<Card>& handAndCommunityCards, vector<Card> opponentAndCommunityCards, int pairValue);
 
     int getRankValue(string rank);
 };

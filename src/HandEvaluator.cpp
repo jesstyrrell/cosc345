@@ -6,7 +6,7 @@ HandEvaluator::HandEvaluator() {
 
 }
 
-vector<bool> HandEvaluator::evaluateTable(vector<vector<Card>> hands, vector<Card> communityCards) {
+vector<bool> HandEvaluator::evaluateTable(const vector<vector<Card>>& hands, vector<Card> communityCards) {
 	vector<bool> results;
 	for (int i = 0; i < hands.size(); i++) { results.push_back(true); }
 
@@ -20,7 +20,7 @@ vector<bool> HandEvaluator::evaluateTable(vector<vector<Card>> hands, vector<Car
 	return results;
 }
 
-int HandEvaluator::compareHands(vector<Card> hand, vector<Card> opponentHand, vector<Card> communityCards) {
+int HandEvaluator::compareHands(vector<Card> hand, vector<Card> opponentHand, const vector<Card>& communityCards) {
 	vector<Card> handAndCommunityCards;
 	vector<Card> opponentAndCommunityCards;
 	for (Card card : hand) { handAndCommunityCards.push_back(card); }
@@ -280,7 +280,7 @@ vector<int> HandEvaluator::checkForPairs(vector<Card> handAndCommunityCards) {
 	return { highestRank, secondHighestRank };
 }
 
-int HandEvaluator::checkOfAKind(vector<Card> handAndCommunityCards, int numOfAKind) {
+int HandEvaluator::checkOfAKind(const vector<Card>& handAndCommunityCards, int numOfAKind) {
 	vector<int> counts = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 	for (Card c : handAndCommunityCards) {
 		counts[12-getRankValue(c.get_rank())]++;
@@ -293,7 +293,7 @@ int HandEvaluator::checkOfAKind(vector<Card> handAndCommunityCards, int numOfAKi
 	return -1;
 }
 
-vector<int> HandEvaluator::checkForFlush(vector<Card> handAndCommunityCards) {
+vector<int> HandEvaluator::checkForFlush(const vector<Card>& handAndCommunityCards) {
 	vector<int> hearts;
 	vector<int> diamonds;
 	vector<int> clubs;
@@ -317,7 +317,7 @@ vector<int> HandEvaluator::checkForFlush(vector<Card> handAndCommunityCards) {
 	return {};
 }
 
-int HandEvaluator::checkForStraight(vector<Card> handAndCommunityCards) {
+int HandEvaluator::checkForStraight(const vector<Card>& handAndCommunityCards) {
 	vector<int> cards;
 	for (Card c : handAndCommunityCards) { cards.push_back(getRankValue(c.get_rank())); }
 	std::sort(cards.begin(), cards.end(), std::greater<int>());
@@ -342,7 +342,7 @@ int HandEvaluator::checkForStraight(vector<Card> handAndCommunityCards) {
 	return highestStraight;
 }
 
-int HandEvaluator::checkHighCard(vector<Card> handAndCommunityCards, vector<Card> opponentAndCommunityCards, int amountToCheck) {
+int HandEvaluator::checkHighCard(const vector<Card>& handAndCommunityCards, vector<Card> opponentAndCommunityCards, int amountToCheck) {
 	vector<int> handValues;
 	vector<int> opponentHandValues;
 	for (Card card : handAndCommunityCards) { handValues.push_back(getRankValue(card.get_rank())); }
@@ -359,7 +359,7 @@ int HandEvaluator::checkHighCard(vector<Card> handAndCommunityCards, vector<Card
 	return DRAW;
 }
 
-int HandEvaluator::checkThreeTopCards(vector<Card> handAndCommunityCards, vector<Card> opponentAndCommunityCards, int pairValue) {
+int HandEvaluator::checkThreeTopCards(const vector<Card>& handAndCommunityCards, vector<Card> opponentAndCommunityCards, int pairValue) {
 	string pairRank = ranks[pairValue];
 	vector<int> trimmedHand;
 	vector<int> trimmedOpponentHand;

@@ -24,6 +24,6 @@ private:
 public:
     EquityCalculator();
 
-    vector<float> evaluateHand(vector<Card> hand, vector<Card> communityCards, Deck deck, int numPlayers);
+    vector<float> evaluateHand(const vector<Card>& hand, const vector<Card>& communityCards, Deck deck, int numPlayers);
 
 };

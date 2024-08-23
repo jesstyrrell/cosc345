@@ -6,7 +6,7 @@ EquityCalculator::EquityCalculator() {
 
 }
 
-vector<float> EquityCalculator::evaluateHand(vector<Card> hand, vector<Card> communityCards, Deck deck, int numPlayers) {
+vector<float> EquityCalculator::evaluateHand(const vector<Card>& hand, const vector<Card>& communityCards, Deck deck, int numPlayers) {
 
 	int iterations = 10000;
 	int wins = 0;

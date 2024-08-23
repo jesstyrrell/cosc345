@@ -45,7 +45,7 @@ Card Deck::deal() {
  * @param rank: string - Rank of the card
  * @param suit: string - Suit of the card
  */
-Card Deck::find_card(string rank, string suit) {
+Card Deck::find_card(const string& rank, const string& suit) {
     for (Card card : cards) {
         if (card.get_suit() == suit && card.get_rank() == rank) {
             return card;

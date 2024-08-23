@@ -18,6 +18,6 @@ class Deck {
         bool static test_deck();
 
         // Helper functions for evaluating cards
-        Card find_card(string rank, string suit);
+        Card find_card(const string& rank, const string& suit);
         void remove_card(Card card);
 };

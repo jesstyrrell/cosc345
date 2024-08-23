@@ -455,7 +455,7 @@ void Game::addBlindsToPot(Player *bigBlindPlayer, Player *smallBlindPlayer) {
     this->pot += smallBlindPlayer->deduct_blind(SMALL_BLIND);
 }
 
-vector<Player*> Game::getWinner(vector<Player*> players, vector<Card> community_cards, vector<bool> inGame){
+vector<Player*> Game::getWinner(vector<Player*> players, const vector<Card>& community_cards, vector<bool> inGame){
     vector<Player*> winners;
     vector<vector<Card>> playerHands;
     vector<Player*> playersInGame;

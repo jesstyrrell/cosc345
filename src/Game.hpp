@@ -55,7 +55,7 @@ class Game {
 
         Player* get_final_winner(vector<bool>& inGame);
 
-        vector<Player*> getWinner(vector<Player*> players, vector<Card> community_cards, vector<bool> inGame);
+        vector<Player*> getWinner(vector<Player*> players, const vector<Card>& community_cards, vector<bool> inGame);
 
 
 
