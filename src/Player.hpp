@@ -30,4 +30,9 @@ class Player {
         bool static test_player();
         int get_current_bet();
         void reset_current_bet();
+
+        // virtual methods to overide in human player and AI player
+        virtual std::string getMove(bool canCheck, bool canRaise, bool canFold, bool canCall) = 0;
+        virtual int getBetSizing(int minBet, int maxBet) = 0;
+
 };
