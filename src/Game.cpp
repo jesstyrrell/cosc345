@@ -293,17 +293,20 @@ void Game::playHand() {
         // If the length of the winners is 1, award the pot to the winner
         if (winners.size() == 1) {
             this->awardPot(winners[0], 1);
+            // TODO: move printing to GUI
             cout << winners[0]->get_name() << " won the hand \n" << endl;
         } else {
             int numWinners = winners.size();
             // loop through the winners and award the pot to each winner
             for (Player* eachWinner : winners) {
                 this->awardPot(eachWinner, numWinners);
+                // TODO: move printing to GUI
                 cout << eachWinner->get_name() << " won the hand \n" << endl;
             }
         } 
     } else {
         this->awardPot(winner, 1);
+        // TODO: move printing to GUI
         cout << winner->get_name() << " won the hand \n" << endl;
     }
 
@@ -462,8 +465,6 @@ vector<Player*> Game::getWinner(vector<Player*> players, const vector<Card>& com
     for(int i = 0; i < players.size(); i++){
         if(inGame[i]){
             vector<Card> playerHand = players[i]->get_hand();
-            // print the length of the player hand
-            cout << playerHand.size() << endl;
             playerHands.push_back(playerHand);
             playersInGame.push_back(players[i]);
         }
