@@ -12,6 +12,7 @@
 #include "src/Player.hpp"
 #include "src/Game.hpp"
 #include "src/HandEvaluator.hpp"
+#include "src/EquityCalculator.hpp"
 #include "src/GUI.hpp"
 
 using namespace std;

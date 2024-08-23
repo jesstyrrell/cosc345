@@ -19,7 +19,7 @@ Deck::Deck() {
     }
 }
 
-vector<Card> Deck::get_cards() {
+vector<Card> Deck::get_cards() { 
     return cards;
 }
 
@@ -37,6 +37,37 @@ Card Deck::deal() {
     cards.pop_back();
     return card;
 }
+
+
+/**
+ * Find a specific card in the deck
+ * 
+ * @param rank: string - Rank of the card
+ * @param suit: string - Suit of the card
+ */
+Card Deck::find_card(const string& rank, const string& suit) {
+    for (Card card : cards) {
+        if (card.get_suit() == suit && card.get_rank() == rank) {
+            return card;
+        }
+    }
+    return Card("", "");
+}
+
+/**
+ * Remove a specific card from the deck
+ * 
+ * @param card: Card - Card to remove
+ */
+void Deck::remove_card(Card card) {
+    for (int i = 0; i < cards.size(); i++) {
+        if (cards[i].get_suit() == card.get_suit() && cards[i].get_rank() == card.get_rank()) {
+            cards.erase(cards.begin() + i);
+            break;
+        }
+    }
+}
+
 
 bool Deck::test_deck() {
     vector<Card> allCardsInDeck;

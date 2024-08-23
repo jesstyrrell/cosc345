@@ -42,7 +42,7 @@ class Game {
         void deal_turn();
         void deal_river();
 
-        void awardPot(Player *player);
+        void awardPot(Player *player, int numWinners);
 
         vector<Player*> get_players();
 
@@ -57,6 +57,7 @@ class Game {
 
         Player* get_final_winner(vector<bool>& inGame);
 
+        vector<Player*> getWinner(vector<Player*> players, const vector<Card>& community_cards, const vector<bool>& inGame);
 
 
 
