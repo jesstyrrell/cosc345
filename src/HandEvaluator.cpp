@@ -6,7 +6,7 @@ HandEvaluator::HandEvaluator() {
 
 }
 
-vector<bool> HandEvaluator::evaluateTable(const vector<vector<Card>>& hands, vector<Card> communityCards) {
+vector<bool> HandEvaluator::evaluateTable(const vector<vector<Card>>& hands, const vector<Card>& communityCards) {
 	vector<bool> results;
 	for (int i = 0; i < hands.size(); i++) { results.push_back(true); }
 
@@ -342,7 +342,7 @@ int HandEvaluator::checkForStraight(const vector<Card>& handAndCommunityCards) {
 	return highestStraight;
 }
 
-int HandEvaluator::checkHighCard(const vector<Card>& handAndCommunityCards, vector<Card> opponentAndCommunityCards, int amountToCheck) {
+int HandEvaluator::checkHighCard(const vector<Card>& handAndCommunityCards, const vector<Card>& opponentAndCommunityCards, int amountToCheck) {
 	vector<int> handValues;
 	vector<int> opponentHandValues;
 	for (Card card : handAndCommunityCards) { handValues.push_back(getRankValue(card.get_rank())); }
@@ -359,7 +359,7 @@ int HandEvaluator::checkHighCard(const vector<Card>& handAndCommunityCards, vect
 	return DRAW;
 }
 
-int HandEvaluator::checkThreeTopCards(const vector<Card>& handAndCommunityCards, vector<Card> opponentAndCommunityCards, int pairValue) {
+int HandEvaluator::checkThreeTopCards(const vector<Card>& handAndCommunityCards, const vector<Card>& opponentAndCommunityCards, int pairValue) {
 	string pairRank = ranks[pairValue];
 	vector<int> trimmedHand;
 	vector<int> trimmedOpponentHand;
