@@ -33,17 +33,15 @@ public:
         int count = 0;
 
         while(true){
-            srand (time(NULL));
             int flip = (rand()%2)+ 1 ;
             if (flip == 1){
                break;
             }
             count++;
         }
-        
         // TESTING: print the bet sizing
         std::cout << min(minBet*(count+1), maxBet) << std::endl;
-        return min(minBet*count, maxBet);
+        return min(minBet*(count+1), maxBet);
     }
     
 };
