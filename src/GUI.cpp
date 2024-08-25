@@ -165,3 +165,8 @@ void GUI::displayPlayerStack(Player* player) {
     std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
     std::cout << "    -----    " << std::endl;
 }
+
+void GUI::displayPot(int pot) {
+    std::cout << "Pot: " << pot << std::endl;
+    std::cout << "    -----    " << std::endl;
+}

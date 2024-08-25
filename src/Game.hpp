@@ -42,7 +42,7 @@ class Game {
         void deal_turn();
         void deal_river();
 
-        void awardPot(Player *player, int numWinners);
+        void awardPot(vector<Player*> winners);
 
         vector<Player*> get_players();
 
