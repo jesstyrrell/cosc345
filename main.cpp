@@ -73,10 +73,11 @@ int main(int argc, char* argv[]) {
         return 0;
     }
 
+    GUI::clearScreen();
+
     // TODO: Implement a way to get the number of players from the user
 
-
-    HumanPlayer player1 = HumanPlayer("Jess", 1000);
+    RandomPlayer player1 = RandomPlayer("Jess", 1000);
     RandomPlayer player2 = RandomPlayer("James", 1000);
     RandomPlayer player3 = RandomPlayer("Corban", 1000);
     // Create a vector of pointers 
@@ -90,8 +91,13 @@ int main(int argc, char* argv[]) {
     // Set the game object for the GUI
     GUI::setGame(&game);
 
+    // TESTING :m start a count to play 20 hands
+    int count = 0;
     // Start a game loop 
-    while(true){
+    while(count < 1000){
+        count ++;
+        // TESTING: print the count 
+        std::cout << "Hand number: " << count << std::endl;
         // Play a hand
         game.playHand();
         // TESTING: Display stack sizes of all players
