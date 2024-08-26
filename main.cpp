@@ -77,14 +77,25 @@ int main(int argc, char* argv[]) {
 
     // TODO: Implement a way to get the number of players from the user
 
-    RandomPlayer player1 = RandomPlayer("Jess", 1000);
-    RandomPlayer player2 = RandomPlayer("James", 1000);
-    RandomPlayer player3 = RandomPlayer("Corban", 1000);
+    RandomPlayer player1 = RandomPlayer("Jess", 100000000);
+    RandomPlayer player2 = RandomPlayer("James", 100000000);
+    RandomPlayer player3 = RandomPlayer("Corban", 100000000);
+    RandomPlayer player4 = RandomPlayer("Andrew", 100000000);
+    RandomPlayer player5 = RandomPlayer("Vaughn", 100000000);
+    RandomPlayer player6 = RandomPlayer("Dirty apple core bin", 100000000);
+    RandomPlayer player7 = RandomPlayer("Top G hummus", 100000000);
+    RandomPlayer player8 = RandomPlayer("Emily", 100000000);
+
     // Create a vector of pointers 
     std::vector<Player*> playerPointers;
     playerPointers.push_back(&player1);
     playerPointers.push_back(&player2);
     playerPointers.push_back(&player3);
+    playerPointers.push_back(&player4);
+    playerPointers.push_back(&player5);
+    playerPointers.push_back(&player6);
+    playerPointers.push_back(&player7);
+    playerPointers.push_back(&player8);
 
     // Initiate a game with all the players 
     Game game = Game(playerPointers); // i swear you have to pass a pointer, but also its a list of two players
@@ -93,19 +104,39 @@ int main(int argc, char* argv[]) {
 
     // TESTING :m start a count to play 20 hands
     int count = 0;
+    int numHands = 1000000;
+    int counterLength = 100;
     // Start a game loop 
-    while(count < 1000){
+    while(count < numHands){
+        count++;
+
+        std::cout << "\033[2J\033[1;1H";
+
+        int frac = (double)count/numHands * counterLength;
+
+        // print frac 
+        // cout << frac << endl;
+
+        std::cout << std::string(counterLength, '-') << std::endl;
+        std::cout << std::string(frac, '*') << std::endl;
+        std::cout << std::string(counterLength, '-') << std::endl;
+
+
         count ++;
         // TESTING: print the count 
-        std::cout << "Hand number: " << count << std::endl;
+        // std::cout << "Hand number: " << count << std::endl;
         // Play a hand
         game.playHand();
-        // TESTING: Display stack sizes of all players
-        for (Player* player : playerPointers) {
-            std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
-        }
+        
         // TODO: Implement a way to ask the user if they want to play another hand or quit
 
     }
 
-}}
+    // TESTING: Display stack sizes of all players
+        for (Player* player : playerPointers) {
+            std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
+        }
+
+    }
+
+}

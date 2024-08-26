@@ -24,7 +24,7 @@ public:
             moveIndex = dist(rng);
         }
         // TESTING: print the move 
-        std::cout << moves[moveIndex] << std::endl;
+        // std::cout << moves[moveIndex] << std::endl;
         return moves[moveIndex];
     }
 
@@ -40,7 +40,7 @@ public:
             count++;
         }
         // TESTING: print the bet sizing
-        std::cout << min(minBet*(count+1), maxBet) << std::endl;
+        // std::cout << min(minBet*(count+1), maxBet) << std::endl;
         return min(minBet*(count+1), maxBet);
     }
     
