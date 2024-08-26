@@ -138,7 +138,30 @@ void GUI::displayStartScreen() {
 }
 
 void GUI::displayEndMessage() {
-    string imagePath = "../../../images/cardAnimation.txt";
+    // Get os type
+    #ifdef _WIN32
+        std::string os = "Windows";
+    #elif __APPLE__
+        std::string os = "MacOS";
+    #elif __linux__
+        std::string os = "Linux";
+    #else
+        std::string os = "Unknown";
+    #endif
+
+    string imagePath;
+
+    if(os == "Windows") {
+        imagePath = "../../../images/cardAnimation.txt";
+    } else if(os == "MacOS") {
+        imagePath = "../images/cardAnimation.txt";
+    } else if(os == "Linux") {
+        imagePath = "../images/cardAnimation.txt";
+    } else {
+        std::cerr << "Unsupported OS" << std::endl;
+        return;
+    }
+    
     string delimiter = "[END OF FRAME]\n";
     int delay = 25;
 
