@@ -1,7 +1,12 @@
-#pragma once 
+#pragma once
 
 #include <iostream>
 #include <string>
+#include <vector>
+#include <thread>
+#include <fstream>
+#include <sstream>
+#include <chrono>
 
 using namespace std; 
 

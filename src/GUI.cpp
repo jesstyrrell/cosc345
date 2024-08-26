@@ -1,9 +1,4 @@
-
-#include <iostream>
-#include <string>
-#include <vector>
-
-#include "Card.hpp"
+﻿#include "Card.hpp"
 #include "Player.hpp"
 #include "GUI.hpp"
 
@@ -139,6 +134,48 @@ void GUI::displayStartScreen() {
 #+#    #+# #+#    #+# #+#   #+#+#        #+#         #+#            #+#      #+#+# #+#+#      #+#     #+#    #+# #+#        
 ###    ###  ########  ###    ####    ###########     ###            ###       ###   ###   ###########  ########  ########## )";
     std::cout << title << std::endl;
+    std::cout << "--------------------------------" << std::endl;
+}
+
+void GUI::displayEndMessage() {
+    string imagePath = "../../../images/cardAnimation.txt";
+    string delimiter = "[END OF FRAME]\n";
+    int delay = 25;
+
+    std::ifstream inputFile(imagePath);
+
+    if (!inputFile) {
+        std::cerr << "Error opening file!" << std::endl;
+        return;
+    }
+
+    // Read the file into a string
+    std::ostringstream oss;
+    oss << inputFile.rdbuf();
+    std::string content = oss.str();
+    inputFile.close();
+
+    std::vector<std::string> frames;
+    size_t start = 0;
+    size_t end;
+
+    // Split the frames
+    while ((end = content.find(delimiter, start)) != std::string::npos) {
+        frames.push_back(content.substr(start, end - start));
+        start = end + delimiter.length();
+    }
+    frames.push_back(content.substr(start)); // Add the last frame
+
+    for (int i = 0; i < 5; i++) {
+        // Print each frame with a delay
+        for (const std::string& frame : frames) {
+            std::cout << frame << std::endl;
+            std::this_thread::sleep_for(std::chrono::milliseconds(delay));
+            clearScreen();
+        }
+    }
+
+    //std::cout << imageASCII << std::endl;
     std::cout << "--------------------------------" << std::endl;
 }
 
