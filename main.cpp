@@ -68,6 +68,7 @@ int main(int argc, char* argv[]) {
     int menuChoice = GUI::displayMenu();
 
     if (menuChoice == 0) {
+        GUI::displayEndMessage();
         return 0;
     }
 
