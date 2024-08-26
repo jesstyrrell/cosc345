@@ -82,7 +82,7 @@ int Game::makeMoveForUser(const std::string& move, Player* player, int playerInd
             return largestBet;
         }
         case Move::RAISE: {
-            int raiseAmount = GUI::getBetSizing(SMALL_BLIND + largestBet, player->get_stack() + player->get_current_bet());
+            int raiseAmount = player->getBetSizing(largestBet+BIG_BLIND, player->get_stack() + player->get_current_bet());
             this->pot += raiseAmount - player->get_current_bet();
             player->bet(raiseAmount);
             return raiseAmount;
@@ -105,8 +105,8 @@ int Game::makeMoveForUser(const std::string& move, Player* player, int playerInd
  */
 bool Game::test_game() {
     vector<Player*> players;
-    Player player1 = Player("Jess", 1000);
-    Player player2 = Player("James", 1000);
+    HumanPlayer player1 = HumanPlayer("Jess", 1000);
+    RandomPlayer player2 = RandomPlayer("James", 1000);
 
     players.push_back(&player1);
     players.push_back(&player2);
@@ -181,7 +181,7 @@ bool Game::test_game() {
     }
 
     // Checking add_player
-    Player player3 = Player("Corban", 1000);
+    HumanPlayer player3 = HumanPlayer("Corban", 1000);
     game.add_player(&player3);
     if (game.get_players().size() != 3) {
         std::cout << "Game does not have 3 players" << std::endl;
@@ -293,17 +293,20 @@ void Game::playHand() {
         // If the length of the winners is 1, award the pot to the winner
         if (winners.size() == 1) {
             this->awardPot(winners[0], 1);
+            // TODO: move printing to GUI
             cout << winners[0]->get_name() << " won the hand \n" << endl;
         } else {
             int numWinners = winners.size();
             // loop through the winners and award the pot to each winner
             for (Player* eachWinner : winners) {
                 this->awardPot(eachWinner, numWinners);
+                // TODO: move printing to GUI
                 cout << eachWinner->get_name() << " won the hand \n" << endl;
             }
         } 
     } else {
         this->awardPot(winner, 1);
+        // TODO: move printing to GUI
         cout << winner->get_name() << " won the hand \n" << endl;
     }
 
@@ -365,8 +368,9 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
 
         // If the player is still in the game
         if (inGame[currentPlayer]) {
-            GUI::displayPlayerHand(this->get_players()[currentPlayer]);
-            GUI::displayPlayerStack(this->get_players()[currentPlayer]);
+            Player* player = this->get_players()[currentPlayer];
+            GUI::displayPlayerHand(player);
+            GUI::displayPlayerStack(player);
             // Check if the player can perform each action
             bool canCheck = largestBet == this->get_players()[currentPlayer]->get_current_bet();
             bool canRaise = this->get_players()[currentPlayer]->get_stack() > largestBet;
@@ -374,7 +378,7 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
             bool canFold = this->get_players()[currentPlayer]->get_current_bet() != largestBet;
             bool canCall = canFold;
             // Get the player's move
-            string move = GUI::getUserMove(canCheck, canRaise, canFold, canCall);
+            string move = player->getMove(canCheck, canRaise, canFold, canCall);
 
             // Perform the move for the player
             int betSize = makeMoveForUser(move, this->get_players()[currentPlayer], currentPlayer, largestBet);
@@ -461,8 +465,6 @@ vector<Player*> Game::getWinner(vector<Player*> players, const vector<Card>& com
     for(int i = 0; i < players.size(); i++){
         if(inGame[i]){
             vector<Card> playerHand = players[i]->get_hand();
-            // print the length of the player hand
-            cout << playerHand.size() << endl;
             playerHands.push_back(playerHand);
             playersInGame.push_back(players[i]);
         }

@@ -130,6 +130,37 @@ void GUI::displayPlayerHand(Player* player) {
     std::cout << "--------------" << std::endl;
 }
 
+void GUI::displayStartScreen() {
+    string title = R"(:::::::::  :::    ::: ::::    :::    ::::::::::: :::::::::::    ::::::::::: :::       ::: :::::::::::  ::::::::  :::::::::: 
+:+:    :+: :+:    :+: :+:+:   :+:        :+:         :+:            :+:     :+:       :+:     :+:     :+:    :+: :+:        
++:+    +:+ +:+    +:+ :+:+:+  +:+        +:+         +:+            +:+     +:+       +:+     +:+     +:+        +:+        
++#++:++#:  +#+    +:+ +#+ +:+ +#+        +#+         +#+            +#+     +#+  +:+  +#+     +#+     +#+        +#++:++#   
++#+    +#+ +#+    +#+ +#+  +#+#+#        +#+         +#+            +#+     +#+ +#+#+ +#+     +#+     +#+        +#+        
+#+#    #+# #+#    #+# #+#   #+#+#        #+#         #+#            #+#      #+#+# #+#+#      #+#     #+#    #+# #+#        
+###    ###  ########  ###    ####    ###########     ###            ###       ###   ###   ###########  ########  ########## )";
+    std::cout << title << std::endl;
+    std::cout << "--------------------------------" << std::endl;
+}
+
+int GUI::displayMenu() {
+    std::cout << "1. Start Game (press Enter)" << std::endl;
+    std::cout << "2. Quit (q)" << std::endl;
+
+    std::string input;
+    std::getline(std::cin, input);  // Read the entire line, allowing us to detect Enter
+
+    while (input != "q" && input != "") {
+        std::cout << "Invalid input. Please enter a valid option: ";
+        std::getline(std::cin, input);  // Use getline to capture the next input
+    }
+
+    if (input == "q") {
+        return 0;
+    }
+    return 1;
+}
+
+
 void GUI::displayPlayerStack(Player* player) {
     std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
     std::cout << "    -----    " << std::endl;

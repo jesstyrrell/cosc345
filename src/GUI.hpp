@@ -21,4 +21,13 @@ class GUI {
         // Methods performed on a single player 
         static void displayPlayerStack(Player *player);
         static void displayPlayerHand(Player *player);
+
+        // Methods performed on the game
+        static void displayStartScreen();
+        static void displayEndMessage();
+        static void displayWinner(Player* player);
+
+        
+        static int displayMenu();
+
 }; 

@@ -4,6 +4,8 @@
 #include <vector>
 
 #include "Player.hpp"
+#include "RandomPlayer.cpp"
+#include "HumanPlayer.cpp"
 #include "Deck.hpp"
 #include "Card.hpp"
 

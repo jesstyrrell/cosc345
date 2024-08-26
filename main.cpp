@@ -29,7 +29,7 @@ bool uniTest(int argc, char* argv[]) {
 
     
     if (allPassed) {
-        std::cout << "Unit tests passed" << std::endl;
+        // std::cout << "Unit tests passed" << std::endl;
 
         // Exiting the program if the tests passed and is running in CI
         if (argc > 1) {
@@ -55,15 +55,30 @@ bool uniTest(int argc, char* argv[]) {
 // A main method for testing the classes
 int main(int argc, char* argv[]) {
 
-    uniTest(argc, argv); 
+    if(!uniTest(argc, argv)){
+        // Print a message to the user that the tests failed
+        std::cout << "Unit tests failed" << std::endl;
+        return 1;
+    } 
+
+    // Display the start screen 
+    GUI::displayStartScreen();
+
+    // TODO: Implement a way for the user to start a game or quit
+    int menuChoice = GUI::displayMenu();
+
+    if (menuChoice == 0) {
+        return 0;
+    }
+
+    // TODO: Implement a way to get the number of players from the user
 
 
-    Player player1 = Player("Jess", 1000);
-    Player player2 = Player("James", 1000);
-    Player player3 = Player("Corban", 1000);
+    HumanPlayer player1 = HumanPlayer("Jess", 1000);
+    RandomPlayer player2 = RandomPlayer("James", 1000);
+    RandomPlayer player3 = RandomPlayer("Corban", 1000);
     // Create a vector of pointers 
     std::vector<Player*> playerPointers;
-
     playerPointers.push_back(&player1);
     playerPointers.push_back(&player2);
     playerPointers.push_back(&player3);
@@ -71,49 +86,16 @@ int main(int argc, char* argv[]) {
     // Initiate a game with all the players 
     Game game = Game(playerPointers); // i swear you have to pass a pointer, but also its a list of two players
 
-    // Play a hand
-    game.playHand();
+    // Start a game loop 
+    while(true){
+        // Play a hand
+        game.playHand();
+        // TESTING: Display stack sizes of all players
+        for (Player* player : playerPointers) {
+            std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
+        }
+        // TODO: Implement a way to ask the user if they want to play another hand or quit
 
-    // TESTING: Display stack sizes of all players
-    for (Player* player : playerPointers) {
-        std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
     }
 
-    // Play a hand
-    game.playHand();
-
-    // TESTING: Display stack sizes of all players
-    for (Player* player : playerPointers) {
-        std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
-    }
-    
-
-    // // Create an instance of HandEvaluator
-    // HandEvaluator evaluator;
-
-    // Deck deck;
-    // deck.shuffle();
-    // deck.shuffle();
-    // deck.shuffle();
-    // deck.shuffle();
-
-    // std::vector<Card> hand;
-    // hand.push_back(deck.deal());
-    // hand.push_back(deck.deal());
-    
-    // std::vector<Card> communityCards;
-    // communityCards.push_back(deck.deal());
-    // communityCards.push_back(deck.deal());
-    // communityCards.push_back(deck.deal());
-    // communityCards.push_back(deck.deal());
-    // communityCards.push_back(deck.deal());
-
-    // int numPlayers = 1;
-
-    // float probability = evaluator.evaluateHand(hand, communityCards, deck, numPlayers);
-
-    // // Output the result
-    // std::cout << "Winning Probability: " << probability * 100 << "%" << std::endl;
-
-    // return 0;
 }
