@@ -19,10 +19,12 @@ class Game {
         vector<Card> community_cards;
         vector<int> currentBets;
 
-        const int BIG_BLIND = 10;
-        const int SMALL_BLIND = 5;
+        const int BIG_BLIND = 2;
+        const int SMALL_BLIND = 1;
+        const int STARTING_STACK = 100000000;
         int pot = 0;
         int button = 0; 
+        int removedPlayerCount = 0;
 
         Stage currentStage = PREFLOP;
         
