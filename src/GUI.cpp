@@ -3,6 +3,15 @@
 #include "GUI.hpp"
 
 
+
+void GUI::setGame(Game* game) {
+    GUI::game = game;
+}
+
+Game& GUI::getGame() {
+    return *GUI::game;
+}
+
 /**
  * Clear the terminal screen
  */
