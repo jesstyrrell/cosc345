@@ -1,0 +1,69 @@
+\doxysection{Game.\+hpp}
+\hypertarget{_game_8hpp_source}{}\label{_game_8hpp_source}\index{src/Game.hpp@{src/Game.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Player.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Deck.hpp"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Card.hpp"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{enum}\ Move\ \{\ CHECK,\ CALL,\ RAISE,\ FOLD\ \};}
+\DoxyCodeLine{00011\ \textcolor{keyword}{enum}\ Stage\ \{\ PREFLOP,\ FLOP,\ TURN,\ RIVER\ \};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game}{Game}}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_deck}{Deck}}\ deck;}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ vector<Player*>\ players;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ vector<Card>\ community\_cards;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ vector<int>\ currentBets;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ BIG\_BLIND\ =\ 10;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ SMALL\_BLIND\ =\ 5;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ pot\ =\ 0;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ button\ =\ 0;\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ Stage\ currentStage\ =\ PREFLOP;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ Move\ getCurrentMove(std::string\ move);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ addBlindsToPot(\mbox{\hyperlink{class_player}{Player}}\ *bigBlindPlayer,\ \mbox{\hyperlink{class_player}{Player}}\ *smallBlindPlayer);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_game_a66631f2f02d7138591409af8ece152fb}{Game}}(vector<Player*>\&\ players);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ add\_player(\mbox{\hyperlink{class_player}{Player}}\ *player);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a69a05d14810171cddd58aa1653272030}{deal}}();}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a018713cb3ce643d8f52e6804903e9d12}{nextStage}}();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ deal\_hands();}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ deal\_flop();}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ deal\_turn();}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ deal\_river();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a6c0b6e7156888c13466f098ea7590571}{awardPot}}(\mbox{\hyperlink{class_player}{Player}}\ *player,\ \textcolor{keywordtype}{int}\ numWinners);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ vector<Player*>\ get\_players();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ resetPlayerBets();}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ resetPlayerHands();}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ resetCommunityCards();}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_ab72401c43b303a37dec67f3d6b75a927}{playHand}}();\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_a1a44850a64799e17f43f22b560275157}{makeMoveForUser}}(\textcolor{keyword}{const}\ std::string\&\ move,\ \mbox{\hyperlink{class_player}{Player}}\ *player,\ \textcolor{keywordtype}{int}\ playerIndex,\ \textcolor{keywordtype}{int}\ largestBet);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_game_a0de5cbe2125b0929a0bc8d2e6cdd64d5}{bettingRound}}(vector<bool>\&\ inGame,\ \textcolor{keywordtype}{int}\ largestBet,\ \textcolor{keywordtype}{int}\ numPlayers);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}*\ \mbox{\hyperlink{class_game_ab99ccbbb2632cadc6810cf11c75c80ff}{get\_final\_winner}}(vector<bool>\&\ inGame);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ vector<Player*>\ getWinner(vector<Player*>\ players,\ \textcolor{keyword}{const}\ vector<Card>\&\ community\_cards,\ \textcolor{keyword}{const}\ vector<bool>\&\ inGame);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_game_a2a40b9c0d56307fbe67da500ed9d4cff}{test\_game}}();}
+\DoxyCodeLine{00063\ \};}
+
+\end{DoxyCode}

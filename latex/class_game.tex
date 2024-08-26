@@ -1,0 +1,172 @@
+\doxysection{Game Class Reference}
+\hypertarget{class_game}{}\label{class_game}\index{Game@{Game}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_a66631f2f02d7138591409af8ece152fb}{Game}} (vector$<$ \mbox{\hyperlink{class_player}{Player}} \texorpdfstring{$\ast$}{*} $>$ \&players)
+\item 
+\Hypertarget{class_game_a57916fe5cb55a85464371173571cf681}\label{class_game_a57916fe5cb55a85464371173571cf681} 
+void {\bfseries add\+\_\+player} (\mbox{\hyperlink{class_player}{Player}} \texorpdfstring{$\ast$}{*}player)
+\item 
+void \mbox{\hyperlink{class_game_a69a05d14810171cddd58aa1653272030}{deal}} ()
+\item 
+void \mbox{\hyperlink{class_game_a018713cb3ce643d8f52e6804903e9d12}{next\+Stage}} ()
+\item 
+\Hypertarget{class_game_a5cc682e0e2c72be6768cdacc9aec26ae}\label{class_game_a5cc682e0e2c72be6768cdacc9aec26ae} 
+void {\bfseries deal\+\_\+hands} ()
+\item 
+\Hypertarget{class_game_adc83a8bdd3819b0eab1540bf1d6dd1c0}\label{class_game_adc83a8bdd3819b0eab1540bf1d6dd1c0} 
+void {\bfseries deal\+\_\+flop} ()
+\item 
+\Hypertarget{class_game_a5fd04d6cb5e1e60a10db3a29fcad71e9}\label{class_game_a5fd04d6cb5e1e60a10db3a29fcad71e9} 
+void {\bfseries deal\+\_\+turn} ()
+\item 
+\Hypertarget{class_game_abe6dc7900667fabf1048c5391ce9a4bc}\label{class_game_abe6dc7900667fabf1048c5391ce9a4bc} 
+void {\bfseries deal\+\_\+river} ()
+\item 
+void \mbox{\hyperlink{class_game_a6c0b6e7156888c13466f098ea7590571}{award\+Pot}} (\mbox{\hyperlink{class_player}{Player}} \texorpdfstring{$\ast$}{*}player, int num\+Winners)
+\item 
+\Hypertarget{class_game_a8b6905dbeb67154aee4e59876ef4316b}\label{class_game_a8b6905dbeb67154aee4e59876ef4316b} 
+vector$<$ \mbox{\hyperlink{class_player}{Player}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries get\+\_\+players} ()
+\item 
+\Hypertarget{class_game_a69614c930626006cd0b3e644bc9cc613}\label{class_game_a69614c930626006cd0b3e644bc9cc613} 
+void {\bfseries reset\+Player\+Bets} ()
+\item 
+\Hypertarget{class_game_adc54b1823a5d8d5221d7bf74e924e145}\label{class_game_adc54b1823a5d8d5221d7bf74e924e145} 
+void {\bfseries reset\+Player\+Hands} ()
+\item 
+\Hypertarget{class_game_a884c074f31c3d278f026360fe28ee1c8}\label{class_game_a884c074f31c3d278f026360fe28ee1c8} 
+void {\bfseries reset\+Community\+Cards} ()
+\item 
+void \mbox{\hyperlink{class_game_ab72401c43b303a37dec67f3d6b75a927}{play\+Hand}} ()
+\item 
+int \mbox{\hyperlink{class_game_a1a44850a64799e17f43f22b560275157}{make\+Move\+For\+User}} (const std\+::string \&move, \mbox{\hyperlink{class_player}{Player}} \texorpdfstring{$\ast$}{*}player, int player\+Index, int largest\+Bet)
+\item 
+bool \mbox{\hyperlink{class_game_a0de5cbe2125b0929a0bc8d2e6cdd64d5}{betting\+Round}} (vector$<$ bool $>$ \&in\+Game, int largest\+Bet, int num\+Players)
+\item 
+\mbox{\hyperlink{class_player}{Player}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_game_ab99ccbbb2632cadc6810cf11c75c80ff}{get\+\_\+final\+\_\+winner}} (vector$<$ bool $>$ \&in\+Game)
+\item 
+\Hypertarget{class_game_aab46e042704ec19c1f0a52280ef06bef}\label{class_game_aab46e042704ec19c1f0a52280ef06bef} 
+vector$<$ \mbox{\hyperlink{class_player}{Player}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries get\+Winner} (vector$<$ \mbox{\hyperlink{class_player}{Player}} \texorpdfstring{$\ast$}{*} $>$ players, const vector$<$ \mbox{\hyperlink{class_card}{Card}} $>$ \&community\+\_\+cards, const vector$<$ bool $>$ \&in\+Game)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_game_a2a40b9c0d56307fbe67da500ed9d4cff}{test\+\_\+game}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_game_a66631f2f02d7138591409af8ece152fb}\index{Game@{Game}!Game@{Game}}
+\index{Game@{Game}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Game()}{Game()}}
+{\footnotesize\ttfamily \label{class_game_a66631f2f02d7138591409af8ece152fb} 
+Game\+::\+Game (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_player}{Player}} \texorpdfstring{$\ast$}{*} $>$ \&}]{players}{}\end{DoxyParamCaption})}
+
+Constructor for the \doxylink{class_game}{Game} class 
+\begin{DoxyParams}{Parameters}
+{\em players} & vector$<$\+Player\texorpdfstring{$\ast$}{*}$>$\& -\/ A vector of pointers to the players in the game \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_game_a6c0b6e7156888c13466f098ea7590571}\index{Game@{Game}!awardPot@{awardPot}}
+\index{awardPot@{awardPot}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{awardPot()}{awardPot()}}
+{\footnotesize\ttfamily \label{class_game_a6c0b6e7156888c13466f098ea7590571} 
+void Game\+::award\+Pot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} \texorpdfstring{$\ast$}{*}}]{winner}{, }\item[{int}]{num\+Winners}{}\end{DoxyParamCaption})}
+
+Award the pot to the winner of the hand 
+\begin{DoxyParams}{Parameters}
+{\em winner} & Player\texorpdfstring{$\ast$}{*} -\/ The player object who won the hand \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_game_a0de5cbe2125b0929a0bc8d2e6cdd64d5}\index{Game@{Game}!bettingRound@{bettingRound}}
+\index{bettingRound@{bettingRound}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{bettingRound()}{bettingRound()}}
+{\footnotesize\ttfamily \label{class_game_a0de5cbe2125b0929a0bc8d2e6cdd64d5} 
+bool Game\+::betting\+Round (\begin{DoxyParamCaption}\item[{vector$<$ bool $>$ \&}]{in\+Game}{, }\item[{int}]{largest\+Bet}{, }\item[{int}]{num\+Players}{}\end{DoxyParamCaption})}
+
+Perform a betting round for the players in the game 
+\begin{DoxyParams}{Parameters}
+{\em in\+Game} & vector$<$bool$>$\& -\/ A vector of booleans corresponding to the players in the game \\
+\hline
+{\em largest\+Bet} & int -\/ The current largest bet in the game \\
+\hline
+{\em num\+Players} & int -\/ The number of players in the game \\
+\hline
+{\em largest\+Bet\+Player} & Player\texorpdfstring{$\ast$}{*} -\/ The player who made the largest bet \\
+\hline
+{\em preflop} & bool -\/ Whether the betting round is pre-\/flop or not \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool -\/ whether the entire hand should be ended 
+\end{DoxyReturn}
+\Hypertarget{class_game_a69a05d14810171cddd58aa1653272030}\index{Game@{Game}!deal@{deal}}
+\index{deal@{deal}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{deal()}{deal()}}
+{\footnotesize\ttfamily \label{class_game_a69a05d14810171cddd58aa1653272030} 
+void Game\+::deal (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Deal cards to the table based on the current stage of the game \Hypertarget{class_game_ab99ccbbb2632cadc6810cf11c75c80ff}\index{Game@{Game}!get\_final\_winner@{get\_final\_winner}}
+\index{get\_final\_winner@{get\_final\_winner}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{get\_final\_winner()}{get\_final\_winner()}}
+{\footnotesize\ttfamily \label{class_game_ab99ccbbb2632cadc6810cf11c75c80ff} 
+\mbox{\hyperlink{class_player}{Player}} \texorpdfstring{$\ast$}{*} Game\+::get\+\_\+final\+\_\+winner (\begin{DoxyParamCaption}\item[{vector$<$ bool $>$ \&}]{in\+Game}{}\end{DoxyParamCaption})}
+
+Get the final winner of the hand-\/ given that there is only one player left 
+\begin{DoxyParams}{Parameters}
+{\em in\+Game} & vector$<$bool$>$\& -\/ A vector of booleans corresponding to the players in the game \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Player\texorpdfstring{$\ast$}{*} -\/ The final winner of the hand 
+\end{DoxyReturn}
+\Hypertarget{class_game_a1a44850a64799e17f43f22b560275157}\index{Game@{Game}!makeMoveForUser@{makeMoveForUser}}
+\index{makeMoveForUser@{makeMoveForUser}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{makeMoveForUser()}{makeMoveForUser()}}
+{\footnotesize\ttfamily \label{class_game_a1a44850a64799e17f43f22b560275157} 
+int Game\+::make\+Move\+For\+User (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{move}{, }\item[{\mbox{\hyperlink{class_player}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{int}]{player\+Index}{, }\item[{int}]{largest\+Bet}{}\end{DoxyParamCaption})}
+
+Perform a move for a user based on the provided move string 
+\begin{DoxyParams}{Parameters}
+{\em move} & string -\/ The move to perform received from the user input \\
+\hline
+{\em player} & Player\texorpdfstring{$\ast$}{*} -\/ The player object to perform the move for \\
+\hline
+{\em pot} & int -\/ The current pot size \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_game_a018713cb3ce643d8f52e6804903e9d12}\index{Game@{Game}!nextStage@{nextStage}}
+\index{nextStage@{nextStage}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{nextStage()}{nextStage()}}
+{\footnotesize\ttfamily \label{class_game_a018713cb3ce643d8f52e6804903e9d12} 
+void Game\+::next\+Stage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Move to the next stage of the game \Hypertarget{class_game_ab72401c43b303a37dec67f3d6b75a927}\index{Game@{Game}!playHand@{playHand}}
+\index{playHand@{playHand}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{playHand()}{playHand()}}
+{\footnotesize\ttfamily \label{class_game_ab72401c43b303a37dec67f3d6b75a927} 
+void Game\+::play\+Hand (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Play a hand of poker
+
+Called in main.\+cpp to play a hand of poker \Hypertarget{class_game_a2a40b9c0d56307fbe67da500ed9d4cff}\index{Game@{Game}!test\_game@{test\_game}}
+\index{test\_game@{test\_game}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{test\_game()}{test\_game()}}
+{\footnotesize\ttfamily \label{class_game_a2a40b9c0d56307fbe67da500ed9d4cff} 
+bool Game\+::test\+\_\+game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Static method to test the \doxylink{class_game}{Game} class
+
+\begin{DoxyReturn}{Returns}
+bool -\/ Whether the tests passed 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Game.\+hpp\item 
+src/Game.\+cpp\end{DoxyCompactItemize}

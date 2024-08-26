@@ -1,0 +1,35 @@
+\doxysection{Equity\+Calculator.\+hpp}
+\hypertarget{_equity_calculator_8hpp_source}{}\label{_equity_calculator_8hpp_source}\index{src/EquityCalculator.hpp@{src/EquityCalculator.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}HandEvaluator.hpp"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_equity_calculator}{EquityCalculator}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_hand_evaluator}{HandEvaluator}}\ handEvaluator;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ vector<string>\ suits\ =\ \{\ \textcolor{stringliteral}{"{}Hearts"{}},\ \textcolor{stringliteral}{"{}Diamonds"{}},\ \textcolor{stringliteral}{"{}Clubs"{}},\ \textcolor{stringliteral}{"{}Spades"{}}\ \};}
+\DoxyCodeLine{00017\ \ \ \ \ vector<string>\ ranks\ =\ \{\ \textcolor{stringliteral}{"{}2"{}},\ \textcolor{stringliteral}{"{}3"{}},\ \textcolor{stringliteral}{"{}4"{}},\ \textcolor{stringliteral}{"{}5"{}},\ \textcolor{stringliteral}{"{}6"{}},\ \textcolor{stringliteral}{"{}7"{}},\ \textcolor{stringliteral}{"{}8"{}},\ \textcolor{stringliteral}{"{}9"{}},\ \textcolor{stringliteral}{"{}10"{}},}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}J"{}},\ \textcolor{stringliteral}{"{}Q"{}},\ \textcolor{stringliteral}{"{}K"{}},\ \textcolor{stringliteral}{"{}A"{}}\ \};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ WIN\ =\ 1;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ DRAW\ =\ 0;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ LOSE\ =\ -\/1;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_equity_calculator}{EquityCalculator}}();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ vector<float>\ evaluateHand(\textcolor{keyword}{const}\ vector<Card>\&\ hand,\ \textcolor{keyword}{const}\ vector<Card>\&\ communityCards,\ \mbox{\hyperlink{class_deck}{Deck}}\ deck,\ \textcolor{keywordtype}{int}\ numPlayers);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \};}
+
+\end{DoxyCode}
