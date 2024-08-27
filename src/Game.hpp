@@ -17,7 +17,7 @@ class Game {
     private:
         Deck deck;
         vector<Player*> players;
-        vector<Card> community_cards;
+        vector<Card> community_cards = {};
         vector<int> currentBets;
 
         const int BIG_BLIND = 10;
@@ -46,6 +46,7 @@ class Game {
         void awardPot(Player *player, int numWinners);
 
         vector<Player*> getPlayers();
+        vector<Card> getCommunityCards();
 
         void resetPlayerBets();
         void resetPlayerHands();

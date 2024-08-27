@@ -48,6 +48,10 @@ std::vector<Player*> Game::getPlayers() {
     return players;
 }
 
+std::vector<Card> Game::getCommunityCards() {
+    return community_cards;
+}
+
 /**
  * Award the pot to the winner of the hand
  * @param winner: Player* - The player object who won the hand
@@ -344,6 +348,11 @@ Player* Game::get_final_winner(vector<bool>& inGame) {
  * @return bool - whether the entire hand should be ended
  */
 bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
+    // TESTING: display game state 
+    GUI::displayGameState();
+    // sleep for 1 second 
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+
     int currentPlayer;
     
     if(currentStage == Stage::FLOP){   // UTG is first to act if pre-flop

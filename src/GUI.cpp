@@ -7,6 +7,7 @@
 Game* GUI::game = nullptr;
 
 const Point GUI::PLAYER_CARD_POSITIONS[2] = {{90, 32}, {98, 32}};
+const Point GUI::COMMUNITY_CARD_POSITIONS[5] = {{78, 16}, {86, 186}, {94, 16}, {102, 16}, {110, 16}};
 
 void GUI::setGame(Game* game) {
     GUI::game = game;
@@ -322,9 +323,11 @@ string getFileContents(string filePath){
 
 string getCardString(Card& card){
     string suit = card.get_suit();
+     
     string rank = card.get_rank();
-
+     
     string startPath = getFilePathStart();
+   
     string cardPath = startPath + "/images/" + suit + "Card.txt";
 
     string cardContent = getFileContents(cardPath);
@@ -340,6 +343,9 @@ string getCardString(Card& card){
 }
 
 void GUI::displayGameState(){
+
+    // clear screen 
+    clearScreen();
     // TODO: Implement this method, will be called as each hand progresses and display 
     // table, chips, cards, stack sizes, players names, etc.
 
@@ -349,13 +355,37 @@ void GUI::displayGameState(){
 
     string tableContent = getFileContents(tablePath);
 
-    string playerCardContent1 = getCardString(getGame().getPlayers()[0]->get_hand()[0]);
-    string playerCardContent2 = getCardString(getGame().getPlayers()[0]->get_hand()[1]);
+    if(getGame().getPlayers()[0]->get_hand().size() != 0){
+        string playerCardContent1 = getCardString(getGame().getPlayers()[0]->get_hand()[0]);
+        string playerCardContent2 = getCardString(getGame().getPlayers()[0]->get_hand()[1]);
 
-    // Add the card to the table content
-    tableContent = addString(tableContent, playerCardContent1, PLAYER_CARD_POSITIONS[0].x, PLAYER_CARD_POSITIONS[0].y);
+        // Add the card to the table content
+        tableContent = addString(tableContent, playerCardContent1, PLAYER_CARD_POSITIONS[0].x, PLAYER_CARD_POSITIONS[0].y);
+        tableContent = addString(tableContent, playerCardContent2, PLAYER_CARD_POSITIONS[1].x, PLAYER_CARD_POSITIONS[1].y);
+    }
+    // Make a list of the current community cards
+    std::vector<Card> communityCards = getGame().getCommunityCards();
 
-    tableContent = addString(tableContent, playerCardContent2, PLAYER_CARD_POSITIONS[1].x, PLAYER_CARD_POSITIONS[1].y);
+    for(int i = 0; i < communityCards.size(); i++){
+        string cardContent = getCardString(communityCards[i]);
+        switch(i){
+            case 0:
+                tableContent = addString(tableContent, cardContent, COMMUNITY_CARD_POSITIONS[0].x, COMMUNITY_CARD_POSITIONS[0].y);
+                break;
+            case 1:
+                tableContent = addString(tableContent, cardContent, COMMUNITY_CARD_POSITIONS[1].x, COMMUNITY_CARD_POSITIONS[1].y);
+                break;
+            case 2:
+                tableContent = addString(tableContent, cardContent, COMMUNITY_CARD_POSITIONS[2].x, COMMUNITY_CARD_POSITIONS[2].y);
+                break;
+            case 3:
+                tableContent = addString(tableContent, cardContent, COMMUNITY_CARD_POSITIONS[3].x, COMMUNITY_CARD_POSITIONS[3].y);
+                break;
+            case 4:
+                tableContent = addString(tableContent, cardContent, COMMUNITY_CARD_POSITIONS[4].x, COMMUNITY_CARD_POSITIONS[4].y);
+                break;
+        }
+    }
 
     std::cout << tableContent << std::endl;
 }

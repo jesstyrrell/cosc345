@@ -67,6 +67,7 @@ int main(int argc, char* argv[]) {
     // TODO: Implement a way for the user to start a game or quit
     int menuChoice = GUI::displayMenu();
 
+
     if (menuChoice == 0) {
         GUI::displayEndMessage();
         return 0;
@@ -75,7 +76,7 @@ int main(int argc, char* argv[]) {
     // TODO: Implement a way to get the number of players from the user
 
     // The first player will always be the human player 
-    HumanPlayer player1 = HumanPlayer("Jess", 1000);
+    RandomPlayer player1 = RandomPlayer("Jess", 1000);
     RandomPlayer player2 = RandomPlayer("James", 1000);
     RandomPlayer player3 = RandomPlayer("Corban", 1000);
     // Create a vector of pointers 
@@ -89,22 +90,28 @@ int main(int argc, char* argv[]) {
     // Set the game object for the GUI
     GUI::setGame(&game);
 
-    player1.add_card_to_hand(Card("Hearts", "A"));
-    player1.add_card_to_hand(Card("Hearts", "K"));
-
     // display the game state
     GUI::displayGameState();
 
-    // // Start a game loop 
-    // while(true){
-    //     // Play a hand
-    //     game.playHand();
-    //     // TESTING: Display stack sizes of all players
-    //     for (Player* player : playerPointers) {
-    //         std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
-    //     }
-    //     // TODO: Implement a way to ask the user if they want to play another hand or quit
+    // Start a game loop 
+    int count = 0;
+   while(count < 10){
+        //Clear the screen
+        // GUI::clearScreen();
+        // Play a hand
+        game.playHand();
+        // TESTING: Display stack sizes of all players
+        // for (Player* player : playerPointers) {
+        //     std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
+        // }
+        // TODO: Implement a way to ask the user if they want to play another hand or quit
 
-    // }
+  //    break;
+    }
+
+    // Display the end message
+    // GUI::displayEndMessage();
+
+    return 0;
 
 }
