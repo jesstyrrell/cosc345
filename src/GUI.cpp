@@ -1,6 +1,7 @@
 ﻿#include "Card.hpp"
 #include "Player.hpp"
 #include "GUI.hpp"
+#include "Game.hpp"
 
 // Define and initialize the static member variable
 Game* GUI::game = nullptr;
@@ -250,6 +251,73 @@ void GUI::displayPlayerStack(Player* player) {
     std::cout << "    -----    " << std::endl;
 }
 
+string addString(string baseString, string newString, int x1, int y1)
+{
+    // Split the base string and new string into lines
+    vector<string> baseLines;
+    vector<string> newLines;
+    stringstream ssBase(baseString), ssNew(newString);
+    string line;
+
+    while (getline(ssBase, line))
+    {
+        baseLines.push_back(line);
+    }
+
+    while (getline(ssNew, line))
+    {
+        newLines.push_back(line);
+    }
+
+    // Ensure the replacement does not go out of bounds
+    for (int i = 0; i < newLines.size(); i++)
+    {
+        int targetLine = y1 + i;
+        if (targetLine < baseLines.size())
+        {
+            string &baseLine = baseLines[targetLine];
+            string &newLine = newLines[i];
+
+            if (x1 < baseLine.size())
+            {
+                // Replace the part of the line starting from x1 with the new string
+                baseLine.replace(x1, newLine.size(), newLine);
+            }
+            else
+            {
+                // If x1 is outside the base line, just append the new string
+                baseLine.append(string(x1 - baseLine.size(), ' ') + newLine);
+            }
+        }
+    }
+
+    // Recombine the base lines into a single string
+    string result;
+    for (const string &baseLine : baseLines)
+    {
+        result += baseLine + "\n";
+    }
+
+    return result;
+}
+
+string getFileContents(string filePath){
+    // Get the contents of the file at the file path
+    std::ifstream file(filePath);
+    if (!file) {
+        std::cerr << "Error opening file!" << std::endl;
+        return "";
+    }
+
+    // Read the file into a string
+    std::ostringstream oss;
+    oss << file.rdbuf();
+    std::string content = oss.str();
+    file.close();
+
+    return content;
+}
+
 void GUI::displayGameState(){
     // TODO: Implement this method, will be called as each hand progresses and display 
     // table, chips, cards, stack sizes, players names, etc.
@@ -258,19 +326,21 @@ void GUI::displayGameState(){
     string startPath = getFilePathStart();
     string tablePath = startPath + "/images/table.txt";
 
-    std::ifstream tableFile(tablePath);
-    if (!tableFile) {
-        std::cerr << "Error opening file!" << std::endl;
-        return;
-    }
+    string tableContent = getFileContents(tablePath);
 
-    // Read the file into a string
-    std::ostringstream oss;
-    oss << tableFile.rdbuf();
-    std::string content = oss.str();
-    tableFile.close();
+    // Get the suit of player[0] hand 
+    string player1Suit1 = GUI::game->get_players()[0]->get_hand()[0].get_suit();
 
-    std::cout << content << std::endl;
+    // Get the card of player[0] hand
+    string card1Path = startPath + "/images/" + player1Suit1 + "Card.txt";
 
+    // print card1Path
+    std::cout << card1Path << std::endl;
 
+    string card1Content = getFileContents(card1Path);
+
+    // Add the card to the table content
+    tableContent = addString(tableContent, card1Content, 90, 32);
+
+    std::cout << tableContent << std::endl;
 }

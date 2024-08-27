@@ -89,6 +89,9 @@ int main(int argc, char* argv[]) {
     // Set the game object for the GUI
     GUI::setGame(&game);
 
+    player1.add_card_to_hand(Card("Hearts", "Ace"));
+    player1.add_card_to_hand(Card("Hearts", "King"));
+
     // display the game state
     GUI::displayGameState();
 
