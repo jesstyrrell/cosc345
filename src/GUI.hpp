@@ -12,12 +12,18 @@ class Game;
 
 using namespace std; 
 
+struct Point{
+    int x;
+    int y;
+};
+
 class GUI {
     private:
         // Pointer to the game object used for getting game state information
         static Game* game;
 
     public: 
+        static const Point PLAYER_CARD_POSITIONS[2];
 
         /**
          * Set the game object for the GUI

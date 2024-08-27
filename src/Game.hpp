@@ -45,7 +45,7 @@ class Game {
 
         void awardPot(Player *player, int numWinners);
 
-        vector<Player*> get_players();
+        vector<Player*> getPlayers();
 
         void resetPlayerBets();
         void resetPlayerHands();

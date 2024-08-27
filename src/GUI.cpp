@@ -6,6 +6,8 @@
 // Define and initialize the static member variable
 Game* GUI::game = nullptr;
 
+const Point GUI::PLAYER_CARD_POSITIONS[2] = {{90, 32}, {98, 32}};
+
 void GUI::setGame(Game* game) {
     GUI::game = game;
 }
@@ -318,6 +320,25 @@ string getFileContents(string filePath){
     return content;
 }
 
+string getCardString(Card& card){
+    string suit = card.get_suit();
+    string rank = card.get_rank();
+
+    string startPath = getFilePathStart();
+    string cardPath = startPath + "/images/" + suit + "Card.txt";
+
+    string cardContent = getFileContents(cardPath);
+
+    // Replace a ? with the rank of the card
+    size_t pos = cardContent.find("?");
+    cardContent.replace(pos, 1, rank);
+    // Replace the second ? with the rank 
+    pos = cardContent.find("?", pos + 1);
+    cardContent.replace(pos, 1, rank);
+
+    return cardContent;
+}
+
 void GUI::displayGameState(){
     // TODO: Implement this method, will be called as each hand progresses and display 
     // table, chips, cards, stack sizes, players names, etc.
@@ -328,19 +349,13 @@ void GUI::displayGameState(){
 
     string tableContent = getFileContents(tablePath);
 
-    // Get the suit of player[0] hand 
-    string player1Suit1 = GUI::game->get_players()[0]->get_hand()[0].get_suit();
-
-    // Get the card of player[0] hand
-    string card1Path = startPath + "/images/" + player1Suit1 + "Card.txt";
-
-    // print card1Path
-    std::cout << card1Path << std::endl;
-
-    string card1Content = getFileContents(card1Path);
+    string playerCardContent1 = getCardString(getGame().getPlayers()[0]->get_hand()[0]);
+    string playerCardContent2 = getCardString(getGame().getPlayers()[0]->get_hand()[1]);
 
     // Add the card to the table content
-    tableContent = addString(tableContent, card1Content, 90, 32);
+    tableContent = addString(tableContent, playerCardContent1, PLAYER_CARD_POSITIONS[0].x, PLAYER_CARD_POSITIONS[0].y);
+
+    tableContent = addString(tableContent, playerCardContent2, PLAYER_CARD_POSITIONS[1].x, PLAYER_CARD_POSITIONS[1].y);
 
     std::cout << tableContent << std::endl;
 }

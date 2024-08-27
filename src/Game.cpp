@@ -44,7 +44,7 @@ void Game::deal_river() {
     community_cards.push_back(deck.deal()); // Deal 1 card for the river
 }
 
-std::vector<Player*> Game::get_players() {
+std::vector<Player*> Game::getPlayers() {
     return players;
 }
 
@@ -121,7 +121,7 @@ bool Game::test_game() {
 
     // Checking deal_hand
     game.deal_hands();
-    for (Player* player : game.get_players()) {
+    for (Player* player : game.getPlayers()) {
         if (player->get_hand().size() != 2) {
             std::cout << "Player does not have 2 cards in hand" << std::endl;
             return false;
@@ -165,16 +165,16 @@ bool Game::test_game() {
         return false;
     }
 
-    // Checking get_players
-    if (game.get_players().size() != 2) {
+    // Checking getPlayers
+    if (game.getPlayers().size() != 2) {
         std::cout << "Game does not have 3 players" << std::endl;
         return false;
     }
-    if (game.get_players()[0]->get_name() != "Jess") {
+    if (game.getPlayers()[0]->get_name() != "Jess") {
         std::cout << "Player 1 is not Jess" << std::endl;
         return false;
     }
-    if (game.get_players()[1]->get_name() != "James") {
+    if (game.getPlayers()[1]->get_name() != "James") {
         std::cout << "Player 2 is not James" << std::endl;
         return false;
     }
@@ -182,13 +182,13 @@ bool Game::test_game() {
     // Checking add_player
     HumanPlayer player3 = HumanPlayer("Corban", 1000);
     game.add_player(&player3);
-    if (game.get_players().size() != 3) {
+    if (game.getPlayers().size() != 3) {
         std::cout << "Game does not have 3 players" << std::endl;
         return false;
     }
 
     // Free memory
-    // for (Player* player : game.get_players()) {
+    // for (Player* player : game.getPlayers()) {
     //     delete player;
     // }
 
@@ -251,14 +251,14 @@ void Game::playHand() {
     this->deal();
 
     // Store the number of players in the hand 
-    int numPlayers = this->get_players().size();
+    int numPlayers = this->getPlayers().size();
 
     // A vector of booleans corresponding to the players in the game - keep track of who is still in the hand
     vector<bool> inGame = vector<bool>(numPlayers, true);
 
     // Get the small blind and big blind players
-    Player* smallBlindPlayer = this->get_players()[(button + 1) % numPlayers];
-    Player* bigBlindPlayer = this->get_players()[(button + 2) % numPlayers];
+    Player* smallBlindPlayer = this->getPlayers()[(button + 1) % numPlayers];
+    Player* bigBlindPlayer = this->getPlayers()[(button + 2) % numPlayers];
 
     // Extract blinds from the players and add them to the pot
     this->addBlindsToPot(bigBlindPlayer, smallBlindPlayer);
@@ -285,7 +285,7 @@ void Game::playHand() {
     
     if(winner == nullptr){
 
-        vector<Player*> winners = this->getWinner(this->get_players(), this->community_cards, inGame);
+        vector<Player*> winners = this->getWinner(this->getPlayers(), this->community_cards, inGame);
 
         // TESTING: print the type of winners[0]
 
@@ -330,7 +330,7 @@ void Game::playHand() {
  * @return Player* - The final winner of the hand
  */
 Player* Game::get_final_winner(vector<bool>& inGame) {
-    Player *winner = this->get_players()[find(inGame.begin(), inGame.end(), true) - inGame.begin()];  
+    Player *winner = this->getPlayers()[find(inGame.begin(), inGame.end(), true) - inGame.begin()];  
     return winner;
 }
 
@@ -355,7 +355,7 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
         }
     }
 
-    Player* largestBetPlayer = this->get_players()[currentPlayer];
+    Player* largestBetPlayer = this->getPlayers()[currentPlayer];
 
     // Loop for the betting round 
     while(true) {
@@ -367,20 +367,20 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
 
         // If the player is still in the game
         if (inGame[currentPlayer]) {
-            Player* player = this->get_players()[currentPlayer];
+            Player* player = this->getPlayers()[currentPlayer];
             GUI::displayPlayerHand(player);
             GUI::displayPlayerStack(player);
             // Check if the player can perform each action
-            bool canCheck = largestBet == this->get_players()[currentPlayer]->get_current_bet();
-            bool canRaise = this->get_players()[currentPlayer]->get_stack() > largestBet;
+            bool canCheck = largestBet == this->getPlayers()[currentPlayer]->get_current_bet();
+            bool canRaise = this->getPlayers()[currentPlayer]->get_stack() > largestBet;
             // A player can only fold or call if they are not the largest better 
-            bool canFold = this->get_players()[currentPlayer]->get_current_bet() != largestBet;
+            bool canFold = this->getPlayers()[currentPlayer]->get_current_bet() != largestBet;
             bool canCall = canFold;
             // Get the player's move
             string move = player->getMove(canCheck, canRaise, canFold, canCall);
 
             // Perform the move for the player
-            int betSize = makeMoveForUser(move, this->get_players()[currentPlayer], currentPlayer, largestBet);
+            int betSize = makeMoveForUser(move, this->getPlayers()[currentPlayer], currentPlayer, largestBet);
 
             // If the player has folded, update the inGame vector
             if (betSize == -1) {
@@ -389,12 +389,12 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
             }
             
             // Update the current bet for the player
-            get_players()[currentPlayer]->bet(betSize);
+            getPlayers()[currentPlayer]->bet(betSize);
 
             // Update the largest bet if the player has bet more than the current largest bet
             if (betSize > largestBet) {
                 largestBet = betSize;
-                largestBetPlayer = this->get_players()[currentPlayer];
+                largestBetPlayer = this->getPlayers()[currentPlayer];
             }
         }
 
@@ -402,7 +402,7 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
         currentPlayer = (currentPlayer + 1) % numPlayers;
 
         // If we have looped back to the player who made the largest bet, break
-        if (this->get_players()[currentPlayer] == largestBetPlayer) {
+        if (this->getPlayers()[currentPlayer] == largestBetPlayer) {
             return false;
         }
     }
@@ -433,14 +433,14 @@ Move Game::getCurrentMove(std::string move) {
 }
 
 void Game::resetPlayerBets() {
-    for (Player* player : this->get_players()) {
+    for (Player* player : this->getPlayers()) {
         player->reset_current_bet();
     }
     
 }
 
 void Game::resetPlayerHands(){
-    for (Player* player : this->get_players()) {
+    for (Player* player : this->getPlayers()) {
         player->clear_hand();
     }
 }
