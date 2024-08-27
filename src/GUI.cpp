@@ -235,3 +235,10 @@ void GUI::displayPlayerStack(Player* player) {
     std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
     std::cout << "    -----    " << std::endl;
 }
+
+void GUI::displayGameState(){
+    // TODO: Implement this method, will be called as each hand progresses and display 
+    // table, chips, cards, stack sizes, players names, etc.
+
+
+}
