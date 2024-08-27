@@ -147,7 +147,7 @@ void GUI::displayStartScreen() {
     std::cout << "--------------------------------" << std::endl;
 }
 
-void GUI::displayEndMessage() {
+string getFilePathStart(){
     // Get os type
     #ifdef _WIN32
         std::string os = "Windows";
@@ -159,19 +159,33 @@ void GUI::displayEndMessage() {
         std::string os = "Unknown";
     #endif
 
-    string imagePath;
+    string startPath;
 
-    if(os == "Windows") {
-        imagePath = "../../../images/cardAnimation.txt";
-    } else if(os == "MacOS") {
-        imagePath = "../images/cardAnimation.txt";
-    } else if(os == "Linux") {
-        imagePath = "../images/cardAnimation.txt";
-    } else {
-        std::cerr << "Unsupported OS" << std::endl;
-        return;
+    if (os == "Windows")
+    {
+        startPath = "../../..";
     }
-    
+    else if (os == "MacOS")
+    {
+        startPath = "..";
+    }
+    else if (os == "Linux")
+    {
+        startPath = "..";
+    }
+    else
+    {
+        std::cerr << "Unsupported OS" << std::endl;
+        return "";
+    }
+    return startPath;
+}
+
+void GUI::displayEndMessage() {
+
+    string startPath = getFilePathStart();
+
+    string imagePath = startPath + "/images/cardAnimation.txt";
     string delimiter = "[END OF FRAME]\n";
     int delay = 25;
 
@@ -239,6 +253,24 @@ void GUI::displayPlayerStack(Player* player) {
 void GUI::displayGameState(){
     // TODO: Implement this method, will be called as each hand progresses and display 
     // table, chips, cards, stack sizes, players names, etc.
+
+    // Get the contents of the table.txt file and print it to the terminal
+    string startPath = getFilePathStart();
+    string tablePath = startPath + "/images/table.txt";
+
+    std::ifstream tableFile(tablePath);
+    if (!tableFile) {
+        std::cerr << "Error opening file!" << std::endl;
+        return;
+    }
+
+    // Read the file into a string
+    std::ostringstream oss;
+    oss << tableFile.rdbuf();
+    std::string content = oss.str();
+    tableFile.close();
+
+    std::cout << content << std::endl;
 
 
 }

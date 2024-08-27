@@ -74,7 +74,7 @@ int main(int argc, char* argv[]) {
 
     // TODO: Implement a way to get the number of players from the user
 
-
+    // The first player will always be the human player 
     HumanPlayer player1 = HumanPlayer("Jess", 1000);
     RandomPlayer player2 = RandomPlayer("James", 1000);
     RandomPlayer player3 = RandomPlayer("Corban", 1000);
@@ -89,16 +89,19 @@ int main(int argc, char* argv[]) {
     // Set the game object for the GUI
     GUI::setGame(&game);
 
-    // Start a game loop 
-    while(true){
-        // Play a hand
-        game.playHand();
-        // TESTING: Display stack sizes of all players
-        for (Player* player : playerPointers) {
-            std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
-        }
-        // TODO: Implement a way to ask the user if they want to play another hand or quit
+    // display the game state
+    GUI::displayGameState();
 
-    }
+    // // Start a game loop 
+    // while(true){
+    //     // Play a hand
+    //     game.playHand();
+    //     // TESTING: Display stack sizes of all players
+    //     for (Player* player : playerPointers) {
+    //         std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
+    //     }
+    //     // TODO: Implement a way to ask the user if they want to play another hand or quit
+
+    // }
 
 }
