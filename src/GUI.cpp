@@ -2,6 +2,16 @@
 #include "Player.hpp"
 #include "GUI.hpp"
 
+// Define and initialize the static member variable
+Game* GUI::game = nullptr;
+
+void GUI::setGame(Game* game) {
+    GUI::game = game;
+}
+
+Game& GUI::getGame() {
+    return *GUI::game;
+}
 
 /**
  * Clear the terminal screen
@@ -224,4 +234,11 @@ int GUI::displayMenu() {
 void GUI::displayPlayerStack(Player* player) {
     std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
     std::cout << "    -----    " << std::endl;
+}
+
+void GUI::displayGameState(){
+    // TODO: Implement this method, will be called as each hand progresses and display 
+    // table, chips, cards, stack sizes, players names, etc.
+
+
 }

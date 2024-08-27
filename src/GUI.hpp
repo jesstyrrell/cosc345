@@ -8,10 +8,28 @@
 #include <sstream>
 #include <chrono>
 
+class Game;
+
 using namespace std; 
 
 class GUI {
+    private:
+        // Pointer to the game object used for getting game state information
+        static Game* game;
+
     public: 
+
+        /**
+         * Set the game object for the GUI
+         * @param game: Game* - Pointer to the game object
+         */
+        static void setGame(Game* game);
+
+        /**
+         * Get the game object for the GUI
+         * @return Game& - Reference to the game object
+         */
+        static Game& getGame();
     
         static void clearScreen();
 
@@ -34,5 +52,6 @@ class GUI {
 
         
         static int displayMenu();
+        static void displayGameState();
 
 }; 
