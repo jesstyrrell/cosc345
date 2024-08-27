@@ -96,6 +96,7 @@ int main(int argc, char* argv[]) {
     // Start a game loop 
     int count = 0;
    while(count < 10){
+        count++;
         //Clear the screen
         // GUI::clearScreen();
         // Play a hand

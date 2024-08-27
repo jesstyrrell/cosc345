@@ -7,7 +7,7 @@
 Game* GUI::game = nullptr;
 
 const Point GUI::PLAYER_CARD_POSITIONS[2] = {{90, 32}, {98, 32}};
-const Point GUI::COMMUNITY_CARD_POSITIONS[5] = {{78, 16}, {86, 186}, {94, 16}, {102, 16}, {110, 16}};
+const Point GUI::COMMUNITY_CARD_POSITIONS[5] = {{78, 16}, {86, 16}, {94, 16}, {102, 16}, {110, 16}};
 
 void GUI::setGame(Game* game) {
     GUI::game = game;
@@ -366,25 +366,15 @@ void GUI::displayGameState(){
     // Make a list of the current community cards
     std::vector<Card> communityCards = getGame().getCommunityCards();
 
+    //  TESTING: print the community cards
+    for(Card card : communityCards){
+        std::cout << card.get_rank() << " of " << card.get_suit() << std::endl;
+    }
+    
+
     for(int i = 0; i < communityCards.size(); i++){
         string cardContent = getCardString(communityCards[i]);
-        switch(i){
-            case 0:
-                tableContent = addString(tableContent, cardContent, COMMUNITY_CARD_POSITIONS[0].x, COMMUNITY_CARD_POSITIONS[0].y);
-                break;
-            case 1:
-                tableContent = addString(tableContent, cardContent, COMMUNITY_CARD_POSITIONS[1].x, COMMUNITY_CARD_POSITIONS[1].y);
-                break;
-            case 2:
-                tableContent = addString(tableContent, cardContent, COMMUNITY_CARD_POSITIONS[2].x, COMMUNITY_CARD_POSITIONS[2].y);
-                break;
-            case 3:
-                tableContent = addString(tableContent, cardContent, COMMUNITY_CARD_POSITIONS[3].x, COMMUNITY_CARD_POSITIONS[3].y);
-                break;
-            case 4:
-                tableContent = addString(tableContent, cardContent, COMMUNITY_CARD_POSITIONS[4].x, COMMUNITY_CARD_POSITIONS[4].y);
-                break;
-        }
+        tableContent = addString(tableContent, cardContent, COMMUNITY_CARD_POSITIONS[i].x, COMMUNITY_CARD_POSITIONS[i].y);
     }
 
     std::cout << tableContent << std::endl;
