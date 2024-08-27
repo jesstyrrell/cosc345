@@ -2,7 +2,8 @@
 #include "Player.hpp"
 #include "GUI.hpp"
 
-
+// Define and initialize the static member variable
+Game* GUI::game = nullptr;
 
 void GUI::setGame(Game* game) {
     GUI::game = game;

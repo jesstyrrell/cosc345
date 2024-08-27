@@ -8,7 +8,7 @@
 #include <sstream>
 #include <chrono>
 
-#include "Game.hpp"
+class Game;
 
 using namespace std; 
 
