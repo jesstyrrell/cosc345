@@ -61,4 +61,6 @@ class GUI {
         static int displayMenu();
         static void displayGameState();
 
+        static void displayPot(int pot);
+
 }; 

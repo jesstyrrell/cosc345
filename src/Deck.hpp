@@ -20,4 +20,5 @@ class Deck {
         // Helper functions for evaluating cards
         Card find_card(const string& rank, const string& suit);
         void remove_card(Card card);
+        void reset();
 };

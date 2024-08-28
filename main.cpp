@@ -73,6 +73,8 @@ int main(int argc, char* argv[]) {
         return 0;
     }
 
+    GUI::clearScreen();
+
     // TODO: Implement a way to get the number of players from the user
 
     // The first player will always be the human player 
@@ -92,7 +94,6 @@ int main(int argc, char* argv[]) {
 
     // display the game state
     GUI::displayGameState();
-
     // Start a game loop 
     int count = 0;
    while(count < 10){
