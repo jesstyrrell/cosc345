@@ -1,0 +1,29 @@
+\doxysection{Deck.\+hpp}
+\hypertarget{_deck_8hpp_source}{}\label{_deck_8hpp_source}\index{src/Deck.hpp@{src/Deck.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Card.hpp"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{using\ namespace\ }std;\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_deck}{Deck}}\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ vector<Card>\ cards;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_deck}{Deck}}();}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ shuffle();}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_card}{Card}}\ deal();}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ vector<Card>\ get\_cards();}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \textcolor{keyword}{static}\ test\_deck();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Helper\ functions\ for\ evaluating\ cards}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_card}{Card}}\ \mbox{\hyperlink{class_deck_a3ad744640638d4a52761525d56004cef}{find\_card}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ rank,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ suit);}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_deck_a61714386178ebc83bfa95b838db0adf1}{remove\_card}}(\mbox{\hyperlink{class_card}{Card}}\ card);}
+\DoxyCodeLine{00023\ \};}
+
+\end{DoxyCode}

@@ -68,6 +68,7 @@ int main(int argc, char* argv[]) {
     int menuChoice = GUI::displayMenu();
 
     if (menuChoice == 0) {
+        GUI::displayEndMessage();
         return 0;
     }
 
@@ -97,6 +98,8 @@ int main(int argc, char* argv[]) {
 
     // Initiate a game with all the players 
     Game game = Game(playerPointers); // i swear you have to pass a pointer, but also its a list of two players
+    // Set the game object for the GUI
+    GUI::setGame(&game);
 
     // TESTING :m start a count to play 20 hands
     int count = 0;

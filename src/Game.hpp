@@ -8,6 +8,7 @@
 #include "HumanPlayer.cpp"
 #include "Deck.hpp"
 #include "Card.hpp"
+#include "GUI.hpp"
 
 enum Move { CHECK, CALL, RAISE, FOLD };
 enum Stage { PREFLOP, FLOP, TURN, RIVER };

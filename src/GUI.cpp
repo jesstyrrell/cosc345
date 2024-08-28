@@ -1,12 +1,17 @@
-
-#include <iostream>
-#include <string>
-#include <vector>
-
-#include "Card.hpp"
+﻿#include "Card.hpp"
 #include "Player.hpp"
 #include "GUI.hpp"
 
+// Define and initialize the static member variable
+Game* GUI::game = nullptr;
+
+void GUI::setGame(Game* game) {
+    GUI::game = game;
+}
+
+Game& GUI::getGame() {
+    return *GUI::game;
+}
 
 /**
  * Clear the terminal screen
@@ -142,6 +147,71 @@ void GUI::displayStartScreen() {
     std::cout << "--------------------------------" << std::endl;
 }
 
+void GUI::displayEndMessage() {
+    // Get os type
+    #ifdef _WIN32
+        std::string os = "Windows";
+    #elif __APPLE__
+        std::string os = "MacOS";
+    #elif __linux__
+        std::string os = "Linux";
+    #else
+        std::string os = "Unknown";
+    #endif
+
+    string imagePath;
+
+    if(os == "Windows") {
+        imagePath = "../../../images/cardAnimation.txt";
+    } else if(os == "MacOS") {
+        imagePath = "../images/cardAnimation.txt";
+    } else if(os == "Linux") {
+        imagePath = "../images/cardAnimation.txt";
+    } else {
+        std::cerr << "Unsupported OS" << std::endl;
+        return;
+    }
+    
+    string delimiter = "[END OF FRAME]\n";
+    int delay = 25;
+
+    std::ifstream inputFile(imagePath);
+
+    if (!inputFile) {
+        std::cerr << "Error opening file!" << std::endl;
+        return;
+    }
+
+    // Read the file into a string
+    std::ostringstream oss;
+    oss << inputFile.rdbuf();
+    std::string content = oss.str();
+    inputFile.close();
+
+    std::vector<std::string> frames;
+    size_t start = 0;
+    size_t end;
+
+    // Split the frames
+    while ((end = content.find(delimiter, start)) != std::string::npos) {
+        frames.push_back(content.substr(start, end - start));
+        start = end + delimiter.length();
+    }
+    frames.push_back(content.substr(start)); // Add the last frame
+
+    for (int i = 0; i < 5; i++) {
+        // Print each frame with a delay
+        for (const std::string& frame : frames) {
+            std::cout << frame << std::endl;
+            std::this_thread::sleep_for(std::chrono::milliseconds(delay));
+            clearScreen();
+        }
+    }
+
+    //std::cout << imageASCII << std::endl;
+    std::cout << "--------------------------------" << std::endl;
+}
+
 int GUI::displayMenu() {
     std::cout << "1. Start Game (press Enter)" << std::endl;
     std::cout << "2. Quit (q)" << std::endl;
@@ -166,7 +236,9 @@ void GUI::displayPlayerStack(Player* player) {
     std::cout << "    -----    " << std::endl;
 }
 
-void GUI::displayPot(int pot) {
-    std::cout << "Pot: " << pot << std::endl;
-    std::cout << "    -----    " << std::endl;
+void GUI::displayGameState(){
+    // TODO: Implement this method, will be called as each hand progresses and display 
+    // table, chips, cards, stack sizes, players names, etc.
+
+
 }

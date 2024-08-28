@@ -1,5 +1,4 @@
 #include "Game.hpp"
-#include "GUI.hpp"
 #include <algorithm>
 #include <iostream>
 #include <ctime>
