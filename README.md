@@ -1,12 +1,19 @@
 
-[codacy-shield]: https://app.codacy.com/project/badge/Grade/5b3df76e50bf4d26b4c0499267e42c59
-[codacy-url]: https://app.codacy.com/gh/jtyrrell2/cosc345/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade
+[codacy-static-shield]: https://app.codacy.com/project/badge/Grade/5b3df76e50bf4d26b4c0499267e42c59
+[codacy-static-url]: https://app.codacy.com/gh/jtyrrell2/cosc345/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade
+
+[codacy-coverage-shield]: https://app.codacy.com/project/badge/Coverage/5b3df76e50bf4d26b4c0499267e42c59
+[codacy-coverage-url]: https://app.codacy.com/gh/jtyrrell2/cosc345/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_coverage
+
+
+
+
 [github-action-shield]: https://github.com/jesstyrrell/cosc345/actions/workflows/cmake-single-platform.yml/badge.svg
 [github-action-url]: https://github.com/jesstyrrell/cosc345/actions/workflows/cmake-single-platform.yml
 
 [assignmen-01-pdf-url]: https://github.com/jesstyrrell/cosc345/blob/master/_docs/Assignment01.pdf
 
-[![CMake Build and Test on Windows][github-action-shield]][github-action-url] [![Codacy Badge][codacy-shield]][codacy-url]
+[![CMake Build and Test on Windows][github-action-shield]][github-action-url] [![Codacy Badge][codacy-static-shield]][codacy-static-url] [![Codacy Badge][codacy-coverage-shield]][codacy-coverage-url]
 
 
 <p align="center">
