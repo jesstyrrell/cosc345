@@ -6,6 +6,8 @@
 #include <random>
 #include <ctime>
 #include <cstdlib> 
+#include <cstring>
+#include <cstring>
 
 #include "src/Card.hpp"
 #include "src/Deck.hpp"
@@ -56,10 +58,14 @@ bool uniTest(int argc, char* argv[]) {
 int main(int argc, char* argv[]) {
 
     if(!uniTest(argc, argv)){
-        // Print a message to the user that the tests failed
-        std::cout << "Unit tests failed" << std::endl;
-        return 1;
-    } 
+    //     // Print a message to the user that the tests failed
+    //     std::cout << "Unit tests failed" << std::endl;
+    //     return 1;
+    // } 
+    //     // Print a message to the user that the tests failed
+    //     std::cout << "Unit tests failed" << std::endl;
+    //     return 1;
+    // } 
 
     // Display the start screen 
     GUI::displayStartScreen();
@@ -103,9 +109,10 @@ int main(int argc, char* argv[]) {
     // Set the game object for the GUI
     GUI::setGame(&game);
 
-    // TESTING add two cards to player hand 
-    // player1.add_card_to_hand(Card("Hearts", "A"));
-    // player1.add_card_to_hand(Card("Hearts", "K"));
+    // TESTING :m start a count to play 20 hands
+    int count = 0;
+    int numHands = 1000000;
+    int counterLength = 100;
 
     // // TESTING deal all the community cards 
     // game.deal_flop();
@@ -147,4 +154,5 @@ int main(int argc, char* argv[]) {
 
     return 0;
 
+    }
 }

@@ -1,6 +1,21 @@
 
-<!-- PROJECT LOGO -->
-<br />
+[codacy-static-shield]: https://app.codacy.com/project/badge/Grade/5b3df76e50bf4d26b4c0499267e42c59
+[codacy-static-url]: https://app.codacy.com/gh/jtyrrell2/cosc345/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade
+
+[codacy-coverage-shield]: https://app.codacy.com/project/badge/Coverage/5b3df76e50bf4d26b4c0499267e42c59
+[codacy-coverage-url]: https://app.codacy.com/gh/jtyrrell2/cosc345/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_coverage
+
+
+
+
+[github-action-shield]: https://github.com/jesstyrrell/cosc345/actions/workflows/cmake-single-platform.yml/badge.svg
+[github-action-url]: https://github.com/jesstyrrell/cosc345/actions/workflows/cmake-single-platform.yml
+
+[assignmen-01-pdf-url]: https://github.com/jesstyrrell/cosc345/blob/master/_docs/Assignment01.pdf
+
+[![CMake Build and Test on Windows][github-action-shield]][github-action-url] [![Codacy Badge][codacy-static-shield]][codacy-static-url] [![Codacy Badge][codacy-coverage-shield]][codacy-coverage-url]
+
+
 <p align="center">
     <h1 align="center">Poker CLI</h1>
     <h6 align="center">July 2024 - October 2024</h6>
@@ -21,12 +36,16 @@ Recognising this tedious process, we came up with the idea of integrating our cl
 
 ## Built With
 
-* **Languages** [C++]()
+* **Languages** [C++](https://www.cplusplus.com/)
+* **Build Tool** [CMake](https://cmake.org/)
+* **Documentation** [Doxgen](https://www.doxygen.nl/index.html)
+
+
 <br>
 
 ## File Tree 
 - `_docs` - Contains all the documentation and assignments for the project
-  - [`_docs/Assignment01.md` - Link to Formal Project Report](./_docs/Assignment01.md)
+  - Formal project report can be found [here][assignmen-01-pdf-url]: `_docs/Assignment01.pdf`
 - `build` - Contains the compiled code 
 - `src` - Contains the source code for the project 
 - `main.cpp` - The main file for the project
@@ -63,8 +82,6 @@ cmake build
    <iframe class="clickup-embed" src="https://sharing.clickup.com/9016454981/g/h/8cprbu5-396/da09794ac7698a4" onwheel="" width="100%" height="700px" style="background: transparent; border: 1px solid #ccc;"></iframe>
 
 </details>
-
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/5b3df76e50bf4d26b4c0499267e42c59)](https://app.codacy.com/gh/jtyrrell2/cosc345/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
