@@ -33,3 +33,7 @@ jobs:
           project-token: ${{secrets.CODACY_PROJECT_TOKEN }}
           # Adjust the coverage-reports path to match your coverage output file
           coverage-reports: coverage.xml
+        run: |
+          echo "Running Codacy Coverage Reporter"
+          bash <(curl -Ls https://coverage.codacy.com/get.sh)
+
