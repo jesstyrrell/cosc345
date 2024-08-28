@@ -78,14 +78,25 @@ int main(int argc, char* argv[]) {
     // TODO: Implement a way to get the number of players from the user
 
     // The first player will always be the human player 
-    RandomPlayer player1 = RandomPlayer("Jess", 1000);
+    HumanPlayer player1 = HumanPlayer("Jess", 1000);
     RandomPlayer player2 = RandomPlayer("James", 1000);
     RandomPlayer player3 = RandomPlayer("Corban", 1000);
+    RandomPlayer player4 = RandomPlayer("Katie", 1000);
+    RandomPlayer player5 = RandomPlayer("Megan", 1000);
+    RandomPlayer player6 = RandomPlayer("Pee", 1000);
+    RandomPlayer player7 = RandomPlayer("Poo", 1000);
+    RandomPlayer player8 = RandomPlayer("Wee", 1000);
+
     // Create a vector of pointers 
     std::vector<Player*> playerPointers;
     playerPointers.push_back(&player1);
     playerPointers.push_back(&player2);
     playerPointers.push_back(&player3);
+    playerPointers.push_back(&player4);
+    playerPointers.push_back(&player5);
+    playerPointers.push_back(&player6);
+    playerPointers.push_back(&player7);
+    playerPointers.push_back(&player8);
 
     // Initiate a game with all the players 
     Game game = Game(playerPointers); // i swear you have to pass a pointer, but also its a list of two players

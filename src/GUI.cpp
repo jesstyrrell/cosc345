@@ -9,6 +9,7 @@ Game* GUI::game = nullptr;
 const Point GUI::PLAYER_CARD_POSITIONS[2] = {{92, 32}, {100, 32}};
 const Point GUI::COMMUNITY_CARD_POSITIONS[5] = {{80, 16}, {88, 16}, {96, 16}, {104, 16}, {112, 16}};
 const Point GUI::PLAYER_NAME_POSITIONS[8] = {{100, 39}, {50,32}, {28, 19}, {50, 3}, {100, 2}, {150, 3}, {171, 19}, {150,32}};
+const Point GUI::PLAYER_CURRENT_BETS[8] = {{100, 29}, {58,27}, {46, 19}, {58, 10}, {100, 8}, {142, 10}, {154, 19}, {142,27}};
 
 void GUI::setGame(Game* game) {
     GUI::game = game;
@@ -355,6 +356,9 @@ string getCardString(Card& card){
 }
 
 void GUI::displayGameState(){
+    Game game = getGame();
+    vector<Player*> players = game.getPlayers();
+    vector<Card> communityCards = game.getCommunityCards();
 
     // clear screen 
     clearScreen();
@@ -367,9 +371,9 @@ void GUI::displayGameState(){
 
     string tableContent = getFileContents(tablePath);
 
-    if(getGame().getPlayers()[0]->get_hand().size() != 0){
-        string playerCardContent1 = getCardString(getGame().getPlayers()[0]->get_hand()[0]);
-        string playerCardContent2 = getCardString(getGame().getPlayers()[0]->get_hand()[1]);
+    if(players[0]->get_hand().size() != 0){
+        string playerCardContent1 = getCardString(players[0]->get_hand()[0]);
+        string playerCardContent2 = getCardString(players[0]->get_hand()[1]);
 
         // Add the card to the table content
         tableContent = addString(tableContent, playerCardContent1, PLAYER_CARD_POSITIONS[0].x, PLAYER_CARD_POSITIONS[0].y);
@@ -377,31 +381,27 @@ void GUI::displayGameState(){
     } else {
     // Show that they have folded 
     }
-    // Make a list of the current community cards
-    std::vector<Card> communityCards = getGame().getCommunityCards();
+  
     
     for(int i = 0; i < communityCards.size(); i++){
         string cardContent = getCardString(communityCards[i]);
         tableContent = addString(tableContent, cardContent, COMMUNITY_CARD_POSITIONS[i].x, COMMUNITY_CARD_POSITIONS[i].y);
     }
 
-    tableContent = addString(tableContent, "Pot: " + std::to_string(getGame().getPot()), 99 - (std::to_string(getGame().getPot()).length() + 5)/2, 14);
+    tableContent = addString(tableContent, "Pot: " + std::to_string(game.getPot()), 99 - (std::to_string(game.getPot()).length() + 5)/2, 14);
 
-    int numPlayers = getGame().getPlayers().size();
+    int numPlayers = players.size();
     int seatStep = 8 / numPlayers;
 
     for(int i = 0; i < numPlayers; i++){
-        tableContent = addString(tableContent, getGame().getPlayers()[i]->get_name(), PLAYER_NAME_POSITIONS[i * seatStep].x - getGame().getPlayers()[i]->get_name().length()/2, PLAYER_NAME_POSITIONS[i * seatStep].y);
-        tableContent = addString(tableContent, "Stack: " + std::to_string(getGame().getPlayers()[i]->get_stack()), PLAYER_NAME_POSITIONS[i * seatStep].x -(7 + std::to_string(getGame().getPlayers()[i]->get_stack()).length())/2, PLAYER_NAME_POSITIONS[i * seatStep].y + 2);
+        tableContent = addString(tableContent, players[i]->get_name(), PLAYER_NAME_POSITIONS[i * seatStep].x - players[i]->get_name().length()/2, PLAYER_NAME_POSITIONS[i * seatStep].y);
+        tableContent = addString(tableContent, "Stack: " + std::to_string(players[i]->get_stack()), PLAYER_NAME_POSITIONS[i * seatStep].x -((7 + std::to_string(players[i]->get_stack()).length() )/2), PLAYER_NAME_POSITIONS[i * seatStep].y + 2);
+        if(players[i]->get_current_bet() != 0){
+            tableContent = addString(tableContent, "Bet: " + std::to_string(players[i]->get_current_bet()), PLAYER_CURRENT_BETS[i * seatStep].x -((5 + std::to_string(players[i]->get_current_bet()).length() )/2), PLAYER_CURRENT_BETS[i * seatStep].y);
+        }
     }
 
     std::cout << tableContent << std::endl;
 
-    // If the pot is neg infinite while loop
-    if(getGame().getPot() < 0){
-        cout << "Pot is negative infinite" << endl;
-        while(true){
-            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-        }
-    }
+    
 }

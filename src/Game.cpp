@@ -111,6 +111,7 @@ int Game::makeMoveForUser(const std::string& move, Player* player, int playerInd
         }
         case Move::FOLD: {
             player->clear_hand();
+            player->reset_current_bet();
             return -1;  // Used to remove the player from the hand 
         }
     }
@@ -376,7 +377,7 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
     // TESTING: display game state 
     GUI::displayGameState();
     // sleep for 1 second 
-    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 
     int currentPlayer;
     
@@ -393,7 +394,6 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
 
     // Loop for the betting round 
     while(true) {
-
         // End the betting round if there is only one player left in the game
         if (count(inGame.begin(), inGame.end(), true) == 1) {
             return true;
@@ -401,6 +401,7 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
 
         // If the player is still in the game
         if (inGame[currentPlayer]) {
+        
             Player* player = this->getPlayers()[currentPlayer];
 
             // TODO: make vars for stack size, current bet etc 
@@ -427,6 +428,8 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
                 largestBet = betSize;
                 largestBetPlayer = this->getPlayers()[currentPlayer];
             }
+             GUI::displayGameState();
+             std::this_thread::sleep_for(std::chrono::milliseconds(2000));
         }
 
         // Move to the next player
