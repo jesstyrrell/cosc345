@@ -66,7 +66,6 @@ int main(int argc, char* argv[]) {
     // Display the start screen 
     GUI::displayStartScreen();
 
-    // TODO: Implement a way for the user to start a game or quit
     int menuChoice = GUI::displayMenu();
 
 
@@ -105,28 +104,17 @@ int main(int argc, char* argv[]) {
     // Set the game object for the GUI
     GUI::setGame(&game);
 
-    // TESTING :m start a count to play 20 hands
-    int count = 0;
-
     // display the game state
     GUI::displayGameState();
     // Start a game loop 
-   while(count < 100){
-        count++;
-        //Clear the screen
-        // GUI::clearScreen();
+   while(true){
         // Play a hand
         game.playHand();
+        // Check if the player wants to play another hand
         if (playerPointers[0]->endOfHand() != 1) {
             break;
         }
-        // TESTING: Display stack sizes of all players
-        // for (Player* player : playerPointers) {
-        //     std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
-        // }
-        // TODO: Implement a way to ask the user if they want to play another hand or quit
 
-  //    break;
     }
 
     // Display the end message
