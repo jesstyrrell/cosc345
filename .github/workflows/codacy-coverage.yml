@@ -30,14 +30,14 @@ jobs:
       - name: Run Codacy Coverage Reporter Action
         uses: codacy/codacy-coverage-reporter-action@v1
         with:
-          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          project-token: ${{secrets.CODACY_PROJECT_TOKEN }}
           # Adjust the coverage-reports path to match your coverage output file
-          coverage-reports: coverage.xml
+          coverage-reports: lcov.info
 
       - name: Run Codacy Coverage Reporter Script
         env:
-          CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          CODACY_PROJECT_TOKEN: ${{secrets.CODACY_PROJECT_TOKEN }}
         run: |
           echo "Running Codacy Coverage Reporter"
-          bash <(curl -Ls https://coverage.codacy.com/get.sh)
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r lcov.info
 
