@@ -8,6 +8,11 @@ Player::Player(const std::string& name, int stack) {
 }
 
 void Player::bet(int amount) {
+    if(amount > this->stack + this->current_bet) {
+        cout << "You don't have enough chips to bet that amount. Betting all in." << endl;
+        cout << amount << endl;
+        while(true){}
+    }
     this->stack -= amount - this->current_bet;
     this->current_bet = amount;
 }

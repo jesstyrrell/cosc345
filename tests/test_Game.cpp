@@ -31,7 +31,7 @@ class TestGame {
             Player *player3 = new Player("James", 1000);
             game->add_player(player3);
 
-            assert(game->get_players().size() == 3 && "Player was not added");
+            assert(game->getPlayers().size() == 3 && "Player was not added");
             tareDown();
         }
 
@@ -40,7 +40,7 @@ class TestGame {
             game->deal_hands();
 
             // Asserting each player has 2 cards in hand
-            for (Player *player : game->get_players()) {
+            for (Player *player : game->getPlayers()) {
                 assert(player->get_hand().size() == 2 && "Player does not have 2 cards in hand");
             }
 
@@ -94,9 +94,9 @@ class TestGame {
         //     tareDown();
         // }
 
-        // void test_get_players() {
+        // void test_getPlayers() {
         //     setUp();
-        //     vector<Player*> players = game->get_players();
+        //     vector<Player*> players = game->getPlayers();
         //     assert(players.size() == 2 && "Game does not have 2 players");
 
         //     Player *player1 = players[0];
@@ -194,7 +194,7 @@ class TestGame {
             // test_deal_flop();
             // test_deal_turn();
             // test_deal_river();
-            // test_get_players();
+            // test_getPlayers();
             // test_get_community_cards();
             // test_get_deck();
             // test_playHand();

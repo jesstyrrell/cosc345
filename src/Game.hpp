@@ -17,15 +17,16 @@ class Game {
     private:
         Deck deck;
         vector<Player*> players;
-        vector<Card> community_cards;
+        vector<Card> community_cards = {};
         vector<int> currentBets;
 
         const int BIG_BLIND = 2;
         const int SMALL_BLIND = 1;
-        const int STARTING_STACK = 100000000;
+        const int STARTING_STACK = 1000;
         int pot = 0;
         int button = 0; 
         int removedPlayerCount = 0;
+        bool atShowdown = false;
 
         Stage currentStage = PREFLOP;
         
@@ -45,9 +46,14 @@ class Game {
         void deal_turn();
         void deal_river();
 
+        int getPot();
+        int getButton();
+        bool getShowdown();
+
         void awardPot(vector<Player*> winners);
 
-        vector<Player*> get_players();
+        vector<Player*> getPlayers();
+        vector<Card> getCommunityCards();
 
         void resetPlayerBets();
         void resetPlayerHands();

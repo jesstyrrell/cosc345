@@ -57,21 +57,18 @@ bool uniTest(int argc, char* argv[]) {
 // A main method for testing the classes
 int main(int argc, char* argv[]) {
 
-    if(!uniTest(argc, argv)){
-    //     // Print a message to the user that the tests failed
-    //     std::cout << "Unit tests failed" << std::endl;
-    //     return 1;
-    // } 
-    //     // Print a message to the user that the tests failed
-    //     std::cout << "Unit tests failed" << std::endl;
-    //     return 1;
-    // } 
+    if (!uniTest(argc, argv)) {
+        // Print a message to the user that the tests failed
+        std::cout << "Unit tests failed" << std::endl;
+        return 1;
+    } 
 
     // Display the start screen 
     GUI::displayStartScreen();
 
     // TODO: Implement a way for the user to start a game or quit
     int menuChoice = GUI::displayMenu();
+
 
     if (menuChoice == 0) {
         GUI::displayEndMessage();
@@ -82,14 +79,15 @@ int main(int argc, char* argv[]) {
 
     // TODO: Implement a way to get the number of players from the user
 
-    RandomPlayer player1 = RandomPlayer("Jess", 100000000);
-    RandomPlayer player2 = RandomPlayer("James", 100000000);
-    RandomPlayer player3 = RandomPlayer("Corban", 100000000);
-    RandomPlayer player4 = RandomPlayer("Andrew", 100000000);
-    RandomPlayer player5 = RandomPlayer("Vaughn", 100000000);
-    RandomPlayer player6 = RandomPlayer("Dirty apple core bin", 100000000);
-    RandomPlayer player7 = RandomPlayer("Top G hummus", 100000000);
-    RandomPlayer player8 = RandomPlayer("Emily", 100000000);
+    // The first player will always be the human player 
+    HumanPlayer player1 = HumanPlayer("Jess", 1000);
+    RandomPlayer player2 = RandomPlayer("James", 1000);
+    RandomPlayer player3 = RandomPlayer("Corban", 1000);
+    RandomPlayer player4 = RandomPlayer("Katie", 1000);
+    RandomPlayer player5 = RandomPlayer("Megan", 1000);
+    RandomPlayer player6 = RandomPlayer("Loren", 1000);
+    RandomPlayer player7 = RandomPlayer("Poo", 1000);
+    RandomPlayer player8 = RandomPlayer("Wee", 1000);
 
     // Create a vector of pointers 
     std::vector<Player*> playerPointers;
@@ -107,41 +105,34 @@ int main(int argc, char* argv[]) {
     // Set the game object for the GUI
     GUI::setGame(&game);
 
-
     // TESTING :m start a count to play 20 hands
     int count = 0;
-    int numHands = 1000000;
-    int counterLength = 100;
-   
-    while(count < numHands){
+
+    // display the game state
+    GUI::displayGameState();
+    // Start a game loop 
+   while(count < 100){
         count++;
-
-        std::cout << "\033[2J\033[1;1H";
-
-        int frac = (double)count/numHands * counterLength;
-
-        // print frac 
-        // cout << frac << endl;
-
-        std::cout << std::string(counterLength, '-') << std::endl;
-        std::cout << std::string(frac, '*') << std::endl;
-        std::cout << std::string(counterLength, '-') << std::endl;
-
-
-        count ++;
-        // TESTING: print the count 
-        // std::cout << "Hand number: " << count << std::endl;
+        //Clear the screen
+        // GUI::clearScreen();
         // Play a hand
         game.playHand();
-        
+        if (playerPointers[0]->endOfHand() != 1) {
+            break;
+        }
+        // TESTING: Display stack sizes of all players
+        // for (Player* player : playerPointers) {
+        //     std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
+        // }
         // TODO: Implement a way to ask the user if they want to play another hand or quit
 
+  //    break;
     }
 
-    // TESTING: Display stack sizes of all players
-        for (Player* player : playerPointers) {
-            std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
-        }
+    // Display the end message
+     GUI::displayEndMessage();
 
-    }
+    return 0;
+
 }
+

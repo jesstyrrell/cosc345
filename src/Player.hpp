@@ -34,5 +34,6 @@ class Player {
         // virtual methods to overide in human player and AI player
         virtual std::string getMove(bool canCheck, bool canRaise, bool canFold, bool canCall) = 0;
         virtual int getBetSizing(int minBet, int maxBet) = 0;
+        virtual int endOfHand() = 0;
 
 };

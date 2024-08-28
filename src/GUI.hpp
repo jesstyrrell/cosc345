@@ -12,12 +12,22 @@ class Game;
 
 using namespace std; 
 
+struct Point{
+    int x;
+    int y;
+};
+
 class GUI {
     private:
         // Pointer to the game object used for getting game state information
         static Game* game;
 
     public: 
+        static const Point PLAYER_CARD_POSITIONS[8][2];
+        static const Point COMMUNITY_CARD_POSITIONS[5];
+        static const Point PLAYER_NAME_POSITIONS[8];
+        static const Point PLAYER_CURRENT_BETS[8];
+        static const Point PLAYER_BUTTON_POSITIONS[8];
 
         /**
          * Set the game object for the GUI
@@ -48,12 +58,11 @@ class GUI {
         // Methods performed on the game
         static void displayStartScreen();
         static void displayEndMessage();
-        static void displayWinner(Player* player);
+        //static void displayWinner(Player* player);
 
         
         static int displayMenu();
+        static int endOfRoundMenu();
         static void displayGameState();
-
-        static void displayPot(int pot);
-
+        static void displayPlayerMove(Player* player, string move, int size);
 }; 

@@ -44,8 +44,24 @@ void Game::deal_river() {
     community_cards.push_back(deck.deal()); // Deal 1 card for the river
 }
 
-std::vector<Player*> Game::get_players() {
+std::vector<Player*> Game::getPlayers() {
     return players;
+}
+
+std::vector<Card> Game::getCommunityCards() {
+    return community_cards;
+}
+
+int Game::getPot() {
+    return pot;
+}
+
+int Game::getButton() {
+    return button;
+}
+
+bool Game::getShowdown() {
+    return atShowdown;
 }
 
 /**
@@ -80,25 +96,34 @@ int Game::makeMoveForUser(const std::string& move, Player* player, int playerInd
         case Move::CALL: {
             int callAmount = largestBet;
             // Check the call amount is less than the player's stack
-            if (callAmount > player->get_stack()) {
+            if (callAmount > player->get_stack() + player->get_current_bet()) {
                 callAmount = player->get_stack() + player->get_current_bet();
             }
             
             this->pot += callAmount - player->get_current_bet();
+
+            
+
             player->bet(callAmount);
+            GUI::displayPlayerMove(player, "Call", -1);
             return largestBet;
         }
         case Move::RAISE: {
             int raiseAmount = player->getBetSizing(largestBet+BIG_BLIND, player->get_stack() + player->get_current_bet());
             this->pot += raiseAmount - player->get_current_bet();
+        
             player->bet(raiseAmount);
+            GUI::displayPlayerMove(player, "Raise", raiseAmount);
             return raiseAmount;
         }
         case Move::CHECK: {
+            GUI::displayPlayerMove(player, "Check", -1);
             return player->get_current_bet();
         }
         case Move::FOLD: {
             player->clear_hand();
+            player->reset_current_bet();
+            GUI::displayPlayerMove(player, "Fold", -1);
             return -1;  // Used to remove the player from the hand 
         }
     }
@@ -129,7 +154,7 @@ bool Game::test_game() {
 
     // Checking deal_hand
     game.deal_hands();
-    for (Player* player : game.get_players()) {
+    for (Player* player : game.getPlayers()) {
         if (player->get_hand().size() != 2) {
             std::cout << "Player does not have 2 cards in hand" << std::endl;
             return false;
@@ -173,16 +198,16 @@ bool Game::test_game() {
         return false;
     }
 
-    // Checking get_players
-    if (game.get_players().size() != 2) {
+    // Checking getPlayers
+    if (game.getPlayers().size() != 2) {
         std::cout << "Game does not have 3 players" << std::endl;
         return false;
     }
-    if (game.get_players()[0]->get_name() != "Jess") {
+    if (game.getPlayers()[0]->get_name() != "Jess") {
         std::cout << "Player 1 is not Jess" << std::endl;
         return false;
     }
-    if (game.get_players()[1]->get_name() != "James") {
+    if (game.getPlayers()[1]->get_name() != "James") {
         std::cout << "Player 2 is not James" << std::endl;
         return false;
     }
@@ -190,13 +215,13 @@ bool Game::test_game() {
     // Checking add_player
     HumanPlayer player3 = HumanPlayer("Corban", 1000);
     game.add_player(&player3);
-    if (game.get_players().size() != 3) {
+    if (game.getPlayers().size() != 3) {
         std::cout << "Game does not have 3 players" << std::endl;
         return false;
     }
 
     // Free memory
-    // for (Player* player : game.get_players()) {
+    // for (Player* player : game.getPlayers()) {
     //     delete player;
     // }
 
@@ -259,14 +284,14 @@ void Game::playHand() {
     this->deal();
 
     // Store the number of players in the hand 
-    int numPlayers = this->get_players().size();
+    int numPlayers = this->getPlayers().size();
 
     // A vector of booleans corresponding to the players in the game - keep track of who is still in the hand
     vector<bool> inGame = vector<bool>(numPlayers, true);
  
     // Get the small blind and big blind players
-    Player* smallBlindPlayer = this->get_players()[(button + 1) % numPlayers];
-    Player* bigBlindPlayer = this->get_players()[(button + 2) % numPlayers];
+    Player* smallBlindPlayer = this->getPlayers()[(button + 1) % numPlayers];
+    Player* bigBlindPlayer = this->getPlayers()[(button + 2) % numPlayers];
 
     // Extract blinds from the players and add them to the pot
     this->addBlindsToPot(bigBlindPlayer, smallBlindPlayer);
@@ -278,7 +303,7 @@ void Game::playHand() {
     // A loop for the 4 possible betting rounds
     for(int i = 0; i < 4; i ++){
         if(this->bettingRound(inGame, largestBet, numPlayers)){
-            // winner = this->get_final_winner(inGame);
+            resetPlayerBets();
             break;
         }
         if(i != 3){
@@ -286,16 +311,24 @@ void Game::playHand() {
         }
         
         largestBet = 0;
-        //GUI::displayCommunityCards(community_cards);
         resetPlayerBets();
     }
 
-    vector<Player*> winners = this->getWinner(this->get_players(), this->community_cards, inGame);
+    vector<Player*> winners = this->getWinner(this->getPlayers(), this->community_cards, inGame);
 
     //GUI::displayCommunityCards(community_cards);
 
+    atShowdown = count(inGame.begin(), inGame.end(), true) > 1;
+    GUI::displayGameState();
+    // sleep for 1 second 
+    std::this_thread::sleep_for(std::chrono::milliseconds(2000));
     // Award the pot to the winner/s
     this->awardPot(winners);
+    GUI::displayGameState();
+    // sleep for 1 second 
+    std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+
+    atShowdown = false;
     // Move the button 
     this->button = (this->button + 1) % numPlayers;
     // Reset all hands 
@@ -309,7 +342,7 @@ void Game::playHand() {
 
     // TESTING: check that the sum of all player stacks is the same as the starting stack
     int totalStack = 0;
-    for (Player* player : this->get_players()) {
+    for (Player* player : this->getPlayers()) {
         totalStack += player->get_stack();
         
         if(player->get_stack() <= 0){
@@ -319,11 +352,11 @@ void Game::playHand() {
             this->players.erase(remove(players.begin(), players.end(), player), players.end());
             this->removedPlayerCount++;
             // Print all the names of the players in the game
-            for (Player* player : this->get_players()) {
+            for (Player* player : this->getPlayers()) {
                 cout << player->get_name() << endl;
             }
             // print the length of the players vector
-            cout << "Length of players vector: " << this->get_players().size() << endl;
+            cout << "Length of players vector: " << this->getPlayers().size() << endl;
             // while(true){}
 
         }
@@ -333,7 +366,7 @@ void Game::playHand() {
         cout << "Total stack is not " << totalChipsInGame << endl;
         cout << "Total stack is " << totalStack << endl;
         // print the stacks of all players
-        for (Player* player : this->get_players()) {
+        for (Player* player : this->getPlayers()) {
             cout << player->get_name() << "'s stack: " << player->get_stack() << endl;
         }
         while(true){}
@@ -348,7 +381,7 @@ void Game::playHand() {
  * @return Player* - The final winner of the hand
  */
 Player* Game::get_final_winner(vector<bool>& inGame) {
-    Player *winner = this->get_players()[find(inGame.begin(), inGame.end(), true) - inGame.begin()];  
+    Player *winner = this->getPlayers()[find(inGame.begin(), inGame.end(), true) - inGame.begin()];  
     return winner;
 }
 
@@ -362,6 +395,11 @@ Player* Game::get_final_winner(vector<bool>& inGame) {
  * @return bool - whether the entire hand should be ended
  */
 bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
+    // TESTING: display game state 
+    GUI::displayGameState();
+    // sleep for 1 second 
+    std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+
     int currentPlayer;
     
     if(currentStage == Stage::FLOP){   // UTG is first to act if pre-flop
@@ -373,10 +411,11 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
         }
     }
 
-    Player* largestBetPlayer = this->get_players()[currentPlayer];
+    Player* largestBetPlayer = this->getPlayers()[currentPlayer];
 
     // Loop for the betting round 
     while(true) {
+        GUI::displayGameState();
 
         // End the betting round if there is only one player left in the game
         if (count(inGame.begin(), inGame.end(), true) == 1) {
@@ -385,52 +424,50 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
 
         // If the player is still in the game
         if (inGame[currentPlayer]) {
-            Player* player = this->get_players()[currentPlayer];
-            // GUI::displayPlayerHand(player);
-           //  GUI::displayPlayerStack(player);
-            // GUI::displayPot(this->pot);
-            //TESTING:: print the current bet of the player
-            // cout << "Current bet: " << player->get_current_bet() << endl;
-            // Check if the player can perform each action
-            bool canCheck = largestBet == this->get_players()[currentPlayer]->get_current_bet();
-            bool canRaise = this->get_players()[currentPlayer]->get_stack() > largestBet;
+        
+            Player* player = this->getPlayers()[currentPlayer];
+
+            // TODO: make vars for stack size, current bet etc 
+            bool canCheck = (largestBet == this->getPlayers()[currentPlayer]->get_current_bet()) || (this->getPlayers()[currentPlayer]->get_stack() == 0);
+            bool canRaise = this->getPlayers()[currentPlayer]->get_stack() + this->getPlayers()[currentPlayer]->get_current_bet() > largestBet;
             // A player can only fold or call if they are not the largest better 
-            bool canFold = this->get_players()[currentPlayer]->get_current_bet() != largestBet;
-            bool canCall = canFold ;
+            bool canFold = this->getPlayers()[currentPlayer]->get_current_bet() != largestBet && this->getPlayers()[currentPlayer]->get_stack() > 0;
+            bool canCall = canFold;
             // Get the player's move
             string move = player->getMove(canCheck, canRaise, canFold, canCall);
 
             // Perform the move for the player
-            int betSize = makeMoveForUser(move, this->get_players()[currentPlayer], currentPlayer, largestBet);
+
+            int betSize = makeMoveForUser(move, this->getPlayers()[currentPlayer], currentPlayer, largestBet);
+            std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 
             // If the player has folded, update the inGame vector
             if (betSize == -1) {
                 inGame[currentPlayer] = false;
                 continue;
             }
-            
-            // Update the current bet for the player
-            // get_players()[currentPlayer]->bet(betSize);
 
             // Update the largest bet if the player has bet more than the current largest bet
             if (betSize > largestBet) {
                 largestBet = betSize;
-                largestBetPlayer = this->get_players()[currentPlayer];
+                largestBetPlayer = this->getPlayers()[currentPlayer];
             }
+             GUI::displayGameState();
+             std::this_thread::sleep_for(std::chrono::milliseconds(2000));
         }
 
         // Move to the next player
         currentPlayer = (currentPlayer + 1) % numPlayers;
 
         // If we have looped back to the player who made the largest bet, break
-        if (this->get_players()[currentPlayer] == largestBetPlayer) {
+        if (this->getPlayers()[currentPlayer] == largestBetPlayer) {
             return false;
         }
 
         // Check if the stack size of all players in the game is 0 
         bool allPlayersStacksZero = true;
         for(int i = 0; i < numPlayers; i++){
-            if(inGame[i] && this->get_players()[i]->get_stack() > 0){
+            if(inGame[i] && this->getPlayers()[i]->get_stack() > 0){
                 allPlayersStacksZero = false;
                 break;
             }
@@ -466,14 +503,14 @@ Move Game::getCurrentMove(std::string move) {
 }
 
 void Game::resetPlayerBets() {
-    for (Player* player : this->get_players()) {
+    for (Player* player : this->getPlayers()) {
         player->reset_current_bet();
     }
     
 }
 
 void Game::resetPlayerHands(){
-    for (Player* player : this->get_players()) {
+    for (Player* player : this->getPlayers()) {
         player->clear_hand();
     }
 }

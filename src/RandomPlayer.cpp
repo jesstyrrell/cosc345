@@ -43,5 +43,9 @@ public:
         // std::cout << min(minBet*(count+1), maxBet) << std::endl;
         return min(minBet*(count+1), maxBet);
     }
+
+    int endOfHand() {
+        return 1;
+    }
     
 };
