@@ -376,7 +376,7 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
     // TESTING: display game state 
     GUI::displayGameState();
     // sleep for 1 second 
-    std::this_thread::sleep_for(std::chrono::milliseconds(10));
+    std::this_thread::sleep_for(std::chrono::milliseconds(100));
 
     int currentPlayer;
     
@@ -393,7 +393,6 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
 
     // Loop for the betting round 
     while(true) {
-        cout << "*" << endl;
 
         // End the betting round if there is only one player left in the game
         if (count(inGame.begin(), inGame.end(), true) == 1) {
@@ -403,13 +402,9 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
         // If the player is still in the game
         if (inGame[currentPlayer]) {
             Player* player = this->getPlayers()[currentPlayer];
-            // GUI::displayPlayerHand(player);
-           //  GUI::displayPlayerStack(player);
-            // GUI::displayPot(this->pot);
-            //TESTING:: print the current bet of the player
-            // cout << "Current bet: " << player->get_current_bet() << endl;
-            // Check if the player can perform each action
-            bool canCheck = (largestBet == this->getPlayers()[currentPlayer]->get_current_bet());
+
+            // TODO: make vars for stack size, current bet etc 
+            bool canCheck = (largestBet == this->getPlayers()[currentPlayer]->get_current_bet()) || (this->getPlayers()[currentPlayer]->get_stack() == 0);
             bool canRaise = this->getPlayers()[currentPlayer]->get_stack() + this->getPlayers()[currentPlayer]->get_current_bet() > largestBet;
             // A player can only fold or call if they are not the largest better 
             bool canFold = this->getPlayers()[currentPlayer]->get_current_bet() != largestBet && this->getPlayers()[currentPlayer]->get_stack() > 0;
@@ -418,13 +413,8 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
             string move = player->getMove(canCheck, canRaise, canFold, canCall);
 
             // Perform the move for the player
-            // print largest bet 
-            cout << "Largest bet: " << largestBet << endl;
-            cout << "Player stack: " << player->get_stack() << endl;
-            cout << "Player current bet: " << player->get_current_bet() << endl;
 
             int betSize = makeMoveForUser(move, this->getPlayers()[currentPlayer], currentPlayer, largestBet);
-            cout << "Bet size: " << betSize << endl;
 
             // If the player has folded, update the inGame vector
             if (betSize == -1) {

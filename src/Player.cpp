@@ -12,7 +12,6 @@ void Player::bet(int amount) {
         cout << "You don't have enough chips to bet that amount. Betting all in." << endl;
         cout << amount << endl;
         while(true){}
-        // amount = this->stack;
     }
     this->stack -= amount - this->current_bet;
     this->current_bet = amount;

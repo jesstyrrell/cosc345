@@ -356,52 +356,52 @@ string getCardString(Card& card){
 
 void GUI::displayGameState(){
 
-    // // clear screen 
-    // clearScreen();
-    // // TODO: Implement this method, will be called as each hand progresses and display 
-    // // table, chips, cards, stack sizes, players names, etc.
+    // clear screen 
+    clearScreen();
+    // TODO: Implement this method, will be called as each hand progresses and display 
+    // table, chips, cards, stack sizes, players names, etc.
 
-    // // Get the contents of the table.txt file and print it to the terminal
-    // string startPath = getFilePathStart();
-    // string tablePath = startPath + "/images/table.txt";
+    // Get the contents of the table.txt file and print it to the terminal
+    string startPath = getFilePathStart();
+    string tablePath = startPath + "/images/table.txt";
 
-    // string tableContent = getFileContents(tablePath);
+    string tableContent = getFileContents(tablePath);
 
-    // if(getGame().getPlayers()[0]->get_hand().size() != 0){
-    //     string playerCardContent1 = getCardString(getGame().getPlayers()[0]->get_hand()[0]);
-    //     string playerCardContent2 = getCardString(getGame().getPlayers()[0]->get_hand()[1]);
+    if(getGame().getPlayers()[0]->get_hand().size() != 0){
+        string playerCardContent1 = getCardString(getGame().getPlayers()[0]->get_hand()[0]);
+        string playerCardContent2 = getCardString(getGame().getPlayers()[0]->get_hand()[1]);
 
-    //     // Add the card to the table content
-    //     tableContent = addString(tableContent, playerCardContent1, PLAYER_CARD_POSITIONS[0].x, PLAYER_CARD_POSITIONS[0].y);
-    //     tableContent = addString(tableContent, playerCardContent2, PLAYER_CARD_POSITIONS[1].x, PLAYER_CARD_POSITIONS[1].y);
-    // } else {
-    // // Show that they have folded 
-    // }
-    // // Make a list of the current community cards
-    // std::vector<Card> communityCards = getGame().getCommunityCards();
+        // Add the card to the table content
+        tableContent = addString(tableContent, playerCardContent1, PLAYER_CARD_POSITIONS[0].x, PLAYER_CARD_POSITIONS[0].y);
+        tableContent = addString(tableContent, playerCardContent2, PLAYER_CARD_POSITIONS[1].x, PLAYER_CARD_POSITIONS[1].y);
+    } else {
+    // Show that they have folded 
+    }
+    // Make a list of the current community cards
+    std::vector<Card> communityCards = getGame().getCommunityCards();
     
-    // for(int i = 0; i < communityCards.size(); i++){
-    //     string cardContent = getCardString(communityCards[i]);
-    //     tableContent = addString(tableContent, cardContent, COMMUNITY_CARD_POSITIONS[i].x, COMMUNITY_CARD_POSITIONS[i].y);
-    // }
+    for(int i = 0; i < communityCards.size(); i++){
+        string cardContent = getCardString(communityCards[i]);
+        tableContent = addString(tableContent, cardContent, COMMUNITY_CARD_POSITIONS[i].x, COMMUNITY_CARD_POSITIONS[i].y);
+    }
 
-    // tableContent = addString(tableContent, "Pot: " + std::to_string(getGame().getPot()), 99 - (std::to_string(getGame().getPot()).length() + 5)/2, 14);
+    tableContent = addString(tableContent, "Pot: " + std::to_string(getGame().getPot()), 99 - (std::to_string(getGame().getPot()).length() + 5)/2, 14);
 
-    // int numPlayers = getGame().getPlayers().size();
-    // int seatStep = 8 / numPlayers;
+    int numPlayers = getGame().getPlayers().size();
+    int seatStep = 8 / numPlayers;
 
-    // for(int i = 0; i < numPlayers; i++){
-    //     tableContent = addString(tableContent, getGame().getPlayers()[i]->get_name(), PLAYER_NAME_POSITIONS[i * seatStep].x - getGame().getPlayers()[i]->get_name().length()/2, PLAYER_NAME_POSITIONS[i * seatStep].y);
-    //     tableContent = addString(tableContent, "Stack: " + std::to_string(getGame().getPlayers()[i]->get_stack()), PLAYER_NAME_POSITIONS[i * seatStep].x -(7 + std::to_string(getGame().getPlayers()[i]->get_stack()).length())/2, PLAYER_NAME_POSITIONS[i * seatStep].y + 2);
-    // }
+    for(int i = 0; i < numPlayers; i++){
+        tableContent = addString(tableContent, getGame().getPlayers()[i]->get_name(), PLAYER_NAME_POSITIONS[i * seatStep].x - getGame().getPlayers()[i]->get_name().length()/2, PLAYER_NAME_POSITIONS[i * seatStep].y);
+        tableContent = addString(tableContent, "Stack: " + std::to_string(getGame().getPlayers()[i]->get_stack()), PLAYER_NAME_POSITIONS[i * seatStep].x -(7 + std::to_string(getGame().getPlayers()[i]->get_stack()).length())/2, PLAYER_NAME_POSITIONS[i * seatStep].y + 2);
+    }
 
-    // std::cout << tableContent << std::endl;
+    std::cout << tableContent << std::endl;
 
-    // // If the pot is neg infinite while loop
-    // if(getGame().getPot() < 0){
-    //     cout << "Pot is negative infinite" << endl;
-    //     while(true){
-    //         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-    //     }
-    // }
+    // If the pot is neg infinite while loop
+    if(getGame().getPot() < 0){
+        cout << "Pot is negative infinite" << endl;
+        while(true){
+            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        }
+    }
 }
