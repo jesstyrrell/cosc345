@@ -58,13 +58,11 @@ class GUI {
         // Methods performed on the game
         static void displayStartScreen();
         static void displayEndMessage();
-        static void displayWinner(Player* player);
+        //static void displayWinner(Player* player);
 
         
         static int displayMenu();
         static int endOfRoundMenu();
         static void displayGameState();
-
-        static void displayPot(int pot);
-
+        static void displayPlayerMove(Player* player, string move, int size);
 }; 

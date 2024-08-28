@@ -450,3 +450,9 @@ void GUI::displayGameState(){
 
     
 }
+
+void GUI::displayPlayerMove(Player* player, string move, int size) {
+    displayGameState();
+    if (size != -1) { move += " " + to_string(size); }
+    cout << player->get_name() << ": " << move << endl;
+}

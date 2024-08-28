@@ -105,6 +105,7 @@ int Game::makeMoveForUser(const std::string& move, Player* player, int playerInd
             
 
             player->bet(callAmount);
+            GUI::displayPlayerMove(player, "Call", -1);
             return largestBet;
         }
         case Move::RAISE: {
@@ -112,14 +113,17 @@ int Game::makeMoveForUser(const std::string& move, Player* player, int playerInd
             this->pot += raiseAmount - player->get_current_bet();
         
             player->bet(raiseAmount);
+            GUI::displayPlayerMove(player, "Raise", raiseAmount);
             return raiseAmount;
         }
         case Move::CHECK: {
+            GUI::displayPlayerMove(player, "Check", -1);
             return player->get_current_bet();
         }
         case Move::FOLD: {
             player->clear_hand();
             player->reset_current_bet();
+            GUI::displayPlayerMove(player, "Fold", -1);
             return -1;  // Used to remove the player from the hand 
         }
     }
@@ -411,6 +415,8 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
 
     // Loop for the betting round 
     while(true) {
+        GUI::displayGameState();
+
         // End the betting round if there is only one player left in the game
         if (count(inGame.begin(), inGame.end(), true) == 1) {
             return true;
@@ -433,6 +439,7 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
             // Perform the move for the player
 
             int betSize = makeMoveForUser(move, this->getPlayers()[currentPlayer], currentPlayer, largestBet);
+            std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 
             // If the player has folded, update the inGame vector
             if (betSize == -1) {
