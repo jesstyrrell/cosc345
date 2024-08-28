@@ -57,6 +57,12 @@ bool uniTest(int argc, char* argv[]) {
 // A main method for testing the classes
 int main(int argc, char* argv[]) {
 
+    if (!uniTest(argc, argv)) {
+        // Print a message to the user that the tests failed
+        std::cout << "Unit tests failed" << std::endl;
+        return 1;
+    } 
+
     // Display the start screen 
     GUI::displayStartScreen();
 
