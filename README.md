@@ -4,6 +4,7 @@
 [github-action-shield]: https://github.com/jesstyrrell/cosc345/actions/workflows/cmake-single-platform.yml/badge.svg
 [github-action-url]: https://github.com/jesstyrrell/cosc345/actions/workflows/cmake-single-platform.yml
 
+[assignmen-01-pdf-url]: https://github.com/jesstyrrell/cosc345/blob/master/_docs/Assignment01.pdf
 
 [![CMake Build and Test on Windows][github-action-shield]][github-action-url] [![Codacy Badge][codacy-shield]][codacy-url]
 
@@ -37,7 +38,7 @@ Recognising this tedious process, we came up with the idea of integrating our cl
 
 ## File Tree 
 - `_docs` - Contains all the documentation and assignments for the project
-  - [`_docs/Assignment01.md` - Link to Formal Project Report](./_docs/Assignment01.md)
+  - Formal project report can be found [here][assignmen-01-pdf-url]: `_docs/Assignment01.pdf`
 - `build` - Contains the compiled code 
 - `src` - Contains the source code for the project 
 - `main.cpp` - The main file for the project
