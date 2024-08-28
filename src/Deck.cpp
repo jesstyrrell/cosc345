@@ -19,6 +19,21 @@ Deck::Deck() {
     }
 }
 
+// A method to restore the deck to its original state
+void Deck::reset() {
+    this->cards.clear();
+    string suits[] = {"Hearts", "Diamonds", "Clubs", "Spades"};
+    string ranks[] = {"2", "3", "4", "5", "6", "7", "8", "9", "10",
+                      "J", "Q", "K", "A"};
+    cards.clear();
+    for (const string& suit : suits) {
+        for (const string& rank : ranks) {
+            cards.push_back(Card(suit, rank));
+        }
+    }
+    shuffle();
+}
+
 vector<Card> Deck::get_cards() { 
     return cards;
 }
