@@ -92,11 +92,28 @@ int main(int argc, char* argv[]) {
     // Set the game object for the GUI
     GUI::setGame(&game);
 
+    // TESTING add two cards to player hand 
+    // player1.add_card_to_hand(Card("Hearts", "A"));
+    // player1.add_card_to_hand(Card("Hearts", "K"));
+
+    // // TESTING deal all the community cards 
+    // game.deal_flop();
+    // game.deal_turn();
+    // game.deal_river();
+
+    // Print all of the cards for testing 
+    for (Card card : player1.get_hand()) {
+        std::cout << card.get_rank() << " of " << card.get_suit() << std::endl;
+    }
+    for (Card card : game.getCommunityCards()) {
+        std::cout << card.get_rank() << " of " << card.get_suit() << std::endl;
+    }
+
     // display the game state
     GUI::displayGameState();
     // Start a game loop 
     int count = 0;
-   while(count < 10){
+   while(count < 100){
         count++;
         //Clear the screen
         // GUI::clearScreen();

@@ -25,6 +25,7 @@ class GUI {
     public: 
         static const Point PLAYER_CARD_POSITIONS[2];
         static const Point COMMUNITY_CARD_POSITIONS[5];
+        static const Point PLAYER_NAME_POSITIONS[8];
 
         /**
          * Set the game object for the GUI

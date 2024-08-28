@@ -22,7 +22,7 @@ class Game {
 
         const int BIG_BLIND = 2;
         const int SMALL_BLIND = 1;
-        const int STARTING_STACK = 100000000;
+        const int STARTING_STACK = 1000;
         int pot = 0;
         int button = 0; 
         int removedPlayerCount = 0;
@@ -44,6 +44,8 @@ class Game {
         void deal_flop();
         void deal_turn();
         void deal_river();
+
+        int getPot();
 
         void awardPot(vector<Player*> winners);
 
