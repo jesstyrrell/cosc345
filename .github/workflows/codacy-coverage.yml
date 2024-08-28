@@ -12,26 +12,32 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
-      - name: Install lcov
-        run: sudo apt-get install -y lcov
-      
-      # Example: Build with coverage flags (adjust according to your build system)
-      - name: Build with coverage
+      - name: Install dependencies
         run: |
-          g++ -fprofile-arcs -ftest-coverage -O0 -g *.cpp -o myprogram
+          sudo apt-get update
+          sudo apt-get install -y cmake lcov
       
-      # Example: Run tests (adjust according to your test framework)
+      - name: Configure CMake
+        run: |
+          mkdir build && cd build
+          cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="--coverage" ..
+      
+      - name: Build
+        working-directory: ${{github.workspace}}/build
+        run: cmake --build .
+      
       - name: Run tests
-        run: ./myprogram
+        working-directory: ${{github.workspace}}/build
+        run: ctest -C Debug --output-on-failure
       
-      # Generate LCOV report
       - name: Generate coverage report
+        working-directory: ${{github.workspace}}/build
         run: |
           lcov --capture --directory . --output-file coverage.info
           lcov --remove coverage.info '/usr/*' --output-file coverage.info
       
-      # Debug: List generated files
       - name: List files
+        working-directory: ${{github.workspace}}/build
         run: |
           ls -R
           find . -name "*.gcda" -o -name "*.gcno"
@@ -40,4 +46,4 @@ jobs:
         uses: codacy/codacy-coverage-reporter-action@v1
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports: coverage.info
+          coverage-reports: build/coverage.info
