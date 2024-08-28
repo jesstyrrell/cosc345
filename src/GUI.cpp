@@ -21,8 +21,12 @@ Game& GUI::getGame() {
  * Clear the terminal screen
  */
 void GUI::clearScreen() {
-    // Clear the screen
-    std::cout << "\033[2J\033[1;1H";
+    // Check the os of the user 
+    #ifdef _WIN32
+        system("cls");
+    #else
+        system("clear");
+    #endif
 }
 
 /**
@@ -362,16 +366,12 @@ void GUI::displayGameState(){
         // Add the card to the table content
         tableContent = addString(tableContent, playerCardContent1, PLAYER_CARD_POSITIONS[0].x, PLAYER_CARD_POSITIONS[0].y);
         tableContent = addString(tableContent, playerCardContent2, PLAYER_CARD_POSITIONS[1].x, PLAYER_CARD_POSITIONS[1].y);
+    } else {
+    // Show that they have folded 
     }
     // Make a list of the current community cards
     std::vector<Card> communityCards = getGame().getCommunityCards();
-
-    //  TESTING: print the community cards
-    for(Card card : communityCards){
-        std::cout << card.get_rank() << " of " << card.get_suit() << std::endl;
-    }
     
-
     for(int i = 0; i < communityCards.size(); i++){
         string cardContent = getCardString(communityCards[i]);
         tableContent = addString(tableContent, cardContent, COMMUNITY_CARD_POSITIONS[i].x, COMMUNITY_CARD_POSITIONS[i].y);
