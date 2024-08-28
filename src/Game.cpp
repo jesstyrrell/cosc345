@@ -56,6 +56,10 @@ int Game::getPot() {
     return pot;
 }
 
+int Game::getButton() {
+    return button;
+}
+
 /**
  * Award the pot to the winner of the hand
  * @param winner: Player* - The player object who won the hand

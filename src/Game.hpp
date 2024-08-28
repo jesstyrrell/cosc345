@@ -46,6 +46,7 @@ class Game {
         void deal_river();
 
         int getPot();
+        int getButton();
 
         void awardPot(vector<Player*> winners);
 
