@@ -265,10 +265,13 @@ int GUI::displayMenu() {
 }
 
 int GUI::endOfRoundMenu() {
-    std::cout << "1. Continue (press Enter)" << std::endl;
+    std::cout << "1. Continue (enter)" << std::endl;
     std::cout << "2. Quit (q)" << std::endl;
 
     std::string input;
+    
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    
     std::getline(std::cin, input);  // Read the entire line, allowing us to detect Enter
 
     while (input != "q" && input != "") {
