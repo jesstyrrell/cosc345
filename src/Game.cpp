@@ -52,9 +52,16 @@ std::vector<Player*> Game::get_players() {
  * Award the pot to the winner of the hand
  * @param winner: Player* - The player object who won the hand
  */
-void Game::awardPot(Player* winner, int numWinners) {
-    // TODO: Test that the pot is split correctly (if there are multiple winners)
-    winner->win(this->pot/numWinners);
+void Game::awardPot(vector<Player*> winners) {
+    // Loop through the winners and award the pot to each winner
+    for (Player* winner : winners) {
+        winner->win(pot / winners.size());
+    }
+    int remainder = pot % winners.size();
+    for(int i = 0; i < remainder; i++){
+        winners[i]->win(1);
+    }
+    // Reset the pot
     this->pot = 0;
 }
 
@@ -71,12 +78,13 @@ int Game::makeMoveForUser(const std::string& move, Player* player, int playerInd
     // Perform correct move on the player's object
     switch (currentMove) {
         case Move::CALL: {
-            int callAmount = largestBet - player->get_current_bet();
+            int callAmount = largestBet;
             // Check the call amount is less than the player's stack
             if (callAmount > player->get_stack()) {
-                callAmount = player->get_stack();
+                callAmount = player->get_stack() + player->get_current_bet();
             }
-            this->pot += callAmount;
+            
+            this->pot += callAmount - player->get_current_bet();
             player->bet(callAmount);
             return largestBet;
         }
@@ -255,7 +263,7 @@ void Game::playHand() {
 
     // A vector of booleans corresponding to the players in the game - keep track of who is still in the hand
     vector<bool> inGame = vector<bool>(numPlayers, true);
-
+ 
     // Get the small blind and big blind players
     Player* smallBlindPlayer = this->get_players()[(button + 1) % numPlayers];
     Player* bigBlindPlayer = this->get_players()[(button + 2) % numPlayers];
@@ -264,14 +272,13 @@ void Game::playHand() {
     this->addBlindsToPot(bigBlindPlayer, smallBlindPlayer);
 
     int largestBet = BIG_BLIND;
-    // Player *largestBetPlayer = bigBlindPlayer;
 
     Player* winner = nullptr;
 
     // A loop for the 4 possible betting rounds
     for(int i = 0; i < 4; i ++){
         if(this->bettingRound(inGame, largestBet, numPlayers)){
-            winner = this->get_final_winner(inGame);
+            // winner = this->get_final_winner(inGame);
             break;
         }
         if(i != 3){
@@ -279,47 +286,58 @@ void Game::playHand() {
         }
         
         largestBet = 0;
-        GUI::displayCommunityCards(community_cards);
+        //GUI::displayCommunityCards(community_cards);
         resetPlayerBets();
     }
-    
-    if(winner == nullptr){
 
-        vector<Player*> winners = this->getWinner(this->get_players(), this->community_cards, inGame);
+    vector<Player*> winners = this->getWinner(this->get_players(), this->community_cards, inGame);
 
-        // TESTING: print the type of winners[0]
+    //GUI::displayCommunityCards(community_cards);
 
-        // If the length of the winners is 1, award the pot to the winner
-        if (winners.size() == 1) {
-            this->awardPot(winners[0], 1);
-            // TODO: move printing to GUI
-            cout << winners[0]->get_name() << " won the hand \n" << endl;
-        } else {
-            int numWinners = winners.size();
-            // loop through the winners and award the pot to each winner
-            for (Player* eachWinner : winners) {
-                this->awardPot(eachWinner, numWinners);
-                // TODO: move printing to GUI
-                cout << eachWinner->get_name() << " won the hand \n" << endl;
-            }
-        } 
-    } else {
-        this->awardPot(winner, 1);
-        // TODO: move printing to GUI
-        cout << winner->get_name() << " won the hand \n" << endl;
-    }
-
-    // TESTING: print who won the hand 
-    
-
+    // Award the pot to the winner/s
+    this->awardPot(winners);
     // Move the button 
     this->button = (this->button + 1) % numPlayers;
     // Reset all hands 
     this->resetPlayerHands();
     // Reset the community cards
     this->resetCommunityCards();
+    // Reset the deck 
+    this->deck.reset();
     // Reset the game stage
     this->currentStage = PREFLOP;
+
+    // TESTING: check that the sum of all player stacks is the same as the starting stack
+    int totalStack = 0;
+    for (Player* player : this->get_players()) {
+        totalStack += player->get_stack();
+        
+        if(player->get_stack() <= 0){
+            cout << player->get_name() << "'s stack: " << player->get_stack() << endl;
+            cout << "Player stack too small, removing from game" << endl;
+            // Remove the player from the players vector
+            this->players.erase(remove(players.begin(), players.end(), player), players.end());
+            this->removedPlayerCount++;
+            // Print all the names of the players in the game
+            for (Player* player : this->get_players()) {
+                cout << player->get_name() << endl;
+            }
+            // print the length of the players vector
+            cout << "Length of players vector: " << this->get_players().size() << endl;
+            // while(true){}
+
+        }
+    }
+    int totalChipsInGame = STARTING_STACK*(this->removedPlayerCount + this->players.size());
+    if (totalStack != totalChipsInGame) {
+        cout << "Total stack is not " << totalChipsInGame << endl;
+        cout << "Total stack is " << totalStack << endl;
+        // print the stacks of all players
+        for (Player* player : this->get_players()) {
+            cout << player->get_name() << "'s stack: " << player->get_stack() << endl;
+        }
+        while(true){}
+    }
 
 
 }
@@ -368,14 +386,17 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
         // If the player is still in the game
         if (inGame[currentPlayer]) {
             Player* player = this->get_players()[currentPlayer];
-            GUI::displayPlayerHand(player);
-            GUI::displayPlayerStack(player);
+            // GUI::displayPlayerHand(player);
+           //  GUI::displayPlayerStack(player);
+            // GUI::displayPot(this->pot);
+            //TESTING:: print the current bet of the player
+            // cout << "Current bet: " << player->get_current_bet() << endl;
             // Check if the player can perform each action
             bool canCheck = largestBet == this->get_players()[currentPlayer]->get_current_bet();
             bool canRaise = this->get_players()[currentPlayer]->get_stack() > largestBet;
             // A player can only fold or call if they are not the largest better 
             bool canFold = this->get_players()[currentPlayer]->get_current_bet() != largestBet;
-            bool canCall = canFold;
+            bool canCall = canFold ;
             // Get the player's move
             string move = player->getMove(canCheck, canRaise, canFold, canCall);
 
@@ -389,7 +410,7 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
             }
             
             // Update the current bet for the player
-            get_players()[currentPlayer]->bet(betSize);
+            // get_players()[currentPlayer]->bet(betSize);
 
             // Update the largest bet if the player has bet more than the current largest bet
             if (betSize > largestBet) {
@@ -404,6 +425,18 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
         // If we have looped back to the player who made the largest bet, break
         if (this->get_players()[currentPlayer] == largestBetPlayer) {
             return false;
+        }
+
+        // Check if the stack size of all players in the game is 0 
+        bool allPlayersStacksZero = true;
+        for(int i = 0; i < numPlayers; i++){
+            if(inGame[i] && this->get_players()[i]->get_stack() > 0){
+                allPlayersStacksZero = false;
+                break;
+            }
+        }
+        if(allPlayersStacksZero){
+            return true;
         }
     }
 }
@@ -476,7 +509,7 @@ vector<Player*> Game::getWinner(vector<Player*> players, const vector<Card>& com
         if(winningIndex[i]){
             winners.push_back(playersInGame[i]);
             // print the name of the winner
-            cout << playersInGame[i]->get_name() << endl;
+            // cout << playersInGame[i]->get_name() << endl;
         }
     }
     return winners;
