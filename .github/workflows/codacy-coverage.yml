@@ -2,9 +2,9 @@ name: Codacy Coverage Reporter
 
 on:
   push:
-    branches: [ci/implement-codecov]
+    branches: [master]
   pull_request:
-    branches: [ci/implement-codecov]
+    branches: [master]
 
 jobs:
   codacy-coverage-reporter:
