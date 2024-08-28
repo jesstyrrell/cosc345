@@ -6,6 +6,7 @@
 #include <random>
 #include <ctime>
 #include <cstdlib> 
+#include <cstring>
 
 #include "src/Card.hpp"
 #include "src/Deck.hpp"
