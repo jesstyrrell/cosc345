@@ -1,5 +1,6 @@
 .vs
 .vscode
+.history
 build 
 CppProperties.json
 CMakeFiles

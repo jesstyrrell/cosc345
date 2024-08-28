@@ -57,16 +57,6 @@ bool uniTest(int argc, char* argv[]) {
 // A main method for testing the classes
 int main(int argc, char* argv[]) {
 
-    if(!uniTest(argc, argv)){
-    //     // Print a message to the user that the tests failed
-    //     std::cout << "Unit tests failed" << std::endl;
-    //     return 1;
-    // } 
-    //     // Print a message to the user that the tests failed
-    //     std::cout << "Unit tests failed" << std::endl;
-    //     return 1;
-    // } 
-
     // Display the start screen 
     GUI::displayStartScreen();
 
@@ -111,26 +101,10 @@ int main(int argc, char* argv[]) {
 
     // TESTING :m start a count to play 20 hands
     int count = 0;
-    int numHands = 1000000;
-    int counterLength = 100;
-
-    // // TESTING deal all the community cards 
-    // game.deal_flop();
-    // game.deal_turn();
-    // game.deal_river();
-
-    // Print all of the cards for testing 
-    for (Card card : player1.get_hand()) {
-        std::cout << card.get_rank() << " of " << card.get_suit() << std::endl;
-    }
-    for (Card card : game.getCommunityCards()) {
-        std::cout << card.get_rank() << " of " << card.get_suit() << std::endl;
-    }
 
     // display the game state
     GUI::displayGameState();
     // Start a game loop 
-    int count = 0;
    while(count < 100){
         count++;
         //Clear the screen
@@ -154,5 +128,5 @@ int main(int argc, char* argv[]) {
 
     return 0;
 
-    }
 }
+
