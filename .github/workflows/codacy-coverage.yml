@@ -27,12 +27,21 @@ jobs:
       #     coverage run -m pytest
       #     coverage xml
 
-      - name: Run Codacy Coverage Reporter Action
+      #Generate LCOV report
+      - name: Generate coverage report
+        run: |
+          lcov --capture --directory . --output-file coverage.info
+          lcov --remove coverage.info '/usr/*' --output-file coverage.info
+      
+      # Debug: List files to check if LCOV file exists
+      - name: List files
+        run: ls -R
+      
+      - name: Run Codacy Coverage Reporter
         uses: codacy/codacy-coverage-reporter-action@v1
         with:
-          project-token: ${{secrets.CODACY_PROJECT_TOKEN }}
-          # Adjust the coverage-reports path to match your coverage output file
-          coverage-reports: lcov.info
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          coverage-reports: coverage.info
 
       - name: Run Codacy Coverage Reporter Script
         env:
