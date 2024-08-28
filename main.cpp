@@ -7,6 +7,7 @@
 #include <ctime>
 #include <cstdlib> 
 #include <cstring>
+#include <cstring>
 
 #include "src/Card.hpp"
 #include "src/Deck.hpp"
@@ -61,6 +62,10 @@ int main(int argc, char* argv[]) {
     //     std::cout << "Unit tests failed" << std::endl;
     //     return 1;
     // } 
+    //     // Print a message to the user that the tests failed
+    //     std::cout << "Unit tests failed" << std::endl;
+    //     return 1;
+    // } 
 
     // Display the start screen 
     GUI::displayStartScreen();
@@ -86,6 +91,15 @@ int main(int argc, char* argv[]) {
     RandomPlayer player7 = RandomPlayer("Top G hummus", 100000000);
     RandomPlayer player8 = RandomPlayer("Emily", 100000000);
 
+    RandomPlayer player1 = RandomPlayer("Jess", 100000000);
+    RandomPlayer player2 = RandomPlayer("James", 100000000);
+    RandomPlayer player3 = RandomPlayer("Corban", 100000000);
+    RandomPlayer player4 = RandomPlayer("Andrew", 100000000);
+    RandomPlayer player5 = RandomPlayer("Vaughn", 100000000);
+    RandomPlayer player6 = RandomPlayer("Dirty apple core bin", 100000000);
+    RandomPlayer player7 = RandomPlayer("Top G hummus", 100000000);
+    RandomPlayer player8 = RandomPlayer("Emily", 100000000);
+
     // Create a vector of pointers 
     std::vector<Player*> playerPointers;
     playerPointers.push_back(&player1);
@@ -96,9 +110,16 @@ int main(int argc, char* argv[]) {
     playerPointers.push_back(&player6);
     playerPointers.push_back(&player7);
     playerPointers.push_back(&player8);
+    playerPointers.push_back(&player4);
+    playerPointers.push_back(&player5);
+    playerPointers.push_back(&player6);
+    playerPointers.push_back(&player7);
+    playerPointers.push_back(&player8);
 
     // Initiate a game with all the players 
     Game game = Game(playerPointers); // i swear you have to pass a pointer, but also its a list of two players
+    // Set the game object for the GUI
+    GUI::setGame(&game);
     // Set the game object for the GUI
     GUI::setGame(&game);
 
@@ -106,7 +127,29 @@ int main(int argc, char* argv[]) {
     int count = 0;
     int numHands = 1000000;
     int counterLength = 100;
+    // TESTING :m start a count to play 20 hands
+    int count = 0;
+    int numHands = 1000000;
+    int counterLength = 100;
     // Start a game loop 
+    while(count < numHands){
+        count++;
+
+        std::cout << "\033[2J\033[1;1H";
+
+        int frac = (double)count/numHands * counterLength;
+
+        // print frac 
+        // cout << frac << endl;
+
+        std::cout << std::string(counterLength, '-') << std::endl;
+        std::cout << std::string(frac, '*') << std::endl;
+        std::cout << std::string(counterLength, '-') << std::endl;
+
+
+        count ++;
+        // TESTING: print the count 
+        // std::cout << "Hand number: " << count << std::endl;
     while(count < numHands){
         count++;
 
@@ -138,5 +181,4 @@ int main(int argc, char* argv[]) {
         }
 
     }
-
 }
