@@ -60,6 +60,10 @@ int Game::getButton() {
     return button;
 }
 
+bool Game::getShowdown() {
+    return atShowdown;
+}
+
 /**
  * Award the pot to the winner of the hand
  * @param winner: Player* - The player object who won the hand
@@ -310,8 +314,17 @@ void Game::playHand() {
 
     //GUI::displayCommunityCards(community_cards);
 
+    atShowdown = count(inGame.begin(), inGame.end(), true) > 1;
+    GUI::displayGameState();
+    // sleep for 1 second 
+    std::this_thread::sleep_for(std::chrono::milliseconds(2000));
     // Award the pot to the winner/s
     this->awardPot(winners);
+    GUI::displayGameState();
+    // sleep for 1 second 
+    std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+
+    atShowdown = false;
     // Move the button 
     this->button = (this->button + 1) % numPlayers;
     // Reset all hands 

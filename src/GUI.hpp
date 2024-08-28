@@ -23,7 +23,7 @@ class GUI {
         static Game* game;
 
     public: 
-        static const Point PLAYER_CARD_POSITIONS[2];
+        static const Point PLAYER_CARD_POSITIONS[8][2];
         static const Point COMMUNITY_CARD_POSITIONS[5];
         static const Point PLAYER_NAME_POSITIONS[8];
         static const Point PLAYER_CURRENT_BETS[8];
@@ -62,6 +62,7 @@ class GUI {
 
         
         static int displayMenu();
+        static int endOfRoundMenu();
         static void displayGameState();
 
         static void displayPot(int pot);

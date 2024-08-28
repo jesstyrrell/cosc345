@@ -6,11 +6,20 @@
 // Define and initialize the static member variable
 Game* GUI::game = nullptr;
 
-const Point GUI::PLAYER_CARD_POSITIONS[2] = {{92, 32}, {100, 32}};
-const Point GUI::COMMUNITY_CARD_POSITIONS[5] = {{80, 16}, {88, 16}, {96, 16}, {104, 16}, {112, 16}};
-const Point GUI::PLAYER_NAME_POSITIONS[8] = {{100, 39}, {50,32}, {28, 19}, {50, 3}, {100, 2}, {150, 3}, {171, 19}, {150,32}};
-const Point GUI::PLAYER_CURRENT_BETS[8] = {{100, 29}, {58,27}, {46, 19}, {58, 10}, {100, 8}, {142, 10}, {154, 19}, {142,27}};
-const Point GUI::PLAYER_BUTTON_POSITIONS[8] = {{100, 39}, {50,32}, {28, 19}, {50, 3}, {100, 2}, {150, 3}, {171, 19}, {150,32}};
+const Point GUI::PLAYER_CARD_POSITIONS[8][2] = {
+    { {96, 39}, {104, 39} },
+    { {30, 37}, {38, 37} },
+    { {10, 24}, {18, 24} },
+    { {30, 8}, {38, 8} },
+    { {97, 2}, {105, 2} },
+    { {164, 8}, {172, 8} },
+    { {186, 24}, {194, 24} },
+    { {164, 37}, {172, 37} },
+};
+const Point GUI::COMMUNITY_CARD_POSITIONS[5] = { {84, 23}, {92, 23}, {100, 23}, {108, 23}, {116, 23} };
+const Point GUI::PLAYER_NAME_POSITIONS[8] = { {104, 46}, {54, 39}, {32, 26}, {54, 10}, {104, 9}, {154, 10}, {175, 26}, {154, 39} };
+const Point GUI::PLAYER_CURRENT_BETS[8] = { {104, 36}, {62, 34}, {50, 26}, {62, 17}, {104, 15}, {146, 17}, {158, 26}, {146, 34} };
+const Point GUI::PLAYER_BUTTON_POSITIONS[8] = { {112, 36}, {68, 36}, {50, 28}, {54, 18}, {94, 15}, {138, 15}, {158, 24}, {152, 32} };
 
 void GUI::setGame(Game* game) {
     GUI::game = game;
@@ -255,6 +264,24 @@ int GUI::displayMenu() {
     return 1;
 }
 
+int GUI::endOfRoundMenu() {
+    std::cout << "1. Continue (press Enter)" << std::endl;
+    std::cout << "2. Quit (q)" << std::endl;
+
+    std::string input;
+    std::getline(std::cin, input);  // Read the entire line, allowing us to detect Enter
+
+    while (input != "q" && input != "") {
+        std::cout << "Invalid input. Please enter a valid option: ";
+        std::getline(std::cin, input);  // Use getline to capture the next input
+    }
+
+    if (input == "q") {
+        return 0;
+    }
+    return 1;
+}
+
 
 void GUI::displayPlayerStack(Player* player) {
     std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
@@ -375,17 +402,6 @@ void GUI::displayGameState(){
 
     string buttonPath = startPath + "/images/button.txt";
     string buttonString = getFileContents(buttonPath);  
-
-    if(players[0]->get_hand().size() != 0){
-        string playerCardContent1 = getCardString(players[0]->get_hand()[0]);
-        string playerCardContent2 = getCardString(players[0]->get_hand()[1]);
-
-        // Add the card to the table content
-        tableContent = addString(tableContent, playerCardContent1, PLAYER_CARD_POSITIONS[0].x, PLAYER_CARD_POSITIONS[0].y);
-        tableContent = addString(tableContent, playerCardContent2, PLAYER_CARD_POSITIONS[1].x, PLAYER_CARD_POSITIONS[1].y);
-    } else {
-    // Show that they have folded 
-    }
   
     
     for(int i = 0; i < communityCards.size(); i++){
@@ -393,7 +409,7 @@ void GUI::displayGameState(){
         tableContent = addString(tableContent, cardContent, COMMUNITY_CARD_POSITIONS[i].x, COMMUNITY_CARD_POSITIONS[i].y);
     }
 
-    tableContent = addString(tableContent, "Pot: " + std::to_string(game.getPot()), 99 - (std::to_string(game.getPot()).length() + 5)/2, 14);
+    tableContent = addString(tableContent, "Pot: " + std::to_string(game.getPot()), 103 - (std::to_string(game.getPot()).length() + 5)/2, 21);
 
     int numPlayers = players.size();
     int seatStep = 8 / numPlayers;
@@ -401,13 +417,33 @@ void GUI::displayGameState(){
     for(int i = 0; i < numPlayers; i++){
         tableContent = addString(tableContent, players[i]->get_name(), PLAYER_NAME_POSITIONS[i * seatStep].x - players[i]->get_name().length()/2, PLAYER_NAME_POSITIONS[i * seatStep].y);
         tableContent = addString(tableContent, "Stack: " + std::to_string(players[i]->get_stack()), PLAYER_NAME_POSITIONS[i * seatStep].x -((7 + std::to_string(players[i]->get_stack()).length() )/2), PLAYER_NAME_POSITIONS[i * seatStep].y + 2);
-        // if(players[i]->get_current_bet() != 0){
+         if(players[i]->get_current_bet() != 0){
             tableContent = addString(tableContent, "Bet: " + std::to_string(players[i]->get_current_bet()), PLAYER_CURRENT_BETS[i * seatStep].x -((5 + std::to_string(players[i]->get_current_bet()).length() )/2), PLAYER_CURRENT_BETS[i * seatStep].y);
-        // }
+         }
 
-        // if(i == button){
+         if(i == button){
             tableContent = addString(tableContent, buttonString, PLAYER_BUTTON_POSITIONS[i * seatStep].x, PLAYER_BUTTON_POSITIONS[i * seatStep].y);
-        // }
+         }
+
+         if (players[i]->get_hand().size() != 0) {
+             string playerCardContent1;
+             string playerCardContent2;
+             if (i == 0 || game.getShowdown()) {
+                playerCardContent1 = getCardString(players[i]->get_hand()[0]);
+                playerCardContent2 = getCardString(players[i]->get_hand()[1]);
+             }
+             else {
+                 playerCardContent1 = getFileContents(startPath + "/images/backCard.txt");
+                 playerCardContent2 = playerCardContent1;
+             }
+
+             // Add the card to the table content
+             tableContent = addString(tableContent, playerCardContent1, PLAYER_CARD_POSITIONS[i * seatStep][0].x, PLAYER_CARD_POSITIONS[i* seatStep][0].y);
+             tableContent = addString(tableContent, playerCardContent2, PLAYER_CARD_POSITIONS[i * seatStep][1].x, PLAYER_CARD_POSITIONS[i* seatStep][1].y);
+         }
+         else {
+             // Show that they have folded 
+         }
     }
 
     std::cout << tableContent << std::endl;

@@ -15,4 +15,8 @@ public:
         return GUI::getBetSizing(minBet, maxBet);
     }
 
+    int endOfHand() {
+        return GUI::endOfRoundMenu();
+    }
+
 };

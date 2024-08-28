@@ -26,6 +26,7 @@ class Game {
         int pot = 0;
         int button = 0; 
         int removedPlayerCount = 0;
+        bool atShowdown = false;
 
         Stage currentStage = PREFLOP;
         
@@ -47,6 +48,7 @@ class Game {
 
         int getPot();
         int getButton();
+        bool getShowdown();
 
         void awardPot(vector<Player*> winners);
 

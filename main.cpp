@@ -83,20 +83,20 @@ int main(int argc, char* argv[]) {
     RandomPlayer player3 = RandomPlayer("Corban", 1000);
     RandomPlayer player4 = RandomPlayer("Katie", 1000);
     RandomPlayer player5 = RandomPlayer("Megan", 1000);
-    RandomPlayer player6 = RandomPlayer("Pee", 1000);
+    RandomPlayer player6 = RandomPlayer("Loren", 1000);
     RandomPlayer player7 = RandomPlayer("Poo", 1000);
     RandomPlayer player8 = RandomPlayer("Wee", 1000);
 
     // Create a vector of pointers 
     std::vector<Player*> playerPointers;
     playerPointers.push_back(&player1);
-    playerPointers.push_back(&player2);
-    playerPointers.push_back(&player3);
-    playerPointers.push_back(&player4);
-    playerPointers.push_back(&player5);
-    playerPointers.push_back(&player6);
-    playerPointers.push_back(&player7);
-    playerPointers.push_back(&player8);
+    //playerPointers.push_back(&player2);
+    //playerPointers.push_back(&player3);
+    //playerPointers.push_back(&player4);
+    //playerPointers.push_back(&player5);
+    //playerPointers.push_back(&player6);
+    //playerPointers.push_back(&player7);
+    //playerPointers.push_back(&player8);
 
     // Initiate a game with all the players 
     Game game = Game(playerPointers); // i swear you have to pass a pointer, but also its a list of two players
@@ -130,6 +130,9 @@ int main(int argc, char* argv[]) {
         // GUI::clearScreen();
         // Play a hand
         game.playHand();
+        if (playerPointers[0]->endOfHand() != 1) {
+            break;
+        }
         // TESTING: Display stack sizes of all players
         // for (Player* player : playerPointers) {
         //     std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
@@ -140,7 +143,7 @@ int main(int argc, char* argv[]) {
     }
 
     // Display the end message
-    // GUI::displayEndMessage();
+     GUI::displayEndMessage();
 
     return 0;
 
