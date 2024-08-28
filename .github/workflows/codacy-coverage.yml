@@ -2,9 +2,9 @@ name: Codacy Coverage Reporter
 
 on:
   push:
-    branches: [ci/implement-codecov] 
+    branches: [ci/implement-codecov]
   pull_request:
-    branches: [ci/implement-codecov ]  
+    branches: [ci/implement-codecov]
 
 jobs:
   codacy-coverage-reporter:
@@ -12,45 +12,32 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
-      # Add steps here to set up your environment and run tests
-      # For example:
-      # - name: Set up Python
-      #   uses: actions/setup-python@v3
-      #   with:
-      #     python-version: '3.x'
-      # - name: Install dependencies
-      #   run: |
-      #     python -m pip install --upgrade pip
-      #     pip install -r requirements.txt
-      # - name: Run tests and generate coverage
-      #   run: |
-      #     coverage run -m pytest
-      #     coverage xml
-
-       # Install lcov
       - name: Install lcov
         run: sudo apt-get install -y lcov
-
-      #Generate LCOV report
+      
+      # Example: Build with coverage flags (adjust according to your build system)
+      - name: Build with coverage
+        run: |
+          g++ -fprofile-arcs -ftest-coverage -O0 -g *.cpp -o myprogram
+      
+      # Example: Run tests (adjust according to your test framework)
+      - name: Run tests
+        run: ./myprogram
+      
+      # Generate LCOV report
       - name: Generate coverage report
         run: |
           lcov --capture --directory . --output-file coverage.info
           lcov --remove coverage.info '/usr/*' --output-file coverage.info
       
-      # Debug: List files to check if LCOV file exists
+      # Debug: List generated files
       - name: List files
-        run: ls -R
+        run: |
+          ls -R
+          find . -name "*.gcda" -o -name "*.gcno"
       
       - name: Run Codacy Coverage Reporter
         uses: codacy/codacy-coverage-reporter-action@v1
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
           coverage-reports: coverage.info
-
-      - name: Run Codacy Coverage Reporter Script
-        env:
-          CODACY_PROJECT_TOKEN: ${{secrets.CODACY_PROJECT_TOKEN }}
-        run: |
-          echo "Running Codacy Coverage Reporter"
-          bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r lcov.info
-
