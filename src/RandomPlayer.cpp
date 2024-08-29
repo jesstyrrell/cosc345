@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Player.hpp"
 #include "GUI.hpp"
 #include <random>

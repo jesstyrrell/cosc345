@@ -35,23 +35,11 @@ const string Card::get_rank() {
     return rank;
 }
 
+/**
+ * Method returning the string representation of the card
+ * 
+ * @return string representation of the card object
+ */
 const string Card::get_card() {
     return rank + " of " + suit;
-}
-
-/**
- * A static method to test the Card class.
- */
-bool Card::test_card() {
-    Card card = Card("Hearts", "Ace");
-
-    if (card.get_suit() != "Hearts") {
-        return false;
-    }
-
-    if (card.get_rank() != "Ace") {
-        return false;
-    }
-
-    return true;
 }

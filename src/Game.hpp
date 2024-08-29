@@ -28,20 +28,17 @@ enum Stage { PREFLOP, FLOP, TURN, RIVER };
  */
 class Game {
     private:
-        Deck deck;  ///< The deck of cards used in the game.
-        vector<Player*> players;  ///< The players participating in the game.
-        vector<Card> community_cards = {};  ///< The community cards shared among all players.
-        vector<int> currentBets;  ///< The current bets of each player.
+        vector<Player*> players;
+        vector<Card> community_cards = {};
+        vector<int> currentBets;
 
-        const int BIG_BLIND = 2;  ///< The value of the big blind.
-        const int SMALL_BLIND = 1;  ///< The value of the small blind.
-        const int STARTING_STACK = 1000;  ///< The initial stack of chips for each player.
-        int pot = 0;  ///< The total amount of chips in the pot.
-        int button = 0;  ///< The position of the dealer button.
-        int removedPlayerCount = 0;  ///< The number of players removed from the game.
-        bool atShowdown = false;  ///< Flag indicating whether the game is at showdown.
-
-        Stage currentStage = PREFLOP;  ///< The current stage of the hand.
+        const int BIG_BLIND = 2;
+        const int SMALL_BLIND = 1;
+        const int STARTING_STACK = 1000;
+        int pot = 0;
+        int button = 0; 
+        int removedPlayerCount = 0;
+        bool atShowdown = false;
         
         /**
          * @brief Converts a move string into a Move enum.
@@ -58,6 +55,10 @@ class Game {
         void addBlindsToPot(Player *bigBlindPlayer, Player *smallBlindPlayer);
 
     public:
+        // Public variables for unit testing
+        Deck deck;
+        Stage currentStage = PREFLOP;
+
         /**
          * @brief Constructs a Game object with the given players.
          * @param players A vector of pointers to the players in the game.

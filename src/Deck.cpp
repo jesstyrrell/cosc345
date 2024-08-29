@@ -62,7 +62,11 @@ Card Deck::deal() {
  */
 Card Deck::find_card(const string& rank, const string& suit) {
     for (Card card : cards) {
-        if (card.get_suit() == suit && card.get_rank() == rank) {
+
+        const bool checkSuit = card.get_suit() == suit;
+        const bool checkRank = card.get_rank() == rank;
+
+        if (checkSuit && checkRank) {
             return card;
         }
     }
@@ -81,38 +85,4 @@ void Deck::remove_card(Card card) {
             break;
         }
     }
-}
-
-
-bool Deck::test_deck() {
-    vector<Card> allCardsInDeck;
-
-    Deck deck = Deck();
-    deck.shuffle();
-
-    // Check that all the cards in the deck are unique and not empty
-    for (Card card : deck.get_cards()) {
-
-        // Check if the cards are empty
-        if (card.get_suit() == "" || card.get_rank() == "") {
-            std::cout << "Card is empty" << std::endl;
-            return false;
-        }
-
-        // Check if current card is in the vector of all cards
-        for (Card c : allCardsInDeck) {
-            if (c.get_suit() == card.get_suit() && c.get_rank() == card.get_rank()) {
-                std::cout << "Card is not unique" << std::endl;
-                return false;
-            }
-        }
-
-        // Add the card to the vector of all cards
-        allCardsInDeck.push_back(card);
-    }
-
-    // Free memory
-    allCardsInDeck.clear();
-
-    return true;
 }

@@ -1,8 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
 
-enable_testing()
-
-
 # Supresses "warning: range-based for loop is a C++11 extension [-Wc++11-extensions]"
 add_definitions(-w)
 
@@ -13,31 +10,62 @@ project(${PROJECT_NAME})
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Define the source path variable 
-set(SRC_PATH src)
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+)
+# For Windows: Prevent overriding the parent project's compiler/linker settings
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
 
-# Defining the file used to run the program 
+# Define the source path variable and main file
+set(SRC_PATH src)
 set(MAIN_FILE main.cpp)
 
 # Get all source and header files in the source path
 file(GLOB_RECURSE SRC_FILES ${SRC_PATH}/*.cpp)
 file(GLOB_RECURSE HEADER_FILES ${SRC_PATH}/*.hpp)
 
-# Setting the C++ standard to be used
-set(CMAKE_CXX_STANDARD 17)  # or 20 for C++20
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
 # Defining the executable target and adding all source files
 add_executable(${PROJECT_NAME} ${MAIN_FILE} ${SRC_FILES} ${HEADER_FILES})
 
-# Add the test executable
-add_executable(TestCard tests/test_Card.cpp ${SRC_FILES} ${HEADER_FILES})
-add_executable(TestDeck tests/test_Deck.cpp ${SRC_FILES} ${HEADER_FILES})
-# add_executable(TestPlayer tests/test_Player.cpp ${SRC_FILES} ${HEADER_FILES})
-# add_executable(TestGame tests/test_Game.cpp ${SRC_FILES} ${HEADER_FILES})
 
-# Register the test
-add_test(NAME TestCard COMMAND TestCard)
-add_test(NAME TestDeck COMMAND TestDeck)
-# add_test(NAME TestPlayer COMMAND TestPlayer) 
-# add_test(NAME TestGame COMMAND TestGame)
+enable_testing()
+
+add_executable( TestCard ./tests/test_Card.cc ${SRC_FILES} ${HEADER_FILES})
+target_link_libraries( TestCard GTest::gtest_main )
+
+add_executable( TestDeck ./tests/test_Deck.cc ${SRC_FILES} ${HEADER_FILES})
+target_link_libraries( TestDeck GTest::gtest_main )
+
+add_executable( TestRandomPlayer ./tests/test_RandomPlayer.cc ${SRC_FILES} ${HEADER_FILES})
+target_link_libraries( TestRandomPlayer GTest::gtest_main GTest::gmock_main )
+
+add_executable( TestGUI ./tests/test_GUI.cc ${SRC_FILES} ${HEADER_FILES})
+target_link_libraries( TestGUI GTest::gtest_main GTest::gmock_main )
+
+add_executable( TestHandEvaluator ./tests/test_HandEvaluator.cc ${SRC_FILES} ${HEADER_FILES})
+target_link_libraries( TestHandEvaluator GTest::gtest_main GTest::gmock_main )
+
+add_executable( TestEquityCalculator ./tests/test_EquityCalculator.cc ${SRC_FILES} ${HEADER_FILES})
+target_link_libraries( TestEquityCalculator GTest::gtest_main GTest::gmock_main )
+
+# add_executable( TestGame ./tests/test_Game.cc ${SRC_FILES} ${HEADER_FILES})
+# target_link_libraries( TestGame GTest::gtest_main GTest::gmock_main )
+
+
+# Including the GoogleTest module
+include(GoogleTest)
+
+# Adding each test executable to the test suite
+gtest_discover_tests(TestCard)
+gtest_discover_tests(TestDeck)
+
+gtest_discover_tests(TestRandomPlayer)
+
+# gtest_discover_tests(TestGUI)
+# gtest_discover_tests(TestGame)
+
+gtest_discover_tests(TestHandEvaluator)
+gtest_discover_tests(TestEquityCalculator)
