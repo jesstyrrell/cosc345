@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Fetch all history for all branches and tags
 
       - name: Install Doxygen
         run: |
@@ -22,32 +24,12 @@ jobs:
       - name: Generate Documentation
         run: doxygen Doxyfile
 
-      - name: Checkout gh-pages branch
-        run: |
-          git fetch origin gh-pages
-          git checkout gh-pages || git checkout -b gh-pages
-        # Fetches the gh-pages branch, checks out the branch or creates it if it does not exist
-
-      - name: Clean gh-pages branch
-        run: |
-          git rm -rf .
-          git commit -m "Cleanup gh-pages branch" || true
-        # Remove all files in the gh-pages branch and commit the change
-
-      - name: Copy Documentation
-        run: |
-          mkdir -p doxygen
-          cp -r docs/html/* doxygen/
-        
-      - name: Configure Git
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-
-      - name: Commit and Push Changes
-        run: |
-          git add doxygen
-          git commit -m "Deploy Doxygen documentation"
-          git push origin gh-pages --force
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/html
+          force_orphan: true  # Create a new orphan branch for gh-pages
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'Deploy Doxygen documentation'
