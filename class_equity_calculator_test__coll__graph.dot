@@ -10,7 +10,7 @@ digraph "EquityCalculatorTest"
   Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" communityCards\nhand" ,fontname="Helvetica"];
   Node3 [label="std::vector\< Card \>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" elements" ,fontname="Helvetica"];
-  Node4 [label="Card",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_card.html",tooltip="Represents a single card in a deck of cards. Each card has a suit and a rank. CHANGE!..."];
+  Node4 [label="Card",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_card.html",tooltip="Represents a single card in a deck of cards. Each card has a suit and a rank."];
   Node5 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" rank\nsuit" ,fontname="Helvetica"];
   Node5 [label="std::string",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node6 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
