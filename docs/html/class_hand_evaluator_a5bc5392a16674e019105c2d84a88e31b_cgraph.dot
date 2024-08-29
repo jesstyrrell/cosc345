@@ -1,0 +1,12 @@
+digraph "HandEvaluator::checkForStraight"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="HandEvaluator::checkForStraight",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Checks for a straight in a combined hand and community cards."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="HandEvaluator::getRankValue",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_hand_evaluator.html#aad910729e355e6c35737a4d3c064133b",tooltip="Gets the numerical value of a card rank."];
+}
