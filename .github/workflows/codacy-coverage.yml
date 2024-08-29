@@ -32,6 +32,7 @@ jobs:
         run: ctest -C Debug --output-on-failure
       
       - name: Generate coverage report
+        if: always()
         working-directory: ${{github.workspace}}/build
         run: |
           lcov --capture --directory . --output-file coverage.info
@@ -45,6 +46,7 @@ jobs:
       
       - name: Run Codacy Coverage Reporter
         uses: codacy/codacy-coverage-reporter-action@v1
+        if: always()
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
           coverage-reports: build/coverage.info
