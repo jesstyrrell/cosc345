@@ -4,7 +4,7 @@
 
 /**
  * @class Card
- * @brief Represents a single card in a deck of cards. Each card has a suit and a rank. CHANGE!!!!!!!!!!
+ * @brief Represents a single card in a deck of cards. Each card has a suit and a rank.
  *
  * Example usage:
  * @code
