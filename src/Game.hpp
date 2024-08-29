@@ -15,7 +15,6 @@ enum Stage { PREFLOP, FLOP, TURN, RIVER };
 
 class Game {
     private:
-        Deck deck;
         vector<Player*> players;
         vector<Card> community_cards = {};
         vector<int> currentBets;
@@ -28,13 +27,16 @@ class Game {
         int removedPlayerCount = 0;
         bool atShowdown = false;
 
-        Stage currentStage = PREFLOP;
         
         Move getCurrentMove(std::string move);
 
         void addBlindsToPot(Player *bigBlindPlayer, Player *smallBlindPlayer);
 
     public:
+        // Public variables for unit testing
+        Deck deck;
+        Stage currentStage = PREFLOP;
+
         Game(vector<Player*>& players);
         void add_player(Player *player);
 
