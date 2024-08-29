@@ -1,4 +1,4 @@
-name: Doxygen GitHub Pages Deploy Action
+name: Doxygen Deploy to Master
 
 on:
   push:
@@ -10,13 +10,32 @@ jobs:
   deploy:
     permissions:
       contents: write
-      
+
     runs-on: ubuntu-latest
     steps:
-      - uses: DenverCoder1/doxygen-github-pages-action@v2.0.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          folder: docs/html
-          config_file: Doxyfile
-          doxygen_version: 1.9.6
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Generate Documentation
+        run: doxygen Doxyfile
+        env:
+          DOXYGEN_VERSION: 1.9.6
+
+      - name: Create Doxygen Directory
+        run: mkdir -p doxygen
+
+      - name: Move Documentation to Doxygen Directory
+        run: |
+          mv docs/html/* doxygen/
+          rm -rf docs/html
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+      - name: Commit and Push Changes
+        run: |
+          git add doxygen
+          git commit -m "Deploy Doxygen documentation"
+          git push origin master
