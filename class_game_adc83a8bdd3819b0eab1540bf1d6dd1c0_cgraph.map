@@ -1,4 +1,0 @@
-<map id="Game::deal_flop" name="Game::deal_flop">
-<area shape="rect" id="node1" title="Deals the flop (the first three community cards)." alt="" coords="5,5,133,31"/>
-<area shape="rect" id="node2" href="$class_deck.html#a16604aabf7fc56dd44a72c4e862758cf" title="Deals a card from the top of the deck." alt="" coords="181,5,272,31"/>
-</map>

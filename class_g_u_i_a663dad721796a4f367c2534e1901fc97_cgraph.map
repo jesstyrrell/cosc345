@@ -1,5 +1,0 @@
-<map id="GUI::displayEndMessage" name="GUI::displayEndMessage">
-<area shape="rect" id="node1" title="Displays the end message when the game is over." alt="" coords="5,31,188,56"/>
-<area shape="rect" id="node2" href="$class_g_u_i.html#acf2275f45170a133113df56f878ff554" title="Clears the console screen." alt="" coords="236,5,367,31"/>
-<area shape="rect" id="node3" href="$_g_u_i_8cpp.html#a674e968d1ecb5cf741d6625f58378c95" title=" " alt="" coords="239,55,364,80"/>
-</map>

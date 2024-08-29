@@ -1,4 +1,0 @@
-<map id="HandEvaluator::checkForPairs" name="HandEvaluator::checkForPairs">
-<area shape="rect" id="node1" title="Checks for pairs in a combined hand and community cards." alt="" coords="5,5,220,31"/>
-<area shape="rect" id="node2" href="$class_hand_evaluator.html#aad910729e355e6c35737a4d3c064133b" title="Gets the numerical value of a card rank." alt="" coords="268,5,484,31"/>
-</map>

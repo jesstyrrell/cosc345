@@ -1,8 +1,0 @@
-<map id="Game::deal_turn" name="Game::deal_turn">
-<area shape="rect" id="node1" title="Deals the turn (the fourth community card)." alt="" coords="473,31,604,56"/>
-<area shape="rect" id="node2" href="$class_game.html#a69a05d14810171cddd58aa1653272030" title="Deals the cards to the players and the community." alt="" coords="307,5,405,31"/>
-<area shape="rect" id="node5" href="$class_game.html#a2a40b9c0d56307fbe67da500ed9d4cff" title="Tests the Game class functionality." alt="" coords="287,55,425,80"/>
-<area shape="rect" id="node3" href="$class_game.html#ab72401c43b303a37dec67f3d6b75a927" title="Plays a single hand of poker." alt="" coords="108,5,239,31"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,31,60,56"/>
-<area shape="rect" id="node6" href="$main_8cpp.html#a9993390ffcca4b99cfb97b329c55ae58" title=" " alt="" coords="139,55,207,80"/>
-</map>

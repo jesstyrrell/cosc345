@@ -1,4 +1,0 @@
-<map id="Game::deal_turn" name="Game::deal_turn">
-<area shape="rect" id="node1" title="Deals the turn (the fourth community card)." alt="" coords="5,5,136,31"/>
-<area shape="rect" id="node2" href="$class_deck.html#a16604aabf7fc56dd44a72c4e862758cf" title="Deals a card from the top of the deck." alt="" coords="184,5,275,31"/>
-</map>

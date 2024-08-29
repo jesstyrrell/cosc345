@@ -1,4 +1,0 @@
-<map id="HumanPlayer" name="HumanPlayer">
-<area shape="rect" id="node1" title=" " alt="" coords="5,79,116,104"/>
-<area shape="rect" id="node2" href="$class_player.html" title="Represents a player in the poker game." alt="" coords="29,5,92,31"/>
-</map>

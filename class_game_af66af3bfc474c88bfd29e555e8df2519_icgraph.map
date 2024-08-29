@@ -1,7 +1,0 @@
-<map id="Game::getCurrentMove" name="Game::getCurrentMove">
-<area shape="rect" id="node1" title="Converts a move string into a Move enum." alt="" coords="729,5,904,31"/>
-<area shape="rect" id="node2" href="$class_game.html#a1a44850a64799e17f43f22b560275157" title="Processes a move made by the user." alt="" coords="491,5,681,31"/>
-<area shape="rect" id="node3" href="$class_game.html#a0de5cbe2125b0929a0bc8d2e6cdd64d5" title="Conducts a betting round." alt="" coords="287,5,443,31"/>
-<area shape="rect" id="node4" href="$class_game.html#ab72401c43b303a37dec67f3d6b75a927" title="Plays a single hand of poker." alt="" coords="108,5,239,31"/>
-<area shape="rect" id="node5" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,60,31"/>
-</map>

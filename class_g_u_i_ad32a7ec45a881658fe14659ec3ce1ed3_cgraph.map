@@ -1,5 +1,0 @@
-<map id="GUI::displayPlayerStack" name="GUI::displayPlayerStack">
-<area shape="rect" id="node1" title="Displays the current chip stack of a player." alt="" coords="5,31,184,56"/>
-<area shape="rect" id="node2" href="$class_player.html#afca8141f38b60b526fd2f874523a2726" title="Gets the name of the player." alt="" coords="232,5,368,31"/>
-<area shape="rect" id="node3" href="$class_player.html#aca2f65a65461c322a0563ae0482be213" title="Gets the current stack of the player." alt="" coords="233,55,367,80"/>
-</map>

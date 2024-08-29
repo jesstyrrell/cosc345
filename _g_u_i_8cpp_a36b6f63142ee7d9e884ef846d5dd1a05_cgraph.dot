@@ -1,0 +1,17 @@
+digraph "getCardString"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="getCardString",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Card::get_rank",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_card.html#a9b352ce37c8d4e365b31dee979c35add",tooltip="Gets the rank of the card."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Card::get_suit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_card.html#a74782cc7cdcc2bf7cabc89eaa265805a",tooltip="Gets the suit of the card."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="getFileContents",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_g_u_i_8cpp.html#a734f170642ae5d075a5f9f98fab8cfdf",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="getFilePathStart",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_g_u_i_8cpp.html#a674e968d1ecb5cf741d6625f58378c95",tooltip=" "];
+}

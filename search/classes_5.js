@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['fn_5ftest_0',['Fn_Test',['../class_fn___test.html',1,'']]]
+  ['player_181',['Player',['../class_player.html',1,'']]],
+  ['point_182',['Point',['../struct_point.html',1,'']]]
 ];

@@ -1,0 +1,35 @@
+digraph "Game"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="Game",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Manages the state and flow of a poker game."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" players" ,fontname="Helvetica"];
+  Node2 [label="std::vector\< Player * \>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" elements" ,fontname="Helvetica"];
+  Node3 [label="Player",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_player.html",tooltip="Represents a player in the poker game."];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" hand" ,fontname="Helvetica"];
+  Node4 [label="std::vector\< Card \>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" elements" ,fontname="Helvetica"];
+  Node5 [label="Card",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_card.html",tooltip="Represents a single card in a deck of cards. Each card has a suit and a rank."];
+  Node6 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" rank\nsuit" ,fontname="Helvetica"];
+  Node6 [label="std::string",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="std::basic_string\<\l Char \>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node8 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" current_bet\nstack" ,fontname="Helvetica"];
+  Node8 [label="int",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node6 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" name" ,fontname="Helvetica"];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" community_cards" ,fontname="Helvetica"];
+  Node9 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" deck" ,fontname="Helvetica"];
+  Node9 [label="Deck",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_deck.html",tooltip="Represents a deck of playing cards, providing functionality to shuffle, deal, and manage the deck."];
+  Node4 -> Node9 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" cards" ,fontname="Helvetica"];
+  Node8 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" BIG_BLIND\nSMALL_BLIND\nSTARTING_STACK\nbutton\npot\nremovedPlayerCount" ,fontname="Helvetica"];
+  Node10 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" atShowdown" ,fontname="Helvetica"];
+  Node10 [label="bool",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node11 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" currentStage" ,fontname="Helvetica"];
+  Node11 [label="Stage",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node12 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" currentBets" ,fontname="Helvetica"];
+  Node12 [label="std::vector\< int \>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node8 -> Node12 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" elements" ,fontname="Helvetica"];
+}

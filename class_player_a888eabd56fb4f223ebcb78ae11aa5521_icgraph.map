@@ -1,6 +1,0 @@
-<map id="Player::show_hand" name="Player::show_hand">
-<area shape="rect" id="node1" title="Displays the player&#39;s current hand." alt="" coords="577,5,721,31"/>
-<area shape="rect" id="node2" href="$class_test_player.html#a8c0b8a5015a1aeb63837332af09f2cce" title=" " alt="" coords="327,5,529,31"/>
-<area shape="rect" id="node3" href="$class_test_player.html#aaf41022e7a915175e1538c5a7b0b2b88" title=" " alt="" coords="108,5,279,31"/>
-<area shape="rect" id="node4" href="$test___player_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
-</map>

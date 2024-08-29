@@ -1,9 +1,0 @@
-<map id="Player::get_hand" name="Player::get_hand">
-<area shape="rect" id="node1" title="Gets the player&#39;s current hand of cards." alt="" coords="575,92,705,117"/>
-<area shape="rect" id="node2" href="$class_g_u_i.html#a32e1013b85cfbec2c4578b34aa7c347f" title="Displays the hand of a player." alt="" coords="339,5,515,31"/>
-<area shape="rect" id="node3" href="$class_test_player.html#a91fe2f759e51f6452dbddcf453c0f1f5" title=" " alt="" coords="350,55,503,95"/>
-<area shape="rect" id="node6" href="$class_test_player.html#adb36c0653ec494204f5a029a124ee584" title=" " alt="" coords="327,120,527,145"/>
-<area shape="rect" id="node7" href="$class_test_player.html#ada290bd551dc27d1779fe994ec056f38" title=" " alt="" coords="332,169,521,195"/>
-<area shape="rect" id="node4" href="$class_test_player.html#aaf41022e7a915175e1538c5a7b0b2b88" title=" " alt="" coords="108,120,279,145"/>
-<area shape="rect" id="node5" href="$test___player_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,120,60,145"/>
-</map>

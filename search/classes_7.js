@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['handevaluator_0',['HandEvaluator',['../class_hand_evaluator.html',1,'']]],
-  ['humanplayer_1',['HumanPlayer',['../class_human_player.html',1,'']]]
+  ['testgame_184',['TestGame',['../class_test_game.html',1,'']]],
+  ['testplayer_185',['TestPlayer',['../class_test_player.html',1,'']]]
 ];

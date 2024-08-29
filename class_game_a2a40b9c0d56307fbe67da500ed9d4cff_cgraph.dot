@@ -1,0 +1,23 @@
+digraph "Game::test_game"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Game::test_game",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Tests the Game class functionality."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Game::add_player",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game.html#a57916fe5cb55a85464371173571cf681",tooltip="Adds a player to the game."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Game::deal_flop",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game.html#adc83a8bdd3819b0eab1540bf1d6dd1c0",tooltip="Deals the flop (the first three community cards)."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Game::deal_hands",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game.html#a5cc682e0e2c72be6768cdacc9aec26ae",tooltip="Deals the hands to the players."];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Game::deal_river",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game.html#abe6dc7900667fabf1048c5391ce9a4bc",tooltip="Deals the river (the fifth community card)."];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Game::deal_turn",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game.html#a5fd04d6cb5e1e60a10db3a29fcad71e9",tooltip="Deals the turn (the fourth community card)."];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Deck::get_cards",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_deck.html#a2fe0172048296260450a74035a34db9b",tooltip="Retrieves the current set of cards in the deck."];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Game::getPlayers",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game.html#a57e5aef2f67e77929842fab7a78404ea",tooltip="Gets the players in the game."];
+}

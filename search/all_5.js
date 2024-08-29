@@ -1,24 +1,6 @@
 var searchData=
 [
-  ['e_0',['E',['../class_e.html',1,'']]],
-  ['endofhand_1',['endOfHand',['../class_random_player.html#af15ae923a157d4cf86885dff392f6ecf',1,'RandomPlayer::endOfHand()'],['../class_player.html#ab9d308303ef68b81db5f4415c8d2aa37',1,'Player::endOfHand()'],['../class_human_player.html#a538faef1a022253707d0a63d20c67550',1,'HumanPlayer::endOfHand()']]],
-  ['endofroundmenu_2',['endOfRoundMenu',['../class_g_u_i.html#ac7211e8e1f154e8e729921afe5d58225',1,'GUI']]],
-  ['enum_2eh_3',['enum.h',['../enum_8h.html',1,'']]],
-  ['enum_5ftest_4',['Enum_Test',['../class_enum___test.html',1,'']]],
-  ['enumptr_5',['enumPtr',['../class_q_tstyle___test.html#a973a4566c9a036f4eca508ba5fe80dcb',1,'QTstyle_Test::enumPtr()'],['../class_javadoc___test.html#abcb36df9d8af3e69290c239ba483d6df',1,'Javadoc_Test::enumPtr()']]],
-  ['enumtype_6',['EnumType',['../class_afterdoc___test.html#adab0cd7ad3b4875e245ca8f6238a388a',1,'Afterdoc_Test']]],
-  ['enumvar_7',['enumVar',['../class_q_tstyle___test.html#a241fb54f66dc0b3b03eece3a1a1bf18b',1,'QTstyle_Test::enumVar()'],['../class_javadoc___test.html#afcc11e097968fb44080b82b75032e40b',1,'Javadoc_Test::enumVar()']]],
-  ['equitycalculator_8',['EquityCalculator',['../class_equity_calculator.html#a27c3e3413c753ca7ff78a9ee0a9fbc2e',1,'EquityCalculator::EquityCalculator()'],['../class_equity_calculator.html',1,'EquityCalculator']]],
-  ['equitycalculator_2ecpp_9',['EquityCalculator.cpp',['../_equity_calculator_8cpp.html',1,'']]],
-  ['equitycalculator_2ehpp_10',['EquityCalculator.hpp',['../_equity_calculator_8hpp.html',1,'']]],
-  ['errno_11',['errno',['../structcmd_8h.html#ad65a8842cc674e3ddf69355898c0ecbf',1,'structcmd.h']]],
-  ['etype_12',['EType',['../class_autolink___test.html#aeb611627c332d067bded1806b1bb45c2',1,'Autolink_Test']]],
-  ['eval1_13',['EVal1',['../class_afterdoc___test.html#adab0cd7ad3b4875e245ca8f6238a388aae054276790e35692ad0abe10c5b75da4',1,'Afterdoc_Test']]],
-  ['eval2_14',['EVal2',['../class_afterdoc___test.html#adab0cd7ad3b4875e245ca8f6238a388aac849f37624d8d2d68ca72c4a8df9cf99',1,'Afterdoc_Test']]],
-  ['evaluatehand_15',['evaluateHand',['../class_equity_calculator.html#af315dfcb578ab5889dab4bc970b1d597',1,'EquityCalculator']]],
-  ['evaluatetable_16',['evaluateTable',['../class_hand_evaluator.html#a913d9b6af7946277de9652577b88292b',1,'HandEvaluator']]],
-  ['example_17',['example',['../class_example___test.html#a22a62b12c65fd5e43b6eadaabb21ebb0',1,'Example_Test::example()'],['../class_include___test.html#aa286655e8f7f6a8ad203ef5fd8548b81',1,'Include_Test::example()'],['../class_tag.html#acc641ffae34e2c4c03a6edf0a513be28',1,'Tag::example()']]],
-  ['example_2ecpp_18',['example.cpp',['../example_8cpp.html',1,'']]],
-  ['example_5ftest_19',['Example_Test',['../class_example___test.html',1,'']]],
-  ['example_5ftest_2ecpp_20',['example_test.cpp',['../example__test_8cpp.html',1,'']]]
+  ['find_5fcard_59',['find_card',['../class_deck.html#a3ad744640638d4a52761525d56004cef',1,'Deck']]],
+  ['flop_60',['FLOP',['../_game_8hpp.html#aca8133200c1122e29b87b314d82604ebaabd21521adb8d1952b4a166aa8711f8b',1,'Game.hpp']]],
+  ['fold_61',['FOLD',['../_game_8hpp.html#a19b869a01ca1a58f4164b4f75c2df388a4c06ebc69df9afd471c3044ba969a17f',1,'Game.hpp']]]
 ];

@@ -1,7 +1,0 @@
-<map id="getCardString" name="getCardString">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,116,105"/>
-<area shape="rect" id="node2" href="$class_card.html#a9b352ce37c8d4e365b31dee979c35add" title="Gets the rank of the card." alt="" coords="168,5,285,31"/>
-<area shape="rect" id="node3" href="$class_card.html#a74782cc7cdcc2bf7cabc89eaa265805a" title="Gets the suit of the card." alt="" coords="171,55,283,80"/>
-<area shape="rect" id="node4" href="$_g_u_i_8cpp.html#a734f170642ae5d075a5f9f98fab8cfdf" title=" " alt="" coords="165,104,289,129"/>
-<area shape="rect" id="node5" href="$_g_u_i_8cpp.html#a674e968d1ecb5cf741d6625f58378c95" title=" " alt="" coords="164,153,289,179"/>
-</map>

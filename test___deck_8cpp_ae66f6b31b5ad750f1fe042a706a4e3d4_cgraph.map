@@ -1,6 +1,0 @@
-<map id="main" name="main">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,60,56"/>
-<area shape="rect" id="node2" href="$test___deck_8cpp.html#a62863bfcb6d04be49be4274a8438af17" title=" " alt="" coords="108,31,193,56"/>
-<area shape="rect" id="node3" href="$class_deck.html#a2fe0172048296260450a74035a34db9b" title="Retrieves the current set of cards in the deck." alt="" coords="241,5,368,31"/>
-<area shape="rect" id="node4" href="$class_deck.html#ae5a1e52ab00ae5924f2bc6b730dba3eb" title="Shuffles the deck of cards." alt="" coords="251,55,358,80"/>
-</map>

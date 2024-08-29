@@ -1,9 +1,0 @@
-<map id="Game::add_player" name="Game::add_player">
-<area shape="rect" id="node1" title="Adds a player to the game." alt="" coords="475,42,616,67"/>
-<area shape="rect" id="node2" href="$class_test_game.html#a832509695facca8c52d60125268a87c6" title=" " alt="" coords="276,5,427,45"/>
-<area shape="rect" id="node5" href="$class_game.html#a2a40b9c0d56307fbe67da500ed9d4cff" title="Tests the Game class functionality." alt="" coords="282,70,421,95"/>
-<area shape="rect" id="node3" href="$class_test_game.html#a482abbabaaa0f7eb7d067c663dde7bae" title=" " alt="" coords="108,13,228,38"/>
-<area shape="rect" id="node4" href="$test___game_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,13,60,38"/>
-<area shape="rect" id="node6" href="$main_8cpp.html#a9993390ffcca4b99cfb97b329c55ae58" title=" " alt="" coords="134,70,202,95"/>
-<area shape="rect" id="node7" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,70,60,95"/>
-</map>

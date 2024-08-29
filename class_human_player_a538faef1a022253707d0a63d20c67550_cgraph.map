@@ -1,4 +1,0 @@
-<map id="HumanPlayer::endOfHand" name="HumanPlayer::endOfHand">
-<area shape="rect" id="node1" title="Handles actions at the end of a hand." alt="" coords="5,5,196,31"/>
-<area shape="rect" id="node2" href="$class_g_u_i.html#ac7211e8e1f154e8e729921afe5d58225" title="Displays the menu at the end of a round." alt="" coords="244,5,415,31"/>
-</map>

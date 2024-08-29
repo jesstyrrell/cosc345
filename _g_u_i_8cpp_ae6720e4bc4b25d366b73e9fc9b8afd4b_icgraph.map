@@ -1,9 +1,0 @@
-<map id="addString" name="addString">
-<area shape="rect" id="node1" title=" " alt="" coords="1179,64,1263,89"/>
-<area shape="rect" id="node2" href="$class_g_u_i.html#a8f55dae107a6648458f6eb16608c66d2" title="Displays the current state of the game." alt="" coords="956,64,1131,89"/>
-<area shape="rect" id="node3" href="$class_game.html#a0de5cbe2125b0929a0bc8d2e6cdd64d5" title="Conducts a betting round." alt="" coords="287,38,443,64"/>
-<area shape="rect" id="node4" href="$class_game.html#ab72401c43b303a37dec67f3d6b75a927" title="Plays a single hand of poker." alt="" coords="108,89,239,114"/>
-<area shape="rect" id="node5" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,114,60,140"/>
-<area shape="rect" id="node6" href="$class_g_u_i.html#a65d07a686330670f5567a3fc11fbace1" title="Displays a player&#39;s move." alt="" coords="729,38,908,64"/>
-<area shape="rect" id="node7" href="$class_game.html#a1a44850a64799e17f43f22b560275157" title="Processes a move made by the user." alt="" coords="491,38,681,64"/>
-</map>

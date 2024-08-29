@@ -1,7 +1,0 @@
-<map id="TestGame::test_add_player" name="TestGame::test_add_player">
-<area shape="rect" id="node1" title=" " alt="" coords="5,73,156,113"/>
-<area shape="rect" id="node2" href="$class_game.html#a57916fe5cb55a85464371173571cf681" title="Adds a player to the game." alt="" coords="213,5,354,31"/>
-<area shape="rect" id="node3" href="$class_game.html#a57e5aef2f67e77929842fab7a78404ea" title="Gets the players in the game." alt="" coords="214,55,353,80"/>
-<area shape="rect" id="node4" href="$class_test_game.html#a9c9f90a680072ff864d9e477d49556f6" title=" " alt="" coords="217,104,350,129"/>
-<area shape="rect" id="node5" href="$class_test_game.html#a13d625d428905ea6da2d23281f9a26b7" title=" " alt="" coords="204,153,363,179"/>
-</map>

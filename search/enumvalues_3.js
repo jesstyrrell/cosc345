@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['gval1_0',['GVal1',['../autolink_8cpp.html#a656d63cf384d2a6f23c2c18523a7bc5ea0f016f49e4f3bcd072319b9d68bc927d',1,'autolink.cpp']]],
-  ['gval2_1',['GVal2',['../autolink_8cpp.html#a656d63cf384d2a6f23c2c18523a7bc5ea811876e2eea5c16ae0594a95d98fbd55',1,'autolink.cpp']]]
+  ['raise_350',['RAISE',['../_game_8hpp.html#a19b869a01ca1a58f4164b4f75c2df388ae9ec39715b515cb7a00034bced1c1ad4',1,'Game.hpp']]],
+  ['river_351',['RIVER',['../_game_8hpp.html#aca8133200c1122e29b87b314d82604eba5f1a4df6ed0c2b7e1aa187f9eb43409f',1,'Game.hpp']]]
 ];

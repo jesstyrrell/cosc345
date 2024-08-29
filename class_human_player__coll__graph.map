@@ -1,9 +1,0 @@
-<map id="HumanPlayer" name="HumanPlayer">
-<area shape="rect" id="node1" title=" " alt="" coords="111,463,222,488"/>
-<area shape="rect" id="node2" href="$class_player.html" title="Represents a player in the poker game." alt="" coords="135,388,198,413"/>
-<area shape="rect" id="node3" title=" " alt="" coords="31,95,118,120"/>
-<area shape="rect" id="node6" href="$class_card.html" title="Represents a single card in a deck of cards. Each card has a suit and a rank." alt="" coords="95,197,147,223"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,5,144,45"/>
-<area shape="rect" id="node5" title=" " alt="" coords="91,285,242,311"/>
-<area shape="rect" id="node7" title=" " alt="" coords="266,285,305,311"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="GUI::displayPlayerHand" name="GUI::displayPlayerHand">
-<area shape="rect" id="node1" title="Displays the hand of a player." alt="" coords="5,31,181,56"/>
-<area shape="rect" id="node2" href="$class_player.html#a37e8e81092cab91b3136f56f2faa7d11" title="Gets the player&#39;s current hand of cards." alt="" coords="232,5,363,31"/>
-<area shape="rect" id="node3" href="$class_player.html#afca8141f38b60b526fd2f874523a2726" title="Gets the name of the player." alt="" coords="229,55,365,80"/>
-</map>

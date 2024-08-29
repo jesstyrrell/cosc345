@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['enum_2eh_0',['enum.h',['../enum_8h.html',1,'']]],
-  ['equitycalculator_2ecpp_1',['EquityCalculator.cpp',['../_equity_calculator_8cpp.html',1,'']]],
-  ['equitycalculator_2ehpp_2',['EquityCalculator.hpp',['../_equity_calculator_8hpp.html',1,'']]],
-  ['example_2ecpp_3',['example.cpp',['../example_8cpp.html',1,'']]],
-  ['example_5ftest_2ecpp_4',['example_test.cpp',['../example__test_8cpp.html',1,'']]]
+  ['game_2ecpp_192',['Game.cpp',['../_game_8cpp.html',1,'']]],
+  ['game_2ehpp_193',['Game.hpp',['../_game_8hpp.html',1,'']]],
+  ['gui_2ecpp_194',['GUI.cpp',['../_g_u_i_8cpp.html',1,'']]],
+  ['gui_2ehpp_195',['GUI.hpp',['../_g_u_i_8hpp.html',1,'']]]
 ];

@@ -1,4 +1,0 @@
-<map id="Game::get_final_winner" name="Game::get_final_winner">
-<area shape="rect" id="node1" title="Determines the final winner of the game." alt="" coords="5,5,181,31"/>
-<area shape="rect" id="node2" href="$class_game.html#a57e5aef2f67e77929842fab7a78404ea" title="Gets the players in the game." alt="" coords="229,5,368,31"/>
-</map>

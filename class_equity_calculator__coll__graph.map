@@ -1,8 +1,0 @@
-<map id="EquityCalculator" name="EquityCalculator">
-<area shape="rect" id="node1" title="Calculates the equity (winning probability) of a poker hand against multiple opponents." alt="" coords="87,407,216,432"/>
-<area shape="rect" id="node2" href="$class_hand_evaluator.html" title="Evaluates poker hands and determines winners, draws, or losses." alt="" coords="103,309,221,335"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,183,164,208"/>
-<area shape="rect" id="node4" title=" " alt="" coords="41,95,128,120"/>
-<area shape="rect" id="node5" title=" " alt="" coords="15,5,154,45"/>
-<area shape="rect" id="node6" title=" " alt="" coords="189,183,228,208"/>
-</map>

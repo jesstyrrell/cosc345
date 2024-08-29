@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['qtstyle_2ecpp_0',['qtstyle.cpp',['../qtstyle_8cpp.html',1,'']]],
-  ['qtstyle_5ftest_1',['QTstyle_Test',['../class_q_tstyle___test.html',1,'QTstyle_Test'],['../class_q_tstyle___test.html#a14a296ea4e2ad446712f2310bec60766',1,'QTstyle_Test::QTstyle_Test()']]]
+  ['win_170',['WIN',['../class_equity_calculator.html#ab397765f1ae7b57a6ec8a6a45c858326',1,'EquityCalculator::WIN()'],['../class_hand_evaluator.html#ac1bb541513b3b5d2e0f3797e32d2e289',1,'HandEvaluator::WIN()']]],
+  ['win_171',['win',['../class_player.html#ab466284a338277f1c20837e3f4d11b57',1,'Player']]]
 ];

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['aceofhearts_0',['AceOfHearts',['../class_test_player.html#a6d30e9ac162a93843101093b7247401e',1,'TestPlayer']]],
-  ['aceofspades_1',['AceOfSpades',['../class_test_player.html#af871e5a82a2e82d15ae904c187f0fab8',1,'TestPlayer']]],
-  ['atshowdown_2',['atShowdown',['../class_game.html#a2f39584e65a512530a723f4b927ddc42',1,'Game']]]
+  ['big_5fblind_309',['BIG_BLIND',['../class_game.html#a05be7cd941605fe93abe7b5b6c2045df',1,'Game']]],
+  ['button_310',['button',['../class_game.html#a7d39bde5e072ea39bb620295d2b21935',1,'Game']]]
 ];

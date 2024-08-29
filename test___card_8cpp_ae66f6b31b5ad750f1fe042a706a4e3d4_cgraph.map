@@ -1,6 +1,0 @@
-<map id="main" name="main">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,60,56"/>
-<area shape="rect" id="node2" href="$test___card_8cpp.html#a3e6340a433d7669030ad0cab0d4d8ec5" title=" " alt="" coords="108,31,191,56"/>
-<area shape="rect" id="node3" href="$class_card.html#a9b352ce37c8d4e365b31dee979c35add" title="Gets the rank of the card." alt="" coords="239,5,356,31"/>
-<area shape="rect" id="node4" href="$class_card.html#a74782cc7cdcc2bf7cabc89eaa265805a" title="Gets the suit of the card." alt="" coords="241,55,353,80"/>
-</map>

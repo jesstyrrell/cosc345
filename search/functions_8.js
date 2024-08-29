@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['handevaluator_0',['HandEvaluator',['../class_hand_evaluator.html#a71b8cb0a809fdeb7fa002185ba07afd4',1,'HandEvaluator']]],
-  ['humanplayer_1',['HumanPlayer',['../class_human_player.html#aae2029af036081e540ff78c2e62cf8c4',1,'HumanPlayer']]]
+  ['main_274',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;main.cpp'],['../test___card_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;test_Card.cpp'],['../test___deck_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;test_Deck.cpp'],['../test___game_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;test_Game.cpp'],['../test___player_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;test_Player.cpp']]],
+  ['makemoveforuser_275',['makeMoveForUser',['../class_game.html#a1a44850a64799e17f43f22b560275157',1,'Game']]]
 ];
