@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['test_5fcard_0',['test_card',['../class_card.html#a6f0afc8f51200818b7295341bad53eb5',1,'Card']]],
-  ['test_5fgame_1',['test_game',['../class_game.html#a2a40b9c0d56307fbe67da500ed9d4cff',1,'Game']]]
+  ['player_0',['Player',['../class_player.html#af94221777924e4498b535e52f1dd3c44',1,'Player']]],
+  ['playhand_1',['playHand',['../class_game.html#ab72401c43b303a37dec67f3d6b75a927',1,'Game']]]
 ];

@@ -1,0 +1,16 @@
+digraph "main"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="main",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="test_card",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$test___card_8cpp.html#a3e6340a433d7669030ad0cab0d4d8ec5",tooltip=" "];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Card::get_rank",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_card.html#a9b352ce37c8d4e365b31dee979c35add",tooltip="Gets the rank of the card."];
+  Node2 -> Node4 [id="edge3_Node000002_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="Card::get_suit",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_card.html#a74782cc7cdcc2bf7cabc89eaa265805a",tooltip="Gets the suit of the card."];
+}

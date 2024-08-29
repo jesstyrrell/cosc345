@@ -1,4 +1,4 @@
-name: Doxygen GitHub Pages Deploy Action
+name: Generate and Deploy Doxygen Documentation
 
 on:
   push:
@@ -8,15 +8,46 @@ on:
 
 jobs:
   deploy:
-    permissions:
-      contents: write
-      
     runs-on: ubuntu-latest
+
     steps:
-      - uses: DenverCoder1/doxygen-github-pages-action@v2.0.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          folder: docs/html
-          config_file: Doxyfile
-          doxygen_version: 1.9.6
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Doxygen
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y doxygen
+
+      - name: Generate Documentation
+        run: doxygen Doxyfile
+
+      - name: Checkout gh-pages branch
+        run: |
+          git fetch origin gh-pages
+          git checkout gh-pages || git checkout -b gh-pages
+        # Fetches the gh-pages branch, checks out the branch or creates it if it does not exist
+
+      - name: Clean gh-pages branch
+        run: |
+          git rm -rf .
+          git commit -m "Cleanup gh-pages branch" || true
+        # Remove all files in the gh-pages branch and commit the change
+
+      - name: Copy Documentation
+        run: |
+          mkdir -p doxygen
+          cp -r docs/html/* doxygen/
+        
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+      - name: Commit and Push Changes
+        run: |
+          git add doxygen
+          git commit -m "Deploy Doxygen documentation"
+          git push origin gh-pages --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
