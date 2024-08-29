@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['y_173',['y',['../struct_point.html#a2e1b5fb2b2a83571f5c0bc0f66a73cf7',1,'Point']]]
+  ['_7eguiwrapper_195',['~GUIWrapper',['../class_g_u_i_wrapper.html#ab34a88d3c469e096302e1474b8c8c899',1,'GUIWrapper']]]
 ];

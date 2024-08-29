@@ -1,0 +1,20 @@
+digraph "HandEvaluatorTest"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="HandEvaluatorTest",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="testing::Test",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" evaluator" ,fontname="Helvetica"];
+  Node3 [label="HandEvaluator",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_hand_evaluator.html",tooltip="Evaluates poker hands and determines winners, draws, or losses."];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" DRAW\nLOSE\nWIN" ,fontname="Helvetica"];
+  Node4 [label="int",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" ranks\nsuits" ,fontname="Helvetica"];
+  Node5 [label="std::vector\< string \>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node6 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" elements" ,fontname="Helvetica"];
+  Node6 [label="std::string",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="std::basic_string\<\l Char \>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+}

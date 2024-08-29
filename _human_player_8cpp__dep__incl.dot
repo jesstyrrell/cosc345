@@ -14,5 +14,7 @@ digraph "src/HumanPlayer.cpp"
   Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 [label="src/GUI.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_g_u_i_8cpp.html",tooltip=" "];
   Node2 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="tests/test_Game.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test___game_8cpp.html",tooltip=" "];
+  Node6 [label="tests/test_Game.cc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test___game_8cc.html",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="tests/test_HumanPlayer.cc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test___human_player_8cc.html",tooltip=" "];
 }

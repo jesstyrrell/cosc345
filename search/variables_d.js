@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['y_342',['y',['../struct_point.html#a2e1b5fb2b2a83571f5c0bc0f66a73cf7',1,'Point']]]
+  ['win_383',['WIN',['../class_equity_calculator.html#ab397765f1ae7b57a6ec8a6a45c858326',1,'EquityCalculator::WIN()'],['../class_hand_evaluator.html#ac1bb541513b3b5d2e0f3797e32d2e289',1,'HandEvaluator::WIN()']]]
 ];

@@ -127,72 +127,40 @@ $(function() {
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="class_deck.html#a3ad744640638d4a52761525d56004cef">   63</a></span>&#160;<a class="code" href="class_card.html">Card</a> <a class="code" href="class_deck.html#a3ad744640638d4a52761525d56004cef">Deck::find_card</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; rank, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; suit) {</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="class_card.html">Card</a> card : cards) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">if</span> (card.get_suit() == suit &amp;&amp; card.get_rank() == rank) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">return</span> card;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_card.html">Card</a>(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="class_deck.html#a61714386178ebc83bfa95b838db0adf1">   77</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_deck.html#a61714386178ebc83bfa95b838db0adf1">Deck::remove_card</a>(<a class="code" href="class_card.html">Card</a> card) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; cards.size(); i++) {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">if</span> (cards[i].get_suit() == card.<a class="code" href="class_card.html#a74782cc7cdcc2bf7cabc89eaa265805a">get_suit</a>() &amp;&amp; cards[i].get_rank() == card.<a class="code" href="class_card.html#a9b352ce37c8d4e365b31dee979c35add">get_rank</a>()) {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            cards.erase(cards.begin() + i);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="class_deck.html#ada7ef0115cdb8d1ab3e3a47c5d15b14d">   87</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_deck.html#ada7ef0115cdb8d1ab3e3a47c5d15b14d">Deck::test_deck</a>() {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    vector&lt;Card&gt; allCardsInDeck;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="class_deck.html">Deck</a> deck = <a class="code" href="class_deck.html">Deck</a>();</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    deck.<a class="code" href="class_deck.html#ae5a1e52ab00ae5924f2bc6b730dba3eb">shuffle</a>();</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// Check that all the cards in the deck are unique and not empty</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="class_card.html">Card</a> card : deck.<a class="code" href="class_deck.html#a2fe0172048296260450a74035a34db9b">get_cards</a>()) {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="comment">// Check if the cards are empty</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">if</span> (card.get_suit() == <span class="stringliteral">&quot;&quot;</span> || card.get_rank() == <span class="stringliteral">&quot;&quot;</span>) {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Card is empty&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="comment">// Check if current card is in the vector of all cards</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="class_card.html">Card</a> c : allCardsInDeck) {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keywordflow">if</span> (c.get_suit() == card.get_suit() &amp;&amp; c.get_rank() == card.get_rank()) {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                std::cout &lt;&lt; <span class="stringliteral">&quot;Card is not unique&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="comment">// Add the card to the vector of all cards</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        allCardsInDeck.push_back(card);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment">// Free memory</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    allCardsInDeck.clear();</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> checkSuit = card.<a class="code" href="class_card.html#a74782cc7cdcc2bf7cabc89eaa265805a">get_suit</a>() == suit;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> checkRank = card.get_rank() == rank;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">if</span> (checkSuit &amp;&amp; checkRank) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">return</span> card;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_card.html">Card</a>(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="class_deck.html#a61714386178ebc83bfa95b838db0adf1">   81</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_deck.html#a61714386178ebc83bfa95b838db0adf1">Deck::remove_card</a>(<a class="code" href="class_card.html">Card</a> card) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; cards.size(); i++) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">if</span> (cards[i].get_suit() == card.<a class="code" href="class_card.html#a74782cc7cdcc2bf7cabc89eaa265805a">get_suit</a>() &amp;&amp; cards[i].get_rank() == card.<a class="code" href="class_card.html#a9b352ce37c8d4e365b31dee979c35add">get_rank</a>()) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            cards.erase(cards.begin() + i);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
 <div class="ttc" id="a_deck_8hpp_html"><div class="ttname"><a href="_deck_8hpp.html">Deck.hpp</a></div></div>
 <div class="ttc" id="aclass_card_html"><div class="ttname"><a href="class_card.html">Card</a></div><div class="ttdoc">Represents a single card in a deck of cards. Each card has a suit and a rank. CHANGE!...</div><div class="ttdef"><b>Definition:</b> <a href="_card_8hpp_source.html#l00014">Card.hpp:14</a></div></div>
 <div class="ttc" id="aclass_card_html_a74782cc7cdcc2bf7cabc89eaa265805a"><div class="ttname"><a href="class_card.html#a74782cc7cdcc2bf7cabc89eaa265805a">Card::get_suit</a></div><div class="ttdeci">const std::string get_suit()</div><div class="ttdoc">Gets the suit of the card.</div><div class="ttdef"><b>Definition:</b> <a href="_card_8cpp_source.html#l00025">Card.cpp:25</a></div></div>
 <div class="ttc" id="aclass_card_html_a9b352ce37c8d4e365b31dee979c35add"><div class="ttname"><a href="class_card.html#a9b352ce37c8d4e365b31dee979c35add">Card::get_rank</a></div><div class="ttdeci">const std::string get_rank()</div><div class="ttdoc">Gets the rank of the card.</div><div class="ttdef"><b>Definition:</b> <a href="_card_8cpp_source.html#l00034">Card.cpp:34</a></div></div>
-<div class="ttc" id="aclass_deck_html"><div class="ttname"><a href="class_deck.html">Deck</a></div><div class="ttdoc">Represents a deck of playing cards, providing functionality to shuffle, deal, and manage the deck.</div><div class="ttdef"><b>Definition:</b> <a href="_deck_8hpp_source.html#l00013">Deck.hpp:13</a></div></div>
 <div class="ttc" id="aclass_deck_html_a14aa4f2f94b6b880cd575cf17af26762"><div class="ttname"><a href="class_deck.html#a14aa4f2f94b6b880cd575cf17af26762">Deck::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdoc">Resets the deck to its initial state with all 52 cards.</div><div class="ttdef"><b>Definition:</b> <a href="_deck_8cpp_source.html#l00023">Deck.cpp:23</a></div></div>
 <div class="ttc" id="aclass_deck_html_a16604aabf7fc56dd44a72c4e862758cf"><div class="ttname"><a href="class_deck.html#a16604aabf7fc56dd44a72c4e862758cf">Deck::deal</a></div><div class="ttdeci">Card deal()</div><div class="ttdoc">Deals a card from the top of the deck.</div><div class="ttdef"><b>Definition:</b> <a href="_deck_8cpp_source.html#l00050">Deck.cpp:50</a></div></div>
 <div class="ttc" id="aclass_deck_html_a2fe0172048296260450a74035a34db9b"><div class="ttname"><a href="class_deck.html#a2fe0172048296260450a74035a34db9b">Deck::get_cards</a></div><div class="ttdeci">vector&lt; Card &gt; get_cards()</div><div class="ttdoc">Retrieves the current set of cards in the deck.</div><div class="ttdef"><b>Definition:</b> <a href="_deck_8cpp_source.html#l00037">Deck.cpp:37</a></div></div>
 <div class="ttc" id="aclass_deck_html_a3ad744640638d4a52761525d56004cef"><div class="ttname"><a href="class_deck.html#a3ad744640638d4a52761525d56004cef">Deck::find_card</a></div><div class="ttdeci">Card find_card(const string &amp;rank, const string &amp;suit)</div><div class="ttdoc">Finds a specific card in the deck based on rank and suit.</div><div class="ttdef"><b>Definition:</b> <a href="_deck_8cpp_source.html#l00063">Deck.cpp:63</a></div></div>
 <div class="ttc" id="aclass_deck_html_a57ae1cb4ac6fd61c249cefb2db85eb99"><div class="ttname"><a href="class_deck.html#a57ae1cb4ac6fd61c249cefb2db85eb99">Deck::Deck</a></div><div class="ttdeci">Deck()</div><div class="ttdoc">Constructs a Deck object and initializes the deck with all 52 cards.</div><div class="ttdef"><b>Definition:</b> <a href="_deck_8cpp_source.html#l00010">Deck.cpp:10</a></div></div>
-<div class="ttc" id="aclass_deck_html_a61714386178ebc83bfa95b838db0adf1"><div class="ttname"><a href="class_deck.html#a61714386178ebc83bfa95b838db0adf1">Deck::remove_card</a></div><div class="ttdeci">void remove_card(Card card)</div><div class="ttdoc">Removes a specified card from the deck.</div><div class="ttdef"><b>Definition:</b> <a href="_deck_8cpp_source.html#l00077">Deck.cpp:77</a></div></div>
-<div class="ttc" id="aclass_deck_html_ada7ef0115cdb8d1ab3e3a47c5d15b14d"><div class="ttname"><a href="class_deck.html#ada7ef0115cdb8d1ab3e3a47c5d15b14d">Deck::test_deck</a></div><div class="ttdeci">static bool test_deck()</div><div class="ttdoc">Tests the Deck class functionality.</div><div class="ttdef"><b>Definition:</b> <a href="_deck_8cpp_source.html#l00087">Deck.cpp:87</a></div></div>
+<div class="ttc" id="aclass_deck_html_a61714386178ebc83bfa95b838db0adf1"><div class="ttname"><a href="class_deck.html#a61714386178ebc83bfa95b838db0adf1">Deck::remove_card</a></div><div class="ttdeci">void remove_card(Card card)</div><div class="ttdoc">Removes a specified card from the deck.</div><div class="ttdef"><b>Definition:</b> <a href="_deck_8cpp_source.html#l00081">Deck.cpp:81</a></div></div>
 <div class="ttc" id="aclass_deck_html_ae5a1e52ab00ae5924f2bc6b730dba3eb"><div class="ttname"><a href="class_deck.html#ae5a1e52ab00ae5924f2bc6b730dba3eb">Deck::shuffle</a></div><div class="ttdeci">void shuffle()</div><div class="ttdoc">Shuffles the deck of cards.</div><div class="ttdef"><b>Definition:</b> <a href="_deck_8cpp_source.html#l00041">Deck.cpp:41</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 29 2024 10:05:12 for Bluron by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Aug 29 2024 22:08:26 for Bluron by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

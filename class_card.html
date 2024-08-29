@@ -97,9 +97,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a6f0afc8f51200818b7295341bad53eb5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_card.html#a6f0afc8f51200818b7295341bad53eb5">test_card</a> ()</td></tr>
-<tr class="memdesc:a6f0afc8f51200818b7295341bad53eb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the <a class="el" href="class_card.html" title="Represents a single card in a deck of cards. Each card has a suit and a rank. CHANGE!...">Card</a> class functionality.  <a href="class_card.html#a6f0afc8f51200818b7295341bad53eb5">More...</a><br /></td></tr>
-<tr class="separator:a6f0afc8f51200818b7295341bad53eb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f4082fb1fcfcc8239a4ed7b49d8aa47"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_card.html#a4f4082fb1fcfcc8239a4ed7b49d8aa47">test_card</a> ()</td></tr>
+<tr class="memdesc:a4f4082fb1fcfcc8239a4ed7b49d8aa47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the <a class="el" href="class_card.html" title="Represents a single card in a deck of cards. Each card has a suit and a rank. CHANGE!...">Card</a> class functionality.  <a href="class_card.html#a4f4082fb1fcfcc8239a4ed7b49d8aa47">More...</a><br /></td></tr>
+<tr class="separator:a4f4082fb1fcfcc8239a4ed7b49d8aa47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
@@ -166,13 +166,6 @@ Data Fields</h2></td></tr>
 <div class="ttc" id="aclass_card_html_a49353d2c0122828982490d640d7ebb4c"><div class="ttname"><a href="class_card.html#a49353d2c0122828982490d640d7ebb4c">Card::rank</a></div><div class="ttdeci">std::string rank</div><div class="ttdoc">The rank of the card (e.g., Ace, King, 7).</div><div class="ttdef"><b>Definition:</b> <a href="_card_8hpp_source.html#l00017">Card.hpp:17</a></div></div>
 <div class="ttc" id="aclass_card_html_a5ac01df9ae312cdb06ed986397445cac"><div class="ttname"><a href="class_card.html#a5ac01df9ae312cdb06ed986397445cac">Card::suit</a></div><div class="ttdeci">std::string suit</div><div class="ttdoc">The suit of the card (e.g., Hearts, Diamonds).</div><div class="ttdef"><b>Definition:</b> <a href="_card_8hpp_source.html#l00016">Card.hpp:16</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="_card_8cpp_source.html#l00045">test_card()</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_card_a569e0a5fbe2fc61dfe0105a0ded81059_icgraph.png" border="0" usemap="#aclass_card_a569e0a5fbe2fc61dfe0105a0ded81059_icgraph" alt=""/></div>
-</div>
-
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -192,12 +185,14 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Gets the card's representation as a string. </p>
-<dl class="section return"><dt>Returns</dt><dd>A string representing the card (e.g., "Ace of Hearts"). </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A string representing the card (e.g., "Ace of Hearts").</dd></dl>
+<p>Method returning the string representation of the card</p>
+<dl class="section return"><dt>Returns</dt><dd>string representation of the card object </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_card_8cpp_source.html#l00038">38</a> of file <a class="el" href="_card_8cpp_source.html">Card.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                            {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_card.html#a49353d2c0122828982490d640d7ebb4c">rank</a> + <span class="stringliteral">&quot; of &quot;</span> + <a class="code" href="class_card.html#a5ac01df9ae312cdb06ed986397445cac">suit</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="_card_8cpp_source.html#l00043">43</a> of file <a class="el" href="_card_8cpp_source.html">Card.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                            {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_card.html#a49353d2c0122828982490d640d7ebb4c">rank</a> + <span class="stringliteral">&quot; of &quot;</span> + <a class="code" href="class_card.html#a5ac01df9ae312cdb06ed986397445cac">suit</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_card_8hpp_source.html#l00017">rank</a>, and <a class="el" href="_card_8hpp_source.html#l00016">suit</a>.</p>
 
@@ -230,7 +225,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_card_8hpp_source.html#l00017">rank</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00361">getCardString()</a>, <a class="el" href="_deck_8cpp_source.html#l00077">Deck::remove_card()</a>, <a class="el" href="_card_8cpp_source.html#l00045">test_card()</a>, and <a class="el" href="test___card_8cpp_source.html#l00005">test_card()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00361">getCardString()</a>, <a class="el" href="_deck_8cpp_source.html#l00081">Deck::remove_card()</a>, and <a class="el" href="test___card_8cc_source.html#l00005">TEST()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -266,7 +261,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_card_8hpp_source.html#l00016">suit</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00361">getCardString()</a>, <a class="el" href="_deck_8cpp_source.html#l00077">Deck::remove_card()</a>, <a class="el" href="_card_8cpp_source.html#l00045">test_card()</a>, and <a class="el" href="test___card_8cpp_source.html#l00005">test_card()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_deck_8cpp_source.html#l00063">Deck::find_card()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00361">getCardString()</a>, <a class="el" href="_deck_8cpp_source.html#l00081">Deck::remove_card()</a>, and <a class="el" href="test___card_8cc_source.html#l00005">TEST()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -275,8 +270,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a6f0afc8f51200818b7295341bad53eb5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f0afc8f51200818b7295341bad53eb5">&#9670;&nbsp;</a></span>test_card()</h2>
+<a id="a4f4082fb1fcfcc8239a4ed7b49d8aa47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f4082fb1fcfcc8239a4ed7b49d8aa47">&#9670;&nbsp;</a></span>test_card()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -285,7 +280,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool Card::test_card </td>
+          <td class="memname">static bool Card::test_card </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -299,39 +294,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Tests the <a class="el" href="class_card.html" title="Represents a single card in a deck of cards. Each card has a suit and a rank. CHANGE!...">Card</a> class functionality. </p>
-<dl class="section return"><dt>Returns</dt><dd>True if the test passes, otherwise false.</dd></dl>
-<p>A static method to test the <a class="el" href="class_card.html" title="Represents a single card in a deck of cards. Each card has a suit and a rank. CHANGE!...">Card</a> class. </p>
-
-<p class="definition">Definition at line <a class="el" href="_card_8cpp_source.html#l00045">45</a> of file <a class="el" href="_card_8cpp_source.html">Card.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                     {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="class_card.html">Card</a> card = <a class="code" href="class_card.html#a569e0a5fbe2fc61dfe0105a0ded81059">Card</a>(<span class="stringliteral">&quot;Hearts&quot;</span>, <span class="stringliteral">&quot;Ace&quot;</span>);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span> (card.<a class="code" href="class_card.html#a74782cc7cdcc2bf7cabc89eaa265805a">get_suit</a>() != <span class="stringliteral">&quot;Hearts&quot;</span>) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">if</span> (card.<a class="code" href="class_card.html#a9b352ce37c8d4e365b31dee979c35add">get_rank</a>() != <span class="stringliteral">&quot;Ace&quot;</span>) {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
-<div class="ttc" id="aclass_card_html_a74782cc7cdcc2bf7cabc89eaa265805a"><div class="ttname"><a href="class_card.html#a74782cc7cdcc2bf7cabc89eaa265805a">Card::get_suit</a></div><div class="ttdeci">const std::string get_suit()</div><div class="ttdoc">Gets the suit of the card.</div><div class="ttdef"><b>Definition:</b> <a href="_card_8cpp_source.html#l00025">Card.cpp:25</a></div></div>
-<div class="ttc" id="aclass_card_html_a9b352ce37c8d4e365b31dee979c35add"><div class="ttname"><a href="class_card.html#a9b352ce37c8d4e365b31dee979c35add">Card::get_rank</a></div><div class="ttdeci">const std::string get_rank()</div><div class="ttdoc">Gets the rank of the card.</div><div class="ttdef"><b>Definition:</b> <a href="_card_8cpp_source.html#l00034">Card.cpp:34</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="_card_8cpp_source.html#l00018">Card()</a>, <a class="el" href="_card_8cpp_source.html#l00034">get_rank()</a>, and <a class="el" href="_card_8cpp_source.html#l00025">get_suit()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00022">uniTest()</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_card_a6f0afc8f51200818b7295341bad53eb5_cgraph.png" border="0" usemap="#aclass_card_a6f0afc8f51200818b7295341bad53eb5_cgraph" alt=""/></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_card_a6f0afc8f51200818b7295341bad53eb5_icgraph.png" border="0" usemap="#aclass_card_a6f0afc8f51200818b7295341bad53eb5_icgraph" alt=""/></div>
-</div>
+<dl class="section return"><dt>Returns</dt><dd>True if the test passes, otherwise false. </dd></dl>
 
 </div>
 </div>
@@ -352,7 +315,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_card_8hpp_source.html#l00017">17</a> of file <a class="el" href="_card_8hpp_source.html">Card.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_card_8cpp_source.html#l00038">get_card()</a>, and <a class="el" href="_card_8cpp_source.html#l00034">get_rank()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_card_8cpp_source.html#l00043">get_card()</a>, and <a class="el" href="_card_8cpp_source.html#l00034">get_rank()</a>.</p>
 
 </div>
 </div>
@@ -372,7 +335,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_card_8hpp_source.html#l00016">16</a> of file <a class="el" href="_card_8hpp_source.html">Card.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_card_8cpp_source.html#l00038">get_card()</a>, and <a class="el" href="_card_8cpp_source.html#l00025">get_suit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_card_8cpp_source.html#l00043">get_card()</a>, and <a class="el" href="_card_8cpp_source.html#l00025">get_suit()</a>.</p>
 
 </div>
 </div>
@@ -383,7 +346,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 29 2024 10:05:12 for Bluron by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Aug 29 2024 22:08:26 for Bluron by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

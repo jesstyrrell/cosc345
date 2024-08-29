@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['testgame_184',['TestGame',['../class_test_game.html',1,'']]],
-  ['testplayer_185',['TestPlayer',['../class_test_player.html',1,'']]]
+  ['randomplayer_211',['RandomPlayer',['../class_random_player.html',1,'']]],
+  ['randomplayertest_212',['RandomPlayerTest',['../class_random_player_test.html',1,'']]]
 ];

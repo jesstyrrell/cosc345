@@ -7,5 +7,7 @@ digraph "HumanPlayer::endOfHand"
   rankdir="LR";
   Node1 [label="HumanPlayer::endOfHand",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Handles actions at the end of a hand."];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="GUI::endOfRoundMenu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_u_i.html#ac7211e8e1f154e8e729921afe5d58225",tooltip="Displays the menu at the end of a round."];
+  Node2 [label="GUIWrapper::endOfRoundMenu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_u_i_wrapper.html#af0562c0046b54e456c4ce44795148e48",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="GUI::endOfRoundMenu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_u_i.html#ac7211e8e1f154e8e729921afe5d58225",tooltip="Displays the menu at the end of a round."];
 }

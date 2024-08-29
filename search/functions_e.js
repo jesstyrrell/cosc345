@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unitest_304',['uniTest',['../main_8cpp.html#a9993390ffcca4b99cfb97b329c55ae58',1,'main.cpp']]]
+  ['win_340',['win',['../class_player.html#ab466284a338277f1c20837e3f4d11b57',1,'Player']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['win_305',['win',['../class_player.html#ab466284a338277f1c20837e3f4d11b57',1,'Player']]]
+  ['_7eguiwrapper_341',['~GUIWrapper',['../class_g_u_i_wrapper.html#ab34a88d3c469e096302e1474b8c8c899',1,'GUIWrapper']]]
 ];

@@ -76,13 +76,13 @@ Example</h2>
 <ol type="1">
 <li>Keep your main project files (<a class="el" href="_card_8cpp.html">Card.cpp</a>, <a class="el" href="_card_8hpp.html">Card.hpp</a>, <a class="el" href="main_8cpp.html">main.cpp</a>) as they are, without any test methods.</li>
 <li>Create a <code>/tests</code> folder in your project root if it doesn't already exist.</li>
-<li>Create a new file named <code><a class="el" href="test___card_8cpp.html">test_Card.cpp</a></code> in the <code>/tests</code> folder:</li>
+<li>Create a new file named <code>test_Card.cpp</code> in the <code>/tests</code> folder:</li>
 </ol>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;../Card.hpp&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;cassert&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> <a class="code" href="test___card_8cpp.html#a3e6340a433d7669030ad0cab0d4d8ec5">test_card</a>() {</div>
+<div class="line"><span class="keywordtype">void</span> test_card() {</div>
 <div class="line">    <a class="code" href="class_card.html">Card</a> card(<span class="stringliteral">&quot;Hearts&quot;</span>, <span class="stringliteral">&quot;Ace&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">    assert(card.get_suit() == <span class="stringliteral">&quot;Hearts&quot;</span> &amp;&amp; <span class="stringliteral">&quot;Incorrect suit&quot;</span>);</div>
@@ -92,12 +92,11 @@ Example</h2>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> <a class="code" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>() {</div>
-<div class="line">    <a class="code" href="test___card_8cpp.html#a3e6340a433d7669030ad0cab0d4d8ec5">test_card</a>();</div>
+<div class="line">    test_card();</div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 <div class="ttc" id="aclass_card_html"><div class="ttname"><a href="class_card.html">Card</a></div><div class="ttdoc">Represents a single card in a deck of cards. Each card has a suit and a rank. CHANGE!...</div><div class="ttdef"><b>Definition:</b> <a href="_card_8hpp_source.html#l00014">Card.hpp:14</a></div></div>
-<div class="ttc" id="amain_8cpp_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00058">main.cpp:58</a></div></div>
-<div class="ttc" id="atest___card_8cpp_html_a3e6340a433d7669030ad0cab0d4d8ec5"><div class="ttname"><a href="test___card_8cpp.html#a3e6340a433d7669030ad0cab0d4d8ec5">test_card</a></div><div class="ttdeci">void test_card()</div><div class="ttdef"><b>Definition:</b> <a href="test___card_8cpp_source.html#l00005">test_Card.cpp:5</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00023">main.cpp:23</a></div></div>
 </div><!-- fragment --><ol type="1">
 <li>Update your <code>CMakeLists.txt</code> to build both your main project and the tests:</li>
 </ol>
@@ -133,16 +132,16 @@ Example</h2>
 <p>This setup creates a separate executable for your tests, which CTest will run. Your main project remains untouched by the testing code.</p>
 <p>For each additional class you want to test:</p>
 <ol type="1">
-<li>Create a new test file in the <code>/tests</code> folder (e.g., <code><a class="el" href="test___deck_8cpp.html">test_Deck.cpp</a></code> for a <code><a class="el" href="class_deck.html" title="Represents a deck of playing cards, providing functionality to shuffle, deal, and manage the deck.">Deck</a></code> class).</li>
+<li>Create a new test file in the <code>/tests</code> folder (e.g., <code>test_Deck.cpp</code> for a <code><a class="el" href="class_deck.html" title="Represents a deck of playing cards, providing functionality to shuffle, deal, and manage the deck.">Deck</a></code> class).</li>
 <li>Write the test function and a main function in this new file.</li>
 <li>Update <code>CMakeLists.txt</code> to build the new test executable and add it as a test.</li>
 </ol>
-<p>For example, if you had a <code><a class="el" href="class_deck.html" title="Represents a deck of playing cards, providing functionality to shuffle, deal, and manage the deck.">Deck</a></code> class, you might create <code><a class="el" href="test___deck_8cpp.html">tests/test_Deck.cpp</a></code>:</p>
+<p>For example, if you had a <code><a class="el" href="class_deck.html" title="Represents a deck of playing cards, providing functionality to shuffle, deal, and manage the deck.">Deck</a></code> class, you might create <code>tests/test_Deck.cpp</code>:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;../Deck.hpp&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;cassert&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> <a class="code" href="test___deck_8cpp.html#a62863bfcb6d04be49be4274a8438af17">test_deck</a>() {</div>
+<div class="line"><span class="keywordtype">void</span> test_deck() {</div>
 <div class="line">    <a class="code" href="class_deck.html">Deck</a> deck;</div>
 <div class="line">    <span class="comment">// Your test logic here</span></div>
 <div class="line">    assert(deck.size() == 52 &amp;&amp; <span class="stringliteral">&quot;Deck should have 52 cards&quot;</span>);</div>
@@ -150,11 +149,10 @@ Example</h2>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> <a class="code" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>() {</div>
-<div class="line">    <a class="code" href="test___deck_8cpp.html#a62863bfcb6d04be49be4274a8438af17">test_deck</a>();</div>
+<div class="line">    test_deck();</div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 <div class="ttc" id="aclass_deck_html"><div class="ttname"><a href="class_deck.html">Deck</a></div><div class="ttdoc">Represents a deck of playing cards, providing functionality to shuffle, deal, and manage the deck.</div><div class="ttdef"><b>Definition:</b> <a href="_deck_8hpp_source.html#l00013">Deck.hpp:13</a></div></div>
-<div class="ttc" id="atest___deck_8cpp_html_a62863bfcb6d04be49be4274a8438af17"><div class="ttname"><a href="test___deck_8cpp.html#a62863bfcb6d04be49be4274a8438af17">test_deck</a></div><div class="ttdeci">void test_deck()</div><div class="ttdef"><b>Definition:</b> <a href="test___deck_8cpp_source.html#l00005">test_Deck.cpp:5</a></div></div>
 </div><!-- fragment --><p>Then update <code>CMakeLists.txt</code>:</p>
 <div class="fragment"><div class="line"># ... previous content ...</div>
 <div class="line"> </div>
@@ -171,7 +169,7 @@ Example</h2>
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 29 2024 10:05:12 for Bluron by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Aug 29 2024 22:08:26 for Bluron by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

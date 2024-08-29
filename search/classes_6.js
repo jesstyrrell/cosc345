@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['randomplayer_183',['RandomPlayer',['../class_random_player.html',1,'']]]
+  ['player_209',['Player',['../class_player.html',1,'']]],
+  ['point_210',['Point',['../struct_point.html',1,'']]]
 ];

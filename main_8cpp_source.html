@@ -86,111 +86,73 @@ $(function() {
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="main_8cpp.html#a9993390ffcca4b99cfb97b329c55ae58">   22</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="main_8cpp.html#a9993390ffcca4b99cfb97b329c55ae58">uniTest</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">bool</span> pass[4] = { 0 }; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// A main method for testing the classes</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">   23</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    pass[0] = <a class="code" href="class_card.html#a6f0afc8f51200818b7295341bad53eb5">Card::test_card</a>();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    pass[1] = <a class="code" href="class_deck.html#ada7ef0115cdb8d1ab3e3a47c5d15b14d">Deck::test_deck</a>();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    pass[2] = <a class="code" href="class_game.html#a2a40b9c0d56307fbe67da500ed9d4cff">Game::test_game</a>();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    pass[3] = <a class="code" href="class_player.html#a729f3d36749ee2986b3d9606cf852682">Player::test_player</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">// Check if the ci flag is passed</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">if</span> (argc &gt; 1 &amp;&amp; strcmp(argv[1], <span class="stringliteral">&quot;-ci&quot;</span>) == 0) {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">bool</span> allPassed = pass[0] &amp;&amp; pass[1] &amp;&amp; pass[2] &amp;&amp; pass[3]; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">if</span> (allPassed) {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">// std::cout &lt;&lt; &quot;Unit tests passed&quot; &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="comment">// Exiting the program if the tests passed and is running in CI</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">if</span> (argc &gt; 1) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">if</span> (strcmp(argv[1], <span class="stringliteral">&quot;-ci&quot;</span>) == 0) {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                exit(0); </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span> allPassed; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// Printing </span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Unit tests failed&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Card test: &quot;</span> &lt;&lt; pass[0] &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Deck test: &quot;</span> &lt;&lt; pass[1] &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Game test: &quot;</span> &lt;&lt; pass[2] &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Player test: &quot;</span> &lt;&lt; pass[3] &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// Exiting the program if the tests failed</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    exit(1);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">// A main method for testing the classes</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">   58</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="main_8cpp.html#a9993390ffcca4b99cfb97b329c55ae58">uniTest</a>(argc, argv)) {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="comment">// Print a message to the user that the tests failed</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Unit tests failed&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    } </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// Display the start screen </span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="class_g_u_i.html#a0dc53c5a6daa0f01b57c4d4731b4d933">GUI::displayStartScreen</a>();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">int</span> menuChoice = <a class="code" href="class_g_u_i.html#a21186f1096332794cd125455f0b9e4f2">GUI::displayMenu</a>();</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span> (menuChoice == 0) {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="class_g_u_i.html#a663dad721796a4f367c2534e1901fc97">GUI::displayEndMessage</a>();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="class_g_u_i.html#acf2275f45170a133113df56f878ff554">GUI::clearScreen</a>();</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// TODO: Implement a way to get the number of players from the user</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// The first player will always be the human player </span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="class_human_player.html">HumanPlayer</a> player1 = <a class="code" href="class_human_player.html">HumanPlayer</a>(<span class="stringliteral">&quot;Jess&quot;</span>, 1000);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="class_random_player.html">RandomPlayer</a> player2 = <a class="code" href="class_random_player.html">RandomPlayer</a>(<span class="stringliteral">&quot;James&quot;</span>, 1000);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="class_random_player.html">RandomPlayer</a> player3 = <a class="code" href="class_random_player.html">RandomPlayer</a>(<span class="stringliteral">&quot;Corban&quot;</span>, 1000);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="class_random_player.html">RandomPlayer</a> player4 = <a class="code" href="class_random_player.html">RandomPlayer</a>(<span class="stringliteral">&quot;Katie&quot;</span>, 1000);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="class_random_player.html">RandomPlayer</a> player5 = <a class="code" href="class_random_player.html">RandomPlayer</a>(<span class="stringliteral">&quot;Megan&quot;</span>, 1000);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="class_random_player.html">RandomPlayer</a> player6 = <a class="code" href="class_random_player.html">RandomPlayer</a>(<span class="stringliteral">&quot;Loren&quot;</span>, 1000);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="class_random_player.html">RandomPlayer</a> player7 = <a class="code" href="class_random_player.html">RandomPlayer</a>(<span class="stringliteral">&quot;Emily&quot;</span>, 1000);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="class_random_player.html">RandomPlayer</a> player8 = <a class="code" href="class_random_player.html">RandomPlayer</a>(<span class="stringliteral">&quot;Mr. Robot&quot;</span>, 1000);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// Create a vector of pointers </span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    std::vector&lt;Player*&gt; playerPointers;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    playerPointers.push_back(&amp;player1);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    playerPointers.push_back(&amp;player2);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    playerPointers.push_back(&amp;player3);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    playerPointers.push_back(&amp;player4);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    playerPointers.push_back(&amp;player5);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    playerPointers.push_back(&amp;player6);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    playerPointers.push_back(&amp;player7);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    playerPointers.push_back(&amp;player8);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">// Initiate a game with all the players </span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="class_game.html">Game</a> game = <a class="code" href="class_game.html">Game</a>(playerPointers); <span class="comment">// i swear you have to pass a pointer, but also its a list of two players</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">// Set the game object for the GUI</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <a class="code" href="class_g_u_i.html#afbedd68995919c50a7298de4735b77c6">GUI::setGame</a>(&amp;game);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">// display the game state</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="class_g_u_i.html#a8f55dae107a6648458f6eb16608c66d2">GUI::displayGameState</a>();</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">// Start a game loop </span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;   <span class="keywordflow">while</span>(<span class="keyword">true</span>){</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="comment">// Play a hand</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        game.<a class="code" href="class_game.html#ab72401c43b303a37dec67f3d6b75a927">playHand</a>();</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="comment">// Check if the player wants to play another hand</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">if</span> (playerPointers[0]-&gt;endOfHand() != 1) {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        }</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">// Display the end message</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;     <a class="code" href="class_g_u_i.html#a663dad721796a4f367c2534e1901fc97">GUI::displayEndMessage</a>();</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// Display the start screen </span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="class_g_u_i.html#a0dc53c5a6daa0f01b57c4d4731b4d933">GUI::displayStartScreen</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">int</span> menuChoice = <a class="code" href="class_g_u_i.html#a21186f1096332794cd125455f0b9e4f2">GUI::displayMenu</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">if</span> (menuChoice == 0) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="class_g_u_i.html#a663dad721796a4f367c2534e1901fc97">GUI::displayEndMessage</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="class_g_u_i.html#acf2275f45170a133113df56f878ff554">GUI::clearScreen</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// TODO: Implement a way to get the number of players from the user</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// The first player will always be the human player </span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="class_human_player.html">HumanPlayer</a> player1 = <a class="code" href="class_human_player.html">HumanPlayer</a>(<span class="stringliteral">&quot;Jess&quot;</span>, 1000);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="class_random_player.html">RandomPlayer</a> player2 = <a class="code" href="class_random_player.html">RandomPlayer</a>(<span class="stringliteral">&quot;James&quot;</span>, 1000);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="class_random_player.html">RandomPlayer</a> player3 = <a class="code" href="class_random_player.html">RandomPlayer</a>(<span class="stringliteral">&quot;Corban&quot;</span>, 1000);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="class_random_player.html">RandomPlayer</a> player4 = <a class="code" href="class_random_player.html">RandomPlayer</a>(<span class="stringliteral">&quot;Katie&quot;</span>, 1000);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="class_random_player.html">RandomPlayer</a> player5 = <a class="code" href="class_random_player.html">RandomPlayer</a>(<span class="stringliteral">&quot;Megan&quot;</span>, 1000);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="class_random_player.html">RandomPlayer</a> player6 = <a class="code" href="class_random_player.html">RandomPlayer</a>(<span class="stringliteral">&quot;Loren&quot;</span>, 1000);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="class_random_player.html">RandomPlayer</a> player7 = <a class="code" href="class_random_player.html">RandomPlayer</a>(<span class="stringliteral">&quot;Emily&quot;</span>, 1000);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="class_random_player.html">RandomPlayer</a> player8 = <a class="code" href="class_random_player.html">RandomPlayer</a>(<span class="stringliteral">&quot;Mr. Robot&quot;</span>, 1000);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// Create a vector of pointers </span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    std::vector&lt;Player*&gt; playerPointers;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    playerPointers.push_back(&amp;player1);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    playerPointers.push_back(&amp;player2);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    playerPointers.push_back(&amp;player3);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    playerPointers.push_back(&amp;player4);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    playerPointers.push_back(&amp;player5);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    playerPointers.push_back(&amp;player6);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    playerPointers.push_back(&amp;player7);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    playerPointers.push_back(&amp;player8);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// Initiate a game with all the players and pass game object to GUI</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="class_game.html">Game</a> game = <a class="code" href="class_game.html">Game</a>(playerPointers);   <span class="comment">// i swear you have to pass a pointer, but also its a list of two players</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="class_g_u_i.html#afbedd68995919c50a7298de4735b77c6">GUI::setGame</a>(&amp;game);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="class_g_u_i.html#a8f55dae107a6648458f6eb16608c66d2">GUI::displayGameState</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// Start a game loop </span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">while</span>(<span class="keyword">true</span>){</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="comment">// Play a hand</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        game.<a class="code" href="class_game.html#ab72401c43b303a37dec67f3d6b75a927">playHand</a>();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="comment">// Check if the player wants to play another hand</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">if</span> (playerPointers[0]-&gt;endOfHand() != 1) {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// Display the end message</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;     <a class="code" href="class_g_u_i.html#a663dad721796a4f367c2534e1901fc97">GUI::displayEndMessage</a>();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
 <div class="ttc" id="a_card_8hpp_html"><div class="ttname"><a href="_card_8hpp.html">Card.hpp</a></div></div>
 <div class="ttc" id="a_deck_8hpp_html"><div class="ttname"><a href="_deck_8hpp.html">Deck.hpp</a></div></div>
 <div class="ttc" id="a_equity_calculator_8hpp_html"><div class="ttname"><a href="_equity_calculator_8hpp.html">EquityCalculator.hpp</a></div></div>
@@ -198,8 +160,6 @@ $(function() {
 <div class="ttc" id="a_game_8hpp_html"><div class="ttname"><a href="_game_8hpp.html">Game.hpp</a></div></div>
 <div class="ttc" id="a_hand_evaluator_8hpp_html"><div class="ttname"><a href="_hand_evaluator_8hpp.html">HandEvaluator.hpp</a></div></div>
 <div class="ttc" id="a_player_8hpp_html"><div class="ttname"><a href="_player_8hpp.html">Player.hpp</a></div></div>
-<div class="ttc" id="aclass_card_html_a6f0afc8f51200818b7295341bad53eb5"><div class="ttname"><a href="class_card.html#a6f0afc8f51200818b7295341bad53eb5">Card::test_card</a></div><div class="ttdeci">static bool test_card()</div><div class="ttdoc">Tests the Card class functionality.</div><div class="ttdef"><b>Definition:</b> <a href="_card_8cpp_source.html#l00045">Card.cpp:45</a></div></div>
-<div class="ttc" id="aclass_deck_html_ada7ef0115cdb8d1ab3e3a47c5d15b14d"><div class="ttname"><a href="class_deck.html#ada7ef0115cdb8d1ab3e3a47c5d15b14d">Deck::test_deck</a></div><div class="ttdeci">static bool test_deck()</div><div class="ttdoc">Tests the Deck class functionality.</div><div class="ttdef"><b>Definition:</b> <a href="_deck_8cpp_source.html#l00087">Deck.cpp:87</a></div></div>
 <div class="ttc" id="aclass_g_u_i_html_a0dc53c5a6daa0f01b57c4d4731b4d933"><div class="ttname"><a href="class_g_u_i.html#a0dc53c5a6daa0f01b57c4d4731b4d933">GUI::displayStartScreen</a></div><div class="ttdeci">static void displayStartScreen()</div><div class="ttdoc">Displays the start screen of the game.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_8cpp_source.html#l00158">GUI.cpp:158</a></div></div>
 <div class="ttc" id="aclass_g_u_i_html_a21186f1096332794cd125455f0b9e4f2"><div class="ttname"><a href="class_g_u_i.html#a21186f1096332794cd125455f0b9e4f2">GUI::displayMenu</a></div><div class="ttdeci">static int displayMenu()</div><div class="ttdoc">Displays the main menu of the game.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_8cpp_source.html#l00249">GUI.cpp:249</a></div></div>
 <div class="ttc" id="aclass_g_u_i_html_a663dad721796a4f367c2534e1901fc97"><div class="ttname"><a href="class_g_u_i.html#a663dad721796a4f367c2534e1901fc97">GUI::displayEndMessage</a></div><div class="ttdeci">static void displayEndMessage()</div><div class="ttdoc">Displays the end message when the game is over.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_8cpp_source.html#l00204">GUI.cpp:204</a></div></div>
@@ -207,17 +167,14 @@ $(function() {
 <div class="ttc" id="aclass_g_u_i_html_acf2275f45170a133113df56f878ff554"><div class="ttname"><a href="class_g_u_i.html#acf2275f45170a133113df56f878ff554">GUI::clearScreen</a></div><div class="ttdeci">static void clearScreen()</div><div class="ttdoc">Clears the console screen.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_8cpp_source.html#l00035">GUI.cpp:35</a></div></div>
 <div class="ttc" id="aclass_g_u_i_html_afbedd68995919c50a7298de4735b77c6"><div class="ttname"><a href="class_g_u_i.html#afbedd68995919c50a7298de4735b77c6">GUI::setGame</a></div><div class="ttdeci">static void setGame(Game *game)</div><div class="ttdoc">Sets the game object for the GUI.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_8cpp_source.html#l00024">GUI.cpp:24</a></div></div>
 <div class="ttc" id="aclass_game_html"><div class="ttname"><a href="class_game.html">Game</a></div><div class="ttdoc">Manages the state and flow of a poker game.</div><div class="ttdef"><b>Definition:</b> <a href="_game_8hpp_source.html#l00029">Game.hpp:29</a></div></div>
-<div class="ttc" id="aclass_game_html_a2a40b9c0d56307fbe67da500ed9d4cff"><div class="ttname"><a href="class_game.html#a2a40b9c0d56307fbe67da500ed9d4cff">Game::test_game</a></div><div class="ttdeci">static bool test_game()</div><div class="ttdoc">Tests the Game class functionality.</div><div class="ttdef"><b>Definition:</b> <a href="_game_8cpp_source.html#l00138">Game.cpp:138</a></div></div>
 <div class="ttc" id="aclass_game_html_ab72401c43b303a37dec67f3d6b75a927"><div class="ttname"><a href="class_game.html#ab72401c43b303a37dec67f3d6b75a927">Game::playHand</a></div><div class="ttdeci">void playHand()</div><div class="ttdoc">Plays a single hand of poker.</div><div class="ttdef"><b>Definition:</b> <a href="_game_8cpp_source.html#l00281">Game.cpp:281</a></div></div>
 <div class="ttc" id="aclass_human_player_html"><div class="ttname"><a href="class_human_player.html">HumanPlayer</a></div><div class="ttdef"><b>Definition:</b> <a href="_human_player_8cpp_source.html#l00004">HumanPlayer.cpp:4</a></div></div>
-<div class="ttc" id="aclass_player_html_a729f3d36749ee2986b3d9606cf852682"><div class="ttname"><a href="class_player.html#a729f3d36749ee2986b3d9606cf852682">Player::test_player</a></div><div class="ttdeci">static bool test_player()</div><div class="ttdoc">Tests the Player class functionality.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8cpp_source.html#l00065">Player.cpp:65</a></div></div>
-<div class="ttc" id="aclass_random_player_html"><div class="ttname"><a href="class_random_player.html">RandomPlayer</a></div><div class="ttdef"><b>Definition:</b> <a href="_random_player_8cpp_source.html#l00007">RandomPlayer.cpp:7</a></div></div>
-<div class="ttc" id="amain_8cpp_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00058">main.cpp:58</a></div></div>
-<div class="ttc" id="amain_8cpp_html_a9993390ffcca4b99cfb97b329c55ae58"><div class="ttname"><a href="main_8cpp.html#a9993390ffcca4b99cfb97b329c55ae58">uniTest</a></div><div class="ttdeci">bool uniTest(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00022">main.cpp:22</a></div></div>
+<div class="ttc" id="aclass_random_player_html"><div class="ttname"><a href="class_random_player.html">RandomPlayer</a></div><div class="ttdef"><b>Definition:</b> <a href="_random_player_8cpp_source.html#l00009">RandomPlayer.cpp:9</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00023">main.cpp:23</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 29 2024 10:05:12 for Bluron by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Aug 29 2024 22:08:26 for Bluron by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

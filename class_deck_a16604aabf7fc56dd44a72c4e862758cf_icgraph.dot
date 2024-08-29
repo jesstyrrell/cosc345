@@ -8,4 +8,6 @@ digraph "Deck::deal"
   Node1 [label="Deck::deal",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Deals a card from the top of the deck."];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="EquityCalculator::evaluateHand",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_equity_calculator.html#af315dfcb578ab5889dab4bc970b1d597",tooltip="Evaluates the equity of a hand against multiple opponents."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="TEST",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test___deck_8cc.html#a03d3c7fb7a0df829af13d2fcc459c2ba",tooltip=" "];
 }

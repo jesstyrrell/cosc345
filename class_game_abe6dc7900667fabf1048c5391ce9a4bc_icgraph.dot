@@ -8,8 +8,4 @@ digraph "Game::deal_river"
   Node1 [label="Game::deal_river",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Deals the river (the fifth community card)."];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="Game::test_game",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game.html#a2a40b9c0d56307fbe67da500ed9d4cff",tooltip="Tests the Game class functionality."];
-  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="uniTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#a9993390ffcca4b99cfb97b329c55ae58",tooltip=" "];
-  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97",tooltip=" "];
 }
