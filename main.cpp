@@ -42,8 +42,8 @@ int main(int argc, char* argv[]) {
     RandomPlayer player4 = RandomPlayer("Katie", 1000);
     RandomPlayer player5 = RandomPlayer("Megan", 1000);
     RandomPlayer player6 = RandomPlayer("Loren", 1000);
-    RandomPlayer player7 = RandomPlayer("Poo", 1000);
-    RandomPlayer player8 = RandomPlayer("Wee", 1000);
+    RandomPlayer player7 = RandomPlayer("Emily", 1000);
+    RandomPlayer player8 = RandomPlayer("Mr. Robot", 1000);
 
     // Create a vector of pointers 
     std::vector<Player*> playerPointers;

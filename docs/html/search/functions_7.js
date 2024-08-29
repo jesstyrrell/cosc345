@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['nextstage_0',['nextStage',['../class_game.html#a018713cb3ce643d8f52e6804903e9d12',1,'Game']]]
+  ['handevaluator_0',['HandEvaluator',['../class_hand_evaluator.html#a71b8cb0a809fdeb7fa002185ba07afd4',1,'HandEvaluator']]],
+  ['humanplayer_1',['HumanPlayer',['../class_human_player.html#aae2029af036081e540ff78c2e62cf8c4',1,'HumanPlayer']]]
 ];

@@ -1,0 +1,22 @@
+digraph "HandEvaluator::checkThreeTopCards"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="HandEvaluator::checkThree\lTopCards",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Compares the top three cards between two hands after pairs have been evaluated."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="HandEvaluator::compareHands",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_hand_evaluator.html#ac699bebeb0b211a7b84359a1023e0d83",tooltip="Compares two hands to determine the winner."];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="EquityCalculator::evaluateHand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_equity_calculator.html#af315dfcb578ab5889dab4bc970b1d597",tooltip="Evaluates the equity of a hand against multiple opponents."];
+  Node2 -> Node4 [id="edge3_Node000002_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="HandEvaluator::evaluateTable",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_hand_evaluator.html#a913d9b6af7946277de9652577b88292b",tooltip="Evaluates multiple hands against community cards."];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="Game::getWinner",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game.html#aab46e042704ec19c1f0a52280ef06bef",tooltip="Determines the winner(s) of the current hand."];
+  Node5 -> Node6 [id="edge5_Node000005_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="Game::playHand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game.html#ab72401c43b303a37dec67f3d6b75a927",tooltip="Plays a single hand of poker."];
+  Node6 -> Node7 [id="edge6_Node000006_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97",tooltip=" "];
+}

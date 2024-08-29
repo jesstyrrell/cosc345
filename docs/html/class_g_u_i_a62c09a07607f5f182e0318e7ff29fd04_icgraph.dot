@@ -1,0 +1,12 @@
+digraph "GUI::getBetSizing"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="GUI::getBetSizing",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Prompts the user for bet sizing."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="HumanPlayer::getBetSizing",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_human_player.html#a5e800cdb7206b3a5421959087e26af2e",tooltip="Gets the player's bet sizing during their turn."];
+}
