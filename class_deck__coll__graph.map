@@ -1,0 +1,7 @@
+<map id="Deck" name="Deck">
+<area shape="rect" id="node1" title="Represents a deck of playing cards, providing functionality to shuffle, deal, and manage the deck." alt="" coords="53,373,108,399"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,285,156,311"/>
+<area shape="rect" id="node3" href="$class_card.html" title="Represents a single card in a deck of cards. Each card has a suit and a rank." alt="" coords="55,197,107,223"/>
+<area shape="rect" id="node4" title=" " alt="" coords="37,95,124,120"/>
+<area shape="rect" id="node5" title=" " alt="" coords="11,5,150,45"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Game::resetPlayerBets" name="Game::resetPlayerBets">
+<area shape="rect" id="node1" title="Resets the current bets of all players." alt="" coords="5,5,177,31"/>
+<area shape="rect" id="node2" href="$class_game.html#a57e5aef2f67e77929842fab7a78404ea" title="Gets the players in the game." alt="" coords="225,5,364,31"/>
+</map>

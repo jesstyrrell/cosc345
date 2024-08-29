@@ -1,0 +1,13 @@
+<map id="Player::get_name" name="Player::get_name">
+<area shape="rect" id="node1" title="Gets the name of the player." alt="" coords="972,80,1108,105"/>
+<area shape="rect" id="node2" href="$class_g_u_i.html#a32e1013b85cfbec2c4578b34aa7c347f" title="Displays the hand of a player." alt="" coords="739,5,915,31"/>
+<area shape="rect" id="node3" href="$class_g_u_i.html#a65d07a686330670f5567a3fc11fbace1" title="Displays a player&#39;s move." alt="" coords="737,55,916,80"/>
+<area shape="rect" id="node8" href="$class_g_u_i.html#ad32a7ec45a881658fe14659ec3ce1ed3" title="Displays the current chip stack of a player." alt="" coords="737,104,916,129"/>
+<area shape="rect" id="node9" href="$class_test_player.html#aa4692c5142245d3ae5cb13021f1a7b34" title=" " alt="" coords="729,153,924,179"/>
+<area shape="rect" id="node4" href="$class_game.html#a1a44850a64799e17f43f22b560275157" title="Processes a move made by the user." alt="" coords="491,55,681,80"/>
+<area shape="rect" id="node5" href="$class_game.html#a0de5cbe2125b0929a0bc8d2e6cdd64d5" title="Conducts a betting round." alt="" coords="287,55,443,80"/>
+<area shape="rect" id="node6" href="$class_game.html#ab72401c43b303a37dec67f3d6b75a927" title="Plays a single hand of poker." alt="" coords="108,55,239,80"/>
+<area shape="rect" id="node7" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,55,60,80"/>
+<area shape="rect" id="node10" href="$class_test_player.html#aaf41022e7a915175e1538c5a7b0b2b88" title=" " alt="" coords="501,153,671,179"/>
+<area shape="rect" id="node11" href="$test___player_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="337,153,392,179"/>
+</map>

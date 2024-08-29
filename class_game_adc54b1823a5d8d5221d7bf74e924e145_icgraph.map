@@ -1,0 +1,5 @@
+<map id="Game::resetPlayerHands" name="Game::resetPlayerHands">
+<area shape="rect" id="node1" title="Resets the hands of all players." alt="" coords="287,5,471,31"/>
+<area shape="rect" id="node2" href="$class_game.html#ab72401c43b303a37dec67f3d6b75a927" title="Plays a single hand of poker." alt="" coords="108,5,239,31"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,60,31"/>
+</map>

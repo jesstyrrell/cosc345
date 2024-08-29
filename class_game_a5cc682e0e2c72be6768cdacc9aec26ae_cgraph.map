@@ -1,0 +1,4 @@
+<map id="Game::deal_hands" name="Game::deal_hands">
+<area shape="rect" id="node1" title="Deals the hands to the players." alt="" coords="5,5,148,31"/>
+<area shape="rect" id="node2" href="$class_deck.html#a16604aabf7fc56dd44a72c4e862758cf" title="Deals a card from the top of the deck." alt="" coords="196,5,287,31"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="HumanPlayer::getBetSizing" name="HumanPlayer::getBetSizing">
+<area shape="rect" id="node1" title="Gets the player&#39;s bet sizing during their turn." alt="" coords="5,5,205,31"/>
+<area shape="rect" id="node2" href="$class_g_u_i.html#a62c09a07607f5f182e0318e7ff29fd04" title="Prompts the user for bet sizing." alt="" coords="253,5,389,31"/>
+</map>

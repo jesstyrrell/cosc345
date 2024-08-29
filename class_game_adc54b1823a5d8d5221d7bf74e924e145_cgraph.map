@@ -1,0 +1,4 @@
+<map id="Game::resetPlayerHands" name="Game::resetPlayerHands">
+<area shape="rect" id="node1" title="Resets the hands of all players." alt="" coords="5,5,189,31"/>
+<area shape="rect" id="node2" href="$class_game.html#a57e5aef2f67e77929842fab7a78404ea" title="Gets the players in the game." alt="" coords="237,5,376,31"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Deck::reset" name="Deck::reset">
+<area shape="rect" id="node1" title="Resets the deck to its initial state with all 52 cards." alt="" coords="5,5,101,31"/>
+<area shape="rect" id="node2" href="$class_deck.html#ae5a1e52ab00ae5924f2bc6b730dba3eb" title="Shuffles the deck of cards." alt="" coords="149,5,256,31"/>
+</map>

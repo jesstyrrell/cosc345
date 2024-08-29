@@ -1,0 +1,4 @@
+<map id="Game::deal_river" name="Game::deal_river">
+<area shape="rect" id="node1" title="Deals the river (the fifth community card)." alt="" coords="5,5,140,31"/>
+<area shape="rect" id="node2" href="$class_deck.html#a16604aabf7fc56dd44a72c4e862758cf" title="Deals a card from the top of the deck." alt="" coords="188,5,279,31"/>
+</map>

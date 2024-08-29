@@ -1,0 +1,8 @@
+<map id="Player::add_card_to_hand" name="Player::add_card_to_hand">
+<area shape="rect" id="node1" title="Adds a card to the player&#39;s hand." alt="" coords="577,70,767,95"/>
+<area shape="rect" id="node2" href="$class_test_player.html#a91fe2f759e51f6452dbddcf453c0f1f5" title=" " alt="" coords="351,5,505,45"/>
+<area shape="rect" id="node5" href="$class_test_player.html#ada290bd551dc27d1779fe994ec056f38" title=" " alt="" coords="333,70,523,95"/>
+<area shape="rect" id="node6" href="$class_test_player.html#a8c0b8a5015a1aeb63837332af09f2cce" title=" " alt="" coords="327,119,529,145"/>
+<area shape="rect" id="node3" href="$class_test_player.html#aaf41022e7a915175e1538c5a7b0b2b88" title=" " alt="" coords="108,70,279,95"/>
+<area shape="rect" id="node4" href="$test___player_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,70,60,95"/>
+</map>

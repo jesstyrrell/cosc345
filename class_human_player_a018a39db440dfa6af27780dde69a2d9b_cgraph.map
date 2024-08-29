@@ -1,0 +1,4 @@
+<map id="HumanPlayer::getMove" name="HumanPlayer::getMove">
+<area shape="rect" id="node1" title="Gets the player&#39;s move during their turn." alt="" coords="5,5,180,31"/>
+<area shape="rect" id="node2" href="$class_g_u_i.html#a90c3a671452b797db9f8ba481c84767c" title="Prompts the user for their move." alt="" coords="228,5,369,31"/>
+</map>

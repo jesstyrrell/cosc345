@@ -1,0 +1,4 @@
+<map id="GUI::displayStartScreen" name="GUI::displayStartScreen">
+<area shape="rect" id="node1" title="Displays the start screen of the game." alt="" coords="108,5,284,31"/>
+<area shape="rect" id="node2" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,60,31"/>
+</map>

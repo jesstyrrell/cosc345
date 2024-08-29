@@ -1,0 +1,4 @@
+<map id="RandomPlayer" name="RandomPlayer">
+<area shape="rect" id="node1" title=" " alt="" coords="5,79,123,104"/>
+<area shape="rect" id="node2" href="$class_player.html" title="Represents a player in the poker game." alt="" coords="33,5,95,31"/>
+</map>

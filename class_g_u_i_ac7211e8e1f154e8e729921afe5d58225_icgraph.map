@@ -1,0 +1,4 @@
+<map id="GUI::endOfRoundMenu" name="GUI::endOfRoundMenu">
+<area shape="rect" id="node1" title="Displays the menu at the end of a round." alt="" coords="244,5,415,31"/>
+<area shape="rect" id="node2" href="$class_human_player.html#a538faef1a022253707d0a63d20c67550" title="Handles actions at the end of a hand." alt="" coords="5,5,196,31"/>
+</map>

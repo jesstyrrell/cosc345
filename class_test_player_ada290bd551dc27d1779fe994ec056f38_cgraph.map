@@ -1,0 +1,7 @@
+<map id="TestPlayer::test_get_hand" name="TestPlayer::test_get_hand">
+<area shape="rect" id="node1" title=" " alt="" coords="5,80,195,105"/>
+<area shape="rect" id="node2" href="$class_player.html#af3998816522aac68efd31d625c367074" title="Adds a card to the player&#39;s hand." alt="" coords="243,5,432,31"/>
+<area shape="rect" id="node3" href="$class_player.html#a37e8e81092cab91b3136f56f2faa7d11" title="Gets the player&#39;s current hand of cards." alt="" coords="272,55,403,80"/>
+<area shape="rect" id="node4" href="$class_test_player.html#a5c34eef1f1f4e47d9b45e3ebe7e18eb3" title=" " alt="" coords="270,104,405,129"/>
+<area shape="rect" id="node5" href="$class_test_player.html#aff9534ecbcfa4a591a51452f7b2c89e3" title=" " alt="" coords="257,153,417,179"/>
+</map>

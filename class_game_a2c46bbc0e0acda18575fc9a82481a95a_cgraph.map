@@ -1,0 +1,4 @@
+<map id="Game::addBlindsToPot" name="Game::addBlindsToPot">
+<area shape="rect" id="node1" title="Adds the blinds to the pot from the appropriate players." alt="" coords="5,5,173,31"/>
+<area shape="rect" id="node2" href="$class_player.html#a75a7946fcb64e122d5704754b6704ac3" title="Deducts a blind amount from the player&#39;s stack." alt="" coords="221,5,376,31"/>
+</map>

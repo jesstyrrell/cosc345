@@ -1,0 +1,9 @@
+<map id="TestGame::test_deal_hands" name="TestGame::test_deal_hands">
+<area shape="rect" id="node1" title=" " alt="" coords="5,97,160,137"/>
+<area shape="rect" id="node2" href="$class_game.html#a5cc682e0e2c72be6768cdacc9aec26ae" title="Deals the hands to the players." alt="" coords="216,5,359,31"/>
+<area shape="rect" id="node4" href="$class_deck.html#a2fe0172048296260450a74035a34db9b" title="Retrieves the current set of cards in the deck." alt="" coords="224,55,351,80"/>
+<area shape="rect" id="node5" href="$class_game.html#a57e5aef2f67e77929842fab7a78404ea" title="Gets the players in the game." alt="" coords="218,104,357,129"/>
+<area shape="rect" id="node6" href="$class_test_game.html#a9c9f90a680072ff864d9e477d49556f6" title=" " alt="" coords="221,153,354,179"/>
+<area shape="rect" id="node7" href="$class_test_game.html#a13d625d428905ea6da2d23281f9a26b7" title=" " alt="" coords="208,203,367,228"/>
+<area shape="rect" id="node3" href="$class_deck.html#a16604aabf7fc56dd44a72c4e862758cf" title="Deals a card from the top of the deck." alt="" coords="415,5,505,31"/>
+</map>

@@ -1,0 +1,16 @@
+<map id="GUI" name="GUI">
+<area shape="rect" id="node1" title="Provides a graphical user interface for interacting with the poker game." alt="" coords="531,788,577,813"/>
+<area shape="rect" id="node2" href="$class_game.html" title="Manages the state and flow of a poker game." alt="" coords="354,676,415,701"/>
+<area shape="rect" id="node3" href="$class_deck.html" title="Represents a deck of playing cards, providing functionality to shuffle, deal, and manage the deck." alt="" coords="5,473,60,498"/>
+<area shape="rect" id="node4" title=" " alt="" coords="23,285,173,311"/>
+<area shape="rect" id="node9" href="$class_player.html" title="Represents a player in the poker game." alt="" coords="201,390,264,415"/>
+<area shape="rect" id="node5" href="$class_card.html" title="Represents a single card in a deck of cards. Each card has a suit and a rank." alt="" coords="105,197,157,223"/>
+<area shape="rect" id="node6" title=" " alt="" coords="136,95,223,120"/>
+<area shape="rect" id="node7" title=" " alt="" coords="110,5,249,45"/>
+<area shape="rect" id="node8" title=" " alt="" coords="143,553,317,579"/>
+<area shape="rect" id="node10" title=" " alt="" coords="400,285,439,311"/>
+<area shape="rect" id="node11" title=" " alt="" coords="498,473,637,498"/>
+<area shape="rect" id="node14" href="$struct_point.html" title="Represents a point with x and y coordinates." alt="" coords="696,603,751,628"/>
+<area shape="rect" id="node12" title=" " alt="" coords="519,553,570,579"/>
+<area shape="rect" id="node13" title=" " alt="" coords="594,553,653,579"/>
+</map>

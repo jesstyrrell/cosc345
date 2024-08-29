@@ -1,0 +1,7 @@
+<map id="TestPlayer::test_clear_hand" name="TestPlayer::test_clear_hand">
+<area shape="rect" id="node1" title=" " alt="" coords="5,80,205,105"/>
+<area shape="rect" id="node2" href="$class_player.html#a174449e6ad5253666daa744a02054066" title="Clears the player&#39;s hand of all cards." alt="" coords="262,5,405,31"/>
+<area shape="rect" id="node3" href="$class_player.html#a37e8e81092cab91b3136f56f2faa7d11" title="Gets the player&#39;s current hand of cards." alt="" coords="268,55,399,80"/>
+<area shape="rect" id="node4" href="$class_test_player.html#a5c34eef1f1f4e47d9b45e3ebe7e18eb3" title=" " alt="" coords="266,104,401,129"/>
+<area shape="rect" id="node5" href="$class_test_player.html#aff9534ecbcfa4a591a51452f7b2c89e3" title=" " alt="" coords="253,153,413,179"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="Game::deal" name="Game::deal">
+<area shape="rect" id="node1" title="Deals the cards to the players and the community." alt="" coords="5,104,103,129"/>
+<area shape="rect" id="node2" href="$class_game.html#adc83a8bdd3819b0eab1540bf1d6dd1c0" title="Deals the flop (the first three community cards)." alt="" coords="158,5,286,31"/>
+<area shape="rect" id="node4" href="$class_game.html#a5cc682e0e2c72be6768cdacc9aec26ae" title="Deals the hands to the players." alt="" coords="151,55,293,80"/>
+<area shape="rect" id="node5" href="$class_game.html#abe6dc7900667fabf1048c5391ce9a4bc" title="Deals the river (the fifth community card)." alt="" coords="155,104,289,129"/>
+<area shape="rect" id="node6" href="$class_game.html#a5fd04d6cb5e1e60a10db3a29fcad71e9" title="Deals the turn (the fourth community card)." alt="" coords="157,153,287,179"/>
+<area shape="rect" id="node7" href="$class_game.html#a018713cb3ce643d8f52e6804903e9d12" title="Advances the game to the next stage." alt="" coords="155,203,289,228"/>
+<area shape="rect" id="node3" href="$class_deck.html#a16604aabf7fc56dd44a72c4e862758cf" title="Deals a card from the top of the deck." alt="" coords="341,80,432,105"/>
+</map>
