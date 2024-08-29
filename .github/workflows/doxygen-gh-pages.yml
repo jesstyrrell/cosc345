@@ -24,12 +24,19 @@ jobs:
       - name: Generate Documentation
         run: doxygen Doxyfile
 
+      # - name: Deploy to GitHub Pages
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./docs/html
+      #     force_orphan: true  # Create a new orphan branch for gh-pages
+      #     user_name: 'github-actions[bot]'
+      #     user_email: 'github-actions[bot]@users.noreply.github.com'
+      #     commit_message: 'Deploy Doxygen documentation'
+
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/html
-          force_orphan: true  # Create a new orphan branch for gh-pages
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_message: 'Deploy Doxygen documentation'
+          folder: docs/html
+
+
