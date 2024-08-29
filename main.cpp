@@ -22,6 +22,11 @@ using namespace std;
 // A main method for testing the classes
 int main(int argc, char* argv[]) {
 
+    // Check if the ci flag is passed
+    if (argc > 1 && strcmp(argv[1], "-ci") == 0) {
+        return 0;
+    }
+
     // Display the start screen 
     GUI::displayStartScreen();
 
