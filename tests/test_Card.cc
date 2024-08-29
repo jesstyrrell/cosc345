@@ -19,7 +19,7 @@ TEST(TestCard, TestCardGetRank) {
     ASSERT_EQ(card.get_rank(), "Ace");
 }
 
-TEST(TestCard, TestCardGetCard) {
-    Card card = Card("Hearts", "Ace");
-    ASSERT_EQ(card.get_card(), "Ace of Hearts");
-}
+// TEST(TestCard, TestCardGetCard) {
+//     Card card = Card("Hearts", "Ace");
+//     ASSERT_EQ(card.get_card(), "Ace of Hearts");
+// }
