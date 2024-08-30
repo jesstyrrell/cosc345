@@ -10,7 +10,7 @@ digraph "GUI"
   Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" players" ,fontname="Helvetica"];
   Node3 [label="std::vector\< Player * \>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" elements" ,fontname="Helvetica"];
-  Node4 [label="Player",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_player.html",tooltip="Represents a player in the poker game."];
+  Node4 [label="Player",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_player.html",tooltip="Represents a human player in the poker game."];
   Node5 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" hand" ,fontname="Helvetica"];
   Node5 [label="std::vector\< Card \>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node6 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" elements" ,fontname="Helvetica"];

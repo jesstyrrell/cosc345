@@ -9,5 +9,6 @@ var searchData=
   ['handevaluatortest_109',['HandEvaluatorTest',['../class_hand_evaluator_test.html',1,'']]],
   ['humanplayer_110',['HumanPlayer',['../class_human_player.html',1,'HumanPlayer'],['../class_human_player.html#aae2029af036081e540ff78c2e62cf8c4',1,'HumanPlayer::HumanPlayer(const std::string &amp;name, int stack)'],['../class_human_player.html#ac8a94ca0d2d555e3fbc9ed4acaa10bea',1,'HumanPlayer::HumanPlayer(const std::string &amp;name, int stack, GUIWrapper *wrapper)']]],
   ['humanplayer_2ecpp_111',['HumanPlayer.cpp',['../_human_player_8cpp.html',1,'']]],
-  ['humanplayertest_112',['HumanPlayerTest',['../class_human_player_test.html',1,'']]]
+  ['humanplayer_2ehpp_112',['HumanPlayer.hpp',['../_human_player_8hpp.html',1,'']]],
+  ['humanplayertest_113',['HumanPlayerTest',['../class_human_player_test.html',1,'']]]
 ];
