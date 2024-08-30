@@ -41,6 +41,10 @@ void GUI::clearScreen() {
     #endif
 }
 
+void moveTo(int x, int y) {
+    std::cout << "\033[" << y << ";" << x << "H";
+}
+
 /**
  * Get user move from the terminal
  */
@@ -163,6 +167,7 @@ void GUI::displayStartScreen() {
 +#+    +#+ +#+    +#+ +#+  +#+#+#        +#+         +#+            +#+     +#+ +#+#+ +#+     +#+     +#+        +#+        
 #+#    #+# #+#    #+# #+#   #+#+#        #+#         #+#            #+#      #+#+# #+#+#      #+#     #+#    #+# #+#        
 ###    ###  ########  ###    ####    ###########     ###            ###       ###   ###   ###########  ########  ########## )";
+    clearScreen();
     std::cout << title << std::endl;
     std::cout << "--------------------------------" << std::endl;
 }
@@ -203,6 +208,8 @@ string getFilePathStart(){
 
 void GUI::displayEndMessage() {
 
+    clearScreen();
+
     string startPath = getFilePathStart();
 
     string imagePath = startPath + "/images/cardAnimation.txt";
@@ -238,9 +245,10 @@ void GUI::displayEndMessage() {
         for (const std::string& frame : frames) {
             std::cout << frame << std::endl;
             std::this_thread::sleep_for(std::chrono::milliseconds(delay));
-            clearScreen();
+            moveTo(0, 0);
         }
     }
+    displayStartScreen();
 
     //std::cout << imageASCII << std::endl;
     std::cout << "--------------------------------" << std::endl;
@@ -392,8 +400,7 @@ void GUI::displayGameState(){
     vector<Card> communityCards = game.getCommunityCards();
     int button = game.getButton();
 
-    // clear screen 
-    clearScreen();
+    moveTo(0, 0);
     // TODO: Implement this method, will be called as each hand progresses and display 
     // table, chips, cards, stack sizes, players names, etc.
 
@@ -450,6 +457,7 @@ void GUI::displayGameState(){
     }
 
     std::cout << tableContent << std::endl;
+    moveTo(0, 0);
 
     
 }
