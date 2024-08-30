@@ -85,6 +85,8 @@ Include dependency graph for GUI.cpp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a0fcdefbd8531ccd32fad2d8d6caa7a76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_g_u_i_8cpp.html#a0fcdefbd8531ccd32fad2d8d6caa7a76">moveTo</a> (int x, int y)</td></tr>
+<tr class="separator:a0fcdefbd8531ccd32fad2d8d6caa7a76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a674e968d1ecb5cf741d6625f58378c95"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_g_u_i_8cpp.html#a674e968d1ecb5cf741d6625f58378c95">getFilePathStart</a> ()</td></tr>
 <tr class="separator:a674e968d1ecb5cf741d6625f58378c95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6720e4bc4b25d366b73e9fc9b8afd4b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_g_u_i_8cpp.html#ae6720e4bc4b25d366b73e9fc9b8afd4b">addString</a> (string baseString, string newString, int x1, int y1)</td></tr>
@@ -133,57 +135,57 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00294">294</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;{</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="comment">// Split the base string and new string into lines</span></div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    vector&lt;string&gt; baseLines;</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    vector&lt;string&gt; newLines;</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    stringstream ssBase(baseString), ssNew(newString);</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="keywordtype">string</span> line;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keywordflow">while</span> (getline(ssBase, line))</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    {</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        baseLines.push_back(line);</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    }</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keywordflow">while</span> (getline(ssNew, line))</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    {</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        newLines.push_back(line);</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    }</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="comment">// Ensure the replacement does not go out of bounds</span></div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; newLines.size(); i++)</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    {</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <span class="keywordtype">int</span> targetLine = y1 + i;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <span class="keywordflow">if</span> (targetLine &lt; baseLines.size())</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        {</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            <span class="keywordtype">string</span> &amp;baseLine = baseLines[targetLine];</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            <span class="keywordtype">string</span> &amp;newLine = newLines[i];</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;            <span class="keywordflow">if</span> (x1 &lt; baseLine.size())</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            {</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                <span class="comment">// Replace the part of the line starting from x1 with the new string</span></div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                baseLine.replace(x1, newLine.size(), newLine);</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            }</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            {</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                <span class="comment">// If x1 is outside the base line, just append the new string</span></div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                baseLine.append(<span class="keywordtype">string</span>(x1 - baseLine.size(), <span class="charliteral">&#39; &#39;</span>) + newLine);</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            }</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        }</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    }</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="comment">// Recombine the base lines into a single string</span></div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="keywordtype">string</span> result;</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;baseLine : baseLines)</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    {</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        result += baseLine + <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    }</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160; </div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00302">302</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;{</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="comment">// Split the base string and new string into lines</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    vector&lt;string&gt; baseLines;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    vector&lt;string&gt; newLines;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    stringstream ssBase(baseString), ssNew(newString);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="keywordtype">string</span> line;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">while</span> (getline(ssBase, line))</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    {</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        baseLines.push_back(line);</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    }</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keywordflow">while</span> (getline(ssNew, line))</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    {</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        newLines.push_back(line);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    }</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="comment">// Ensure the replacement does not go out of bounds</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; newLines.size(); i++)</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    {</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        <span class="keywordtype">int</span> targetLine = y1 + i;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="keywordflow">if</span> (targetLine &lt; baseLines.size())</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        {</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            <span class="keywordtype">string</span> &amp;baseLine = baseLines[targetLine];</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            <span class="keywordtype">string</span> &amp;newLine = newLines[i];</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            <span class="keywordflow">if</span> (x1 &lt; baseLine.size())</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            {</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                <span class="comment">// Replace the part of the line starting from x1 with the new string</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                baseLine.replace(x1, newLine.size(), newLine);</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            }</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;            {</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                <span class="comment">// If x1 is outside the base line, just append the new string</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                baseLine.append(<span class="keywordtype">string</span>(x1 - baseLine.size(), <span class="charliteral">&#39; &#39;</span>) + newLine);</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            }</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        }</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    }</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="comment">// Recombine the base lines into a single string</span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="keywordtype">string</span> result;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;baseLine : baseLines)</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    {</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        result += baseLine + <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    }</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00389">GUI::displayGameState()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00397">GUI::displayGameState()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -208,42 +210,42 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00361">361</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                                {</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <span class="keywordtype">string</span> suit = card.<a class="code" href="class_card.html#a74782cc7cdcc2bf7cabc89eaa265805a">get_suit</a>();</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;     </div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="keywordtype">string</span> rank = card.<a class="code" href="class_card.html#a9b352ce37c8d4e365b31dee979c35add">get_rank</a>();</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;     </div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="keywordtype">string</span> startPath = <a class="code" href="_g_u_i_8cpp.html#a674e968d1ecb5cf741d6625f58378c95">getFilePathStart</a>();</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;   </div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keywordtype">string</span> cardPath = startPath + <span class="stringliteral">&quot;/images/&quot;</span> + suit + <span class="stringliteral">&quot;Card.txt&quot;</span>;</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160; </div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="keywordtype">string</span> cardContent = <a class="code" href="_g_u_i_8cpp.html#a734f170642ae5d075a5f9f98fab8cfdf">getFileContents</a>(cardPath);</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160; </div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="comment">// Replace a ? with the rank of the card</span></div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="keywordtype">int</span> start = 0;</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; </div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 2; i++){</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        <span class="keywordtype">size_t</span> pos = cardContent.find(<span class="stringliteral">&quot;?&quot;</span>, start);</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        <span class="keywordflow">if</span>(rank != <span class="stringliteral">&quot;10&quot;</span>){</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            cardContent.replace(pos, 1, rank);</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(i == 0){</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            cardContent.replace(pos, 2, rank);</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        }<span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            cardContent.replace(pos-1, 2, rank);</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        }</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        start = pos + 1;</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    }</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <span class="keywordflow">return</span> cardContent;</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;}</div>
-<div class="ttc" id="a_g_u_i_8cpp_html_a674e968d1ecb5cf741d6625f58378c95"><div class="ttname"><a href="_g_u_i_8cpp.html#a674e968d1ecb5cf741d6625f58378c95">getFilePathStart</a></div><div class="ttdeci">string getFilePathStart()</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_8cpp_source.html#l00170">GUI.cpp:170</a></div></div>
-<div class="ttc" id="a_g_u_i_8cpp_html_a734f170642ae5d075a5f9f98fab8cfdf"><div class="ttname"><a href="_g_u_i_8cpp.html#a734f170642ae5d075a5f9f98fab8cfdf">getFileContents</a></div><div class="ttdeci">string getFileContents(string filePath)</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_8cpp_source.html#l00344">GUI.cpp:344</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00369">369</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                                {</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="keywordtype">string</span> suit = card.<a class="code" href="class_card.html#a74782cc7cdcc2bf7cabc89eaa265805a">get_suit</a>();</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;     </div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="keywordtype">string</span> rank = card.<a class="code" href="class_card.html#a9b352ce37c8d4e365b31dee979c35add">get_rank</a>();</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;     </div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="keywordtype">string</span> startPath = <a class="code" href="_g_u_i_8cpp.html#a674e968d1ecb5cf741d6625f58378c95">getFilePathStart</a>();</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;   </div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <span class="keywordtype">string</span> cardPath = startPath + <span class="stringliteral">&quot;/images/&quot;</span> + suit + <span class="stringliteral">&quot;Card.txt&quot;</span>;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; </div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keywordtype">string</span> cardContent = <a class="code" href="_g_u_i_8cpp.html#a734f170642ae5d075a5f9f98fab8cfdf">getFileContents</a>(cardPath);</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <span class="comment">// Replace a ? with the rank of the card</span></div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <span class="keywordtype">int</span> start = 0;</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 2; i++){</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        <span class="keywordtype">size_t</span> pos = cardContent.find(<span class="stringliteral">&quot;?&quot;</span>, start);</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        <span class="keywordflow">if</span>(rank != <span class="stringliteral">&quot;10&quot;</span>){</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;            cardContent.replace(pos, 1, rank);</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(i == 0){</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            cardContent.replace(pos, 2, rank);</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            cardContent.replace(pos-1, 2, rank);</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        }</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        start = pos + 1;</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    }</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    <span class="keywordflow">return</span> cardContent;</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;}</div>
+<div class="ttc" id="a_g_u_i_8cpp_html_a674e968d1ecb5cf741d6625f58378c95"><div class="ttname"><a href="_g_u_i_8cpp.html#a674e968d1ecb5cf741d6625f58378c95">getFilePathStart</a></div><div class="ttdeci">string getFilePathStart()</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_8cpp_source.html#l00175">GUI.cpp:175</a></div></div>
+<div class="ttc" id="a_g_u_i_8cpp_html_a734f170642ae5d075a5f9f98fab8cfdf"><div class="ttname"><a href="_g_u_i_8cpp.html#a734f170642ae5d075a5f9f98fab8cfdf">getFileContents</a></div><div class="ttdeci">string getFileContents(string filePath)</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_8cpp_source.html#l00352">GUI.cpp:352</a></div></div>
 <div class="ttc" id="aclass_card_html_a74782cc7cdcc2bf7cabc89eaa265805a"><div class="ttname"><a href="class_card.html#a74782cc7cdcc2bf7cabc89eaa265805a">Card::get_suit</a></div><div class="ttdeci">const std::string get_suit()</div><div class="ttdoc">Gets the suit of the card.</div><div class="ttdef"><b>Definition:</b> <a href="_card_8cpp_source.html#l00025">Card.cpp:25</a></div></div>
 <div class="ttc" id="aclass_card_html_a9b352ce37c8d4e365b31dee979c35add"><div class="ttname"><a href="class_card.html#a9b352ce37c8d4e365b31dee979c35add">Card::get_rank</a></div><div class="ttdeci">const std::string get_rank()</div><div class="ttdoc">Gets the rank of the card.</div><div class="ttdef"><b>Definition:</b> <a href="_card_8cpp_source.html#l00034">Card.cpp:34</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_card_8cpp_source.html#l00034">Card::get_rank()</a>, <a class="el" href="_card_8cpp_source.html#l00025">Card::get_suit()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00344">getFileContents()</a>, and <a class="el" href="_g_u_i_8cpp_source.html#l00170">getFilePathStart()</a>.</p>
+<p class="reference">References <a class="el" href="_card_8cpp_source.html#l00034">Card::get_rank()</a>, <a class="el" href="_card_8cpp_source.html#l00025">Card::get_suit()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00352">getFileContents()</a>, and <a class="el" href="_g_u_i_8cpp_source.html#l00175">getFilePathStart()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00389">GUI::displayGameState()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00397">GUI::displayGameState()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -273,25 +275,25 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00344">344</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                                       {</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="comment">// Get the contents of the file at the file path</span></div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    std::ifstream file(filePath);</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="keywordflow">if</span> (!file) {</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;Error opening file!&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    }</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="comment">// Read the file into a string</span></div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    std::ostringstream oss;</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    oss &lt;&lt; file.rdbuf();</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    std::string content = oss.str();</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    file.close();</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="keywordflow">return</span> content;</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00352">352</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                                       {</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <span class="comment">// Get the contents of the file at the file path</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    std::ifstream file(filePath);</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <span class="keywordflow">if</span> (!file) {</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;Error opening file!&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    }</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <span class="comment">// Read the file into a string</span></div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    std::ostringstream oss;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    oss &lt;&lt; file.rdbuf();</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    std::string content = oss.str();</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    file.close();</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="keywordflow">return</span> content;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00389">GUI::displayGameState()</a>, and <a class="el" href="_g_u_i_8cpp_source.html#l00361">getCardString()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00397">GUI::displayGameState()</a>, and <a class="el" href="_g_u_i_8cpp_source.html#l00369">getCardString()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -315,42 +317,42 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00170">170</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                         {</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="comment">// Get os type</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">    #ifdef _WIN32</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        std::string os = <span class="stringliteral">&quot;Windows&quot;</span>;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="preprocessor">    #elif __APPLE__</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        std::string os = <span class="stringliteral">&quot;MacOS&quot;</span>;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="preprocessor">    #elif __linux__</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        std::string os = <span class="stringliteral">&quot;Linux&quot;</span>;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor">    #else</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        std::string os = <span class="stringliteral">&quot;Unknown&quot;</span>;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordtype">string</span> startPath;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordflow">if</span> (os == <span class="stringliteral">&quot;Windows&quot;</span>)</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    {</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        startPath = <span class="stringliteral">&quot;../../..&quot;</span>;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    }</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (os == <span class="stringliteral">&quot;MacOS&quot;</span>)</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    {</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        startPath = <span class="stringliteral">&quot;..&quot;</span>;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    }</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (os == <span class="stringliteral">&quot;Linux&quot;</span>)</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    {</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        startPath = <span class="stringliteral">&quot;..&quot;</span>;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    }</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    {</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;Unsupported OS&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00175">175</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                         {</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="comment">// Get os type</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="preprocessor">    #ifdef _WIN32</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        std::string os = <span class="stringliteral">&quot;Windows&quot;</span>;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="preprocessor">    #elif __APPLE__</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        std::string os = <span class="stringliteral">&quot;MacOS&quot;</span>;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor">    #elif __linux__</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        std::string os = <span class="stringliteral">&quot;Linux&quot;</span>;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="preprocessor">    #else</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        std::string os = <span class="stringliteral">&quot;Unknown&quot;</span>;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordtype">string</span> startPath;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">if</span> (os == <span class="stringliteral">&quot;Windows&quot;</span>)</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    {</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        startPath = <span class="stringliteral">&quot;../../..&quot;</span>;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    }</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (os == <span class="stringliteral">&quot;MacOS&quot;</span>)</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    {</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        startPath = <span class="stringliteral">&quot;..&quot;</span>;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    }</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (os == <span class="stringliteral">&quot;Linux&quot;</span>)</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    {</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        startPath = <span class="stringliteral">&quot;..&quot;</span>;</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    }</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">return</span> startPath;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    {</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;Unsupported OS&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    }</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keywordflow">return</span> startPath;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00204">GUI::displayEndMessage()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00389">GUI::displayGameState()</a>, and <a class="el" href="_g_u_i_8cpp_source.html#l00361">getCardString()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00209">GUI::displayEndMessage()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00397">GUI::displayGameState()</a>, and <a class="el" href="_g_u_i_8cpp_source.html#l00369">getCardString()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -359,10 +361,50 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a0fcdefbd8531ccd32fad2d8d6caa7a76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fcdefbd8531ccd32fad2d8d6caa7a76">&#9670;&nbsp;</a></span>moveTo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void moveTo </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00044">44</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                          {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;\033[&quot;</span> &lt;&lt; y &lt;&lt; <span class="stringliteral">&quot;;&quot;</span> &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot;H&quot;</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00209">GUI::displayEndMessage()</a>, and <a class="el" href="_g_u_i_8cpp_source.html#l00397">GUI::displayGameState()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_g_u_i_8cpp_a0fcdefbd8531ccd32fad2d8d6caa7a76_icgraph.png" border="0" usemap="#a_g_u_i_8cpp_a0fcdefbd8531ccd32fad2d8d6caa7a76_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 30 2024 01:16:05 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Aug 30 2024 01:39:43 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -7,5 +7,8 @@ digraph "GUI::displayStartScreen"
   rankdir="RL";
   Node1 [label="GUI::displayStartScreen",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Displays the start screen of the game."];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97",tooltip=" "];
+  Node2 [label="GUI::displayEndMessage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_u_i.html#a663dad721796a4f367c2534e1901fc97",tooltip="Displays the end message when the game is over."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

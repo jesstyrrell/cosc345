@@ -6,5 +6,6 @@ var searchData=
   ['mock_5fmethod_117',['MOCK_METHOD',['../class_mock_g_u_i_wrapper.html#a1db6fa67db13ee37c502ecfa15c43ff4',1,'MockGUIWrapper::MOCK_METHOD(std::string, getUserMove,(bool, bool, bool, bool),(override))'],['../class_mock_g_u_i_wrapper.html#a8880d42f0ae01d2d8afc5c8005333936',1,'MockGUIWrapper::MOCK_METHOD(int, getBetSizing,(int, int),(override))'],['../class_mock_g_u_i_wrapper.html#a19cb3d001dd215c48e57fbd6c80c7111',1,'MockGUIWrapper::MOCK_METHOD(int, endOfRoundMenu,(),(override))']]],
   ['mockgui_118',['mockGui',['../class_human_player_test.html#ae8b11e37f9b1710804dfe913d82dcb44',1,'HumanPlayerTest']]],
   ['mockguiwrapper_119',['MockGUIWrapper',['../class_mock_g_u_i_wrapper.html',1,'']]],
-  ['move_120',['Move',['../_game_8hpp.html#a19b869a01ca1a58f4164b4f75c2df388',1,'Game.hpp']]]
+  ['move_120',['Move',['../_game_8hpp.html#a19b869a01ca1a58f4164b4f75c2df388',1,'Game.hpp']]],
+  ['moveto_121',['moveTo',['../_g_u_i_8cpp.html#a0fcdefbd8531ccd32fad2d8d6caa7a76',1,'GUI.cpp']]]
 ];
