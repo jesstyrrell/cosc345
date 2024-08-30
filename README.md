@@ -63,9 +63,7 @@ cmake build
 <!-- USAGE EXAMPLES -->
 ## View Project
 
-<div align="center">
-   <img style="width: 100%" src="./_docs/ProjectScreenshot.png">
-</div>
+[![asciicast](https://asciinema.org/a/bR9ZJ5Nb30RBkJNLt0PWUEnV3.png)](https://asciinema.org/a/bR9ZJ5Nb30RBkJNLt0PWUEnV3)
 
 ## Project Schedule
 
@@ -80,6 +78,8 @@ cmake build
    <iframe class="clickup-embed" src="https://sharing.clickup.com/9016454981/g/h/8cprbu5-396/da09794ac7698a4" onwheel="" width="100%" height="700px" style="background: transparent; border: 1px solid #ccc;"></iframe>
 
 </details>
+
+
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
