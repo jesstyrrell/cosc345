@@ -36,27 +36,29 @@ TEST(TestDeck, TestDeckReset) {
 }
 
 // FIXME: This is currently failing in the ci but passes in the local environment
-// TEST(TestDeck, TestDeckShuffle) {
-//     Deck deck = Deck();
-//     vector<Card> cards = deck.get_cards();
-//     deck.shuffle();
-//     vector<Card> shuffledCards = deck.get_cards();
+TEST(TestDeck, TestDeckShuffle) {
+    Deck deck = Deck();
+    vector<Card> cards = deck.get_cards();
+    deck.shuffle();
+    vector<Card> shuffledCards = deck.get_cards();
 
-//     // Check if the cards are shuffled
-//     bool isShuffled = false;
-//     for (int i = 0; i < cards.size(); i++) {
+    // Check if the cards are shuffled
+    bool isShuffled = false;
+    for (int i = 0; i < cards.size(); i++) {
 
-//         const bool checkSuit = cards[i].get_suit() == shuffledCards[i].get_suit();
-//         const bool checkRank = cards[i].get_rank() == shuffledCards[i].get_rank();
+        bool checkSuit = cards[i].get_suit() == shuffledCards[i].get_suit();
+        bool checkRank = cards[i].get_rank() == shuffledCards[i].get_rank();
 
-//         if (checkSuit && checkRank) {
-//             isShuffled = true;
-//             break;
-//         }
-//     }
+        // If any of the cards are are different, then the deck is shuffled
+        if (!checkSuit || !checkRank) {
+            isShuffled = true;
+            break;
+        }
+    }
 
-//     ASSERT_TRUE(isShuffled);
-// }
+
+    ASSERT_TRUE(isShuffled);
+}
 
 TEST(TestDeck, TestDeckDeal) {
     Deck deck = Deck();
