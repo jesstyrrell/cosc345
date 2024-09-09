@@ -46,14 +46,16 @@ TEST(TestDeck, TestDeckShuffle) {
     bool isShuffled = false;
     for (int i = 0; i < cards.size(); i++) {
 
-        const bool checkSuit = cards[i].get_suit() == shuffledCards[i].get_suit();
-        const bool checkRank = cards[i].get_rank() == shuffledCards[i].get_rank();
+        bool checkSuit = cards[i].get_suit() == shuffledCards[i].get_suit();
+        bool checkRank = cards[i].get_rank() == shuffledCards[i].get_rank();
 
-        if (checkSuit && checkRank) {
+        // If any of the cards are are different, then the deck is shuffled
+        if (!checkSuit || !checkRank) {
             isShuffled = true;
             break;
         }
     }
+
 
     ASSERT_TRUE(isShuffled);
 }
