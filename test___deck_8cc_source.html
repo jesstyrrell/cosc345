@@ -107,64 +107,66 @@ $(function() {
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">// FIXME: This is currently failing in the ci but passes in the local environment</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// TEST(TestDeck, TestDeckShuffle) {</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">//     Deck deck = Deck();</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//     vector&lt;Card&gt; cards = deck.get_cards();</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//     deck.shuffle();</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//     vector&lt;Card&gt; shuffledCards = deck.get_cards();</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="test___deck_8cc.html#a0a136d376e0d376b3f455c72ad67950f">   39</a></span>&#160;<a class="code" href="test___deck_8cc.html#a32761366781d5d43b35b6c0373c698c9">TEST</a>(TestDeck, TestDeckShuffle) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="class_deck.html">Deck</a> deck = <a class="code" href="class_deck.html">Deck</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    vector&lt;Card&gt; cards = deck.<a class="code" href="class_deck.html#a2fe0172048296260450a74035a34db9b">get_cards</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    deck.<a class="code" href="class_deck.html#ae5a1e52ab00ae5924f2bc6b730dba3eb">shuffle</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    vector&lt;Card&gt; shuffledCards = deck.<a class="code" href="class_deck.html#a2fe0172048296260450a74035a34db9b">get_cards</a>();</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">//     // Check if the cards are shuffled</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">//     bool isShuffled = false;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">//     for (int i = 0; i &lt; cards.size(); i++) {</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// Check if the cards are shuffled</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">bool</span> isShuffled = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; cards.size(); i++) {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">//         const bool checkSuit = cards[i].get_suit() == shuffledCards[i].get_suit();</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">//         const bool checkRank = cards[i].get_rank() == shuffledCards[i].get_rank();</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">bool</span> checkSuit = cards[i].get_suit() == shuffledCards[i].get_suit();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">bool</span> checkRank = cards[i].get_rank() == shuffledCards[i].get_rank();</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">//         if (checkSuit &amp;&amp; checkRank) {</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">//             isShuffled = true;</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">//             break;</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">//         }</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">//     }</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">//     ASSERT_TRUE(isShuffled);</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">// }</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="test___deck_8cc.html#a03d3c7fb7a0df829af13d2fcc459c2ba">   61</a></span>&#160;<a class="code" href="test___deck_8cc.html#a32761366781d5d43b35b6c0373c698c9">TEST</a>(TestDeck, TestDeckDeal) {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="class_deck.html">Deck</a> deck = <a class="code" href="class_deck.html">Deck</a>();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    vector&lt;Card&gt; cards = deck.<a class="code" href="class_deck.html#a2fe0172048296260450a74035a34db9b">get_cards</a>();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="class_card.html">Card</a> card = deck.<a class="code" href="class_deck.html#a16604aabf7fc56dd44a72c4e862758cf">deal</a>();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    vector&lt;Card&gt; newCards = deck.<a class="code" href="class_deck.html#a2fe0172048296260450a74035a34db9b">get_cards</a>();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    ASSERT_EQ(cards.size(), 52);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    ASSERT_EQ(newCards.size(), 51);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="test___deck_8cc.html#ac945c334b60d4eeeadd1cd110c1bb9d8">   72</a></span>&#160;<a class="code" href="test___deck_8cc.html#a32761366781d5d43b35b6c0373c698c9">TEST</a>(TestDeck, TestDeckFindCard) {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="class_deck.html">Deck</a> deck = <a class="code" href="class_deck.html">Deck</a>();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="class_card.html">Card</a> card = deck.<a class="code" href="class_deck.html#a3ad744640638d4a52761525d56004cef">find_card</a>(<span class="stringliteral">&quot;A&quot;</span>, <span class="stringliteral">&quot;Hearts&quot;</span>);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    ASSERT_EQ(card.<a class="code" href="class_card.html#a74782cc7cdcc2bf7cabc89eaa265805a">get_suit</a>(), <span class="stringliteral">&quot;Hearts&quot;</span>);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    ASSERT_EQ(card.<a class="code" href="class_card.html#a9b352ce37c8d4e365b31dee979c35add">get_rank</a>(), <span class="stringliteral">&quot;A&quot;</span>);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="test___deck_8cc.html#ad6a69a28e7e0c0d1f60b5211522d8f74">   80</a></span>&#160;<a class="code" href="test___deck_8cc.html#a32761366781d5d43b35b6c0373c698c9">TEST</a>(TestDeck, TestDeckRemoveCard) {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="class_deck.html">Deck</a> deck = <a class="code" href="class_deck.html">Deck</a>();</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="class_card.html">Card</a> card = deck.<a class="code" href="class_deck.html#a3ad744640638d4a52761525d56004cef">find_card</a>(<span class="stringliteral">&quot;A&quot;</span>, <span class="stringliteral">&quot;Hearts&quot;</span>);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    deck.<a class="code" href="class_deck.html#a61714386178ebc83bfa95b838db0adf1">remove_card</a>(card);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    vector&lt;Card&gt; cards = deck.<a class="code" href="class_deck.html#a2fe0172048296260450a74035a34db9b">get_cards</a>();</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">bool</span> cardExists = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="class_card.html">Card</a> c : cards) {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">if</span> (c.get_suit() == card.<a class="code" href="class_card.html#a74782cc7cdcc2bf7cabc89eaa265805a">get_suit</a>() &amp;&amp; c.get_rank() == card.<a class="code" href="class_card.html#a9b352ce37c8d4e365b31dee979c35add">get_rank</a>()) {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            cardExists = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    ASSERT_FALSE(cardExists);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="comment">// If any of the cards are are different, then the deck is shuffled</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">if</span> (!checkSuit || !checkRank) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            isShuffled = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    ASSERT_TRUE(isShuffled);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="test___deck_8cc.html#a03d3c7fb7a0df829af13d2fcc459c2ba">   63</a></span>&#160;<a class="code" href="test___deck_8cc.html#a32761366781d5d43b35b6c0373c698c9">TEST</a>(TestDeck, TestDeckDeal) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="class_deck.html">Deck</a> deck = <a class="code" href="class_deck.html">Deck</a>();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    vector&lt;Card&gt; cards = deck.<a class="code" href="class_deck.html#a2fe0172048296260450a74035a34db9b">get_cards</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="class_card.html">Card</a> card = deck.<a class="code" href="class_deck.html#a16604aabf7fc56dd44a72c4e862758cf">deal</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    vector&lt;Card&gt; newCards = deck.<a class="code" href="class_deck.html#a2fe0172048296260450a74035a34db9b">get_cards</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    ASSERT_EQ(cards.size(), 52);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    ASSERT_EQ(newCards.size(), 51);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="test___deck_8cc.html#ac945c334b60d4eeeadd1cd110c1bb9d8">   74</a></span>&#160;<a class="code" href="test___deck_8cc.html#a32761366781d5d43b35b6c0373c698c9">TEST</a>(TestDeck, TestDeckFindCard) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="class_deck.html">Deck</a> deck = <a class="code" href="class_deck.html">Deck</a>();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="class_card.html">Card</a> card = deck.<a class="code" href="class_deck.html#a3ad744640638d4a52761525d56004cef">find_card</a>(<span class="stringliteral">&quot;A&quot;</span>, <span class="stringliteral">&quot;Hearts&quot;</span>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    ASSERT_EQ(card.<a class="code" href="class_card.html#a74782cc7cdcc2bf7cabc89eaa265805a">get_suit</a>(), <span class="stringliteral">&quot;Hearts&quot;</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    ASSERT_EQ(card.<a class="code" href="class_card.html#a9b352ce37c8d4e365b31dee979c35add">get_rank</a>(), <span class="stringliteral">&quot;A&quot;</span>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="test___deck_8cc.html#ad6a69a28e7e0c0d1f60b5211522d8f74">   82</a></span>&#160;<a class="code" href="test___deck_8cc.html#a32761366781d5d43b35b6c0373c698c9">TEST</a>(TestDeck, TestDeckRemoveCard) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="class_deck.html">Deck</a> deck = <a class="code" href="class_deck.html">Deck</a>();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="class_card.html">Card</a> card = deck.<a class="code" href="class_deck.html#a3ad744640638d4a52761525d56004cef">find_card</a>(<span class="stringliteral">&quot;A&quot;</span>, <span class="stringliteral">&quot;Hearts&quot;</span>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    deck.<a class="code" href="class_deck.html#a61714386178ebc83bfa95b838db0adf1">remove_card</a>(card);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    vector&lt;Card&gt; cards = deck.<a class="code" href="class_deck.html#a2fe0172048296260450a74035a34db9b">get_cards</a>();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">bool</span> cardExists = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="class_card.html">Card</a> c : cards) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">if</span> (c.get_suit() == card.<a class="code" href="class_card.html#a74782cc7cdcc2bf7cabc89eaa265805a">get_suit</a>() &amp;&amp; c.get_rank() == card.<a class="code" href="class_card.html#a9b352ce37c8d4e365b31dee979c35add">get_rank</a>()) {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            cardExists = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    ASSERT_FALSE(cardExists);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
 <div class="ttc" id="aclass_card_html"><div class="ttname"><a href="class_card.html">Card</a></div><div class="ttdoc">Represents a single card in a deck of cards. Each card has a suit and a rank.</div><div class="ttdef"><b>Definition:</b> <a href="_card_8hpp_source.html#l00014">Card.hpp:14</a></div></div>
 <div class="ttc" id="aclass_card_html_a74782cc7cdcc2bf7cabc89eaa265805a"><div class="ttname"><a href="class_card.html#a74782cc7cdcc2bf7cabc89eaa265805a">Card::get_suit</a></div><div class="ttdeci">const std::string get_suit()</div><div class="ttdoc">Gets the suit of the card.</div><div class="ttdef"><b>Definition:</b> <a href="_card_8cpp_source.html#l00025">Card.cpp:25</a></div></div>
 <div class="ttc" id="aclass_card_html_a9b352ce37c8d4e365b31dee979c35add"><div class="ttname"><a href="class_card.html#a9b352ce37c8d4e365b31dee979c35add">Card::get_rank</a></div><div class="ttdeci">const std::string get_rank()</div><div class="ttdoc">Gets the rank of the card.</div><div class="ttdef"><b>Definition:</b> <a href="_card_8cpp_source.html#l00034">Card.cpp:34</a></div></div>
@@ -179,7 +181,7 @@ $(function() {
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 30 2024 02:40:58 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Mon Sep 9 2024 23:20:20 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
