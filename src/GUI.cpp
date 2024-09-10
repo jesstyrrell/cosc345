@@ -2,6 +2,7 @@
 #include "Player.hpp"
 #include "GUI.hpp"
 #include "Game.hpp"
+#include "Math.h"
 
 // Define and initialize the static member variable
 Game* GUI::game = nullptr;
@@ -20,6 +21,7 @@ const Point GUI::COMMUNITY_CARD_POSITIONS[5] = { {84, 23}, {92, 23}, {100, 23}, 
 const Point GUI::PLAYER_NAME_POSITIONS[8] = { {104, 46}, {54, 39}, {32, 26}, {54, 10}, {104, 9}, {154, 10}, {175, 26}, {154, 39} };
 const Point GUI::PLAYER_CURRENT_BETS[8] = { {104, 36}, {62, 34}, {50, 26}, {62, 17}, {104, 15}, {146, 17}, {158, 26}, {146, 34} };
 const Point GUI::PLAYER_BUTTON_POSITIONS[8] = { {112, 36}, {68, 36}, {50, 28}, {54, 18}, {94, 15}, {138, 15}, {158, 24}, {152, 32} };
+const Point GUI::PLAYER_EQUITY_POSITION[2] = {{10, 10}, {10, 11}};
 
 void GUI::setGame(Game* game) {
     GUI::game = game;
@@ -454,6 +456,14 @@ void GUI::displayGameState(){
          else {
              // Show that they have folded 
          }
+    }
+    vector<float> playerEquities= players[0]->get_equity(communityCards, numPlayers);
+    if (playerEquities[0] != -1 && playerEquities[1] != -1) {
+        string playerWinEquity = (std::ostringstream() << std::fixed << std::setprecision(2) << (std::round(playerEquities[0] * 10000) / 100)).str() + "%";
+        string playerDrawEquity = (std::ostringstream() << std::fixed << std::setprecision(2) << (std::round(playerEquities[1] * 10000) / 100)).str() + "%";
+
+        tableContent = addString(tableContent, "Win:" + playerWinEquity, PLAYER_EQUITY_POSITION[0].x, PLAYER_EQUITY_POSITION[0].y);
+        tableContent = addString(tableContent, "Draw: " + playerDrawEquity, PLAYER_EQUITY_POSITION[1].x, PLAYER_EQUITY_POSITION[1].y);
     }
 
     std::cout << tableContent << std::endl;

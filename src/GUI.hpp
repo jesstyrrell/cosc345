@@ -7,6 +7,7 @@
 #include <fstream>
 #include <sstream>
 #include <chrono>
+#include <iomanip>
 
 class Game;
 
@@ -36,6 +37,7 @@ class GUI {
         static const Point PLAYER_NAME_POSITIONS[8];     ///< Positions for player names.
         static const Point PLAYER_CURRENT_BETS[8];       ///< Positions for player current bets.
         static const Point PLAYER_BUTTON_POSITIONS[8];   ///< Positions for player buttons.
+        static const Point PLAYER_EQUITY_POSITION[2];    ///< Positions for player equity.
 
         /**
          * @brief Sets the game object for the GUI.

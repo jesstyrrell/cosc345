@@ -54,12 +54,12 @@ int main(int argc, char* argv[]) {
     std::vector<Player*> playerPointers;
     playerPointers.push_back(&player1);
     playerPointers.push_back(&player2);
-    playerPointers.push_back(&player3);
-    playerPointers.push_back(&player4);
-    playerPointers.push_back(&player5);
-    playerPointers.push_back(&player6);
-    playerPointers.push_back(&player7);
-    playerPointers.push_back(&player8);
+    //playerPointers.push_back(&player3);
+    //playerPointers.push_back(&player4);
+    //playerPointers.push_back(&player5);
+    //playerPointers.push_back(&player6);
+    //playerPointers.push_back(&player7);
+    //playerPointers.push_back(&player8);
 
     // Initiate a game with all the players and pass game object to GUI
     Game game = Game(playerPointers);   // i swear you have to pass a pointer, but also its a list of two players

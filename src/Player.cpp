@@ -1,4 +1,5 @@
 #include "Player.hpp"
+#include "EquityCalculator.hpp"
 
 using namespace std;
 
@@ -59,6 +60,17 @@ void Player::show_hand() {
 
 void Player::reset_current_bet() {
     this->current_bet = 0;
+}
+
+vector<float> Player::get_equity(vector<Card> communityCards, int numPlayers) {
+    if (this->hand.size() == 0) {
+        return { -1, -1 };
+    }
+    EquityCalculator equityCalculator;
+    Deck deck;
+    for (Card c : communityCards) { deck.remove_card(c); };
+    for (Card c : this->hand) { deck.remove_card(c); };
+    return equityCalculator.evaluateHand(this->hand, communityCards, deck, numPlayers);
 }
 
 
