@@ -1,0 +1,49 @@
+name: Build and Release (Windows)
+
+on:
+  workflow_dispatch:
+
+env:
+  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - uses: actions/checkout@v4
+
+      # Step 2: Configure CMake
+      - name: Configure CMake
+        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+
+      # Step 3: Build the project
+      - name: Build
+        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+
+      # Step 4: Run tests
+      - name: Test
+        working-directory: ${{github.workspace}}/build
+        run: ctest -C ${{env.BUILD_TYPE}}
+
+      # Step 5: Upload the built executable as an artifact
+      - name: Upload executable
+        uses: actions/upload-artifact@v3
+        with:
+          name: windows-executable
+          path: ${{github.workspace}}/build/Release/PokerGame.exe
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Step 6: Create GitHub Release and attach the executable
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ${{github.workspace}}/build/Release/PokerGame.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
