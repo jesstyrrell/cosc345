@@ -55,7 +55,13 @@ jobs:
       # Step 7: Checkout the repository to prepare for tagging
       - uses: actions/checkout@v4
 
-      # Step 8: Create a unique tag based on the run number
+      # Step 8: Download the artifact from the build job
+      - name: Download executable
+        uses: actions/download-artifact@v3
+        with:
+          name: windows-executable
+
+      # Step 9: Create a unique tag based on the run number
       - name: Generate and create tag
         id: create_tag
         run: |
@@ -66,13 +72,21 @@ jobs:
           git tag $TAG_NAME
           git push origin $TAG_NAME
 
-      # Step 9: Create GitHub Release with the generated tag and attach the executable
+      # Step 10: Create GitHub Release with the generated tag and attach the executable
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ env.TAG_NAME }}
           name: ${{ inputs.release_name }}
           body: ${{ inputs.release_description }}
-          files: ${{github.workspace}}/build/Release/PokerGame.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Step 11: Upload files to the release
+      - name: Upload release assets
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            ${{ github.workspace }}/build/Release/PokerGame.exe
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
