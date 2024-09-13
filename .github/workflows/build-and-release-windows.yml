@@ -3,14 +3,10 @@ name: Build and Release (Windows)
 on:
   workflow_dispatch:
     inputs:
-      tag_name:
-        description: 'Tag name for the release'
-        required: true
-        default: 'v1.0.${{ github.run_number }}' # Dynamically generate the default tag name
       release_name:
         description: 'Release name'
         required: true
-        default: 'Initial Release'
+        default: 'Automated Release'
       release_description:
         description: 'Release description'
         required: false
@@ -27,7 +23,7 @@ jobs:
       # Step 1: Checkout the repository
       - uses: actions/checkout@v4
 
-      # Step 2: Configure CMake (using the same structure as your build/test workflow)
+      # Step 2: Configure CMake
       - name: Configure CMake
         run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
@@ -59,19 +55,22 @@ jobs:
       # Step 7: Checkout the repository to prepare for tagging
       - uses: actions/checkout@v4
 
-      # Step 8: Create the specified tag
-      - name: Create a new tag
+      # Step 8: Create a unique tag based on the run number
+      - name: Generate and create tag
+        id: create_tag
         run: |
+          TAG_NAME=v1.0.${{ github.run_number }}
+          echo "TAG_NAME=${TAG_NAME}" >> $GITHUB_ENV
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git tag ${{ inputs.tag_name }}
-          git push origin ${{ inputs.tag_name }}
+          git tag $TAG_NAME
+          git push origin $TAG_NAME
 
-      # Step 9: Create GitHub Release using the inputs provided
+      # Step 9: Create GitHub Release with the generated tag and attach the executable
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ inputs.tag_name }}
+          tag_name: ${{ env.TAG_NAME }}
           name: ${{ inputs.release_name }}
           body: ${{ inputs.release_description }}
           files: ${{github.workspace}}/build/Release/PokerGame.exe
