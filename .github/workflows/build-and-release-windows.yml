@@ -84,6 +84,6 @@ jobs:
           name: ${{ inputs.release_name }}
           body: ${{ inputs.release_description }}
           files: |
-            ${{ github.workspace }}/build/Release/PokerGame.exe
+            ${{ github.workspace }}/PokerGame.exe
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
