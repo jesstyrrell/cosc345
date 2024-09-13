@@ -72,20 +72,13 @@ jobs:
           git tag $TAG_NAME
           git push origin $TAG_NAME
 
-      # Step 10: Create GitHub Release with the generated tag and attach the executable
-      - name: Create GitHub Release
+      # Step 10: Create GitHub Release and upload assets
+      - name: Create GitHub Release and upload assets
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ env.TAG_NAME }}
           name: ${{ inputs.release_name }}
           body: ${{ inputs.release_description }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # Step 11: Upload files to the release
-      - name: Upload release assets
-        uses: softprops/action-gh-release@v1
-        with:
           files: |
             ${{ github.workspace }}/build/Release/PokerGame.exe
         env:
