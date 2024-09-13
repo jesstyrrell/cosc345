@@ -212,19 +212,20 @@ int HandEvaluator::compareHands(vector<Card> hand, vector<Card> opponentHand, co
 			vector<Card> trimmedHand;
 			vector<Card> trimmedOpponentHand;
 			string firstPairRank = ranks[firstHandPair];
-			string secondPairRank = ranks[firstHandPair];
+			string secondPairRank = ranks[secondHandPair];
 			// remove the paired cards
 			int removedCards = 0;
 			for (Card card : handAndCommunityCards) {
-				if (card.get_rank() != firstPairRank && card.get_rank() != secondPairRank || removedCards >= 2) {
+				if (card.get_rank() != firstPairRank && card.get_rank() != secondPairRank || removedCards >= 4) {
 					trimmedHand.push_back(card);
 				}
 				else {
 					removedCards++;
 				}
 			}
+			removedCards = 0;
 			for (Card card : opponentAndCommunityCards) {
-				if (card.get_rank() != firstPairRank && card.get_rank() != secondPairRank || removedCards >= 2) {
+				if (card.get_rank() != firstPairRank && card.get_rank() != secondPairRank || removedCards >= 4) {
 					trimmedOpponentHand.push_back(card);
 				}
 				else {
@@ -254,7 +255,6 @@ int HandEvaluator::compareHands(vector<Card> hand, vector<Card> opponentHand, co
 	}
 	// High Card Check
 	return checkHighCard(handAndCommunityCards, opponentAndCommunityCards, 5);
-
 	// draw
 	return DRAW;
 }
@@ -345,7 +345,7 @@ int HandEvaluator::checkForStraight(const vector<Card>& handAndCommunityCards) {
 int HandEvaluator::checkHighCard(const vector<Card>& handAndCommunityCards, const vector<Card>& opponentAndCommunityCards, int amountToCheck) {
 	vector<int> handValues;
 	vector<int> opponentHandValues;
-	for (Card card : handAndCommunityCards) { handValues.push_back(getRankValue(card.get_rank())); }
+	for(Card card : handAndCommunityCards) { handValues.push_back(getRankValue(card.get_rank())); }
 	for (Card card : opponentAndCommunityCards) { opponentHandValues.push_back(getRankValue(card.get_rank())); }
 	std::sort(handValues.begin(), handValues.end(), std::greater<int>());
 	std::sort(opponentHandValues.begin(), opponentHandValues.end(), std::greater<int>());
