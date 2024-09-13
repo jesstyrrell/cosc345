@@ -72,6 +72,10 @@ jobs:
           git tag $TAG_NAME
           git push origin $TAG_NAME
 
+      # Step 9.5: List all files within the workspace
+      - name: List files
+        run: ls -R ${{ github.workspace }}
+
       # Step 10: Create GitHub Release and upload assets
       - name: Create GitHub Release and upload assets
         uses: softprops/action-gh-release@v1
