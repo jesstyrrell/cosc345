@@ -7,7 +7,6 @@
 #include <ctime>
 #include <cstdlib> 
 #include <cstring>
-#include <cstring>
 
 #include "src/Card.hpp"
 #include "src/Deck.hpp"
@@ -21,6 +20,10 @@ using namespace std;
 
 // A main method for testing the classes
 int main(int argc, char* argv[]) {
+
+    EquityCalculator equityCalculator;
+    //equityCalculator.buildPreflopEquityCSV();
+
 
     // Check if the ci flag is passed
     if (argc > 1 && strcmp(argv[1], "-ci") == 0) {

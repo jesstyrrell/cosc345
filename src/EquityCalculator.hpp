@@ -4,6 +4,10 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include <chrono>
+#include <fstream>
+#include <unordered_map>
+#include <sstream>
 
 using namespace std;
 
@@ -39,5 +43,7 @@ public:
      * @param numPlayers The number of players in the game.
      * @return A vector of float values representing the equity of the hand.
      */
+    vector<float> calculateHandEquity(const vector<Card>& hand, const vector<Card>& communityCards, Deck deck, int numPlayers);
     vector<float> evaluateHand(const vector<Card>& hand, const vector<Card>& communityCards, Deck deck, int numPlayers);
+    void buildPreflopEquityCSV();
 };

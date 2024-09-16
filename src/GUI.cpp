@@ -457,7 +457,7 @@ void GUI::displayGameState(){
              // Show that they have folded 
          }
     }
-    vector<float> playerEquities= players[0]->get_equity(communityCards, numPlayers);
+    vector<float> playerEquities = players[0]->get_equity(communityCards, numPlayers);
     if (playerEquities[0] != -1 && playerEquities[1] != -1) {
         string playerWinEquity = (std::ostringstream() << std::fixed << std::setprecision(2) << (std::round(playerEquities[0] * 10000) / 100)).str() + "%";
         string playerDrawEquity = (std::ostringstream() << std::fixed << std::setprecision(2) << (std::round(playerEquities[1] * 10000) / 100)).str() + "%";

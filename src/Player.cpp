@@ -70,7 +70,7 @@ vector<float> Player::get_equity(vector<Card> communityCards, int numPlayers) {
     Deck deck;
     for (Card c : communityCards) { deck.remove_card(c); };
     for (Card c : this->hand) { deck.remove_card(c); };
-    return equityCalculator.evaluateHand(this->hand, communityCards, deck, numPlayers);
+    return equityCalculator.calculateHandEquity(this->hand, communityCards, deck, numPlayers);
 }
 
 
