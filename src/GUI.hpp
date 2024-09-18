@@ -10,7 +10,7 @@
 
 class Game;
 
-using namespace std; 
+using namespace std;
 
 /**
  * @struct Point
@@ -27,10 +27,10 @@ struct Point {
  */
 class GUI {
     private:
-        /// Pointer to the game object used for getting game state information.
+        /// Pointer to the game object used for getting game state information
         static Game* game;
 
-    public: 
+    public:
         static const Point PLAYER_CARD_POSITIONS[8][2];  ///< Positions for player cards.
         static const Point COMMUNITY_CARD_POSITIONS[5];  ///< Positions for community cards.
         static const Point PLAYER_NAME_POSITIONS[8];     ///< Positions for player names.
@@ -48,11 +48,28 @@ class GUI {
          * @return Reference to the game object.
          */
         static Game& getGame();
-    
+
+        /**
+         * @brief Prompts the user to sign in.
+         * @return The name of the user as a string.
+         */
+        static string signInMenu();
+
+        /**
+         * @brief Gets the number of players from the user.
+         * @return The number of players as an integer.
+         */
+        static int getNumberOfPlayers();
         /**
          * @brief Clears the console screen.
          */
         static void clearScreen();
+
+        /**
+         * @brief Generate a random name for a player.
+         * @return The randomly generated name as a string.
+         */
+        static string getRandomPlayerName();
 
         // Methods performed on the user
 
