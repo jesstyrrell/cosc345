@@ -7,7 +7,6 @@
 #include <ctime>
 #include <cstdlib> 
 #include <cstring>
-#include <cstring>
 
 #include "src/Card.hpp"
 #include "src/Deck.hpp"
@@ -28,7 +27,7 @@ int main(int argc, char* argv[]) {
         return 0;
     }
 
-    // Display the start screen 
+    // Display the start screen
     GUI::displayStartScreen();
 
     int menuChoice = GUI::displayMenu();
@@ -37,36 +36,46 @@ int main(int argc, char* argv[]) {
         return 0;
     }
 
-    GUI::clearScreen();
-
-
-
-    std::vector<Player*> playerPointers;
-
-    // Ask the user if they want to create an account, play or play as guest
-    PlayerProfile currentPlayer = GUI::chooseAccount();
-    // Creating a human player from the player profile
-    HumanPlayer humanPlayer = HumanPlayer(currentPlayer.name, 1000);
-    cout << "[DEBUGGING] Player name: " << currentPlayer.name << endl;
-    playerPointers.push_back(&humanPlayer);
-
-
-    // Create n random players
+    // Call the GUI method to get the players name, and let them play as guest
+    string playerName = GUI::signInMenu();
     int numberOfPlayers = GUI::getNumberOfPlayers();
-    cout << "[DEBUGGING] Number of players: " << numberOfPlayers << endl;
-    for (int i = 0; i < numberOfPlayers - 1; i++) {
-        int startingPot = 1000;
 
-        RandomPlayer randomPlayer = RandomPlayer(Player::generate_random_name(), startingPot);
-        playerPointers.push_back(&randomPlayer);
+    
+    std::vector<Player*> playerPointers;
+    HumanPlayer player = HumanPlayer(playerName, 1000);
+    playerPointers.push_back(&player);
+
+    for(int i = 0; i < numberOfPlayers-1; i++){
+        string name = GUI::getRandomPlayerName();
+        cout << name << endl;
+        RandomPlayer *player = new RandomPlayer(name, 1000);
+        playerPointers.push_back(player);
     }
 
-    while(true) {
-        // Click enter to break
-        if (cin.get() == '\n') {
-            break;
-        }
-    }
+    // // Ask the user if they want to create an account, play or play as guest
+    // PlayerProfile currentPlayer = GUI::chooseAccount();
+    // // Creating a human player from the player profile
+    // HumanPlayer humanPlayer = HumanPlayer(currentPlayer.name, 1000);
+    // cout << "[DEBUGGING] Player name: " << currentPlayer.name << endl;
+    // playerPointers.push_back(&humanPlayer);
+
+
+    // // Create n random players
+    // int numberOfPlayers = GUI::getNumberOfPlayers();
+    // cout << "[DEBUGGING] Number of players: " << numberOfPlayers << endl;
+    // for (int i = 0; i < numberOfPlayers - 1; i++) {
+    //     int startingPot = 1000;
+
+    //     RandomPlayer randomPlayer = RandomPlayer(Player::generate_random_name(), startingPot);
+    //     playerPointers.push_back(&randomPlayer);
+    // }
+
+    // while(true) {
+    //     // Click enter to break
+    //     if (cin.get() == '\n') {
+    //         break;
+    //     }
+    // }
 
     // Initiate a game with all the players and pass game object to GUI
     Game game = Game(playerPointers);   // i swear you have to pass a pointer, but also its a list of two players
@@ -74,7 +83,7 @@ int main(int argc, char* argv[]) {
 
     GUI::displayGameState();
     
-    // Start a game loop 
+    // Start a game loop
     while(true){
         // Play a hand
         game.playHand();
@@ -92,4 +101,5 @@ int main(int argc, char* argv[]) {
     return 0;
 
 }
+
 

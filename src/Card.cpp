@@ -22,7 +22,7 @@ Card::Card(const std::string& suit, const std::string& rank) : suit(suit), rank(
  *
  * @return The suit of the card.
  */
-const string Card::get_suit() {
+const string Card::get_suit() const {
     return suit;
 }
 
@@ -31,7 +31,7 @@ const string Card::get_suit() {
  *
  * @return The rank of the card.
  */
-const string Card::get_rank() {
+const string Card::get_rank() const {
     return rank;
 }
 
@@ -40,6 +40,6 @@ const string Card::get_rank() {
  * 
  * @return string representation of the card object
  */
-const string Card::get_card() {
+const string Card::get_card() const {
     return rank + " of " + suit;
 }

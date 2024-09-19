@@ -7,12 +7,13 @@
 #include <fstream>
 #include <sstream>
 #include <chrono>
+#include <iomanip>
 
 #include "PlayerProfile.hpp"
 
 class Game;
 
-using namespace std; 
+using namespace std;
 
 /**
  * @struct Point
@@ -32,19 +33,20 @@ enum MenuOption { START_GAME, CREATE_PROFILE, QUIT };
  */
 class GUI {
     private:
-        /// Pointer to the game object used for getting game state information.
+        /// Pointer to the game object used for getting game state information
         static Game* game;
 
         static PlayerProfile createProfile();
         static PlayerProfile getProfile(); 
 
 
-    public: 
+    public:
         static const Point PLAYER_CARD_POSITIONS[8][2];  ///< Positions for player cards.
         static const Point COMMUNITY_CARD_POSITIONS[5];  ///< Positions for community cards.
         static const Point PLAYER_NAME_POSITIONS[8];     ///< Positions for player names.
         static const Point PLAYER_CURRENT_BETS[8];       ///< Positions for player current bets.
         static const Point PLAYER_BUTTON_POSITIONS[8];   ///< Positions for player buttons.
+        static const Point PLAYER_EQUITY_POSITION[2];    ///< Positions for player equity.
 
         /**
          * @brief Sets the game object for the GUI.
@@ -57,11 +59,28 @@ class GUI {
          * @return Reference to the game object.
          */
         static Game& getGame();
-    
+
+        /**
+         * @brief Prompts the user to sign in.
+         * @return The name of the user as a string.
+         */
+        static string signInMenu();
+
+        /**
+         * @brief Gets the number of players from the user.
+         * @return The number of players as an integer.
+         */
+        static int getNumberOfPlayers();
         /**
          * @brief Clears the console screen.
          */
         static void clearScreen();
+
+        /**
+         * @brief Generate a random name for a player.
+         * @return The randomly generated name as a string.
+         */
+        static string getRandomPlayerName();
 
         // Methods performed on the user
 

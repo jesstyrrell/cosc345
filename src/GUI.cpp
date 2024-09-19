@@ -27,6 +27,7 @@ const Point GUI::COMMUNITY_CARD_POSITIONS[5] = { {84, 23}, {92, 23}, {100, 23}, 
 const Point GUI::PLAYER_NAME_POSITIONS[8] = { {104, 46}, {54, 39}, {32, 26}, {54, 10}, {104, 9}, {154, 10}, {175, 26}, {154, 39} };
 const Point GUI::PLAYER_CURRENT_BETS[8] = { {104, 36}, {62, 34}, {50, 26}, {62, 17}, {104, 15}, {146, 17}, {158, 26}, {146, 34} };
 const Point GUI::PLAYER_BUTTON_POSITIONS[8] = { {112, 36}, {68, 36}, {50, 28}, {54, 18}, {94, 15}, {138, 15}, {158, 24}, {152, 32} };
+const Point GUI::PLAYER_EQUITY_POSITION[2] = {{10, 10}, {10, 11}};
 
 void GUI::setGame(Game* game) {
     GUI::game = game;
@@ -287,6 +288,46 @@ MenuOption GUI::displayMenu() {
     }
 }
 
+int GUI::getNumberOfPlayers() {
+    std::cout << "Enter the number of players: ";
+    int numPlayers;
+    while(true) {
+        std::cin >> numPlayers;
+        if (std::cin.fail() || numPlayers < 2 || numPlayers > 8) {
+            std::cin.clear(); // Clear the error state
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard invalid input
+            std::cout << "Invalid input. Please enter a number between 2 and 8: ";
+        } else {
+            break;
+        }
+    }
+    return numPlayers;
+}
+
+string GUI::signInMenu() {
+    std::cout << "Select one of the following options:" << std::endl;
+    std::cout << "1. Sign in with a name" << std::endl;
+    std::cout << "2. Create profile" << std::endl;
+    std::cout << "3. Play as guest" << std::endl;
+
+    std::string input;
+    std::getline(std::cin, input);  // Read the entire line, allowing us to detect Enter
+    while(input != "3") {
+        if(input == "1" || input == "2") {
+            std::cout << "This feature is not yet implemented. Please select another option: ";
+            std::getline(std::cin, input);  // Use getline to capture the next input
+        } else {
+        std::cout << "Invalid input. Please enter a valid option: ";
+        std::getline(std::cin, input);  // Use getline to capture the next input
+    }}
+
+    std::string name;
+    std::cout << "Enter your name: ";
+    // Get the next line of input as the player name, allowing for spaces
+    std::getline(std::cin, name);
+    return name;
+}
+
 int GUI::endOfRoundMenu() {
     std::cout << "1. Continue (enter)" << std::endl;
     std::cout << "2. Quit (q)" << std::endl;
@@ -307,7 +348,6 @@ int GUI::endOfRoundMenu() {
     }
     return 1;
 }
-
 
 void GUI::displayPlayerStack(Player* player) {
     std::cout << player->get_name() << "'s stack: " << player->get_stack() << std::endl;
@@ -426,7 +466,7 @@ void GUI::displayGameState(){
     string tableContent = getFileContents(tablePath);
 
     string buttonPath = startPath + "/images/button.txt";
-    string buttonString = getFileContents(buttonPath);  
+    string buttonString = getFileContents(buttonPath);
   
     
     for(int i = 0; i < communityCards.size(); i++){
@@ -481,6 +521,45 @@ void GUI::displayPlayerMove(Player* player, string move, int size) {
     displayGameState();
     if (size != -1) { move += " " + to_string(size); }
     cout << player->get_name() << ": " << move << endl;
+}
+std::string GUI::getRandomPlayerName() {
+    std::string startPath = getFilePathStart();
+
+    // Get the contents of the adjectives.txt file
+    std::string adjectives = getFileContents(startPath + "/images/adjectives.txt");
+
+    // Split the adjective string into lines
+    std::vector<std::string> adjectiveList;
+    std::stringstream ssAdjectives(adjectives);
+    std::string adjective;
+    while (std::getline(ssAdjectives, adjective)) {
+        adjectiveList.push_back(adjective);
+    }
+
+    // Get the contents of the animals.txt file
+    std::string animals = getFileContents(startPath + "/images/animals.txt");
+
+    // Split the animals string into lines
+    std::vector<std::string> animalList;
+    std::stringstream ssAnimals(animals);
+    std::string animal;
+    while (std::getline(ssAnimals, animal)) {
+        animalList.push_back(animal);
+    }
+
+    // Initialize random number generator statically so it's only seeded once
+    auto seed = std::chrono::system_clock::now().time_since_epoch().count();
+    std::mt19937 gen(static_cast<unsigned long>(seed));  // Seeding the generator
+
+
+    // Randomly pick an adjective and animal from the lists
+    std::uniform_int_distribution<> distrAdjective(0, adjectiveList.size() - 1);
+    std::string randomAdjective = adjectiveList[distrAdjective(gen)];
+
+    std::uniform_int_distribution<> distrAnimal(0, animalList.size() - 1);
+    std::string randomAnimal = animalList[distrAnimal(gen)];
+
+    return randomAdjective + randomAnimal;
 }
 
 int GUI::getNumberOfPlayers() {

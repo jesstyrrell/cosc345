@@ -1,6 +1,7 @@
 #include <random>
 
 #include "Player.hpp"
+#include "EquityCalculator.hpp"
 
 using namespace std;
 
@@ -75,4 +76,15 @@ string Player::generate_random_name() {
     string randomNumber = std::to_string(rand() % 1000 + 1);
 
     return adjectives[adjectiveIndex(gen)] + " " + animals[animalIndex(gen)] + " " + randomNumber;
+}
+
+vector<float> Player::get_equity(vector<Card> communityCards, int numPlayers) {
+    if (this->hand.size() == 0) {
+        return { -1, -1 };
+    }
+    EquityCalculator equityCalculator;
+    Deck deck;
+    for (Card c : communityCards) { deck.remove_card(c); };
+    for (Card c : this->hand) { deck.remove_card(c); };
+    return equityCalculator.calculateHandEquity(this->hand, communityCards, deck, numPlayers);
 }

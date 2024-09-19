@@ -20,6 +20,10 @@ void Game::add_player(Player* player) {
     players.push_back(player);
 }
 
+void Game::setPot(int pot) {
+    this->pot = pot;
+}
+
 void Game::deal_hands() {
     for (Player* player : players) {
         player->add_card_to_hand(deck.deal()); // Deal the first card to the player

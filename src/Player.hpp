@@ -103,6 +103,13 @@ class Player {
          */
         static string generate_random_name();
 
+        /**
+         * @brief Returns the equity of the players hand for the current stage of the game
+         * @param communityCards The community cards to check player cards against.
+         * @param numPlayers The number of players in the game.
+         */
+        vector<float> get_equity(vector<Card> communityCards, int numPlayers);
+
         // virtual methods to override in human player and AI player
 
         /**

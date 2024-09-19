@@ -28,19 +28,19 @@ class Card {
          * @brief Gets the suit of the card.
          * @return The suit of the card as a string.
          */
-        const std::string get_suit();
+        const std::string get_suit() const;
 
         /**
          * @brief Gets the rank of the card.
          * @return The rank of the card as a string.
          */
-        const std::string get_rank();
+        const std::string get_rank() const;
 
         /**
          * @brief Gets the card's representation as a string.
          * @return A string representing the card (e.g., "Ace of Hearts").
          */
-        const std::string get_card();
+        const std::string get_card() const;
 
         /**
          * @brief Tests the Card class functionality.
