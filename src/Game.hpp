@@ -39,20 +39,6 @@ class Game {
         int button = 0; 
         int removedPlayerCount = 0;
         bool atShowdown = false;
-        
-        /**
-         * @brief Converts a move string into a Move enum.
-         * @param move The move as a string.
-         * @return The corresponding Move enum value.
-         */
-        Move getCurrentMove(std::string move);
-
-        /**
-         * @brief Adds the blinds to the pot from the appropriate players.
-         * @param bigBlindPlayer Pointer to the player posting the big blind.
-         * @param smallBlindPlayer Pointer to the player posting the small blind.
-         */
-        void addBlindsToPot(Player *bigBlindPlayer, Player *smallBlindPlayer);
 
     public:
         // Public variables for unit testing
@@ -70,6 +56,18 @@ class Game {
          * @param player Pointer to the player to be added.
          */
         void add_player(Player *player);
+
+        /**
+         * @brief Adds the blinds to the pot from the appropriate players.
+         * @param bigBlindPlayer Pointer to the player posting the big blind.
+         * @param smallBlindPlayer Pointer to the player posting the small blind.
+         */
+        void addBlindsToPot(Player *bigBlindPlayer, Player *smallBlindPlayer);
+
+        /**
+         * @brief Sets the pot size within the game.
+         */
+        void setPot(int pot);
 
         /**
          * @brief Deals the cards to the players and the community.
@@ -118,6 +116,13 @@ class Game {
          * @return True if the game is at showdown, otherwise false.
          */
         bool getShowdown();
+
+        /**
+         * @brief Converts a move string into a Move enum.
+         * @param move The move as a string.
+         * @return The corresponding Move enum value.
+         */
+        Move getCurrentMove(std::string move);
 
         /**
          * @brief Awards the pot to the winning players.
