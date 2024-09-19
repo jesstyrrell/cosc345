@@ -290,17 +290,21 @@ MenuOption GUI::displayMenu() {
 
 int GUI::getNumberOfPlayers() {
     std::cout << "Enter the number of players: ";
+
     int numPlayers;
-    while(true) {
+
+    // Asking the user for the number of players - bounded between 2 and 8
+    do {
         std::cin >> numPlayers;
+
+        // Check if the input is valid
         if (std::cin.fail() || numPlayers < 2 || numPlayers > 8) {
             std::cin.clear(); // Clear the error state
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard invalid input
             std::cout << "Invalid input. Please enter a number between 2 and 8: ";
-        } else {
-            break;
         }
-    }
+    } while (numPlayers < 2 || numPlayers > 8);
+
     return numPlayers;
 }
 
@@ -560,13 +564,6 @@ std::string GUI::getRandomPlayerName() {
     std::string randomAnimal = animalList[distrAnimal(gen)];
 
     return randomAdjective + randomAnimal;
-}
-
-int GUI::getNumberOfPlayers() {
-    std::cout << "Enter the number of players: ";
-    int numPlayers;
-    std::cin >> numPlayers;
-    return numPlayers;
 }
 
 PlayerProfile GUI::chooseAccount() {

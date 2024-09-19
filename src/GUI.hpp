@@ -170,11 +170,6 @@ class GUI {
         static void displayPlayerMove(Player* player, string move, int size);
 
         /**
-         * @brief Asks the user for the number of players in the game.
-         */
-        static int getNumberOfPlayers();
-
-        /**
          * @brief Displays input to the user to create a profile.
          */
         static PlayerProfile chooseAccount();
