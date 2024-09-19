@@ -98,22 +98,34 @@ TEST_F(GameTest, AwardPot) {
 //     Player* player = game.getPlayers()[0];
 
 //     // Test CALL
-//     EXPECT_EQ(game.makeMoveForUser("call", player, 0, 50), 50);
+//     EXPECT_EQ(game.makeMoveForUser("c", player, 0, 50), 50);
     
 //     // Test RAISE
-//     EXPECT_EQ(game.makeMoveForUser("raise", player, 0, 50), 100);
+//     EXPECT_EQ(game.makeMoveForUser("r", player, 0, 50), 100);
     
 //     // Test CHECK
-//     EXPECT_EQ(game.makeMoveForUser("check", player, 0, 0), 0);
+//     EXPECT_EQ(game.makeMoveForUser("a", player, 0, 0), 0);
     
 //     // Test FOLD
-//     EXPECT_EQ(game.makeMoveForUser("fold", player, 0, 50), -1);
+//     EXPECT_EQ(game.makeMoveForUser("f", player, 0, 50), -1);
 // }
 
 TEST_F(GameTest, Deal) {
     Game game = createGameWithPlayers(2);
     game.deal();
     EXPECT_EQ(game.getPlayers()[0]->get_hand().size(), 2);
+
+    game.currentStage = Stage::FLOP;
+    game.deal();
+    EXPECT_EQ(game.getCommunityCards().size(), 3);
+
+    game.currentStage = Stage::TURN;
+    game.deal();
+    EXPECT_EQ(game.getCommunityCards().size(), 4);
+
+    game.currentStage = Stage::RIVER;
+    game.deal();
+    EXPECT_EQ(game.getCommunityCards().size(), 5);
 }
 
 TEST_F(GameTest, NextStage) {
