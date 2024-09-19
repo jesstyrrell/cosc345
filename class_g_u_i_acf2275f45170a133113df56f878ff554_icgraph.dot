@@ -14,5 +14,4 @@ digraph "GUI::clearScreen"
   Node4 [label="GUI::displayStartScreen",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_u_i.html#a0dc53c5a6daa0f01b57c4d4731b4d933",tooltip="Displays the start screen of the game."];
   Node4 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }
