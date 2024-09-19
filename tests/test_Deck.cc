@@ -35,7 +35,6 @@ TEST(TestDeck, TestDeckReset) {
     ASSERT_EQ(cards.size(), 52);
 }
 
-// FIXME: This is currently failing in the ci but passes in the local environment
 TEST(TestDeck, TestDeckShuffle) {
     Deck deck = Deck();
     vector<Card> cards = deck.get_cards();
