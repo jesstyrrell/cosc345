@@ -80,21 +80,21 @@ TEST_F(EquityCalculatorTest, FindEquity) {
 }
 
 // FIXME: Test calculateHandEquity function
-// TEST_F(EquityCalculatorTest, CalculateHandEquity) {
-//     std::vector<Card> hand = {Card("Hearts", "A"), Card("Spades", "K")};
-//     std::vector<Card> communityCards;
-//     Deck deck;
-//     int numPlayers = 2;
+TEST_F(EquityCalculatorTest, CalculateHandEquity) {
+    std::vector<Card> hand = {Card("Hearts", "A"), Card("Spades", "K")};
+    std::vector<Card> communityCards;
+    Deck deck;
+    int numPlayers = 2;
 
-//     // Test preflop equity calculation
-//     auto result = calculator.calculateHandEquity(hand, communityCards, deck, numPlayers);
-//     EXPECT_EQ(result.size(), 2);
+    // Test preflop equity calculation
+    auto result = calculator.calculateHandEquity(hand, communityCards, deck, numPlayers);
+    EXPECT_EQ(result.size(), 2);
 
-//     // Test with community cards (postflop)
-//     communityCards = {Card("Clubs", "7"), Card("Diamonds", "8"), Card("Hearts", "9")};
-//     result = calculator.calculateHandEquity(hand, communityCards, deck, numPlayers);
-//     EXPECT_EQ(result.size(), 3);
-// }
+    // Test with community cards (postflop)
+    communityCards = {Card("Clubs", "7"), Card("Diamonds", "8"), Card("Hearts", "9")};
+    result = calculator.calculateHandEquity(hand, communityCards, deck, numPlayers);
+    EXPECT_EQ(result.size(), 3);
+}
 
 // Test evaluateHand function
 TEST_F(EquityCalculatorTest, EvaluateHand) {
