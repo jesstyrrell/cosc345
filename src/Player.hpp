@@ -97,6 +97,12 @@ class Player {
          */
         void reset_current_bet();
 
+        /**
+         * @brief Generates a random name for the player.
+         * @return The randomly generated name.
+         */
+        static string generate_random_name();
+
         // virtual methods to override in human player and AI player
 
         /**
@@ -122,5 +128,4 @@ class Player {
          * @return The outcome of the end-of-hand process.
          */
         virtual int endOfHand() = 0;
-
 };

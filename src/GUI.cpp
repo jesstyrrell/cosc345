@@ -1,7 +1,14 @@
-﻿#include "Card.hpp"
+﻿#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <sstream>
+
+#include "Card.hpp"
 #include "Player.hpp"
 #include "GUI.hpp"
 #include "Game.hpp"
+#include "CSVWorker.hpp"
 
 // Define and initialize the static member variable
 Game* GUI::game = nullptr;
@@ -91,7 +98,6 @@ string GUI::getUserMove(bool canCheck, bool canRaise, bool canFold, bool canCall
  * @param minBet: int - Minimum bet size
  * @param maxBet: int - Maximum bet size
  */
-
 int GUI::getBetSizing(int minBet, int maxBet) {
     // Get user bet size
     // TODO: Test bet sizing input validation
@@ -254,22 +260,31 @@ void GUI::displayEndMessage() {
     std::cout << "--------------------------------" << std::endl;
 }
 
-int GUI::displayMenu() {
+MenuOption GUI::displayMenu() {
+    vector<string> acceptedInputs = {"", "p", "q"};
+
     std::cout << "1. Start Game (press Enter)" << std::endl;
+    std::cout << "2. Create a profile (p)" << std::endl;
     std::cout << "2. Quit (q)" << std::endl;
 
     std::string input;
     std::getline(std::cin, input);  // Read the entire line, allowing us to detect Enter
 
-    while (input != "q" && input != "") {
+    // While the user input is not in acceptedInputs, prompt the user for a valid input
+    while (std::find(acceptedInputs.begin(), acceptedInputs.end(), input) == acceptedInputs.end()) {
         std::cout << "Invalid input. Please enter a valid option: ";
         std::getline(std::cin, input);  // Use getline to capture the next input
     }
 
-    if (input == "q") {
-        return 0;
+    // Handle the user input
+    switch (input[0]) {
+        case 'p':
+            return CREATE_PROFILE;
+        case 'q':
+            return QUIT;
+        default:
+            return START_GAME;
     }
-    return 1;
 }
 
 int GUI::endOfRoundMenu() {
@@ -466,4 +481,73 @@ void GUI::displayPlayerMove(Player* player, string move, int size) {
     displayGameState();
     if (size != -1) { move += " " + to_string(size); }
     cout << player->get_name() << ": " << move << endl;
+}
+
+int GUI::getNumberOfPlayers() {
+    std::cout << "Enter the number of players: ";
+    int numPlayers;
+    std::cin >> numPlayers;
+    return numPlayers;
+}
+
+PlayerProfile GUI::chooseAccount() {
+    enum MenuOption { CREATE_PROFILE, PLAY, PLAY_AS_GUEST };
+    vector<string> acceptedInputs = {"1", "2", "3"};
+
+    // Ask the user if they want to create an account, play or play as guest
+    std::cout << "1. Create a profile" << std::endl;
+    std::cout << "2. Play" << std::endl;
+    std::cout << "3. Play as guest" << std::endl;
+
+    // While the user input is not in acceptedInputs, prompt the user for a valid input
+    std::string input;
+    do {
+        std::getline(std::cin, input);  
+    } while (std::find(acceptedInputs.begin(), acceptedInputs.end(), input) == acceptedInputs.end());
+
+    // Handle the user input
+    switch (std::stoi(input)) {
+        case CREATE_PROFILE:
+            return GUI::createProfile();
+        case PLAY:
+            return GUI::getProfile();
+        case PLAY_AS_GUEST:
+            return PlayerProfile({ "Guest", 0 });
+    }
+}
+
+PlayerProfile GUI::createProfile() {
+    CSVWorker csv("../data/profiles.csv");
+
+    // Check if a profile exists in the CSV file
+    std::string name;
+    int age;
+
+    std::cout << "Enter your name: ";
+    std::cin >> name;
+
+    std::cout << "Enter your age: ";
+    std::cin >> age;
+
+    PlayerProfile playerProfile = { name, age };
+    csv.addProfile(playerProfile);
+
+    return playerProfile;
+}
+
+PlayerProfile GUI::getProfile() {
+    CSVWorker csv("../data/profiles.csv");
+
+    std::string name; 
+    std::cout << "Enter your name: ";
+    std::cin >> name;
+
+    // Get the user's profile that has the name entered
+    for (PlayerProfile profile : csv.getProfiles()) {
+        if (profile.name == name) {
+            return profile;
+        }
+    }
+
+    return PlayerProfile();
 }

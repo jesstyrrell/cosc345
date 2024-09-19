@@ -16,6 +16,7 @@
 #include "src/HandEvaluator.hpp"
 #include "src/EquityCalculator.hpp"
 #include "src/GUI.hpp"
+#include "src/PlayerProfile.hpp"
 
 using namespace std;
 
@@ -38,28 +39,34 @@ int main(int argc, char* argv[]) {
 
     GUI::clearScreen();
 
-    // TODO: Implement a way to get the number of players from the user
 
-    // The first player will always be the human player 
-    HumanPlayer player1 = HumanPlayer("Jess", 1000);
-    RandomPlayer player2 = RandomPlayer("James", 1000);
-    RandomPlayer player3 = RandomPlayer("Corban", 1000);
-    RandomPlayer player4 = RandomPlayer("Katie", 1000);
-    RandomPlayer player5 = RandomPlayer("Megan", 1000);
-    RandomPlayer player6 = RandomPlayer("Loren", 1000);
-    RandomPlayer player7 = RandomPlayer("Emily", 1000);
-    RandomPlayer player8 = RandomPlayer("Mr. Robot", 1000);
 
-    // Create a vector of pointers 
     std::vector<Player*> playerPointers;
-    playerPointers.push_back(&player1);
-    playerPointers.push_back(&player2);
-    playerPointers.push_back(&player3);
-    playerPointers.push_back(&player4);
-    playerPointers.push_back(&player5);
-    playerPointers.push_back(&player6);
-    playerPointers.push_back(&player7);
-    playerPointers.push_back(&player8);
+
+    // Ask the user if they want to create an account, play or play as guest
+    PlayerProfile currentPlayer = GUI::chooseAccount();
+    // Creating a human player from the player profile
+    HumanPlayer humanPlayer = HumanPlayer(currentPlayer.name, 1000);
+    cout << "[DEBUGGING] Player name: " << currentPlayer.name << endl;
+    playerPointers.push_back(&humanPlayer);
+
+
+    // Create n random players
+    int numberOfPlayers = GUI::getNumberOfPlayers();
+    cout << "[DEBUGGING] Number of players: " << numberOfPlayers << endl;
+    for (int i = 0; i < numberOfPlayers - 1; i++) {
+        int startingPot = 1000;
+
+        RandomPlayer randomPlayer = RandomPlayer(Player::generate_random_name(), startingPot);
+        playerPointers.push_back(&randomPlayer);
+    }
+
+    while(true) {
+        // Click enter to break
+        if (cin.get() == '\n') {
+            break;
+        }
+    }
 
     // Initiate a game with all the players and pass game object to GUI
     Game game = Game(playerPointers);   // i swear you have to pass a pointer, but also its a list of two players

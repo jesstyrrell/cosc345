@@ -8,6 +8,8 @@
 #include <sstream>
 #include <chrono>
 
+#include "PlayerProfile.hpp"
+
 class Game;
 
 using namespace std; 
@@ -21,6 +23,9 @@ struct Point {
     int y;  ///< The y-coordinate of the point.
 };
 
+// Enum for defining the menu options
+enum MenuOption { START_GAME, CREATE_PROFILE, QUIT };
+
 /**
  * @class GUI
  * @brief Provides a graphical user interface for interacting with the poker game.
@@ -29,6 +34,10 @@ class GUI {
     private:
         /// Pointer to the game object used for getting game state information.
         static Game* game;
+
+        static PlayerProfile createProfile();
+        static PlayerProfile getProfile(); 
+
 
     public: 
         static const Point PLAYER_CARD_POSITIONS[8][2];  ///< Positions for player cards.
@@ -120,7 +129,7 @@ class GUI {
          * @brief Displays the main menu of the game.
          * @return The selected menu option as an integer.
          */
-        static int displayMenu();
+        static MenuOption displayMenu();
 
         /**
          * @brief Displays the menu at the end of a round.
@@ -140,4 +149,14 @@ class GUI {
          * @param size The bet size associated with the move.
          */
         static void displayPlayerMove(Player* player, string move, int size);
+
+        /**
+         * @brief Asks the user for the number of players in the game.
+         */
+        static int getNumberOfPlayers();
+
+        /**
+         * @brief Displays input to the user to create a profile.
+         */
+        static PlayerProfile chooseAccount();
 };
