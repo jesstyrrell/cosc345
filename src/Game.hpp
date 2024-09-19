@@ -196,10 +196,4 @@ class Game {
          * @return A vector of pointers to the winning players.
          */
         vector<Player*> getWinner(vector<Player*> players, const vector<Card>& community_cards, const vector<bool>& inGame);
-
-        /**
-         * @brief Tests the Game class functionality.
-         * @return True if the test passes, otherwise false.
-         */
-        bool static test_game();
 };

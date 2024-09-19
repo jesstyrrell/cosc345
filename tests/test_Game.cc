@@ -110,10 +110,6 @@ TEST_F(GameTest, AwardPot) {
 //     EXPECT_EQ(game.makeMoveForUser("fold", player, 0, 50), -1);
 // }
 
-TEST_F(GameTest, TestGame) {
-    EXPECT_TRUE(Game::test_game());
-}
-
 TEST_F(GameTest, Deal) {
     Game game = createGameWithPlayers(2);
     game.deal();
