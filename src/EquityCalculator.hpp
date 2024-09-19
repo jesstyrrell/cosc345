@@ -8,6 +8,7 @@
 #include <fstream>
 #include <unordered_map>
 #include <sstream>
+#include <sys/stat.h>
 
 using namespace std;
 
