@@ -93,9 +93,9 @@ vector<float> EquityCalculator::calculateHandEquity(const vector<Card>& hand, co
 	if (!fileExists(getFileStartPath() + "/preflopEquity.csv")) { buildPreflopEquityCSV(); }
 
 	vector<string> search;
-	search.push_back(hand[0].get_rank());
-	search.push_back(hand[1].get_rank());
-	search.push_back(hand[0].get_suit() == hand[1].get_suit() ? "true" : "false");
+	search.push_back(hand.at(0).rank);
+	search.push_back(hand.at(1).rank);
+	search.push_back(hand.at(0).suit == hand.at(1).suit ? "true" : "false");
 	search.push_back(to_string(numPlayers));
 
 	return findEquity(getFileStartPath() + "/preflopEquity.csv", search);
@@ -126,7 +126,7 @@ vector<float> EquityCalculator::evaluateHand(const vector<Card>& hand, const vec
 		while (communityCardsFull.size() < 5) {
 			communityCardsFull.push_back(deckCopy.deal());
 		}
-		for (int player = 0; player < numPlayers; player++) {
+		for (int player = 1; player < numPlayers; player++) {
 			if (lose) { continue; }
 			// create random hand for opponent
 			vector<Card> otherHand;
@@ -150,7 +150,7 @@ void EquityCalculator::buildPreflopEquityCSV() {
 	// Define the suits and ranks
 	vector<string> suits = { "Hearts", "Diamonds", "Clubs", "Spades" };
 	vector<string> ranks = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A" };
-	int maxPlayers = 2;
+	int maxPlayers = 8;
 
 	// Vector to hold all cards
 	vector<Card> communityCards;
