@@ -6,28 +6,38 @@
 #include <chrono>
 #include <algorithm>
 
-class RandomPlayer : public Player {
+class BasicPlayer : public Player {
 private:
     std::default_random_engine rng;
 
 public:
-    RandomPlayer(const std::string& name, int stack) : Player(name, stack) {
+    BasicPlayer(const std::string& name, int stack) : Player(name, stack) {
         unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
         rng.seed(seed);
     }
 
     std::string getMove(bool canCheck, bool canRaise, bool canFold, bool canCall, vector<Card> community_cards, int largestBet, int numPlayersInHand) override {
-        vector<std::string> moves = {"a", "r", "f", "c"};
-        // randomly select one of the bools that is true
-        std::vector<bool> possibleMoves = {canCheck, canRaise, canFold, canCall};
-        std::uniform_int_distribution<int> dist(0, 3);
-        int moveIndex = dist(rng);
-        while (!possibleMoves[moveIndex]) {
-            moveIndex = dist(rng);
+        // Get the bros equity from the equity calculator
+        vector<float> equity = get_equity(community_cards, numPlayersInHand);
+        double equityThreshold = 1/numPlayersInHand;
+        // If the equity is below the threshold, fold
+        if (equity[0] < equityThreshold) {
+            if(canFold){
+                return "f";
+            } else {
+                return "a";
+            }
         }
-        // TESTING: print the move
-        // std::cout << moves[moveIndex] << std::endl;
-        return moves[moveIndex];
+
+        if(canCall){
+            if(equity[0] >= equityThreshold*1.1){
+                return "r";
+            } else {
+                return "c";
+            }
+        }
+        return "r";
+
     }
 
     int getBetSizing(int minBet, int maxBet) override {

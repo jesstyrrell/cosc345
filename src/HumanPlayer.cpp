@@ -5,7 +5,7 @@ class HumanPlayer : public Player {
 public:
     HumanPlayer(const std::string& name, int stack) : Player(name, stack) {}
 
-    std::string getMove(bool canCheck, bool canRaise, bool canFold, bool canCall) override {
+    std::string getMove(bool canCheck, bool canRaise, bool canFold, bool canCall, vector<Card> community_cards, int largestBet, int numPlayersInHand) override {
         // Call GUI to get user move
         return GUI::getUserMove(canCheck, canRaise, canFold, canCall);
     }

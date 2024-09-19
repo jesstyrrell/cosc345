@@ -6,7 +6,7 @@
 
 #include "Card.hpp"
 
-using namespace std; 
+using namespace std;
 
 /**
  * @class Player
@@ -114,7 +114,7 @@ class Player {
          * @param canCall Whether the player can call.
          * @return The player's chosen move as a string.
          */
-        virtual std::string getMove(bool canCheck, bool canRaise, bool canFold, bool canCall) = 0;
+        virtual std::string getMove(bool canCheck, bool canRaise, bool canFold, bool canCall, vector<Card> community_cards, int largestBet, int numPlayersInHand) = 0;
 
         /**
          * @brief Gets the player's bet sizing during their turn.

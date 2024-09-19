@@ -5,7 +5,7 @@
 #include <string>
 #include <random>
 #include <ctime>
-#include <cstdlib> 
+#include <cstdlib>
 #include <cstring>
 
 #include "src/Card.hpp"
@@ -15,6 +15,7 @@
 #include "src/HandEvaluator.hpp"
 #include "src/EquityCalculator.hpp"
 #include "src/GUI.hpp"
+#include "src/BasicPlayer.cpp"
 
 using namespace std;
 
@@ -41,13 +42,13 @@ int main(int argc, char* argv[]) {
 
     
     std::vector<Player*> playerPointers;
-    HumanPlayer player = HumanPlayer(playerName, 1000);
+    BasicPlayer player = BasicPlayer(playerName, 100000);
     playerPointers.push_back(&player);
 
     for(int i = 0; i < numberOfPlayers-1; i++){
         string name = GUI::getRandomPlayerName();
         cout << name << endl;
-        RandomPlayer *player = new RandomPlayer(name, 1000);
+        RandomPlayer *player = new RandomPlayer(name, 100000);
         playerPointers.push_back(player);
     }
 
@@ -57,8 +58,9 @@ int main(int argc, char* argv[]) {
 
     GUI::displayGameState();
     
+    int count = 0;
     // Start a game loop
-    while(true){
+    while(count < 100000){
         // Play a hand
         game.playHand();
 
@@ -66,6 +68,7 @@ int main(int argc, char* argv[]) {
         if (playerPointers[0]->endOfHand() != 1) {
             break;
         }
+        count++;
 
     }
 
