@@ -128,7 +128,7 @@ $(function() {
 <div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="class_deck.html#a3ad744640638d4a52761525d56004cef">   63</a></span>&#160;<a class="code" href="class_card.html">Card</a> <a class="code" href="class_deck.html#a3ad744640638d4a52761525d56004cef">Deck::find_card</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; rank, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; suit) {</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="class_card.html">Card</a> card : cards) {</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> checkSuit = card.<a class="code" href="class_card.html#a74782cc7cdcc2bf7cabc89eaa265805a">get_suit</a>() == suit;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> checkSuit = card.<a class="code" href="class_card.html#a9df0b3ca31842ad2c8669cae24e543bf">get_suit</a>() == suit;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> checkRank = card.get_rank() == rank;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">if</span> (checkSuit &amp;&amp; checkRank) {</div>
@@ -140,7 +140,7 @@ $(function() {
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
 <div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="class_deck.html#a61714386178ebc83bfa95b838db0adf1">   81</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_deck.html#a61714386178ebc83bfa95b838db0adf1">Deck::remove_card</a>(<a class="code" href="class_card.html">Card</a> card) {</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; cards.size(); i++) {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">if</span> (cards[i].get_suit() == card.<a class="code" href="class_card.html#a74782cc7cdcc2bf7cabc89eaa265805a">get_suit</a>() &amp;&amp; cards[i].get_rank() == card.<a class="code" href="class_card.html#a9b352ce37c8d4e365b31dee979c35add">get_rank</a>()) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">if</span> (cards[i].get_suit() == card.<a class="code" href="class_card.html#a9df0b3ca31842ad2c8669cae24e543bf">get_suit</a>() &amp;&amp; cards[i].get_rank() == card.<a class="code" href="class_card.html#a684299c7ec09b07b09ff1072c7b908e3">get_rank</a>()) {</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            cards.erase(cards.begin() + i);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
@@ -148,8 +148,8 @@ $(function() {
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
 <div class="ttc" id="a_deck_8hpp_html"><div class="ttname"><a href="_deck_8hpp.html">Deck.hpp</a></div></div>
 <div class="ttc" id="aclass_card_html"><div class="ttname"><a href="class_card.html">Card</a></div><div class="ttdoc">Represents a single card in a deck of cards. Each card has a suit and a rank.</div><div class="ttdef"><b>Definition:</b> <a href="_card_8hpp_source.html#l00014">Card.hpp:14</a></div></div>
-<div class="ttc" id="aclass_card_html_a74782cc7cdcc2bf7cabc89eaa265805a"><div class="ttname"><a href="class_card.html#a74782cc7cdcc2bf7cabc89eaa265805a">Card::get_suit</a></div><div class="ttdeci">const std::string get_suit()</div><div class="ttdoc">Gets the suit of the card.</div><div class="ttdef"><b>Definition:</b> <a href="_card_8cpp_source.html#l00025">Card.cpp:25</a></div></div>
-<div class="ttc" id="aclass_card_html_a9b352ce37c8d4e365b31dee979c35add"><div class="ttname"><a href="class_card.html#a9b352ce37c8d4e365b31dee979c35add">Card::get_rank</a></div><div class="ttdeci">const std::string get_rank()</div><div class="ttdoc">Gets the rank of the card.</div><div class="ttdef"><b>Definition:</b> <a href="_card_8cpp_source.html#l00034">Card.cpp:34</a></div></div>
+<div class="ttc" id="aclass_card_html_a684299c7ec09b07b09ff1072c7b908e3"><div class="ttname"><a href="class_card.html#a684299c7ec09b07b09ff1072c7b908e3">Card::get_rank</a></div><div class="ttdeci">const std::string get_rank() const</div><div class="ttdoc">Gets the rank of the card.</div><div class="ttdef"><b>Definition:</b> <a href="_card_8cpp_source.html#l00034">Card.cpp:34</a></div></div>
+<div class="ttc" id="aclass_card_html_a9df0b3ca31842ad2c8669cae24e543bf"><div class="ttname"><a href="class_card.html#a9df0b3ca31842ad2c8669cae24e543bf">Card::get_suit</a></div><div class="ttdeci">const std::string get_suit() const</div><div class="ttdoc">Gets the suit of the card.</div><div class="ttdef"><b>Definition:</b> <a href="_card_8cpp_source.html#l00025">Card.cpp:25</a></div></div>
 <div class="ttc" id="aclass_deck_html_a14aa4f2f94b6b880cd575cf17af26762"><div class="ttname"><a href="class_deck.html#a14aa4f2f94b6b880cd575cf17af26762">Deck::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdoc">Resets the deck to its initial state with all 52 cards.</div><div class="ttdef"><b>Definition:</b> <a href="_deck_8cpp_source.html#l00023">Deck.cpp:23</a></div></div>
 <div class="ttc" id="aclass_deck_html_a16604aabf7fc56dd44a72c4e862758cf"><div class="ttname"><a href="class_deck.html#a16604aabf7fc56dd44a72c4e862758cf">Deck::deal</a></div><div class="ttdeci">Card deal()</div><div class="ttdoc">Deals a card from the top of the deck.</div><div class="ttdef"><b>Definition:</b> <a href="_deck_8cpp_source.html#l00050">Deck.cpp:50</a></div></div>
 <div class="ttc" id="aclass_deck_html_a2fe0172048296260450a74035a34db9b"><div class="ttname"><a href="class_deck.html#a2fe0172048296260450a74035a34db9b">Deck::get_cards</a></div><div class="ttdeci">vector&lt; Card &gt; get_cards()</div><div class="ttdoc">Retrieves the current set of cards in the deck.</div><div class="ttdef"><b>Definition:</b> <a href="_deck_8cpp_source.html#l00037">Deck.cpp:37</a></div></div>
@@ -160,7 +160,7 @@ $(function() {
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 15 2024 03:21:13 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Sep 19 2024 08:22:10 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

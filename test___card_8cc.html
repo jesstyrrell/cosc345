@@ -123,12 +123,12 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;                                    {</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <a class="code" href="class_card.html">Card</a> card = <a class="code" href="class_card.html">Card</a>(<span class="stringliteral">&quot;Hearts&quot;</span>, <span class="stringliteral">&quot;Ace&quot;</span>);</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    ASSERT_EQ(card.<a class="code" href="class_card.html#a74782cc7cdcc2bf7cabc89eaa265805a">get_suit</a>(), <span class="stringliteral">&quot;Hearts&quot;</span>);</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    ASSERT_EQ(card.<a class="code" href="class_card.html#a9b352ce37c8d4e365b31dee979c35add">get_rank</a>(), <span class="stringliteral">&quot;Ace&quot;</span>);</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    ASSERT_EQ(card.<a class="code" href="class_card.html#a9df0b3ca31842ad2c8669cae24e543bf">get_suit</a>(), <span class="stringliteral">&quot;Hearts&quot;</span>);</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    ASSERT_EQ(card.<a class="code" href="class_card.html#a684299c7ec09b07b09ff1072c7b908e3">get_rank</a>(), <span class="stringliteral">&quot;Ace&quot;</span>);</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
 <div class="ttc" id="aclass_card_html"><div class="ttname"><a href="class_card.html">Card</a></div><div class="ttdoc">Represents a single card in a deck of cards. Each card has a suit and a rank.</div><div class="ttdef"><b>Definition:</b> <a href="_card_8hpp_source.html#l00014">Card.hpp:14</a></div></div>
-<div class="ttc" id="aclass_card_html_a74782cc7cdcc2bf7cabc89eaa265805a"><div class="ttname"><a href="class_card.html#a74782cc7cdcc2bf7cabc89eaa265805a">Card::get_suit</a></div><div class="ttdeci">const std::string get_suit()</div><div class="ttdoc">Gets the suit of the card.</div><div class="ttdef"><b>Definition:</b> <a href="_card_8cpp_source.html#l00025">Card.cpp:25</a></div></div>
-<div class="ttc" id="aclass_card_html_a9b352ce37c8d4e365b31dee979c35add"><div class="ttname"><a href="class_card.html#a9b352ce37c8d4e365b31dee979c35add">Card::get_rank</a></div><div class="ttdeci">const std::string get_rank()</div><div class="ttdoc">Gets the rank of the card.</div><div class="ttdef"><b>Definition:</b> <a href="_card_8cpp_source.html#l00034">Card.cpp:34</a></div></div>
+<div class="ttc" id="aclass_card_html_a684299c7ec09b07b09ff1072c7b908e3"><div class="ttname"><a href="class_card.html#a684299c7ec09b07b09ff1072c7b908e3">Card::get_rank</a></div><div class="ttdeci">const std::string get_rank() const</div><div class="ttdoc">Gets the rank of the card.</div><div class="ttdef"><b>Definition:</b> <a href="_card_8cpp_source.html#l00034">Card.cpp:34</a></div></div>
+<div class="ttc" id="aclass_card_html_a9df0b3ca31842ad2c8669cae24e543bf"><div class="ttname"><a href="class_card.html#a9df0b3ca31842ad2c8669cae24e543bf">Card::get_suit</a></div><div class="ttdeci">const std::string get_suit() const</div><div class="ttdoc">Gets the suit of the card.</div><div class="ttdef"><b>Definition:</b> <a href="_card_8cpp_source.html#l00025">Card.cpp:25</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_card_8cpp_source.html#l00034">Card::get_rank()</a>, and <a class="el" href="_card_8cpp_source.html#l00025">Card::get_suit()</a>.</p>
 <div class="dynheader">
@@ -168,9 +168,9 @@ Here is the call graph for this function:</div>
 <p class="definition">Definition at line <a class="el" href="test___card_8cc_source.html#l00022">22</a> of file <a class="el" href="test___card_8cc_source.html">test_Card.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                                {</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="class_card.html">Card</a> card = <a class="code" href="class_card.html">Card</a>(<span class="stringliteral">&quot;Hearts&quot;</span>, <span class="stringliteral">&quot;Ace&quot;</span>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    ASSERT_EQ(card.<a class="code" href="class_card.html#a315510240b14695ef1622d8e9ab6cb7c">get_card</a>(), <span class="stringliteral">&quot;Ace of Hearts&quot;</span>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    ASSERT_EQ(card.<a class="code" href="class_card.html#a7c6ccceef629a4d6ec4f0d135f8ee740">get_card</a>(), <span class="stringliteral">&quot;Ace of Hearts&quot;</span>);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
-<div class="ttc" id="aclass_card_html_a315510240b14695ef1622d8e9ab6cb7c"><div class="ttname"><a href="class_card.html#a315510240b14695ef1622d8e9ab6cb7c">Card::get_card</a></div><div class="ttdeci">const std::string get_card()</div><div class="ttdoc">Gets the card's representation as a string.</div><div class="ttdef"><b>Definition:</b> <a href="_card_8cpp_source.html#l00043">Card.cpp:43</a></div></div>
+<div class="ttc" id="aclass_card_html_a7c6ccceef629a4d6ec4f0d135f8ee740"><div class="ttname"><a href="class_card.html#a7c6ccceef629a4d6ec4f0d135f8ee740">Card::get_card</a></div><div class="ttdeci">const std::string get_card() const</div><div class="ttdoc">Gets the card's representation as a string.</div><div class="ttdef"><b>Definition:</b> <a href="_card_8cpp_source.html#l00043">Card.cpp:43</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_card_8cpp_source.html#l00043">Card::get_card()</a>.</p>
 <div class="dynheader">
@@ -210,7 +210,7 @@ Here is the call graph for this function:</div>
 <p class="definition">Definition at line <a class="el" href="test___card_8cc_source.html#l00017">17</a> of file <a class="el" href="test___card_8cc_source.html">test_Card.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                                {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="class_card.html">Card</a> card = <a class="code" href="class_card.html">Card</a>(<span class="stringliteral">&quot;Hearts&quot;</span>, <span class="stringliteral">&quot;Ace&quot;</span>);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    ASSERT_EQ(card.<a class="code" href="class_card.html#a9b352ce37c8d4e365b31dee979c35add">get_rank</a>(), <span class="stringliteral">&quot;Ace&quot;</span>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    ASSERT_EQ(card.<a class="code" href="class_card.html#a684299c7ec09b07b09ff1072c7b908e3">get_rank</a>(), <span class="stringliteral">&quot;Ace&quot;</span>);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_card_8cpp_source.html#l00034">Card::get_rank()</a>.</p>
@@ -251,7 +251,7 @@ Here is the call graph for this function:</div>
 <p class="definition">Definition at line <a class="el" href="test___card_8cc_source.html#l00012">12</a> of file <a class="el" href="test___card_8cc_source.html">test_Card.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                                {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="class_card.html">Card</a> card = <a class="code" href="class_card.html">Card</a>(<span class="stringliteral">&quot;Hearts&quot;</span>, <span class="stringliteral">&quot;Ace&quot;</span>);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    ASSERT_EQ(card.<a class="code" href="class_card.html#a74782cc7cdcc2bf7cabc89eaa265805a">get_suit</a>(), <span class="stringliteral">&quot;Hearts&quot;</span>);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    ASSERT_EQ(card.<a class="code" href="class_card.html#a9df0b3ca31842ad2c8669cae24e543bf">get_suit</a>(), <span class="stringliteral">&quot;Hearts&quot;</span>);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_card_8cpp_source.html#l00025">Card::get_suit()</a>.</p>
@@ -266,7 +266,7 @@ Here is the call graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 15 2024 03:21:13 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Sep 19 2024 08:22:10 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

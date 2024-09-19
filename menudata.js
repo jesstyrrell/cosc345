@@ -99,6 +99,7 @@ var menudata={children:[
 {text:"t",url:"globals.html#index_t"}]},
 {text:"Functions",url:"globals_func.html",children:[
 {text:"a",url:"globals_func.html#index_a"},
+{text:"f",url:"globals_func.html#index_f"},
 {text:"g",url:"globals_func.html#index_g"},
 {text:"m",url:"globals_func.html#index_m"},
 {text:"t",url:"globals_func.html#index_t"}]},

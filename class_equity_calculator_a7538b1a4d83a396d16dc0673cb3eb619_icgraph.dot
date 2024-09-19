@@ -1,0 +1,11 @@
+digraph "EquityCalculator::calculateHandEquity"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="EquityCalculator::calculate\lHandEquity",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Evaluates the equity of a hand against multiple opponents."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Player::get_equity",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_player.html#ac40b5f5383aa1b6146a39c74f08254ad",tooltip="Returns the equity of the players hand for the current stage of the game."];
+}

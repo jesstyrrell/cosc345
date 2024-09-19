@@ -1,0 +1,23 @@
+digraph "Player::get_equity"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Player::get_equity",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Returns the equity of the players hand for the current stage of the game."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="EquityCalculator::calculate\lHandEquity",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_equity_calculator.html#a7538b1a4d83a396d16dc0673cb3eb619",tooltip="Evaluates the equity of a hand against multiple opponents."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="fileExists",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_equity_calculator_8cpp.html#afdd89841220a8b18e39e0844a833a18b",tooltip=" "];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="findEquity",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_equity_calculator_8cpp.html#aad170b93b646c253148f800ac3894ca2",tooltip=" "];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="getFileStartPath",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_equity_calculator_8cpp.html#a0085024502b532d59d893e73ac36ab14",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Deck::remove_card",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_deck.html#a61714386178ebc83bfa95b838db0adf1",tooltip="Removes a specified card from the deck."];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Card::get_rank",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_card.html#a684299c7ec09b07b09ff1072c7b908e3",tooltip="Gets the rank of the card."];
+  Node6 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Card::get_suit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_card.html#a9df0b3ca31842ad2c8669cae24e543bf",tooltip="Gets the suit of the card."];
+}

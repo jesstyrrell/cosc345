@@ -151,6 +151,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a715f618c366e6787c0c9b40f76d9fea8 inherit pub_methods_class_player"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a715f618c366e6787c0c9b40f76d9fea8">reset_current_bet</a> ()</td></tr>
 <tr class="memdesc:a715f618c366e6787c0c9b40f76d9fea8 inherit pub_methods_class_player"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the player's current bet to zero.  <a href="class_player.html#a715f618c366e6787c0c9b40f76d9fea8">More...</a><br /></td></tr>
 <tr class="separator:a715f618c366e6787c0c9b40f76d9fea8 inherit pub_methods_class_player"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac40b5f5383aa1b6146a39c74f08254ad inherit pub_methods_class_player"><td class="memItemLeft" align="right" valign="top">vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ac40b5f5383aa1b6146a39c74f08254ad">get_equity</a> (vector&lt; <a class="el" href="class_card.html">Card</a> &gt; communityCards, int numPlayers)</td></tr>
+<tr class="memdesc:ac40b5f5383aa1b6146a39c74f08254ad inherit pub_methods_class_player"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the equity of the players hand for the current stage of the game.  <a href="class_player.html#ac40b5f5383aa1b6146a39c74f08254ad">More...</a><br /></td></tr>
+<tr class="separator:ac40b5f5383aa1b6146a39c74f08254ad inherit pub_methods_class_player"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -206,7 +209,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;: <a class="code" href="class_player.html#af94221777924e4498b535e52f1dd3c44">Player</a>(<a class="code" href="class_player.html#acf0355128a99ee20ad9931b760fb2de1">name</a>, <a class="code" href="class_player.html#a466b156d07fe5acae5adefa9b17a5e5e">stack</a>) {}</div>
 <div class="ttc" id="aclass_player_html_a466b156d07fe5acae5adefa9b17a5e5e"><div class="ttname"><a href="class_player.html#a466b156d07fe5acae5adefa9b17a5e5e">Player::stack</a></div><div class="ttdeci">int stack</div><div class="ttdoc">The player's current chip stack.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00019">Player.hpp:19</a></div></div>
 <div class="ttc" id="aclass_player_html_acf0355128a99ee20ad9931b760fb2de1"><div class="ttname"><a href="class_player.html#acf0355128a99ee20ad9931b760fb2de1">Player::name</a></div><div class="ttdeci">string name</div><div class="ttdoc">The name of the player.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00017">Player.hpp:17</a></div></div>
-<div class="ttc" id="aclass_player_html_af94221777924e4498b535e52f1dd3c44"><div class="ttname"><a href="class_player.html#af94221777924e4498b535e52f1dd3c44">Player::Player</a></div><div class="ttdeci">Player(const std::string &amp;name, int stack)</div><div class="ttdoc">Constructs a Player object with a given name and stack.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8cpp_source.html#l00005">Player.cpp:5</a></div></div>
+<div class="ttc" id="aclass_player_html_af94221777924e4498b535e52f1dd3c44"><div class="ttname"><a href="class_player.html#af94221777924e4498b535e52f1dd3c44">Player::Player</a></div><div class="ttdeci">Player(const std::string &amp;name, int stack)</div><div class="ttdoc">Constructs a Player object with a given name and stack.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8cpp_source.html#l00006">Player.cpp:6</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -289,9 +292,9 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                    {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_g_u_i.html#ac7211e8e1f154e8e729921afe5d58225">GUI::endOfRoundMenu</a>();</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
-<div class="ttc" id="aclass_g_u_i_html_ac7211e8e1f154e8e729921afe5d58225"><div class="ttname"><a href="class_g_u_i.html#ac7211e8e1f154e8e729921afe5d58225">GUI::endOfRoundMenu</a></div><div class="ttdeci">static int endOfRoundMenu()</div><div class="ttdoc">Displays the menu at the end of a round.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_8cpp_source.html#l00275">GUI.cpp:275</a></div></div>
+<div class="ttc" id="aclass_g_u_i_html_ac7211e8e1f154e8e729921afe5d58225"><div class="ttname"><a href="class_g_u_i.html#ac7211e8e1f154e8e729921afe5d58225">GUI::endOfRoundMenu</a></div><div class="ttdeci">static int endOfRoundMenu()</div><div class="ttdoc">Displays the menu at the end of a round.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_8cpp_source.html#l00276">GUI.cpp:276</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_g_u_i_8cpp_source.html#l00275">GUI::endOfRoundMenu()</a>.</p>
+<p class="reference">References <a class="el" href="_g_u_i_8cpp_source.html#l00276">GUI::endOfRoundMenu()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -472,9 +475,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="comment">// Call GUI to get bet sizing</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_g_u_i.html#a62c09a07607f5f182e0318e7ff29fd04">GUI::getBetSizing</a>(minBet, maxBet);</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    }</div>
-<div class="ttc" id="aclass_g_u_i_html_a62c09a07607f5f182e0318e7ff29fd04"><div class="ttname"><a href="class_g_u_i.html#a62c09a07607f5f182e0318e7ff29fd04">GUI::getBetSizing</a></div><div class="ttdeci">static int getBetSizing(int minBet, int maxBet)</div><div class="ttdoc">Prompts the user for bet sizing.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_8cpp_source.html#l00095">GUI.cpp:95</a></div></div>
+<div class="ttc" id="aclass_g_u_i_html_a62c09a07607f5f182e0318e7ff29fd04"><div class="ttname"><a href="class_g_u_i.html#a62c09a07607f5f182e0318e7ff29fd04">GUI::getBetSizing</a></div><div class="ttdeci">static int getBetSizing(int minBet, int maxBet)</div><div class="ttdoc">Prompts the user for bet sizing.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_8cpp_source.html#l00096">GUI.cpp:96</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_g_u_i_8cpp_source.html#l00095">GUI::getBetSizing()</a>.</p>
+<p class="reference">References <a class="el" href="_g_u_i_8cpp_source.html#l00096">GUI::getBetSizing()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -671,9 +674,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <span class="comment">// Call GUI to get user move</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_g_u_i.html#a90c3a671452b797db9f8ba481c84767c">GUI::getUserMove</a>(canCheck, canRaise, canFold, canCall);</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    }</div>
-<div class="ttc" id="aclass_g_u_i_html_a90c3a671452b797db9f8ba481c84767c"><div class="ttname"><a href="class_g_u_i.html#a90c3a671452b797db9f8ba481c84767c">GUI::getUserMove</a></div><div class="ttdeci">static string getUserMove(bool canCheck, bool canRaise, bool canFold, bool canCall)</div><div class="ttdoc">Prompts the user for their move.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_8cpp_source.html#l00051">GUI.cpp:51</a></div></div>
+<div class="ttc" id="aclass_g_u_i_html_a90c3a671452b797db9f8ba481c84767c"><div class="ttname"><a href="class_g_u_i.html#a90c3a671452b797db9f8ba481c84767c">GUI::getUserMove</a></div><div class="ttdeci">static string getUserMove(bool canCheck, bool canRaise, bool canFold, bool canCall)</div><div class="ttdoc">Prompts the user for their move.</div><div class="ttdef"><b>Definition:</b> <a href="_g_u_i_8cpp_source.html#l00052">GUI.cpp:52</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_g_u_i_8cpp_source.html#l00051">GUI::getUserMove()</a>.</p>
+<p class="reference">References <a class="el" href="_g_u_i_8cpp_source.html#l00052">GUI::getUserMove()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -792,7 +795,7 @@ Here is the call graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 15 2024 03:21:13 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Sep 19 2024 08:22:10 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
