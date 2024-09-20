@@ -46,7 +46,7 @@ digraph "main"
   Node18 [label="Game::getShowdown",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game.html#ae10d3e9f219b74699aa150537440c041",tooltip="Checks if the game is at showdown."];
   Node7 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node19 [label="GUI::displayMenu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_u_i.html#a21186f1096332794cd125455f0b9e4f2",tooltip="Displays the main menu of the game."];
+  Node19 [label="GUI::displayMenu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_u_i.html#a48d92746fefe3c11de167dcddc22346f",tooltip="Displays the main menu of the game."];
   Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node20 [label="GUI::getNumberOfPlayers",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_u_i.html#abd6f0d1943a70f629ba208965a42b32e",tooltip="Gets the number of players from the user."];
@@ -60,5 +60,15 @@ digraph "main"
   Node1 -> Node23 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node23 [label="GUI::setGame",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_u_i.html#afbedd68995919c50a7298de4735b77c6",tooltip="Sets the game object for the GUI."];
   Node1 -> Node24 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node24 [label="GUI::signInMenu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_u_i.html#acf780fe2b0b8db9ee7692ef7f163c133",tooltip="Prompts the user to sign in."];
+  Node24 [label="GUI::signInMenu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_u_i.html#acb96e4bfa59c6929e70a33c8c45f795b",tooltip="Prompts the user to sign in."];
+  Node24 -> Node25 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node25 [label="GUI::createProfile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_u_i.html#a9e9d37ed78911ad4b67c1d7fa1c77767",tooltip="Creates a new player profile."];
+  Node25 -> Node26 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node26 [label="CSVWorker::addProfile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_c_s_v_worker.html#ac98b30f76d058e7fff41a92382c7ecb5",tooltip=" "];
+  Node25 -> Node27 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node27 [label="CSVWorker::writeProfiles",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_c_s_v_worker.html#a8038915113e4cca065f4e825119ec9de",tooltip=" "];
+  Node24 -> Node28 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node28 [label="GUI::getProfile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_u_i.html#a00b431f2af4b04eff9dd33d987d0d772",tooltip="Gets the profile of a player from the ./data/profiles.csv file."];
+  Node28 -> Node29 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node29 [label="CSVWorker::readProfiles",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_c_s_v_worker.html#a29ab2f722ff460150a940e9a2df0f68c",tooltip=" "];
 }

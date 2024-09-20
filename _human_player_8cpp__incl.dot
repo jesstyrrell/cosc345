@@ -31,4 +31,7 @@ digraph "src/HumanPlayer.cpp"
   Node11 [label="chrono",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node7 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node12 [label="iomanip",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="PlayerProfile.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_player_profile_8hpp.html",tooltip=" "];
+  Node13 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

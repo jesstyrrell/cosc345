@@ -25,4 +25,7 @@ digraph "tests/MockGUI.hpp"
   Node10 [label="chrono",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node3 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node11 [label="iomanip",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="PlayerProfile.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_player_profile_8hpp.html",tooltip=" "];
+  Node12 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

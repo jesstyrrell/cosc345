@@ -141,6 +141,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ab7b0e6361b1975fc798b4fdbc5513a7c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ab7b0e6361b1975fc798b4fdbc5513a7c">test_player</a> ()</td></tr>
 <tr class="memdesc:ab7b0e6361b1975fc798b4fdbc5513a7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the <a class="el" href="class_player.html" title="Represents a human player in the poker game.">Player</a> class functionality.  <a href="class_player.html#ab7b0e6361b1975fc798b4fdbc5513a7c">More...</a><br /></td></tr>
 <tr class="separator:ab7b0e6361b1975fc798b4fdbc5513a7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af363340378b1a1c9df846f22f4faacb4"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#af363340378b1a1c9df846f22f4faacb4">generate_random_name</a> ()</td></tr>
+<tr class="memdesc:af363340378b1a1c9df846f22f4faacb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a random name for the player.  <a href="class_player.html#af363340378b1a1c9df846f22f4faacb4">More...</a><br /></td></tr>
+<tr class="separator:af363340378b1a1c9df846f22f4faacb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -198,11 +201,11 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00006">6</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;                                               {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    this-&gt;<a class="code" href="class_player.html#acf0355128a99ee20ad9931b760fb2de1">name</a> = <a class="code" href="class_player.html#acf0355128a99ee20ad9931b760fb2de1">name</a>;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    this-&gt;<a class="code" href="class_player.html#a466b156d07fe5acae5adefa9b17a5e5e">stack</a> = <a class="code" href="class_player.html#a466b156d07fe5acae5adefa9b17a5e5e">stack</a>;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00008">8</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                                               {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    this-&gt;<a class="code" href="class_player.html#acf0355128a99ee20ad9931b760fb2de1">name</a> = <a class="code" href="class_player.html#acf0355128a99ee20ad9931b760fb2de1">name</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    this-&gt;<a class="code" href="class_player.html#a466b156d07fe5acae5adefa9b17a5e5e">stack</a> = <a class="code" href="class_player.html#a466b156d07fe5acae5adefa9b17a5e5e">stack</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
 <div class="ttc" id="aclass_player_html_a466b156d07fe5acae5adefa9b17a5e5e"><div class="ttname"><a href="class_player.html#a466b156d07fe5acae5adefa9b17a5e5e">Player::stack</a></div><div class="ttdeci">int stack</div><div class="ttdoc">The player's current chip stack.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00019">Player.hpp:19</a></div></div>
 <div class="ttc" id="aclass_player_html_acf0355128a99ee20ad9931b760fb2de1"><div class="ttname"><a href="class_player.html#acf0355128a99ee20ad9931b760fb2de1">Player::name</a></div><div class="ttdeci">string name</div><div class="ttdoc">The name of the player.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00017">Player.hpp:17</a></div></div>
 </div><!-- fragment -->
@@ -233,10 +236,10 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00043">43</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                       {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    this-&gt;<a class="code" href="class_player.html#a120127b3026b271cb7b1a5b82d635503">hand</a>.push_back(card);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00045">45</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                       {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    this-&gt;<a class="code" href="class_player.html#a120127b3026b271cb7b1a5b82d635503">hand</a>.push_back(card);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
 <div class="ttc" id="aclass_player_html_a120127b3026b271cb7b1a5b82d635503"><div class="ttname"><a href="class_player.html#a120127b3026b271cb7b1a5b82d635503">Player::hand</a></div><div class="ttdeci">vector&lt; Card &gt; hand</div><div class="ttdoc">The player's hand of cards.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00018">Player.hpp:18</a></div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="test___player_8cc_source.html#l00068">TEST_F()</a>.</p>
@@ -272,16 +275,16 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00011">11</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                           {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">if</span>(amount &gt; this-&gt;<a class="code" href="class_player.html#a466b156d07fe5acae5adefa9b17a5e5e">stack</a> + this-&gt;<a class="code" href="class_player.html#a42345ff4fe6e617a5829aae4a9037c51">current_bet</a>) {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;You don&#39;t have enough chips to bet that amount. Betting all in.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        cout &lt;&lt; amount &lt;&lt; endl;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordflow">while</span>(<span class="keyword">true</span>){}</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    }</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    this-&gt;<a class="code" href="class_player.html#a466b156d07fe5acae5adefa9b17a5e5e">stack</a> -= amount - this-&gt;<a class="code" href="class_player.html#a42345ff4fe6e617a5829aae4a9037c51">current_bet</a>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    this-&gt;current_bet = amount;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00013">13</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                           {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">if</span>(amount &gt; this-&gt;<a class="code" href="class_player.html#a466b156d07fe5acae5adefa9b17a5e5e">stack</a> + this-&gt;<a class="code" href="class_player.html#a42345ff4fe6e617a5829aae4a9037c51">current_bet</a>) {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;You don&#39;t have enough chips to bet that amount. Betting all in.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        cout &lt;&lt; amount &lt;&lt; endl;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordflow">while</span>(<span class="keyword">true</span>){}</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    this-&gt;<a class="code" href="class_player.html#a466b156d07fe5acae5adefa9b17a5e5e">stack</a> -= amount - this-&gt;<a class="code" href="class_player.html#a42345ff4fe6e617a5829aae4a9037c51">current_bet</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    this-&gt;current_bet = amount;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
 <div class="ttc" id="aclass_player_html_a42345ff4fe6e617a5829aae4a9037c51"><div class="ttname"><a href="class_player.html#a42345ff4fe6e617a5829aae4a9037c51">Player::current_bet</a></div><div class="ttdeci">int current_bet</div><div class="ttdoc">The player's current bet in the ongoing hand.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00020">Player.hpp:20</a></div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="_game_8cpp_source.html#l00094">Game::makeMoveForUser()</a>, and <a class="el" href="test___player_8cc_source.html#l00036">TEST_F()</a>.</p>
@@ -310,10 +313,10 @@ Here is the caller graph for this function:</div>
 
 <p>Clears the player's hand of all cards. </p>
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00047">47</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                        {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    this-&gt;<a class="code" href="class_player.html#a120127b3026b271cb7b1a5b82d635503">hand</a>.clear();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00049">49</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                        {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    this-&gt;<a class="code" href="class_player.html#a120127b3026b271cb7b1a5b82d635503">hand</a>.clear();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="_game_8cpp_source.html#l00094">Game::makeMoveForUser()</a>, and <a class="el" href="test___player_8cc_source.html#l00080">TEST_F()</a>.</p>
 <div class="dynheader">
@@ -349,12 +352,12 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The remaining stack after deducting the blind. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00021">21</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                                   {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    this-&gt;<a class="code" href="class_player.html#a466b156d07fe5acae5adefa9b17a5e5e">stack</a> -= amount;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    this-&gt;<a class="code" href="class_player.html#a42345ff4fe6e617a5829aae4a9037c51">current_bet</a> = amount;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">return</span> amount;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00023">23</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                                   {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    this-&gt;<a class="code" href="class_player.html#a466b156d07fe5acae5adefa9b17a5e5e">stack</a> -= amount;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    this-&gt;<a class="code" href="class_player.html#a42345ff4fe6e617a5829aae4a9037c51">current_bet</a> = amount;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">return</span> amount;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="_game_8cpp_source.html#l00428">Game::addBlindsToPot()</a>, and <a class="el" href="test___player_8cc_source.html#l00048">TEST_F()</a>.</p>
 <div class="dynheader">
@@ -395,6 +398,49 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="af363340378b1a1c9df846f22f4faacb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af363340378b1a1c9df846f22f4faacb4">&#9670;&nbsp;</a></span>generate_random_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Player::generate_random_name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generates a random name for the player. </p>
+<dl class="section return"><dt>Returns</dt><dd>The randomly generated name. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00067">67</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                    {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    std::vector&lt;string&gt; animals = {<span class="stringliteral">&quot;Dog&quot;</span>, <span class="stringliteral">&quot;Cat&quot;</span>, <span class="stringliteral">&quot;Fish&quot;</span>, <span class="stringliteral">&quot;Bird&quot;</span>, <span class="stringliteral">&quot;Elephant&quot;</span>, <span class="stringliteral">&quot;Lion&quot;</span>, <span class="stringliteral">&quot;Tiger&quot;</span>, <span class="stringliteral">&quot;Bear&quot;</span>, <span class="stringliteral">&quot;Penguin&quot;</span>, <span class="stringliteral">&quot;Panda&quot;</span>, <span class="stringliteral">&quot;Giraffe&quot;</span>, <span class="stringliteral">&quot;Horse&quot;</span>, <span class="stringliteral">&quot;Cow&quot;</span>, <span class="stringliteral">&quot;Pig&quot;</span>, <span class="stringliteral">&quot;Sheep&quot;</span>, <span class="stringliteral">&quot;Goat&quot;</span>, <span class="stringliteral">&quot;Chicken&quot;</span>, <span class="stringliteral">&quot;Duck&quot;</span>, <span class="stringliteral">&quot;Goose&quot;</span>, <span class="stringliteral">&quot;Turkey&quot;</span>, <span class="stringliteral">&quot;Ostrich&quot;</span>, <span class="stringliteral">&quot;Kangaroo&quot;</span>, <span class="stringliteral">&quot;Koala&quot;</span>, <span class="stringliteral">&quot;Sloth&quot;</span>, <span class="stringliteral">&quot;Monkey&quot;</span>, <span class="stringliteral">&quot;Gorilla&quot;</span>, <span class="stringliteral">&quot;Chimpanzee&quot;</span>, <span class="stringliteral">&quot;Orangutan&quot;</span>, <span class="stringliteral">&quot;Rabbit&quot;</span>, <span class="stringliteral">&quot;Frog&quot;</span>, <span class="stringliteral">&quot;Toad&quot;</span>, <span class="stringliteral">&quot;Turtle&quot;</span>, <span class="stringliteral">&quot;Snake&quot;</span>, <span class="stringliteral">&quot;Lizard&quot;</span>, <span class="stringliteral">&quot;Iguana&quot;</span>, <span class="stringliteral">&quot;Chameleon&quot;</span>, <span class="stringliteral">&quot;Alligator&quot;</span>, <span class="stringliteral">&quot;Crocodile&quot;</span>, <span class="stringliteral">&quot;Shark&quot;</span>, <span class="stringliteral">&quot;Whale&quot;</span>, <span class="stringliteral">&quot;Dolphin&quot;</span>, <span class="stringliteral">&quot;Octopus&quot;</span>, <span class="stringliteral">&quot;Squid&quot;</span>, <span class="stringliteral">&quot;Jellyfish&quot;</span>, <span class="stringliteral">&quot;Starfish&quot;</span>, <span class="stringliteral">&quot;Seahorse&quot;</span>, <span class="stringliteral">&quot;Crab&quot;</span>, <span class="stringliteral">&quot;Lobster&quot;</span>, <span class="stringliteral">&quot;Shrimp&quot;</span>, <span class="stringliteral">&quot;Clam&quot;</span>, <span class="stringliteral">&quot;Oyster&quot;</span>, <span class="stringliteral">&quot;Mussel&quot;</span>, <span class="stringliteral">&quot;Scallop&quot;</span>, <span class="stringliteral">&quot;Snail&quot;</span>, <span class="stringliteral">&quot;Slug&quot;</span>, <span class="stringliteral">&quot;Butterfly&quot;</span>, <span class="stringliteral">&quot;Moth&quot;</span>, <span class="stringliteral">&quot;Caterpillar&quot;</span>, <span class="stringliteral">&quot;Ant&quot;</span>, <span class="stringliteral">&quot;Bee&quot;</span>, <span class="stringliteral">&quot;Wasp&quot;</span>, <span class="stringliteral">&quot;Hornet&quot;</span>, <span class="stringliteral">&quot;Fly&quot;</span>, <span class="stringliteral">&quot;Mosquito&quot;</span>, <span class="stringliteral">&quot;Beetle&quot;</span>, <span class="stringliteral">&quot;Ladybug&quot;</span>, <span class="stringliteral">&quot;Grasshopper&quot;</span>, <span class="stringliteral">&quot;Cricket&quot;</span>, <span class="stringliteral">&quot;Dragonfly&quot;</span>, <span class="stringliteral">&quot;Damselfly&quot;</span>, <span class="stringliteral">&quot;Centipede&quot;</span>, <span class="stringliteral">&quot;Millipede&quot;</span>, <span class="stringliteral">&quot;Spider&quot;</span>, <span class="stringliteral">&quot;Tarantula&quot;</span>, <span class="stringliteral">&quot;Scorpion&quot;</span>, <span class="stringliteral">&quot;Tick&quot;</span>, <span class="stringliteral">&quot;Mite&quot;</span>, <span class="stringliteral">&quot;Flea&quot;</span>, <span class="stringliteral">&quot;Bedbug&quot;</span>, <span class="stringliteral">&quot;Cockroach&quot;</span>, <span class="stringliteral">&quot;Termite&quot;</span>, <span class="stringliteral">&quot;Praying Mantis&quot;</span>, <span class="stringliteral">&quot;Walking Stick&quot;</span>, <span class="stringliteral">&quot;Earwig&quot;</span>, <span class="stringliteral">&quot;Silverfish&quot;</span>, <span class="stringliteral">&quot;Firefly&quot;</span>, <span class="stringliteral">&quot;Glowworm&quot;</span>, <span class="stringliteral">&quot;Earthworm&quot;</span>, <span class="stringliteral">&quot;Leech&quot;</span>, <span class="stringliteral">&quot;Slug&quot;</span>, <span class="stringliteral">&quot;Snail&quot;</span>, <span class="stringliteral">&quot;Clam&quot;</span>, <span class="stringliteral">&quot;Oyster&quot;</span>, <span class="stringliteral">&quot;Mussel&quot;</span>, <span class="stringliteral">&quot;Scallop&quot;</span>, <span class="stringliteral">&quot;Squid&quot;</span>, <span class="stringliteral">&quot;Octopus&quot;</span>, <span class="stringliteral">&quot;Cuttlefish&quot;</span>, <span class="stringliteral">&quot;Nautilus&quot;</span>, <span class="stringliteral">&quot;Ammonite&quot;</span>, <span class="stringliteral">&quot;Trilobite&quot;</span>, <span class="stringliteral">&quot;Crab&quot;</span>, <span class="stringliteral">&quot;Lobster&quot;</span>, <span class="stringliteral">&quot;Shrimp&quot;</span>, <span class="stringliteral">&quot;Krill&quot;</span>, <span class="stringliteral">&quot;Barnacle&quot;</span>, <span class="stringliteral">&quot;Crayfish&quot;</span>, <span class="stringliteral">&quot;Cockroach&quot;</span>, <span class="stringliteral">&quot;Termite&quot;</span>, <span class="stringliteral">&quot;Praying Mantis&quot;</span>, <span class="stringliteral">&quot;Walking Stick&quot;</span>, <span class="stringliteral">&quot;Earwig&quot;</span>, <span class="stringliteral">&quot;Silverfish&quot;</span>, <span class="stringliteral">&quot;Firefly&quot;</span>, <span class="stringliteral">&quot;Glowworm&quot;</span>, <span class="stringliteral">&quot;Earthworm&quot;</span>, <span class="stringliteral">&quot;Leech&quot;</span>, <span class="stringliteral">&quot;Slug&quot;</span>};</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    std::vector&lt;string&gt; adjectives = {<span class="stringliteral">&quot;Happy&quot;</span>, <span class="stringliteral">&quot;Sad&quot;</span>, <span class="stringliteral">&quot;Angry&quot;</span>, <span class="stringliteral">&quot;Excited&quot;</span>, <span class="stringliteral">&quot;Bored&quot;</span>, <span class="stringliteral">&quot;Tired&quot;</span>, <span class="stringliteral">&quot;Energetic&quot;</span>, <span class="stringliteral">&quot;Lazy&quot;</span>, <span class="stringliteral">&quot;Calm&quot;</span>, <span class="stringliteral">&quot;Anxious&quot;</span>, <span class="stringliteral">&quot;Nervous&quot;</span>, <span class="stringliteral">&quot;Confident&quot;</span>, <span class="stringliteral">&quot;Shy&quot;</span>, <span class="stringliteral">&quot;Brave&quot;</span>, <span class="stringliteral">&quot;Scared&quot;</span>, <span class="stringliteral">&quot;Proud&quot;</span>, <span class="stringliteral">&quot;Embarrassed&quot;</span>, <span class="stringliteral">&quot;Ashamed&quot;</span>, <span class="stringliteral">&quot;Guilty&quot;</span>, <span class="stringliteral">&quot;Jealous&quot;</span>, <span class="stringliteral">&quot;Envious&quot;</span>, <span class="stringliteral">&quot;Grateful&quot;</span>, <span class="stringliteral">&quot;Thankful&quot;</span>, <span class="stringliteral">&quot;Hopeful&quot;</span>, <span class="stringliteral">&quot;Hopeless&quot;</span>, <span class="stringliteral">&quot;Optimistic&quot;</span>, <span class="stringliteral">&quot;Pessimistic&quot;</span>, <span class="stringliteral">&quot;Curious&quot;</span>, <span class="stringliteral">&quot;Inquisitive&quot;</span>, <span class="stringliteral">&quot;Impatient&quot;</span>, <span class="stringliteral">&quot;Patient&quot;</span>, <span class="stringliteral">&quot;Polite&quot;</span>, <span class="stringliteral">&quot;Rude&quot;</span>, <span class="stringliteral">&quot;Kind&quot;</span>, <span class="stringliteral">&quot;Mean&quot;</span>, <span class="stringliteral">&quot;Generous&quot;</span>, <span class="stringliteral">&quot;Greedy&quot;</span>, <span class="stringliteral">&quot;Honest&quot;</span>, <span class="stringliteral">&quot;Dishonest&quot;</span>, <span class="stringliteral">&quot;Loyal&quot;</span>, <span class="stringliteral">&quot;Unfaithful&quot;</span>, <span class="stringliteral">&quot;Responsible&quot;</span>, <span class="stringliteral">&quot;Irresponsible&quot;</span>, <span class="stringliteral">&quot;Reliable&quot;</span>, <span class="stringliteral">&quot;Unreliable&quot;</span>, <span class="stringliteral">&quot;Trustworthy&quot;</span>, <span class="stringliteral">&quot;Untrustworthy&quot;</span>, <span class="stringliteral">&quot;Fair&quot;</span>, <span class="stringliteral">&quot;Unfair&quot;</span>, <span class="stringliteral">&quot;Forgiving&quot;</span>, <span class="stringliteral">&quot;Unforgiving&quot;</span>, <span class="stringliteral">&quot;Tolerant&quot;</span>, <span class="stringliteral">&quot;Intolerant&quot;</span>, <span class="stringliteral">&quot;Understanding&quot;</span>, <span class="stringliteral">&quot;Misunderstanding&quot;</span>, <span class="stringliteral">&quot;Sympathetic&quot;</span>, <span class="stringliteral">&quot;Unsympathetic&quot;</span>, <span class="stringliteral">&quot;Empathetic&quot;</span>, <span class="stringliteral">&quot;Apathetic&quot;</span>, <span class="stringliteral">&quot;Compassionate&quot;</span>, <span class="stringliteral">&quot;Heartless&quot;</span>, <span class="stringliteral">&quot;Caring&quot;</span>, <span class="stringliteral">&quot;Uncaring&quot;</span>, <span class="stringliteral">&quot;Affectionate&quot;</span>, <span class="stringliteral">&quot;Cold&quot;</span>, <span class="stringliteral">&quot;Warm&quot;</span>, <span class="stringliteral">&quot;Friendly&quot;</span>, <span class="stringliteral">&quot;Unfriendly&quot;</span>, <span class="stringliteral">&quot;Sociable&quot;</span>, <span class="stringliteral">&quot;Unsociable&quot;</span>, <span class="stringliteral">&quot;Outgoing&quot;</span>, <span class="stringliteral">&quot;Shy&quot;</span>, <span class="stringliteral">&quot;Introverted&quot;</span>, <span class="stringliteral">&quot;Extroverted&quot;</span>, <span class="stringliteral">&quot;Optimistic&quot;</span>, <span class="stringliteral">&quot;Pessimistic&quot;</span>, <span class="stringliteral">&quot;Cheerful&quot;</span>, <span class="stringliteral">&quot;Gloomy&quot;</span>, <span class="stringliteral">&quot;Joyful&quot;</span>, <span class="stringliteral">&quot;Sorrowful&quot;</span>, <span class="stringliteral">&quot;Playful&quot;</span>, <span class="stringliteral">&quot;Serious&quot;</span>, <span class="stringliteral">&quot;Silly&quot;</span>, <span class="stringliteral">&quot;Serious&quot;</span>, <span class="stringliteral">&quot;Clever&quot;</span>, <span class="stringliteral">&quot;Stupid&quot;</span>, <span class="stringliteral">&quot;Wise&quot;</span>, <span class="stringliteral">&quot;Foolish&quot;</span>, <span class="stringliteral">&quot;Smart&quot;</span>, <span class="stringliteral">&quot;Dumb&quot;</span>, <span class="stringliteral">&quot;Intelligent&quot;</span>, <span class="stringliteral">&quot;Ignorant&quot;</span>, <span class="stringliteral">&quot;Knowledgeable&quot;</span>, <span class="stringliteral">&quot;Uninformed&quot;</span>, <span class="stringliteral">&quot;Educated&quot;</span>, <span class="stringliteral">&quot;Uneducated&quot;</span>, <span class="stringliteral">&quot;Informed&quot;</span>, <span class="stringliteral">&quot;Uninformed&quot;</span>, <span class="stringliteral">&quot;Experienced&quot;</span>, <span class="stringliteral">&quot;Inexperienced&quot;</span>, <span class="stringliteral">&quot;Skilled&quot;</span>, <span class="stringliteral">&quot;Unskilled&quot;</span>, <span class="stringliteral">&quot;Talented&quot;</span>, <span class="stringliteral">&quot;Untalented&quot;</span>, <span class="stringliteral">&quot;Gifted&quot;</span>, <span class="stringliteral">&quot;Ungifted&quot;</span>, <span class="stringliteral">&quot;Creative&quot;</span>, <span class="stringliteral">&quot;Uncreative&quot;</span>, <span class="stringliteral">&quot;Imaginative&quot;</span>, <span class="stringliteral">&quot;Unimaginative&quot;</span>, <span class="stringliteral">&quot;Innovative&quot;</span>, <span class="stringliteral">&quot;Uninnovative&quot;</span>, <span class="stringliteral">&quot;Resourceful&quot;</span>, <span class="stringliteral">&quot;Unresourceful&quot;</span>, <span class="stringliteral">&quot;Adventurous&quot;</span> };</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    random_device rd;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    mt19937 gen(rd());</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    std::uniform_int_distribution&lt;&gt; animalIndex(0, animals.size() - 1);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    std::uniform_int_distribution&lt;&gt; adjectiveIndex(0, adjectives.size() - 1);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">string</span> randomNumber = std::to_string(rand() % 1000 + 1);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">return</span> adjectives[adjectiveIndex(gen)] + <span class="stringliteral">&quot; &quot;</span> + animals[animalIndex(gen)] + <span class="stringliteral">&quot; &quot;</span> + randomNumber;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a6bbf9eaf94c40552906fb108b6a2392a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6bbf9eaf94c40552906fb108b6a2392a">&#9670;&nbsp;</a></span>get_current_bet()</h2>
 
@@ -413,10 +459,10 @@ Here is the caller graph for this function:</div>
 <p>Gets the player's current bet in the ongoing hand. </p>
 <dl class="section return"><dt>Returns</dt><dd>The player's current bet amount. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00051">51</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                            {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_player.html#a42345ff4fe6e617a5829aae4a9037c51">current_bet</a>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00053">53</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                            {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_player.html#a42345ff4fe6e617a5829aae4a9037c51">current_bet</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="_game_8cpp_source.html#l00094">Game::makeMoveForUser()</a>, and <a class="el" href="test___player_8cc_source.html#l00036">TEST_F()</a>.</p>
 <div class="dynheader">
@@ -462,17 +508,17 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00065">65</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                                                            {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">if</span> (this-&gt;<a class="code" href="class_player.html#a120127b3026b271cb7b1a5b82d635503">hand</a>.size() == 0) {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">return</span> { -1, -1 };</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="class_equity_calculator.html">EquityCalculator</a> equityCalculator;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="class_deck.html">Deck</a> deck;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="class_card.html">Card</a> c : communityCards) { deck.<a class="code" href="class_deck.html#a61714386178ebc83bfa95b838db0adf1">remove_card</a>(c); };</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="class_card.html">Card</a> c : this-&gt;<a class="code" href="class_player.html#a120127b3026b271cb7b1a5b82d635503">hand</a>) { deck.<a class="code" href="class_deck.html#a61714386178ebc83bfa95b838db0adf1">remove_card</a>(c); };</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> equityCalculator.<a class="code" href="class_equity_calculator.html#a7538b1a4d83a396d16dc0673cb3eb619">calculateHandEquity</a>(this-&gt;hand, communityCards, deck, numPlayers);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00081">81</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                                                            {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span> (this-&gt;<a class="code" href="class_player.html#a120127b3026b271cb7b1a5b82d635503">hand</a>.size() == 0) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">return</span> { -1, -1 };</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="class_equity_calculator.html">EquityCalculator</a> equityCalculator;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="class_deck.html">Deck</a> deck;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="class_card.html">Card</a> c : communityCards) { deck.<a class="code" href="class_deck.html#a61714386178ebc83bfa95b838db0adf1">remove_card</a>(c); };</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="class_card.html">Card</a> c : this-&gt;<a class="code" href="class_player.html#a120127b3026b271cb7b1a5b82d635503">hand</a>) { deck.<a class="code" href="class_deck.html#a61714386178ebc83bfa95b838db0adf1">remove_card</a>(c); };</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">return</span> equityCalculator.<a class="code" href="class_equity_calculator.html#a7538b1a4d83a396d16dc0673cb3eb619">calculateHandEquity</a>(this-&gt;hand, communityCards, deck, numPlayers);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
 <div class="ttc" id="aclass_card_html"><div class="ttname"><a href="class_card.html">Card</a></div><div class="ttdoc">Represents a single card in a deck of cards. Each card has a suit and a rank.</div><div class="ttdef"><b>Definition:</b> <a href="_card_8hpp_source.html#l00014">Card.hpp:14</a></div></div>
 <div class="ttc" id="aclass_deck_html"><div class="ttname"><a href="class_deck.html">Deck</a></div><div class="ttdoc">Represents a deck of playing cards, providing functionality to shuffle, deal, and manage the deck.</div><div class="ttdef"><b>Definition:</b> <a href="_deck_8hpp_source.html#l00013">Deck.hpp:13</a></div></div>
 <div class="ttc" id="aclass_deck_html_a61714386178ebc83bfa95b838db0adf1"><div class="ttname"><a href="class_deck.html#a61714386178ebc83bfa95b838db0adf1">Deck::remove_card</a></div><div class="ttdeci">void remove_card(Card card)</div><div class="ttdoc">Removes a specified card from the deck.</div><div class="ttdef"><b>Definition:</b> <a href="_deck_8cpp_source.html#l00081">Deck.cpp:81</a></div></div>
@@ -513,12 +559,12 @@ Here is the caller graph for this function:</div>
 <p>Gets the player's current hand of cards. </p>
 <dl class="section return"><dt>Returns</dt><dd>A vector containing the player's hand of cards. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00039">39</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                              {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_player.html#a120127b3026b271cb7b1a5b82d635503">hand</a>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00041">41</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                              {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_player.html#a120127b3026b271cb7b1a5b82d635503">hand</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00155">GUI::displayPlayerHand()</a>, and <a class="el" href="test___player_8cc_source.html#l00068">TEST_F()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00161">GUI::displayPlayerHand()</a>, and <a class="el" href="test___player_8cc_source.html#l00068">TEST_F()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -545,12 +591,12 @@ Here is the caller graph for this function:</div>
 <p>Gets the name of the player. </p>
 <dl class="section return"><dt>Returns</dt><dd>The player's name. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00035">35</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                        {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_player.html#acf0355128a99ee20ad9931b760fb2de1">name</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00037">37</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                        {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_player.html#acf0355128a99ee20ad9931b760fb2de1">name</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00155">GUI::displayPlayerHand()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00505">GUI::displayPlayerMove()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00337">GUI::displayPlayerStack()</a>, and <a class="el" href="test___human_player_8cc_source.html#l00023">TEST_F()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00161">GUI::displayPlayerHand()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00538">GUI::displayPlayerMove()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00371">GUI::displayPlayerStack()</a>, and <a class="el" href="test___human_player_8cc_source.html#l00023">TEST_F()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -577,12 +623,12 @@ Here is the caller graph for this function:</div>
 <p>Gets the current stack of the player. </p>
 <dl class="section return"><dt>Returns</dt><dd>The player's current chip stack. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00031">31</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                      {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_player.html#a466b156d07fe5acae5adefa9b17a5e5e">stack</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00033">33</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                      {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_player.html#a466b156d07fe5acae5adefa9b17a5e5e">stack</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="_game_8cpp_source.html#l00303">Game::bettingRound()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00337">GUI::displayPlayerStack()</a>, <a class="el" href="_game_8cpp_source.html#l00094">Game::makeMoveForUser()</a>, and <a class="el" href="test___human_player_8cc_source.html#l00023">TEST_F()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_game_8cpp_source.html#l00303">Game::bettingRound()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00371">GUI::displayPlayerStack()</a>, <a class="el" href="_game_8cpp_source.html#l00094">Game::makeMoveForUser()</a>, and <a class="el" href="test___human_player_8cc_source.html#l00023">TEST_F()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -732,10 +778,10 @@ Here is the caller graph for this function:</div>
 
 <p>Resets the player's current bet to zero. </p>
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00061">61</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                               {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    this-&gt;<a class="code" href="class_player.html#a42345ff4fe6e617a5829aae4a9037c51">current_bet</a> = 0;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00063">63</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                               {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    this-&gt;<a class="code" href="class_player.html#a42345ff4fe6e617a5829aae4a9037c51">current_bet</a> = 0;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="_game_8cpp_source.html#l00094">Game::makeMoveForUser()</a>, and <a class="el" href="test___player_8cc_source.html#l00099">TEST_F()</a>.</p>
 <div class="dynheader">
@@ -763,12 +809,12 @@ Here is the caller graph for this function:</div>
 
 <p>Displays the player's current hand. </p>
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00055">55</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                       {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="class_card.html">Card</a> card : <a class="code" href="class_player.html#a120127b3026b271cb7b1a5b82d635503">hand</a>) {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        cout &lt;&lt; card.get_rank() &lt;&lt; <span class="stringliteral">&quot; of &quot;</span> &lt;&lt; card.get_suit() &lt;&lt; endl;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00057">57</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                       {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="class_card.html">Card</a> card : <a class="code" href="class_player.html#a120127b3026b271cb7b1a5b82d635503">hand</a>) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        cout &lt;&lt; card.get_rank() &lt;&lt; <span class="stringliteral">&quot; of &quot;</span> &lt;&lt; card.get_suit() &lt;&lt; endl;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="test___player_8cc_source.html#l00091">TEST_F()</a>.</p>
 <div class="dynheader">
@@ -831,10 +877,10 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00027">27</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                           {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    this-&gt;<a class="code" href="class_player.html#a466b156d07fe5acae5adefa9b17a5e5e">stack</a> += amount;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00029">29</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                           {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    this-&gt;<a class="code" href="class_player.html#a466b156d07fe5acae5adefa9b17a5e5e">stack</a> += amount;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="test___player_8cc_source.html#l00055">TEST_F()</a>.</p>
 <div class="dynheader">
@@ -957,7 +1003,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 20 2024 00:01:24 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Sep 20 2024 01:04:32 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['hand_357',['hand',['../class_player.html#a120127b3026b271cb7b1a5b82d635503',1,'Player']]],
-  ['handevaluator_358',['handEvaluator',['../class_equity_calculator.html#aa38652d7e965daffdf37dd7988f0a5cf',1,'EquityCalculator']]]
+  ['game_399',['game',['../class_g_u_i.html#afb260f19c1cd60e5cdfc5ddc511e636d',1,'GUI']]]
 ];

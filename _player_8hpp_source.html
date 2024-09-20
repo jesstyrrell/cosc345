@@ -113,17 +113,18 @@ $(function() {
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordtype">void</span> reset_current_bet();</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        vector&lt;float&gt; get_equity(vector&lt;Card&gt; communityCards, <span class="keywordtype">int</span> numPlayers);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="comment">// virtual methods to override in human player and AI player</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="class_player.html#a7df36236f01194eda0b891187ddc7fe5">  117</a></span>&#160;        <span class="keyword">virtual</span> std::string <a class="code" href="class_player.html#a7df36236f01194eda0b891187ddc7fe5">getMove</a>(<span class="keywordtype">bool</span> canCheck, <span class="keywordtype">bool</span> canRaise, <span class="keywordtype">bool</span> canFold, <span class="keywordtype">bool</span> canCall) = 0;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="class_player.html#ae9d26573718b00460800539a32916288">  125</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_player.html#ae9d26573718b00460800539a32916288">getBetSizing</a>(<span class="keywordtype">int</span> minBet, <span class="keywordtype">int</span> maxBet) = 0;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="class_player.html#ab9d308303ef68b81db5f4415c8d2aa37">  131</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_player.html#ab9d308303ef68b81db5f4415c8d2aa37">endOfHand</a>() = 0;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">string</span> generate_random_name();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        vector&lt;float&gt; get_equity(vector&lt;Card&gt; communityCards, <span class="keywordtype">int</span> numPlayers);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="comment">// virtual methods to override in human player and AI player</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="class_player.html#a7df36236f01194eda0b891187ddc7fe5">  123</a></span>&#160;        <span class="keyword">virtual</span> std::string <a class="code" href="class_player.html#a7df36236f01194eda0b891187ddc7fe5">getMove</a>(<span class="keywordtype">bool</span> canCheck, <span class="keywordtype">bool</span> canRaise, <span class="keywordtype">bool</span> canFold, <span class="keywordtype">bool</span> canCall) = 0;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="class_player.html#ae9d26573718b00460800539a32916288">  131</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_player.html#ae9d26573718b00460800539a32916288">getBetSizing</a>(<span class="keywordtype">int</span> minBet, <span class="keywordtype">int</span> maxBet) = 0;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;};</div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="class_player.html#ab9d308303ef68b81db5f4415c8d2aa37">  137</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_player.html#ab9d308303ef68b81db5f4415c8d2aa37">endOfHand</a>() = 0;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;};</div>
 <div class="ttc" id="a_card_8hpp_html"><div class="ttname"><a href="_card_8hpp.html">Card.hpp</a></div></div>
 <div class="ttc" id="aclass_card_html"><div class="ttname"><a href="class_card.html">Card</a></div><div class="ttdoc">Represents a single card in a deck of cards. Each card has a suit and a rank.</div><div class="ttdef"><b>Definition:</b> <a href="_card_8hpp_source.html#l00014">Card.hpp:14</a></div></div>
 <div class="ttc" id="aclass_player_html"><div class="ttname"><a href="class_player.html">Player</a></div><div class="ttdoc">Represents a human player in the poker game.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00015">Player.hpp:15</a></div></div>
@@ -137,7 +138,7 @@ $(function() {
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 20 2024 00:01:24 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Sep 20 2024 01:04:32 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

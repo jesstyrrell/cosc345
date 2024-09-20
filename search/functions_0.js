@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['add_5fcard_5fto_5fhand_239',['add_card_to_hand',['../class_player.html#af3998816522aac68efd31d625c367074',1,'Player']]],
-  ['add_5fplayer_240',['add_player',['../class_game.html#a57916fe5cb55a85464371173571cf681',1,'Game']]],
-  ['addblindstopot_241',['addBlindsToPot',['../class_game.html#a2c46bbc0e0acda18575fc9a82481a95a',1,'Game']]],
-  ['addstring_242',['addString',['../_g_u_i_8cpp.html#ae6720e4bc4b25d366b73e9fc9b8afd4b',1,'GUI.cpp']]],
-  ['awardpot_243',['awardPot',['../class_game.html#a9e75306bf8f51c5213e2ffceb46f801f',1,'Game']]]
+  ['add_5fcard_5fto_5fhand_270',['add_card_to_hand',['../class_player.html#af3998816522aac68efd31d625c367074',1,'Player']]],
+  ['add_5fplayer_271',['add_player',['../class_game.html#a57916fe5cb55a85464371173571cf681',1,'Game']]],
+  ['addblindstopot_272',['addBlindsToPot',['../class_game.html#a2c46bbc0e0acda18575fc9a82481a95a',1,'Game']]],
+  ['addprofile_273',['addProfile',['../class_c_s_v_worker.html#ac98b30f76d058e7fff41a92382c7ecb5',1,'CSVWorker']]],
+  ['addstring_274',['addString',['../_g_u_i_8cpp.html#ae6720e4bc4b25d366b73e9fc9b8afd4b',1,'GUI.cpp']]],
+  ['awardpot_275',['awardPot',['../class_game.html#a9e75306bf8f51c5213e2ffceb46f801f',1,'Game']]]
 ];
