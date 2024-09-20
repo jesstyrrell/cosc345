@@ -27,8 +27,10 @@ digraph "Card::get_rank"
   Node10 [label="EquityCalculator::buildPreflop\lEquityCSV",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_equity_calculator.html#a5e6d58769d8554960b7434bef984cb28",tooltip=" "];
   Node9 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node11 [label="Player::get_equity",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_player.html#ac40b5f5383aa1b6146a39c74f08254ad",tooltip="Returns the equity of the players hand for the current stage of the game."];
-  Node9 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node12 [label="TEST",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test___deck_8cc.html#ad6a69a28e7e0c0d1f60b5211522d8f74",tooltip=" "];
-  Node1 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node13 [label="TEST",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test___card_8cc.html#a4f0ff53a821ccb36f4e4e53fba82fc09",tooltip=" "];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="TEST_F",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test___player_8cc.html#a58e6b1b83a0b3890240da45b9cfca22b",tooltip=" "];
+  Node9 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="TEST",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test___deck_8cc.html#ad6a69a28e7e0c0d1f60b5211522d8f74",tooltip=" "];
+  Node1 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="TEST",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test___card_8cc.html#a4f0ff53a821ccb36f4e4e53fba82fc09",tooltip=" "];
 }

@@ -95,12 +95,14 @@ Functions</h2></td></tr>
 <tr class="separator:a03d3c7fb7a0df829af13d2fcc459c2ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac945c334b60d4eeeadd1cd110c1bb9d8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test___deck_8cc.html#ac945c334b60d4eeeadd1cd110c1bb9d8">TEST</a> (TestDeck, TestDeckFindCard)</td></tr>
 <tr class="separator:ac945c334b60d4eeeadd1cd110c1bb9d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a548ec3703398ce239a7422a03b0b6cbf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test___deck_8cc.html#a548ec3703398ce239a7422a03b0b6cbf">TEST</a> (TestDeck, TestDeckFindCardNotExist)</td></tr>
+<tr class="separator:a548ec3703398ce239a7422a03b0b6cbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6a69a28e7e0c0d1f60b5211522d8f74"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test___deck_8cc.html#ad6a69a28e7e0c0d1f60b5211522d8f74">TEST</a> (TestDeck, TestDeckRemoveCard)</td></tr>
 <tr class="separator:ad6a69a28e7e0c0d1f60b5211522d8f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a32761366781d5d43b35b6c0373c698c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32761366781d5d43b35b6c0373c698c9">&#9670;&nbsp;</a></span>TEST() <span class="overload">[1/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a32761366781d5d43b35b6c0373c698c9">&#9670;&nbsp;</a></span>TEST() <span class="overload">[1/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -156,7 +158,7 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <a id="a03d3c7fb7a0df829af13d2fcc459c2ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03d3c7fb7a0df829af13d2fcc459c2ba">&#9670;&nbsp;</a></span>TEST() <span class="overload">[2/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a03d3c7fb7a0df829af13d2fcc459c2ba">&#9670;&nbsp;</a></span>TEST() <span class="overload">[2/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -181,17 +183,17 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="test___deck_8cc_source.html#l00063">63</a> of file <a class="el" href="test___deck_8cc_source.html">test_Deck.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                             {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="class_deck.html">Deck</a> deck = <a class="code" href="class_deck.html">Deck</a>();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    vector&lt;Card&gt; cards = deck.<a class="code" href="class_deck.html#a2fe0172048296260450a74035a34db9b">get_cards</a>();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="class_card.html">Card</a> card = deck.<a class="code" href="class_deck.html#a16604aabf7fc56dd44a72c4e862758cf">deal</a>();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    vector&lt;Card&gt; newCards = deck.<a class="code" href="class_deck.html#a2fe0172048296260450a74035a34db9b">get_cards</a>();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    ASSERT_EQ(cards.size(), 52);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    ASSERT_EQ(newCards.size(), 51);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="test___deck_8cc_source.html#l00062">62</a> of file <a class="el" href="test___deck_8cc_source.html">test_Deck.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                             {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="class_deck.html">Deck</a> deck = <a class="code" href="class_deck.html">Deck</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    vector&lt;Card&gt; cards = deck.<a class="code" href="class_deck.html#a2fe0172048296260450a74035a34db9b">get_cards</a>();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="class_card.html">Card</a> card = deck.<a class="code" href="class_deck.html#a16604aabf7fc56dd44a72c4e862758cf">deal</a>();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    vector&lt;Card&gt; newCards = deck.<a class="code" href="class_deck.html#a2fe0172048296260450a74035a34db9b">get_cards</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    ASSERT_EQ(cards.size(), 52);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    ASSERT_EQ(newCards.size(), 51);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
 <div class="ttc" id="aclass_card_html"><div class="ttname"><a href="class_card.html">Card</a></div><div class="ttdoc">Represents a single card in a deck of cards. Each card has a suit and a rank.</div><div class="ttdef"><b>Definition:</b> <a href="_card_8hpp_source.html#l00014">Card.hpp:14</a></div></div>
 <div class="ttc" id="aclass_deck_html_a16604aabf7fc56dd44a72c4e862758cf"><div class="ttname"><a href="class_deck.html#a16604aabf7fc56dd44a72c4e862758cf">Deck::deal</a></div><div class="ttdeci">Card deal()</div><div class="ttdoc">Deals a card from the top of the deck.</div><div class="ttdef"><b>Definition:</b> <a href="_deck_8cpp_source.html#l00050">Deck.cpp:50</a></div></div>
 </div><!-- fragment -->
@@ -205,7 +207,7 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <a id="ac945c334b60d4eeeadd1cd110c1bb9d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac945c334b60d4eeeadd1cd110c1bb9d8">&#9670;&nbsp;</a></span>TEST() <span class="overload">[3/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac945c334b60d4eeeadd1cd110c1bb9d8">&#9670;&nbsp;</a></span>TEST() <span class="overload">[3/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -230,14 +232,14 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="test___deck_8cc_source.html#l00074">74</a> of file <a class="el" href="test___deck_8cc_source.html">test_Deck.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                 {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="class_deck.html">Deck</a> deck = <a class="code" href="class_deck.html">Deck</a>();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="class_card.html">Card</a> card = deck.<a class="code" href="class_deck.html#a3ad744640638d4a52761525d56004cef">find_card</a>(<span class="stringliteral">&quot;A&quot;</span>, <span class="stringliteral">&quot;Hearts&quot;</span>);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    ASSERT_EQ(card.<a class="code" href="class_card.html#a9df0b3ca31842ad2c8669cae24e543bf">get_suit</a>(), <span class="stringliteral">&quot;Hearts&quot;</span>);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    ASSERT_EQ(card.<a class="code" href="class_card.html#a684299c7ec09b07b09ff1072c7b908e3">get_rank</a>(), <span class="stringliteral">&quot;A&quot;</span>);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="test___deck_8cc_source.html#l00073">73</a> of file <a class="el" href="test___deck_8cc_source.html">test_Deck.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                 {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="class_deck.html">Deck</a> deck = <a class="code" href="class_deck.html">Deck</a>();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="class_card.html">Card</a> card = deck.<a class="code" href="class_deck.html#a3ad744640638d4a52761525d56004cef">find_card</a>(<span class="stringliteral">&quot;A&quot;</span>, <span class="stringliteral">&quot;Hearts&quot;</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    ASSERT_EQ(card.<a class="code" href="class_card.html#a9df0b3ca31842ad2c8669cae24e543bf">get_suit</a>(), <span class="stringliteral">&quot;Hearts&quot;</span>);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    ASSERT_EQ(card.<a class="code" href="class_card.html#a684299c7ec09b07b09ff1072c7b908e3">get_rank</a>(), <span class="stringliteral">&quot;A&quot;</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
 <div class="ttc" id="aclass_card_html_a684299c7ec09b07b09ff1072c7b908e3"><div class="ttname"><a href="class_card.html#a684299c7ec09b07b09ff1072c7b908e3">Card::get_rank</a></div><div class="ttdeci">const std::string get_rank() const</div><div class="ttdoc">Gets the rank of the card.</div><div class="ttdef"><b>Definition:</b> <a href="_card_8cpp_source.html#l00034">Card.cpp:34</a></div></div>
 <div class="ttc" id="aclass_card_html_a9df0b3ca31842ad2c8669cae24e543bf"><div class="ttname"><a href="class_card.html#a9df0b3ca31842ad2c8669cae24e543bf">Card::get_suit</a></div><div class="ttdeci">const std::string get_suit() const</div><div class="ttdoc">Gets the suit of the card.</div><div class="ttdef"><b>Definition:</b> <a href="_card_8cpp_source.html#l00025">Card.cpp:25</a></div></div>
 <div class="ttc" id="aclass_deck_html_a3ad744640638d4a52761525d56004cef"><div class="ttname"><a href="class_deck.html#a3ad744640638d4a52761525d56004cef">Deck::find_card</a></div><div class="ttdeci">Card find_card(const string &amp;rank, const string &amp;suit)</div><div class="ttdoc">Finds a specific card in the deck based on rank and suit.</div><div class="ttdef"><b>Definition:</b> <a href="_deck_8cpp_source.html#l00063">Deck.cpp:63</a></div></div>
@@ -251,8 +253,52 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="a548ec3703398ce239a7422a03b0b6cbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a548ec3703398ce239a7422a03b0b6cbf">&#9670;&nbsp;</a></span>TEST() <span class="overload">[4/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TEST </td>
+          <td>(</td>
+          <td class="paramtype">TestDeck&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TestDeckFindCardNotExist&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="test___deck_8cc_source.html#l00081">81</a> of file <a class="el" href="test___deck_8cc_source.html">test_Deck.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                         {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="class_deck.html">Deck</a> deck = <a class="code" href="class_deck.html">Deck</a>();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="class_card.html">Card</a> card = deck.<a class="code" href="class_deck.html#a3ad744640638d4a52761525d56004cef">find_card</a>(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    ASSERT_EQ(card.<a class="code" href="class_card.html#a9df0b3ca31842ad2c8669cae24e543bf">get_suit</a>(), <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    ASSERT_EQ(card.<a class="code" href="class_card.html#a684299c7ec09b07b09ff1072c7b908e3">get_rank</a>(), <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_deck_8cpp_source.html#l00063">Deck::find_card()</a>, <a class="el" href="_card_8cpp_source.html#l00034">Card::get_rank()</a>, and <a class="el" href="_card_8cpp_source.html#l00025">Card::get_suit()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="test___deck_8cc_a548ec3703398ce239a7422a03b0b6cbf_cgraph.png" border="0" usemap="#atest___deck_8cc_a548ec3703398ce239a7422a03b0b6cbf_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
 <a id="a21fc877325b884df6e01d89d94f82ec8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21fc877325b884df6e01d89d94f82ec8">&#9670;&nbsp;</a></span>TEST() <span class="overload">[4/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a21fc877325b884df6e01d89d94f82ec8">&#9670;&nbsp;</a></span>TEST() <span class="overload">[5/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -295,7 +341,7 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <a id="ad6a69a28e7e0c0d1f60b5211522d8f74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6a69a28e7e0c0d1f60b5211522d8f74">&#9670;&nbsp;</a></span>TEST() <span class="overload">[5/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6a69a28e7e0c0d1f60b5211522d8f74">&#9670;&nbsp;</a></span>TEST() <span class="overload">[6/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -320,23 +366,26 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="test___deck_8cc_source.html#l00082">82</a> of file <a class="el" href="test___deck_8cc_source.html">test_Deck.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                   {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="class_deck.html">Deck</a> deck = <a class="code" href="class_deck.html">Deck</a>();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="class_card.html">Card</a> card = deck.<a class="code" href="class_deck.html#a3ad744640638d4a52761525d56004cef">find_card</a>(<span class="stringliteral">&quot;A&quot;</span>, <span class="stringliteral">&quot;Hearts&quot;</span>);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    deck.<a class="code" href="class_deck.html#a61714386178ebc83bfa95b838db0adf1">remove_card</a>(card);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    vector&lt;Card&gt; cards = deck.<a class="code" href="class_deck.html#a2fe0172048296260450a74035a34db9b">get_cards</a>();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">bool</span> cardExists = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="class_card.html">Card</a> c : cards) {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">if</span> (c.get_suit() == card.<a class="code" href="class_card.html#a9df0b3ca31842ad2c8669cae24e543bf">get_suit</a>() &amp;&amp; c.get_rank() == card.<a class="code" href="class_card.html#a684299c7ec09b07b09ff1072c7b908e3">get_rank</a>()) {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            cardExists = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    ASSERT_FALSE(cardExists);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="test___deck_8cc_source.html#l00089">89</a> of file <a class="el" href="test___deck_8cc_source.html">test_Deck.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                                   {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="class_deck.html">Deck</a> deck = <a class="code" href="class_deck.html">Deck</a>();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="class_card.html">Card</a> card = deck.<a class="code" href="class_deck.html#a3ad744640638d4a52761525d56004cef">find_card</a>(<span class="stringliteral">&quot;A&quot;</span>, <span class="stringliteral">&quot;Hearts&quot;</span>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    deck.<a class="code" href="class_deck.html#a61714386178ebc83bfa95b838db0adf1">remove_card</a>(card);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    vector&lt;Card&gt; cards = deck.<a class="code" href="class_deck.html#a2fe0172048296260450a74035a34db9b">get_cards</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">bool</span> cardExists = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="class_card.html">Card</a> c : cards) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordtype">bool</span> checkSuit = c.get_suit() == card.<a class="code" href="class_card.html#a9df0b3ca31842ad2c8669cae24e543bf">get_suit</a>();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordtype">bool</span> checkRank = c.get_rank() == card.<a class="code" href="class_card.html#a684299c7ec09b07b09ff1072c7b908e3">get_rank</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">if</span> (checkSuit &amp;&amp; checkRank) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            cardExists = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    ASSERT_FALSE(cardExists);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
 <div class="ttc" id="aclass_deck_html_a61714386178ebc83bfa95b838db0adf1"><div class="ttname"><a href="class_deck.html#a61714386178ebc83bfa95b838db0adf1">Deck::remove_card</a></div><div class="ttdeci">void remove_card(Card card)</div><div class="ttdoc">Removes a specified card from the deck.</div><div class="ttdef"><b>Definition:</b> <a href="_deck_8cpp_source.html#l00081">Deck.cpp:81</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_deck_8cpp_source.html#l00063">Deck::find_card()</a>, <a class="el" href="_deck_8cpp_source.html#l00037">Deck::get_cards()</a>, <a class="el" href="_card_8cpp_source.html#l00034">Card::get_rank()</a>, <a class="el" href="_card_8cpp_source.html#l00025">Card::get_suit()</a>, and <a class="el" href="_deck_8cpp_source.html#l00081">Deck::remove_card()</a>.</p>
@@ -349,7 +398,7 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <a id="ac5583231cd0f55417687592b8b1ba700"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac5583231cd0f55417687592b8b1ba700">&#9670;&nbsp;</a></span>TEST() <span class="overload">[6/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5583231cd0f55417687592b8b1ba700">&#9670;&nbsp;</a></span>TEST() <span class="overload">[7/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -395,7 +444,7 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <a id="a0a136d376e0d376b3f455c72ad67950f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a136d376e0d376b3f455c72ad67950f">&#9670;&nbsp;</a></span>TEST() <span class="overload">[7/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a136d376e0d376b3f455c72ad67950f">&#9670;&nbsp;</a></span>TEST() <span class="overload">[8/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -420,30 +469,30 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="test___deck_8cc_source.html#l00039">39</a> of file <a class="el" href="test___deck_8cc_source.html">test_Deck.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="class_deck.html">Deck</a> deck = <a class="code" href="class_deck.html">Deck</a>();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    vector&lt;Card&gt; cards = deck.<a class="code" href="class_deck.html#a2fe0172048296260450a74035a34db9b">get_cards</a>();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    deck.<a class="code" href="class_deck.html#ae5a1e52ab00ae5924f2bc6b730dba3eb">shuffle</a>();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    vector&lt;Card&gt; shuffledCards = deck.<a class="code" href="class_deck.html#a2fe0172048296260450a74035a34db9b">get_cards</a>();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// Check if the cards are shuffled</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">bool</span> isShuffled = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; cards.size(); i++) {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">bool</span> checkSuit = cards[i].get_suit() == shuffledCards[i].get_suit();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">bool</span> checkRank = cards[i].get_rank() == shuffledCards[i].get_rank();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="comment">// If any of the cards are are different, then the deck is shuffled</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">if</span> (!checkSuit || !checkRank) {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            isShuffled = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="test___deck_8cc_source.html#l00038">38</a> of file <a class="el" href="test___deck_8cc_source.html">test_Deck.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="class_deck.html">Deck</a> deck = <a class="code" href="class_deck.html">Deck</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    vector&lt;Card&gt; cards = deck.<a class="code" href="class_deck.html#a2fe0172048296260450a74035a34db9b">get_cards</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    deck.<a class="code" href="class_deck.html#ae5a1e52ab00ae5924f2bc6b730dba3eb">shuffle</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    vector&lt;Card&gt; shuffledCards = deck.<a class="code" href="class_deck.html#a2fe0172048296260450a74035a34db9b">get_cards</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// Check if the cards are shuffled</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">bool</span> isShuffled = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; cards.size(); i++) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">bool</span> checkSuit = cards[i].get_suit() == shuffledCards[i].get_suit();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">bool</span> checkRank = cards[i].get_rank() == shuffledCards[i].get_rank();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="comment">// If any of the cards are are different, then the deck is shuffled</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">if</span> (!checkSuit || !checkRank) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            isShuffled = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    ASSERT_TRUE(isShuffled);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    ASSERT_TRUE(isShuffled);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_deck_8cpp_source.html#l00037">Deck::get_cards()</a>, and <a class="el" href="_deck_8cpp_source.html#l00041">Deck::shuffle()</a>.</p>
 <div class="dynheader">
@@ -457,7 +506,7 @@ Here is the call graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 19 2024 08:43:41 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Sep 20 2024 00:01:24 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

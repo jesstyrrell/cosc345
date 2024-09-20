@@ -9,5 +9,5 @@ digraph "Deck::get_cards"
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="TEST",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test___deck_8cc.html#a32761366781d5d43b35b6c0373c698c9",tooltip=" "];
   Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="Game::test_game",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game.html#a2a40b9c0d56307fbe67da500ed9d4cff",tooltip="Tests the Game class functionality."];
+  Node3 [label="TEST_F",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test___game_8cc.html#aa74720a6e6583bc8e6968552cca44430",tooltip=" "];
 }

@@ -7,5 +7,5 @@ digraph "Game::deal_flop"
   rankdir="RL";
   Node1 [label="Game::deal_flop",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Deals the flop (the first three community cards)."];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="Game::test_game",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_game.html#a2a40b9c0d56307fbe67da500ed9d4cff",tooltip="Tests the Game class functionality."];
+  Node2 [label="TEST_F",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test___game_8cc.html#a10077f84f75dfa4951439b27d300d709",tooltip=" "];
 }

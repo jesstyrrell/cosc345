@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['small_5fblind_402',['SMALL_BLIND',['../class_game.html#a665446eb353d8a401969c834cd71fcdd',1,'Game']]],
-  ['stack_403',['stack',['../class_player.html#a466b156d07fe5acae5adefa9b17a5e5e',1,'Player']]],
-  ['starting_5fstack_404',['STARTING_STACK',['../class_game.html#ab124a0d6756e5941a9241315b1983d45',1,'Game']]],
-  ['suit_405',['suit',['../class_card.html#a5ac01df9ae312cdb06ed986397445cac',1,'Card']]],
-  ['suits_406',['suits',['../class_equity_calculator.html#a8463532428aff14c1ab54fc4c9765c88',1,'EquityCalculator::suits()'],['../class_hand_evaluator.html#aed3c55dbf3c3bb9bc304e83ae332200b',1,'HandEvaluator::suits()']]]
+  ['win_378',['WIN',['../class_equity_calculator.html#ab397765f1ae7b57a6ec8a6a45c858326',1,'EquityCalculator::WIN()'],['../class_hand_evaluator.html#ac1bb541513b3b5d2e0f3797e32d2e289',1,'HandEvaluator::WIN()']]]
 ];

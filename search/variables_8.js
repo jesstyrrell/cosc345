@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mockgui_386',['mockGui',['../class_human_player_test.html#ae8b11e37f9b1710804dfe913d82dcb44',1,'HumanPlayerTest']]]
+  ['name_360',['name',['../class_player.html#acf0355128a99ee20ad9931b760fb2de1',1,'Player']]]
 ];

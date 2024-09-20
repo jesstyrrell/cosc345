@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['rank_398',['rank',['../class_card.html#a49353d2c0122828982490d640d7ebb4c',1,'Card']]],
-  ['ranks_399',['ranks',['../class_equity_calculator.html#af4ca4ac7a7b3fab05ebf9c7119b79cb4',1,'EquityCalculator::ranks()'],['../class_hand_evaluator.html#a5a5001f8c7a5af0b74f5173501e5279c',1,'HandEvaluator::ranks()']]],
-  ['removedplayercount_400',['removedPlayerCount',['../class_game.html#af4a444aeaddb618cc202c73c35fd157f',1,'Game']]],
-  ['rng_401',['rng',['../class_random_player.html#ae63ce0a196eb8b44a4b83771378bd017',1,'RandomPlayer']]]
+  ['small_5fblind_373',['SMALL_BLIND',['../class_game.html#a665446eb353d8a401969c834cd71fcdd',1,'Game']]],
+  ['stack_374',['stack',['../class_player.html#a466b156d07fe5acae5adefa9b17a5e5e',1,'Player']]],
+  ['starting_5fstack_375',['STARTING_STACK',['../class_game.html#ab124a0d6756e5941a9241315b1983d45',1,'Game']]],
+  ['suit_376',['suit',['../class_card.html#a5ac01df9ae312cdb06ed986397445cac',1,'Card']]],
+  ['suits_377',['suits',['../class_equity_calculator.html#a8463532428aff14c1ab54fc4c9765c88',1,'EquityCalculator::suits()'],['../class_hand_evaluator.html#aed3c55dbf3c3bb9bc304e83ae332200b',1,'HandEvaluator::suits()']]]
 ];

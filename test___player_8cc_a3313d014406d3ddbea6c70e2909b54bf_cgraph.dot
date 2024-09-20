@@ -1,0 +1,15 @@
+digraph "TEST_F"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="TEST_F",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Player::deduct_blind",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_player.html#a75a7946fcb64e122d5704754b6704ac3",tooltip="Deducts a blind amount from the player's stack."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Player::get_current_bet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_player.html#a6bbf9eaf94c40552906fb108b6a2392a",tooltip="Gets the player's current bet in the ongoing hand."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Player::get_stack",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_player.html#aca2f65a65461c322a0563ae0482be213",tooltip="Gets the current stack of the player."];
+}
