@@ -15,7 +15,7 @@
 #include "src/HandEvaluator.hpp"
 #include "src/EquityCalculator.hpp"
 #include "src/GUI.hpp"
-#include "src/BasicPlayer.cpp"
+#include "src/PlayerProfile.hpp"
 
 using namespace std;
 
@@ -30,25 +30,24 @@ int main(int argc, char* argv[]) {
     // Display the start screen
     GUI::displayStartScreen();
 
-    int menuChoice = GUI::displayMenu();
-    if (menuChoice == 0) {
+    MenuOption menuChoice = GUI::displayMenu();
+    if (menuChoice == MenuOption::QUIT) {
         GUI::displayEndMessage();
         return 0;
     }
 
     // Call the GUI method to get the players name, and let them play as guest
-    string playerName = GUI::signInMenu();
+    PlayerProfile currentPlayer = GUI::signInMenu();
     int numberOfPlayers = GUI::getNumberOfPlayers();
 
     
     std::vector<Player*> playerPointers;
-    BasicPlayer player = BasicPlayer(playerName, 100000);
+    HumanPlayer player = HumanPlayer(currentPlayer.name, 1000);
     playerPointers.push_back(&player);
 
     for(int i = 0; i < numberOfPlayers-1; i++){
-        string name = GUI::getRandomPlayerName();
-        cout << name << endl;
-        RandomPlayer *player = new RandomPlayer(name, 100000);
+        string randomPlayerName = GUI::getRandomPlayerName();
+        RandomPlayer *player = new RandomPlayer(randomPlayerName, 1000);
         playerPointers.push_back(player);
     }
 
@@ -58,9 +57,8 @@ int main(int argc, char* argv[]) {
 
     GUI::displayGameState();
     
-    int count = 0;
     // Start a game loop
-    while(count < 100000){
+    while(true){
         // Play a hand
         game.playHand();
 
@@ -68,7 +66,6 @@ int main(int argc, char* argv[]) {
         if (playerPointers[0]->endOfHand() != 1) {
             break;
         }
-        count++;
 
     }
 

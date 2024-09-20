@@ -9,6 +9,8 @@
 #include <chrono>
 #include <iomanip>
 
+#include "PlayerProfile.hpp"
+
 class Game;
 
 using namespace std;
@@ -22,6 +24,9 @@ struct Point {
     int y;  ///< The y-coordinate of the point.
 };
 
+// Enum for defining the menu options
+enum MenuOption { START_GAME, CREATE_PROFILE, QUIT };
+
 /**
  * @class GUI
  * @brief Provides a graphical user interface for interacting with the poker game.
@@ -30,6 +35,20 @@ class GUI {
     private:
         /// Pointer to the game object used for getting game state information
         static Game* game;
+
+        /**
+         * @brief Creates a new player profile.
+         * @return The newly created player profile.
+         */
+        static PlayerProfile createProfile();
+
+        /**
+         * @brief Gets the profile of a player from the `./data/profiles.csv` file.
+         * @param name The name of the player.
+         * @return The profile of the player.
+         */
+        static PlayerProfile getProfile(const std::string& name); 
+
 
     public:
         static const Point PLAYER_CARD_POSITIONS[8][2];  ///< Positions for player cards.
@@ -55,7 +74,7 @@ class GUI {
          * @brief Prompts the user to sign in.
          * @return The name of the user as a string.
          */
-        static string signInMenu();
+        static PlayerProfile signInMenu();
 
         /**
          * @brief Gets the number of players from the user.
@@ -139,7 +158,7 @@ class GUI {
          * @brief Displays the main menu of the game.
          * @return The selected menu option as an integer.
          */
-        static int displayMenu();
+        static MenuOption displayMenu();
 
         /**
          * @brief Displays the menu at the end of a round.
@@ -159,4 +178,9 @@ class GUI {
          * @param size The bet size associated with the move.
          */
         static void displayPlayerMove(Player* player, string move, int size);
+
+        /**
+         * @brief Displays input to the user to create a profile.
+         */
+        static PlayerProfile chooseAccount();
 };
