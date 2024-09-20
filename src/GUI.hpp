@@ -47,7 +47,7 @@ class GUI {
          * @param name The name of the player.
          * @return The profile of the player.
          */
-        static PlayerProfile getProfile(string name); 
+        static PlayerProfile getProfile(const std::string& name); 
 
 
     public:
