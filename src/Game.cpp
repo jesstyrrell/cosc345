@@ -252,17 +252,17 @@ void Game::playHand() {
         totalStack += player->get_stack();
         
         if(player->get_stack() <= 0){
-            cout << player->get_name() << "'s stack: " << player->get_stack() << endl;
-            cout << "Player stack too small, removing from game" << endl;
+            // cout << player->get_name() << "'s stack: " << player->get_stack() << endl;
+            // cout << "Player stack too small, removing from game" << endl;
             // Remove the player from the players vector
             this->players.erase(remove(players.begin(), players.end(), player), players.end());
             this->removedPlayerCount++;
             // Print all the names of the players in the game
             for (Player* player : this->getPlayers()) {
-                cout << player->get_name() << endl;
+                // cout << player->get_name() << endl;
             }
             // print the length of the players vector
-            cout << "Length of players vector: " << this->getPlayers().size() << endl;
+            // cout << "Length of players vector: " << this->getPlayers().size() << endl;
             // while(true){}
 
         }

@@ -19,7 +19,8 @@ public:
     std::string getMove(bool canCheck, bool canRaise, bool canFold, bool canCall, vector<Card> community_cards, int largestBet, int numPlayersInHand) override {
         // Get the bros equity from the equity calculator
         vector<float> equity = get_equity(community_cards, numPlayersInHand);
-        double equityThreshold = 1/numPlayersInHand;
+        double equityThreshold = 1.0/numPlayersInHand;
+
         // If the equity is below the threshold, fold
         if (equity[0] < equityThreshold) {
             if(canFold){
@@ -30,7 +31,7 @@ public:
         }
 
         if(canCall){
-            if(equity[0] >= equityThreshold*1.1){
+            if(equity[0] >= equityThreshold*1.15){
                 return "r";
             } else {
                 return "c";
