@@ -42,6 +42,9 @@ target_link_libraries( TestDeck GTest::gtest_main )
 add_executable( TestRandomPlayer ./tests/test_RandomPlayer.cc ${SRC_FILES} ${HEADER_FILES})
 target_link_libraries( TestRandomPlayer GTest::gtest_main GTest::gmock_main )
 
+# add_executable( TestHumanPlayer ./tests/test_HumanPlayer.cc ${SRC_FILES} ${HEADER_FILES})
+# target_link_libraries( TestHumanPlayer GTest::gtest_main GTest::gmock_main )
+
 add_executable( TestGUI ./tests/test_GUI.cc ${SRC_FILES} ${HEADER_FILES})
 target_link_libraries( TestGUI GTest::gtest_main GTest::gmock_main )
 
@@ -51,8 +54,8 @@ target_link_libraries( TestHandEvaluator GTest::gtest_main GTest::gmock_main )
 add_executable( TestEquityCalculator ./tests/test_EquityCalculator.cc ${SRC_FILES} ${HEADER_FILES})
 target_link_libraries( TestEquityCalculator GTest::gtest_main GTest::gmock_main )
 
-# add_executable( TestGame ./tests/test_Game.cc ${SRC_FILES} ${HEADER_FILES})
-# target_link_libraries( TestGame GTest::gtest_main GTest::gmock_main )
+add_executable( TestGame ./tests/test_Game.cc ${SRC_FILES} ${HEADER_FILES})
+target_link_libraries( TestGame GTest::gtest_main GTest::gmock_main )
 
 
 # Including the GoogleTest module
@@ -63,9 +66,10 @@ gtest_discover_tests(TestCard)
 gtest_discover_tests(TestDeck)
 
 gtest_discover_tests(TestRandomPlayer)
+# gtest_discover_tests(TestHumanPlayer)
 
 # gtest_discover_tests(TestGUI)
-# gtest_discover_tests(TestGame)
+gtest_discover_tests(TestGame)
 
 gtest_discover_tests(TestHandEvaluator)
 gtest_discover_tests(TestEquityCalculator)
