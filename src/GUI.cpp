@@ -601,7 +601,7 @@ PlayerProfile GUI::createProfile() {
     return playerProfile;
 }
 
-PlayerProfile GUI::getProfile(string name) {
+PlayerProfile GUI::getProfile(const std::string& name) {
     CSVWorker csv("../data/profiles.csv");
 
     // Get the user's profile that has the name entered
