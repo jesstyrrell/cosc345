@@ -1,3 +1,5 @@
+#include <random>
+
 #include "Player.hpp"
 #include "EquityCalculator.hpp"
 
@@ -60,6 +62,20 @@ void Player::show_hand() {
 
 void Player::reset_current_bet() {
     this->current_bet = 0;
+}
+
+string Player::generate_random_name() {
+    std::vector<string> animals = {"Dog", "Cat", "Fish", "Bird", "Elephant", "Lion", "Tiger", "Bear", "Penguin", "Panda", "Giraffe", "Horse", "Cow", "Pig", "Sheep", "Goat", "Chicken", "Duck", "Goose", "Turkey", "Ostrich", "Kangaroo", "Koala", "Sloth", "Monkey", "Gorilla", "Chimpanzee", "Orangutan", "Rabbit", "Frog", "Toad", "Turtle", "Snake", "Lizard", "Iguana", "Chameleon", "Alligator", "Crocodile", "Shark", "Whale", "Dolphin", "Octopus", "Squid", "Jellyfish", "Starfish", "Seahorse", "Crab", "Lobster", "Shrimp", "Clam", "Oyster", "Mussel", "Scallop", "Snail", "Slug", "Butterfly", "Moth", "Caterpillar", "Ant", "Bee", "Wasp", "Hornet", "Fly", "Mosquito", "Beetle", "Ladybug", "Grasshopper", "Cricket", "Dragonfly", "Damselfly", "Centipede", "Millipede", "Spider", "Tarantula", "Scorpion", "Tick", "Mite", "Flea", "Bedbug", "Cockroach", "Termite", "Praying Mantis", "Walking Stick", "Earwig", "Silverfish", "Firefly", "Glowworm", "Earthworm", "Leech", "Slug", "Snail", "Clam", "Oyster", "Mussel", "Scallop", "Squid", "Octopus", "Cuttlefish", "Nautilus", "Ammonite", "Trilobite", "Crab", "Lobster", "Shrimp", "Krill", "Barnacle", "Crayfish", "Cockroach", "Termite", "Praying Mantis", "Walking Stick", "Earwig", "Silverfish", "Firefly", "Glowworm", "Earthworm", "Leech", "Slug"};
+    std::vector<string> adjectives = {"Happy", "Sad", "Angry", "Excited", "Bored", "Tired", "Energetic", "Lazy", "Calm", "Anxious", "Nervous", "Confident", "Shy", "Brave", "Scared", "Proud", "Embarrassed", "Ashamed", "Guilty", "Jealous", "Envious", "Grateful", "Thankful", "Hopeful", "Hopeless", "Optimistic", "Pessimistic", "Curious", "Inquisitive", "Impatient", "Patient", "Polite", "Rude", "Kind", "Mean", "Generous", "Greedy", "Honest", "Dishonest", "Loyal", "Unfaithful", "Responsible", "Irresponsible", "Reliable", "Unreliable", "Trustworthy", "Untrustworthy", "Fair", "Unfair", "Forgiving", "Unforgiving", "Tolerant", "Intolerant", "Understanding", "Misunderstanding", "Sympathetic", "Unsympathetic", "Empathetic", "Apathetic", "Compassionate", "Heartless", "Caring", "Uncaring", "Affectionate", "Cold", "Warm", "Friendly", "Unfriendly", "Sociable", "Unsociable", "Outgoing", "Shy", "Introverted", "Extroverted", "Optimistic", "Pessimistic", "Cheerful", "Gloomy", "Joyful", "Sorrowful", "Playful", "Serious", "Silly", "Serious", "Clever", "Stupid", "Wise", "Foolish", "Smart", "Dumb", "Intelligent", "Ignorant", "Knowledgeable", "Uninformed", "Educated", "Uneducated", "Informed", "Uninformed", "Experienced", "Inexperienced", "Skilled", "Unskilled", "Talented", "Untalented", "Gifted", "Ungifted", "Creative", "Uncreative", "Imaginative", "Unimaginative", "Innovative", "Uninnovative", "Resourceful", "Unresourceful", "Adventurous" };
+    
+    random_device rd;
+    mt19937 gen(rd());
+    std::uniform_int_distribution<> animalIndex(0, animals.size() - 1);
+    std::uniform_int_distribution<> adjectiveIndex(0, adjectives.size() - 1);
+
+    string randomNumber = std::to_string(rand() % 1000 + 1);
+
+    return adjectives[adjectiveIndex(gen)] + " " + animals[animalIndex(gen)] + " " + randomNumber;
 }
 
 vector<float> Player::get_equity(vector<Card> communityCards, int numPlayers) {

@@ -15,6 +15,7 @@
 #include "src/HandEvaluator.hpp"
 #include "src/EquityCalculator.hpp"
 #include "src/GUI.hpp"
+#include "src/PlayerProfile.hpp"
 
 using namespace std;
 
@@ -29,25 +30,24 @@ int main(int argc, char* argv[]) {
     // Display the start screen
     GUI::displayStartScreen();
 
-    int menuChoice = GUI::displayMenu();
-    if (menuChoice == 0) {
+    MenuOption menuChoice = GUI::displayMenu();
+    if (menuChoice == MenuOption::QUIT) {
         GUI::displayEndMessage();
         return 0;
     }
 
     // Call the GUI method to get the players name, and let them play as guest
-    string playerName = GUI::signInMenu();
+    PlayerProfile currentPlayer = GUI::signInMenu();
     int numberOfPlayers = GUI::getNumberOfPlayers();
 
     
     std::vector<Player*> playerPointers;
-    HumanPlayer player = HumanPlayer(playerName, 1000);
+    HumanPlayer player = HumanPlayer(currentPlayer.name, 1000);
     playerPointers.push_back(&player);
 
     for(int i = 0; i < numberOfPlayers-1; i++){
-        string name = GUI::getRandomPlayerName();
-        cout << name << endl;
-        RandomPlayer *player = new RandomPlayer(name, 1000);
+        string randomPlayerName = GUI::getRandomPlayerName();
+        RandomPlayer *player = new RandomPlayer(randomPlayerName, 1000);
         playerPointers.push_back(player);
     }
 

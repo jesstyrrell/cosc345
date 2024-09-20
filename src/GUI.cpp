@@ -1,7 +1,14 @@
-﻿#include "Card.hpp"
+﻿#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <sstream>
+
+#include "Card.hpp"
 #include "Player.hpp"
 #include "GUI.hpp"
 #include "Game.hpp"
+#include "CSVWorker.hpp"
 
 // Define and initialize the static member variable
 Game* GUI::game = nullptr;
@@ -92,7 +99,6 @@ string GUI::getUserMove(bool canCheck, bool canRaise, bool canFold, bool canCall
  * @param minBet: int - Minimum bet size
  * @param maxBet: int - Maximum bet size
  */
-
 int GUI::getBetSizing(int minBet, int maxBet) {
     // Get user bet size
     // TODO: Test bet sizing input validation
@@ -255,62 +261,90 @@ void GUI::displayEndMessage() {
     std::cout << "--------------------------------" << std::endl;
 }
 
-int GUI::displayMenu() {
+MenuOption GUI::displayMenu() {
+    vector<string> acceptedInputs = {"", "p", "q"};
+
     std::cout << "1. Start Game (press Enter)" << std::endl;
     std::cout << "2. Quit (q)" << std::endl;
 
     std::string input;
     std::getline(std::cin, input);  // Read the entire line, allowing us to detect Enter
 
-    while (input != "q" && input != "") {
+    // While the user input is not in acceptedInputs, prompt the user for a valid input
+    while (std::find(acceptedInputs.begin(), acceptedInputs.end(), input) == acceptedInputs.end()) {
         std::cout << "Invalid input. Please enter a valid option: ";
         std::getline(std::cin, input);  // Use getline to capture the next input
     }
 
-    if (input == "q") {
-        return 0;
+    // Handle the user input
+    switch (input[0]) {
+        case 'q':
+            return QUIT;
+        default:
+            return START_GAME;
     }
-    return 1;
 }
 
-string GUI::signInMenu() {
+int GUI::getNumberOfPlayers() {
+    std::cout << "Enter the number of players: ";
+
+    int numPlayers;
+
+    // Asking the user for the number of players - bounded between 2 and 8
+    do {
+        std::cin >> numPlayers;
+
+        // Check if the input is valid
+        if (std::cin.fail() || numPlayers < 2 || numPlayers > 8) {
+            std::cin.clear(); // Clear the error state
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard invalid input
+            std::cout << "Invalid input. Please enter a number between 2 and 8: ";
+        }
+    } while (numPlayers < 2 || numPlayers > 8);
+
+    return numPlayers;
+}
+
+PlayerProfile GUI::signInMenu() {
+    enum MenuOption { SIGN_IN = 1, CREATE_PROFILE, PLAY_AS_GUEST };
+    const std::vector<std::string> acceptedInputs = {"1", "2", "3"};
+
     std::cout << "Select one of the following options:" << std::endl;
     std::cout << "1. Sign in with a name" << std::endl;
     std::cout << "2. Create profile" << std::endl;
     std::cout << "3. Play as guest" << std::endl;
 
     std::string input;
-    std::getline(std::cin, input);  // Read the entire line, allowing us to detect Enter
-    while(input != "3") {
-        if(input == "1" || input == "2") {
-            std::cout << "This feature is not yet implemented. Please select another option: ";
-            std::getline(std::cin, input);  // Use getline to capture the next input
-        } else {
-        std::cout << "Invalid input. Please enter a valid option: ";
-        std::getline(std::cin, input);  // Use getline to capture the next input
-    }}
-
-    std::string name;
-    std::cout << "Enter your name: ";
-    // Get the next line of input as the player name, allowing for spaces
-    std::getline(std::cin, name);
-    return name;
-}
-
-int GUI::getNumberOfPlayers() {
-    std::cout << "Enter the number of players: ";
-    int numPlayers;
-    while(true) {
-        std::cin >> numPlayers;
-        if (std::cin.fail() || numPlayers < 2 || numPlayers > 8) {
-            std::cin.clear(); // Clear the error state
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard invalid input
-            std::cout << "Invalid input. Please enter a number between 2 and 8: ";
-        } else {
-            break;
+    do {
+        std::getline(std::cin, input);
+        if (std::find(acceptedInputs.begin(), acceptedInputs.end(), input) == acceptedInputs.end()) {
+            std::cout << "Invalid input. Please enter a valid option: ";
         }
+    } while (std::find(acceptedInputs.begin(), acceptedInputs.end(), input) == acceptedInputs.end());
+
+    MenuOption choice = static_cast<MenuOption>(std::stoi(input));
+
+    switch (choice) {
+        case SIGN_IN: {
+            std::string name;
+            std::cout << "Enter your name: ";
+            std::getline(std::cin, name);
+            return GUI::getProfile(name);
+        }
+
+        case CREATE_PROFILE:
+            return GUI::createProfile();
+
+        case PLAY_AS_GUEST: {
+            std::string guestName;
+            std::cout << "Enter a name for guest play: ";
+            std::getline(std::cin, guestName);
+            return PlayerProfile({ guestName, 0 });
+        }
+
+        default:
+            throw std::runtime_error("Unexpected menu option");
     }
-    return numPlayers;
 }
 
 int GUI::endOfRoundMenu() {
@@ -339,8 +373,7 @@ void GUI::displayPlayerStack(Player* player) {
     std::cout << "    -----    " << std::endl;
 }
 
-string addString(string baseString, string newString, int x1, int y1)
-{
+string addString(string baseString, string newString, int x1, int y1) {
     // Split the base string and new string into lines
     vector<string> baseLines;
     vector<string> newLines;
@@ -389,7 +422,7 @@ string addString(string baseString, string newString, int x1, int y1)
     return result;
 }
 
-string getFileContents(string filePath){
+string getFileContents(string filePath) {
     // Get the contents of the file at the file path
     std::ifstream file(filePath);
     if (!file) {
@@ -406,7 +439,7 @@ string getFileContents(string filePath){
     return content;
 }
 
-string getCardString(Card& card){
+string getCardString(Card& card) {
     string suit = card.get_suit();
      
     string rank = card.get_rank();
@@ -434,7 +467,7 @@ string getCardString(Card& card){
     return cardContent;
 }
 
-void GUI::displayGameState(){
+void GUI::displayGameState() {
     Game game = getGame();
     vector<Player*> players = game.getPlayers();
     vector<Card> communityCards = game.getCommunityCards();
@@ -507,6 +540,7 @@ void GUI::displayPlayerMove(Player* player, string move, int size) {
     if (size != -1) { move += " " + to_string(size); }
     cout << player->get_name() << ": " << move << endl;
 }
+
 std::string GUI::getRandomPlayerName() {
     std::string startPath = getFilePathStart();
 
@@ -545,4 +579,38 @@ std::string GUI::getRandomPlayerName() {
     std::string randomAnimal = animalList[distrAnimal(gen)];
 
     return randomAdjective + randomAnimal;
+}
+
+PlayerProfile GUI::createProfile() {
+    CSVWorker csv("../data/profiles.csv");
+
+    // Check if a profile exists in the CSV file
+    std::string name;
+    int age;
+
+    std::cout << "Enter your name: ";
+    std::cin >> name;
+
+    std::cout << "Enter your age: ";
+    std::cin >> age;
+
+    PlayerProfile playerProfile = { name, age };
+    csv.addProfile(playerProfile);
+    csv.writeProfiles();
+
+    return playerProfile;
+}
+
+PlayerProfile GUI::getProfile(const std::string& name) {
+    CSVWorker csv("../data/profiles.csv");
+
+    // Get the user's profile that has the name entered
+    for (PlayerProfile profile : csv.readProfiles()) {
+        if (profile.name == name) {
+            return profile;
+        }
+    }
+
+    cout << "Profile not found. Playing as guest." << endl;
+    return PlayerProfile({ "Guest", 0 });
 }
