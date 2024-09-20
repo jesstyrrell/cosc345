@@ -36,8 +36,18 @@ class GUI {
         /// Pointer to the game object used for getting game state information
         static Game* game;
 
+        /**
+         * @brief Creates a new player profile.
+         * @return The newly created player profile.
+         */
         static PlayerProfile createProfile();
-        static PlayerProfile getProfile(); 
+
+        /**
+         * @brief Gets the profile of a player from the `./data/profiles.csv` file.
+         * @param name The name of the player.
+         * @return The profile of the player.
+         */
+        static PlayerProfile getProfile(string name); 
 
 
     public:
@@ -64,7 +74,7 @@ class GUI {
          * @brief Prompts the user to sign in.
          * @return The name of the user as a string.
          */
-        static string signInMenu();
+        static PlayerProfile signInMenu();
 
         /**
          * @brief Gets the number of players from the user.

@@ -265,7 +265,6 @@ MenuOption GUI::displayMenu() {
     vector<string> acceptedInputs = {"", "p", "q"};
 
     std::cout << "1. Start Game (press Enter)" << std::endl;
-    std::cout << "2. Create a profile (p)" << std::endl;
     std::cout << "2. Quit (q)" << std::endl;
 
     std::string input;
@@ -279,8 +278,6 @@ MenuOption GUI::displayMenu() {
 
     // Handle the user input
     switch (input[0]) {
-        case 'p':
-            return CREATE_PROFILE;
         case 'q':
             return QUIT;
         default:
@@ -308,28 +305,46 @@ int GUI::getNumberOfPlayers() {
     return numPlayers;
 }
 
-string GUI::signInMenu() {
+PlayerProfile GUI::signInMenu() {
+    enum MenuOption { SIGN_IN = 1, CREATE_PROFILE, PLAY_AS_GUEST };
+    const std::vector<std::string> acceptedInputs = {"1", "2", "3"};
+
     std::cout << "Select one of the following options:" << std::endl;
     std::cout << "1. Sign in with a name" << std::endl;
     std::cout << "2. Create profile" << std::endl;
     std::cout << "3. Play as guest" << std::endl;
 
     std::string input;
-    std::getline(std::cin, input);  // Read the entire line, allowing us to detect Enter
-    while(input != "3") {
-        if(input == "1" || input == "2") {
-            std::cout << "This feature is not yet implemented. Please select another option: ";
-            std::getline(std::cin, input);  // Use getline to capture the next input
-        } else {
-        std::cout << "Invalid input. Please enter a valid option: ";
-        std::getline(std::cin, input);  // Use getline to capture the next input
-    }}
+    do {
+        std::getline(std::cin, input);
+        if (std::find(acceptedInputs.begin(), acceptedInputs.end(), input) == acceptedInputs.end()) {
+            std::cout << "Invalid input. Please enter a valid option: ";
+        }
+    } while (std::find(acceptedInputs.begin(), acceptedInputs.end(), input) == acceptedInputs.end());
 
-    std::string name;
-    std::cout << "Enter your name: ";
-    // Get the next line of input as the player name, allowing for spaces
-    std::getline(std::cin, name);
-    return name;
+    MenuOption choice = static_cast<MenuOption>(std::stoi(input));
+
+    switch (choice) {
+        case SIGN_IN: {
+            std::string name;
+            std::cout << "Enter your name: ";
+            std::getline(std::cin, name);
+            return GUI::getProfile(name);
+        }
+
+        case CREATE_PROFILE:
+            return GUI::createProfile();
+
+        case PLAY_AS_GUEST: {
+            std::string guestName;
+            std::cout << "Enter a name for guest play: ";
+            std::getline(std::cin, guestName);
+            return PlayerProfile({ guestName, 0 });
+        }
+
+        default:
+            throw std::runtime_error("Unexpected menu option");
+    }
 }
 
 int GUI::endOfRoundMenu() {
@@ -358,8 +373,7 @@ void GUI::displayPlayerStack(Player* player) {
     std::cout << "    -----    " << std::endl;
 }
 
-string addString(string baseString, string newString, int x1, int y1)
-{
+string addString(string baseString, string newString, int x1, int y1) {
     // Split the base string and new string into lines
     vector<string> baseLines;
     vector<string> newLines;
@@ -408,7 +422,7 @@ string addString(string baseString, string newString, int x1, int y1)
     return result;
 }
 
-string getFileContents(string filePath){
+string getFileContents(string filePath) {
     // Get the contents of the file at the file path
     std::ifstream file(filePath);
     if (!file) {
@@ -425,7 +439,7 @@ string getFileContents(string filePath){
     return content;
 }
 
-string getCardString(Card& card){
+string getCardString(Card& card) {
     string suit = card.get_suit();
      
     string rank = card.get_rank();
@@ -453,7 +467,7 @@ string getCardString(Card& card){
     return cardContent;
 }
 
-void GUI::displayGameState(){
+void GUI::displayGameState() {
     Game game = getGame();
     vector<Player*> players = game.getPlayers();
     vector<Card> communityCards = game.getCommunityCards();
@@ -526,6 +540,7 @@ void GUI::displayPlayerMove(Player* player, string move, int size) {
     if (size != -1) { move += " " + to_string(size); }
     cout << player->get_name() << ": " << move << endl;
 }
+
 std::string GUI::getRandomPlayerName() {
     std::string startPath = getFilePathStart();
 
@@ -566,32 +581,6 @@ std::string GUI::getRandomPlayerName() {
     return randomAdjective + randomAnimal;
 }
 
-PlayerProfile GUI::chooseAccount() {
-    enum MenuOption { CREATE_PROFILE, PLAY, PLAY_AS_GUEST };
-    vector<string> acceptedInputs = {"1", "2", "3"};
-
-    // Ask the user if they want to create an account, play or play as guest
-    std::cout << "1. Create a profile" << std::endl;
-    std::cout << "2. Play" << std::endl;
-    std::cout << "3. Play as guest" << std::endl;
-
-    // While the user input is not in acceptedInputs, prompt the user for a valid input
-    std::string input;
-    do {
-        std::getline(std::cin, input);  
-    } while (std::find(acceptedInputs.begin(), acceptedInputs.end(), input) == acceptedInputs.end());
-
-    // Handle the user input
-    switch (std::stoi(input)) {
-        case CREATE_PROFILE:
-            return GUI::createProfile();
-        case PLAY:
-            return GUI::getProfile();
-        case PLAY_AS_GUEST:
-            return PlayerProfile({ "Guest", 0 });
-    }
-}
-
 PlayerProfile GUI::createProfile() {
     CSVWorker csv("../data/profiles.csv");
 
@@ -607,23 +596,21 @@ PlayerProfile GUI::createProfile() {
 
     PlayerProfile playerProfile = { name, age };
     csv.addProfile(playerProfile);
+    csv.writeProfiles();
 
     return playerProfile;
 }
 
-PlayerProfile GUI::getProfile() {
+PlayerProfile GUI::getProfile(string name) {
     CSVWorker csv("../data/profiles.csv");
 
-    std::string name; 
-    std::cout << "Enter your name: ";
-    std::cin >> name;
-
     // Get the user's profile that has the name entered
-    for (PlayerProfile profile : csv.getProfiles()) {
+    for (PlayerProfile profile : csv.readProfiles()) {
         if (profile.name == name) {
             return profile;
         }
     }
 
-    return PlayerProfile();
+    cout << "Profile not found. Playing as guest." << endl;
+    return PlayerProfile({ "Guest", 0 });
 }
