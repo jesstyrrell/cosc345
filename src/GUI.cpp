@@ -62,7 +62,7 @@ string GUI::getUserMove(bool canCheck, bool canRaise, bool canFold, bool canCall
 
     // Create message to user based on possible actions
     // TODO: format nicely
-    string message = "Enter your move: (";
+    string message = "";
     if (canFold) {
         message += "fold = f";
     }
@@ -75,7 +75,10 @@ string GUI::getUserMove(bool canCheck, bool canRaise, bool canFold, bool canCall
     if (canRaise) {
         message += ", raise = r";
     }
-    message += ") ";
+    if (message.length() >= 2 && message.substr(0, 2) == ", ") {
+        message = message.substr(2);
+    }
+    message = "Enter your move: (" + message + ") ";
 
 
     std::string move; 
