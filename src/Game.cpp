@@ -309,9 +309,9 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
     int currentPlayer;
     
     if(currentStage == Stage::FLOP){   // UTG is first to act if pre-flop
-        currentPlayer = button + 3 % numPlayers;
+        currentPlayer = (button + 3) % numPlayers;
     } else {    // Otherwise, the player to the left of the button is first to act
-        currentPlayer = button + 1 % numPlayers;
+        currentPlayer = (button + 1) % numPlayers;
         while(!inGame[currentPlayer]){
             currentPlayer = (currentPlayer + 1) % numPlayers;
         }
