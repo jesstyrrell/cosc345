@@ -34,7 +34,7 @@ class Game {
 
         const int BIG_BLIND = 2;
         const int SMALL_BLIND = 1;
-        const int STARTING_STACK = 1000;
+        const int STARTING_STACK = 10000000;
         int pot = 0;
         int button = 0; 
         int removedPlayerCount = 0;
@@ -118,6 +118,12 @@ class Game {
         bool getShowdown();
 
         /**
+         * @brief Returns the big blind.
+         * @return The value of the big blind.
+         */
+        int getBigBlind();
+
+        /**
          * @brief Converts a move string into a Move enum.
          * @param move The move as a string.
          * @return The corresponding Move enum value.
@@ -160,7 +166,7 @@ class Game {
         /**
          * @brief Plays a single hand of poker.
          */
-        void playHand(); 
+        void playHand(int millisecondDelay); 
 
         /**
          * @brief Processes a move made by the user.
@@ -179,7 +185,7 @@ class Game {
          * @param numPlayers The number of players in the game.
          * @return True if the betting round is successful, otherwise false.
          */
-        bool bettingRound(vector<bool>& inGame, int largestBet, int numPlayers);
+        bool bettingRound(vector<bool>& inGame, int largestBet, int numPlayers, int millisecondDelay);
 
         /**
          * @brief Determines the final winner of the game.

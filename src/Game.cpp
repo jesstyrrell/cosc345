@@ -68,6 +68,10 @@ bool Game::getShowdown() {
     return atShowdown;
 }
 
+int Game::getBigBlind() {
+    return BIG_BLIND;
+}
+
 /**
  * Award the pot to the winner of the hand
  * @param winner: Player* - The player object who won the hand
@@ -184,7 +188,7 @@ void Game::nextStage(){
  * 
  * Called in main.cpp to play a hand of poker
  */
-void Game::playHand() {
+void Game::playHand(int millisecondDelay) {
 
     // Deal cards out to the table 
     this->deal();
@@ -208,7 +212,7 @@ void Game::playHand() {
 
     // A loop for the 4 possible betting rounds
     for(int i = 0; i < 4; i ++){
-        if(this->bettingRound(inGame, largestBet, numPlayers)){
+        if(this->bettingRound(inGame, largestBet, numPlayers, millisecondDelay)){
             resetPlayerBets();
             break;
         }
@@ -227,12 +231,12 @@ void Game::playHand() {
     atShowdown = count(inGame.begin(), inGame.end(), true) > 1;
     GUI::displayGameState();
     // sleep for 1 second 
-    std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+    std::this_thread::sleep_for(std::chrono::milliseconds(millisecondDelay));
     // Award the pot to the winner/s
     this->awardPot(winners);
     GUI::displayGameState();
     // sleep for 1 second 
-    std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+    std::this_thread::sleep_for(std::chrono::milliseconds(millisecondDelay));
 
     atShowdown = false;
     // Move the button 
@@ -300,11 +304,11 @@ Player* Game::get_final_winner(vector<bool>& inGame) {
  * @param preflop: bool - Whether the betting round is pre-flop or not
  * @return bool - whether the entire hand should be ended
  */
-bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
+bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers, int millisecondDelay) {
     // TESTING: display game state 
     GUI::displayGameState();
     // sleep for 1 second 
-    std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+    std::this_thread::sleep_for(std::chrono::milliseconds(millisecondDelay));
 
     int currentPlayer;
     
@@ -345,7 +349,7 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
             // Perform the move for the player
 
             int betSize = makeMoveForUser(move, this->getPlayers()[currentPlayer], currentPlayer, largestBet);
-            std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+            std::this_thread::sleep_for(std::chrono::milliseconds(millisecondDelay));
 
             // If the player has folded, update the inGame vector
             if (betSize == -1) {
@@ -359,7 +363,7 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
                 largestBetPlayer = this->getPlayers()[currentPlayer];
             }
              GUI::displayGameState();
-             std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+             std::this_thread::sleep_for(std::chrono::milliseconds(millisecondDelay));
         }
 
         // Move to the next player

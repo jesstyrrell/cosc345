@@ -47,7 +47,9 @@ void Player::add_card_to_hand(Card card) {
 }
 
 void Player::clear_hand() {
-    this->hand.clear();
+    //this->hand.clear();
+    vector<Card>().swap(this->hand);
+    int test = 0;
 }
 
 int Player::get_current_bet() {

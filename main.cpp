@@ -40,14 +40,22 @@ int main(int argc, char* argv[]) {
     PlayerProfile currentPlayer = GUI::signInMenu();
     int numberOfPlayers = GUI::getNumberOfPlayers();
 
-    
+    bool testBBPerRound = true;
+    int startingStack = 1000;
     std::vector<Player*> playerPointers;
-    HumanPlayer player = HumanPlayer(currentPlayer.name, 1000);
-    playerPointers.push_back(&player);
+    if (testBBPerRound) {
+        startingStack = 10000000;
+        RandomPlayer player = RandomPlayer(currentPlayer.name, startingStack);
+        playerPointers.push_back(&player);
+    }
+    else {
+        HumanPlayer player = HumanPlayer(currentPlayer.name, startingStack);
+        playerPointers.push_back(&player);
+    }
 
     for(int i = 0; i < numberOfPlayers-1; i++){
         string randomPlayerName = GUI::getRandomPlayerName();
-        RandomPlayer *player = new RandomPlayer(randomPlayerName, 1000);
+        RandomPlayer *player = new RandomPlayer(randomPlayerName, startingStack);
         playerPointers.push_back(player);
     }
 
@@ -57,16 +65,22 @@ int main(int argc, char* argv[]) {
 
     GUI::displayGameState();
     
+    int Round = 0;
     // Start a game loop
     while(true){
+        Round++;
         // Play a hand
-        game.playHand();
+        game.playHand(10);
 
         // Check if the player wants to play another hand
         if (playerPointers[0]->endOfHand() != 1) {
             break;
         }
-
+        if (testBBPerRound && Round >= 100) {
+            cout << (playerPointers[0]->get_stack() - startingStack) / (game.getBigBlind() * Round) << endl;
+            GUI::endOfRoundMenu();
+            break;
+        }
     }
 
     // Display the end message
