@@ -2,12 +2,13 @@ digraph "Deck::remove_card"
 {
  // INTERACTIVE_SVG=YES
  // LATEX_PDF_SIZE
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node1 [label="Deck::remove_card",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Removes a specified card from the deck."];
-  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="Card::get_rank",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_card.html#a684299c7ec09b07b09ff1072c7b908e3",tooltip="Gets the rank of the card."];
-  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="Card::get_suit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_card.html#a9df0b3ca31842ad2c8669cae24e543bf",tooltip="Gets the suit of the card."];
+  Node1 [id="Node000001",label="Deck::remove_card",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Removes a specified card from the deck."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Card::get_rank",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_card.html#a684299c7ec09b07b09ff1072c7b908e3",tooltip="Gets the rank of the card."];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Card::get_suit",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_card.html#a9df0b3ca31842ad2c8669cae24e543bf",tooltip="Gets the suit of the card."];
 }

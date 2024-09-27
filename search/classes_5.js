@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['mockgui_231',['MockGUI',['../class_mock_g_u_i.html',1,'']]]
+  ['handevaluator_0',['HandEvaluator',['../class_hand_evaluator.html',1,'']]],
+  ['handevaluatortest_1',['HandEvaluatorTest',['../class_hand_evaluator_test.html',1,'']]],
+  ['humanplayer_2',['HumanPlayer',['../class_human_player.html',1,'']]],
+  ['humanplayertest_3',['HumanPlayerTest',['../class_human_player_test.html',1,'']]]
 ];

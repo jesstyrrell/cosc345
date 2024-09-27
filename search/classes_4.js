@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['handevaluator_227',['HandEvaluator',['../class_hand_evaluator.html',1,'']]],
-  ['handevaluatortest_228',['HandEvaluatorTest',['../class_hand_evaluator_test.html',1,'']]],
-  ['humanplayer_229',['HumanPlayer',['../class_human_player.html',1,'']]],
-  ['humanplayertest_230',['HumanPlayerTest',['../class_human_player_test.html',1,'']]]
+  ['game_0',['Game',['../class_game.html',1,'']]],
+  ['gametest_1',['GameTest',['../class_game_test.html',1,'']]],
+  ['gui_2',['GUI',['../class_g_u_i.html',1,'']]]
 ];

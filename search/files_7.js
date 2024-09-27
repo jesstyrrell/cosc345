@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['randomplayer_2ecpp_259',['RandomPlayer.cpp',['../_random_player_8cpp.html',1,'']]],
-  ['readme_2emd_260',['README.md',['../_r_e_a_d_m_e_8md.html',1,'(Global Namespace)'],['../tests_2_r_e_a_d_m_e_8md.html',1,'(Global Namespace)']]]
+  ['player_2ecpp_0',['Player.cpp',['../_player_8cpp.html',1,'']]],
+  ['player_2ehpp_1',['Player.hpp',['../_player_8hpp.html',1,'']]],
+  ['playerprofile_2ehpp_2',['PlayerProfile.hpp',['../_player_profile_8hpp.html',1,'']]]
 ];

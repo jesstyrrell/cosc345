@@ -2,14 +2,15 @@ digraph "GUI::getUserMove"
 {
  // INTERACTIVE_SVG=YES
  // LATEX_PDF_SIZE
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="RL";
-  Node1 [label="GUI::getUserMove",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Prompts the user for their move."];
-  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="HumanPlayer::getMove",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_human_player.html#a018a39db440dfa6af27780dde69a2d9b",tooltip="Gets the player's move during their turn."];
-  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="TEST_F",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test___human_player_8cc.html#a38437ea9b1784f9346622a2135020993",tooltip=" "];
-  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="HumanPlayerTest::SetUp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_human_player_test.html#af7aa343e83c6efc46920bb9089b3b9f9",tooltip=" "];
+  Node1 [id="Node000001",label="GUI::getUserMove",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Prompts the user for their move."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="HumanPlayer::getMove",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_human_player.html#a66f9b60ee68cf69ac693aafbec113343",tooltip="Gets the player's move during their turn."];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="TEST_F",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$test___human_player_8cc.html#a38437ea9b1784f9346622a2135020993",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="HumanPlayerTest::SetUp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_human_player_test.html#af7aa343e83c6efc46920bb9089b3b9f9",tooltip=" "];
 }

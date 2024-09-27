@@ -2,14 +2,15 @@ digraph "HumanPlayerTest::SetUp"
 {
  // INTERACTIVE_SVG=YES
  // LATEX_PDF_SIZE
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node1 [label="HumanPlayerTest::SetUp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
-  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="GUI::endOfRoundMenu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_u_i.html#ac7211e8e1f154e8e729921afe5d58225",tooltip="Displays the menu at the end of a round."];
-  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="GUI::getBetSizing",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_u_i.html#a62c09a07607f5f182e0318e7ff29fd04",tooltip="Prompts the user for bet sizing."];
-  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="GUI::getUserMove",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_u_i.html#a90c3a671452b797db9f8ba481c84767c",tooltip="Prompts the user for their move."];
+  Node1 [id="Node000001",label="HumanPlayerTest::SetUp",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="GUI::endOfRoundMenu",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_g_u_i.html#ac7211e8e1f154e8e729921afe5d58225",tooltip="Displays the menu at the end of a round."];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="GUI::getBetSizing",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_g_u_i.html#a62c09a07607f5f182e0318e7ff29fd04",tooltip="Prompts the user for bet sizing."];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="GUI::getUserMove",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_g_u_i.html#a90c3a671452b797db9f8ba481c84767c",tooltip="Prompts the user for their move."];
 }

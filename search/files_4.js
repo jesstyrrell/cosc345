@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['handevaluator_2ecpp_250',['HandEvaluator.cpp',['../_hand_evaluator_8cpp.html',1,'']]],
-  ['handevaluator_2ehpp_251',['HandEvaluator.hpp',['../_hand_evaluator_8hpp.html',1,'']]],
-  ['humanplayer_2ecpp_252',['HumanPlayer.cpp',['../_human_player_8cpp.html',1,'']]],
-  ['humanplayer_2ehpp_253',['HumanPlayer.hpp',['../_human_player_8hpp.html',1,'']]]
+  ['game_2ecpp_0',['Game.cpp',['../_game_8cpp.html',1,'']]],
+  ['game_2ehpp_1',['Game.hpp',['../_game_8hpp.html',1,'']]],
+  ['gui_2ecpp_2',['GUI.cpp',['../_g_u_i_8cpp.html',1,'']]],
+  ['gui_2ehpp_3',['GUI.hpp',['../_g_u_i_8hpp.html',1,'']]]
 ];
