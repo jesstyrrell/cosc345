@@ -5,7 +5,7 @@
 #include <string>
 #include <random>
 #include <ctime>
-#include <cstdlib> 
+#include <cstdlib>
 #include <cstring>
 
 #include "src/Card.hpp"
@@ -16,6 +16,7 @@
 #include "src/EquityCalculator.hpp"
 #include "src/GUI.hpp"
 #include "src/PlayerProfile.hpp"
+#include "src/BasicPlayer.cpp"
 
 using namespace std;
 
@@ -47,7 +48,7 @@ int main(int argc, char* argv[]) {
 
     for(int i = 0; i < numberOfPlayers-1; i++){
         string randomPlayerName = GUI::getRandomPlayerName();
-        RandomPlayer *player = new RandomPlayer(randomPlayerName, 1000);
+        BasicPlayer *player = new BasicPlayer(randomPlayerName, 1000);
         playerPointers.push_back(player);
     }
 

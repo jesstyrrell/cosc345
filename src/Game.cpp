@@ -227,12 +227,12 @@ void Game::playHand() {
     atShowdown = count(inGame.begin(), inGame.end(), true) > 1;
     GUI::displayGameState();
     // sleep for 1 second 
-    std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+    // std::this_thread::sleep_for(std::chrono::milliseconds(2000));
     // Award the pot to the winner/s
     this->awardPot(winners);
     GUI::displayGameState();
     // sleep for 1 second 
-    std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+    // std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 
     atShowdown = false;
     // Move the button 
@@ -252,17 +252,17 @@ void Game::playHand() {
         totalStack += player->get_stack();
         
         if(player->get_stack() <= 0){
-            cout << player->get_name() << "'s stack: " << player->get_stack() << endl;
-            cout << "Player stack too small, removing from game" << endl;
+            // cout << player->get_name() << "'s stack: " << player->get_stack() << endl;
+            // cout << "Player stack too small, removing from game" << endl;
             // Remove the player from the players vector
             this->players.erase(remove(players.begin(), players.end(), player), players.end());
             this->removedPlayerCount++;
             // Print all the names of the players in the game
             for (Player* player : this->getPlayers()) {
-                cout << player->get_name() << endl;
+                // cout << player->get_name() << endl;
             }
             // print the length of the players vector
-            cout << "Length of players vector: " << this->getPlayers().size() << endl;
+            // cout << "Length of players vector: " << this->getPlayers().size() << endl;
             // while(true){}
 
         }
@@ -304,7 +304,7 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
     // TESTING: display game state 
     GUI::displayGameState();
     // sleep for 1 second 
-    std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+    // std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 
     int currentPlayer;
     
@@ -333,19 +333,21 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
         
             Player* player = this->getPlayers()[currentPlayer];
 
-            // TODO: make vars for stack size, current bet etc 
+            // Get the current number of players in the hand
+            int numPlayersInHand = count(inGame.begin(), inGame.end(), true);
+
             bool canCheck = (largestBet == this->getPlayers()[currentPlayer]->get_current_bet()) || (this->getPlayers()[currentPlayer]->get_stack() == 0);
             bool canRaise = this->getPlayers()[currentPlayer]->get_stack() + this->getPlayers()[currentPlayer]->get_current_bet() > largestBet;
             // A player can only fold or call if they are not the largest better 
             bool canFold = this->getPlayers()[currentPlayer]->get_current_bet() != largestBet && this->getPlayers()[currentPlayer]->get_stack() > 0;
             bool canCall = canFold;
             // Get the player's move
-            string move = player->getMove(canCheck, canRaise, canFold, canCall);
+            string move = player->getMove(canCheck, canRaise, canFold, canCall, community_cards, largestBet, numPlayersInHand);
 
             // Perform the move for the player
 
             int betSize = makeMoveForUser(move, this->getPlayers()[currentPlayer], currentPlayer, largestBet);
-            std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+            // std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 
             // If the player has folded, update the inGame vector
             if (betSize == -1) {
@@ -359,7 +361,7 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
                 largestBetPlayer = this->getPlayers()[currentPlayer];
             }
              GUI::displayGameState();
-             std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+            //  std::this_thread::sleep_for(std::chrono::milliseconds(2000));
         }
 
         // Move to the next player

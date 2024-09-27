@@ -4,18 +4,21 @@
 #include <vector>
 #include <string>
 
+#include "Game.hpp"
 #include "Card.hpp"
 
 using namespace std;
+
+class Game;
 
 /**
  * @class Player
  * @brief Represents a human player in the poker game.
  */
-class HumanPlayer {
+class RandomPlayer {
 
 public:
-
+    std::default_random_engine rng;
     /**
      * @brief Gets the human player's move during their turn by calling the getPlayerMove method in GUI class.
      * @param canCheck Whether the player can check.
