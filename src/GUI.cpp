@@ -265,7 +265,7 @@ void GUI::displayEndMessage() {
 }
 
 MenuOption GUI::displayMenu() {
-    vector<string> acceptedInputs = {"", "p", "q"};
+    vector<string> acceptedInputs = {"", "p", "q", "1", "2"};
 
     std::cout << "1. Start Game (press Enter)" << std::endl;
     std::cout << "2. Quit (q)" << std::endl;
@@ -282,6 +282,8 @@ MenuOption GUI::displayMenu() {
     // Handle the user input
     switch (input[0]) {
         case 'q':
+            return QUIT;
+        case '2':
             return QUIT;
         default:
             return START_GAME;

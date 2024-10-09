@@ -87,7 +87,8 @@ TEST_F(GameTest, AwardPot) {
     Game game = createGameWithPlayers(2);
     game.setPot(100);
     std::vector<Player*> winners = {game.getPlayers()[0]};
-    game.awardPot(winners);
+    std::vector<bool> inGame = {true, true};
+    game.awardPot(winners, inGame);
     EXPECT_EQ(game.getPot(), 0);
     EXPECT_EQ(winners[0]->get_stack(), 1100);
 }
