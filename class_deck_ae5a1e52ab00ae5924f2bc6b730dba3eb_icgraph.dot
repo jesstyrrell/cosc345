@@ -29,10 +29,13 @@ digraph "Deck::shuffle"
   Node10 -> Node11 [id="edge11_Node000010_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node11 [id="Node000011",label="Game::playHand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game.html#ab72401c43b303a37dec67f3d6b75a927",tooltip="Plays a single hand of poker."];
   Node11 -> Node12 [id="edge12_Node000011_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node12 [id="Node000012",label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97",tooltip=" "];
-  Node10 -> Node13 [id="edge13_Node000010_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node13 [id="Node000013",label="TEST",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$test___deck_8cc.html#ac5583231cd0f55417687592b8b1ba700",tooltip=" "];
-  Node1 -> Node13 [id="edge14_Node000001_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node14 [id="edge15_Node000001_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node14 [id="Node000014",label="TEST",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$test___deck_8cc.html#a0a136d376e0d376b3f455c72ad67950f",tooltip=" "];
+  Node12 [id="Node000012",label="playGame",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8cpp.html#a4cbfdb17bf51e00546880626f7e80429",tooltip=" "];
+  Node12 -> Node13 [id="edge13_Node000012_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97",tooltip=" "];
+  Node12 -> Node12 [id="edge14_Node000012_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node10 -> Node14 [id="edge15_Node000010_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="TEST",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$test___deck_8cc.html#ac5583231cd0f55417687592b8b1ba700",tooltip=" "];
+  Node1 -> Node14 [id="edge16_Node000001_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node15 [id="edge17_Node000001_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="TEST",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$test___deck_8cc.html#a0a136d376e0d376b3f455c72ad67950f",tooltip=" "];
 }

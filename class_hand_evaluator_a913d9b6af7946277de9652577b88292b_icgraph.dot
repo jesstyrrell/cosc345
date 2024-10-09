@@ -14,8 +14,11 @@ digraph "HandEvaluator::evaluateTable"
   Node3 -> Node4 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="Game::playHand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game.html#ab72401c43b303a37dec67f3d6b75a927",tooltip="Plays a single hand of poker."];
   Node4 -> Node5 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97",tooltip=" "];
-  Node3 -> Node6 [id="edge5_Node000003_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node6 [id="Node000006",label="TEST_F",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$test___game_8cc.html#adf97e005acdc02b38d612eabddf53792",tooltip=" "];
-  Node2 -> Node4 [id="edge6_Node000002_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="playGame",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8cpp.html#a4cbfdb17bf51e00546880626f7e80429",tooltip=" "];
+  Node5 -> Node6 [id="edge5_Node000005_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97",tooltip=" "];
+  Node5 -> Node5 [id="edge6_Node000005_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 -> Node7 [id="edge7_Node000003_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="TEST_F",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$test___game_8cc.html#adf97e005acdc02b38d612eabddf53792",tooltip=" "];
+  Node2 -> Node4 [id="edge8_Node000002_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

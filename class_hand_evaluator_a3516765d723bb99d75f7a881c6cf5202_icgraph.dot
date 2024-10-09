@@ -33,8 +33,11 @@ digraph "HandEvaluator::checkForFlush"
   Node12 -> Node13 [id="edge13_Node000012_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node13 [id="Node000013",label="Game::playHand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game.html#ab72401c43b303a37dec67f3d6b75a927",tooltip="Plays a single hand of poker."];
   Node13 -> Node14 [id="edge14_Node000013_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node14 [id="Node000014",label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97",tooltip=" "];
-  Node12 -> Node15 [id="edge15_Node000012_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node15 [id="Node000015",label="TEST_F",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$test___game_8cc.html#adf97e005acdc02b38d612eabddf53792",tooltip=" "];
-  Node11 -> Node13 [id="edge16_Node000011_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="playGame",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8cpp.html#a4cbfdb17bf51e00546880626f7e80429",tooltip=" "];
+  Node14 -> Node15 [id="edge15_Node000014_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97",tooltip=" "];
+  Node14 -> Node14 [id="edge16_Node000014_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node12 -> Node16 [id="edge17_Node000012_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node16 [id="Node000016",label="TEST_F",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$test___game_8cc.html#adf97e005acdc02b38d612eabddf53792",tooltip=" "];
+  Node11 -> Node13 [id="edge18_Node000011_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }
