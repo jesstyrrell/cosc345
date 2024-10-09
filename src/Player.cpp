@@ -71,6 +71,10 @@ void Player::reset_total_bet(){
     this->totalBetThisHand = 0;
 }
 
+void Player::setTotalBet(int amount) {
+    this->totalBetThisHand = amount;
+}
+
 void Player::reset_current_bet() {
     this->current_bet = 0;
 }

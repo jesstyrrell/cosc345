@@ -79,17 +79,17 @@ void Game::awardPot(vector<Player*> winners, vector<bool>& inGame) {
     while(pot > 0){
         count++;
         if (winners.size() == 1) {
-            cout << "Winner: " << winners[0]->get_name() << endl;
             Player* winner = winners[0];
             int winAmount = 0;
             int amountBet = winner->get_total_bet();
 
             for (Player* player : players) {
                 winAmount += min(player->get_total_bet(), amountBet);
+                // reduce each players total bet
+                player->setTotalBet(max(0, player->get_total_bet() - amountBet));
                 cout << player->get_total_bet() << endl;
             }
             winner->win(min(winAmount, (int)(pot)));
-            cout << winAmount << endl;
             if(winAmount > pot){
                 pot = 0;
             } else {
@@ -99,6 +99,7 @@ void Game::awardPot(vector<Player*> winners, vector<bool>& inGame) {
             inGame[distance(players.begin(), find(players.begin(), players.end(), winner))] = false;
             winners = this->getWinner(this->getPlayers(), this->community_cards, inGame);
         } else {
+
             // Sort the winners by total bet (smallest to largest)
             sort(winners.begin(), winners.end(), [](Player* a, Player* b) {
                 return a->get_total_bet() < b->get_total_bet();
@@ -112,11 +113,13 @@ void Game::awardPot(vector<Player*> winners, vector<bool>& inGame) {
                 int amountBet = winner->get_total_bet();
                 for(Player* player : players){
                     winAmount += min(player->get_total_bet(), amountBet);
+                    // reduce each players total bet
+                    player->setTotalBet(max(0, player->get_total_bet() - amountBet));
                 }
                 // Award every winner the same amount 
-                winner->win((winAmount-cumulativeAmountWon)/ numWinners + cumulativeAmountWon);
-                this->pot -= (winAmount-cumulativeAmountWon)/ numWinners + cumulativeAmountWon;
-                cumulativeAmountWon += winAmount;
+                winner->win(((winAmount))/ numWinners + cumulativeAmountWon);
+                this->pot -= ((winAmount))/ numWinners + cumulativeAmountWon;
+                cumulativeAmountWon += ((winAmount))/ numWinners;
                 numWinners--;
             }
 
@@ -274,7 +277,7 @@ void Game::playHand() {
     atShowdown = count(inGame.begin(), inGame.end(), true) > 1;
     GUI::displayGameState();
     // sleep for 1 second 
-    std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+    // std::this_thread::sleep_for(std::chrono::milliseconds(2000));
     // Award the pot to the winner/s
     this->awardPot(winners, inGame);
     GUI::displayGameState();

@@ -100,6 +100,12 @@ class Player {
         int get_total_bet();
 
         /**
+         * @brief Sets the total amount the player has bet this hand.
+         * @param amount The total amount the player has bet this hand.
+         */
+        void setTotalBet(int amount);
+
+        /**
          * @brief Resets the player's current bet to zero.
          */
         void reset_current_bet();
