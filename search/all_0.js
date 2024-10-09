@@ -7,5 +7,5 @@ var searchData=
   ['addstring_4',['addString',['../_g_u_i_8cpp.html#ae6720e4bc4b25d366b73e9fc9b8afd4b',1,'GUI.cpp']]],
   ['age_5',['age',['../struct_player_profile.html#a247f35b94d10cc4c0344200f3c68f60b',1,'PlayerProfile']]],
   ['atshowdown_6',['atShowdown',['../class_game.html#a2f39584e65a512530a723f4b927ddc42',1,'Game']]],
-  ['awardpot_7',['awardPot',['../class_game.html#a9e75306bf8f51c5213e2ffceb46f801f',1,'Game']]]
+  ['awardpot_7',['awardPot',['../class_game.html#ac0b29143b66a8cecb267b54ac84deb06',1,'Game']]]
 ];

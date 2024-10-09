@@ -76,7 +76,7 @@ $(function() {
 <li>add_player()&#160;:&#160;<a class="el" href="class_game.html#a57916fe5cb55a85464371173571cf681">Game</a></li>
 <li>addBlindsToPot()&#160;:&#160;<a class="el" href="class_game.html#a2c46bbc0e0acda18575fc9a82481a95a">Game</a></li>
 <li>addProfile()&#160;:&#160;<a class="el" href="class_c_s_v_worker.html#ac98b30f76d058e7fff41a92382c7ecb5">CSVWorker</a></li>
-<li>awardPot()&#160;:&#160;<a class="el" href="class_game.html#a9e75306bf8f51c5213e2ffceb46f801f">Game</a></li>
+<li>awardPot()&#160;:&#160;<a class="el" href="class_game.html#ac0b29143b66a8cecb267b54ac84deb06">Game</a></li>
 </ul>
 
 
@@ -156,6 +156,7 @@ $(function() {
 <li>get_rank()&#160;:&#160;<a class="el" href="class_card.html#a684299c7ec09b07b09ff1072c7b908e3">Card</a></li>
 <li>get_stack()&#160;:&#160;<a class="el" href="class_player.html#aca2f65a65461c322a0563ae0482be213">Player</a></li>
 <li>get_suit()&#160;:&#160;<a class="el" href="class_card.html#a9df0b3ca31842ad2c8669cae24e543bf">Card</a></li>
+<li>get_total_bet()&#160;:&#160;<a class="el" href="class_player.html#a37ed1e9eb87f6cf207ba4a1e6716686a">Player</a></li>
 <li>getBetSizing()&#160;:&#160;<a class="el" href="class_basic_player.html#aaf57921cc3b59ac7eb089cbb4118c895">BasicPlayer</a>, <a class="el" href="class_g_u_i.html#a62c09a07607f5f182e0318e7ff29fd04">GUI</a>, <a class="el" href="class_human_player.html#a5e800cdb7206b3a5421959087e26af2e">HumanPlayer</a>, <a class="el" href="class_player.html#ae9d26573718b00460800539a32916288">Player</a>, <a class="el" href="class_random_player.html#a2f098d614d0b7dc889ede922051c561f">RandomPlayer</a></li>
 <li>getButton()&#160;:&#160;<a class="el" href="class_game.html#a4760c827f1396dfba471b22a79a4f7ee">Game</a></li>
 <li>getCommunityCards()&#160;:&#160;<a class="el" href="class_game.html#ae8d1705be89f97f5ef13ba1a460502f2">Game</a></li>
@@ -205,15 +206,18 @@ $(function() {
 <li>remove_card()&#160;:&#160;<a class="el" href="class_deck.html#a61714386178ebc83bfa95b838db0adf1">Deck</a></li>
 <li>reset()&#160;:&#160;<a class="el" href="class_deck.html#a14aa4f2f94b6b880cd575cf17af26762">Deck</a></li>
 <li>reset_current_bet()&#160;:&#160;<a class="el" href="class_player.html#a715f618c366e6787c0c9b40f76d9fea8">Player</a></li>
+<li>reset_total_bet()&#160;:&#160;<a class="el" href="class_player.html#abd7fd847a2366e5def25e054016ec457">Player</a></li>
 <li>resetCommunityCards()&#160;:&#160;<a class="el" href="class_game.html#a884c074f31c3d278f026360fe28ee1c8">Game</a></li>
 <li>resetPlayerBets()&#160;:&#160;<a class="el" href="class_game.html#a69614c930626006cd0b3e644bc9cc613">Game</a></li>
 <li>resetPlayerHands()&#160;:&#160;<a class="el" href="class_game.html#adc54b1823a5d8d5221d7bf74e924e145">Game</a></li>
+<li>resetPlayerTotalBets()&#160;:&#160;<a class="el" href="class_game.html#a1882570f0a56d879af6a95e6075ac186">Game</a></li>
 </ul>
 
 
 <h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
 <li>setGame()&#160;:&#160;<a class="el" href="class_g_u_i.html#afbedd68995919c50a7298de4735b77c6">GUI</a></li>
 <li>setPot()&#160;:&#160;<a class="el" href="class_game.html#acf5aaf9c3d8df910021de38a4c5f6cb6">Game</a></li>
+<li>setTotalBet()&#160;:&#160;<a class="el" href="class_player.html#a2278cd03e59d4dccdb959714ecd32e47">Player</a></li>
 <li>SetUp()&#160;:&#160;<a class="el" href="class_game_test.html#afa1888507fe2f63b370f4b122ca880bb">GameTest</a>, <a class="el" href="class_hand_evaluator_test.html#a66b16f750ab1512628c0e1170c04edde">HandEvaluatorTest</a>, <a class="el" href="class_human_player_test.html#af7aa343e83c6efc46920bb9089b3b9f9">HumanPlayerTest</a>, <a class="el" href="class_player_test.html#a973b057125645aaf92a6c29cc9265cfe">PlayerTest</a>, <a class="el" href="class_random_player_test.html#a6c42f1734723c6cab4b5bbdc10518973">RandomPlayerTest</a></li>
 <li>show_hand()&#160;:&#160;<a class="el" href="class_player.html#a888eabd56fb4f223ebcb78ae11aa5521">Player</a></li>
 <li>shuffle()&#160;:&#160;<a class="el" href="class_deck.html#ae5a1e52ab00ae5924f2bc6b730dba3eb">Deck</a></li>
@@ -236,7 +240,7 @@ $(function() {
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 27 2024 03:15:06 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Wed Oct 9 2024 09:00:38 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

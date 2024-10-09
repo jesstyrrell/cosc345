@@ -5,5 +5,5 @@ var searchData=
   ['addblindstopot_2',['addBlindsToPot',['../class_game.html#a2c46bbc0e0acda18575fc9a82481a95a',1,'Game']]],
   ['addprofile_3',['addProfile',['../class_c_s_v_worker.html#ac98b30f76d058e7fff41a92382c7ecb5',1,'CSVWorker']]],
   ['addstring_4',['addString',['../_g_u_i_8cpp.html#ae6720e4bc4b25d366b73e9fc9b8afd4b',1,'GUI.cpp']]],
-  ['awardpot_5',['awardPot',['../class_game.html#a9e75306bf8f51c5213e2ffceb46f801f',1,'Game']]]
+  ['awardpot_5',['awardPot',['../class_game.html#ac0b29143b66a8cecb267b54ac84deb06',1,'Game']]]
 ];

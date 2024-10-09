@@ -15,6 +15,6 @@ digraph "Player"
   Node5 -> Node4 [id="edge4_Node000004_Node000005",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" elements",fontcolor="grey" ];
   Node5 [id="Node000005",label="Card",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_card.html",tooltip="Represents a single card in a deck of cards. Each card has a suit and a rank."];
   Node2 -> Node5 [id="edge5_Node000005_Node000002",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" rank\nsuit",fontcolor="grey" ];
-  Node6 -> Node1 [id="edge6_Node000001_Node000006",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" current_bet\nstack",fontcolor="grey" ];
+  Node6 -> Node1 [id="edge6_Node000001_Node000006",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" current_bet\nstack\ntotalBetThisHand",fontcolor="grey" ];
   Node6 [id="Node000006",label="int",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
 }

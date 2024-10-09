@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['player_0',['player',['../class_player.html',1,'Player'],['../class_player_test.html#a9563ee500fff5fd525e45356e9a77eee',1,'PlayerTest::player'],['../class_random_player_test.html#aa4e8e45b6a25bb2051cfacf79fd11bfc',1,'RandomPlayerTest::player'],['../class_player.html#af94221777924e4498b535e52f1dd3c44',1,'Player::Player()']]],
+  ['player_0',['player',['../class_player.html',1,'Player'],['../class_player.html#af94221777924e4498b535e52f1dd3c44',1,'Player::Player()'],['../class_player_test.html#a9563ee500fff5fd525e45356e9a77eee',1,'PlayerTest::player'],['../class_random_player_test.html#aa4e8e45b6a25bb2051cfacf79fd11bfc',1,'RandomPlayerTest::player']]],
   ['player_2ecpp_1',['Player.cpp',['../_player_8cpp.html',1,'']]],
   ['player_2ehpp_2',['Player.hpp',['../_player_8hpp.html',1,'']]],
   ['player_5fbutton_5fpositions_3',['PLAYER_BUTTON_POSITIONS',['../class_g_u_i.html#a1c883c08330527a2d48d21280dab7450',1,'GUI']]],

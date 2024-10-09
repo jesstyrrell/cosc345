@@ -21,7 +21,7 @@ digraph "RandomPlayerTest"
   Node8 -> Node7 [id="edge7_Node000007_Node000008",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" elements",fontcolor="grey" ];
   Node8 [id="Node000008",label="Card",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_card.html",tooltip="Represents a single card in a deck of cards. Each card has a suit and a rank."];
   Node5 -> Node8 [id="edge8_Node000008_Node000005",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" rank\nsuit",fontcolor="grey" ];
-  Node9 -> Node4 [id="edge9_Node000004_Node000009",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" current_bet\nstack",fontcolor="grey" ];
+  Node9 -> Node4 [id="edge9_Node000004_Node000009",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" current_bet\nstack\ntotalBetThisHand",fontcolor="grey" ];
   Node9 [id="Node000009",label="int",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
   Node10 -> Node3 [id="edge10_Node000003_Node000010",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" rng",fontcolor="grey" ];
   Node10 [id="Node000010",label="default_random_engine",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];

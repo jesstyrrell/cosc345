@@ -1,4 +1,4 @@
-digraph "Game::getWinner"
+digraph "Player::get_total_bet"
 {
  // INTERACTIVE_SVG=YES
  // LATEX_PDF_SIZE
@@ -6,7 +6,7 @@ digraph "Game::getWinner"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="RL";
-  Node1 [id="Node000001",label="Game::getWinner",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Determines the winner(s) of the current hand."];
+  Node1 [id="Node000001",label="Player::get_total_bet",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Gets the total amount the player has bet this hand."];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="Game::awardPot",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game.html#ac0b29143b66a8cecb267b54ac84deb06",tooltip="Awards the pot to the winning players."];
   Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -15,5 +15,4 @@ digraph "Game::getWinner"
   Node4 [id="Node000004",label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97",tooltip=" "];
   Node2 -> Node5 [id="edge4_Node000002_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node5 [id="Node000005",label="TEST_F",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$test___game_8cc.html#adf97e005acdc02b38d612eabddf53792",tooltip=" "];
-  Node1 -> Node3 [id="edge5_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

@@ -163,11 +163,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="test___game_8cc_source.html#l00219">219</a> of file <a class="el" href="test___game_8cc_source.html">test_Game.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  219</span>                                {</div>
-<div class="line"><span class="lineno">  220</span>    ::testing::InitGoogleTest(&amp;argc, argv);</div>
-<div class="line"><span class="lineno">  221</span>    <span class="keywordflow">return</span> RUN_ALL_TESTS();</div>
-<div class="line"><span class="lineno">  222</span>}</div>
+<p class="definition">Definition at line <a class="el" href="test___game_8cc_source.html#l00220">220</a> of file <a class="el" href="test___game_8cc_source.html">test_Game.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  220</span>                                {</div>
+<div class="line"><span class="lineno">  221</span>    ::testing::InitGoogleTest(&amp;argc, argv);</div>
+<div class="line"><span class="lineno">  222</span>    <span class="keywordflow">return</span> RUN_ALL_TESTS();</div>
+<div class="line"><span class="lineno">  223</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -197,24 +197,24 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="test___game_8cc_source.html#l00190">190</a> of file <a class="el" href="test___game_8cc_source.html">test_Game.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  190</span>                                 {</div>
-<div class="line"><span class="lineno">  191</span>    <a class="code hl_class" href="class_game.html">Game</a> game = createGameWithPlayers(2);</div>
-<div class="line"><span class="lineno">  192</span>    <a class="code hl_class" href="class_player.html">Player</a>* bigBlind = game.<a class="code hl_function" href="class_game.html#a57e5aef2f67e77929842fab7a78404ea">getPlayers</a>()[0];</div>
-<div class="line"><span class="lineno">  193</span>    <a class="code hl_class" href="class_player.html">Player</a>* smallBlind = game.<a class="code hl_function" href="class_game.html#a57e5aef2f67e77929842fab7a78404ea">getPlayers</a>()[1];</div>
-<div class="line"><span class="lineno">  194</span>    game.<a class="code hl_function" href="class_game.html#a2c46bbc0e0acda18575fc9a82481a95a">addBlindsToPot</a>(bigBlind, smallBlind);</div>
-<div class="line"><span class="lineno">  195</span> </div>
-<div class="line"><span class="lineno">  196</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> BIG_BLIND = 2;</div>
-<div class="line"><span class="lineno">  197</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> SMALL_BLIND = 1;</div>
-<div class="line"><span class="lineno">  198</span>    EXPECT_EQ(game.<a class="code hl_function" href="class_game.html#a20b263146b74bb0c81341cfd26c44de6">getPot</a>(), BIG_BLIND + SMALL_BLIND);</div>
-<div class="line"><span class="lineno">  199</span>}</div>
+<p class="definition">Definition at line <a class="el" href="test___game_8cc_source.html#l00191">191</a> of file <a class="el" href="test___game_8cc_source.html">test_Game.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  191</span>                                 {</div>
+<div class="line"><span class="lineno">  192</span>    <a class="code hl_class" href="class_game.html">Game</a> game = createGameWithPlayers(2);</div>
+<div class="line"><span class="lineno">  193</span>    <a class="code hl_class" href="class_player.html">Player</a>* bigBlind = game.<a class="code hl_function" href="class_game.html#a57e5aef2f67e77929842fab7a78404ea">getPlayers</a>()[0];</div>
+<div class="line"><span class="lineno">  194</span>    <a class="code hl_class" href="class_player.html">Player</a>* smallBlind = game.<a class="code hl_function" href="class_game.html#a57e5aef2f67e77929842fab7a78404ea">getPlayers</a>()[1];</div>
+<div class="line"><span class="lineno">  195</span>    game.<a class="code hl_function" href="class_game.html#a2c46bbc0e0acda18575fc9a82481a95a">addBlindsToPot</a>(bigBlind, smallBlind);</div>
+<div class="line"><span class="lineno">  196</span> </div>
+<div class="line"><span class="lineno">  197</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> BIG_BLIND = 2;</div>
+<div class="line"><span class="lineno">  198</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> SMALL_BLIND = 1;</div>
+<div class="line"><span class="lineno">  199</span>    EXPECT_EQ(game.<a class="code hl_function" href="class_game.html#a20b263146b74bb0c81341cfd26c44de6">getPot</a>(), BIG_BLIND + SMALL_BLIND);</div>
+<div class="line"><span class="lineno">  200</span>}</div>
 <div class="ttc" id="aclass_game_html"><div class="ttname"><a href="class_game.html">Game</a></div><div class="ttdoc">Manages the state and flow of a poker game.</div><div class="ttdef"><b>Definition</b> <a href="_game_8hpp_source.html#l00029">Game.hpp:29</a></div></div>
 <div class="ttc" id="aclass_game_html_a20b263146b74bb0c81341cfd26c44de6"><div class="ttname"><a href="class_game.html#a20b263146b74bb0c81341cfd26c44de6">Game::getPot</a></div><div class="ttdeci">int getPot()</div><div class="ttdoc">Gets the current pot size.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00059">Game.cpp:59</a></div></div>
-<div class="ttc" id="aclass_game_html_a2c46bbc0e0acda18575fc9a82481a95a"><div class="ttname"><a href="class_game.html#a2c46bbc0e0acda18575fc9a82481a95a">Game::addBlindsToPot</a></div><div class="ttdeci">void addBlindsToPot(Player *bigBlindPlayer, Player *smallBlindPlayer)</div><div class="ttdoc">Adds the blinds to the pot from the appropriate players.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00430">Game.cpp:430</a></div></div>
+<div class="ttc" id="aclass_game_html_a2c46bbc0e0acda18575fc9a82481a95a"><div class="ttname"><a href="class_game.html#a2c46bbc0e0acda18575fc9a82481a95a">Game::addBlindsToPot</a></div><div class="ttdeci">void addBlindsToPot(Player *bigBlindPlayer, Player *smallBlindPlayer)</div><div class="ttdoc">Adds the blinds to the pot from the appropriate players.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00489">Game.cpp:489</a></div></div>
 <div class="ttc" id="aclass_game_html_a57e5aef2f67e77929842fab7a78404ea"><div class="ttname"><a href="class_game.html#a57e5aef2f67e77929842fab7a78404ea">Game::getPlayers</a></div><div class="ttdeci">vector&lt; Player * &gt; getPlayers()</div><div class="ttdoc">Gets the players in the game.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00051">Game.cpp:51</a></div></div>
 <div class="ttc" id="aclass_player_html"><div class="ttname"><a href="class_player.html">Player</a></div><div class="ttdoc">Represents a human player in the poker game.</div><div class="ttdef"><b>Definition</b> <a href="_player_8hpp_source.html#l00015">Player.hpp:15</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_game_8cpp_source.html#l00430">Game::addBlindsToPot()</a>, <a class="el" href="_game_8cpp_source.html#l00051">Game::getPlayers()</a>, and <a class="el" href="_game_8cpp_source.html#l00059">Game::getPot()</a>.</p>
+<p class="reference">References <a class="el" href="_game_8cpp_source.html#l00489">Game::addBlindsToPot()</a>, <a class="el" href="_game_8cpp_source.html#l00051">Game::getPlayers()</a>, and <a class="el" href="_game_8cpp_source.html#l00059">Game::getPot()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -299,11 +299,12 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   87</span>    <a class="code hl_class" href="class_game.html">Game</a> game = createGameWithPlayers(2);</div>
 <div class="line"><span class="lineno">   88</span>    game.<a class="code hl_function" href="class_game.html#acf5aaf9c3d8df910021de38a4c5f6cb6">setPot</a>(100);</div>
 <div class="line"><span class="lineno">   89</span>    std::vector&lt;Player*&gt; winners = {game.<a class="code hl_function" href="class_game.html#a57e5aef2f67e77929842fab7a78404ea">getPlayers</a>()[0]};</div>
-<div class="line"><span class="lineno">   90</span>    game.<a class="code hl_function" href="class_game.html#a9e75306bf8f51c5213e2ffceb46f801f">awardPot</a>(winners);</div>
-<div class="line"><span class="lineno">   91</span>    EXPECT_EQ(game.<a class="code hl_function" href="class_game.html#a20b263146b74bb0c81341cfd26c44de6">getPot</a>(), 0);</div>
-<div class="line"><span class="lineno">   92</span>    EXPECT_EQ(winners[0]-&gt;get_stack(), 1100);</div>
-<div class="line"><span class="lineno">   93</span>}</div>
-<div class="ttc" id="aclass_game_html_a9e75306bf8f51c5213e2ffceb46f801f"><div class="ttname"><a href="class_game.html#a9e75306bf8f51c5213e2ffceb46f801f">Game::awardPot</a></div><div class="ttdeci">void awardPot(vector&lt; Player * &gt; winners)</div><div class="ttdoc">Awards the pot to the winning players.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00075">Game.cpp:75</a></div></div>
+<div class="line"><span class="lineno">   90</span>    std::vector&lt;bool&gt; inGame = {<span class="keyword">true</span>, <span class="keyword">true</span>};</div>
+<div class="line"><span class="lineno">   91</span>    game.<a class="code hl_function" href="class_game.html#ac0b29143b66a8cecb267b54ac84deb06">awardPot</a>(winners, inGame);</div>
+<div class="line"><span class="lineno">   92</span>    EXPECT_EQ(game.<a class="code hl_function" href="class_game.html#a20b263146b74bb0c81341cfd26c44de6">getPot</a>(), 0);</div>
+<div class="line"><span class="lineno">   93</span>    EXPECT_EQ(winners[0]-&gt;get_stack(), 1100);</div>
+<div class="line"><span class="lineno">   94</span>}</div>
+<div class="ttc" id="aclass_game_html_ac0b29143b66a8cecb267b54ac84deb06"><div class="ttname"><a href="class_game.html#ac0b29143b66a8cecb267b54ac84deb06">Game::awardPot</a></div><div class="ttdeci">void awardPot(vector&lt; Player * &gt; winners, vector&lt; bool &gt; &amp;inGame)</div><div class="ttdoc">Awards the pot to the winning players.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00075">Game.cpp:75</a></div></div>
 <div class="ttc" id="aclass_game_html_acf5aaf9c3d8df910021de38a4c5f6cb6"><div class="ttname"><a href="class_game.html#acf5aaf9c3d8df910021de38a4c5f6cb6">Game::setPot</a></div><div class="ttdeci">void setPot(int pot)</div><div class="ttdoc">Sets the pot size within the game.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00023">Game.cpp:23</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_game_8cpp_source.html#l00075">Game::awardPot()</a>, <a class="el" href="_game_8cpp_source.html#l00051">Game::getPlayers()</a>, <a class="el" href="_game_8cpp_source.html#l00059">Game::getPot()</a>, and <a class="el" href="_game_8cpp_source.html#l00023">Game::setPot()</a>.</p>
@@ -382,32 +383,32 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="test___game_8cc_source.html#l00113">113</a> of file <a class="el" href="test___game_8cc_source.html">test_Game.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  113</span>                       {</div>
-<div class="line"><span class="lineno">  114</span>    <a class="code hl_class" href="class_game.html">Game</a> game = createGameWithPlayers(2);</div>
-<div class="line"><span class="lineno">  115</span>    game.<a class="code hl_function" href="class_game.html#a69a05d14810171cddd58aa1653272030">deal</a>();</div>
-<div class="line"><span class="lineno">  116</span>    EXPECT_EQ(game.<a class="code hl_function" href="class_game.html#a57e5aef2f67e77929842fab7a78404ea">getPlayers</a>()[0]-&gt;get_hand().size(), 2);</div>
-<div class="line"><span class="lineno">  117</span> </div>
-<div class="line"><span class="lineno">  118</span>    game.<a class="code hl_variable" href="class_game.html#ae2ca18e2bb93274baea5274dd125c10e">currentStage</a> = <a class="code hl_enumvalue" href="_game_8hpp.html#aca8133200c1122e29b87b314d82604ebaabd21521adb8d1952b4a166aa8711f8b">Stage::FLOP</a>;</div>
-<div class="line"><span class="lineno">  119</span>    game.<a class="code hl_function" href="class_game.html#a69a05d14810171cddd58aa1653272030">deal</a>();</div>
-<div class="line"><span class="lineno">  120</span>    EXPECT_EQ(game.<a class="code hl_function" href="class_game.html#ae8d1705be89f97f5ef13ba1a460502f2">getCommunityCards</a>().size(), 3);</div>
-<div class="line"><span class="lineno">  121</span> </div>
-<div class="line"><span class="lineno">  122</span>    game.<a class="code hl_variable" href="class_game.html#ae2ca18e2bb93274baea5274dd125c10e">currentStage</a> = <a class="code hl_enumvalue" href="_game_8hpp.html#aca8133200c1122e29b87b314d82604eba4e5add805436f8349199498326cf43d1">Stage::TURN</a>;</div>
-<div class="line"><span class="lineno">  123</span>    game.<a class="code hl_function" href="class_game.html#a69a05d14810171cddd58aa1653272030">deal</a>();</div>
-<div class="line"><span class="lineno">  124</span>    EXPECT_EQ(game.<a class="code hl_function" href="class_game.html#ae8d1705be89f97f5ef13ba1a460502f2">getCommunityCards</a>().size(), 4);</div>
-<div class="line"><span class="lineno">  125</span> </div>
-<div class="line"><span class="lineno">  126</span>    game.<a class="code hl_variable" href="class_game.html#ae2ca18e2bb93274baea5274dd125c10e">currentStage</a> = <a class="code hl_enumvalue" href="_game_8hpp.html#aca8133200c1122e29b87b314d82604eba5f1a4df6ed0c2b7e1aa187f9eb43409f">Stage::RIVER</a>;</div>
-<div class="line"><span class="lineno">  127</span>    game.<a class="code hl_function" href="class_game.html#a69a05d14810171cddd58aa1653272030">deal</a>();</div>
-<div class="line"><span class="lineno">  128</span>    EXPECT_EQ(game.<a class="code hl_function" href="class_game.html#ae8d1705be89f97f5ef13ba1a460502f2">getCommunityCards</a>().size(), 5);</div>
-<div class="line"><span class="lineno">  129</span>}</div>
+<p class="definition">Definition at line <a class="el" href="test___game_8cc_source.html#l00114">114</a> of file <a class="el" href="test___game_8cc_source.html">test_Game.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  114</span>                       {</div>
+<div class="line"><span class="lineno">  115</span>    <a class="code hl_class" href="class_game.html">Game</a> game = createGameWithPlayers(2);</div>
+<div class="line"><span class="lineno">  116</span>    game.<a class="code hl_function" href="class_game.html#a69a05d14810171cddd58aa1653272030">deal</a>();</div>
+<div class="line"><span class="lineno">  117</span>    EXPECT_EQ(game.<a class="code hl_function" href="class_game.html#a57e5aef2f67e77929842fab7a78404ea">getPlayers</a>()[0]-&gt;get_hand().size(), 2);</div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>    game.<a class="code hl_variable" href="class_game.html#ae2ca18e2bb93274baea5274dd125c10e">currentStage</a> = <a class="code hl_enumvalue" href="_game_8hpp.html#aca8133200c1122e29b87b314d82604ebaabd21521adb8d1952b4a166aa8711f8b">Stage::FLOP</a>;</div>
+<div class="line"><span class="lineno">  120</span>    game.<a class="code hl_function" href="class_game.html#a69a05d14810171cddd58aa1653272030">deal</a>();</div>
+<div class="line"><span class="lineno">  121</span>    EXPECT_EQ(game.<a class="code hl_function" href="class_game.html#ae8d1705be89f97f5ef13ba1a460502f2">getCommunityCards</a>().size(), 3);</div>
+<div class="line"><span class="lineno">  122</span> </div>
+<div class="line"><span class="lineno">  123</span>    game.<a class="code hl_variable" href="class_game.html#ae2ca18e2bb93274baea5274dd125c10e">currentStage</a> = <a class="code hl_enumvalue" href="_game_8hpp.html#aca8133200c1122e29b87b314d82604eba4e5add805436f8349199498326cf43d1">Stage::TURN</a>;</div>
+<div class="line"><span class="lineno">  124</span>    game.<a class="code hl_function" href="class_game.html#a69a05d14810171cddd58aa1653272030">deal</a>();</div>
+<div class="line"><span class="lineno">  125</span>    EXPECT_EQ(game.<a class="code hl_function" href="class_game.html#ae8d1705be89f97f5ef13ba1a460502f2">getCommunityCards</a>().size(), 4);</div>
+<div class="line"><span class="lineno">  126</span> </div>
+<div class="line"><span class="lineno">  127</span>    game.<a class="code hl_variable" href="class_game.html#ae2ca18e2bb93274baea5274dd125c10e">currentStage</a> = <a class="code hl_enumvalue" href="_game_8hpp.html#aca8133200c1122e29b87b314d82604eba5f1a4df6ed0c2b7e1aa187f9eb43409f">Stage::RIVER</a>;</div>
+<div class="line"><span class="lineno">  128</span>    game.<a class="code hl_function" href="class_game.html#a69a05d14810171cddd58aa1653272030">deal</a>();</div>
+<div class="line"><span class="lineno">  129</span>    EXPECT_EQ(game.<a class="code hl_function" href="class_game.html#ae8d1705be89f97f5ef13ba1a460502f2">getCommunityCards</a>().size(), 5);</div>
+<div class="line"><span class="lineno">  130</span>}</div>
 <div class="ttc" id="a_game_8hpp_html_aca8133200c1122e29b87b314d82604eba4e5add805436f8349199498326cf43d1"><div class="ttname"><a href="_game_8hpp.html#aca8133200c1122e29b87b314d82604eba4e5add805436f8349199498326cf43d1">TURN</a></div><div class="ttdeci">@ TURN</div><div class="ttdef"><b>Definition</b> <a href="_game_8hpp_source.html#l00023">Game.hpp:23</a></div></div>
 <div class="ttc" id="a_game_8hpp_html_aca8133200c1122e29b87b314d82604eba5f1a4df6ed0c2b7e1aa187f9eb43409f"><div class="ttname"><a href="_game_8hpp.html#aca8133200c1122e29b87b314d82604eba5f1a4df6ed0c2b7e1aa187f9eb43409f">RIVER</a></div><div class="ttdeci">@ RIVER</div><div class="ttdef"><b>Definition</b> <a href="_game_8hpp_source.html#l00023">Game.hpp:23</a></div></div>
 <div class="ttc" id="a_game_8hpp_html_aca8133200c1122e29b87b314d82604ebaabd21521adb8d1952b4a166aa8711f8b"><div class="ttname"><a href="_game_8hpp.html#aca8133200c1122e29b87b314d82604ebaabd21521adb8d1952b4a166aa8711f8b">FLOP</a></div><div class="ttdeci">@ FLOP</div><div class="ttdef"><b>Definition</b> <a href="_game_8hpp_source.html#l00023">Game.hpp:23</a></div></div>
-<div class="ttc" id="aclass_game_html_a69a05d14810171cddd58aa1653272030"><div class="ttname"><a href="class_game.html#a69a05d14810171cddd58aa1653272030">Game::deal</a></div><div class="ttdeci">void deal()</div><div class="ttdoc">Deals the cards to the players and the community.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00140">Game.cpp:140</a></div></div>
+<div class="ttc" id="aclass_game_html_a69a05d14810171cddd58aa1653272030"><div class="ttname"><a href="class_game.html#a69a05d14810171cddd58aa1653272030">Game::deal</a></div><div class="ttdeci">void deal()</div><div class="ttdoc">Deals the cards to the players and the community.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00190">Game.cpp:190</a></div></div>
 <div class="ttc" id="aclass_game_html_ae2ca18e2bb93274baea5274dd125c10e"><div class="ttname"><a href="class_game.html#ae2ca18e2bb93274baea5274dd125c10e">Game::currentStage</a></div><div class="ttdeci">Stage currentStage</div><div class="ttdef"><b>Definition</b> <a href="_game_8hpp_source.html#l00046">Game.hpp:46</a></div></div>
 <div class="ttc" id="aclass_game_html_ae8d1705be89f97f5ef13ba1a460502f2"><div class="ttname"><a href="class_game.html#ae8d1705be89f97f5ef13ba1a460502f2">Game::getCommunityCards</a></div><div class="ttdeci">vector&lt; Card &gt; getCommunityCards()</div><div class="ttdoc">Gets the community cards on the table.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00055">Game.cpp:55</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_game_8hpp_source.html#l00046">Game::currentStage</a>, <a class="el" href="_game_8cpp_source.html#l00140">Game::deal()</a>, <a class="el" href="_game_8hpp_source.html#l00023">FLOP</a>, <a class="el" href="_game_8cpp_source.html#l00055">Game::getCommunityCards()</a>, <a class="el" href="_game_8cpp_source.html#l00051">Game::getPlayers()</a>, <a class="el" href="_game_8hpp_source.html#l00023">RIVER</a>, and <a class="el" href="_game_8hpp_source.html#l00023">TURN</a>.</p>
+<p class="reference">References <a class="el" href="_game_8hpp_source.html#l00046">Game::currentStage</a>, <a class="el" href="_game_8cpp_source.html#l00190">Game::deal()</a>, <a class="el" href="_game_8hpp_source.html#l00023">FLOP</a>, <a class="el" href="_game_8cpp_source.html#l00055">Game::getCommunityCards()</a>, <a class="el" href="_game_8cpp_source.html#l00051">Game::getPlayers()</a>, <a class="el" href="_game_8hpp_source.html#l00023">RIVER</a>, and <a class="el" href="_game_8hpp_source.html#l00023">TURN</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -667,22 +668,22 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="test___game_8cc_source.html#l00160">160</a> of file <a class="el" href="test___game_8cc_source.html">test_Game.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  160</span>                                 {</div>
-<div class="line"><span class="lineno">  161</span>    <a class="code hl_class" href="class_game.html">Game</a> game = createGameWithPlayers(2);</div>
-<div class="line"><span class="lineno">  162</span>    EXPECT_EQ(game.<a class="code hl_function" href="class_game.html#af66af3bfc474c88bfd29e555e8df2519">getCurrentMove</a>(<span class="stringliteral">&quot;a&quot;</span>), <a class="code hl_enumvalue" href="_game_8hpp.html#a19b869a01ca1a58f4164b4f75c2df388aed65b7dfe470f4e500b15f7074bb7fa2">Move::CHECK</a>);</div>
-<div class="line"><span class="lineno">  163</span>    EXPECT_EQ(game.<a class="code hl_function" href="class_game.html#af66af3bfc474c88bfd29e555e8df2519">getCurrentMove</a>(<span class="stringliteral">&quot;c&quot;</span>), <a class="code hl_enumvalue" href="_game_8hpp.html#a19b869a01ca1a58f4164b4f75c2df388abd0ebc08c262bab82a1882256d2d66e8">Move::CALL</a>);</div>
-<div class="line"><span class="lineno">  164</span>    EXPECT_EQ(game.<a class="code hl_function" href="class_game.html#af66af3bfc474c88bfd29e555e8df2519">getCurrentMove</a>(<span class="stringliteral">&quot;r&quot;</span>), <a class="code hl_enumvalue" href="_game_8hpp.html#a19b869a01ca1a58f4164b4f75c2df388ae9ec39715b515cb7a00034bced1c1ad4">Move::RAISE</a>);</div>
-<div class="line"><span class="lineno">  165</span>    EXPECT_EQ(game.<a class="code hl_function" href="class_game.html#af66af3bfc474c88bfd29e555e8df2519">getCurrentMove</a>(<span class="stringliteral">&quot;f&quot;</span>), <a class="code hl_enumvalue" href="_game_8hpp.html#a19b869a01ca1a58f4164b4f75c2df388a4c06ebc69df9afd471c3044ba969a17f">Move::FOLD</a>);</div>
-<div class="line"><span class="lineno">  166</span>    EXPECT_EQ(game.<a class="code hl_function" href="class_game.html#af66af3bfc474c88bfd29e555e8df2519">getCurrentMove</a>(<span class="stringliteral">&quot;invalid&quot;</span>), <a class="code hl_enumvalue" href="_game_8hpp.html#a19b869a01ca1a58f4164b4f75c2df388a4c06ebc69df9afd471c3044ba969a17f">Move::FOLD</a>);</div>
-<div class="line"><span class="lineno">  167</span>}</div>
+<p class="definition">Definition at line <a class="el" href="test___game_8cc_source.html#l00161">161</a> of file <a class="el" href="test___game_8cc_source.html">test_Game.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  161</span>                                 {</div>
+<div class="line"><span class="lineno">  162</span>    <a class="code hl_class" href="class_game.html">Game</a> game = createGameWithPlayers(2);</div>
+<div class="line"><span class="lineno">  163</span>    EXPECT_EQ(game.<a class="code hl_function" href="class_game.html#af66af3bfc474c88bfd29e555e8df2519">getCurrentMove</a>(<span class="stringliteral">&quot;a&quot;</span>), <a class="code hl_enumvalue" href="_game_8hpp.html#a19b869a01ca1a58f4164b4f75c2df388aed65b7dfe470f4e500b15f7074bb7fa2">Move::CHECK</a>);</div>
+<div class="line"><span class="lineno">  164</span>    EXPECT_EQ(game.<a class="code hl_function" href="class_game.html#af66af3bfc474c88bfd29e555e8df2519">getCurrentMove</a>(<span class="stringliteral">&quot;c&quot;</span>), <a class="code hl_enumvalue" href="_game_8hpp.html#a19b869a01ca1a58f4164b4f75c2df388abd0ebc08c262bab82a1882256d2d66e8">Move::CALL</a>);</div>
+<div class="line"><span class="lineno">  165</span>    EXPECT_EQ(game.<a class="code hl_function" href="class_game.html#af66af3bfc474c88bfd29e555e8df2519">getCurrentMove</a>(<span class="stringliteral">&quot;r&quot;</span>), <a class="code hl_enumvalue" href="_game_8hpp.html#a19b869a01ca1a58f4164b4f75c2df388ae9ec39715b515cb7a00034bced1c1ad4">Move::RAISE</a>);</div>
+<div class="line"><span class="lineno">  166</span>    EXPECT_EQ(game.<a class="code hl_function" href="class_game.html#af66af3bfc474c88bfd29e555e8df2519">getCurrentMove</a>(<span class="stringliteral">&quot;f&quot;</span>), <a class="code hl_enumvalue" href="_game_8hpp.html#a19b869a01ca1a58f4164b4f75c2df388a4c06ebc69df9afd471c3044ba969a17f">Move::FOLD</a>);</div>
+<div class="line"><span class="lineno">  167</span>    EXPECT_EQ(game.<a class="code hl_function" href="class_game.html#af66af3bfc474c88bfd29e555e8df2519">getCurrentMove</a>(<span class="stringliteral">&quot;invalid&quot;</span>), <a class="code hl_enumvalue" href="_game_8hpp.html#a19b869a01ca1a58f4164b4f75c2df388a4c06ebc69df9afd471c3044ba969a17f">Move::FOLD</a>);</div>
+<div class="line"><span class="lineno">  168</span>}</div>
 <div class="ttc" id="a_game_8hpp_html_a19b869a01ca1a58f4164b4f75c2df388a4c06ebc69df9afd471c3044ba969a17f"><div class="ttname"><a href="_game_8hpp.html#a19b869a01ca1a58f4164b4f75c2df388a4c06ebc69df9afd471c3044ba969a17f">FOLD</a></div><div class="ttdeci">@ FOLD</div><div class="ttdef"><b>Definition</b> <a href="_game_8hpp_source.html#l00017">Game.hpp:17</a></div></div>
 <div class="ttc" id="a_game_8hpp_html_a19b869a01ca1a58f4164b4f75c2df388abd0ebc08c262bab82a1882256d2d66e8"><div class="ttname"><a href="_game_8hpp.html#a19b869a01ca1a58f4164b4f75c2df388abd0ebc08c262bab82a1882256d2d66e8">CALL</a></div><div class="ttdeci">@ CALL</div><div class="ttdef"><b>Definition</b> <a href="_game_8hpp_source.html#l00017">Game.hpp:17</a></div></div>
 <div class="ttc" id="a_game_8hpp_html_a19b869a01ca1a58f4164b4f75c2df388ae9ec39715b515cb7a00034bced1c1ad4"><div class="ttname"><a href="_game_8hpp.html#a19b869a01ca1a58f4164b4f75c2df388ae9ec39715b515cb7a00034bced1c1ad4">RAISE</a></div><div class="ttdeci">@ RAISE</div><div class="ttdef"><b>Definition</b> <a href="_game_8hpp_source.html#l00017">Game.hpp:17</a></div></div>
 <div class="ttc" id="a_game_8hpp_html_a19b869a01ca1a58f4164b4f75c2df388aed65b7dfe470f4e500b15f7074bb7fa2"><div class="ttname"><a href="_game_8hpp.html#a19b869a01ca1a58f4164b4f75c2df388aed65b7dfe470f4e500b15f7074bb7fa2">CHECK</a></div><div class="ttdeci">@ CHECK</div><div class="ttdef"><b>Definition</b> <a href="_game_8hpp_source.html#l00017">Game.hpp:17</a></div></div>
-<div class="ttc" id="aclass_game_html_af66af3bfc474c88bfd29e555e8df2519"><div class="ttname"><a href="class_game.html#af66af3bfc474c88bfd29e555e8df2519">Game::getCurrentMove</a></div><div class="ttdeci">Move getCurrentMove(std::string move)</div><div class="ttdoc">Converts a move string into a Move enum.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00394">Game.cpp:394</a></div></div>
+<div class="ttc" id="aclass_game_html_af66af3bfc474c88bfd29e555e8df2519"><div class="ttname"><a href="class_game.html#af66af3bfc474c88bfd29e555e8df2519">Game::getCurrentMove</a></div><div class="ttdeci">Move getCurrentMove(std::string move)</div><div class="ttdoc">Converts a move string into a Move enum.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00453">Game.cpp:453</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_game_8hpp_source.html#l00017">CALL</a>, <a class="el" href="_game_8hpp_source.html#l00017">CHECK</a>, <a class="el" href="_game_8hpp_source.html#l00017">FOLD</a>, <a class="el" href="_game_8cpp_source.html#l00394">Game::getCurrentMove()</a>, and <a class="el" href="_game_8hpp_source.html#l00017">RAISE</a>.</p>
+<p class="reference">References <a class="el" href="_game_8hpp_source.html#l00017">CALL</a>, <a class="el" href="_game_8hpp_source.html#l00017">CHECK</a>, <a class="el" href="_game_8hpp_source.html#l00017">FOLD</a>, <a class="el" href="_game_8cpp_source.html#l00453">Game::getCurrentMove()</a>, and <a class="el" href="_game_8hpp_source.html#l00017">RAISE</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -717,16 +718,16 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="test___game_8cc_source.html#l00145">145</a> of file <a class="el" href="test___game_8cc_source.html">test_Game.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  145</span>                                 {</div>
-<div class="line"><span class="lineno">  146</span>    <a class="code hl_class" href="class_game.html">Game</a> game = createGameWithPlayers(2);</div>
-<div class="line"><span class="lineno">  147</span>    std::vector&lt;bool&gt; inGame = {<span class="keyword">true</span>, <span class="keyword">false</span>};</div>
-<div class="line"><span class="lineno">  148</span>    <a class="code hl_class" href="class_player.html">Player</a>* winner = game.<a class="code hl_function" href="class_game.html#ab99ccbbb2632cadc6810cf11c75c80ff">get_final_winner</a>(inGame);</div>
-<div class="line"><span class="lineno">  149</span>    EXPECT_EQ(winner, game.<a class="code hl_function" href="class_game.html#a57e5aef2f67e77929842fab7a78404ea">getPlayers</a>()[0]);</div>
-<div class="line"><span class="lineno">  150</span>}</div>
-<div class="ttc" id="aclass_game_html_ab99ccbbb2632cadc6810cf11c75c80ff"><div class="ttname"><a href="class_game.html#ab99ccbbb2632cadc6810cf11c75c80ff">Game::get_final_winner</a></div><div class="ttdeci">Player * get_final_winner(vector&lt; bool &gt; &amp;inGame)</div><div class="ttdoc">Determines the final winner of the game.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00289">Game.cpp:289</a></div></div>
+<p class="definition">Definition at line <a class="el" href="test___game_8cc_source.html#l00146">146</a> of file <a class="el" href="test___game_8cc_source.html">test_Game.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  146</span>                                 {</div>
+<div class="line"><span class="lineno">  147</span>    <a class="code hl_class" href="class_game.html">Game</a> game = createGameWithPlayers(2);</div>
+<div class="line"><span class="lineno">  148</span>    std::vector&lt;bool&gt; inGame = {<span class="keyword">true</span>, <span class="keyword">false</span>};</div>
+<div class="line"><span class="lineno">  149</span>    <a class="code hl_class" href="class_player.html">Player</a>* winner = game.<a class="code hl_function" href="class_game.html#ab99ccbbb2632cadc6810cf11c75c80ff">get_final_winner</a>(inGame);</div>
+<div class="line"><span class="lineno">  150</span>    EXPECT_EQ(winner, game.<a class="code hl_function" href="class_game.html#a57e5aef2f67e77929842fab7a78404ea">getPlayers</a>()[0]);</div>
+<div class="line"><span class="lineno">  151</span>}</div>
+<div class="ttc" id="aclass_game_html_ab99ccbbb2632cadc6810cf11c75c80ff"><div class="ttname"><a href="class_game.html#ab99ccbbb2632cadc6810cf11c75c80ff">Game::get_final_winner</a></div><div class="ttdeci">Player * get_final_winner(vector&lt; bool &gt; &amp;inGame)</div><div class="ttdoc">Determines the final winner of the game.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00348">Game.cpp:348</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_game_8cpp_source.html#l00289">Game::get_final_winner()</a>, and <a class="el" href="_game_8cpp_source.html#l00051">Game::getPlayers()</a>.</p>
+<p class="reference">References <a class="el" href="_game_8cpp_source.html#l00348">Game::get_final_winner()</a>, and <a class="el" href="_game_8cpp_source.html#l00051">Game::getPlayers()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -844,15 +845,15 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="test___game_8cc_source.html#l00131">131</a> of file <a class="el" href="test___game_8cc_source.html">test_Game.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  131</span>                            {</div>
-<div class="line"><span class="lineno">  132</span>    <a class="code hl_class" href="class_game.html">Game</a> game = createGameWithPlayers(2);</div>
-<div class="line"><span class="lineno">  133</span>    game.<a class="code hl_function" href="class_game.html#a018713cb3ce643d8f52e6804903e9d12">nextStage</a>();</div>
-<div class="line"><span class="lineno">  134</span>    <span class="comment">// Add assertions based on the expected behavior of nextStage()</span></div>
-<div class="line"><span class="lineno">  135</span>}</div>
-<div class="ttc" id="aclass_game_html_a018713cb3ce643d8f52e6804903e9d12"><div class="ttname"><a href="class_game.html#a018713cb3ce643d8f52e6804903e9d12">Game::nextStage</a></div><div class="ttdeci">void nextStage()</div><div class="ttdoc">Advances the game to the next stage.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00164">Game.cpp:164</a></div></div>
+<p class="definition">Definition at line <a class="el" href="test___game_8cc_source.html#l00132">132</a> of file <a class="el" href="test___game_8cc_source.html">test_Game.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  132</span>                            {</div>
+<div class="line"><span class="lineno">  133</span>    <a class="code hl_class" href="class_game.html">Game</a> game = createGameWithPlayers(2);</div>
+<div class="line"><span class="lineno">  134</span>    game.<a class="code hl_function" href="class_game.html#a018713cb3ce643d8f52e6804903e9d12">nextStage</a>();</div>
+<div class="line"><span class="lineno">  135</span>    <span class="comment">// Add assertions based on the expected behavior of nextStage()</span></div>
+<div class="line"><span class="lineno">  136</span>}</div>
+<div class="ttc" id="aclass_game_html_a018713cb3ce643d8f52e6804903e9d12"><div class="ttname"><a href="class_game.html#a018713cb3ce643d8f52e6804903e9d12">Game::nextStage</a></div><div class="ttdeci">void nextStage()</div><div class="ttdoc">Advances the game to the next stage.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00214">Game.cpp:214</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_game_8cpp_source.html#l00164">Game::nextStage()</a>.</p>
+<p class="reference">References <a class="el" href="_game_8cpp_source.html#l00214">Game::nextStage()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -887,16 +888,16 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="test___game_8cc_source.html#l00183">183</a> of file <a class="el" href="test___game_8cc_source.html">test_Game.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  183</span>                                      {</div>
-<div class="line"><span class="lineno">  184</span>    <a class="code hl_class" href="class_game.html">Game</a> game = createGameWithPlayers(2);</div>
-<div class="line"><span class="lineno">  185</span>    game.<a class="code hl_function" href="class_game.html#adc83a8bdd3819b0eab1540bf1d6dd1c0">deal_flop</a>();</div>
-<div class="line"><span class="lineno">  186</span>    game.<a class="code hl_function" href="class_game.html#a884c074f31c3d278f026360fe28ee1c8">resetCommunityCards</a>();</div>
-<div class="line"><span class="lineno">  187</span>    EXPECT_EQ(game.<a class="code hl_function" href="class_game.html#ae8d1705be89f97f5ef13ba1a460502f2">getCommunityCards</a>().size(), 0);</div>
-<div class="line"><span class="lineno">  188</span>}</div>
-<div class="ttc" id="aclass_game_html_a884c074f31c3d278f026360fe28ee1c8"><div class="ttname"><a href="class_game.html#a884c074f31c3d278f026360fe28ee1c8">Game::resetCommunityCards</a></div><div class="ttdeci">void resetCommunityCards()</div><div class="ttdoc">Resets the community cards on the table.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00426">Game.cpp:426</a></div></div>
+<p class="definition">Definition at line <a class="el" href="test___game_8cc_source.html#l00184">184</a> of file <a class="el" href="test___game_8cc_source.html">test_Game.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  184</span>                                      {</div>
+<div class="line"><span class="lineno">  185</span>    <a class="code hl_class" href="class_game.html">Game</a> game = createGameWithPlayers(2);</div>
+<div class="line"><span class="lineno">  186</span>    game.<a class="code hl_function" href="class_game.html#adc83a8bdd3819b0eab1540bf1d6dd1c0">deal_flop</a>();</div>
+<div class="line"><span class="lineno">  187</span>    game.<a class="code hl_function" href="class_game.html#a884c074f31c3d278f026360fe28ee1c8">resetCommunityCards</a>();</div>
+<div class="line"><span class="lineno">  188</span>    EXPECT_EQ(game.<a class="code hl_function" href="class_game.html#ae8d1705be89f97f5ef13ba1a460502f2">getCommunityCards</a>().size(), 0);</div>
+<div class="line"><span class="lineno">  189</span>}</div>
+<div class="ttc" id="aclass_game_html_a884c074f31c3d278f026360fe28ee1c8"><div class="ttname"><a href="class_game.html#a884c074f31c3d278f026360fe28ee1c8">Game::resetCommunityCards</a></div><div class="ttdeci">void resetCommunityCards()</div><div class="ttdoc">Resets the community cards on the table.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00485">Game.cpp:485</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_game_8cpp_source.html#l00034">Game::deal_flop()</a>, <a class="el" href="_game_8cpp_source.html#l00055">Game::getCommunityCards()</a>, and <a class="el" href="_game_8cpp_source.html#l00426">Game::resetCommunityCards()</a>.</p>
+<p class="reference">References <a class="el" href="_game_8cpp_source.html#l00034">Game::deal_flop()</a>, <a class="el" href="_game_8cpp_source.html#l00055">Game::getCommunityCards()</a>, and <a class="el" href="_game_8cpp_source.html#l00485">Game::resetCommunityCards()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -931,16 +932,16 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="test___game_8cc_source.html#l00169">169</a> of file <a class="el" href="test___game_8cc_source.html">test_Game.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  169</span>                                  {</div>
-<div class="line"><span class="lineno">  170</span>    <a class="code hl_class" href="class_game.html">Game</a> game = createGameWithPlayers(2);</div>
-<div class="line"><span class="lineno">  171</span>    game.<a class="code hl_function" href="class_game.html#a57e5aef2f67e77929842fab7a78404ea">getPlayers</a>()[0]-&gt;bet(50);</div>
-<div class="line"><span class="lineno">  172</span>    game.<a class="code hl_function" href="class_game.html#a69614c930626006cd0b3e644bc9cc613">resetPlayerBets</a>();</div>
-<div class="line"><span class="lineno">  173</span>    EXPECT_EQ(game.<a class="code hl_function" href="class_game.html#a57e5aef2f67e77929842fab7a78404ea">getPlayers</a>()[0]-&gt;get_current_bet(), 0);</div>
-<div class="line"><span class="lineno">  174</span>}</div>
-<div class="ttc" id="aclass_game_html_a69614c930626006cd0b3e644bc9cc613"><div class="ttname"><a href="class_game.html#a69614c930626006cd0b3e644bc9cc613">Game::resetPlayerBets</a></div><div class="ttdeci">void resetPlayerBets()</div><div class="ttdoc">Resets the current bets of all players.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00413">Game.cpp:413</a></div></div>
+<p class="definition">Definition at line <a class="el" href="test___game_8cc_source.html#l00170">170</a> of file <a class="el" href="test___game_8cc_source.html">test_Game.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  170</span>                                  {</div>
+<div class="line"><span class="lineno">  171</span>    <a class="code hl_class" href="class_game.html">Game</a> game = createGameWithPlayers(2);</div>
+<div class="line"><span class="lineno">  172</span>    game.<a class="code hl_function" href="class_game.html#a57e5aef2f67e77929842fab7a78404ea">getPlayers</a>()[0]-&gt;bet(50);</div>
+<div class="line"><span class="lineno">  173</span>    game.<a class="code hl_function" href="class_game.html#a69614c930626006cd0b3e644bc9cc613">resetPlayerBets</a>();</div>
+<div class="line"><span class="lineno">  174</span>    EXPECT_EQ(game.<a class="code hl_function" href="class_game.html#a57e5aef2f67e77929842fab7a78404ea">getPlayers</a>()[0]-&gt;get_current_bet(), 0);</div>
+<div class="line"><span class="lineno">  175</span>}</div>
+<div class="ttc" id="aclass_game_html_a69614c930626006cd0b3e644bc9cc613"><div class="ttname"><a href="class_game.html#a69614c930626006cd0b3e644bc9cc613">Game::resetPlayerBets</a></div><div class="ttdeci">void resetPlayerBets()</div><div class="ttdoc">Resets the current bets of all players.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00472">Game.cpp:472</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_game_8cpp_source.html#l00051">Game::getPlayers()</a>, and <a class="el" href="_game_8cpp_source.html#l00413">Game::resetPlayerBets()</a>.</p>
+<p class="reference">References <a class="el" href="_game_8cpp_source.html#l00051">Game::getPlayers()</a>, and <a class="el" href="_game_8cpp_source.html#l00472">Game::resetPlayerBets()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -975,16 +976,16 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="test___game_8cc_source.html#l00176">176</a> of file <a class="el" href="test___game_8cc_source.html">test_Game.cc</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  176</span>                                   {</div>
-<div class="line"><span class="lineno">  177</span>    <a class="code hl_class" href="class_game.html">Game</a> game = createGameWithPlayers(2);</div>
-<div class="line"><span class="lineno">  178</span>    game.<a class="code hl_function" href="class_game.html#a5cc682e0e2c72be6768cdacc9aec26ae">deal_hands</a>();</div>
-<div class="line"><span class="lineno">  179</span>    game.<a class="code hl_function" href="class_game.html#adc54b1823a5d8d5221d7bf74e924e145">resetPlayerHands</a>();</div>
-<div class="line"><span class="lineno">  180</span>    EXPECT_EQ(game.<a class="code hl_function" href="class_game.html#a57e5aef2f67e77929842fab7a78404ea">getPlayers</a>()[0]-&gt;get_hand().size(), 0);</div>
-<div class="line"><span class="lineno">  181</span>}</div>
-<div class="ttc" id="aclass_game_html_adc54b1823a5d8d5221d7bf74e924e145"><div class="ttname"><a href="class_game.html#adc54b1823a5d8d5221d7bf74e924e145">Game::resetPlayerHands</a></div><div class="ttdeci">void resetPlayerHands()</div><div class="ttdoc">Resets the hands of all players.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00420">Game.cpp:420</a></div></div>
+<p class="definition">Definition at line <a class="el" href="test___game_8cc_source.html#l00177">177</a> of file <a class="el" href="test___game_8cc_source.html">test_Game.cc</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  177</span>                                   {</div>
+<div class="line"><span class="lineno">  178</span>    <a class="code hl_class" href="class_game.html">Game</a> game = createGameWithPlayers(2);</div>
+<div class="line"><span class="lineno">  179</span>    game.<a class="code hl_function" href="class_game.html#a5cc682e0e2c72be6768cdacc9aec26ae">deal_hands</a>();</div>
+<div class="line"><span class="lineno">  180</span>    game.<a class="code hl_function" href="class_game.html#adc54b1823a5d8d5221d7bf74e924e145">resetPlayerHands</a>();</div>
+<div class="line"><span class="lineno">  181</span>    EXPECT_EQ(game.<a class="code hl_function" href="class_game.html#a57e5aef2f67e77929842fab7a78404ea">getPlayers</a>()[0]-&gt;get_hand().size(), 0);</div>
+<div class="line"><span class="lineno">  182</span>}</div>
+<div class="ttc" id="aclass_game_html_adc54b1823a5d8d5221d7bf74e924e145"><div class="ttname"><a href="class_game.html#adc54b1823a5d8d5221d7bf74e924e145">Game::resetPlayerHands</a></div><div class="ttdeci">void resetPlayerHands()</div><div class="ttdoc">Resets the hands of all players.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00479">Game.cpp:479</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_game_8cpp_source.html#l00027">Game::deal_hands()</a>, <a class="el" href="_game_8cpp_source.html#l00051">Game::getPlayers()</a>, and <a class="el" href="_game_8cpp_source.html#l00420">Game::resetPlayerHands()</a>.</p>
+<p class="reference">References <a class="el" href="_game_8cpp_source.html#l00027">Game::deal_hands()</a>, <a class="el" href="_game_8cpp_source.html#l00051">Game::getPlayers()</a>, and <a class="el" href="_game_8cpp_source.html#l00479">Game::resetPlayerHands()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -996,7 +997,7 @@ Here is the call graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 27 2024 03:15:06 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Wed Oct 9 2024 09:00:38 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
