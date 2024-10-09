@@ -8,6 +8,7 @@ using namespace std;
 Player::Player(const std::string& name, int stack) {
     this->name = name;
     this->stack = stack;
+
 }
 
 void Player::bet(int amount) {
@@ -17,12 +18,14 @@ void Player::bet(int amount) {
         while(true){}
     }
     this->stack -= amount - this->current_bet;
+    this->totalBetThisHand += amount - this->current_bet;
     this->current_bet = amount;
 }
 
 int Player::deduct_blind(int amount) {
     this->stack -= amount;
     this->current_bet = amount;
+    this->totalBetThisHand += amount;
     return amount;
 }
 
@@ -54,10 +57,18 @@ int Player::get_current_bet() {
     return this->current_bet;
 }
 
+int Player::get_total_bet() {
+    return this->totalBetThisHand;
+}
+
 void Player::show_hand() {
     for (Card card : hand) {
         cout << card.get_rank() << " of " << card.get_suit() << endl;
     }
+}
+
+void Player::reset_total_bet(){
+    this->totalBetThisHand = 0;
 }
 
 void Player::reset_current_bet() {

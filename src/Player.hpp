@@ -18,6 +18,7 @@ class Player {
         vector<Card> hand;          ///< The player's hand of cards.
         int stack;                  ///< The player's current chip stack.
         int current_bet = 0;        ///< The player's current bet in the ongoing hand.
+        int totalBetThisHand = 0;    ///< The total amount the player has bet this hand.
 
     public:
         /**
@@ -93,9 +94,21 @@ class Player {
         int get_current_bet();
 
         /**
+         * @brief Gets the total amount the player has bet this hand.
+         * @return The total amount the player has bet this hand.
+         */
+        int get_total_bet();
+
+        /**
          * @brief Resets the player's current bet to zero.
          */
         void reset_current_bet();
+
+        /**
+         * @brief Resets the total amount the player has bet this hand to zero.
+         * This is used at the end of a hand to reset the player's total bet.
+         */
+        void reset_total_bet();
 
         /**
          * @brief Generates a random name for the player.

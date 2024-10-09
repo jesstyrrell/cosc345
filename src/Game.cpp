@@ -72,11 +72,58 @@ bool Game::getShowdown() {
  * Award the pot to the winner of the hand
  * @param winner: Player* - The player object who won the hand
  */
-void Game::awardPot(vector<Player*> winners) {
+void Game::awardPot(vector<Player*> winners, vector<bool>& inGame) {
+
+    int count = 0;
     // Loop through the winners and award the pot to each winner
-    for (Player* winner : winners) {
-        winner->win(pot / winners.size());
+    while(pot > 0){
+        count++;
+        if (winners.size() == 1) {
+            cout << "Winner: " << winners[0]->get_name() << endl;
+            Player* winner = winners[0];
+            int winAmount = 0;
+            int amountBet = winner->get_total_bet();
+
+            for (Player* player : players) {
+                winAmount += min(player->get_total_bet(), amountBet);
+                cout << player->get_total_bet() << endl;
+            }
+            winner->win(min(winAmount, (int)(pot)));
+            cout << winAmount << endl;
+            if(winAmount > pot){
+                pot = 0;
+            } else {
+                pot -= winAmount;
+            }
+            // Set the winner to no longer be inGame 
+            inGame[distance(players.begin(), find(players.begin(), players.end(), winner))] = false;
+            winners = this->getWinner(this->getPlayers(), this->community_cards, inGame);
+        } else {
+            // Sort the winners by total bet (smallest to largest)
+            sort(winners.begin(), winners.end(), [](Player* a, Player* b) {
+                return a->get_total_bet() < b->get_total_bet();
+            });
+
+            int cumulativeAmountWon = 0;
+            int numWinners = winners.size();
+
+            for(Player* winner : winners){
+                int winAmount = 0;
+                int amountBet = winner->get_total_bet();
+                for(Player* player : players){
+                    winAmount += min(player->get_total_bet(), amountBet);
+                }
+                // Award every winner the same amount 
+                winner->win((winAmount-cumulativeAmountWon)/ numWinners + cumulativeAmountWon);
+                this->pot -= (winAmount-cumulativeAmountWon)/ numWinners + cumulativeAmountWon;
+                cumulativeAmountWon += winAmount;
+                numWinners--;
+            }
+
+        }
     }
+
+
     int remainder = pot % winners.size();
     for(int i = 0; i < remainder; i++){
         winners[i]->win(1);
@@ -227,13 +274,12 @@ void Game::playHand() {
     atShowdown = count(inGame.begin(), inGame.end(), true) > 1;
     GUI::displayGameState();
     // sleep for 1 second 
-    // std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+    std::this_thread::sleep_for(std::chrono::milliseconds(2000));
     // Award the pot to the winner/s
-    this->awardPot(winners);
+    this->awardPot(winners, inGame);
     GUI::displayGameState();
     // sleep for 1 second 
     // std::this_thread::sleep_for(std::chrono::milliseconds(2000));
-
     atShowdown = false;
     // Move the button 
     this->button = (this->button + 1) % numPlayers;
@@ -245,6 +291,9 @@ void Game::playHand() {
     this->deck.reset();
     // Reset the game stage
     this->currentStage = PREFLOP;
+
+    // Reset the total bets of all players
+    this->resetPlayerTotalBets();
 
     // TESTING: check that the sum of all player stacks is the same as the starting stack
     int totalStack = 0;
@@ -279,6 +328,13 @@ void Game::playHand() {
     }
 
 
+}
+
+
+void Game::resetPlayerTotalBets(){
+    for(Player* player : this->getPlayers()){
+        player->reset_total_bet();
+    }
 }
 
 /**

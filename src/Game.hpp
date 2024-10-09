@@ -36,7 +36,7 @@ class Game {
         const int SMALL_BLIND = 1;
         const int STARTING_STACK = 1000;
         int pot = 0;
-        int button = 0; 
+        int button = 0;
         int removedPlayerCount = 0;
         bool atShowdown = false;
 
@@ -128,7 +128,7 @@ class Game {
          * @brief Awards the pot to the winning players.
          * @param winners A vector of pointers to the winning players.
          */
-        void awardPot(vector<Player*> winners);
+        void awardPot(vector<Player*> winners, vector<bool>& inGame);
 
         /**
          * @brief Gets the players in the game.
@@ -146,6 +146,11 @@ class Game {
          * @brief Resets the current bets of all players.
          */
         void resetPlayerBets();
+
+        /**
+         * @brief Resets the total bets of all players.
+         */
+        void resetPlayerTotalBets();
 
         /**
          * @brief Resets the hands of all players.
