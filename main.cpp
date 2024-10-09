@@ -20,21 +20,14 @@
 
 using namespace std;
 
-// A main method for testing the classes
-int main(int argc, char* argv[]) {
-
-    // Check if the ci flag is passed
-    if (argc > 1 && strcmp(argv[1], "-ci") == 0) {
-        return 0;
-    }
-
+void playGame(){
     // Display the start screen
     GUI::displayStartScreen();
 
     MenuOption menuChoice = GUI::displayMenu();
     if (menuChoice == MenuOption::QUIT) {
         GUI::displayEndMessage();
-        return 0;
+        return;
     }
 
     // Call the GUI method to get the players name, and let them play as guest
@@ -63,9 +56,14 @@ int main(int argc, char* argv[]) {
         // Play a hand
         game.playHand();
 
+        int playerChoice = playerPointers[0]->endOfHand();
         // Check if the player wants to play another hand
-        if (playerPointers[0]->endOfHand() != 1) {
+        if (playerChoice == 0) {
             break;
+        }
+        if(playerChoice == 2){
+            playGame();
+            return;
         }
 
     }
@@ -73,8 +71,20 @@ int main(int argc, char* argv[]) {
     // Display the end message
      GUI::displayEndMessage();
 
-    return 0;
+    return;
 
 }
 
+
+
+
+// A main method for testing the classes
+int main(int argc, char* argv[]) {
+
+    // Check if the ci flag is passed
+    if (argc > 1 && strcmp(argv[1], "-ci") == 0) {
+        return 0;
+    }
+    playGame();
+}
 

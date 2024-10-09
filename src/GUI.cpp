@@ -354,7 +354,8 @@ PlayerProfile GUI::signInMenu() {
 
 int GUI::endOfRoundMenu() {
     std::cout << "1. Continue (enter)" << std::endl;
-    std::cout << "2. Quit (q)" << std::endl;
+    std::cout << "2. Main menu (m)" << std::endl;
+    std::cout << "3. Quit (q)" << std::endl;
 
     std::string input;
     
@@ -362,13 +363,16 @@ int GUI::endOfRoundMenu() {
     
     std::getline(std::cin, input);  // Read the entire line, allowing us to detect Enter
 
-    while (input != "q" && input != "") {
+    while (input != "q" && input != "" && input != "m" && input != "1" && input != "2" && input != "3") {
         std::cout << "Invalid input. Please enter a valid option: ";
         std::getline(std::cin, input);  // Use getline to capture the next input
     }
 
-    if (input == "q") {
+    if (input == "q" || input == "3") {
         return 0;
+    }
+    if(input == "m" || input == "2"){
+        return 2;
     }
     return 1;
 }

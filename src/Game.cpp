@@ -270,6 +270,11 @@ void Game::playHand() {
         resetPlayerBets();
     }
 
+    // if the number of community cards is less than 5, deal the remaining cards
+    while(community_cards.size() < 5){
+        this->deal();
+    }
+
     vector<Player*> winners = this->getWinner(this->getPlayers(), this->community_cards, inGame);
 
     //GUI::displayCommunityCards(community_cards);
@@ -432,14 +437,13 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
         }
 
         // Check if the stack size of all players in the game is 0 
-        bool allPlayersStacksZero = true;
+        int numStacksNonZero = 0;
         for(int i = 0; i < numPlayers; i++){
             if(inGame[i] && this->getPlayers()[i]->get_stack() > 0){
-                allPlayersStacksZero = false;
-                break;
+                numStacksNonZero++;
             }
         }
-        if(allPlayersStacksZero){
+        if(numStacksNonZero <= 1){
             return true;
         }
     }
