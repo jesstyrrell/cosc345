@@ -310,7 +310,7 @@ int GUI::getNumberOfPlayers() {
     return numPlayers;
 }
 
-int GUI::getNumberOfPlayers() {
+int GUI::getBotDifficulty() {
     std::cout << "Enter the bot difficulty (1, 2, or 3): ";
 
     int difficulty;
