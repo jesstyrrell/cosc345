@@ -139,7 +139,7 @@ class Player {
          * @param canCall Whether the player can call.
          * @return The player's chosen move as a string.
          */
-        virtual std::string getMove(bool canCheck, bool canRaise, bool canFold, bool canCall, vector<Card> community_cards, int largestBet, int numPlayersInHand) = 0;
+        virtual std::string getMove(bool canCheck, bool canRaise, bool canFold, bool canCall, vector<Card> community_cards, int largestBet, int numPlayersInHand, int pot) = 0;
 
         /**
          * @brief Gets the player's bet sizing during their turn.

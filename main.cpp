@@ -38,22 +38,22 @@ void playGame(){
 
     
     std::vector<Player*> playerPointers;
-    HumanPlayer player = HumanPlayer(currentPlayer.name, 1000);
+    RandomPlayer player = RandomPlayer(currentPlayer.name, 1000);
     playerPointers.push_back(&player);
 
     for(int i = 0; i < numberOfPlayers-1; i++){
         string randomPlayerName = GUI::getRandomPlayerName();
         if (difficulty == 1) {
-            RandomPlayer randPlayer = RandomPlayer(randomPlayerName, 1000);
-            playerPointers.push_back(&randPlayer);
+            RandomPlayer *randPlayer = new RandomPlayer(randomPlayerName, 1000);
+            playerPointers.push_back(randPlayer);
         }
         if (difficulty == 2) {
-            BasicPlayer basicPlayer = BasicPlayer(randomPlayerName, 1000);
-            playerPointers.push_back(&basicPlayer);
+            BasicPlayer *basicPlayer = new BasicPlayer(randomPlayerName, 1000);
+            playerPointers.push_back(basicPlayer);
         }
         if (difficulty == 3) {
-            BetterPlayer betterPlayer = BetterPlayer(randomPlayerName, 1000);
-            playerPointers.push_back(&betterPlayer);
+            BetterPlayer *betterPlayer = new BetterPlayer(randomPlayerName, 1000);
+            playerPointers.push_back(betterPlayer);
         }
     }
 
@@ -66,7 +66,6 @@ void playGame(){
     // Start a game loop
     while(true){
         // Play a hand
-        cout << "testing testing" << endl;
         game.playHand();
 
         int playerChoice = playerPointers[0]->endOfHand();

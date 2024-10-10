@@ -10,6 +10,7 @@ class BetterPlayer : public Player
 {
 private:
     std::default_random_engine rng;
+    int pot;
 
 public:
     BetterPlayer(const std::string &name, int stack) : Player(name, stack)
@@ -18,8 +19,9 @@ public:
         rng.seed(seed);
     }
 
-    std::string getMove(bool canCheck, bool canRaise, bool canFold, bool canCall, vector<Card> community_cards, int largestBet, int numPlayersInHand) override
+    std::string getMove(bool canCheck, bool canRaise, bool canFold, bool canCall, vector<Card> community_cards, int largestBet, int numPlayersInHand, int pot) override
     {
+        this->pot = pot;
         // Get the bros equity from the equity calculator
         vector<float> equity = get_equity(community_cards, numPlayersInHand);
         double equityThreshold = 1.0 / numPlayersInHand * 1.15;
@@ -51,23 +53,28 @@ public:
         return "r";
     }
 
-    int getBetSizing(int minBet, int maxBet) override
-    {
-        // randomly flip a coin until it is false and count the number of flips
-        int count = 0;
 
-        while (true)
-        {
-            int flip = (rand() % 2) + 1;
-            if (flip == 1)
-            {
+    int getBetSizing(int minBet, int maxBet) override {
+        // Randomly choose a bet size that is either 1/4, 1/3, 1/2 or full pot
+        std::uniform_int_distribution<int> betSize(1, 4);
+        int bet = 0;
+        switch(betSize(rng)){
+            case 1:
+                bet = pot/4;
                 break;
-            }
-            count++;
+            case 2:
+                bet = pot/3;
+                break;
+            case 3:
+                bet = pot/2;
+                break;
+            case 4:
+                bet = pot;
+                break;
         }
-        // TESTING: print the bet sizing
-        // std::cout << min(minBet*(count+1), maxBet) << std::endl;
-        return min(minBet * (count + 1), maxBet);
+
+        return max(min(bet, maxBet), minBet);
+
     }
 
     int endOfHand()

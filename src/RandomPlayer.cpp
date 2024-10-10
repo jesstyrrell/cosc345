@@ -16,7 +16,7 @@ public:
         rng.seed(seed);
     }
 
-    std::string getMove(bool canCheck, bool canRaise, bool canFold, bool canCall, vector<Card> community_cards, int largestBet, int numPlayersInHand) override {
+    std::string getMove(bool canCheck, bool canRaise, bool canFold, bool canCall, vector<Card> community_cards, int largestBet, int numPlayersInHand, int pot) override {
         vector<std::string> moves = {"a", "r", "f", "c"};
         // randomly select one of the bools that is true
         std::vector<bool> possibleMoves = {canCheck, canRaise, canFold, canCall};
