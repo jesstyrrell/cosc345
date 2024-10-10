@@ -46,8 +46,14 @@ vector<Card> Player::get_hand() {
 }
 
 void Player::add_card_to_hand(Card card) {
+    if (this->hand.empty()) {
+        // Create a new hand (vector of cards) if the current hand is empty
+        this->hand = std::vector<Card>();
+    }
+    // Add the card to the hand
     this->hand.push_back(card);
 }
+
 
 void Player::clear_hand() {
     this->hand.clear();
