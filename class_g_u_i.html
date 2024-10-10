@@ -102,6 +102,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:abd6f0d1943a70f629ba208965a42b32e" id="r_abd6f0d1943a70f629ba208965a42b32e"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i.html#abd6f0d1943a70f629ba208965a42b32e">getNumberOfPlayers</a> ()</td></tr>
 <tr class="memdesc:abd6f0d1943a70f629ba208965a42b32e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of players from the user.  <br /></td></tr>
 <tr class="separator:abd6f0d1943a70f629ba208965a42b32e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ce2a1a0efb5bd2967c3b6338f82e1c0" id="r_a7ce2a1a0efb5bd2967c3b6338f82e1c0"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i.html#a7ce2a1a0efb5bd2967c3b6338f82e1c0">getBotDifficulty</a> ()</td></tr>
+<tr class="separator:a7ce2a1a0efb5bd2967c3b6338f82e1c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf2275f45170a133113df56f878ff554" id="r_acf2275f45170a133113df56f878ff554"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g_u_i.html#acf2275f45170a133113df56f878ff554">clearScreen</a> ()</td></tr>
 <tr class="memdesc:acf2275f45170a133113df56f878ff554"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the console screen.  <br /></td></tr>
 <tr class="separator:acf2275f45170a133113df56f878ff554"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -287,32 +289,32 @@ Here is the caller graph for this function:</div>
 <p>Creates a new player profile. </p>
 <dl class="section return"><dt>Returns</dt><dd>The newly created player profile. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00593">593</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  593</span>                                 {</div>
-<div class="line"><span class="lineno">  594</span>    <a class="code hl_class" href="class_c_s_v_worker.html">CSVWorker</a> csv(<span class="stringliteral">&quot;../data/profiles.csv&quot;</span>);</div>
-<div class="line"><span class="lineno">  595</span> </div>
-<div class="line"><span class="lineno">  596</span>    <span class="comment">// Check if a profile exists in the CSV file</span></div>
-<div class="line"><span class="lineno">  597</span>    std::string name;</div>
-<div class="line"><span class="lineno">  598</span>    <span class="keywordtype">int</span> age;</div>
-<div class="line"><span class="lineno">  599</span> </div>
-<div class="line"><span class="lineno">  600</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Enter your name: &quot;</span>;</div>
-<div class="line"><span class="lineno">  601</span>    std::cin &gt;&gt; name;</div>
-<div class="line"><span class="lineno">  602</span> </div>
-<div class="line"><span class="lineno">  603</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Enter your age: &quot;</span>;</div>
-<div class="line"><span class="lineno">  604</span>    std::cin &gt;&gt; age;</div>
-<div class="line"><span class="lineno">  605</span> </div>
-<div class="line"><span class="lineno">  606</span>    <a class="code hl_struct" href="struct_player_profile.html">PlayerProfile</a> playerProfile = { name, age };</div>
-<div class="line"><span class="lineno">  607</span>    csv.addProfile(playerProfile);</div>
-<div class="line"><span class="lineno">  608</span>    csv.writeProfiles();</div>
-<div class="line"><span class="lineno">  609</span> </div>
-<div class="line"><span class="lineno">  610</span>    <span class="keywordflow">return</span> playerProfile;</div>
-<div class="line"><span class="lineno">  611</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00613">613</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  613</span>                                 {</div>
+<div class="line"><span class="lineno">  614</span>    <a class="code hl_class" href="class_c_s_v_worker.html">CSVWorker</a> csv(<span class="stringliteral">&quot;../data/profiles.csv&quot;</span>);</div>
+<div class="line"><span class="lineno">  615</span> </div>
+<div class="line"><span class="lineno">  616</span>    <span class="comment">// Check if a profile exists in the CSV file</span></div>
+<div class="line"><span class="lineno">  617</span>    std::string name;</div>
+<div class="line"><span class="lineno">  618</span>    <span class="keywordtype">int</span> age;</div>
+<div class="line"><span class="lineno">  619</span> </div>
+<div class="line"><span class="lineno">  620</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Enter your name: &quot;</span>;</div>
+<div class="line"><span class="lineno">  621</span>    std::cin &gt;&gt; name;</div>
+<div class="line"><span class="lineno">  622</span> </div>
+<div class="line"><span class="lineno">  623</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Enter your age: &quot;</span>;</div>
+<div class="line"><span class="lineno">  624</span>    std::cin &gt;&gt; age;</div>
+<div class="line"><span class="lineno">  625</span> </div>
+<div class="line"><span class="lineno">  626</span>    <a class="code hl_struct" href="struct_player_profile.html">PlayerProfile</a> playerProfile = { name, age };</div>
+<div class="line"><span class="lineno">  627</span>    csv.addProfile(playerProfile);</div>
+<div class="line"><span class="lineno">  628</span>    csv.writeProfiles();</div>
+<div class="line"><span class="lineno">  629</span> </div>
+<div class="line"><span class="lineno">  630</span>    <span class="keywordflow">return</span> playerProfile;</div>
+<div class="line"><span class="lineno">  631</span>}</div>
 <div class="ttc" id="aclass_c_s_v_worker_html"><div class="ttname"><a href="class_c_s_v_worker.html">CSVWorker</a></div><div class="ttdef"><b>Definition</b> <a href="_c_s_v_worker_8hpp_source.html#l00009">CSVWorker.hpp:10</a></div></div>
 <div class="ttc" id="astruct_player_profile_html"><div class="ttname"><a href="struct_player_profile.html">PlayerProfile</a></div><div class="ttdef"><b>Definition</b> <a href="_player_profile_8hpp_source.html#l00007">PlayerProfile.hpp:7</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_c_s_v_worker_8cpp_source.html#l00063">CSVWorker::addProfile()</a>, and <a class="el" href="_c_s_v_worker_8cpp_source.html#l00010">CSVWorker::writeProfiles()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00313">signInMenu()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00333">signInMenu()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -509,7 +511,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_g_u_i_8cpp_source.html#l00043">clearScreen()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00172">displayStartScreen()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00185">getFilePathStart()</a>, and <a class="el" href="_g_u_i_8cpp_source.html#l00052">moveTo()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00023">playGame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00024">playGame()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -548,77 +550,77 @@ Here is the caller graph for this function:</div>
 
 <p>Displays the current state of the game. </p>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00479">479</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  479</span>                           {</div>
-<div class="line"><span class="lineno">  480</span>    <a class="code hl_class" href="class_game.html">Game</a> <a class="code hl_variable" href="class_g_u_i.html#afb260f19c1cd60e5cdfc5ddc511e636d">game</a> = <a class="code hl_function" href="class_g_u_i.html#a8a11612f177718da765ea52bc74d62de">getGame</a>();</div>
-<div class="line"><span class="lineno">  481</span>    vector&lt;Player*&gt; players = <a class="code hl_variable" href="class_g_u_i.html#afb260f19c1cd60e5cdfc5ddc511e636d">game</a>.<a class="code hl_function" href="class_game.html#a57e5aef2f67e77929842fab7a78404ea">getPlayers</a>();</div>
-<div class="line"><span class="lineno">  482</span>    vector&lt;Card&gt; communityCards = <a class="code hl_variable" href="class_g_u_i.html#afb260f19c1cd60e5cdfc5ddc511e636d">game</a>.<a class="code hl_function" href="class_game.html#ae8d1705be89f97f5ef13ba1a460502f2">getCommunityCards</a>();</div>
-<div class="line"><span class="lineno">  483</span>    <span class="keywordtype">int</span> button = <a class="code hl_variable" href="class_g_u_i.html#afb260f19c1cd60e5cdfc5ddc511e636d">game</a>.<a class="code hl_function" href="class_game.html#a4760c827f1396dfba471b22a79a4f7ee">getButton</a>();</div>
-<div class="line"><span class="lineno">  484</span> </div>
-<div class="line"><span class="lineno">  485</span>    <a class="code hl_function" href="_g_u_i_8cpp.html#a0fcdefbd8531ccd32fad2d8d6caa7a76">moveTo</a>(0, 0);</div>
-<div class="line"><span class="lineno">  486</span>    <span class="comment">// TODO: Implement this method, will be called as each hand progresses and display </span></div>
-<div class="line"><span class="lineno">  487</span>    <span class="comment">// table, chips, cards, stack sizes, players names, etc.</span></div>
-<div class="line"><span class="lineno">  488</span> </div>
-<div class="line"><span class="lineno">  489</span>    <span class="comment">// Get the contents of the table.txt file and print it to the terminal</span></div>
-<div class="line"><span class="lineno">  490</span>    <span class="keywordtype">string</span> startPath = <a class="code hl_function" href="_g_u_i_8cpp.html#a674e968d1ecb5cf741d6625f58378c95">getFilePathStart</a>();</div>
-<div class="line"><span class="lineno">  491</span>    <span class="keywordtype">string</span> tablePath = startPath + <span class="stringliteral">&quot;/images/table.txt&quot;</span>;</div>
-<div class="line"><span class="lineno">  492</span> </div>
-<div class="line"><span class="lineno">  493</span>    <span class="keywordtype">string</span> tableContent = <a class="code hl_function" href="_g_u_i_8cpp.html#a734f170642ae5d075a5f9f98fab8cfdf">getFileContents</a>(tablePath);</div>
-<div class="line"><span class="lineno">  494</span> </div>
-<div class="line"><span class="lineno">  495</span>    <span class="keywordtype">string</span> buttonPath = startPath + <span class="stringliteral">&quot;/images/button.txt&quot;</span>;</div>
-<div class="line"><span class="lineno">  496</span>    <span class="keywordtype">string</span> buttonString = <a class="code hl_function" href="_g_u_i_8cpp.html#a734f170642ae5d075a5f9f98fab8cfdf">getFileContents</a>(buttonPath);</div>
-<div class="line"><span class="lineno">  497</span>  </div>
-<div class="line"><span class="lineno">  498</span>    </div>
-<div class="line"><span class="lineno">  499</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; communityCards.size(); i++){</div>
-<div class="line"><span class="lineno">  500</span>        <span class="keywordtype">string</span> cardContent = <a class="code hl_function" href="_g_u_i_8cpp.html#a36b6f63142ee7d9e884ef846d5dd1a05">getCardString</a>(communityCards[i]);</div>
-<div class="line"><span class="lineno">  501</span>        tableContent = <a class="code hl_function" href="_g_u_i_8cpp.html#ae6720e4bc4b25d366b73e9fc9b8afd4b">addString</a>(tableContent, cardContent, <a class="code hl_variable" href="class_g_u_i.html#a5ce851b4b9a953083201d8b566a8ed93">COMMUNITY_CARD_POSITIONS</a>[i].x, <a class="code hl_variable" href="class_g_u_i.html#a5ce851b4b9a953083201d8b566a8ed93">COMMUNITY_CARD_POSITIONS</a>[i].y);</div>
-<div class="line"><span class="lineno">  502</span>    }</div>
-<div class="line"><span class="lineno">  503</span> </div>
-<div class="line"><span class="lineno">  504</span>    tableContent = <a class="code hl_function" href="_g_u_i_8cpp.html#ae6720e4bc4b25d366b73e9fc9b8afd4b">addString</a>(tableContent, <span class="stringliteral">&quot;Pot: &quot;</span> + std::to_string(<a class="code hl_variable" href="class_g_u_i.html#afb260f19c1cd60e5cdfc5ddc511e636d">game</a>.<a class="code hl_function" href="class_game.html#a20b263146b74bb0c81341cfd26c44de6">getPot</a>()), 103 - (std::to_string(<a class="code hl_variable" href="class_g_u_i.html#afb260f19c1cd60e5cdfc5ddc511e636d">game</a>.<a class="code hl_function" href="class_game.html#a20b263146b74bb0c81341cfd26c44de6">getPot</a>()).length() + 5)/2, 21);</div>
-<div class="line"><span class="lineno">  505</span> </div>
-<div class="line"><span class="lineno">  506</span>    <span class="keywordtype">int</span> numPlayers = players.size();</div>
-<div class="line"><span class="lineno">  507</span>    <span class="keywordtype">int</span> seatStep = 8 / numPlayers;</div>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00499">499</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  499</span>                           {</div>
+<div class="line"><span class="lineno">  500</span>    <a class="code hl_class" href="class_game.html">Game</a> <a class="code hl_variable" href="class_g_u_i.html#afb260f19c1cd60e5cdfc5ddc511e636d">game</a> = <a class="code hl_function" href="class_g_u_i.html#a8a11612f177718da765ea52bc74d62de">getGame</a>();</div>
+<div class="line"><span class="lineno">  501</span>    vector&lt;Player*&gt; players = <a class="code hl_variable" href="class_g_u_i.html#afb260f19c1cd60e5cdfc5ddc511e636d">game</a>.<a class="code hl_function" href="class_game.html#a57e5aef2f67e77929842fab7a78404ea">getPlayers</a>();</div>
+<div class="line"><span class="lineno">  502</span>    vector&lt;Card&gt; communityCards = <a class="code hl_variable" href="class_g_u_i.html#afb260f19c1cd60e5cdfc5ddc511e636d">game</a>.<a class="code hl_function" href="class_game.html#ae8d1705be89f97f5ef13ba1a460502f2">getCommunityCards</a>();</div>
+<div class="line"><span class="lineno">  503</span>    <span class="keywordtype">int</span> button = <a class="code hl_variable" href="class_g_u_i.html#afb260f19c1cd60e5cdfc5ddc511e636d">game</a>.<a class="code hl_function" href="class_game.html#a4760c827f1396dfba471b22a79a4f7ee">getButton</a>();</div>
+<div class="line"><span class="lineno">  504</span> </div>
+<div class="line"><span class="lineno">  505</span>    <a class="code hl_function" href="_g_u_i_8cpp.html#a0fcdefbd8531ccd32fad2d8d6caa7a76">moveTo</a>(0, 0);</div>
+<div class="line"><span class="lineno">  506</span>    <span class="comment">// TODO: Implement this method, will be called as each hand progresses and display </span></div>
+<div class="line"><span class="lineno">  507</span>    <span class="comment">// table, chips, cards, stack sizes, players names, etc.</span></div>
 <div class="line"><span class="lineno">  508</span> </div>
-<div class="line"><span class="lineno">  509</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; numPlayers; i++){</div>
-<div class="line"><span class="lineno">  510</span>        tableContent = <a class="code hl_function" href="_g_u_i_8cpp.html#ae6720e4bc4b25d366b73e9fc9b8afd4b">addString</a>(tableContent, players[i]-&gt;get_name(), <a class="code hl_variable" href="class_g_u_i.html#ada5f6ee4c98b1f494a23b031c1bf4ba6">PLAYER_NAME_POSITIONS</a>[i * seatStep].x - players[i]-&gt;get_name().length()/2, <a class="code hl_variable" href="class_g_u_i.html#ada5f6ee4c98b1f494a23b031c1bf4ba6">PLAYER_NAME_POSITIONS</a>[i * seatStep].y);</div>
-<div class="line"><span class="lineno">  511</span>        tableContent = <a class="code hl_function" href="_g_u_i_8cpp.html#ae6720e4bc4b25d366b73e9fc9b8afd4b">addString</a>(tableContent, <span class="stringliteral">&quot;Stack: &quot;</span> + std::to_string(players[i]-&gt;get_stack()), <a class="code hl_variable" href="class_g_u_i.html#ada5f6ee4c98b1f494a23b031c1bf4ba6">PLAYER_NAME_POSITIONS</a>[i * seatStep].x -((7 + std::to_string(players[i]-&gt;get_stack()).length() )/2), <a class="code hl_variable" href="class_g_u_i.html#ada5f6ee4c98b1f494a23b031c1bf4ba6">PLAYER_NAME_POSITIONS</a>[i * seatStep].y + 2);</div>
-<div class="line"><span class="lineno">  512</span>         <span class="keywordflow">if</span>(players[i]-&gt;get_current_bet() != 0){</div>
-<div class="line"><span class="lineno">  513</span>            tableContent = <a class="code hl_function" href="_g_u_i_8cpp.html#ae6720e4bc4b25d366b73e9fc9b8afd4b">addString</a>(tableContent, <span class="stringliteral">&quot;Bet: &quot;</span> + std::to_string(players[i]-&gt;get_current_bet()), <a class="code hl_variable" href="class_g_u_i.html#a38db803390e152b091b3df4b4e2bfaf5">PLAYER_CURRENT_BETS</a>[i * seatStep].x -((5 + std::to_string(players[i]-&gt;get_current_bet()).length() )/2), <a class="code hl_variable" href="class_g_u_i.html#a38db803390e152b091b3df4b4e2bfaf5">PLAYER_CURRENT_BETS</a>[i * seatStep].y);</div>
-<div class="line"><span class="lineno">  514</span>         }</div>
-<div class="line"><span class="lineno">  515</span> </div>
-<div class="line"><span class="lineno">  516</span>         <span class="keywordflow">if</span>(i == button){</div>
-<div class="line"><span class="lineno">  517</span>            tableContent = <a class="code hl_function" href="_g_u_i_8cpp.html#ae6720e4bc4b25d366b73e9fc9b8afd4b">addString</a>(tableContent, buttonString, <a class="code hl_variable" href="class_g_u_i.html#a1c883c08330527a2d48d21280dab7450">PLAYER_BUTTON_POSITIONS</a>[i * seatStep].x, <a class="code hl_variable" href="class_g_u_i.html#a1c883c08330527a2d48d21280dab7450">PLAYER_BUTTON_POSITIONS</a>[i * seatStep].y);</div>
-<div class="line"><span class="lineno">  518</span>         }</div>
-<div class="line"><span class="lineno">  519</span> </div>
-<div class="line"><span class="lineno">  520</span>         <span class="keywordflow">if</span> (players[i]-&gt;get_hand().size() != 0) {</div>
-<div class="line"><span class="lineno">  521</span>             <span class="keywordtype">string</span> playerCardContent1;</div>
-<div class="line"><span class="lineno">  522</span>             <span class="keywordtype">string</span> playerCardContent2;</div>
-<div class="line"><span class="lineno">  523</span>             <span class="keywordflow">if</span> (i == 0 || <a class="code hl_variable" href="class_g_u_i.html#afb260f19c1cd60e5cdfc5ddc511e636d">game</a>.<a class="code hl_function" href="class_game.html#ae10d3e9f219b74699aa150537440c041">getShowdown</a>()) {</div>
-<div class="line"><span class="lineno">  524</span>                playerCardContent1 = <a class="code hl_function" href="_g_u_i_8cpp.html#a36b6f63142ee7d9e884ef846d5dd1a05">getCardString</a>(players[i]-&gt;get_hand()[0]);</div>
-<div class="line"><span class="lineno">  525</span>                playerCardContent2 = <a class="code hl_function" href="_g_u_i_8cpp.html#a36b6f63142ee7d9e884ef846d5dd1a05">getCardString</a>(players[i]-&gt;get_hand()[1]);</div>
-<div class="line"><span class="lineno">  526</span>             }</div>
-<div class="line"><span class="lineno">  527</span>             <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  528</span>                 playerCardContent1 = <a class="code hl_function" href="_g_u_i_8cpp.html#a734f170642ae5d075a5f9f98fab8cfdf">getFileContents</a>(startPath + <span class="stringliteral">&quot;/images/backCard.txt&quot;</span>);</div>
-<div class="line"><span class="lineno">  529</span>                 playerCardContent2 = playerCardContent1;</div>
-<div class="line"><span class="lineno">  530</span>             }</div>
-<div class="line"><span class="lineno">  531</span> </div>
-<div class="line"><span class="lineno">  532</span>             <span class="comment">// Add the card to the table content</span></div>
-<div class="line"><span class="lineno">  533</span>             tableContent = <a class="code hl_function" href="_g_u_i_8cpp.html#ae6720e4bc4b25d366b73e9fc9b8afd4b">addString</a>(tableContent, playerCardContent1, <a class="code hl_variable" href="class_g_u_i.html#a24ae79dd1d8bd5fc9290bf7e4198d66d">PLAYER_CARD_POSITIONS</a>[i * seatStep][0].x, <a class="code hl_variable" href="class_g_u_i.html#a24ae79dd1d8bd5fc9290bf7e4198d66d">PLAYER_CARD_POSITIONS</a>[i* seatStep][0].y);</div>
-<div class="line"><span class="lineno">  534</span>             tableContent = <a class="code hl_function" href="_g_u_i_8cpp.html#ae6720e4bc4b25d366b73e9fc9b8afd4b">addString</a>(tableContent, playerCardContent2, <a class="code hl_variable" href="class_g_u_i.html#a24ae79dd1d8bd5fc9290bf7e4198d66d">PLAYER_CARD_POSITIONS</a>[i * seatStep][1].x, <a class="code hl_variable" href="class_g_u_i.html#a24ae79dd1d8bd5fc9290bf7e4198d66d">PLAYER_CARD_POSITIONS</a>[i* seatStep][1].y);</div>
-<div class="line"><span class="lineno">  535</span>         }</div>
-<div class="line"><span class="lineno">  536</span>         <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  537</span>             <span class="comment">// Show that they have folded </span></div>
+<div class="line"><span class="lineno">  509</span>    <span class="comment">// Get the contents of the table.txt file and print it to the terminal</span></div>
+<div class="line"><span class="lineno">  510</span>    <span class="keywordtype">string</span> startPath = <a class="code hl_function" href="_g_u_i_8cpp.html#a674e968d1ecb5cf741d6625f58378c95">getFilePathStart</a>();</div>
+<div class="line"><span class="lineno">  511</span>    <span class="keywordtype">string</span> tablePath = startPath + <span class="stringliteral">&quot;/images/table.txt&quot;</span>;</div>
+<div class="line"><span class="lineno">  512</span> </div>
+<div class="line"><span class="lineno">  513</span>    <span class="keywordtype">string</span> tableContent = <a class="code hl_function" href="_g_u_i_8cpp.html#a734f170642ae5d075a5f9f98fab8cfdf">getFileContents</a>(tablePath);</div>
+<div class="line"><span class="lineno">  514</span> </div>
+<div class="line"><span class="lineno">  515</span>    <span class="keywordtype">string</span> buttonPath = startPath + <span class="stringliteral">&quot;/images/button.txt&quot;</span>;</div>
+<div class="line"><span class="lineno">  516</span>    <span class="keywordtype">string</span> buttonString = <a class="code hl_function" href="_g_u_i_8cpp.html#a734f170642ae5d075a5f9f98fab8cfdf">getFileContents</a>(buttonPath);</div>
+<div class="line"><span class="lineno">  517</span>  </div>
+<div class="line"><span class="lineno">  518</span>    </div>
+<div class="line"><span class="lineno">  519</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; communityCards.size(); i++){</div>
+<div class="line"><span class="lineno">  520</span>        <span class="keywordtype">string</span> cardContent = <a class="code hl_function" href="_g_u_i_8cpp.html#a36b6f63142ee7d9e884ef846d5dd1a05">getCardString</a>(communityCards[i]);</div>
+<div class="line"><span class="lineno">  521</span>        tableContent = <a class="code hl_function" href="_g_u_i_8cpp.html#ae6720e4bc4b25d366b73e9fc9b8afd4b">addString</a>(tableContent, cardContent, <a class="code hl_variable" href="class_g_u_i.html#a5ce851b4b9a953083201d8b566a8ed93">COMMUNITY_CARD_POSITIONS</a>[i].x, <a class="code hl_variable" href="class_g_u_i.html#a5ce851b4b9a953083201d8b566a8ed93">COMMUNITY_CARD_POSITIONS</a>[i].y);</div>
+<div class="line"><span class="lineno">  522</span>    }</div>
+<div class="line"><span class="lineno">  523</span> </div>
+<div class="line"><span class="lineno">  524</span>    tableContent = <a class="code hl_function" href="_g_u_i_8cpp.html#ae6720e4bc4b25d366b73e9fc9b8afd4b">addString</a>(tableContent, <span class="stringliteral">&quot;Pot: &quot;</span> + std::to_string(<a class="code hl_variable" href="class_g_u_i.html#afb260f19c1cd60e5cdfc5ddc511e636d">game</a>.<a class="code hl_function" href="class_game.html#a20b263146b74bb0c81341cfd26c44de6">getPot</a>()), 103 - (std::to_string(<a class="code hl_variable" href="class_g_u_i.html#afb260f19c1cd60e5cdfc5ddc511e636d">game</a>.<a class="code hl_function" href="class_game.html#a20b263146b74bb0c81341cfd26c44de6">getPot</a>()).length() + 5)/2, 21);</div>
+<div class="line"><span class="lineno">  525</span> </div>
+<div class="line"><span class="lineno">  526</span>    <span class="keywordtype">int</span> numPlayers = players.size();</div>
+<div class="line"><span class="lineno">  527</span>    <span class="keywordtype">int</span> seatStep = 8 / numPlayers;</div>
+<div class="line"><span class="lineno">  528</span> </div>
+<div class="line"><span class="lineno">  529</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; numPlayers; i++){</div>
+<div class="line"><span class="lineno">  530</span>        tableContent = <a class="code hl_function" href="_g_u_i_8cpp.html#ae6720e4bc4b25d366b73e9fc9b8afd4b">addString</a>(tableContent, players[i]-&gt;get_name(), <a class="code hl_variable" href="class_g_u_i.html#ada5f6ee4c98b1f494a23b031c1bf4ba6">PLAYER_NAME_POSITIONS</a>[i * seatStep].x - players[i]-&gt;get_name().length()/2, <a class="code hl_variable" href="class_g_u_i.html#ada5f6ee4c98b1f494a23b031c1bf4ba6">PLAYER_NAME_POSITIONS</a>[i * seatStep].y);</div>
+<div class="line"><span class="lineno">  531</span>        tableContent = <a class="code hl_function" href="_g_u_i_8cpp.html#ae6720e4bc4b25d366b73e9fc9b8afd4b">addString</a>(tableContent, <span class="stringliteral">&quot;Stack: &quot;</span> + std::to_string(players[i]-&gt;get_stack()), <a class="code hl_variable" href="class_g_u_i.html#ada5f6ee4c98b1f494a23b031c1bf4ba6">PLAYER_NAME_POSITIONS</a>[i * seatStep].x -((7 + std::to_string(players[i]-&gt;get_stack()).length() )/2), <a class="code hl_variable" href="class_g_u_i.html#ada5f6ee4c98b1f494a23b031c1bf4ba6">PLAYER_NAME_POSITIONS</a>[i * seatStep].y + 2);</div>
+<div class="line"><span class="lineno">  532</span>         <span class="keywordflow">if</span>(players[i]-&gt;get_current_bet() != 0){</div>
+<div class="line"><span class="lineno">  533</span>            tableContent = <a class="code hl_function" href="_g_u_i_8cpp.html#ae6720e4bc4b25d366b73e9fc9b8afd4b">addString</a>(tableContent, <span class="stringliteral">&quot;Bet: &quot;</span> + std::to_string(players[i]-&gt;get_current_bet()), <a class="code hl_variable" href="class_g_u_i.html#a38db803390e152b091b3df4b4e2bfaf5">PLAYER_CURRENT_BETS</a>[i * seatStep].x -((5 + std::to_string(players[i]-&gt;get_current_bet()).length() )/2), <a class="code hl_variable" href="class_g_u_i.html#a38db803390e152b091b3df4b4e2bfaf5">PLAYER_CURRENT_BETS</a>[i * seatStep].y);</div>
+<div class="line"><span class="lineno">  534</span>         }</div>
+<div class="line"><span class="lineno">  535</span> </div>
+<div class="line"><span class="lineno">  536</span>         <span class="keywordflow">if</span>(i == button){</div>
+<div class="line"><span class="lineno">  537</span>            tableContent = <a class="code hl_function" href="_g_u_i_8cpp.html#ae6720e4bc4b25d366b73e9fc9b8afd4b">addString</a>(tableContent, buttonString, <a class="code hl_variable" href="class_g_u_i.html#a1c883c08330527a2d48d21280dab7450">PLAYER_BUTTON_POSITIONS</a>[i * seatStep].x, <a class="code hl_variable" href="class_g_u_i.html#a1c883c08330527a2d48d21280dab7450">PLAYER_BUTTON_POSITIONS</a>[i * seatStep].y);</div>
 <div class="line"><span class="lineno">  538</span>         }</div>
-<div class="line"><span class="lineno">  539</span>    }</div>
-<div class="line"><span class="lineno">  540</span> </div>
-<div class="line"><span class="lineno">  541</span>    std::cout &lt;&lt; tableContent &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  542</span>    <a class="code hl_function" href="_g_u_i_8cpp.html#a0fcdefbd8531ccd32fad2d8d6caa7a76">moveTo</a>(0, 0);</div>
-<div class="line"><span class="lineno">  543</span> </div>
-<div class="line"><span class="lineno">  544</span>    </div>
-<div class="line"><span class="lineno">  545</span>}</div>
-<div class="ttc" id="a_g_u_i_8cpp_html_a36b6f63142ee7d9e884ef846d5dd1a05"><div class="ttname"><a href="_g_u_i_8cpp.html#a36b6f63142ee7d9e884ef846d5dd1a05">getCardString</a></div><div class="ttdeci">string getCardString(Card &amp;card)</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8cpp_source.html#l00451">GUI.cpp:451</a></div></div>
-<div class="ttc" id="a_g_u_i_8cpp_html_a734f170642ae5d075a5f9f98fab8cfdf"><div class="ttname"><a href="_g_u_i_8cpp.html#a734f170642ae5d075a5f9f98fab8cfdf">getFileContents</a></div><div class="ttdeci">string getFileContents(string filePath)</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8cpp_source.html#l00434">GUI.cpp:434</a></div></div>
-<div class="ttc" id="a_g_u_i_8cpp_html_ae6720e4bc4b25d366b73e9fc9b8afd4b"><div class="ttname"><a href="_g_u_i_8cpp.html#ae6720e4bc4b25d366b73e9fc9b8afd4b">addString</a></div><div class="ttdeci">string addString(string baseString, string newString, int x1, int y1)</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8cpp_source.html#l00385">GUI.cpp:385</a></div></div>
+<div class="line"><span class="lineno">  539</span> </div>
+<div class="line"><span class="lineno">  540</span>         <span class="keywordflow">if</span> (players[i]-&gt;get_hand().size() != 0) {</div>
+<div class="line"><span class="lineno">  541</span>             <span class="keywordtype">string</span> playerCardContent1;</div>
+<div class="line"><span class="lineno">  542</span>             <span class="keywordtype">string</span> playerCardContent2;</div>
+<div class="line"><span class="lineno">  543</span>             <span class="keywordflow">if</span> (i == 0 || <a class="code hl_variable" href="class_g_u_i.html#afb260f19c1cd60e5cdfc5ddc511e636d">game</a>.<a class="code hl_function" href="class_game.html#ae10d3e9f219b74699aa150537440c041">getShowdown</a>()) {</div>
+<div class="line"><span class="lineno">  544</span>                playerCardContent1 = <a class="code hl_function" href="_g_u_i_8cpp.html#a36b6f63142ee7d9e884ef846d5dd1a05">getCardString</a>(players[i]-&gt;get_hand()[0]);</div>
+<div class="line"><span class="lineno">  545</span>                playerCardContent2 = <a class="code hl_function" href="_g_u_i_8cpp.html#a36b6f63142ee7d9e884ef846d5dd1a05">getCardString</a>(players[i]-&gt;get_hand()[1]);</div>
+<div class="line"><span class="lineno">  546</span>             }</div>
+<div class="line"><span class="lineno">  547</span>             <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  548</span>                 playerCardContent1 = <a class="code hl_function" href="_g_u_i_8cpp.html#a734f170642ae5d075a5f9f98fab8cfdf">getFileContents</a>(startPath + <span class="stringliteral">&quot;/images/backCard.txt&quot;</span>);</div>
+<div class="line"><span class="lineno">  549</span>                 playerCardContent2 = playerCardContent1;</div>
+<div class="line"><span class="lineno">  550</span>             }</div>
+<div class="line"><span class="lineno">  551</span> </div>
+<div class="line"><span class="lineno">  552</span>             <span class="comment">// Add the card to the table content</span></div>
+<div class="line"><span class="lineno">  553</span>             tableContent = <a class="code hl_function" href="_g_u_i_8cpp.html#ae6720e4bc4b25d366b73e9fc9b8afd4b">addString</a>(tableContent, playerCardContent1, <a class="code hl_variable" href="class_g_u_i.html#a24ae79dd1d8bd5fc9290bf7e4198d66d">PLAYER_CARD_POSITIONS</a>[i * seatStep][0].x, <a class="code hl_variable" href="class_g_u_i.html#a24ae79dd1d8bd5fc9290bf7e4198d66d">PLAYER_CARD_POSITIONS</a>[i* seatStep][0].y);</div>
+<div class="line"><span class="lineno">  554</span>             tableContent = <a class="code hl_function" href="_g_u_i_8cpp.html#ae6720e4bc4b25d366b73e9fc9b8afd4b">addString</a>(tableContent, playerCardContent2, <a class="code hl_variable" href="class_g_u_i.html#a24ae79dd1d8bd5fc9290bf7e4198d66d">PLAYER_CARD_POSITIONS</a>[i * seatStep][1].x, <a class="code hl_variable" href="class_g_u_i.html#a24ae79dd1d8bd5fc9290bf7e4198d66d">PLAYER_CARD_POSITIONS</a>[i* seatStep][1].y);</div>
+<div class="line"><span class="lineno">  555</span>         }</div>
+<div class="line"><span class="lineno">  556</span>         <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  557</span>             <span class="comment">// Show that they have folded </span></div>
+<div class="line"><span class="lineno">  558</span>         }</div>
+<div class="line"><span class="lineno">  559</span>    }</div>
+<div class="line"><span class="lineno">  560</span> </div>
+<div class="line"><span class="lineno">  561</span>    std::cout &lt;&lt; tableContent &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  562</span>    <a class="code hl_function" href="_g_u_i_8cpp.html#a0fcdefbd8531ccd32fad2d8d6caa7a76">moveTo</a>(0, 0);</div>
+<div class="line"><span class="lineno">  563</span> </div>
+<div class="line"><span class="lineno">  564</span>    </div>
+<div class="line"><span class="lineno">  565</span>}</div>
+<div class="ttc" id="a_g_u_i_8cpp_html_a36b6f63142ee7d9e884ef846d5dd1a05"><div class="ttname"><a href="_g_u_i_8cpp.html#a36b6f63142ee7d9e884ef846d5dd1a05">getCardString</a></div><div class="ttdeci">string getCardString(Card &amp;card)</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8cpp_source.html#l00471">GUI.cpp:471</a></div></div>
+<div class="ttc" id="a_g_u_i_8cpp_html_a734f170642ae5d075a5f9f98fab8cfdf"><div class="ttname"><a href="_g_u_i_8cpp.html#a734f170642ae5d075a5f9f98fab8cfdf">getFileContents</a></div><div class="ttdeci">string getFileContents(string filePath)</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8cpp_source.html#l00454">GUI.cpp:454</a></div></div>
+<div class="ttc" id="a_g_u_i_8cpp_html_ae6720e4bc4b25d366b73e9fc9b8afd4b"><div class="ttname"><a href="_g_u_i_8cpp.html#ae6720e4bc4b25d366b73e9fc9b8afd4b">addString</a></div><div class="ttdeci">string addString(string baseString, string newString, int x1, int y1)</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8cpp_source.html#l00405">GUI.cpp:405</a></div></div>
 <div class="ttc" id="aclass_g_u_i_html_a1c883c08330527a2d48d21280dab7450"><div class="ttname"><a href="class_g_u_i.html#a1c883c08330527a2d48d21280dab7450">GUI::PLAYER_BUTTON_POSITIONS</a></div><div class="ttdeci">static const Point PLAYER_BUTTON_POSITIONS[8]</div><div class="ttdoc">Positions for player buttons.</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8hpp_source.html#l00029">GUI.hpp:29</a></div></div>
 <div class="ttc" id="aclass_g_u_i_html_a24ae79dd1d8bd5fc9290bf7e4198d66d"><div class="ttname"><a href="class_g_u_i.html#a24ae79dd1d8bd5fc9290bf7e4198d66d">GUI::PLAYER_CARD_POSITIONS</a></div><div class="ttdeci">static const Point PLAYER_CARD_POSITIONS[8][2]</div><div class="ttdoc">Positions for player cards.</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8hpp_source.html#l00016">GUI.hpp:16</a></div></div>
 <div class="ttc" id="aclass_g_u_i_html_a38db803390e152b091b3df4b4e2bfaf5"><div class="ttname"><a href="class_g_u_i.html#a38db803390e152b091b3df4b4e2bfaf5">GUI::PLAYER_CURRENT_BETS</a></div><div class="ttdeci">static const Point PLAYER_CURRENT_BETS[8]</div><div class="ttdoc">Positions for player current bets.</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8hpp_source.html#l00028">GUI.hpp:28</a></div></div>
@@ -633,9 +635,9 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclass_game_html_ae10d3e9f219b74699aa150537440c041"><div class="ttname"><a href="class_game.html#ae10d3e9f219b74699aa150537440c041">Game::getShowdown</a></div><div class="ttdeci">bool getShowdown()</div><div class="ttdoc">Checks if the game is at showdown.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00067">Game.cpp:67</a></div></div>
 <div class="ttc" id="aclass_game_html_ae8d1705be89f97f5ef13ba1a460502f2"><div class="ttname"><a href="class_game.html#ae8d1705be89f97f5ef13ba1a460502f2">Game::getCommunityCards</a></div><div class="ttdeci">vector&lt; Card &gt; getCommunityCards()</div><div class="ttdoc">Gets the community cards on the table.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00055">Game.cpp:55</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_g_u_i_8cpp_source.html#l00385">addString()</a>, <a class="el" href="_g_u_i_8hpp_source.html#l00026">COMMUNITY_CARD_POSITIONS</a>, <a class="el" href="_g_u_i_8hpp_source.html#l00037">game</a>, <a class="el" href="_game_8cpp_source.html#l00063">Game::getButton()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00451">getCardString()</a>, <a class="el" href="_game_8cpp_source.html#l00055">Game::getCommunityCards()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00434">getFileContents()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00185">getFilePathStart()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00036">getGame()</a>, <a class="el" href="_game_8cpp_source.html#l00051">Game::getPlayers()</a>, <a class="el" href="_game_8cpp_source.html#l00059">Game::getPot()</a>, <a class="el" href="_game_8cpp_source.html#l00067">Game::getShowdown()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00052">moveTo()</a>, <a class="el" href="_g_u_i_8hpp_source.html#l00029">PLAYER_BUTTON_POSITIONS</a>, <a class="el" href="_g_u_i_8hpp_source.html#l00016">PLAYER_CARD_POSITIONS</a>, <a class="el" href="_g_u_i_8hpp_source.html#l00028">PLAYER_CURRENT_BETS</a>, and <a class="el" href="_g_u_i_8hpp_source.html#l00027">PLAYER_NAME_POSITIONS</a>.</p>
+<p class="reference">References <a class="el" href="_g_u_i_8cpp_source.html#l00405">addString()</a>, <a class="el" href="_g_u_i_8hpp_source.html#l00026">COMMUNITY_CARD_POSITIONS</a>, <a class="el" href="_g_u_i_8hpp_source.html#l00037">game</a>, <a class="el" href="_game_8cpp_source.html#l00063">Game::getButton()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00471">getCardString()</a>, <a class="el" href="_game_8cpp_source.html#l00055">Game::getCommunityCards()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00454">getFileContents()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00185">getFilePathStart()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00036">getGame()</a>, <a class="el" href="_game_8cpp_source.html#l00051">Game::getPlayers()</a>, <a class="el" href="_game_8cpp_source.html#l00059">Game::getPot()</a>, <a class="el" href="_game_8cpp_source.html#l00067">Game::getShowdown()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00052">moveTo()</a>, <a class="el" href="_g_u_i_8hpp_source.html#l00029">PLAYER_BUTTON_POSITIONS</a>, <a class="el" href="_g_u_i_8hpp_source.html#l00016">PLAYER_CARD_POSITIONS</a>, <a class="el" href="_g_u_i_8hpp_source.html#l00028">PLAYER_CURRENT_BETS</a>, and <a class="el" href="_g_u_i_8hpp_source.html#l00027">PLAYER_NAME_POSITIONS</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_game_8cpp_source.html#l00360">Game::bettingRound()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00547">displayPlayerMove()</a>, <a class="el" href="main_8cpp_source.html#l00023">playGame()</a>, and <a class="el" href="_game_8cpp_source.html#l00230">Game::playHand()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_game_8cpp_source.html#l00360">Game::bettingRound()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00567">displayPlayerMove()</a>, <a class="el" href="main_8cpp_source.html#l00024">playGame()</a>, and <a class="el" href="_game_8cpp_source.html#l00230">Game::playHand()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -706,7 +708,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_g_u_i_8hpp_source.html#l00028">QUIT</a>, and <a class="el" href="_g_u_i_8hpp_source.html#l00028">START_GAME</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00023">playGame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00024">playGame()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -823,15 +825,15 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00547">547</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  547</span>                                                                 {</div>
-<div class="line"><span class="lineno">  548</span>    <a class="code hl_function" href="class_g_u_i.html#a8f55dae107a6648458f6eb16608c66d2">displayGameState</a>();</div>
-<div class="line"><span class="lineno">  549</span>    <span class="keywordflow">if</span> (size != -1) { move += <span class="stringliteral">&quot; &quot;</span> + to_string(size); }</div>
-<div class="line"><span class="lineno">  550</span>    cout &lt;&lt; player-&gt;<a class="code hl_function" href="class_player.html#afca8141f38b60b526fd2f874523a2726">get_name</a>() &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; move &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  551</span>}</div>
-<div class="ttc" id="aclass_g_u_i_html_a8f55dae107a6648458f6eb16608c66d2"><div class="ttname"><a href="class_g_u_i.html#a8f55dae107a6648458f6eb16608c66d2">GUI::displayGameState</a></div><div class="ttdeci">static void displayGameState()</div><div class="ttdoc">Displays the current state of the game.</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8cpp_source.html#l00479">GUI.cpp:479</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00567">567</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  567</span>                                                                 {</div>
+<div class="line"><span class="lineno">  568</span>    <a class="code hl_function" href="class_g_u_i.html#a8f55dae107a6648458f6eb16608c66d2">displayGameState</a>();</div>
+<div class="line"><span class="lineno">  569</span>    <span class="keywordflow">if</span> (size != -1) { move += <span class="stringliteral">&quot; &quot;</span> + to_string(size); }</div>
+<div class="line"><span class="lineno">  570</span>    cout &lt;&lt; player-&gt;<a class="code hl_function" href="class_player.html#afca8141f38b60b526fd2f874523a2726">get_name</a>() &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; move &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  571</span>}</div>
+<div class="ttc" id="aclass_g_u_i_html_a8f55dae107a6648458f6eb16608c66d2"><div class="ttname"><a href="class_g_u_i.html#a8f55dae107a6648458f6eb16608c66d2">GUI::displayGameState</a></div><div class="ttdeci">static void displayGameState()</div><div class="ttdoc">Displays the current state of the game.</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8cpp_source.html#l00499">GUI.cpp:499</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_g_u_i_8cpp_source.html#l00479">displayGameState()</a>, and <a class="el" href="_player_8cpp_source.html#l00040">Player::get_name()</a>.</p>
+<p class="reference">References <a class="el" href="_g_u_i_8cpp_source.html#l00499">displayGameState()</a>, and <a class="el" href="_player_8cpp_source.html#l00040">Player::get_name()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_game_8cpp_source.html#l00137">Game::makeMoveForUser()</a>.</p>
 <div class="dynheader">
@@ -879,11 +881,11 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00380">380</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  380</span>                                           {</div>
-<div class="line"><span class="lineno">  381</span>    std::cout &lt;&lt; player-&gt;<a class="code hl_function" href="class_player.html#afca8141f38b60b526fd2f874523a2726">get_name</a>() &lt;&lt; <span class="stringliteral">&quot;&#39;s stack: &quot;</span> &lt;&lt; player-&gt;<a class="code hl_function" href="class_player.html#aca2f65a65461c322a0563ae0482be213">get_stack</a>() &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  382</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;    -----    &quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  383</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00400">400</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  400</span>                                           {</div>
+<div class="line"><span class="lineno">  401</span>    std::cout &lt;&lt; player-&gt;<a class="code hl_function" href="class_player.html#afca8141f38b60b526fd2f874523a2726">get_name</a>() &lt;&lt; <span class="stringliteral">&quot;&#39;s stack: &quot;</span> &lt;&lt; player-&gt;<a class="code hl_function" href="class_player.html#aca2f65a65461c322a0563ae0482be213">get_stack</a>() &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  402</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;    -----    &quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  403</span>}</div>
 <div class="ttc" id="aclass_player_html_aca2f65a65461c322a0563ae0482be213"><div class="ttname"><a href="class_player.html#aca2f65a65461c322a0563ae0482be213">Player::get_stack</a></div><div class="ttdeci">int get_stack()</div><div class="ttdoc">Gets the current stack of the player.</div><div class="ttdef"><b>Definition</b> <a href="_player_8cpp_source.html#l00036">Player.cpp:36</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_player_8cpp_source.html#l00040">Player::get_name()</a>, and <a class="el" href="_player_8cpp_source.html#l00036">Player::get_stack()</a>.</p>
@@ -936,7 +938,7 @@ Here is the call graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_g_u_i_8cpp_source.html#l00043">clearScreen()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00219">displayEndMessage()</a>, and <a class="el" href="main_8cpp_source.html#l00023">playGame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00219">displayEndMessage()</a>, and <a class="el" href="main_8cpp_source.html#l00024">playGame()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -976,31 +978,31 @@ Here is the caller graph for this function:</div>
 <p>Displays the menu at the end of a round. </p>
 <dl class="section return"><dt>Returns</dt><dd>The selected menu option as an integer. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00355">355</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  355</span>                        {</div>
-<div class="line"><span class="lineno">  356</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;1. Continue (enter)&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  357</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;2. Main menu (m)&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  358</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;3. Quit (q)&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  359</span> </div>
-<div class="line"><span class="lineno">  360</span>    std::string input;</div>
-<div class="line"><span class="lineno">  361</span>    </div>
-<div class="line"><span class="lineno">  362</span>    std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
-<div class="line"><span class="lineno">  363</span>    </div>
-<div class="line"><span class="lineno">  364</span>    std::getline(std::cin, input);  <span class="comment">// Read the entire line, allowing us to detect Enter</span></div>
-<div class="line"><span class="lineno">  365</span> </div>
-<div class="line"><span class="lineno">  366</span>    <span class="keywordflow">while</span> (input != <span class="stringliteral">&quot;q&quot;</span> &amp;&amp; input != <span class="stringliteral">&quot;&quot;</span> &amp;&amp; input != <span class="stringliteral">&quot;m&quot;</span> &amp;&amp; input != <span class="stringliteral">&quot;1&quot;</span> &amp;&amp; input != <span class="stringliteral">&quot;2&quot;</span> &amp;&amp; input != <span class="stringliteral">&quot;3&quot;</span>) {</div>
-<div class="line"><span class="lineno">  367</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Invalid input. Please enter a valid option: &quot;</span>;</div>
-<div class="line"><span class="lineno">  368</span>        std::getline(std::cin, input);  <span class="comment">// Use getline to capture the next input</span></div>
-<div class="line"><span class="lineno">  369</span>    }</div>
-<div class="line"><span class="lineno">  370</span> </div>
-<div class="line"><span class="lineno">  371</span>    <span class="keywordflow">if</span> (input == <span class="stringliteral">&quot;q&quot;</span> || input == <span class="stringliteral">&quot;3&quot;</span>) {</div>
-<div class="line"><span class="lineno">  372</span>        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  373</span>    }</div>
-<div class="line"><span class="lineno">  374</span>    <span class="keywordflow">if</span>(input == <span class="stringliteral">&quot;m&quot;</span> || input == <span class="stringliteral">&quot;2&quot;</span>){</div>
-<div class="line"><span class="lineno">  375</span>        <span class="keywordflow">return</span> 2;</div>
-<div class="line"><span class="lineno">  376</span>    }</div>
-<div class="line"><span class="lineno">  377</span>    <span class="keywordflow">return</span> 1;</div>
-<div class="line"><span class="lineno">  378</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00375">375</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  375</span>                        {</div>
+<div class="line"><span class="lineno">  376</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;1. Continue (enter)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  377</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;2. Main menu (m)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  378</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;3. Quit (q)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  379</span> </div>
+<div class="line"><span class="lineno">  380</span>    std::string input;</div>
+<div class="line"><span class="lineno">  381</span>    </div>
+<div class="line"><span class="lineno">  382</span>    std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">  383</span>    </div>
+<div class="line"><span class="lineno">  384</span>    std::getline(std::cin, input);  <span class="comment">// Read the entire line, allowing us to detect Enter</span></div>
+<div class="line"><span class="lineno">  385</span> </div>
+<div class="line"><span class="lineno">  386</span>    <span class="keywordflow">while</span> (input != <span class="stringliteral">&quot;q&quot;</span> &amp;&amp; input != <span class="stringliteral">&quot;&quot;</span> &amp;&amp; input != <span class="stringliteral">&quot;m&quot;</span> &amp;&amp; input != <span class="stringliteral">&quot;1&quot;</span> &amp;&amp; input != <span class="stringliteral">&quot;2&quot;</span> &amp;&amp; input != <span class="stringliteral">&quot;3&quot;</span>) {</div>
+<div class="line"><span class="lineno">  387</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Invalid input. Please enter a valid option: &quot;</span>;</div>
+<div class="line"><span class="lineno">  388</span>        std::getline(std::cin, input);  <span class="comment">// Use getline to capture the next input</span></div>
+<div class="line"><span class="lineno">  389</span>    }</div>
+<div class="line"><span class="lineno">  390</span> </div>
+<div class="line"><span class="lineno">  391</span>    <span class="keywordflow">if</span> (input == <span class="stringliteral">&quot;q&quot;</span> || input == <span class="stringliteral">&quot;3&quot;</span>) {</div>
+<div class="line"><span class="lineno">  392</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  393</span>    }</div>
+<div class="line"><span class="lineno">  394</span>    <span class="keywordflow">if</span>(input == <span class="stringliteral">&quot;m&quot;</span> || input == <span class="stringliteral">&quot;2&quot;</span>){</div>
+<div class="line"><span class="lineno">  395</span>        <span class="keywordflow">return</span> 2;</div>
+<div class="line"><span class="lineno">  396</span>    }</div>
+<div class="line"><span class="lineno">  397</span>    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">  398</span>}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="_human_player_8cpp_source.html#l00018">HumanPlayer::endOfHand()</a>, and <a class="el" href="test___human_player_8cc_source.html#l00011">HumanPlayerTest::SetUp()</a>.</p>
 <div class="dynheader">
@@ -1100,6 +1102,59 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a7ce2a1a0efb5bd2967c3b6338f82e1c0" name="a7ce2a1a0efb5bd2967c3b6338f82e1c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ce2a1a0efb5bd2967c3b6338f82e1c0">&#9670;&#160;</a></span>getBotDifficulty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GUI::getBotDifficulty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00313">313</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  313</span>                          {</div>
+<div class="line"><span class="lineno">  314</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Enter the bot difficulty (1, 2, or 3): &quot;</span>;</div>
+<div class="line"><span class="lineno">  315</span> </div>
+<div class="line"><span class="lineno">  316</span>    <span class="keywordtype">int</span> difficulty;</div>
+<div class="line"><span class="lineno">  317</span> </div>
+<div class="line"><span class="lineno">  318</span>    <span class="comment">// Asking the user for the number of players - bounded between 2 and 8</span></div>
+<div class="line"><span class="lineno">  319</span>    <span class="keywordflow">do</span> {</div>
+<div class="line"><span class="lineno">  320</span>        std::cin &gt;&gt; difficulty;</div>
+<div class="line"><span class="lineno">  321</span> </div>
+<div class="line"><span class="lineno">  322</span>        <span class="comment">// Check if the input is valid</span></div>
+<div class="line"><span class="lineno">  323</span>        <span class="keywordflow">if</span> (std::cin.fail() || difficulty &lt; 1 || difficulty &gt; 3) {</div>
+<div class="line"><span class="lineno">  324</span>            std::cin.clear(); <span class="comment">// Clear the error state</span></div>
+<div class="line"><span class="lineno">  325</span>            std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>); <span class="comment">// Discard invalid input</span></div>
+<div class="line"><span class="lineno">  326</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;Invalid input. Please enter a number between 1 and 3: &quot;</span>;</div>
+<div class="line"><span class="lineno">  327</span>        }</div>
+<div class="line"><span class="lineno">  328</span>    } <span class="keywordflow">while</span> (difficulty &lt; 1 || difficulty &gt; 3);</div>
+<div class="line"><span class="lineno">  329</span> </div>
+<div class="line"><span class="lineno">  330</span>    <span class="keywordflow">return</span> difficulty;</div>
+<div class="line"><span class="lineno">  331</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00024">playGame()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_g_u_i_a7ce2a1a0efb5bd2967c3b6338f82e1c0_icgraph.png" border="0" usemap="#aclass_g_u_i_a7ce2a1a0efb5bd2967c3b6338f82e1c0_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
 <a id="a8a11612f177718da765ea52bc74d62de" name="a8a11612f177718da765ea52bc74d62de"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8a11612f177718da765ea52bc74d62de">&#9670;&#160;</a></span>getGame()</h2>
 
@@ -1133,7 +1188,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_g_u_i_8hpp_source.html#l00037">game</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00479">displayGameState()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00499">displayGameState()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1189,7 +1244,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  310</span>    <span class="keywordflow">return</span> numPlayers;</div>
 <div class="line"><span class="lineno">  311</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00023">playGame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00024">playGame()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1231,24 +1286,24 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The profile of the player. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00613">613</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  613</span>                                                   {</div>
-<div class="line"><span class="lineno">  614</span>    <a class="code hl_class" href="class_c_s_v_worker.html">CSVWorker</a> csv(<span class="stringliteral">&quot;../data/profiles.csv&quot;</span>);</div>
-<div class="line"><span class="lineno">  615</span> </div>
-<div class="line"><span class="lineno">  616</span>    <span class="comment">// Get the user&#39;s profile that has the name entered</span></div>
-<div class="line"><span class="lineno">  617</span>    <span class="keywordflow">for</span> (<a class="code hl_struct" href="struct_player_profile.html">PlayerProfile</a> profile : csv.readProfiles()) {</div>
-<div class="line"><span class="lineno">  618</span>        <span class="keywordflow">if</span> (profile.name == name) {</div>
-<div class="line"><span class="lineno">  619</span>            <span class="keywordflow">return</span> profile;</div>
-<div class="line"><span class="lineno">  620</span>        }</div>
-<div class="line"><span class="lineno">  621</span>    }</div>
-<div class="line"><span class="lineno">  622</span> </div>
-<div class="line"><span class="lineno">  623</span>    cout &lt;&lt; <span class="stringliteral">&quot;Profile not found. Playing as guest.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  624</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="struct_player_profile.html">PlayerProfile</a>({ <span class="stringliteral">&quot;Guest&quot;</span>, 0 });</div>
-<div class="line"><span class="lineno">  625</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00633">633</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  633</span>                                                   {</div>
+<div class="line"><span class="lineno">  634</span>    <a class="code hl_class" href="class_c_s_v_worker.html">CSVWorker</a> csv(<span class="stringliteral">&quot;../data/profiles.csv&quot;</span>);</div>
+<div class="line"><span class="lineno">  635</span> </div>
+<div class="line"><span class="lineno">  636</span>    <span class="comment">// Get the user&#39;s profile that has the name entered</span></div>
+<div class="line"><span class="lineno">  637</span>    <span class="keywordflow">for</span> (<a class="code hl_struct" href="struct_player_profile.html">PlayerProfile</a> profile : csv.readProfiles()) {</div>
+<div class="line"><span class="lineno">  638</span>        <span class="keywordflow">if</span> (profile.name == name) {</div>
+<div class="line"><span class="lineno">  639</span>            <span class="keywordflow">return</span> profile;</div>
+<div class="line"><span class="lineno">  640</span>        }</div>
+<div class="line"><span class="lineno">  641</span>    }</div>
+<div class="line"><span class="lineno">  642</span> </div>
+<div class="line"><span class="lineno">  643</span>    cout &lt;&lt; <span class="stringliteral">&quot;Profile not found. Playing as guest.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  644</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="struct_player_profile.html">PlayerProfile</a>({ <span class="stringliteral">&quot;Guest&quot;</span>, 0 });</div>
+<div class="line"><span class="lineno">  645</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_c_s_v_worker_8cpp_source.html#l00028">CSVWorker::readProfiles()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00313">signInMenu()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00333">signInMenu()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1288,50 +1343,50 @@ Here is the caller graph for this function:</div>
 <p>Generate a random name for a player. </p>
 <dl class="section return"><dt>Returns</dt><dd>The randomly generated name as a string. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00553">553</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  553</span>                                   {</div>
-<div class="line"><span class="lineno">  554</span>    std::string startPath = <a class="code hl_function" href="_g_u_i_8cpp.html#a674e968d1ecb5cf741d6625f58378c95">getFilePathStart</a>();</div>
-<div class="line"><span class="lineno">  555</span> </div>
-<div class="line"><span class="lineno">  556</span>    <span class="comment">// Get the contents of the adjectives.txt file</span></div>
-<div class="line"><span class="lineno">  557</span>    std::string adjectives = <a class="code hl_function" href="_g_u_i_8cpp.html#a734f170642ae5d075a5f9f98fab8cfdf">getFileContents</a>(startPath + <span class="stringliteral">&quot;/images/adjectives.txt&quot;</span>);</div>
-<div class="line"><span class="lineno">  558</span> </div>
-<div class="line"><span class="lineno">  559</span>    <span class="comment">// Split the adjective string into lines</span></div>
-<div class="line"><span class="lineno">  560</span>    std::vector&lt;std::string&gt; adjectiveList;</div>
-<div class="line"><span class="lineno">  561</span>    std::stringstream ssAdjectives(adjectives);</div>
-<div class="line"><span class="lineno">  562</span>    std::string adjective;</div>
-<div class="line"><span class="lineno">  563</span>    <span class="keywordflow">while</span> (std::getline(ssAdjectives, adjective)) {</div>
-<div class="line"><span class="lineno">  564</span>        adjectiveList.push_back(adjective);</div>
-<div class="line"><span class="lineno">  565</span>    }</div>
-<div class="line"><span class="lineno">  566</span> </div>
-<div class="line"><span class="lineno">  567</span>    <span class="comment">// Get the contents of the animals.txt file</span></div>
-<div class="line"><span class="lineno">  568</span>    std::string animals = <a class="code hl_function" href="_g_u_i_8cpp.html#a734f170642ae5d075a5f9f98fab8cfdf">getFileContents</a>(startPath + <span class="stringliteral">&quot;/images/animals.txt&quot;</span>);</div>
-<div class="line"><span class="lineno">  569</span> </div>
-<div class="line"><span class="lineno">  570</span>    <span class="comment">// Split the animals string into lines</span></div>
-<div class="line"><span class="lineno">  571</span>    std::vector&lt;std::string&gt; animalList;</div>
-<div class="line"><span class="lineno">  572</span>    std::stringstream ssAnimals(animals);</div>
-<div class="line"><span class="lineno">  573</span>    std::string animal;</div>
-<div class="line"><span class="lineno">  574</span>    <span class="keywordflow">while</span> (std::getline(ssAnimals, animal)) {</div>
-<div class="line"><span class="lineno">  575</span>        animalList.push_back(animal);</div>
-<div class="line"><span class="lineno">  576</span>    }</div>
-<div class="line"><span class="lineno">  577</span> </div>
-<div class="line"><span class="lineno">  578</span>    <span class="comment">// Initialize random number generator statically so it&#39;s only seeded once</span></div>
-<div class="line"><span class="lineno">  579</span>    <span class="keyword">auto</span> seed = std::chrono::system_clock::now().time_since_epoch().count();</div>
-<div class="line"><span class="lineno">  580</span>    std::mt19937 gen(<span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">long</span><span class="keyword">&gt;</span>(seed));  <span class="comment">// Seeding the generator</span></div>
-<div class="line"><span class="lineno">  581</span> </div>
-<div class="line"><span class="lineno">  582</span> </div>
-<div class="line"><span class="lineno">  583</span>    <span class="comment">// Randomly pick an adjective and animal from the lists</span></div>
-<div class="line"><span class="lineno">  584</span>    std::uniform_int_distribution&lt;&gt; distrAdjective(0, adjectiveList.size() - 1);</div>
-<div class="line"><span class="lineno">  585</span>    std::string randomAdjective = adjectiveList[distrAdjective(gen)];</div>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00573">573</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  573</span>                                   {</div>
+<div class="line"><span class="lineno">  574</span>    std::string startPath = <a class="code hl_function" href="_g_u_i_8cpp.html#a674e968d1ecb5cf741d6625f58378c95">getFilePathStart</a>();</div>
+<div class="line"><span class="lineno">  575</span> </div>
+<div class="line"><span class="lineno">  576</span>    <span class="comment">// Get the contents of the adjectives.txt file</span></div>
+<div class="line"><span class="lineno">  577</span>    std::string adjectives = <a class="code hl_function" href="_g_u_i_8cpp.html#a734f170642ae5d075a5f9f98fab8cfdf">getFileContents</a>(startPath + <span class="stringliteral">&quot;/images/adjectives.txt&quot;</span>);</div>
+<div class="line"><span class="lineno">  578</span> </div>
+<div class="line"><span class="lineno">  579</span>    <span class="comment">// Split the adjective string into lines</span></div>
+<div class="line"><span class="lineno">  580</span>    std::vector&lt;std::string&gt; adjectiveList;</div>
+<div class="line"><span class="lineno">  581</span>    std::stringstream ssAdjectives(adjectives);</div>
+<div class="line"><span class="lineno">  582</span>    std::string adjective;</div>
+<div class="line"><span class="lineno">  583</span>    <span class="keywordflow">while</span> (std::getline(ssAdjectives, adjective)) {</div>
+<div class="line"><span class="lineno">  584</span>        adjectiveList.push_back(adjective);</div>
+<div class="line"><span class="lineno">  585</span>    }</div>
 <div class="line"><span class="lineno">  586</span> </div>
-<div class="line"><span class="lineno">  587</span>    std::uniform_int_distribution&lt;&gt; distrAnimal(0, animalList.size() - 1);</div>
-<div class="line"><span class="lineno">  588</span>    std::string randomAnimal = animalList[distrAnimal(gen)];</div>
+<div class="line"><span class="lineno">  587</span>    <span class="comment">// Get the contents of the animals.txt file</span></div>
+<div class="line"><span class="lineno">  588</span>    std::string animals = <a class="code hl_function" href="_g_u_i_8cpp.html#a734f170642ae5d075a5f9f98fab8cfdf">getFileContents</a>(startPath + <span class="stringliteral">&quot;/images/animals.txt&quot;</span>);</div>
 <div class="line"><span class="lineno">  589</span> </div>
-<div class="line"><span class="lineno">  590</span>    <span class="keywordflow">return</span> randomAdjective + randomAnimal;</div>
-<div class="line"><span class="lineno">  591</span>}</div>
+<div class="line"><span class="lineno">  590</span>    <span class="comment">// Split the animals string into lines</span></div>
+<div class="line"><span class="lineno">  591</span>    std::vector&lt;std::string&gt; animalList;</div>
+<div class="line"><span class="lineno">  592</span>    std::stringstream ssAnimals(animals);</div>
+<div class="line"><span class="lineno">  593</span>    std::string animal;</div>
+<div class="line"><span class="lineno">  594</span>    <span class="keywordflow">while</span> (std::getline(ssAnimals, animal)) {</div>
+<div class="line"><span class="lineno">  595</span>        animalList.push_back(animal);</div>
+<div class="line"><span class="lineno">  596</span>    }</div>
+<div class="line"><span class="lineno">  597</span> </div>
+<div class="line"><span class="lineno">  598</span>    <span class="comment">// Initialize random number generator statically so it&#39;s only seeded once</span></div>
+<div class="line"><span class="lineno">  599</span>    <span class="keyword">auto</span> seed = std::chrono::system_clock::now().time_since_epoch().count();</div>
+<div class="line"><span class="lineno">  600</span>    std::mt19937 gen(<span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">long</span><span class="keyword">&gt;</span>(seed));  <span class="comment">// Seeding the generator</span></div>
+<div class="line"><span class="lineno">  601</span> </div>
+<div class="line"><span class="lineno">  602</span> </div>
+<div class="line"><span class="lineno">  603</span>    <span class="comment">// Randomly pick an adjective and animal from the lists</span></div>
+<div class="line"><span class="lineno">  604</span>    std::uniform_int_distribution&lt;&gt; distrAdjective(0, adjectiveList.size() - 1);</div>
+<div class="line"><span class="lineno">  605</span>    std::string randomAdjective = adjectiveList[distrAdjective(gen)];</div>
+<div class="line"><span class="lineno">  606</span> </div>
+<div class="line"><span class="lineno">  607</span>    std::uniform_int_distribution&lt;&gt; distrAnimal(0, animalList.size() - 1);</div>
+<div class="line"><span class="lineno">  608</span>    std::string randomAnimal = animalList[distrAnimal(gen)];</div>
+<div class="line"><span class="lineno">  609</span> </div>
+<div class="line"><span class="lineno">  610</span>    <span class="keywordflow">return</span> randomAdjective + randomAnimal;</div>
+<div class="line"><span class="lineno">  611</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_g_u_i_8cpp_source.html#l00434">getFileContents()</a>, and <a class="el" href="_g_u_i_8cpp_source.html#l00185">getFilePathStart()</a>.</p>
+<p class="reference">References <a class="el" href="_g_u_i_8cpp_source.html#l00454">getFileContents()</a>, and <a class="el" href="_g_u_i_8cpp_source.html#l00185">getFilePathStart()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00023">playGame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00024">playGame()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1493,7 +1548,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_g_u_i_8hpp_source.html#l00037">game</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00023">playGame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00024">playGame()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1528,56 +1583,56 @@ Here is the caller graph for this function:</div>
 <p>Prompts the user to sign in. </p>
 <dl class="section return"><dt>Returns</dt><dd>The name of the user as a string. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00313">313</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  313</span>                              {</div>
-<div class="line"><span class="lineno">  314</span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="_g_u_i_8hpp.html#a5be5e47a3042bc91460d05e47f32120d">MenuOption</a> { SIGN_IN = 1, <a class="code hl_enumvalue" href="_g_u_i_8hpp.html#a5be5e47a3042bc91460d05e47f32120daa4a88474c10fb863e1a2894a3d61246f">CREATE_PROFILE</a>, PLAY_AS_GUEST };</div>
-<div class="line"><span class="lineno">  315</span>    <span class="keyword">const</span> std::vector&lt;std::string&gt; acceptedInputs = {<span class="stringliteral">&quot;1&quot;</span>, <span class="stringliteral">&quot;2&quot;</span>, <span class="stringliteral">&quot;3&quot;</span>};</div>
-<div class="line"><span class="lineno">  316</span> </div>
-<div class="line"><span class="lineno">  317</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Select one of the following options:&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  318</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;1. Sign in with a name&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  319</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;2. Create profile&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  320</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;3. Play as guest&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  321</span> </div>
-<div class="line"><span class="lineno">  322</span>    std::string input;</div>
-<div class="line"><span class="lineno">  323</span>    <span class="keywordflow">do</span> {</div>
-<div class="line"><span class="lineno">  324</span>        std::getline(std::cin, input);</div>
-<div class="line"><span class="lineno">  325</span>        <span class="keywordflow">if</span> (std::find(acceptedInputs.begin(), acceptedInputs.end(), input) == acceptedInputs.end()) {</div>
-<div class="line"><span class="lineno">  326</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;Invalid input. Please enter a valid option: &quot;</span>;</div>
-<div class="line"><span class="lineno">  327</span>        }</div>
-<div class="line"><span class="lineno">  328</span>    } <span class="keywordflow">while</span> (std::find(acceptedInputs.begin(), acceptedInputs.end(), input) == acceptedInputs.end());</div>
-<div class="line"><span class="lineno">  329</span> </div>
-<div class="line"><span class="lineno">  330</span>    <a class="code hl_enumeration" href="_g_u_i_8hpp.html#a5be5e47a3042bc91460d05e47f32120d">MenuOption</a> choice = <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="_g_u_i_8hpp.html#a5be5e47a3042bc91460d05e47f32120d">MenuOption</a><span class="keyword">&gt;</span>(std::stoi(input));</div>
-<div class="line"><span class="lineno">  331</span> </div>
-<div class="line"><span class="lineno">  332</span>    <span class="keywordflow">switch</span> (choice) {</div>
-<div class="line"><span class="lineno">  333</span>        <span class="keywordflow">case</span> SIGN_IN: {</div>
-<div class="line"><span class="lineno">  334</span>            std::string name;</div>
-<div class="line"><span class="lineno">  335</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;Enter your name: &quot;</span>;</div>
-<div class="line"><span class="lineno">  336</span>            std::getline(std::cin, name);</div>
-<div class="line"><span class="lineno">  337</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="class_g_u_i.html#a00b431f2af4b04eff9dd33d987d0d772">GUI::getProfile</a>(name);</div>
-<div class="line"><span class="lineno">  338</span>        }</div>
-<div class="line"><span class="lineno">  339</span> </div>
-<div class="line"><span class="lineno">  340</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_g_u_i_8hpp.html#a5be5e47a3042bc91460d05e47f32120daa4a88474c10fb863e1a2894a3d61246f">CREATE_PROFILE</a>:</div>
-<div class="line"><span class="lineno">  341</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="class_g_u_i.html#a9e9d37ed78911ad4b67c1d7fa1c77767">GUI::createProfile</a>();</div>
-<div class="line"><span class="lineno">  342</span> </div>
-<div class="line"><span class="lineno">  343</span>        <span class="keywordflow">case</span> PLAY_AS_GUEST: {</div>
-<div class="line"><span class="lineno">  344</span>            std::string guestName;</div>
-<div class="line"><span class="lineno">  345</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;Enter a name for guest play: &quot;</span>;</div>
-<div class="line"><span class="lineno">  346</span>            std::getline(std::cin, guestName);</div>
-<div class="line"><span class="lineno">  347</span>            <span class="keywordflow">return</span> <a class="code hl_struct" href="struct_player_profile.html">PlayerProfile</a>({ guestName, 0 });</div>
-<div class="line"><span class="lineno">  348</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00333">333</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  333</span>                              {</div>
+<div class="line"><span class="lineno">  334</span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="_g_u_i_8hpp.html#a5be5e47a3042bc91460d05e47f32120d">MenuOption</a> { SIGN_IN = 1, <a class="code hl_enumvalue" href="_g_u_i_8hpp.html#a5be5e47a3042bc91460d05e47f32120daa4a88474c10fb863e1a2894a3d61246f">CREATE_PROFILE</a>, PLAY_AS_GUEST };</div>
+<div class="line"><span class="lineno">  335</span>    <span class="keyword">const</span> std::vector&lt;std::string&gt; acceptedInputs = {<span class="stringliteral">&quot;1&quot;</span>, <span class="stringliteral">&quot;2&quot;</span>, <span class="stringliteral">&quot;3&quot;</span>};</div>
+<div class="line"><span class="lineno">  336</span> </div>
+<div class="line"><span class="lineno">  337</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Select one of the following options:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  338</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;1. Sign in with a name&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  339</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;2. Create profile&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  340</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;3. Play as guest&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  341</span> </div>
+<div class="line"><span class="lineno">  342</span>    std::string input;</div>
+<div class="line"><span class="lineno">  343</span>    <span class="keywordflow">do</span> {</div>
+<div class="line"><span class="lineno">  344</span>        std::getline(std::cin, input);</div>
+<div class="line"><span class="lineno">  345</span>        <span class="keywordflow">if</span> (std::find(acceptedInputs.begin(), acceptedInputs.end(), input) == acceptedInputs.end()) {</div>
+<div class="line"><span class="lineno">  346</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;Invalid input. Please enter a valid option: &quot;</span>;</div>
+<div class="line"><span class="lineno">  347</span>        }</div>
+<div class="line"><span class="lineno">  348</span>    } <span class="keywordflow">while</span> (std::find(acceptedInputs.begin(), acceptedInputs.end(), input) == acceptedInputs.end());</div>
 <div class="line"><span class="lineno">  349</span> </div>
-<div class="line"><span class="lineno">  350</span>        <span class="keywordflow">default</span>:</div>
-<div class="line"><span class="lineno">  351</span>            <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Unexpected menu option&quot;</span>);</div>
-<div class="line"><span class="lineno">  352</span>    }</div>
-<div class="line"><span class="lineno">  353</span>}</div>
+<div class="line"><span class="lineno">  350</span>    <a class="code hl_enumeration" href="_g_u_i_8hpp.html#a5be5e47a3042bc91460d05e47f32120d">MenuOption</a> choice = <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="_g_u_i_8hpp.html#a5be5e47a3042bc91460d05e47f32120d">MenuOption</a><span class="keyword">&gt;</span>(std::stoi(input));</div>
+<div class="line"><span class="lineno">  351</span> </div>
+<div class="line"><span class="lineno">  352</span>    <span class="keywordflow">switch</span> (choice) {</div>
+<div class="line"><span class="lineno">  353</span>        <span class="keywordflow">case</span> SIGN_IN: {</div>
+<div class="line"><span class="lineno">  354</span>            std::string name;</div>
+<div class="line"><span class="lineno">  355</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;Enter your name: &quot;</span>;</div>
+<div class="line"><span class="lineno">  356</span>            std::getline(std::cin, name);</div>
+<div class="line"><span class="lineno">  357</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="class_g_u_i.html#a00b431f2af4b04eff9dd33d987d0d772">GUI::getProfile</a>(name);</div>
+<div class="line"><span class="lineno">  358</span>        }</div>
+<div class="line"><span class="lineno">  359</span> </div>
+<div class="line"><span class="lineno">  360</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="_g_u_i_8hpp.html#a5be5e47a3042bc91460d05e47f32120daa4a88474c10fb863e1a2894a3d61246f">CREATE_PROFILE</a>:</div>
+<div class="line"><span class="lineno">  361</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="class_g_u_i.html#a9e9d37ed78911ad4b67c1d7fa1c77767">GUI::createProfile</a>();</div>
+<div class="line"><span class="lineno">  362</span> </div>
+<div class="line"><span class="lineno">  363</span>        <span class="keywordflow">case</span> PLAY_AS_GUEST: {</div>
+<div class="line"><span class="lineno">  364</span>            std::string guestName;</div>
+<div class="line"><span class="lineno">  365</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;Enter a name for guest play: &quot;</span>;</div>
+<div class="line"><span class="lineno">  366</span>            std::getline(std::cin, guestName);</div>
+<div class="line"><span class="lineno">  367</span>            <span class="keywordflow">return</span> <a class="code hl_struct" href="struct_player_profile.html">PlayerProfile</a>({ guestName, 0 });</div>
+<div class="line"><span class="lineno">  368</span>        }</div>
+<div class="line"><span class="lineno">  369</span> </div>
+<div class="line"><span class="lineno">  370</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  371</span>            <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Unexpected menu option&quot;</span>);</div>
+<div class="line"><span class="lineno">  372</span>    }</div>
+<div class="line"><span class="lineno">  373</span>}</div>
 <div class="ttc" id="a_g_u_i_8hpp_html_a5be5e47a3042bc91460d05e47f32120d"><div class="ttname"><a href="_g_u_i_8hpp.html#a5be5e47a3042bc91460d05e47f32120d">MenuOption</a></div><div class="ttdeci">MenuOption</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8hpp_source.html#l00028">GUI.hpp:28</a></div></div>
 <div class="ttc" id="a_g_u_i_8hpp_html_a5be5e47a3042bc91460d05e47f32120daa4a88474c10fb863e1a2894a3d61246f"><div class="ttname"><a href="_g_u_i_8hpp.html#a5be5e47a3042bc91460d05e47f32120daa4a88474c10fb863e1a2894a3d61246f">CREATE_PROFILE</a></div><div class="ttdeci">@ CREATE_PROFILE</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8hpp_source.html#l00028">GUI.hpp:28</a></div></div>
-<div class="ttc" id="aclass_g_u_i_html_a00b431f2af4b04eff9dd33d987d0d772"><div class="ttname"><a href="class_g_u_i.html#a00b431f2af4b04eff9dd33d987d0d772">GUI::getProfile</a></div><div class="ttdeci">static PlayerProfile getProfile(const std::string &amp;name)</div><div class="ttdoc">Gets the profile of a player from the ./data/profiles.csv file.</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8cpp_source.html#l00613">GUI.cpp:613</a></div></div>
-<div class="ttc" id="aclass_g_u_i_html_a9e9d37ed78911ad4b67c1d7fa1c77767"><div class="ttname"><a href="class_g_u_i.html#a9e9d37ed78911ad4b67c1d7fa1c77767">GUI::createProfile</a></div><div class="ttdeci">static PlayerProfile createProfile()</div><div class="ttdoc">Creates a new player profile.</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8cpp_source.html#l00593">GUI.cpp:593</a></div></div>
+<div class="ttc" id="aclass_g_u_i_html_a00b431f2af4b04eff9dd33d987d0d772"><div class="ttname"><a href="class_g_u_i.html#a00b431f2af4b04eff9dd33d987d0d772">GUI::getProfile</a></div><div class="ttdeci">static PlayerProfile getProfile(const std::string &amp;name)</div><div class="ttdoc">Gets the profile of a player from the ./data/profiles.csv file.</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8cpp_source.html#l00633">GUI.cpp:633</a></div></div>
+<div class="ttc" id="aclass_g_u_i_html_a9e9d37ed78911ad4b67c1d7fa1c77767"><div class="ttname"><a href="class_g_u_i.html#a9e9d37ed78911ad4b67c1d7fa1c77767">GUI::createProfile</a></div><div class="ttdeci">static PlayerProfile createProfile()</div><div class="ttdoc">Creates a new player profile.</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8cpp_source.html#l00613">GUI.cpp:613</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_g_u_i_8hpp_source.html#l00028">CREATE_PROFILE</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00593">createProfile()</a>, and <a class="el" href="_g_u_i_8cpp_source.html#l00613">getProfile()</a>.</p>
+<p class="reference">References <a class="el" href="_g_u_i_8hpp_source.html#l00028">CREATE_PROFILE</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00613">createProfile()</a>, and <a class="el" href="_g_u_i_8cpp_source.html#l00633">getProfile()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00023">playGame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00024">playGame()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1616,7 +1671,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_g_u_i_8hpp_source.html#l00026">26</a> of file <a class="el" href="_g_u_i_8hpp_source.html">GUI.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00479">displayGameState()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00499">displayGameState()</a>.</p>
 
 </div>
 </div>
@@ -1644,7 +1699,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_g_u_i_8hpp_source.html#l00037">37</a> of file <a class="el" href="_g_u_i_8hpp_source.html">GUI.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00479">displayGameState()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00036">getGame()</a>, and <a class="el" href="_g_u_i_8cpp_source.html#l00032">setGame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00499">displayGameState()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00036">getGame()</a>, and <a class="el" href="_g_u_i_8cpp_source.html#l00032">setGame()</a>.</p>
 
 </div>
 </div>
@@ -1672,7 +1727,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_g_u_i_8hpp_source.html#l00029">29</a> of file <a class="el" href="_g_u_i_8hpp_source.html">GUI.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00479">displayGameState()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00499">displayGameState()</a>.</p>
 
 </div>
 </div>
@@ -1714,7 +1769,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   24</span>    <span class="keywordtype">int</span> y;  </div>
 <div class="line"><span class="lineno">   25</span>};</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00479">displayGameState()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00499">displayGameState()</a>.</p>
 
 </div>
 </div>
@@ -1743,7 +1798,7 @@ Here is the caller graph for this function:</div>
 <p class="definition">Definition at line <a class="el" href="_g_u_i_8hpp_source.html#l00028">28</a> of file <a class="el" href="_g_u_i_8hpp_source.html">GUI.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   28</span>{ <a class="code hl_enumvalue" href="_g_u_i_8hpp.html#a5be5e47a3042bc91460d05e47f32120daccab244294e0e1bcded736405b2db375">START_GAME</a>, <a class="code hl_enumvalue" href="_g_u_i_8hpp.html#a5be5e47a3042bc91460d05e47f32120daa4a88474c10fb863e1a2894a3d61246f">CREATE_PROFILE</a>, <a class="code hl_enumvalue" href="_g_u_i_8hpp.html#a5be5e47a3042bc91460d05e47f32120da76bdc8adfd6c6463ab269ff4c06be9b4">QUIT</a> };</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00479">displayGameState()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00499">displayGameState()</a>.</p>
 
 </div>
 </div>
@@ -1797,7 +1852,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_g_u_i_8hpp_source.html#l00027">27</a> of file <a class="el" href="_g_u_i_8hpp_source.html">GUI.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00479">displayGameState()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00499">displayGameState()</a>.</p>
 
 </div>
 </div>
@@ -1808,7 +1863,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 10 2024 20:59:35 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Thu Oct 10 2024 22:20:52 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

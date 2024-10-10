@@ -50,12 +50,14 @@ digraph "Deck::deal"
   Node19 -> Node20 [id="edge23_Node000019_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node20 [id="Node000020",label="Player::get_equity",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_player.html#ac40b5f5383aa1b6146a39c74f08254ad",tooltip="Returns the equity of the players hand for the current stage of the game."];
   Node20 -> Node21 [id="edge24_Node000020_Node000021",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node21 [id="Node000021",label="BasicPlayer::getMove",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_basic_player.html#ab77fd6eb15d997d705eb1f750b3ebd52",tooltip="Gets the player's move during their turn."];
+  Node21 [id="Node000021",label="BasicPlayer::getMove",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_basic_player.html#a9c6ca42bec1e9936d98e9c210f6f08c4",tooltip="Gets the player's move during their turn."];
   Node20 -> Node22 [id="edge25_Node000020_Node000022",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node22 [id="Node000022",label="TEST_F",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$test___player_8cc.html#a58e6b1b83a0b3890240da45b9cfca22b",tooltip=" "];
+  Node22 [id="Node000022",label="BetterPlayer::getMove",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_better_player.html#ac228cde696e45779a7270a4d0ca6a297",tooltip="Gets the player's move during their turn."];
   Node20 -> Node23 [id="edge26_Node000020_Node000023",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node23 [id="Node000023",label="TEST_F",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$test___player_8cc.html#ab159003d62d4815baca60d6e6394374e",tooltip=" "];
-  Node17 -> Node19 [id="edge27_Node000017_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node24 [id="edge28_Node000001_Node000024",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node24 [id="Node000024",label="TEST",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$test___deck_8cc.html#a03d3c7fb7a0df829af13d2fcc459c2ba",tooltip=" "];
+  Node23 [id="Node000023",label="TEST_F",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$test___player_8cc.html#a58e6b1b83a0b3890240da45b9cfca22b",tooltip=" "];
+  Node20 -> Node24 [id="edge27_Node000020_Node000024",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node24 [id="Node000024",label="TEST_F",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$test___player_8cc.html#ab159003d62d4815baca60d6e6394374e",tooltip=" "];
+  Node17 -> Node19 [id="edge28_Node000017_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node25 [id="edge29_Node000001_Node000025",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node25 [id="Node000025",label="TEST",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$test___deck_8cc.html#a03d3c7fb7a0df829af13d2fcc459c2ba",tooltip=" "];
 }

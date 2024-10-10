@@ -91,9 +91,9 @@ Collaboration diagram for HumanPlayer:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aae2029af036081e540ff78c2e62cf8c4" id="r_aae2029af036081e540ff78c2e62cf8c4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_human_player.html#aae2029af036081e540ff78c2e62cf8c4">HumanPlayer</a> (const std::string &amp;<a class="el" href="class_player.html#acf0355128a99ee20ad9931b760fb2de1">name</a>, int <a class="el" href="class_player.html#a466b156d07fe5acae5adefa9b17a5e5e">stack</a>)</td></tr>
 <tr class="separator:aae2029af036081e540ff78c2e62cf8c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66f9b60ee68cf69ac693aafbec113343" id="r_a66f9b60ee68cf69ac693aafbec113343"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_human_player.html#a66f9b60ee68cf69ac693aafbec113343">getMove</a> (bool canCheck, bool canRaise, bool canFold, bool canCall, vector&lt; <a class="el" href="class_card.html">Card</a> &gt; community_cards, int largestBet, int numPlayersInHand) override</td></tr>
-<tr class="memdesc:a66f9b60ee68cf69ac693aafbec113343"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the player's move during their turn.  <br /></td></tr>
-<tr class="separator:a66f9b60ee68cf69ac693aafbec113343"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5496268ce091ed4d6e4f2d8ff81b09f4" id="r_a5496268ce091ed4d6e4f2d8ff81b09f4"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_human_player.html#a5496268ce091ed4d6e4f2d8ff81b09f4">getMove</a> (bool canCheck, bool canRaise, bool canFold, bool canCall, vector&lt; <a class="el" href="class_card.html">Card</a> &gt; community_cards, int largestBet, int numPlayersInHand, int pot) override</td></tr>
+<tr class="memdesc:a5496268ce091ed4d6e4f2d8ff81b09f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the player's move during their turn.  <br /></td></tr>
+<tr class="separator:a5496268ce091ed4d6e4f2d8ff81b09f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e800cdb7206b3a5421959087e26af2e" id="r_a5e800cdb7206b3a5421959087e26af2e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_human_player.html#a5e800cdb7206b3a5421959087e26af2e">getBetSizing</a> (int minBet, int maxBet) override</td></tr>
 <tr class="memdesc:a5e800cdb7206b3a5421959087e26af2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the player's bet sizing during their turn.  <br /></td></tr>
 <tr class="separator:a5e800cdb7206b3a5421959087e26af2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -248,9 +248,9 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   18</span>                    {</div>
 <div class="line"><span class="lineno">   19</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="class_g_u_i.html#ac7211e8e1f154e8e729921afe5d58225">GUI::endOfRoundMenu</a>();</div>
 <div class="line"><span class="lineno">   20</span>    }</div>
-<div class="ttc" id="aclass_g_u_i_html_ac7211e8e1f154e8e729921afe5d58225"><div class="ttname"><a href="class_g_u_i.html#ac7211e8e1f154e8e729921afe5d58225">GUI::endOfRoundMenu</a></div><div class="ttdeci">static int endOfRoundMenu()</div><div class="ttdoc">Displays the menu at the end of a round.</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8cpp_source.html#l00355">GUI.cpp:355</a></div></div>
+<div class="ttc" id="aclass_g_u_i_html_ac7211e8e1f154e8e729921afe5d58225"><div class="ttname"><a href="class_g_u_i.html#ac7211e8e1f154e8e729921afe5d58225">GUI::endOfRoundMenu</a></div><div class="ttdeci">static int endOfRoundMenu()</div><div class="ttdoc">Displays the menu at the end of a round.</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8cpp_source.html#l00375">GUI.cpp:375</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_g_u_i_8cpp_source.html#l00355">GUI::endOfRoundMenu()</a>.</p>
+<p class="reference">References <a class="el" href="_g_u_i_8cpp_source.html#l00375">GUI::endOfRoundMenu()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="test___human_player_8cc_source.html#l00049">TEST_F()</a>.</p>
 <div class="dynheader">
@@ -418,9 +418,6 @@ Here is the caller graph for this function:</div>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::string HumanPlayer::getMove </td>
@@ -470,11 +467,6 @@ Here is the caller graph for this function:</div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Gets the human player's move during their turn by calling the getPlayerMove method in <a class="el" href="class_g_u_i.html" title="Provides a graphical user interface for interacting with the poker game.">GUI</a> class. </p>
@@ -489,12 +481,10 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The player's chosen move as a string. </dd></dl>
 
-<p>Implements <a class="el" href="class_player.html#aa1865d5f50f9c27e6451478a169420ff">Player</a>.</p>
-
 </div>
 </div>
-<a id="a66f9b60ee68cf69ac693aafbec113343" name="a66f9b60ee68cf69ac693aafbec113343"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66f9b60ee68cf69ac693aafbec113343">&#9670;&#160;</a></span>getMove() <span class="overload">[2/2]</span></h2>
+<a id="a5496268ce091ed4d6e4f2d8ff81b09f4" name="a5496268ce091ed4d6e4f2d8ff81b09f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5496268ce091ed4d6e4f2d8ff81b09f4">&#9670;&#160;</a></span>getMove() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -542,7 +532,13 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>numPlayersInHand</em>&#160;</td>
+          <td class="paramname"><em>numPlayersInHand</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pot</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -569,10 +565,10 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The player's chosen move as a string. </dd></dl>
 
-<p>Implements <a class="el" href="class_player.html#aa1865d5f50f9c27e6451478a169420ff">Player</a>.</p>
+<p>Implements <a class="el" href="class_player.html#adc8ed9db4362a7843c6fe50c2abc3d73">Player</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="_human_player_8cpp_source.html#l00008">8</a> of file <a class="el" href="_human_player_8cpp_source.html">HumanPlayer.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    8</span>                                                                                                                                                             {</div>
+<div class="fragment"><div class="line"><span class="lineno">    8</span>                                                                                                                                                                      {</div>
 <div class="line"><span class="lineno">    9</span>        <span class="comment">// Call GUI to get user move</span></div>
 <div class="line"><span class="lineno">   10</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="class_g_u_i.html#a90c3a671452b797db9f8ba481c84767c">GUI::getUserMove</a>(canCheck, canRaise, canFold, canCall);</div>
 <div class="line"><span class="lineno">   11</span>    }</div>
@@ -584,12 +580,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_human_player_a66f9b60ee68cf69ac693aafbec113343_cgraph.png" border="0" usemap="#aclass_human_player_a66f9b60ee68cf69ac693aafbec113343_cgraph" alt=""/></div>
+<div class="center"><img src="class_human_player_a5496268ce091ed4d6e4f2d8ff81b09f4_cgraph.png" border="0" usemap="#aclass_human_player_a5496268ce091ed4d6e4f2d8ff81b09f4_cgraph" alt=""/></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_human_player_a66f9b60ee68cf69ac693aafbec113343_icgraph.png" border="0" usemap="#aclass_human_player_a66f9b60ee68cf69ac693aafbec113343_icgraph" alt=""/></div>
+<div class="center"><img src="class_human_player_a5496268ce091ed4d6e4f2d8ff81b09f4_icgraph.png" border="0" usemap="#aclass_human_player_a5496268ce091ed4d6e4f2d8ff81b09f4_icgraph" alt=""/></div>
 </div>
 
 </div>
@@ -601,7 +597,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 10 2024 20:59:35 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Thu Oct 10 2024 22:20:52 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

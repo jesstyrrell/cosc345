@@ -92,9 +92,9 @@ Collaboration diagram for RandomPlayer:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3d516ee6f285bbbeb3416be783f675df" id="r_a3d516ee6f285bbbeb3416be783f675df"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_random_player.html#a3d516ee6f285bbbeb3416be783f675df">RandomPlayer</a> (const std::string &amp;<a class="el" href="class_player.html#acf0355128a99ee20ad9931b760fb2de1">name</a>, int <a class="el" href="class_player.html#a466b156d07fe5acae5adefa9b17a5e5e">stack</a>)</td></tr>
 <tr class="separator:a3d516ee6f285bbbeb3416be783f675df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e9015292156422c79bee21da4320f53" id="r_a1e9015292156422c79bee21da4320f53"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_random_player.html#a1e9015292156422c79bee21da4320f53">getMove</a> (bool canCheck, bool canRaise, bool canFold, bool canCall, vector&lt; <a class="el" href="class_card.html">Card</a> &gt; community_cards, int largestBet, int numPlayersInHand) override</td></tr>
-<tr class="memdesc:a1e9015292156422c79bee21da4320f53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the player's move during their turn.  <br /></td></tr>
-<tr class="separator:a1e9015292156422c79bee21da4320f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80740c5ea20b07bc1527587c14df79fc" id="r_a80740c5ea20b07bc1527587c14df79fc"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_random_player.html#a80740c5ea20b07bc1527587c14df79fc">getMove</a> (bool canCheck, bool canRaise, bool canFold, bool canCall, vector&lt; <a class="el" href="class_card.html">Card</a> &gt; community_cards, int largestBet, int numPlayersInHand, int pot) override</td></tr>
+<tr class="memdesc:a80740c5ea20b07bc1527587c14df79fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the player's move during their turn.  <br /></td></tr>
+<tr class="separator:a80740c5ea20b07bc1527587c14df79fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f098d614d0b7dc889ede922051c561f" id="r_a2f098d614d0b7dc889ede922051c561f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_random_player.html#a2f098d614d0b7dc889ede922051c561f">getBetSizing</a> (int minBet, int maxBet) override</td></tr>
 <tr class="memdesc:a2f098d614d0b7dc889ede922051c561f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the player's bet sizing during their turn.  <br /></td></tr>
 <tr class="separator:a2f098d614d0b7dc889ede922051c561f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -418,9 +418,6 @@ Here is the caller graph for this function:</div>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::string RandomPlayer::getMove </td>
@@ -470,11 +467,6 @@ Here is the caller graph for this function:</div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Gets the human player's move during their turn by calling the getPlayerMove method in <a class="el" href="class_g_u_i.html" title="Provides a graphical user interface for interacting with the poker game.">GUI</a> class. </p>
@@ -489,12 +481,10 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The player's chosen move as a string. </dd></dl>
 
-<p>Implements <a class="el" href="class_player.html#aa1865d5f50f9c27e6451478a169420ff">Player</a>.</p>
-
 </div>
 </div>
-<a id="a1e9015292156422c79bee21da4320f53" name="a1e9015292156422c79bee21da4320f53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e9015292156422c79bee21da4320f53">&#9670;&#160;</a></span>getMove() <span class="overload">[2/2]</span></h2>
+<a id="a80740c5ea20b07bc1527587c14df79fc" name="a80740c5ea20b07bc1527587c14df79fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80740c5ea20b07bc1527587c14df79fc">&#9670;&#160;</a></span>getMove() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -542,7 +532,13 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>numPlayersInHand</em>&#160;</td>
+          <td class="paramname"><em>numPlayersInHand</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pot</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -569,10 +565,10 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The player's chosen move as a string. </dd></dl>
 
-<p>Implements <a class="el" href="class_player.html#aa1865d5f50f9c27e6451478a169420ff">Player</a>.</p>
+<p>Implements <a class="el" href="class_player.html#adc8ed9db4362a7843c6fe50c2abc3d73">Player</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="_random_player_8cpp_source.html#l00019">19</a> of file <a class="el" href="_random_player_8cpp_source.html">RandomPlayer.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   19</span>                                                                                                                                                             {</div>
+<div class="fragment"><div class="line"><span class="lineno">   19</span>                                                                                                                                                                      {</div>
 <div class="line"><span class="lineno">   20</span>        vector&lt;std::string&gt; moves = {<span class="stringliteral">&quot;a&quot;</span>, <span class="stringliteral">&quot;r&quot;</span>, <span class="stringliteral">&quot;f&quot;</span>, <span class="stringliteral">&quot;c&quot;</span>};</div>
 <div class="line"><span class="lineno">   21</span>        <span class="comment">// randomly select one of the bools that is true</span></div>
 <div class="line"><span class="lineno">   22</span>        std::vector&lt;bool&gt; possibleMoves = {canCheck, canRaise, canFold, canCall};</div>
@@ -624,7 +620,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 10 2024 20:59:35 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Thu Oct 10 2024 22:20:52 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

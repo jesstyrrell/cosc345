@@ -90,9 +90,9 @@ Collaboration diagram for BasicPlayer:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a797e8667cd34d7295eef9f31b4e692f7" id="r_a797e8667cd34d7295eef9f31b4e692f7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_player.html#a797e8667cd34d7295eef9f31b4e692f7">BasicPlayer</a> (const std::string &amp;<a class="el" href="class_player.html#acf0355128a99ee20ad9931b760fb2de1">name</a>, int <a class="el" href="class_player.html#a466b156d07fe5acae5adefa9b17a5e5e">stack</a>)</td></tr>
 <tr class="separator:a797e8667cd34d7295eef9f31b4e692f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab77fd6eb15d997d705eb1f750b3ebd52" id="r_ab77fd6eb15d997d705eb1f750b3ebd52"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_player.html#ab77fd6eb15d997d705eb1f750b3ebd52">getMove</a> (bool canCheck, bool canRaise, bool canFold, bool canCall, vector&lt; <a class="el" href="class_card.html">Card</a> &gt; community_cards, int largestBet, int numPlayersInHand) override</td></tr>
-<tr class="memdesc:ab77fd6eb15d997d705eb1f750b3ebd52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the player's move during their turn.  <br /></td></tr>
-<tr class="separator:ab77fd6eb15d997d705eb1f750b3ebd52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c6ca42bec1e9936d98e9c210f6f08c4" id="r_a9c6ca42bec1e9936d98e9c210f6f08c4"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_player.html#a9c6ca42bec1e9936d98e9c210f6f08c4">getMove</a> (bool canCheck, bool canRaise, bool canFold, bool canCall, vector&lt; <a class="el" href="class_card.html">Card</a> &gt; community_cards, int largestBet, int numPlayersInHand, int <a class="el" href="class_basic_player.html#a3630c64a5d158e86a7e58ccb46be1b67">pot</a>) override</td></tr>
+<tr class="memdesc:a9c6ca42bec1e9936d98e9c210f6f08c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the player's move during their turn.  <br /></td></tr>
+<tr class="separator:a9c6ca42bec1e9936d98e9c210f6f08c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf57921cc3b59ac7eb089cbb4118c895" id="r_aaf57921cc3b59ac7eb089cbb4118c895"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_player.html#aaf57921cc3b59ac7eb089cbb4118c895">getBetSizing</a> (int minBet, int maxBet) override</td></tr>
 <tr class="memdesc:aaf57921cc3b59ac7eb089cbb4118c895"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the player's bet sizing during their turn.  <br /></td></tr>
 <tr class="separator:aaf57921cc3b59ac7eb089cbb4118c895"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -153,6 +153,8 @@ Public Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a58920def1975e4b16702e1d8f5c0741e" id="r_a58920def1975e4b16702e1d8f5c0741e"><td class="memItemLeft" align="right" valign="top">std::default_random_engine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_player.html#a58920def1975e4b16702e1d8f5c0741e">rng</a></td></tr>
 <tr class="separator:a58920def1975e4b16702e1d8f5c0741e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3630c64a5d158e86a7e58ccb46be1b67" id="r_a3630c64a5d158e86a7e58ccb46be1b67"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_player.html#a3630c64a5d158e86a7e58ccb46be1b67">pot</a></td></tr>
+<tr class="separator:a3630c64a5d158e86a7e58ccb46be1b67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -202,11 +204,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_basic_player_8cpp_source.html#l00014">14</a> of file <a class="el" href="_basic_player_8cpp_source.html">BasicPlayer.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   14</span>                                                  : <a class="code hl_class" href="class_player.html">Player</a>(<a class="code hl_variable" href="class_player.html#acf0355128a99ee20ad9931b760fb2de1">name</a>, <a class="code hl_variable" href="class_player.html#a466b156d07fe5acae5adefa9b17a5e5e">stack</a>) {</div>
-<div class="line"><span class="lineno">   15</span>        <span class="keywordtype">unsigned</span> seed = std::chrono::system_clock::now().time_since_epoch().count();</div>
-<div class="line"><span class="lineno">   16</span>        <a class="code hl_variable" href="class_basic_player.html#a58920def1975e4b16702e1d8f5c0741e">rng</a>.seed(seed);</div>
-<div class="line"><span class="lineno">   17</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_basic_player_8cpp_source.html#l00015">15</a> of file <a class="el" href="_basic_player_8cpp_source.html">BasicPlayer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   15</span>                                                  : <a class="code hl_class" href="class_player.html">Player</a>(<a class="code hl_variable" href="class_player.html#acf0355128a99ee20ad9931b760fb2de1">name</a>, <a class="code hl_variable" href="class_player.html#a466b156d07fe5acae5adefa9b17a5e5e">stack</a>) {</div>
+<div class="line"><span class="lineno">   16</span>        <span class="keywordtype">unsigned</span> seed = std::chrono::system_clock::now().time_since_epoch().count();</div>
+<div class="line"><span class="lineno">   17</span>        <a class="code hl_variable" href="class_basic_player.html#a58920def1975e4b16702e1d8f5c0741e">rng</a>.seed(seed);</div>
+<div class="line"><span class="lineno">   18</span>    }</div>
 <div class="ttc" id="aclass_basic_player_html_a58920def1975e4b16702e1d8f5c0741e"><div class="ttname"><a href="class_basic_player.html#a58920def1975e4b16702e1d8f5c0741e">BasicPlayer::rng</a></div><div class="ttdeci">std::default_random_engine rng</div><div class="ttdef"><b>Definition</b> <a href="_basic_player_8cpp_source.html#l00011">BasicPlayer.cpp:11</a></div></div>
 <div class="ttc" id="aclass_player_html"><div class="ttname"><a href="class_player.html">Player</a></div><div class="ttdoc">Represents a human player in the poker game.</div><div class="ttdef"><b>Definition</b> <a href="_player_8hpp_source.html#l00015">Player.hpp:15</a></div></div>
 <div class="ttc" id="aclass_player_html_a466b156d07fe5acae5adefa9b17a5e5e"><div class="ttname"><a href="class_player.html#a466b156d07fe5acae5adefa9b17a5e5e">Player::stack</a></div><div class="ttdeci">int stack</div><div class="ttdoc">The player's current chip stack.</div><div class="ttdef"><b>Definition</b> <a href="_player_8hpp_source.html#l00019">Player.hpp:19</a></div></div>
@@ -245,10 +247,10 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_player.html#ab9d308303ef68b81db5f4415c8d2aa37">Player</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_basic_player_8cpp_source.html#l00060">60</a> of file <a class="el" href="_basic_player_8cpp_source.html">BasicPlayer.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   60</span>                    {</div>
-<div class="line"><span class="lineno">   61</span>        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><span class="lineno">   62</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_basic_player_8cpp_source.html#l00069">69</a> of file <a class="el" href="_basic_player_8cpp_source.html">BasicPlayer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>                    {</div>
+<div class="line"><span class="lineno">   70</span>        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">   71</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -298,27 +300,43 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_player.html#ae9d26573718b00460800539a32916288">Player</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_basic_player_8cpp_source.html#l00044">44</a> of file <a class="el" href="_basic_player_8cpp_source.html">BasicPlayer.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   44</span>                                                      {</div>
-<div class="line"><span class="lineno">   45</span>        <span class="comment">// randomly flip a coin until it is false and count the number of flips</span></div>
-<div class="line"><span class="lineno">   46</span>        <span class="keywordtype">int</span> count = 0;</div>
-<div class="line"><span class="lineno">   47</span> </div>
-<div class="line"><span class="lineno">   48</span>        <span class="keywordflow">while</span>(<span class="keyword">true</span>){</div>
-<div class="line"><span class="lineno">   49</span>            <span class="keywordtype">int</span> flip = (rand()%2)+ 1 ;</div>
-<div class="line"><span class="lineno">   50</span>            <span class="keywordflow">if</span> (flip == 1){</div>
-<div class="line"><span class="lineno">   51</span>               <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   52</span>            }</div>
-<div class="line"><span class="lineno">   53</span>            count++;</div>
-<div class="line"><span class="lineno">   54</span>        }</div>
-<div class="line"><span class="lineno">   55</span>        <span class="comment">// TESTING: print the bet sizing</span></div>
-<div class="line"><span class="lineno">   56</span>        <span class="comment">// std::cout &lt;&lt; min(minBet*(count+1), maxBet) &lt;&lt; std::endl;</span></div>
-<div class="line"><span class="lineno">   57</span>        <span class="keywordflow">return</span> min(minBet*(count+1), maxBet);</div>
-<div class="line"><span class="lineno">   58</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_basic_player_8cpp_source.html#l00046">46</a> of file <a class="el" href="_basic_player_8cpp_source.html">BasicPlayer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>                                                      {</div>
+<div class="line"><span class="lineno">   47</span>        <span class="comment">// Randomly choose a bet size that is either 1/4, 1/3, 1/2 or full pot</span></div>
+<div class="line"><span class="lineno">   48</span>        std::uniform_int_distribution&lt;int&gt; betSize(1, 4);</div>
+<div class="line"><span class="lineno">   49</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="class_player.html#ae0004d5df21e13f61b795d1c175e873d">bet</a> = 0;</div>
+<div class="line"><span class="lineno">   50</span>        <span class="keywordflow">switch</span>(betSize(<a class="code hl_variable" href="class_basic_player.html#a58920def1975e4b16702e1d8f5c0741e">rng</a>)){</div>
+<div class="line"><span class="lineno">   51</span>            <span class="keywordflow">case</span> 1:</div>
+<div class="line"><span class="lineno">   52</span>                <a class="code hl_function" href="class_player.html#ae0004d5df21e13f61b795d1c175e873d">bet</a> = <a class="code hl_variable" href="class_basic_player.html#a3630c64a5d158e86a7e58ccb46be1b67">pot</a>/4;</div>
+<div class="line"><span class="lineno">   53</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   54</span>            <span class="keywordflow">case</span> 2:</div>
+<div class="line"><span class="lineno">   55</span>                <a class="code hl_function" href="class_player.html#ae0004d5df21e13f61b795d1c175e873d">bet</a> = <a class="code hl_variable" href="class_basic_player.html#a3630c64a5d158e86a7e58ccb46be1b67">pot</a>/3;</div>
+<div class="line"><span class="lineno">   56</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   57</span>            <span class="keywordflow">case</span> 3:</div>
+<div class="line"><span class="lineno">   58</span>                <a class="code hl_function" href="class_player.html#ae0004d5df21e13f61b795d1c175e873d">bet</a> = <a class="code hl_variable" href="class_basic_player.html#a3630c64a5d158e86a7e58ccb46be1b67">pot</a>/2;</div>
+<div class="line"><span class="lineno">   59</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   60</span>            <span class="keywordflow">case</span> 4:</div>
+<div class="line"><span class="lineno">   61</span>                <a class="code hl_function" href="class_player.html#ae0004d5df21e13f61b795d1c175e873d">bet</a> = <a class="code hl_variable" href="class_basic_player.html#a3630c64a5d158e86a7e58ccb46be1b67">pot</a>;</div>
+<div class="line"><span class="lineno">   62</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   63</span>        }</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>        <span class="keywordflow">return</span> max(min(<a class="code hl_function" href="class_player.html#ae0004d5df21e13f61b795d1c175e873d">bet</a>, maxBet), minBet);</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>    }</div>
+<div class="ttc" id="aclass_basic_player_html_a3630c64a5d158e86a7e58ccb46be1b67"><div class="ttname"><a href="class_basic_player.html#a3630c64a5d158e86a7e58ccb46be1b67">BasicPlayer::pot</a></div><div class="ttdeci">int pot</div><div class="ttdef"><b>Definition</b> <a href="_basic_player_8cpp_source.html#l00012">BasicPlayer.cpp:12</a></div></div>
+<div class="ttc" id="aclass_player_html_ae0004d5df21e13f61b795d1c175e873d"><div class="ttname"><a href="class_player.html#ae0004d5df21e13f61b795d1c175e873d">Player::bet</a></div><div class="ttdeci">void bet(int amount)</div><div class="ttdoc">Places a bet by the player.</div><div class="ttdef"><b>Definition</b> <a href="_player_8cpp_source.html#l00014">Player.cpp:14</a></div></div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="_player_8cpp_source.html#l00014">Player::bet()</a>, <a class="el" href="_basic_player_8cpp_source.html#l00012">pot</a>, and <a class="el" href="_basic_player_8cpp_source.html#l00011">rng</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_basic_player_aaf57921cc3b59ac7eb089cbb4118c895_cgraph.png" border="0" usemap="#aclass_basic_player_aaf57921cc3b59ac7eb089cbb4118c895_cgraph" alt=""/></div>
+</div>
+
 </div>
 </div>
-<a id="ab77fd6eb15d997d705eb1f750b3ebd52" name="ab77fd6eb15d997d705eb1f750b3ebd52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab77fd6eb15d997d705eb1f750b3ebd52">&#9670;&#160;</a></span>getMove()</h2>
+<a id="a9c6ca42bec1e9936d98e9c210f6f08c4" name="a9c6ca42bec1e9936d98e9c210f6f08c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c6ca42bec1e9936d98e9c210f6f08c4">&#9670;&#160;</a></span>getMove()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -366,7 +384,13 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>numPlayersInHand</em>&#160;</td>
+          <td class="paramname"><em>numPlayersInHand</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pot</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -393,45 +417,72 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The player's chosen move as a string. </dd></dl>
 
-<p>Implements <a class="el" href="class_player.html#aa1865d5f50f9c27e6451478a169420ff">Player</a>.</p>
+<p>Implements <a class="el" href="class_player.html#adc8ed9db4362a7843c6fe50c2abc3d73">Player</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_basic_player_8cpp_source.html#l00019">19</a> of file <a class="el" href="_basic_player_8cpp_source.html">BasicPlayer.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   19</span>                                                                                                                                                             {</div>
-<div class="line"><span class="lineno">   20</span>        <span class="comment">// Get the bros equity from the equity calculator</span></div>
-<div class="line"><span class="lineno">   21</span>        vector&lt;float&gt; equity = <a class="code hl_function" href="class_player.html#ac40b5f5383aa1b6146a39c74f08254ad">get_equity</a>(community_cards, numPlayersInHand);</div>
-<div class="line"><span class="lineno">   22</span>        <span class="keywordtype">double</span> equityThreshold = 1.0/numPlayersInHand;</div>
-<div class="line"><span class="lineno">   23</span> </div>
-<div class="line"><span class="lineno">   24</span>        <span class="comment">// If the equity is below the threshold, fold</span></div>
-<div class="line"><span class="lineno">   25</span>        <span class="keywordflow">if</span> (equity[0] &lt; equityThreshold) {</div>
-<div class="line"><span class="lineno">   26</span>            <span class="keywordflow">if</span>(canFold){</div>
-<div class="line"><span class="lineno">   27</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;f&quot;</span>;</div>
-<div class="line"><span class="lineno">   28</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   29</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;a&quot;</span>;</div>
-<div class="line"><span class="lineno">   30</span>            }</div>
-<div class="line"><span class="lineno">   31</span>        }</div>
-<div class="line"><span class="lineno">   32</span> </div>
-<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">if</span>(canCall){</div>
-<div class="line"><span class="lineno">   34</span>            <span class="keywordflow">if</span>(equity[0] &gt;= equityThreshold*1.15){</div>
-<div class="line"><span class="lineno">   35</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;r&quot;</span>;</div>
-<div class="line"><span class="lineno">   36</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   37</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;c&quot;</span>;</div>
-<div class="line"><span class="lineno">   38</span>            }</div>
-<div class="line"><span class="lineno">   39</span>        }</div>
-<div class="line"><span class="lineno">   40</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;r&quot;</span>;</div>
-<div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   42</span>    }</div>
-<div class="ttc" id="aclass_player_html_ac40b5f5383aa1b6146a39c74f08254ad"><div class="ttname"><a href="class_player.html#ac40b5f5383aa1b6146a39c74f08254ad">Player::get_equity</a></div><div class="ttdeci">vector&lt; float &gt; get_equity(vector&lt; Card &gt; communityCards, int numPlayers)</div><div class="ttdoc">Returns the equity of the players hand for the current stage of the game.</div><div class="ttdef"><b>Definition</b> <a href="_player_8cpp_source.html#l00096">Player.cpp:96</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_basic_player_8cpp_source.html#l00020">20</a> of file <a class="el" href="_basic_player_8cpp_source.html">BasicPlayer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>                                                                                                                                                                      {</div>
+<div class="line"><span class="lineno">   21</span>        this-&gt;<a class="code hl_variable" href="class_basic_player.html#a3630c64a5d158e86a7e58ccb46be1b67">pot</a> = <a class="code hl_variable" href="class_basic_player.html#a3630c64a5d158e86a7e58ccb46be1b67">pot</a>;</div>
+<div class="line"><span class="lineno">   22</span>        <span class="comment">// Get the bros equity from the equity calculator</span></div>
+<div class="line"><span class="lineno">   23</span>        vector&lt;float&gt; equity = <a class="code hl_function" href="class_player.html#ac40b5f5383aa1b6146a39c74f08254ad">get_equity</a>(community_cards, numPlayersInHand);</div>
+<div class="line"><span class="lineno">   24</span>        <span class="keywordtype">double</span> equityThreshold = 1.0/numPlayersInHand;</div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span>        <span class="comment">// If the equity is below the threshold, fold</span></div>
+<div class="line"><span class="lineno">   27</span>        <span class="keywordflow">if</span> (equity[0] &lt; equityThreshold) {</div>
+<div class="line"><span class="lineno">   28</span>            <span class="keywordflow">if</span>(canFold){</div>
+<div class="line"><span class="lineno">   29</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;f&quot;</span>;</div>
+<div class="line"><span class="lineno">   30</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   31</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;a&quot;</span>;</div>
+<div class="line"><span class="lineno">   32</span>            }</div>
+<div class="line"><span class="lineno">   33</span>        }</div>
+<div class="line"><span class="lineno">   34</span> </div>
+<div class="line"><span class="lineno">   35</span>        <span class="keywordflow">if</span>(canCall){</div>
+<div class="line"><span class="lineno">   36</span>            <span class="keywordflow">if</span>(equity[0] &gt;= equityThreshold*1.15){</div>
+<div class="line"><span class="lineno">   37</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;r&quot;</span>;</div>
+<div class="line"><span class="lineno">   38</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   39</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;c&quot;</span>;</div>
+<div class="line"><span class="lineno">   40</span>            }</div>
+<div class="line"><span class="lineno">   41</span>        }</div>
+<div class="line"><span class="lineno">   42</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;r&quot;</span>;</div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>    }</div>
+<div class="ttc" id="aclass_player_html_ac40b5f5383aa1b6146a39c74f08254ad"><div class="ttname"><a href="class_player.html#ac40b5f5383aa1b6146a39c74f08254ad">Player::get_equity</a></div><div class="ttdeci">vector&lt; float &gt; get_equity(vector&lt; Card &gt; communityCards, int numPlayers)</div><div class="ttdoc">Returns the equity of the players hand for the current stage of the game.</div><div class="ttdef"><b>Definition</b> <a href="_player_8cpp_source.html#l00102">Player.cpp:102</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_player_8cpp_source.html#l00096">Player::get_equity()</a>.</p>
+<p class="reference">References <a class="el" href="_player_8cpp_source.html#l00102">Player::get_equity()</a>, and <a class="el" href="_basic_player_8cpp_source.html#l00012">pot</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_basic_player_ab77fd6eb15d997d705eb1f750b3ebd52_cgraph.png" border="0" usemap="#aclass_basic_player_ab77fd6eb15d997d705eb1f750b3ebd52_cgraph" alt=""/></div>
+<div class="center"><img src="class_basic_player_a9c6ca42bec1e9936d98e9c210f6f08c4_cgraph.png" border="0" usemap="#aclass_basic_player_a9c6ca42bec1e9936d98e9c210f6f08c4_cgraph" alt=""/></div>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Field Documentation</h2>
+<a id="a3630c64a5d158e86a7e58ccb46be1b67" name="a3630c64a5d158e86a7e58ccb46be1b67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3630c64a5d158e86a7e58ccb46be1b67">&#9670;&#160;</a></span>pot</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int BasicPlayer::pot</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_basic_player_8cpp_source.html#l00012">12</a> of file <a class="el" href="_basic_player_8cpp_source.html">BasicPlayer.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_basic_player_8cpp_source.html#l00046">getBetSizing()</a>, and <a class="el" href="_basic_player_8cpp_source.html#l00020">getMove()</a>.</p>
+
+</div>
+</div>
 <a id="a58920def1975e4b16702e1d8f5c0741e" name="a58920def1975e4b16702e1d8f5c0741e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a58920def1975e4b16702e1d8f5c0741e">&#9670;&#160;</a></span>rng</h2>
 
@@ -454,7 +505,7 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_basic_player_8cpp_source.html#l00011">11</a> of file <a class="el" href="_basic_player_8cpp_source.html">BasicPlayer.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_basic_player_8cpp_source.html#l00014">BasicPlayer()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_basic_player_8cpp_source.html#l00015">BasicPlayer()</a>, and <a class="el" href="_basic_player_8cpp_source.html#l00046">getBetSizing()</a>.</p>
 
 </div>
 </div>
@@ -464,7 +515,7 @@ Here is the call graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 10 2024 20:59:35 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Thu Oct 10 2024 22:20:52 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

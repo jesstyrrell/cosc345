@@ -142,9 +142,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac40b5f5383aa1b6146a39c74f08254ad" id="r_ac40b5f5383aa1b6146a39c74f08254ad"><td class="memItemLeft" align="right" valign="top">vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ac40b5f5383aa1b6146a39c74f08254ad">get_equity</a> (vector&lt; <a class="el" href="class_card.html">Card</a> &gt; communityCards, int numPlayers)</td></tr>
 <tr class="memdesc:ac40b5f5383aa1b6146a39c74f08254ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the equity of the players hand for the current stage of the game.  <br /></td></tr>
 <tr class="separator:ac40b5f5383aa1b6146a39c74f08254ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1865d5f50f9c27e6451478a169420ff" id="r_aa1865d5f50f9c27e6451478a169420ff"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#aa1865d5f50f9c27e6451478a169420ff">getMove</a> (bool canCheck, bool canRaise, bool canFold, bool canCall, vector&lt; <a class="el" href="class_card.html">Card</a> &gt; community_cards, int largestBet, int numPlayersInHand)=0</td></tr>
-<tr class="memdesc:aa1865d5f50f9c27e6451478a169420ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the player's move during their turn.  <br /></td></tr>
-<tr class="separator:aa1865d5f50f9c27e6451478a169420ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc8ed9db4362a7843c6fe50c2abc3d73" id="r_adc8ed9db4362a7843c6fe50c2abc3d73"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#adc8ed9db4362a7843c6fe50c2abc3d73">getMove</a> (bool canCheck, bool canRaise, bool canFold, bool canCall, vector&lt; <a class="el" href="class_card.html">Card</a> &gt; community_cards, int largestBet, int numPlayersInHand, int pot)=0</td></tr>
+<tr class="memdesc:adc8ed9db4362a7843c6fe50c2abc3d73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the player's move during their turn.  <br /></td></tr>
+<tr class="separator:adc8ed9db4362a7843c6fe50c2abc3d73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9d26573718b00460800539a32916288" id="r_ae9d26573718b00460800539a32916288"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ae9d26573718b00460800539a32916288">getBetSizing</a> (int minBet, int maxBet)=0</td></tr>
 <tr class="memdesc:ae9d26573718b00460800539a32916288"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the player's bet sizing during their turn.  <br /></td></tr>
 <tr class="separator:ae9d26573718b00460800539a32916288"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -260,8 +260,13 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00048">48</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   48</span>                                       {</div>
-<div class="line"><span class="lineno">   49</span>    this-&gt;<a class="code hl_variable" href="class_player.html#a120127b3026b271cb7b1a5b82d635503">hand</a>.push_back(card);</div>
-<div class="line"><span class="lineno">   50</span>}</div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">if</span> (this-&gt;<a class="code hl_variable" href="class_player.html#a120127b3026b271cb7b1a5b82d635503">hand</a>.empty()) {</div>
+<div class="line"><span class="lineno">   50</span>        <span class="comment">// Create a new hand (vector of cards) if the current hand is empty</span></div>
+<div class="line"><span class="lineno">   51</span>        this-&gt;<a class="code hl_variable" href="class_player.html#a120127b3026b271cb7b1a5b82d635503">hand</a> = std::vector&lt;Card&gt;();</div>
+<div class="line"><span class="lineno">   52</span>    }</div>
+<div class="line"><span class="lineno">   53</span>    <span class="comment">// Add the card to the hand</span></div>
+<div class="line"><span class="lineno">   54</span>    this-&gt;<a class="code hl_variable" href="class_player.html#a120127b3026b271cb7b1a5b82d635503">hand</a>.push_back(card);</div>
+<div class="line"><span class="lineno">   55</span>}</div>
 <div class="ttc" id="aclass_player_html_a120127b3026b271cb7b1a5b82d635503"><div class="ttname"><a href="class_player.html#a120127b3026b271cb7b1a5b82d635503">Player::hand</a></div><div class="ttdeci">vector&lt; Card &gt; hand</div><div class="ttdoc">The player's hand of cards.</div><div class="ttdef"><b>Definition</b> <a href="_player_8hpp_source.html#l00018">Player.hpp:18</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_player_8hpp_source.html#l00018">hand</a>.</p>
@@ -315,7 +320,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_player_8hpp_source.html#l00020">current_bet</a>, <a class="el" href="_player_8hpp_source.html#l00019">stack</a>, and <a class="el" href="_player_8hpp_source.html#l00021">totalBetThisHand</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_game_8cpp_source.html#l00137">Game::makeMoveForUser()</a>, <a class="el" href="test___player_8cc_source.html#l00036">TEST_F()</a>, <a class="el" href="test___player_8cc_source.html#l00086">TEST_F()</a>, and <a class="el" href="test___player_8cc_source.html#l00099">TEST_F()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_basic_player_8cpp_source.html#l00046">BasicPlayer::getBetSizing()</a>, <a class="el" href="_better_player_8cpp_source.html#l00057">BetterPlayer::getBetSizing()</a>, <a class="el" href="_game_8cpp_source.html#l00137">Game::makeMoveForUser()</a>, <a class="el" href="test___player_8cc_source.html#l00036">TEST_F()</a>, <a class="el" href="test___player_8cc_source.html#l00086">TEST_F()</a>, and <a class="el" href="test___player_8cc_source.html#l00099">TEST_F()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -341,10 +346,10 @@ Here is the caller graph for this function:</div>
 
 <p>Clears the player's hand of all cards. </p>
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00052">52</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   52</span>                        {</div>
-<div class="line"><span class="lineno">   53</span>    this-&gt;<a class="code hl_variable" href="class_player.html#a120127b3026b271cb7b1a5b82d635503">hand</a>.clear();</div>
-<div class="line"><span class="lineno">   54</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00058">58</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   58</span>                        {</div>
+<div class="line"><span class="lineno">   59</span>    this-&gt;<a class="code hl_variable" href="class_player.html#a120127b3026b271cb7b1a5b82d635503">hand</a>.clear();</div>
+<div class="line"><span class="lineno">   60</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_player_8hpp_source.html#l00018">hand</a>.</p>
 
@@ -392,7 +397,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_player_8hpp_source.html#l00020">current_bet</a>, <a class="el" href="_player_8hpp_source.html#l00019">stack</a>, and <a class="el" href="_player_8hpp_source.html#l00021">totalBetThisHand</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_game_8cpp_source.html#l00486">Game::addBlindsToPot()</a>, and <a class="el" href="test___player_8cc_source.html#l00048">TEST_F()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_game_8cpp_source.html#l00485">Game::addBlindsToPot()</a>, and <a class="el" href="test___player_8cc_source.html#l00048">TEST_F()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -427,7 +432,7 @@ Here is the caller graph for this function:</div>
 <p>Handles actions at the end of a hand. </p>
 <dl class="section return"><dt>Returns</dt><dd>The outcome of the end-of-hand process. </dd></dl>
 
-<p>Implemented in <a class="el" href="class_basic_player.html#af7eb54527c22517c15cc5338cf4dd34d">BasicPlayer</a>, <a class="el" href="class_human_player.html#a538faef1a022253707d0a63d20c67550">HumanPlayer</a>, <a class="el" href="class_human_player.html#a538faef1a022253707d0a63d20c67550">HumanPlayer</a>, <a class="el" href="class_random_player.html#af15ae923a157d4cf86885dff392f6ecf">RandomPlayer</a>, and <a class="el" href="class_random_player.html#af15ae923a157d4cf86885dff392f6ecf">RandomPlayer</a>.</p>
+<p>Implemented in <a class="el" href="class_basic_player.html#af7eb54527c22517c15cc5338cf4dd34d">BasicPlayer</a>, <a class="el" href="class_better_player.html#a3251c6f76bb5e1e0e80000c05fc0abc8">BetterPlayer</a>, <a class="el" href="class_human_player.html#a538faef1a022253707d0a63d20c67550">HumanPlayer</a>, <a class="el" href="class_human_player.html#a538faef1a022253707d0a63d20c67550">HumanPlayer</a>, <a class="el" href="class_random_player.html#af15ae923a157d4cf86885dff392f6ecf">RandomPlayer</a>, and <a class="el" href="class_random_player.html#af15ae923a157d4cf86885dff392f6ecf">RandomPlayer</a>.</p>
 
 </div>
 </div>
@@ -457,20 +462,20 @@ Here is the caller graph for this function:</div>
 <p>Generates a random name for the player. </p>
 <dl class="section return"><dt>Returns</dt><dd>The randomly generated name. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00082">82</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   82</span>                                    {</div>
-<div class="line"><span class="lineno">   83</span>    std::vector&lt;string&gt; animals = {<span class="stringliteral">&quot;Dog&quot;</span>, <span class="stringliteral">&quot;Cat&quot;</span>, <span class="stringliteral">&quot;Fish&quot;</span>, <span class="stringliteral">&quot;Bird&quot;</span>, <span class="stringliteral">&quot;Elephant&quot;</span>, <span class="stringliteral">&quot;Lion&quot;</span>, <span class="stringliteral">&quot;Tiger&quot;</span>, <span class="stringliteral">&quot;Bear&quot;</span>, <span class="stringliteral">&quot;Penguin&quot;</span>, <span class="stringliteral">&quot;Panda&quot;</span>, <span class="stringliteral">&quot;Giraffe&quot;</span>, <span class="stringliteral">&quot;Horse&quot;</span>, <span class="stringliteral">&quot;Cow&quot;</span>, <span class="stringliteral">&quot;Pig&quot;</span>, <span class="stringliteral">&quot;Sheep&quot;</span>, <span class="stringliteral">&quot;Goat&quot;</span>, <span class="stringliteral">&quot;Chicken&quot;</span>, <span class="stringliteral">&quot;Duck&quot;</span>, <span class="stringliteral">&quot;Goose&quot;</span>, <span class="stringliteral">&quot;Turkey&quot;</span>, <span class="stringliteral">&quot;Ostrich&quot;</span>, <span class="stringliteral">&quot;Kangaroo&quot;</span>, <span class="stringliteral">&quot;Koala&quot;</span>, <span class="stringliteral">&quot;Sloth&quot;</span>, <span class="stringliteral">&quot;Monkey&quot;</span>, <span class="stringliteral">&quot;Gorilla&quot;</span>, <span class="stringliteral">&quot;Chimpanzee&quot;</span>, <span class="stringliteral">&quot;Orangutan&quot;</span>, <span class="stringliteral">&quot;Rabbit&quot;</span>, <span class="stringliteral">&quot;Frog&quot;</span>, <span class="stringliteral">&quot;Toad&quot;</span>, <span class="stringliteral">&quot;Turtle&quot;</span>, <span class="stringliteral">&quot;Snake&quot;</span>, <span class="stringliteral">&quot;Lizard&quot;</span>, <span class="stringliteral">&quot;Iguana&quot;</span>, <span class="stringliteral">&quot;Chameleon&quot;</span>, <span class="stringliteral">&quot;Alligator&quot;</span>, <span class="stringliteral">&quot;Crocodile&quot;</span>, <span class="stringliteral">&quot;Shark&quot;</span>, <span class="stringliteral">&quot;Whale&quot;</span>, <span class="stringliteral">&quot;Dolphin&quot;</span>, <span class="stringliteral">&quot;Octopus&quot;</span>, <span class="stringliteral">&quot;Squid&quot;</span>, <span class="stringliteral">&quot;Jellyfish&quot;</span>, <span class="stringliteral">&quot;Starfish&quot;</span>, <span class="stringliteral">&quot;Seahorse&quot;</span>, <span class="stringliteral">&quot;Crab&quot;</span>, <span class="stringliteral">&quot;Lobster&quot;</span>, <span class="stringliteral">&quot;Shrimp&quot;</span>, <span class="stringliteral">&quot;Clam&quot;</span>, <span class="stringliteral">&quot;Oyster&quot;</span>, <span class="stringliteral">&quot;Mussel&quot;</span>, <span class="stringliteral">&quot;Scallop&quot;</span>, <span class="stringliteral">&quot;Snail&quot;</span>, <span class="stringliteral">&quot;Slug&quot;</span>, <span class="stringliteral">&quot;Butterfly&quot;</span>, <span class="stringliteral">&quot;Moth&quot;</span>, <span class="stringliteral">&quot;Caterpillar&quot;</span>, <span class="stringliteral">&quot;Ant&quot;</span>, <span class="stringliteral">&quot;Bee&quot;</span>, <span class="stringliteral">&quot;Wasp&quot;</span>, <span class="stringliteral">&quot;Hornet&quot;</span>, <span class="stringliteral">&quot;Fly&quot;</span>, <span class="stringliteral">&quot;Mosquito&quot;</span>, <span class="stringliteral">&quot;Beetle&quot;</span>, <span class="stringliteral">&quot;Ladybug&quot;</span>, <span class="stringliteral">&quot;Grasshopper&quot;</span>, <span class="stringliteral">&quot;Cricket&quot;</span>, <span class="stringliteral">&quot;Dragonfly&quot;</span>, <span class="stringliteral">&quot;Damselfly&quot;</span>, <span class="stringliteral">&quot;Centipede&quot;</span>, <span class="stringliteral">&quot;Millipede&quot;</span>, <span class="stringliteral">&quot;Spider&quot;</span>, <span class="stringliteral">&quot;Tarantula&quot;</span>, <span class="stringliteral">&quot;Scorpion&quot;</span>, <span class="stringliteral">&quot;Tick&quot;</span>, <span class="stringliteral">&quot;Mite&quot;</span>, <span class="stringliteral">&quot;Flea&quot;</span>, <span class="stringliteral">&quot;Bedbug&quot;</span>, <span class="stringliteral">&quot;Cockroach&quot;</span>, <span class="stringliteral">&quot;Termite&quot;</span>, <span class="stringliteral">&quot;Praying Mantis&quot;</span>, <span class="stringliteral">&quot;Walking Stick&quot;</span>, <span class="stringliteral">&quot;Earwig&quot;</span>, <span class="stringliteral">&quot;Silverfish&quot;</span>, <span class="stringliteral">&quot;Firefly&quot;</span>, <span class="stringliteral">&quot;Glowworm&quot;</span>, <span class="stringliteral">&quot;Earthworm&quot;</span>, <span class="stringliteral">&quot;Leech&quot;</span>, <span class="stringliteral">&quot;Slug&quot;</span>, <span class="stringliteral">&quot;Snail&quot;</span>, <span class="stringliteral">&quot;Clam&quot;</span>, <span class="stringliteral">&quot;Oyster&quot;</span>, <span class="stringliteral">&quot;Mussel&quot;</span>, <span class="stringliteral">&quot;Scallop&quot;</span>, <span class="stringliteral">&quot;Squid&quot;</span>, <span class="stringliteral">&quot;Octopus&quot;</span>, <span class="stringliteral">&quot;Cuttlefish&quot;</span>, <span class="stringliteral">&quot;Nautilus&quot;</span>, <span class="stringliteral">&quot;Ammonite&quot;</span>, <span class="stringliteral">&quot;Trilobite&quot;</span>, <span class="stringliteral">&quot;Crab&quot;</span>, <span class="stringliteral">&quot;Lobster&quot;</span>, <span class="stringliteral">&quot;Shrimp&quot;</span>, <span class="stringliteral">&quot;Krill&quot;</span>, <span class="stringliteral">&quot;Barnacle&quot;</span>, <span class="stringliteral">&quot;Crayfish&quot;</span>, <span class="stringliteral">&quot;Cockroach&quot;</span>, <span class="stringliteral">&quot;Termite&quot;</span>, <span class="stringliteral">&quot;Praying Mantis&quot;</span>, <span class="stringliteral">&quot;Walking Stick&quot;</span>, <span class="stringliteral">&quot;Earwig&quot;</span>, <span class="stringliteral">&quot;Silverfish&quot;</span>, <span class="stringliteral">&quot;Firefly&quot;</span>, <span class="stringliteral">&quot;Glowworm&quot;</span>, <span class="stringliteral">&quot;Earthworm&quot;</span>, <span class="stringliteral">&quot;Leech&quot;</span>, <span class="stringliteral">&quot;Slug&quot;</span>};</div>
-<div class="line"><span class="lineno">   84</span>    std::vector&lt;string&gt; adjectives = {<span class="stringliteral">&quot;Happy&quot;</span>, <span class="stringliteral">&quot;Sad&quot;</span>, <span class="stringliteral">&quot;Angry&quot;</span>, <span class="stringliteral">&quot;Excited&quot;</span>, <span class="stringliteral">&quot;Bored&quot;</span>, <span class="stringliteral">&quot;Tired&quot;</span>, <span class="stringliteral">&quot;Energetic&quot;</span>, <span class="stringliteral">&quot;Lazy&quot;</span>, <span class="stringliteral">&quot;Calm&quot;</span>, <span class="stringliteral">&quot;Anxious&quot;</span>, <span class="stringliteral">&quot;Nervous&quot;</span>, <span class="stringliteral">&quot;Confident&quot;</span>, <span class="stringliteral">&quot;Shy&quot;</span>, <span class="stringliteral">&quot;Brave&quot;</span>, <span class="stringliteral">&quot;Scared&quot;</span>, <span class="stringliteral">&quot;Proud&quot;</span>, <span class="stringliteral">&quot;Embarrassed&quot;</span>, <span class="stringliteral">&quot;Ashamed&quot;</span>, <span class="stringliteral">&quot;Guilty&quot;</span>, <span class="stringliteral">&quot;Jealous&quot;</span>, <span class="stringliteral">&quot;Envious&quot;</span>, <span class="stringliteral">&quot;Grateful&quot;</span>, <span class="stringliteral">&quot;Thankful&quot;</span>, <span class="stringliteral">&quot;Hopeful&quot;</span>, <span class="stringliteral">&quot;Hopeless&quot;</span>, <span class="stringliteral">&quot;Optimistic&quot;</span>, <span class="stringliteral">&quot;Pessimistic&quot;</span>, <span class="stringliteral">&quot;Curious&quot;</span>, <span class="stringliteral">&quot;Inquisitive&quot;</span>, <span class="stringliteral">&quot;Impatient&quot;</span>, <span class="stringliteral">&quot;Patient&quot;</span>, <span class="stringliteral">&quot;Polite&quot;</span>, <span class="stringliteral">&quot;Rude&quot;</span>, <span class="stringliteral">&quot;Kind&quot;</span>, <span class="stringliteral">&quot;Mean&quot;</span>, <span class="stringliteral">&quot;Generous&quot;</span>, <span class="stringliteral">&quot;Greedy&quot;</span>, <span class="stringliteral">&quot;Honest&quot;</span>, <span class="stringliteral">&quot;Dishonest&quot;</span>, <span class="stringliteral">&quot;Loyal&quot;</span>, <span class="stringliteral">&quot;Unfaithful&quot;</span>, <span class="stringliteral">&quot;Responsible&quot;</span>, <span class="stringliteral">&quot;Irresponsible&quot;</span>, <span class="stringliteral">&quot;Reliable&quot;</span>, <span class="stringliteral">&quot;Unreliable&quot;</span>, <span class="stringliteral">&quot;Trustworthy&quot;</span>, <span class="stringliteral">&quot;Untrustworthy&quot;</span>, <span class="stringliteral">&quot;Fair&quot;</span>, <span class="stringliteral">&quot;Unfair&quot;</span>, <span class="stringliteral">&quot;Forgiving&quot;</span>, <span class="stringliteral">&quot;Unforgiving&quot;</span>, <span class="stringliteral">&quot;Tolerant&quot;</span>, <span class="stringliteral">&quot;Intolerant&quot;</span>, <span class="stringliteral">&quot;Understanding&quot;</span>, <span class="stringliteral">&quot;Misunderstanding&quot;</span>, <span class="stringliteral">&quot;Sympathetic&quot;</span>, <span class="stringliteral">&quot;Unsympathetic&quot;</span>, <span class="stringliteral">&quot;Empathetic&quot;</span>, <span class="stringliteral">&quot;Apathetic&quot;</span>, <span class="stringliteral">&quot;Compassionate&quot;</span>, <span class="stringliteral">&quot;Heartless&quot;</span>, <span class="stringliteral">&quot;Caring&quot;</span>, <span class="stringliteral">&quot;Uncaring&quot;</span>, <span class="stringliteral">&quot;Affectionate&quot;</span>, <span class="stringliteral">&quot;Cold&quot;</span>, <span class="stringliteral">&quot;Warm&quot;</span>, <span class="stringliteral">&quot;Friendly&quot;</span>, <span class="stringliteral">&quot;Unfriendly&quot;</span>, <span class="stringliteral">&quot;Sociable&quot;</span>, <span class="stringliteral">&quot;Unsociable&quot;</span>, <span class="stringliteral">&quot;Outgoing&quot;</span>, <span class="stringliteral">&quot;Shy&quot;</span>, <span class="stringliteral">&quot;Introverted&quot;</span>, <span class="stringliteral">&quot;Extroverted&quot;</span>, <span class="stringliteral">&quot;Optimistic&quot;</span>, <span class="stringliteral">&quot;Pessimistic&quot;</span>, <span class="stringliteral">&quot;Cheerful&quot;</span>, <span class="stringliteral">&quot;Gloomy&quot;</span>, <span class="stringliteral">&quot;Joyful&quot;</span>, <span class="stringliteral">&quot;Sorrowful&quot;</span>, <span class="stringliteral">&quot;Playful&quot;</span>, <span class="stringliteral">&quot;Serious&quot;</span>, <span class="stringliteral">&quot;Silly&quot;</span>, <span class="stringliteral">&quot;Serious&quot;</span>, <span class="stringliteral">&quot;Clever&quot;</span>, <span class="stringliteral">&quot;Stupid&quot;</span>, <span class="stringliteral">&quot;Wise&quot;</span>, <span class="stringliteral">&quot;Foolish&quot;</span>, <span class="stringliteral">&quot;Smart&quot;</span>, <span class="stringliteral">&quot;Dumb&quot;</span>, <span class="stringliteral">&quot;Intelligent&quot;</span>, <span class="stringliteral">&quot;Ignorant&quot;</span>, <span class="stringliteral">&quot;Knowledgeable&quot;</span>, <span class="stringliteral">&quot;Uninformed&quot;</span>, <span class="stringliteral">&quot;Educated&quot;</span>, <span class="stringliteral">&quot;Uneducated&quot;</span>, <span class="stringliteral">&quot;Informed&quot;</span>, <span class="stringliteral">&quot;Uninformed&quot;</span>, <span class="stringliteral">&quot;Experienced&quot;</span>, <span class="stringliteral">&quot;Inexperienced&quot;</span>, <span class="stringliteral">&quot;Skilled&quot;</span>, <span class="stringliteral">&quot;Unskilled&quot;</span>, <span class="stringliteral">&quot;Talented&quot;</span>, <span class="stringliteral">&quot;Untalented&quot;</span>, <span class="stringliteral">&quot;Gifted&quot;</span>, <span class="stringliteral">&quot;Ungifted&quot;</span>, <span class="stringliteral">&quot;Creative&quot;</span>, <span class="stringliteral">&quot;Uncreative&quot;</span>, <span class="stringliteral">&quot;Imaginative&quot;</span>, <span class="stringliteral">&quot;Unimaginative&quot;</span>, <span class="stringliteral">&quot;Innovative&quot;</span>, <span class="stringliteral">&quot;Uninnovative&quot;</span>, <span class="stringliteral">&quot;Resourceful&quot;</span>, <span class="stringliteral">&quot;Unresourceful&quot;</span>, <span class="stringliteral">&quot;Adventurous&quot;</span> };</div>
-<div class="line"><span class="lineno">   85</span>    </div>
-<div class="line"><span class="lineno">   86</span>    random_device rd;</div>
-<div class="line"><span class="lineno">   87</span>    mt19937 gen(rd());</div>
-<div class="line"><span class="lineno">   88</span>    std::uniform_int_distribution&lt;&gt; animalIndex(0, animals.size() - 1);</div>
-<div class="line"><span class="lineno">   89</span>    std::uniform_int_distribution&lt;&gt; adjectiveIndex(0, adjectives.size() - 1);</div>
-<div class="line"><span class="lineno">   90</span> </div>
-<div class="line"><span class="lineno">   91</span>    <span class="keywordtype">string</span> randomNumber = std::to_string(rand() % 1000 + 1);</div>
-<div class="line"><span class="lineno">   92</span> </div>
-<div class="line"><span class="lineno">   93</span>    <span class="keywordflow">return</span> adjectives[adjectiveIndex(gen)] + <span class="stringliteral">&quot; &quot;</span> + animals[animalIndex(gen)] + <span class="stringliteral">&quot; &quot;</span> + randomNumber;</div>
-<div class="line"><span class="lineno">   94</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00088">88</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   88</span>                                    {</div>
+<div class="line"><span class="lineno">   89</span>    std::vector&lt;string&gt; animals = {<span class="stringliteral">&quot;Dog&quot;</span>, <span class="stringliteral">&quot;Cat&quot;</span>, <span class="stringliteral">&quot;Fish&quot;</span>, <span class="stringliteral">&quot;Bird&quot;</span>, <span class="stringliteral">&quot;Elephant&quot;</span>, <span class="stringliteral">&quot;Lion&quot;</span>, <span class="stringliteral">&quot;Tiger&quot;</span>, <span class="stringliteral">&quot;Bear&quot;</span>, <span class="stringliteral">&quot;Penguin&quot;</span>, <span class="stringliteral">&quot;Panda&quot;</span>, <span class="stringliteral">&quot;Giraffe&quot;</span>, <span class="stringliteral">&quot;Horse&quot;</span>, <span class="stringliteral">&quot;Cow&quot;</span>, <span class="stringliteral">&quot;Pig&quot;</span>, <span class="stringliteral">&quot;Sheep&quot;</span>, <span class="stringliteral">&quot;Goat&quot;</span>, <span class="stringliteral">&quot;Chicken&quot;</span>, <span class="stringliteral">&quot;Duck&quot;</span>, <span class="stringliteral">&quot;Goose&quot;</span>, <span class="stringliteral">&quot;Turkey&quot;</span>, <span class="stringliteral">&quot;Ostrich&quot;</span>, <span class="stringliteral">&quot;Kangaroo&quot;</span>, <span class="stringliteral">&quot;Koala&quot;</span>, <span class="stringliteral">&quot;Sloth&quot;</span>, <span class="stringliteral">&quot;Monkey&quot;</span>, <span class="stringliteral">&quot;Gorilla&quot;</span>, <span class="stringliteral">&quot;Chimpanzee&quot;</span>, <span class="stringliteral">&quot;Orangutan&quot;</span>, <span class="stringliteral">&quot;Rabbit&quot;</span>, <span class="stringliteral">&quot;Frog&quot;</span>, <span class="stringliteral">&quot;Toad&quot;</span>, <span class="stringliteral">&quot;Turtle&quot;</span>, <span class="stringliteral">&quot;Snake&quot;</span>, <span class="stringliteral">&quot;Lizard&quot;</span>, <span class="stringliteral">&quot;Iguana&quot;</span>, <span class="stringliteral">&quot;Chameleon&quot;</span>, <span class="stringliteral">&quot;Alligator&quot;</span>, <span class="stringliteral">&quot;Crocodile&quot;</span>, <span class="stringliteral">&quot;Shark&quot;</span>, <span class="stringliteral">&quot;Whale&quot;</span>, <span class="stringliteral">&quot;Dolphin&quot;</span>, <span class="stringliteral">&quot;Octopus&quot;</span>, <span class="stringliteral">&quot;Squid&quot;</span>, <span class="stringliteral">&quot;Jellyfish&quot;</span>, <span class="stringliteral">&quot;Starfish&quot;</span>, <span class="stringliteral">&quot;Seahorse&quot;</span>, <span class="stringliteral">&quot;Crab&quot;</span>, <span class="stringliteral">&quot;Lobster&quot;</span>, <span class="stringliteral">&quot;Shrimp&quot;</span>, <span class="stringliteral">&quot;Clam&quot;</span>, <span class="stringliteral">&quot;Oyster&quot;</span>, <span class="stringliteral">&quot;Mussel&quot;</span>, <span class="stringliteral">&quot;Scallop&quot;</span>, <span class="stringliteral">&quot;Snail&quot;</span>, <span class="stringliteral">&quot;Slug&quot;</span>, <span class="stringliteral">&quot;Butterfly&quot;</span>, <span class="stringliteral">&quot;Moth&quot;</span>, <span class="stringliteral">&quot;Caterpillar&quot;</span>, <span class="stringliteral">&quot;Ant&quot;</span>, <span class="stringliteral">&quot;Bee&quot;</span>, <span class="stringliteral">&quot;Wasp&quot;</span>, <span class="stringliteral">&quot;Hornet&quot;</span>, <span class="stringliteral">&quot;Fly&quot;</span>, <span class="stringliteral">&quot;Mosquito&quot;</span>, <span class="stringliteral">&quot;Beetle&quot;</span>, <span class="stringliteral">&quot;Ladybug&quot;</span>, <span class="stringliteral">&quot;Grasshopper&quot;</span>, <span class="stringliteral">&quot;Cricket&quot;</span>, <span class="stringliteral">&quot;Dragonfly&quot;</span>, <span class="stringliteral">&quot;Damselfly&quot;</span>, <span class="stringliteral">&quot;Centipede&quot;</span>, <span class="stringliteral">&quot;Millipede&quot;</span>, <span class="stringliteral">&quot;Spider&quot;</span>, <span class="stringliteral">&quot;Tarantula&quot;</span>, <span class="stringliteral">&quot;Scorpion&quot;</span>, <span class="stringliteral">&quot;Tick&quot;</span>, <span class="stringliteral">&quot;Mite&quot;</span>, <span class="stringliteral">&quot;Flea&quot;</span>, <span class="stringliteral">&quot;Bedbug&quot;</span>, <span class="stringliteral">&quot;Cockroach&quot;</span>, <span class="stringliteral">&quot;Termite&quot;</span>, <span class="stringliteral">&quot;Praying Mantis&quot;</span>, <span class="stringliteral">&quot;Walking Stick&quot;</span>, <span class="stringliteral">&quot;Earwig&quot;</span>, <span class="stringliteral">&quot;Silverfish&quot;</span>, <span class="stringliteral">&quot;Firefly&quot;</span>, <span class="stringliteral">&quot;Glowworm&quot;</span>, <span class="stringliteral">&quot;Earthworm&quot;</span>, <span class="stringliteral">&quot;Leech&quot;</span>, <span class="stringliteral">&quot;Slug&quot;</span>, <span class="stringliteral">&quot;Snail&quot;</span>, <span class="stringliteral">&quot;Clam&quot;</span>, <span class="stringliteral">&quot;Oyster&quot;</span>, <span class="stringliteral">&quot;Mussel&quot;</span>, <span class="stringliteral">&quot;Scallop&quot;</span>, <span class="stringliteral">&quot;Squid&quot;</span>, <span class="stringliteral">&quot;Octopus&quot;</span>, <span class="stringliteral">&quot;Cuttlefish&quot;</span>, <span class="stringliteral">&quot;Nautilus&quot;</span>, <span class="stringliteral">&quot;Ammonite&quot;</span>, <span class="stringliteral">&quot;Trilobite&quot;</span>, <span class="stringliteral">&quot;Crab&quot;</span>, <span class="stringliteral">&quot;Lobster&quot;</span>, <span class="stringliteral">&quot;Shrimp&quot;</span>, <span class="stringliteral">&quot;Krill&quot;</span>, <span class="stringliteral">&quot;Barnacle&quot;</span>, <span class="stringliteral">&quot;Crayfish&quot;</span>, <span class="stringliteral">&quot;Cockroach&quot;</span>, <span class="stringliteral">&quot;Termite&quot;</span>, <span class="stringliteral">&quot;Praying Mantis&quot;</span>, <span class="stringliteral">&quot;Walking Stick&quot;</span>, <span class="stringliteral">&quot;Earwig&quot;</span>, <span class="stringliteral">&quot;Silverfish&quot;</span>, <span class="stringliteral">&quot;Firefly&quot;</span>, <span class="stringliteral">&quot;Glowworm&quot;</span>, <span class="stringliteral">&quot;Earthworm&quot;</span>, <span class="stringliteral">&quot;Leech&quot;</span>, <span class="stringliteral">&quot;Slug&quot;</span>};</div>
+<div class="line"><span class="lineno">   90</span>    std::vector&lt;string&gt; adjectives = {<span class="stringliteral">&quot;Happy&quot;</span>, <span class="stringliteral">&quot;Sad&quot;</span>, <span class="stringliteral">&quot;Angry&quot;</span>, <span class="stringliteral">&quot;Excited&quot;</span>, <span class="stringliteral">&quot;Bored&quot;</span>, <span class="stringliteral">&quot;Tired&quot;</span>, <span class="stringliteral">&quot;Energetic&quot;</span>, <span class="stringliteral">&quot;Lazy&quot;</span>, <span class="stringliteral">&quot;Calm&quot;</span>, <span class="stringliteral">&quot;Anxious&quot;</span>, <span class="stringliteral">&quot;Nervous&quot;</span>, <span class="stringliteral">&quot;Confident&quot;</span>, <span class="stringliteral">&quot;Shy&quot;</span>, <span class="stringliteral">&quot;Brave&quot;</span>, <span class="stringliteral">&quot;Scared&quot;</span>, <span class="stringliteral">&quot;Proud&quot;</span>, <span class="stringliteral">&quot;Embarrassed&quot;</span>, <span class="stringliteral">&quot;Ashamed&quot;</span>, <span class="stringliteral">&quot;Guilty&quot;</span>, <span class="stringliteral">&quot;Jealous&quot;</span>, <span class="stringliteral">&quot;Envious&quot;</span>, <span class="stringliteral">&quot;Grateful&quot;</span>, <span class="stringliteral">&quot;Thankful&quot;</span>, <span class="stringliteral">&quot;Hopeful&quot;</span>, <span class="stringliteral">&quot;Hopeless&quot;</span>, <span class="stringliteral">&quot;Optimistic&quot;</span>, <span class="stringliteral">&quot;Pessimistic&quot;</span>, <span class="stringliteral">&quot;Curious&quot;</span>, <span class="stringliteral">&quot;Inquisitive&quot;</span>, <span class="stringliteral">&quot;Impatient&quot;</span>, <span class="stringliteral">&quot;Patient&quot;</span>, <span class="stringliteral">&quot;Polite&quot;</span>, <span class="stringliteral">&quot;Rude&quot;</span>, <span class="stringliteral">&quot;Kind&quot;</span>, <span class="stringliteral">&quot;Mean&quot;</span>, <span class="stringliteral">&quot;Generous&quot;</span>, <span class="stringliteral">&quot;Greedy&quot;</span>, <span class="stringliteral">&quot;Honest&quot;</span>, <span class="stringliteral">&quot;Dishonest&quot;</span>, <span class="stringliteral">&quot;Loyal&quot;</span>, <span class="stringliteral">&quot;Unfaithful&quot;</span>, <span class="stringliteral">&quot;Responsible&quot;</span>, <span class="stringliteral">&quot;Irresponsible&quot;</span>, <span class="stringliteral">&quot;Reliable&quot;</span>, <span class="stringliteral">&quot;Unreliable&quot;</span>, <span class="stringliteral">&quot;Trustworthy&quot;</span>, <span class="stringliteral">&quot;Untrustworthy&quot;</span>, <span class="stringliteral">&quot;Fair&quot;</span>, <span class="stringliteral">&quot;Unfair&quot;</span>, <span class="stringliteral">&quot;Forgiving&quot;</span>, <span class="stringliteral">&quot;Unforgiving&quot;</span>, <span class="stringliteral">&quot;Tolerant&quot;</span>, <span class="stringliteral">&quot;Intolerant&quot;</span>, <span class="stringliteral">&quot;Understanding&quot;</span>, <span class="stringliteral">&quot;Misunderstanding&quot;</span>, <span class="stringliteral">&quot;Sympathetic&quot;</span>, <span class="stringliteral">&quot;Unsympathetic&quot;</span>, <span class="stringliteral">&quot;Empathetic&quot;</span>, <span class="stringliteral">&quot;Apathetic&quot;</span>, <span class="stringliteral">&quot;Compassionate&quot;</span>, <span class="stringliteral">&quot;Heartless&quot;</span>, <span class="stringliteral">&quot;Caring&quot;</span>, <span class="stringliteral">&quot;Uncaring&quot;</span>, <span class="stringliteral">&quot;Affectionate&quot;</span>, <span class="stringliteral">&quot;Cold&quot;</span>, <span class="stringliteral">&quot;Warm&quot;</span>, <span class="stringliteral">&quot;Friendly&quot;</span>, <span class="stringliteral">&quot;Unfriendly&quot;</span>, <span class="stringliteral">&quot;Sociable&quot;</span>, <span class="stringliteral">&quot;Unsociable&quot;</span>, <span class="stringliteral">&quot;Outgoing&quot;</span>, <span class="stringliteral">&quot;Shy&quot;</span>, <span class="stringliteral">&quot;Introverted&quot;</span>, <span class="stringliteral">&quot;Extroverted&quot;</span>, <span class="stringliteral">&quot;Optimistic&quot;</span>, <span class="stringliteral">&quot;Pessimistic&quot;</span>, <span class="stringliteral">&quot;Cheerful&quot;</span>, <span class="stringliteral">&quot;Gloomy&quot;</span>, <span class="stringliteral">&quot;Joyful&quot;</span>, <span class="stringliteral">&quot;Sorrowful&quot;</span>, <span class="stringliteral">&quot;Playful&quot;</span>, <span class="stringliteral">&quot;Serious&quot;</span>, <span class="stringliteral">&quot;Silly&quot;</span>, <span class="stringliteral">&quot;Serious&quot;</span>, <span class="stringliteral">&quot;Clever&quot;</span>, <span class="stringliteral">&quot;Stupid&quot;</span>, <span class="stringliteral">&quot;Wise&quot;</span>, <span class="stringliteral">&quot;Foolish&quot;</span>, <span class="stringliteral">&quot;Smart&quot;</span>, <span class="stringliteral">&quot;Dumb&quot;</span>, <span class="stringliteral">&quot;Intelligent&quot;</span>, <span class="stringliteral">&quot;Ignorant&quot;</span>, <span class="stringliteral">&quot;Knowledgeable&quot;</span>, <span class="stringliteral">&quot;Uninformed&quot;</span>, <span class="stringliteral">&quot;Educated&quot;</span>, <span class="stringliteral">&quot;Uneducated&quot;</span>, <span class="stringliteral">&quot;Informed&quot;</span>, <span class="stringliteral">&quot;Uninformed&quot;</span>, <span class="stringliteral">&quot;Experienced&quot;</span>, <span class="stringliteral">&quot;Inexperienced&quot;</span>, <span class="stringliteral">&quot;Skilled&quot;</span>, <span class="stringliteral">&quot;Unskilled&quot;</span>, <span class="stringliteral">&quot;Talented&quot;</span>, <span class="stringliteral">&quot;Untalented&quot;</span>, <span class="stringliteral">&quot;Gifted&quot;</span>, <span class="stringliteral">&quot;Ungifted&quot;</span>, <span class="stringliteral">&quot;Creative&quot;</span>, <span class="stringliteral">&quot;Uncreative&quot;</span>, <span class="stringliteral">&quot;Imaginative&quot;</span>, <span class="stringliteral">&quot;Unimaginative&quot;</span>, <span class="stringliteral">&quot;Innovative&quot;</span>, <span class="stringliteral">&quot;Uninnovative&quot;</span>, <span class="stringliteral">&quot;Resourceful&quot;</span>, <span class="stringliteral">&quot;Unresourceful&quot;</span>, <span class="stringliteral">&quot;Adventurous&quot;</span> };</div>
+<div class="line"><span class="lineno">   91</span>    </div>
+<div class="line"><span class="lineno">   92</span>    random_device rd;</div>
+<div class="line"><span class="lineno">   93</span>    mt19937 gen(rd());</div>
+<div class="line"><span class="lineno">   94</span>    std::uniform_int_distribution&lt;&gt; animalIndex(0, animals.size() - 1);</div>
+<div class="line"><span class="lineno">   95</span>    std::uniform_int_distribution&lt;&gt; adjectiveIndex(0, adjectives.size() - 1);</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>    <span class="keywordtype">string</span> randomNumber = std::to_string(rand() % 1000 + 1);</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">return</span> adjectives[adjectiveIndex(gen)] + <span class="stringliteral">&quot; &quot;</span> + animals[animalIndex(gen)] + <span class="stringliteral">&quot; &quot;</span> + randomNumber;</div>
+<div class="line"><span class="lineno">  100</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -492,10 +497,10 @@ Here is the caller graph for this function:</div>
 <p>Gets the player's current bet in the ongoing hand. </p>
 <dl class="section return"><dt>Returns</dt><dd>The player's current bet amount. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00056">56</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   56</span>                            {</div>
-<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="class_player.html#a42345ff4fe6e617a5829aae4a9037c51">current_bet</a>;</div>
-<div class="line"><span class="lineno">   58</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00062">62</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   62</span>                            {</div>
+<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="class_player.html#a42345ff4fe6e617a5829aae4a9037c51">current_bet</a>;</div>
+<div class="line"><span class="lineno">   64</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_player_8hpp_source.html#l00020">current_bet</a>.</p>
 
@@ -543,17 +548,17 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00096">96</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   96</span>                                                                            {</div>
-<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">if</span> (this-&gt;<a class="code hl_variable" href="class_player.html#a120127b3026b271cb7b1a5b82d635503">hand</a>.size() == 0) {</div>
-<div class="line"><span class="lineno">   98</span>        <span class="keywordflow">return</span> { -1, -1 };</div>
-<div class="line"><span class="lineno">   99</span>    }</div>
-<div class="line"><span class="lineno">  100</span>    <a class="code hl_class" href="class_equity_calculator.html">EquityCalculator</a> equityCalculator;</div>
-<div class="line"><span class="lineno">  101</span>    <a class="code hl_class" href="class_deck.html">Deck</a> deck;</div>
-<div class="line"><span class="lineno">  102</span>    <span class="keywordflow">for</span> (<a class="code hl_class" href="class_card.html">Card</a> c : communityCards) { deck.<a class="code hl_function" href="class_deck.html#a61714386178ebc83bfa95b838db0adf1">remove_card</a>(c); };</div>
-<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">for</span> (<a class="code hl_class" href="class_card.html">Card</a> c : this-&gt;<a class="code hl_variable" href="class_player.html#a120127b3026b271cb7b1a5b82d635503">hand</a>) { deck.<a class="code hl_function" href="class_deck.html#a61714386178ebc83bfa95b838db0adf1">remove_card</a>(c); };</div>
-<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">return</span> equityCalculator.<a class="code hl_function" href="class_equity_calculator.html#a7538b1a4d83a396d16dc0673cb3eb619">calculateHandEquity</a>(this-&gt;<a class="code hl_variable" href="class_player.html#a120127b3026b271cb7b1a5b82d635503">hand</a>, communityCards, deck, numPlayers);</div>
-<div class="line"><span class="lineno">  105</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00102">102</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  102</span>                                                                            {</div>
+<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">if</span> (this-&gt;<a class="code hl_variable" href="class_player.html#a120127b3026b271cb7b1a5b82d635503">hand</a>.size() == 0) {</div>
+<div class="line"><span class="lineno">  104</span>        <span class="keywordflow">return</span> { -1, -1 };</div>
+<div class="line"><span class="lineno">  105</span>    }</div>
+<div class="line"><span class="lineno">  106</span>    <a class="code hl_class" href="class_equity_calculator.html">EquityCalculator</a> equityCalculator;</div>
+<div class="line"><span class="lineno">  107</span>    <a class="code hl_class" href="class_deck.html">Deck</a> deck;</div>
+<div class="line"><span class="lineno">  108</span>    <span class="keywordflow">for</span> (<a class="code hl_class" href="class_card.html">Card</a> c : communityCards) { deck.<a class="code hl_function" href="class_deck.html#a61714386178ebc83bfa95b838db0adf1">remove_card</a>(c); };</div>
+<div class="line"><span class="lineno">  109</span>    <span class="keywordflow">for</span> (<a class="code hl_class" href="class_card.html">Card</a> c : this-&gt;<a class="code hl_variable" href="class_player.html#a120127b3026b271cb7b1a5b82d635503">hand</a>) { deck.<a class="code hl_function" href="class_deck.html#a61714386178ebc83bfa95b838db0adf1">remove_card</a>(c); };</div>
+<div class="line"><span class="lineno">  110</span>    <span class="keywordflow">return</span> equityCalculator.<a class="code hl_function" href="class_equity_calculator.html#a7538b1a4d83a396d16dc0673cb3eb619">calculateHandEquity</a>(this-&gt;<a class="code hl_variable" href="class_player.html#a120127b3026b271cb7b1a5b82d635503">hand</a>, communityCards, deck, numPlayers);</div>
+<div class="line"><span class="lineno">  111</span>}</div>
 <div class="ttc" id="aclass_card_html"><div class="ttname"><a href="class_card.html">Card</a></div><div class="ttdoc">Represents a single card in a deck of cards. Each card has a suit and a rank.</div><div class="ttdef"><b>Definition</b> <a href="_card_8hpp_source.html#l00014">Card.hpp:14</a></div></div>
 <div class="ttc" id="aclass_deck_html"><div class="ttname"><a href="class_deck.html">Deck</a></div><div class="ttdoc">Represents a deck of playing cards, providing functionality to shuffle, deal, and manage the deck.</div><div class="ttdef"><b>Definition</b> <a href="_deck_8hpp_source.html#l00013">Deck.hpp:13</a></div></div>
 <div class="ttc" id="aclass_deck_html_a61714386178ebc83bfa95b838db0adf1"><div class="ttname"><a href="class_deck.html#a61714386178ebc83bfa95b838db0adf1">Deck::remove_card</a></div><div class="ttdeci">void remove_card(Card card)</div><div class="ttdoc">Removes a specified card from the deck.</div><div class="ttdef"><b>Definition</b> <a href="_deck_8cpp_source.html#l00081">Deck.cpp:81</a></div></div>
@@ -562,7 +567,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_equity_calculator_8cpp_source.html#l00088">EquityCalculator::calculateHandEquity()</a>, <a class="el" href="_player_8hpp_source.html#l00018">hand</a>, and <a class="el" href="_deck_8cpp_source.html#l00081">Deck::remove_card()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_basic_player_8cpp_source.html#l00019">BasicPlayer::getMove()</a>, <a class="el" href="test___player_8cc_source.html#l00105">TEST_F()</a>, and <a class="el" href="test___player_8cc_source.html#l00115">TEST_F()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_basic_player_8cpp_source.html#l00020">BasicPlayer::getMove()</a>, <a class="el" href="_better_player_8cpp_source.html#l00022">BetterPlayer::getMove()</a>, <a class="el" href="test___player_8cc_source.html#l00105">TEST_F()</a>, and <a class="el" href="test___player_8cc_source.html#l00115">TEST_F()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -635,7 +640,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_player_8hpp_source.html#l00017">name</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00164">GUI::displayPlayerHand()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00547">GUI::displayPlayerMove()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00380">GUI::displayPlayerStack()</a>, <a class="el" href="test___human_player_8cc_source.html#l00023">TEST_F()</a>, <a class="el" href="test___player_8cc_source.html#l00031">TEST_F()</a>, and <a class="el" href="test___player_8cc_source.html#l00064">TEST_F()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00164">GUI::displayPlayerHand()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00567">GUI::displayPlayerMove()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00400">GUI::displayPlayerStack()</a>, <a class="el" href="test___human_player_8cc_source.html#l00023">TEST_F()</a>, <a class="el" href="test___player_8cc_source.html#l00031">TEST_F()</a>, and <a class="el" href="test___player_8cc_source.html#l00064">TEST_F()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -669,7 +674,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_player_8hpp_source.html#l00019">stack</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00380">GUI::displayPlayerStack()</a>, <a class="el" href="_game_8cpp_source.html#l00137">Game::makeMoveForUser()</a>, <a class="el" href="test___human_player_8cc_source.html#l00023">TEST_F()</a>, <a class="el" href="test___player_8cc_source.html#l00036">TEST_F()</a>, <a class="el" href="test___player_8cc_source.html#l00031">TEST_F()</a>, <a class="el" href="test___player_8cc_source.html#l00048">TEST_F()</a>, <a class="el" href="test___player_8cc_source.html#l00060">TEST_F()</a>, and <a class="el" href="test___player_8cc_source.html#l00055">TEST_F()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00400">GUI::displayPlayerStack()</a>, <a class="el" href="_game_8cpp_source.html#l00137">Game::makeMoveForUser()</a>, <a class="el" href="test___human_player_8cc_source.html#l00023">TEST_F()</a>, <a class="el" href="test___player_8cc_source.html#l00036">TEST_F()</a>, <a class="el" href="test___player_8cc_source.html#l00031">TEST_F()</a>, <a class="el" href="test___player_8cc_source.html#l00048">TEST_F()</a>, <a class="el" href="test___player_8cc_source.html#l00060">TEST_F()</a>, and <a class="el" href="test___player_8cc_source.html#l00055">TEST_F()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -696,10 +701,10 @@ Here is the caller graph for this function:</div>
 <p>Gets the total amount the player has bet this hand. </p>
 <dl class="section return"><dt>Returns</dt><dd>The total amount the player has bet this hand. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00060">60</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   60</span>                          {</div>
-<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="class_player.html#a557d556c45d4b75ea7633f1053b9652c">totalBetThisHand</a>;</div>
-<div class="line"><span class="lineno">   62</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00066">66</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>                          {</div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="class_player.html#a557d556c45d4b75ea7633f1053b9652c">totalBetThisHand</a>;</div>
+<div class="line"><span class="lineno">   68</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_player_8hpp_source.html#l00021">totalBetThisHand</a>.</p>
 
@@ -756,7 +761,7 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The player's chosen bet size. </dd></dl>
 
-<p>Implemented in <a class="el" href="class_human_player.html#a067b4ad429a48b73b10b8a355bf1f28e">HumanPlayer</a>, <a class="el" href="class_random_player.html#a8b5801bd692cab6f874635209a428349">RandomPlayer</a>, <a class="el" href="class_basic_player.html#aaf57921cc3b59ac7eb089cbb4118c895">BasicPlayer</a>, <a class="el" href="class_human_player.html#a5e800cdb7206b3a5421959087e26af2e">HumanPlayer</a>, and <a class="el" href="class_random_player.html#a2f098d614d0b7dc889ede922051c561f">RandomPlayer</a>.</p>
+<p>Implemented in <a class="el" href="class_human_player.html#a067b4ad429a48b73b10b8a355bf1f28e">HumanPlayer</a>, <a class="el" href="class_random_player.html#a8b5801bd692cab6f874635209a428349">RandomPlayer</a>, <a class="el" href="class_basic_player.html#aaf57921cc3b59ac7eb089cbb4118c895">BasicPlayer</a>, <a class="el" href="class_better_player.html#a560a01fe02346154307b1833532ea099">BetterPlayer</a>, <a class="el" href="class_human_player.html#a5e800cdb7206b3a5421959087e26af2e">HumanPlayer</a>, and <a class="el" href="class_random_player.html#a2f098d614d0b7dc889ede922051c561f">RandomPlayer</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_game_8cpp_source.html#l00137">Game::makeMoveForUser()</a>.</p>
 <div class="dynheader">
@@ -767,8 +772,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="aa1865d5f50f9c27e6451478a169420ff" name="aa1865d5f50f9c27e6451478a169420ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1865d5f50f9c27e6451478a169420ff">&#9670;&#160;</a></span>getMove()</h2>
+<a id="adc8ed9db4362a7843c6fe50c2abc3d73" name="adc8ed9db4362a7843c6fe50c2abc3d73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc8ed9db4362a7843c6fe50c2abc3d73">&#9670;&#160;</a></span>getMove()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -816,7 +821,13 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>numPlayersInHand</em>&#160;</td>
+          <td class="paramname"><em>numPlayersInHand</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pot</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -843,13 +854,13 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The player's chosen move as a string. </dd></dl>
 
-<p>Implemented in <a class="el" href="class_human_player.html#a80e93aec50355d6af36fed01f3f42db7">HumanPlayer</a>, <a class="el" href="class_random_player.html#a34b4f71e43b58f98e4dd42d9a8d34a91">RandomPlayer</a>, <a class="el" href="class_basic_player.html#ab77fd6eb15d997d705eb1f750b3ebd52">BasicPlayer</a>, <a class="el" href="class_human_player.html#a66f9b60ee68cf69ac693aafbec113343">HumanPlayer</a>, and <a class="el" href="class_random_player.html#a1e9015292156422c79bee21da4320f53">RandomPlayer</a>.</p>
+<p>Implemented in <a class="el" href="class_basic_player.html#a9c6ca42bec1e9936d98e9c210f6f08c4">BasicPlayer</a>, <a class="el" href="class_better_player.html#ac228cde696e45779a7270a4d0ca6a297">BetterPlayer</a>, <a class="el" href="class_human_player.html#a5496268ce091ed4d6e4f2d8ff81b09f4">HumanPlayer</a>, and <a class="el" href="class_random_player.html#a80740c5ea20b07bc1527587c14df79fc">RandomPlayer</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_game_8cpp_source.html#l00360">Game::bettingRound()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_player_aa1865d5f50f9c27e6451478a169420ff_icgraph.png" border="0" usemap="#aclass_player_aa1865d5f50f9c27e6451478a169420ff_icgraph" alt=""/></div>
+<div class="center"><img src="class_player_adc8ed9db4362a7843c6fe50c2abc3d73_icgraph.png" border="0" usemap="#aclass_player_adc8ed9db4362a7843c6fe50c2abc3d73_icgraph" alt=""/></div>
 </div>
 
 </div>
@@ -871,10 +882,10 @@ Here is the caller graph for this function:</div>
 
 <p>Resets the player's current bet to zero. </p>
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00078">78</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   78</span>                               {</div>
-<div class="line"><span class="lineno">   79</span>    this-&gt;<a class="code hl_variable" href="class_player.html#a42345ff4fe6e617a5829aae4a9037c51">current_bet</a> = 0;</div>
-<div class="line"><span class="lineno">   80</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00084">84</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   84</span>                               {</div>
+<div class="line"><span class="lineno">   85</span>    this-&gt;<a class="code hl_variable" href="class_player.html#a42345ff4fe6e617a5829aae4a9037c51">current_bet</a> = 0;</div>
+<div class="line"><span class="lineno">   86</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_player_8hpp_source.html#l00020">current_bet</a>.</p>
 
@@ -904,10 +915,10 @@ Here is the caller graph for this function:</div>
 
 <p>Resets the total amount the player has bet this hand to zero. This is used at the end of a hand to reset the player's total bet. </p>
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00070">70</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   70</span>                            {</div>
-<div class="line"><span class="lineno">   71</span>    this-&gt;<a class="code hl_variable" href="class_player.html#a557d556c45d4b75ea7633f1053b9652c">totalBetThisHand</a> = 0;</div>
-<div class="line"><span class="lineno">   72</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00076">76</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   76</span>                            {</div>
+<div class="line"><span class="lineno">   77</span>    this-&gt;<a class="code hl_variable" href="class_player.html#a557d556c45d4b75ea7633f1053b9652c">totalBetThisHand</a> = 0;</div>
+<div class="line"><span class="lineno">   78</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_player_8hpp_source.html#l00021">totalBetThisHand</a>.</p>
 
@@ -937,10 +948,10 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00074">74</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   74</span>                                   {</div>
-<div class="line"><span class="lineno">   75</span>    this-&gt;<a class="code hl_variable" href="class_player.html#a557d556c45d4b75ea7633f1053b9652c">totalBetThisHand</a> = amount;</div>
-<div class="line"><span class="lineno">   76</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00080">80</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   80</span>                                   {</div>
+<div class="line"><span class="lineno">   81</span>    this-&gt;<a class="code hl_variable" href="class_player.html#a557d556c45d4b75ea7633f1053b9652c">totalBetThisHand</a> = amount;</div>
+<div class="line"><span class="lineno">   82</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_player_8hpp_source.html#l00021">totalBetThisHand</a>.</p>
 
@@ -963,12 +974,12 @@ Here is the caller graph for this function:</div>
 
 <p>Displays the player's current hand. </p>
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00064">64</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   64</span>                       {</div>
-<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">for</span> (<a class="code hl_class" href="class_card.html">Card</a> card : <a class="code hl_variable" href="class_player.html#a120127b3026b271cb7b1a5b82d635503">hand</a>) {</div>
-<div class="line"><span class="lineno">   66</span>        cout &lt;&lt; card.get_rank() &lt;&lt; <span class="stringliteral">&quot; of &quot;</span> &lt;&lt; card.get_suit() &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">   67</span>    }</div>
-<div class="line"><span class="lineno">   68</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00070">70</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   70</span>                       {</div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">for</span> (<a class="code hl_class" href="class_card.html">Card</a> card : <a class="code hl_variable" href="class_player.html#a120127b3026b271cb7b1a5b82d635503">hand</a>) {</div>
+<div class="line"><span class="lineno">   72</span>        cout &lt;&lt; card.get_rank() &lt;&lt; <span class="stringliteral">&quot; of &quot;</span> &lt;&lt; card.get_suit() &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">   73</span>    }</div>
+<div class="line"><span class="lineno">   74</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_player_8hpp_source.html#l00018">hand</a>.</p>
 
@@ -1074,7 +1085,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00020">20</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_player_8cpp_source.html#l00014">bet()</a>, <a class="el" href="_player_8cpp_source.html#l00025">deduct_blind()</a>, <a class="el" href="_player_8cpp_source.html#l00056">get_current_bet()</a>, and <a class="el" href="_player_8cpp_source.html#l00078">reset_current_bet()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_player_8cpp_source.html#l00014">bet()</a>, <a class="el" href="_player_8cpp_source.html#l00025">deduct_blind()</a>, <a class="el" href="_player_8cpp_source.html#l00062">get_current_bet()</a>, and <a class="el" href="_player_8cpp_source.html#l00084">reset_current_bet()</a>.</p>
 
 </div>
 </div>
@@ -1102,7 +1113,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00018">18</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_player_8cpp_source.html#l00048">add_card_to_hand()</a>, <a class="el" href="_player_8cpp_source.html#l00052">clear_hand()</a>, <a class="el" href="_player_8cpp_source.html#l00096">get_equity()</a>, <a class="el" href="_player_8cpp_source.html#l00044">get_hand()</a>, and <a class="el" href="_player_8cpp_source.html#l00064">show_hand()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_player_8cpp_source.html#l00048">add_card_to_hand()</a>, <a class="el" href="_player_8cpp_source.html#l00058">clear_hand()</a>, <a class="el" href="_player_8cpp_source.html#l00102">get_equity()</a>, <a class="el" href="_player_8cpp_source.html#l00044">get_hand()</a>, and <a class="el" href="_player_8cpp_source.html#l00070">show_hand()</a>.</p>
 
 </div>
 </div>
@@ -1186,7 +1197,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00021">21</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_player_8cpp_source.html#l00014">bet()</a>, <a class="el" href="_player_8cpp_source.html#l00025">deduct_blind()</a>, <a class="el" href="_player_8cpp_source.html#l00060">get_total_bet()</a>, <a class="el" href="_player_8cpp_source.html#l00070">reset_total_bet()</a>, and <a class="el" href="_player_8cpp_source.html#l00074">setTotalBet()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_player_8cpp_source.html#l00014">bet()</a>, <a class="el" href="_player_8cpp_source.html#l00025">deduct_blind()</a>, <a class="el" href="_player_8cpp_source.html#l00066">get_total_bet()</a>, <a class="el" href="_player_8cpp_source.html#l00076">reset_total_bet()</a>, and <a class="el" href="_player_8cpp_source.html#l00080">setTotalBet()</a>.</p>
 
 </div>
 </div>
@@ -1197,7 +1208,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 10 2024 20:59:35 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Thu Oct 10 2024 22:20:52 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

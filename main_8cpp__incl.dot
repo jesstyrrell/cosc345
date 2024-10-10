@@ -101,4 +101,11 @@ digraph "main.cpp"
   Node27 -> Node5 [id="edge67_Node000027_Node000005",color="steelblue1",style="solid",tooltip=" "];
   Node27 -> Node18 [id="edge68_Node000027_Node000018",color="steelblue1",style="solid",tooltip=" "];
   Node27 -> Node21 [id="edge69_Node000027_Node000021",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node28 [id="edge70_Node000001_Node000028",color="steelblue1",style="solid",tooltip=" "];
+  Node28 [id="Node000028",label="src/BetterPlayer.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_better_player_8cpp.html",tooltip=" "];
+  Node28 -> Node11 [id="edge71_Node000028_Node000011",color="steelblue1",style="solid",tooltip=" "];
+  Node28 -> Node14 [id="edge72_Node000028_Node000014",color="steelblue1",style="solid",tooltip=" "];
+  Node28 -> Node5 [id="edge73_Node000028_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node28 -> Node18 [id="edge74_Node000028_Node000018",color="steelblue1",style="solid",tooltip=" "];
+  Node28 -> Node21 [id="edge75_Node000028_Node000021",color="steelblue1",style="solid",tooltip=" "];
 }

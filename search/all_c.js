@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['player_0',['player',['../class_player.html',1,'Player'],['../class_player.html#af94221777924e4498b535e52f1dd3c44',1,'Player::Player()'],['../class_player_test.html#a9563ee500fff5fd525e45356e9a77eee',1,'PlayerTest::player'],['../class_random_player_test.html#aa4e8e45b6a25bb2051cfacf79fd11bfc',1,'RandomPlayerTest::player']]],
+  ['player_0',['player',['../class_player.html',1,'Player'],['../class_player_test.html#a9563ee500fff5fd525e45356e9a77eee',1,'PlayerTest::player'],['../class_random_player_test.html#aa4e8e45b6a25bb2051cfacf79fd11bfc',1,'RandomPlayerTest::player'],['../class_player.html#af94221777924e4498b535e52f1dd3c44',1,'Player::Player()']]],
   ['player_2ecpp_1',['Player.cpp',['../_player_8cpp.html',1,'']]],
   ['player_2ehpp_2',['Player.hpp',['../_player_8hpp.html',1,'']]],
   ['player_5fbutton_5fpositions_3',['PLAYER_BUTTON_POSITIONS',['../class_g_u_i.html#a1c883c08330527a2d48d21280dab7450',1,'GUI']]],
@@ -16,7 +16,7 @@ var searchData=
   ['playhand_13',['playHand',['../class_game.html#ab72401c43b303a37dec67f3d6b75a927',1,'Game']]],
   ['point_14',['Point',['../struct_point.html',1,'']]],
   ['position_15',['position',['../struct_player_profile.html#a1a1da62c65c94d706f8051f405b365ec',1,'PlayerProfile']]],
-  ['pot_16',['pot',['../class_game.html#ac177604d65e051cf0eb51b1bd17e1554',1,'Game']]],
+  ['pot_16',['pot',['../class_basic_player.html#a3630c64a5d158e86a7e58ccb46be1b67',1,'BasicPlayer::pot'],['../class_better_player.html#ab20eae7d31253f68394d4d6fb661c018',1,'BetterPlayer::pot'],['../class_game.html#ac177604d65e051cf0eb51b1bd17e1554',1,'Game::pot']]],
   ['preflop_17',['PREFLOP',['../_game_8hpp.html#aca8133200c1122e29b87b314d82604eba4e67e7473039cd53536ab01b52f6ab90',1,'Game.hpp']]],
   ['printprofiles_18',['printProfiles',['../class_c_s_v_worker.html#a89ca1423b53942a8b6299e85a7b8278b',1,'CSVWorker']]],
   ['profiles_19',['profiles',['../class_c_s_v_worker.html#a082cbb637b9250fc6189967a43417ab6',1,'CSVWorker']]],

@@ -8,6 +8,6 @@ var searchData=
   ['player_5fname_5fpositions_5',['PLAYER_NAME_POSITIONS',['../class_g_u_i.html#ada5f6ee4c98b1f494a23b031c1bf4ba6',1,'GUI']]],
   ['players_6',['players',['../class_game.html#a8b1b6150488acf6e0d3a222dbf359842',1,'Game']]],
   ['position_7',['position',['../struct_player_profile.html#a1a1da62c65c94d706f8051f405b365ec',1,'PlayerProfile']]],
-  ['pot_8',['pot',['../class_game.html#ac177604d65e051cf0eb51b1bd17e1554',1,'Game']]],
+  ['pot_8',['pot',['../class_basic_player.html#a3630c64a5d158e86a7e58ccb46be1b67',1,'BasicPlayer::pot'],['../class_better_player.html#ab20eae7d31253f68394d4d6fb661c018',1,'BetterPlayer::pot'],['../class_game.html#ac177604d65e051cf0eb51b1bd17e1554',1,'Game::pot']]],
   ['profiles_9',['profiles',['../class_c_s_v_worker.html#a082cbb637b9250fc6189967a43417ab6',1,'CSVWorker']]]
 ];

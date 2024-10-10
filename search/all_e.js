@@ -20,6 +20,6 @@ var searchData=
   ['resetplayerhands_17',['resetPlayerHands',['../class_game.html#adc54b1823a5d8d5221d7bf74e924e145',1,'Game']]],
   ['resetplayertotalbets_18',['resetPlayerTotalBets',['../class_game.html#a1882570f0a56d879af6a95e6075ac186',1,'Game']]],
   ['river_19',['RIVER',['../_game_8hpp.html#aca8133200c1122e29b87b314d82604eba5f1a4df6ed0c2b7e1aa187f9eb43409f',1,'Game.hpp']]],
-  ['rng_20',['rng',['../class_basic_player.html#a58920def1975e4b16702e1d8f5c0741e',1,'BasicPlayer::rng'],['../class_random_player.html#ae63ce0a196eb8b44a4b83771378bd017',1,'RandomPlayer::rng']]],
+  ['rng_20',['rng',['../class_basic_player.html#a58920def1975e4b16702e1d8f5c0741e',1,'BasicPlayer::rng'],['../class_better_player.html#a4f719a0ab4a85f1ea05dbdd06f7d6d4b',1,'BetterPlayer::rng'],['../class_random_player.html#ae63ce0a196eb8b44a4b83771378bd017',1,'RandomPlayer::rng']]],
   ['running_20locally_21',['Running Locally',['../md__r_e_a_d_m_e.html#autotoc_md3',1,'']]]
 ];

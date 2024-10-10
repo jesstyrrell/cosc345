@@ -8,7 +8,7 @@ digraph "TEST_F"
   rankdir="LR";
   Node1 [id="Node000001",label="TEST_F",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="HumanPlayer::getMove",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_human_player.html#a66f9b60ee68cf69ac693aafbec113343",tooltip="Gets the player's move during their turn."];
+  Node2 [id="Node000002",label="HumanPlayer::getMove",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_human_player.html#a5496268ce091ed4d6e4f2d8ff81b09f4",tooltip="Gets the player's move during their turn."];
   Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="GUI::getUserMove",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_g_u_i.html#a90c3a671452b797db9f8ba481c84767c",tooltip="Prompts the user for their move."];
 }
