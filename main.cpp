@@ -17,6 +17,7 @@
 #include "src/GUI.hpp"
 #include "src/PlayerProfile.hpp"
 #include "src/BasicPlayer.cpp"
+#include "src/BetterPlayer.cpp"
 
 using namespace std;
 
@@ -32,17 +33,28 @@ void playGame(){
 
     // Call the GUI method to get the players name, and let them play as guest
     PlayerProfile currentPlayer = GUI::signInMenu();
+    int difficulty = GUI::getBotDifficulty();
     int numberOfPlayers = GUI::getNumberOfPlayers();
 
     
     std::vector<Player*> playerPointers;
-    HumanPlayer player = HumanPlayer(currentPlayer.name, 1000);
+    RandomPlayer player = RandomPlayer(currentPlayer.name, 1000);
     playerPointers.push_back(&player);
 
     for(int i = 0; i < numberOfPlayers-1; i++){
         string randomPlayerName = GUI::getRandomPlayerName();
-        BasicPlayer *player = new BasicPlayer(randomPlayerName, 1000);
-        playerPointers.push_back(player);
+        if (difficulty == 1) {
+            RandomPlayer *randPlayer = new RandomPlayer(randomPlayerName, 1000);
+            playerPointers.push_back(randPlayer);
+        }
+        if (difficulty == 2) {
+            BasicPlayer *basicPlayer = new BasicPlayer(randomPlayerName, 1000);
+            playerPointers.push_back(basicPlayer);
+        }
+        if (difficulty == 3) {
+            BetterPlayer *betterPlayer = new BetterPlayer(randomPlayerName, 1000);
+            playerPointers.push_back(betterPlayer);
+        }
     }
 
     // Initiate a game with all the players and pass game object to GUI
@@ -69,7 +81,7 @@ void playGame(){
     }
 
     // Display the end message
-     GUI::displayEndMessage();
+    GUI::displayEndMessage();
 
     return;
 

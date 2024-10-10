@@ -373,7 +373,6 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
             currentPlayer = (currentPlayer + 1) % numPlayers;
         }
     }
-
     Player* largestBetPlayer = this->getPlayers()[currentPlayer];
 
     // Loop for the betting round 
@@ -399,7 +398,7 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
             bool canFold = this->getPlayers()[currentPlayer]->get_current_bet() != largestBet && this->getPlayers()[currentPlayer]->get_stack() > 0;
             bool canCall = canFold;
             // Get the player's move
-            string move = player->getMove(canCheck, canRaise, canFold, canCall, community_cards, largestBet, numPlayersInHand);
+            string move = player->getMove(canCheck, canRaise, canFold, canCall, community_cards, largestBet, numPlayersInHand, pot);
 
             // Perform the move for the player
 
