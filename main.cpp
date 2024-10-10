@@ -38,7 +38,7 @@ void playGame(){
 
     
     std::vector<Player*> playerPointers;
-    RandomPlayer player = RandomPlayer(currentPlayer.name, 1000);
+    HumanPlayer player = HumanPlayer(currentPlayer.name, 1000);
     playerPointers.push_back(&player);
 
     for(int i = 0; i < numberOfPlayers-1; i++){
