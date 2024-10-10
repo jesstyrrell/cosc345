@@ -126,13 +126,6 @@ void Game::awardPot(vector<Player*> winners, vector<bool>& inGame) {
         }
     }
 
-
-    int remainder = pot % winners.size();
-    for(int i = 0; i < remainder; i++){
-        winners[i]->win(1);
-    }
-    // Reset the pot
-    this->pot = 0;
 }
 
 /**
