@@ -380,7 +380,6 @@ bool Game::bettingRound(vector<bool>& inGame, int largestBet, int numPlayers) {
             currentPlayer = (currentPlayer + 1) % numPlayers;
         }
     }
-
     Player* largestBetPlayer = this->getPlayers()[currentPlayer];
 
     // Loop for the betting round 

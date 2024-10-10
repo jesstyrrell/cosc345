@@ -44,15 +44,17 @@ void playGame(){
     for(int i = 0; i < numberOfPlayers-1; i++){
         string randomPlayerName = GUI::getRandomPlayerName();
         if (difficulty == 1) {
-            RandomPlayer *player = new RandomPlayer(randomPlayerName, 1000);
+            RandomPlayer randPlayer = RandomPlayer(randomPlayerName, 1000);
+            playerPointers.push_back(&randPlayer);
         }
-        if (difficulty == 1) {
-            BasicPlayer *player = new BasicPlayer(randomPlayerName, 1000);
+        if (difficulty == 2) {
+            BasicPlayer basicPlayer = BasicPlayer(randomPlayerName, 1000);
+            playerPointers.push_back(&basicPlayer);
         }
-        if (difficulty == 1) {
-            BetterPlayer *player = new BetterPlayer(randomPlayerName, 1000);
+        if (difficulty == 3) {
+            BetterPlayer betterPlayer = BetterPlayer(randomPlayerName, 1000);
+            playerPointers.push_back(&betterPlayer);
         }
-        playerPointers.push_back(player);
     }
 
     // Initiate a game with all the players and pass game object to GUI
@@ -64,6 +66,7 @@ void playGame(){
     // Start a game loop
     while(true){
         // Play a hand
+        cout << "testing testing" << endl;
         game.playHand();
 
         int playerChoice = playerPointers[0]->endOfHand();
