@@ -310,6 +310,26 @@ int GUI::getNumberOfPlayers() {
     return numPlayers;
 }
 
+int GUI::getNumberOfPlayers() {
+    std::cout << "Enter the bot difficulty (1, 2, or 3): ";
+
+    int difficulty;
+
+    // Asking the user for the number of players - bounded between 2 and 8
+    do {
+        std::cin >> difficulty;
+
+        // Check if the input is valid
+        if (std::cin.fail() || difficulty < 1 || difficulty > 3) {
+            std::cin.clear(); // Clear the error state
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard invalid input
+            std::cout << "Invalid input. Please enter a number between 1 and 3: ";
+        }
+    } while (difficulty < 1 || difficulty > 3);
+
+    return difficulty;
+}
+
 PlayerProfile GUI::signInMenu() {
     enum MenuOption { SIGN_IN = 1, CREATE_PROFILE, PLAY_AS_GUEST };
     const std::vector<std::string> acceptedInputs = {"1", "2", "3"};

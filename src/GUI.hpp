@@ -81,6 +81,9 @@ class GUI {
          * @return The number of players as an integer.
          */
         static int getNumberOfPlayers();
+
+        static int getBotDifficulty();
+
         /**
          * @brief Clears the console screen.
          */
