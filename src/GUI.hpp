@@ -171,7 +171,7 @@ class GUI {
 
         static string getFilePathStart();
 
-
+        static MenuOption displayRules();
 
         /**
          * @brief Displays the menu to view player stats.

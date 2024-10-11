@@ -1,0 +1,42 @@
+==============================================================================
+                           HOW TO PLAY POKER
+==============================================================================
+
+Poker is a popular card game that combines skill, strategy, and a bit of luck. 
+The most common variant is Texas Hold'em, where players are dealt two private 
+cards and share five community cards. The objective is to create the best 
+five-card hand using any combination of your two cards and the five community 
+cards. Players take turns betting, raising, or folding based on the strength 
+of their hands and their assessment of their opponents' potential hands.
+
+The game consists of several rounds: the pre-flop (after players receive their 
+two cards), the flop (the first three community cards), the turn (the fourth 
+community card), and the river (the fifth and final community card). After 
+each round of betting, players can choose to stay in the game or fold. At the 
+end of the final betting round, if more than one player remains, a showdown 
+occurs where players reveal their hands, and the best hand wins the pot.
+
+==============================================================================
+                     POKER WINNING HANDS CHEATSHEET
+==============================================================================
+
++---------------------+--------------------------------------------------+
+| Hand                | Description                                      |
++---------------------+--------------------------------------------------+
+| Royal Flush         | A, K, Q, J, 10 of the same suit.                 |
+| Straight Flush      | Five consecutive cards of the same suit.         |
+| Four of a Kind      | Four cards of the same rank.                     |
+| Full House          | Three of a kind plus a pair.                     |
+| Flush               | Five cards of the same suit, not in sequence.    |
+| Straight            | Five consecutive cards of different suits.       |
+| Three of a Kind     | Three cards of the same rank.                    |
+| Two Pair            | Two different pairs of cards.                    |
+| One Pair            | Two cards of the same rank.                      |
+| High Card           | The highest card when no other hand is made.     |
++---------------------+--------------------------------------------------+
+
+This cheatsheet will help you quickly identify and understand the strength of 
+your hand during play. Understanding these hands will help you make strategic 
+decisions during the game. Good luck at the tables!
+
+==============================================================================
