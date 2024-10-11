@@ -16,5 +16,6 @@ var searchData=
   ['displayplayermove_13',['displayPlayerMove',['../class_g_u_i.html#a65d07a686330670f5567a3fc11fbace1',1,'GUI']]],
   ['displayplayerstack_14',['displayPlayerStack',['../class_g_u_i.html#ad32a7ec45a881658fe14659ec3ce1ed3',1,'GUI']]],
   ['displayplayerstats_15',['displayPlayerStats',['../class_g_u_i.html#a87d629d180139474a648efe907a68ba0',1,'GUI']]],
-  ['displaystartscreen_16',['displayStartScreen',['../class_g_u_i.html#a0dc53c5a6daa0f01b57c4d4731b4d933',1,'GUI']]]
+  ['displayrules_16',['displayRules',['../class_g_u_i.html#aa89e71ae5dec1f83fefbc36147f2ae8d',1,'GUI']]],
+  ['displaystartscreen_17',['displayStartScreen',['../class_g_u_i.html#a0dc53c5a6daa0f01b57c4d4731b4d933',1,'GUI']]]
 ];

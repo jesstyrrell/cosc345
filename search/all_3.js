@@ -5,7 +5,7 @@ var searchData=
   ['deal_5fhands_2',['deal_hands',['../class_game.html#a5cc682e0e2c72be6768cdacc9aec26ae',1,'Game']]],
   ['deal_5friver_3',['deal_river',['../class_game.html#abe6dc7900667fabf1048c5391ce9a4bc',1,'Game']]],
   ['deal_5fturn_4',['deal_turn',['../class_game.html#a5fd04d6cb5e1e60a10db3a29fcad71e9',1,'Game']]],
-  ['deck_5',['deck',['../class_deck.html#a57ae1cb4ac6fd61c249cefb2db85eb99',1,'Deck::Deck()'],['../class_game.html#abb82577958d4e519f96dd7383dffd656',1,'Game::deck'],['../class_deck.html',1,'Deck']]],
+  ['deck_5',['deck',['../class_game.html#abb82577958d4e519f96dd7383dffd656',1,'Game::deck'],['../class_deck.html#a57ae1cb4ac6fd61c249cefb2db85eb99',1,'Deck::Deck()'],['../class_deck.html',1,'Deck']]],
   ['deck_2ecpp_6',['Deck.cpp',['../_deck_8cpp.html',1,'']]],
   ['deck_2ehpp_7',['Deck.hpp',['../_deck_8hpp.html',1,'']]],
   ['deduct_5fblind_8',['deduct_blind',['../class_player.html#a75a7946fcb64e122d5704754b6704ac3',1,'Player']]],
@@ -18,6 +18,7 @@ var searchData=
   ['displayplayermove_15',['displayPlayerMove',['../class_g_u_i.html#a65d07a686330670f5567a3fc11fbace1',1,'GUI']]],
   ['displayplayerstack_16',['displayPlayerStack',['../class_g_u_i.html#ad32a7ec45a881658fe14659ec3ce1ed3',1,'GUI']]],
   ['displayplayerstats_17',['displayPlayerStats',['../class_g_u_i.html#a87d629d180139474a648efe907a68ba0',1,'GUI']]],
-  ['displaystartscreen_18',['displayStartScreen',['../class_g_u_i.html#a0dc53c5a6daa0f01b57c4d4731b4d933',1,'GUI']]],
-  ['draw_19',['draw',['../class_equity_calculator.html#a4bb71132fd121dd7dd110dd5b6f5a3e4',1,'EquityCalculator::DRAW'],['../class_hand_evaluator.html#a5f725c4ce7c03fb8ec0ae1cdb4f03503',1,'HandEvaluator::DRAW']]]
+  ['displayrules_18',['displayRules',['../class_g_u_i.html#aa89e71ae5dec1f83fefbc36147f2ae8d',1,'GUI']]],
+  ['displaystartscreen_19',['displayStartScreen',['../class_g_u_i.html#a0dc53c5a6daa0f01b57c4d4731b4d933',1,'GUI']]],
+  ['draw_20',['draw',['../class_equity_calculator.html#a4bb71132fd121dd7dd110dd5b6f5a3e4',1,'EquityCalculator::DRAW'],['../class_hand_evaluator.html#a5f725c4ce7c03fb8ec0ae1cdb4f03503',1,'HandEvaluator::DRAW']]]
 ];

@@ -37,11 +37,17 @@ digraph "GUI::getFilePathStart"
   Node8 -> Node5 [id="edge17_Node000008_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node8 -> Node10 [id="edge18_Node000008_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node13 [id="edge19_Node000001_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node13 [id="Node000013",label="getCardString",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_g_u_i_8cpp.html#a36b6f63142ee7d9e884ef846d5dd1a05",tooltip=" "];
-  Node13 -> Node8 [id="edge20_Node000013_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node4 [id="edge21_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node14 [id="edge22_Node000001_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node14 [id="Node000014",label="GUI::getRandomPlayerName",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_g_u_i.html#aec4f6946605953f5ad6a0d9899e75853",tooltip="Generate a random name for a player."];
-  Node14 -> Node5 [id="edge23_Node000014_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node5 [id="edge24_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="GUI::displayRules",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_g_u_i.html#aa89e71ae5dec1f83fefbc36147f2ae8d",tooltip=" "];
+  Node13 -> Node14 [id="edge20_Node000013_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="GUI::displayMenu",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_g_u_i.html#a48d92746fefe3c11de167dcddc22346f",tooltip="Displays the main menu of the game."];
+  Node14 -> Node13 [id="edge21_Node000014_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node14 -> Node5 [id="edge22_Node000014_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node15 [id="edge23_Node000001_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="getCardString",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_g_u_i_8cpp.html#a36b6f63142ee7d9e884ef846d5dd1a05",tooltip=" "];
+  Node15 -> Node8 [id="edge24_Node000015_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node4 [id="edge25_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node16 [id="edge26_Node000001_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node16 [id="Node000016",label="GUI::getRandomPlayerName",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_g_u_i.html#aec4f6946605953f5ad6a0d9899e75853",tooltip="Generate a random name for a player."];
+  Node16 -> Node5 [id="edge27_Node000016_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node5 [id="edge28_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }
