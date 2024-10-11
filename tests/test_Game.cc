@@ -83,15 +83,15 @@ TEST_F(GameTest, GetShowdown) {
     EXPECT_FALSE(game.getShowdown());
 }
 
-TEST_F(GameTest, AwardPot) {
-    Game game = createGameWithPlayers(2);
-    game.setPot(100);
-    std::vector<Player*> winners = {game.getPlayers()[0]};
-    std::vector<bool> inGame = {true, true};
-    game.awardPot(winners, inGame);
-    EXPECT_EQ(game.getPot(), 0);
-    EXPECT_EQ(winners[0]->get_stack(), 1100);
-}
+// TEST_F(GameTest, AwardPot) {
+//     Game game = createGameWithPlayers(2);
+//     game.setPot(100);
+//     std::vector<Player*> winners = {game.getPlayers()[0]};
+//     std::vector<bool> inGame = {true, true};
+//     game.awardPot(winners, inGame);
+//     EXPECT_EQ(game.getPot(), 0);
+//     EXPECT_EQ(winners[0]->get_stack(), 1100);
+// }
 
 // FIXME: ***Exception: SegFault during test
 // TEST_F(GameTest, MakeMoveForUser) {

@@ -19,6 +19,7 @@ public:
     void addProfile(const PlayerProfile &profile);
     const std::vector<PlayerProfile> &getProfiles() const;
     void printProfiles() const;
+    void updateProfile(const PlayerProfile &profile);
 };
 
 #endif // CSV_WORKER_H

@@ -182,7 +182,7 @@ void GUI::displayStartScreen() {
     std::cout << "--------------------------------" << std::endl;
 }
 
-string getFilePathStart(){
+string GUI::getFilePathStart(){
     // Get os type
     #ifdef _WIN32
         std::string os = "Windows";
@@ -220,7 +220,7 @@ void GUI::displayEndMessage() {
 
     clearScreen();
 
-    string startPath = getFilePathStart();
+    string startPath = GUI::getFilePathStart();
 
     string imagePath = startPath + "/images/cardAnimation.txt";
     string delimiter = "[END OF FRAME]\n";
@@ -364,7 +364,9 @@ PlayerProfile GUI::signInMenu() {
             std::string guestName;
             std::cout << "Enter a name for guest play: ";
             std::getline(std::cin, guestName);
-            return PlayerProfile({ guestName, 0 });
+            PlayerProfile *temp = new PlayerProfile({guestName});
+            temp->isGuest = true;
+            return *temp;
         }
 
         default:
@@ -473,7 +475,7 @@ string getCardString(Card& card) {
      
     string rank = card.get_rank();
      
-    string startPath = getFilePathStart();
+    string startPath = GUI::getFilePathStart();
    
     string cardPath = startPath + "/images/" + suit + "Card.txt";
 
@@ -507,7 +509,7 @@ void GUI::displayGameState() {
     // table, chips, cards, stack sizes, players names, etc.
 
     // Get the contents of the table.txt file and print it to the terminal
-    string startPath = getFilePathStart();
+    string startPath = GUI::getFilePathStart();
     string tablePath = startPath + "/images/table.txt";
 
     string tableContent = getFileContents(tablePath);
@@ -571,7 +573,7 @@ void GUI::displayPlayerMove(Player* player, string move, int size) {
 }
 
 std::string GUI::getRandomPlayerName() {
-    std::string startPath = getFilePathStart();
+    std::string startPath = GUI::getFilePathStart();
 
     // Get the contents of the adjectives.txt file
     std::string adjectives = getFileContents(startPath + "/images/adjectives.txt");
@@ -610,8 +612,65 @@ std::string GUI::getRandomPlayerName() {
     return randomAdjective + randomAnimal;
 }
 
+void GUI::optionToViewStats(PlayerProfile player){
+    // either display stats or return 
+     std::cout << "Do you want to view your statistics? (y/n): ";
+
+    string decision;
+    // Asking the user for y/n
+    do {
+        std::cin >> decision;
+
+        // Check if the input is valid
+        if (decision != "y" && decision != "n") {
+            std::cout << "Invalid input. Please enter y or n: ";
+        }
+    } while (decision != "y" && decision != "n");
+    if(decision == "y"){
+        displayPlayerStats(player);
+    }
+    return;
+}
+
+void GUI::displayPlayerStats(PlayerProfile player){
+    if(player.totalHandsPlayed == 0){
+        std::cout << "No hands played yet! Play some hands to view your statistics <3" << std::endl;
+        return;
+    }
+    std::cout << "Name: " << player.name << std::endl;
+    std::cout << "Total hands played: " << player.totalHandsPlayed << "\n" << std::endl;
+
+    if(player.numHandsEasy != 0){
+        std::cout << "Easy hands played: " << player.numHandsEasy << std::endl;
+        std::cout << "Easy PnL per 100 hands: " << (player.easyPnl / player.numHandsEasy)*100.0 << "\n" <<std::endl;
+    } else {
+        std::cout << "No easy hands played" << "\n" << std::endl;
+    }
+
+    if(player.numHandsMedium != 0){
+        std::cout << "Medium hands played: " << player.numHandsMedium << std::endl;
+        std::cout << "Medium PnL per 100 hands: " << (player.mediumPnl / player.numHandsMedium)*100.0 << "\n" << std::endl;
+    } else {
+        std::cout << "No medium hands played" << "\n" << std::endl;
+    }
+
+    if(player.numHandsHard != 0){
+        std::cout << "Hard hands played: " << player.numHandsHard << std::endl;
+        std::cout << "Hard PnL per 100 hands: " << (player.hardPnl / player.numHandsHard)*100.0 << "\n" << std::endl;
+    } else {
+        std::cout << "No hard hands played" << "\n" << std::endl;
+    }
+
+    std::cout << "VPIP: " << player.numHandsVpip/player.totalHandsPlayed << std::endl;
+    
+
+    return;
+}
+
+
 PlayerProfile GUI::createProfile() {
-    CSVWorker csv("../data/profiles.csv");
+    string startPath = GUI::getFilePathStart();
+    CSVWorker csv(startPath + "/data/profiles.csv");
 
     // Check if a profile exists in the CSV file
     std::string name;
@@ -620,10 +679,9 @@ PlayerProfile GUI::createProfile() {
     std::cout << "Enter your name: ";
     std::cin >> name;
 
-    std::cout << "Enter your age: ";
-    std::cin >> age;
 
-    PlayerProfile playerProfile = { name, age };
+    PlayerProfile playerProfile = { name };
+    csv.readProfiles();
     csv.addProfile(playerProfile);
     csv.writeProfiles();
 
@@ -631,8 +689,8 @@ PlayerProfile GUI::createProfile() {
 }
 
 PlayerProfile GUI::getProfile(const std::string& name) {
-    CSVWorker csv("../data/profiles.csv");
-
+    string startPath = GUI::getFilePathStart();
+    CSVWorker csv(startPath + "/data/profiles.csv");
     // Get the user's profile that has the name entered
     for (PlayerProfile profile : csv.readProfiles()) {
         if (profile.name == name) {
@@ -640,6 +698,6 @@ PlayerProfile GUI::getProfile(const std::string& name) {
         }
     }
 
-    cout << "Profile not found. Playing as guest." << endl;
-    return PlayerProfile({ "Guest", 0 });
+    cout << "Profile not found." << endl;
+    return signInMenu();
 }
