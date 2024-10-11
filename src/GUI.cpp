@@ -38,6 +38,23 @@ Game& GUI::getGame() {
     return *GUI::game;
 }
 
+string getFileContents(string filePath) {
+    // Get the contents of the file at the file path
+    std::ifstream file(filePath);
+    if (!file) {
+        std::cerr << "Error opening file!" << std::endl;
+        return "";
+    }
+
+    // Read the file into a string
+    std::ostringstream oss;
+    oss << file.rdbuf();
+    std::string content = oss.str();
+    file.close();
+
+    return content;
+}
+
 /**
  * Clear the terminal screen
  */
@@ -59,10 +76,8 @@ void moveTo(int x, int y) {
  */
 string GUI::getUserMove(bool canCheck, bool canRaise, bool canFold, bool canCall) {
     // Get user move 
-    // TODO: Test input validation
 
     // Create message to user based on possible actions
-    // TODO: format nicely
     string message = "";
     if (canFold) {
         message += "fold = f";
@@ -130,9 +145,9 @@ int GUI::getBetSizing(int minBet, int maxBet) {
     return bet_sizing;
 }
 
-/** 
+/**
  * Display community cards to the terminal
- * 
+ *
  * @param community_cards: vector<Card> - Community cards to display
  */
 void GUI::displayCommunityCards(const std::vector<Card>& community_cards) {
@@ -140,11 +155,11 @@ void GUI::displayCommunityCards(const std::vector<Card>& community_cards) {
     for (Card card : community_cards) {
         std::cout << card.get_rank() << " of " << card.get_suit() << std::endl;
     }
-}   
+} 
 
-/** 
+/**
  * Display all player hands to the terminal
- * 
+ *
  * @param players: vector<Player*> - Players to display hands for
  */
 void GUI::displayAllPlayerHands(const std::vector<Player*>& players) {
@@ -266,10 +281,11 @@ void GUI::displayEndMessage() {
 }
 
 MenuOption GUI::displayMenu() {
-    vector<string> acceptedInputs = {"", "p", "q", "1", "2"};
+    vector<string> acceptedInputs = {"", "p", "q", "1", "2", "3", "r"};
 
     std::cout << "1. Start Game (press Enter)" << std::endl;
-    std::cout << "2. Quit (q)" << std::endl;
+    std::cout << "2. View rules (r)" << std::endl;
+    std::cout << "3. Quit (q)" << std::endl;
 
     std::string input;
     std::getline(std::cin, input);  // Read the entire line, allowing us to detect Enter
@@ -284,11 +300,34 @@ MenuOption GUI::displayMenu() {
     switch (input[0]) {
         case 'q':
             return QUIT;
-        case '2':
+        case '3':
             return QUIT;
+        case 'r':
+            return GUI::displayRules();
+        case '2':
+            return GUI::displayRules();
         default:
             return START_GAME;
     }
+}
+
+MenuOption GUI::displayRules(){
+    string startPath = GUI::getFilePathStart();
+    string rulesPath = startPath + "/images/pokerTutorial.txt";
+
+   string rules = getFileContents(rulesPath);
+
+   cout << rules + "\n" << endl;
+    cout << "Press Enter to return to the main menu" << endl;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+    // clear the screen
+    clearScreen();
+    // display the start screen
+    displayStartScreen();
+    MenuOption m = GUI::displayMenu();
+    return m;
+
 }
 
 int GUI::getNumberOfPlayers() {
@@ -454,22 +493,6 @@ string addString(string baseString, string newString, int x1, int y1) {
     return result;
 }
 
-string getFileContents(string filePath) {
-    // Get the contents of the file at the file path
-    std::ifstream file(filePath);
-    if (!file) {
-        std::cerr << "Error opening file!" << std::endl;
-        return "";
-    }
-
-    // Read the file into a string
-    std::ostringstream oss;
-    oss << file.rdbuf();
-    std::string content = oss.str();
-    file.close();
-
-    return content;
-}
 
 string getCardString(Card& card) {
     string suit = card.get_suit();
