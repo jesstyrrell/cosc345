@@ -350,7 +350,7 @@ int GUI::getNumberOfPlayers() {
 }
 
 int GUI::getBotDifficulty() {
-    std::cout << "Enter the bot difficulty (1, 2, or 3): ";
+    std::cout << "Enter the bot difficulty (Easy (1), Medium (2), Hard (3)): ";
 
     int difficulty;
 
@@ -684,7 +684,7 @@ void GUI::displayPlayerStats(PlayerProfile player){
         std::cout << "No hard hands played" << "\n" << std::endl;
     }
 
-    std::cout << "VPIP: " << player.numHandsVpip/player.totalHandsPlayed << std::endl;
+    std::cout << "VPIP: " << (player.numHandsVpip/player.totalHandsPlayed)*100 << "%" <<std::endl;
     
 
     return;
