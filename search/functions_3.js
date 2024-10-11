@@ -10,7 +10,7 @@ var searchData=
   ['displayallplayerhands_7',['displayAllPlayerHands',['../class_g_u_i.html#adb6c42ff08d7fe70a6137069598dd2e4',1,'GUI']]],
   ['displaycommunitycards_8',['displayCommunityCards',['../class_g_u_i.html#ae2e18e14aa1963742ce94c33b0338a80',1,'GUI']]],
   ['displayendmessage_9',['displayEndMessage',['../class_g_u_i.html#a663dad721796a4f367c2534e1901fc97',1,'GUI']]],
-  ['displaygamestate_10',['displayGameState',['../class_g_u_i.html#a8f55dae107a6648458f6eb16608c66d2',1,'GUI']]],
+  ['displaygamestate_10',['displaygamestate',['../class_g_u_i.html#aceab7aad7982ca405d39986bf9ffb57b',1,'GUI::displayGameState(vector&lt; Player * &gt; winners)'],['../class_g_u_i.html#a8f55dae107a6648458f6eb16608c66d2',1,'GUI::displayGameState()']]],
   ['displaymenu_11',['displayMenu',['../class_g_u_i.html#a48d92746fefe3c11de167dcddc22346f',1,'GUI']]],
   ['displayplayerhand_12',['displayPlayerHand',['../class_g_u_i.html#a32e1013b85cfbec2c4578b34aa7c347f',1,'GUI']]],
   ['displayplayermove_13',['displayPlayerMove',['../class_g_u_i.html#a65d07a686330670f5567a3fc11fbace1',1,'GUI']]],
