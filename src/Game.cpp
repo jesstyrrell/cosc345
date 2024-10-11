@@ -279,7 +279,7 @@ vector<int> Game::playHand() {
     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     // Award the pot to the winner/s
     this->awardPot(winners, inGame);
-    GUI::displayGameState();
+    GUI::displayGameState(winners);
     // sleep for 1 second 
     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     atShowdown = false;
