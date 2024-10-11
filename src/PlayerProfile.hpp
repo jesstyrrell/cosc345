@@ -6,10 +6,15 @@
 
 struct PlayerProfile {
     std::string name;
-    int age;
-    std::string position;
-    double height;
-    double weight;
+    int totalHandsPlayed;
+    int numHandsEasy;
+    int numHandsMedium;
+    int numHandsHard;
+    int easyPnl;
+    int mediumPnl;
+    int hardPnl;
+    int numHandsVpip;
+    bool isGuest;
 };
 
 #endif // PLAYER_PROFILE_H

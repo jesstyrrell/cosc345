@@ -165,7 +165,7 @@ class Game {
         /**
          * @brief Plays a single hand of poker.
          */
-        void playHand(); 
+        vector<int> playHand(); 
 
         /**
          * @brief Processes a move made by the user.

@@ -227,7 +227,8 @@ void Game::nextStage(){
  * 
  * Called in main.cpp to play a hand of poker
  */
-void Game::playHand() {
+vector<int> Game::playHand() {
+    int humanPlayerStartingStack = this->getPlayers()[0]->get_stack();
 
     // Deal cards out to the table 
     this->deal();
@@ -317,16 +318,26 @@ void Game::playHand() {
 
         }
     }
-    int totalChipsInGame = STARTING_STACK*(this->removedPlayerCount + this->players.size());
-    if (totalStack != totalChipsInGame) {
-        cout << "Total stack is not " << totalChipsInGame << endl;
-        cout << "Total stack is " << totalStack << endl;
-        // print the stacks of all players
-        for (Player* player : this->getPlayers()) {
-            cout << player->get_name() << "'s stack: " << player->get_stack() << endl;
-        }
-        while(true){}
+
+    // Here we want to return a vector of the amount of chips the first player won, and if they put in voluntarily
+    int pnl = this->getPlayers()[0]->get_stack() - humanPlayerStartingStack;
+
+    bool vpip = abs(pnl) > 0;
+
+    // If the player was in the small b
+    if(bigBlindPlayer == this->getPlayers()[0] && (pnl == -BIG_BLIND || pnl == SMALL_BLIND)){
+        vpip = false;
     }
+
+    if(smallBlindPlayer == this->getPlayers()[0] && pnl == -SMALL_BLIND){
+        vpip = false;
+    }
+
+    int vpipInt = vpip ? 1 : 0;
+
+    return {pnl, vpipInt};
+
+
 
 
 }

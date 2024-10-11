@@ -18,6 +18,7 @@
 #include "src/PlayerProfile.hpp"
 #include "src/BasicPlayer.cpp"
 #include "src/BetterPlayer.cpp"
+#include "src/CSVWorker.hpp"
 
 using namespace std;
 
@@ -33,6 +34,13 @@ void playGame(){
 
     // Call the GUI method to get the players name, and let them play as guest
     PlayerProfile currentPlayer = GUI::signInMenu();
+
+    // check if the player is a guest
+    if (!currentPlayer.isGuest) {
+        GUI::optionToViewStats(currentPlayer);
+    }
+
+
     int difficulty = GUI::getBotDifficulty();
     int numberOfPlayers = GUI::getNumberOfPlayers();
 
@@ -62,11 +70,18 @@ void playGame(){
     GUI::setGame(&game);
 
     GUI::displayGameState();
+
+    int numHandsPlayed = 0;
+    int totalPnl = 0;
+    int numHandsVpip = 0;
     
     // Start a game loop
     while(true){
         // Play a hand
-        game.playHand();
+        vector<int> result = game.playHand();
+        numHandsPlayed++;
+        totalPnl += result[0];
+        numHandsVpip += result[1];
 
         int playerChoice = playerPointers[0]->endOfHand();
         // Check if the player wants to play another hand
@@ -79,6 +94,40 @@ void playGame(){
         }
 
     }
+    // Update the player's profile with the results
+    currentPlayer.totalHandsPlayed += numHandsPlayed;
+    currentPlayer.numHandsVpip += numHandsVpip;
+
+    if(difficulty == 1){
+        currentPlayer.easyPnl += totalPnl;
+        currentPlayer.numHandsEasy += numHandsPlayed;
+    } else if(difficulty == 2){
+        currentPlayer.mediumPnl += totalPnl;
+        currentPlayer.numHandsMedium += numHandsPlayed;
+    } else {
+        currentPlayer.hardPnl += totalPnl;
+        currentPlayer.numHandsHard += numHandsPlayed;
+    }
+
+    string filePathStart = GUI::getFilePathStart();
+
+    CSVWorker csv(filePathStart + "/data/profiles.csv");
+    csv.updateProfile(currentPlayer);
+
+    //clear the gui 
+    GUI::clearScreen();
+    // check if the player is a guest
+    if (!currentPlayer.isGuest) {
+        GUI::optionToViewStats(currentPlayer);
+    }
+
+    // print hit enter to leave
+    cout << "Press enter to leave" << endl;
+    cin.ignore();
+    cin.ignore();
+
+    // while(true){}
+
 
     // Display the end message
     GUI::displayEndMessage();

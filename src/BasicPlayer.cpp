@@ -62,7 +62,7 @@ public:
                 break;
         }
 
-        return max(min(bet, maxBet), minBet);
+        return max(minBet, min(maxBet, bet));
 
     }
 

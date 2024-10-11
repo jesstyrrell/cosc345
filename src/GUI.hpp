@@ -155,6 +155,12 @@ class GUI {
          */
         static void displayEndMessage();
 
+        /**
+         * @brief Displays the winner of the game.
+         * @param player Pointer to the winning player.
+         */
+        static void displayPlayerStats(PlayerProfile profile);
+
         //static void displayWinner(Player* player);
 
         /**
@@ -162,6 +168,16 @@ class GUI {
          * @return The selected menu option as an integer.
          */
         static MenuOption displayMenu();
+
+        static string getFilePathStart();
+
+
+
+        /**
+         * @brief Displays the menu to view player stats.
+         */
+        static void optionToViewStats(PlayerProfile profile);
+
 
         /**
          * @brief Displays the menu at the end of a round.
