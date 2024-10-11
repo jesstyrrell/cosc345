@@ -533,7 +533,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  372</span>    <span class="comment">// TESTING: display game state </span></div>
 <div class="line"><span class="lineno">  373</span>    <a class="code hl_function" href="class_g_u_i.html#a8f55dae107a6648458f6eb16608c66d2">GUI::displayGameState</a>();</div>
 <div class="line"><span class="lineno">  374</span>    <span class="comment">// sleep for 1 second </span></div>
-<div class="line"><span class="lineno">  375</span>    <span class="comment">// std::this_thread::sleep_for(std::chrono::milliseconds(2000));</span></div>
+<div class="line"><span class="lineno">  375</span>    std::this_thread::sleep_for(std::chrono::milliseconds(1000));</div>
 <div class="line"><span class="lineno">  376</span> </div>
 <div class="line"><span class="lineno">  377</span>    <span class="keywordtype">int</span> currentPlayer;</div>
 <div class="line"><span class="lineno">  378</span>    </div>
@@ -575,7 +575,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  414</span>            <span class="comment">// Perform the move for the player</span></div>
 <div class="line"><span class="lineno">  415</span> </div>
 <div class="line"><span class="lineno">  416</span>            <span class="keywordtype">int</span> betSize = <a class="code hl_function" href="class_game.html#a1a44850a64799e17f43f22b560275157">makeMoveForUser</a>(move, this-&gt;<a class="code hl_function" href="class_game.html#a57e5aef2f67e77929842fab7a78404ea">getPlayers</a>()[currentPlayer], currentPlayer, largestBet);</div>
-<div class="line"><span class="lineno">  417</span>            <span class="comment">// std::this_thread::sleep_for(std::chrono::milliseconds(2000));</span></div>
+<div class="line"><span class="lineno">  417</span>            std::this_thread::sleep_for(std::chrono::milliseconds(1000));</div>
 <div class="line"><span class="lineno">  418</span> </div>
 <div class="line"><span class="lineno">  419</span>            <span class="comment">// If the player has folded, update the inGame vector</span></div>
 <div class="line"><span class="lineno">  420</span>            <span class="keywordflow">if</span> (betSize == -1) {</div>
@@ -589,7 +589,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  428</span>                largestBetPlayer = this-&gt;<a class="code hl_function" href="class_game.html#a57e5aef2f67e77929842fab7a78404ea">getPlayers</a>()[currentPlayer];</div>
 <div class="line"><span class="lineno">  429</span>            }</div>
 <div class="line"><span class="lineno">  430</span>             <a class="code hl_function" href="class_g_u_i.html#a8f55dae107a6648458f6eb16608c66d2">GUI::displayGameState</a>();</div>
-<div class="line"><span class="lineno">  431</span>            <span class="comment">//  std::this_thread::sleep_for(std::chrono::milliseconds(2000));</span></div>
+<div class="line"><span class="lineno">  431</span>             std::this_thread::sleep_for(std::chrono::milliseconds(1000));</div>
 <div class="line"><span class="lineno">  432</span>        }</div>
 <div class="line"><span class="lineno">  433</span> </div>
 <div class="line"><span class="lineno">  434</span>        <span class="comment">// Move to the next player</span></div>
@@ -613,13 +613,13 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  452</span>    }</div>
 <div class="line"><span class="lineno">  453</span>}</div>
 <div class="ttc" id="a_game_8hpp_html_aca8133200c1122e29b87b314d82604ebaabd21521adb8d1952b4a166aa8711f8b"><div class="ttname"><a href="_game_8hpp.html#aca8133200c1122e29b87b314d82604ebaabd21521adb8d1952b4a166aa8711f8b">FLOP</a></div><div class="ttdeci">@ FLOP</div><div class="ttdef"><b>Definition</b> <a href="_game_8hpp_source.html#l00023">Game.hpp:23</a></div></div>
-<div class="ttc" id="aclass_g_u_i_html_a8f55dae107a6648458f6eb16608c66d2"><div class="ttname"><a href="class_g_u_i.html#a8f55dae107a6648458f6eb16608c66d2">GUI::displayGameState</a></div><div class="ttdeci">static void displayGameState()</div><div class="ttdoc">Displays the current state of the game.</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8cpp_source.html#l00526">GUI.cpp:526</a></div></div>
+<div class="ttc" id="aclass_g_u_i_html_a8f55dae107a6648458f6eb16608c66d2"><div class="ttname"><a href="class_g_u_i.html#a8f55dae107a6648458f6eb16608c66d2">GUI::displayGameState</a></div><div class="ttdeci">static void displayGameState()</div><div class="ttdoc">Displays the current state of the game.</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8cpp_source.html#l00524">GUI.cpp:524</a></div></div>
 <div class="ttc" id="aclass_game_html_a1a44850a64799e17f43f22b560275157"><div class="ttname"><a href="class_game.html#a1a44850a64799e17f43f22b560275157">Game::makeMoveForUser</a></div><div class="ttdeci">int makeMoveForUser(const std::string &amp;move, Player *player, int playerIndex, int largestBet)</div><div class="ttdoc">Processes a move made by the user.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00137">Game.cpp:137</a></div></div>
 <div class="ttc" id="aclass_game_html_a7d39bde5e072ea39bb620295d2b21935"><div class="ttname"><a href="class_game.html#a7d39bde5e072ea39bb620295d2b21935">Game::button</a></div><div class="ttdeci">int button</div><div class="ttdef"><b>Definition</b> <a href="_game_8hpp_source.html#l00039">Game.hpp:39</a></div></div>
 <div class="ttc" id="aclass_game_html_ae2ca18e2bb93274baea5274dd125c10e"><div class="ttname"><a href="class_game.html#ae2ca18e2bb93274baea5274dd125c10e">Game::currentStage</a></div><div class="ttdeci">Stage currentStage</div><div class="ttdef"><b>Definition</b> <a href="_game_8hpp_source.html#l00046">Game.hpp:46</a></div></div>
 <div class="ttc" id="aclass_player_html_adc8ed9db4362a7843c6fe50c2abc3d73"><div class="ttname"><a href="class_player.html#adc8ed9db4362a7843c6fe50c2abc3d73">Player::getMove</a></div><div class="ttdeci">virtual std::string getMove(bool canCheck, bool canRaise, bool canFold, bool canCall, vector&lt; Card &gt; community_cards, int largestBet, int numPlayersInHand, int pot)=0</div><div class="ttdoc">Gets the player's move during their turn.</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_game_8hpp_source.html#l00039">button</a>, <a class="el" href="_game_8hpp_source.html#l00032">community_cards</a>, <a class="el" href="_game_8hpp_source.html#l00046">currentStage</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00526">GUI::displayGameState()</a>, <a class="el" href="_game_8hpp_source.html#l00023">FLOP</a>, <a class="el" href="class_player.html#adc8ed9db4362a7843c6fe50c2abc3d73">Player::getMove()</a>, <a class="el" href="_game_8cpp_source.html#l00051">getPlayers()</a>, <a class="el" href="_game_8cpp_source.html#l00137">makeMoveForUser()</a>, and <a class="el" href="_game_8hpp_source.html#l00038">pot</a>.</p>
+<p class="reference">References <a class="el" href="_game_8hpp_source.html#l00039">button</a>, <a class="el" href="_game_8hpp_source.html#l00032">community_cards</a>, <a class="el" href="_game_8hpp_source.html#l00046">currentStage</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00524">GUI::displayGameState()</a>, <a class="el" href="_game_8hpp_source.html#l00023">FLOP</a>, <a class="el" href="class_player.html#adc8ed9db4362a7843c6fe50c2abc3d73">Player::getMove()</a>, <a class="el" href="_game_8cpp_source.html#l00051">getPlayers()</a>, <a class="el" href="_game_8cpp_source.html#l00137">makeMoveForUser()</a>, and <a class="el" href="_game_8hpp_source.html#l00038">pot</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_game_8cpp_source.html#l00230">playHand()</a>.</p>
 <div class="dynheader">
@@ -939,7 +939,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_game_8hpp_source.html#l00039">button</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00526">GUI::displayGameState()</a>, and <a class="el" href="test___game_8cc_source.html#l00076">TEST_F()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00524">GUI::displayGameState()</a>, and <a class="el" href="test___game_8cc_source.html#l00076">TEST_F()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -973,7 +973,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_game_8hpp_source.html#l00032">community_cards</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00526">GUI::displayGameState()</a>, <a class="el" href="test___game_8cc_source.html#l00114">TEST_F()</a>, <a class="el" href="test___game_8cc_source.html#l00047">TEST_F()</a>, <a class="el" href="test___game_8cc_source.html#l00063">TEST_F()</a>, <a class="el" href="test___game_8cc_source.html#l00055">TEST_F()</a>, and <a class="el" href="test___game_8cc_source.html#l00184">TEST_F()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00524">GUI::displayGameState()</a>, <a class="el" href="test___game_8cc_source.html#l00114">TEST_F()</a>, <a class="el" href="test___game_8cc_source.html#l00047">TEST_F()</a>, <a class="el" href="test___game_8cc_source.html#l00063">TEST_F()</a>, <a class="el" href="test___game_8cc_source.html#l00055">TEST_F()</a>, and <a class="el" href="test___game_8cc_source.html#l00184">TEST_F()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1074,7 +1074,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_game_8hpp_source.html#l00031">players</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_game_8cpp_source.html#l00075">awardPot()</a>, <a class="el" href="_game_8cpp_source.html#l00371">bettingRound()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00526">GUI::displayGameState()</a>, <a class="el" href="_game_8cpp_source.html#l00357">get_final_winner()</a>, <a class="el" href="_game_8cpp_source.html#l00230">playHand()</a>, <a class="el" href="_game_8cpp_source.html#l00479">resetPlayerBets()</a>, <a class="el" href="_game_8cpp_source.html#l00486">resetPlayerHands()</a>, <a class="el" href="_game_8cpp_source.html#l00346">resetPlayerTotalBets()</a>, <a class="el" href="test___game_8cc_source.html#l00191">TEST_F()</a>, <a class="el" href="test___game_8cc_source.html#l00031">TEST_F()</a>, <a class="el" href="test___game_8cc_source.html#l00026">TEST_F()</a>, <a class="el" href="test___game_8cc_source.html#l00114">TEST_F()</a>, <a class="el" href="test___game_8cc_source.html#l00038">TEST_F()</a>, <a class="el" href="test___game_8cc_source.html#l00146">TEST_F()</a>, <a class="el" href="test___game_8cc_source.html#l00170">TEST_F()</a>, and <a class="el" href="test___game_8cc_source.html#l00177">TEST_F()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_game_8cpp_source.html#l00075">awardPot()</a>, <a class="el" href="_game_8cpp_source.html#l00371">bettingRound()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00524">GUI::displayGameState()</a>, <a class="el" href="_game_8cpp_source.html#l00357">get_final_winner()</a>, <a class="el" href="_game_8cpp_source.html#l00230">playHand()</a>, <a class="el" href="_game_8cpp_source.html#l00479">resetPlayerBets()</a>, <a class="el" href="_game_8cpp_source.html#l00486">resetPlayerHands()</a>, <a class="el" href="_game_8cpp_source.html#l00346">resetPlayerTotalBets()</a>, <a class="el" href="test___game_8cc_source.html#l00191">TEST_F()</a>, <a class="el" href="test___game_8cc_source.html#l00031">TEST_F()</a>, <a class="el" href="test___game_8cc_source.html#l00026">TEST_F()</a>, <a class="el" href="test___game_8cc_source.html#l00114">TEST_F()</a>, <a class="el" href="test___game_8cc_source.html#l00038">TEST_F()</a>, <a class="el" href="test___game_8cc_source.html#l00146">TEST_F()</a>, <a class="el" href="test___game_8cc_source.html#l00170">TEST_F()</a>, and <a class="el" href="test___game_8cc_source.html#l00177">TEST_F()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1108,7 +1108,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_game_8hpp_source.html#l00038">pot</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00526">GUI::displayGameState()</a>, <a class="el" href="test___game_8cc_source.html#l00191">TEST_F()</a>, and <a class="el" href="test___game_8cc_source.html#l00071">TEST_F()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00524">GUI::displayGameState()</a>, <a class="el" href="test___game_8cc_source.html#l00191">TEST_F()</a>, and <a class="el" href="test___game_8cc_source.html#l00071">TEST_F()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1143,7 +1143,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_game_8hpp_source.html#l00041">atShowdown</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00526">GUI::displayGameState()</a>, and <a class="el" href="test___game_8cc_source.html#l00081">TEST_F()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_g_u_i_8cpp_source.html#l00524">GUI::displayGameState()</a>, and <a class="el" href="test___game_8cc_source.html#l00081">TEST_F()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1344,7 +1344,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  177</span>    </div>
 <div class="line"><span class="lineno">  178</span>}</div>
 <div class="ttc" id="a_game_8hpp_html_a19b869a01ca1a58f4164b4f75c2df388"><div class="ttname"><a href="_game_8hpp.html#a19b869a01ca1a58f4164b4f75c2df388">Move</a></div><div class="ttdeci">Move</div><div class="ttdoc">Represents the possible moves a player can make in the game.</div><div class="ttdef"><b>Definition</b> <a href="_game_8hpp_source.html#l00017">Game.hpp:17</a></div></div>
-<div class="ttc" id="aclass_g_u_i_html_a65d07a686330670f5567a3fc11fbace1"><div class="ttname"><a href="class_g_u_i.html#a65d07a686330670f5567a3fc11fbace1">GUI::displayPlayerMove</a></div><div class="ttdeci">static void displayPlayerMove(Player *player, string move, int size)</div><div class="ttdoc">Displays a player's move.</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8cpp_source.html#l00594">GUI.cpp:594</a></div></div>
+<div class="ttc" id="aclass_g_u_i_html_a65d07a686330670f5567a3fc11fbace1"><div class="ttname"><a href="class_g_u_i.html#a65d07a686330670f5567a3fc11fbace1">GUI::displayPlayerMove</a></div><div class="ttdeci">static void displayPlayerMove(Player *player, string move, int size)</div><div class="ttdoc">Displays a player's move.</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8cpp_source.html#l00592">GUI.cpp:592</a></div></div>
 <div class="ttc" id="aclass_game_html_af66af3bfc474c88bfd29e555e8df2519"><div class="ttname"><a href="class_game.html#af66af3bfc474c88bfd29e555e8df2519">Game::getCurrentMove</a></div><div class="ttdeci">Move getCurrentMove(std::string move)</div><div class="ttdoc">Converts a move string into a Move enum.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00460">Game.cpp:460</a></div></div>
 <div class="ttc" id="aclass_player_html_a174449e6ad5253666daa744a02054066"><div class="ttname"><a href="class_player.html#a174449e6ad5253666daa744a02054066">Player::clear_hand</a></div><div class="ttdeci">void clear_hand()</div><div class="ttdoc">Clears the player's hand of all cards.</div><div class="ttdef"><b>Definition</b> <a href="_player_8cpp_source.html#l00056">Player.cpp:56</a></div></div>
 <div class="ttc" id="aclass_player_html_a6bbf9eaf94c40552906fb108b6a2392a"><div class="ttname"><a href="class_player.html#a6bbf9eaf94c40552906fb108b6a2392a">Player::get_current_bet</a></div><div class="ttdeci">int get_current_bet()</div><div class="ttdoc">Gets the player's current bet in the ongoing hand.</div><div class="ttdef"><b>Definition</b> <a href="_player_8cpp_source.html#l00060">Player.cpp:60</a></div></div>
@@ -1353,7 +1353,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclass_player_html_ae0004d5df21e13f61b795d1c175e873d"><div class="ttname"><a href="class_player.html#ae0004d5df21e13f61b795d1c175e873d">Player::bet</a></div><div class="ttdeci">void bet(int amount)</div><div class="ttdoc">Places a bet by the player.</div><div class="ttdef"><b>Definition</b> <a href="_player_8cpp_source.html#l00014">Player.cpp:14</a></div></div>
 <div class="ttc" id="aclass_player_html_ae9d26573718b00460800539a32916288"><div class="ttname"><a href="class_player.html#ae9d26573718b00460800539a32916288">Player::getBetSizing</a></div><div class="ttdeci">virtual int getBetSizing(int minBet, int maxBet)=0</div><div class="ttdoc">Gets the player's bet sizing during their turn.</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_player_8cpp_source.html#l00014">Player::bet()</a>, <a class="el" href="_game_8hpp_source.html#l00035">BIG_BLIND</a>, <a class="el" href="_game_8hpp_source.html#l00017">CALL</a>, <a class="el" href="_game_8hpp_source.html#l00017">CHECK</a>, <a class="el" href="_player_8cpp_source.html#l00056">Player::clear_hand()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00594">GUI::displayPlayerMove()</a>, <a class="el" href="_game_8hpp_source.html#l00017">FOLD</a>, <a class="el" href="_player_8cpp_source.html#l00060">Player::get_current_bet()</a>, <a class="el" href="_player_8cpp_source.html#l00034">Player::get_stack()</a>, <a class="el" href="class_player.html#ae9d26573718b00460800539a32916288">Player::getBetSizing()</a>, <a class="el" href="_game_8cpp_source.html#l00460">getCurrentMove()</a>, <a class="el" href="_game_8hpp_source.html#l00038">pot</a>, <a class="el" href="_game_8hpp_source.html#l00017">RAISE</a>, and <a class="el" href="_player_8cpp_source.html#l00082">Player::reset_current_bet()</a>.</p>
+<p class="reference">References <a class="el" href="_player_8cpp_source.html#l00014">Player::bet()</a>, <a class="el" href="_game_8hpp_source.html#l00035">BIG_BLIND</a>, <a class="el" href="_game_8hpp_source.html#l00017">CALL</a>, <a class="el" href="_game_8hpp_source.html#l00017">CHECK</a>, <a class="el" href="_player_8cpp_source.html#l00056">Player::clear_hand()</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00592">GUI::displayPlayerMove()</a>, <a class="el" href="_game_8hpp_source.html#l00017">FOLD</a>, <a class="el" href="_player_8cpp_source.html#l00060">Player::get_current_bet()</a>, <a class="el" href="_player_8cpp_source.html#l00034">Player::get_stack()</a>, <a class="el" href="class_player.html#ae9d26573718b00460800539a32916288">Player::getBetSizing()</a>, <a class="el" href="_game_8cpp_source.html#l00460">getCurrentMove()</a>, <a class="el" href="_game_8hpp_source.html#l00038">pot</a>, <a class="el" href="_game_8hpp_source.html#l00017">RAISE</a>, and <a class="el" href="_player_8cpp_source.html#l00082">Player::reset_current_bet()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_game_8cpp_source.html#l00371">bettingRound()</a>.</p>
 <div class="dynheader">
@@ -1486,12 +1486,12 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  276</span>    <a class="code hl_variable" href="class_game.html#a2f39584e65a512530a723f4b927ddc42">atShowdown</a> = count(inGame.begin(), inGame.end(), <span class="keyword">true</span>) &gt; 1;</div>
 <div class="line"><span class="lineno">  277</span>    <a class="code hl_function" href="class_g_u_i.html#a8f55dae107a6648458f6eb16608c66d2">GUI::displayGameState</a>();</div>
 <div class="line"><span class="lineno">  278</span>    <span class="comment">// sleep for 1 second </span></div>
-<div class="line"><span class="lineno">  279</span>    <span class="comment">// std::this_thread::sleep_for(std::chrono::milliseconds(2000));</span></div>
+<div class="line"><span class="lineno">  279</span>    std::this_thread::sleep_for(std::chrono::milliseconds(1000));</div>
 <div class="line"><span class="lineno">  280</span>    <span class="comment">// Award the pot to the winner/s</span></div>
 <div class="line"><span class="lineno">  281</span>    this-&gt;<a class="code hl_function" href="class_game.html#ac0b29143b66a8cecb267b54ac84deb06">awardPot</a>(winners, inGame);</div>
 <div class="line"><span class="lineno">  282</span>    <a class="code hl_function" href="class_g_u_i.html#a8f55dae107a6648458f6eb16608c66d2">GUI::displayGameState</a>();</div>
 <div class="line"><span class="lineno">  283</span>    <span class="comment">// sleep for 1 second </span></div>
-<div class="line"><span class="lineno">  284</span>    <span class="comment">// std::this_thread::sleep_for(std::chrono::milliseconds(2000));</span></div>
+<div class="line"><span class="lineno">  284</span>    std::this_thread::sleep_for(std::chrono::milliseconds(1000));</div>
 <div class="line"><span class="lineno">  285</span>    <a class="code hl_variable" href="class_game.html#a2f39584e65a512530a723f4b927ddc42">atShowdown</a> = <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">  286</span>    <span class="comment">// Move the button </span></div>
 <div class="line"><span class="lineno">  287</span>    this-&gt;<a class="code hl_variable" href="class_game.html#a7d39bde5e072ea39bb620295d2b21935">button</a> = (this-&gt;<a class="code hl_variable" href="class_game.html#a7d39bde5e072ea39bb620295d2b21935">button</a> + 1) % numPlayers;</div>
@@ -1562,7 +1562,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclass_game_html_adc54b1823a5d8d5221d7bf74e924e145"><div class="ttname"><a href="class_game.html#adc54b1823a5d8d5221d7bf74e924e145">Game::resetPlayerHands</a></div><div class="ttdeci">void resetPlayerHands()</div><div class="ttdoc">Resets the hands of all players.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00486">Game.cpp:486</a></div></div>
 <div class="ttc" id="aclass_game_html_af4a444aeaddb618cc202c73c35fd157f"><div class="ttname"><a href="class_game.html#af4a444aeaddb618cc202c73c35fd157f">Game::removedPlayerCount</a></div><div class="ttdeci">int removedPlayerCount</div><div class="ttdef"><b>Definition</b> <a href="_game_8hpp_source.html#l00040">Game.hpp:40</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_game_8cpp_source.html#l00496">addBlindsToPot()</a>, <a class="el" href="_game_8hpp_source.html#l00041">atShowdown</a>, <a class="el" href="_game_8cpp_source.html#l00075">awardPot()</a>, <a class="el" href="_game_8cpp_source.html#l00371">bettingRound()</a>, <a class="el" href="_game_8hpp_source.html#l00035">BIG_BLIND</a>, <a class="el" href="_game_8hpp_source.html#l00039">button</a>, <a class="el" href="_game_8hpp_source.html#l00032">community_cards</a>, <a class="el" href="_game_8hpp_source.html#l00046">currentStage</a>, <a class="el" href="_game_8cpp_source.html#l00183">deal()</a>, <a class="el" href="_game_8hpp_source.html#l00045">deck</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00526">GUI::displayGameState()</a>, <a class="el" href="_game_8cpp_source.html#l00051">getPlayers()</a>, <a class="el" href="_game_8cpp_source.html#l00501">getWinner()</a>, <a class="el" href="_game_8hpp_source.html#l00031">players</a>, <a class="el" href="_game_8hpp_source.html#l00023">PREFLOP</a>, <a class="el" href="_game_8hpp_source.html#l00040">removedPlayerCount</a>, <a class="el" href="_deck_8cpp_source.html#l00023">Deck::reset()</a>, <a class="el" href="_game_8cpp_source.html#l00492">resetCommunityCards()</a>, <a class="el" href="_game_8cpp_source.html#l00479">resetPlayerBets()</a>, <a class="el" href="_game_8cpp_source.html#l00486">resetPlayerHands()</a>, <a class="el" href="_game_8cpp_source.html#l00346">resetPlayerTotalBets()</a>, and <a class="el" href="_game_8hpp_source.html#l00036">SMALL_BLIND</a>.</p>
+<p class="reference">References <a class="el" href="_game_8cpp_source.html#l00496">addBlindsToPot()</a>, <a class="el" href="_game_8hpp_source.html#l00041">atShowdown</a>, <a class="el" href="_game_8cpp_source.html#l00075">awardPot()</a>, <a class="el" href="_game_8cpp_source.html#l00371">bettingRound()</a>, <a class="el" href="_game_8hpp_source.html#l00035">BIG_BLIND</a>, <a class="el" href="_game_8hpp_source.html#l00039">button</a>, <a class="el" href="_game_8hpp_source.html#l00032">community_cards</a>, <a class="el" href="_game_8hpp_source.html#l00046">currentStage</a>, <a class="el" href="_game_8cpp_source.html#l00183">deal()</a>, <a class="el" href="_game_8hpp_source.html#l00045">deck</a>, <a class="el" href="_g_u_i_8cpp_source.html#l00524">GUI::displayGameState()</a>, <a class="el" href="_game_8cpp_source.html#l00051">getPlayers()</a>, <a class="el" href="_game_8cpp_source.html#l00501">getWinner()</a>, <a class="el" href="_game_8hpp_source.html#l00031">players</a>, <a class="el" href="_game_8hpp_source.html#l00023">PREFLOP</a>, <a class="el" href="_game_8hpp_source.html#l00040">removedPlayerCount</a>, <a class="el" href="_deck_8cpp_source.html#l00023">Deck::reset()</a>, <a class="el" href="_game_8cpp_source.html#l00492">resetCommunityCards()</a>, <a class="el" href="_game_8cpp_source.html#l00479">resetPlayerBets()</a>, <a class="el" href="_game_8cpp_source.html#l00486">resetPlayerHands()</a>, <a class="el" href="_game_8cpp_source.html#l00346">resetPlayerTotalBets()</a>, and <a class="el" href="_game_8hpp_source.html#l00036">SMALL_BLIND</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00025">playGame()</a>.</p>
 <div class="dynheader">
@@ -2060,7 +2060,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 11 2024 00:28:09 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Fri Oct 11 2024 00:35:05 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

@@ -141,30 +141,28 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
 </div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">// Test findEquity function</span></div>
-<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="test___equity_calculator_8cc.html#a6a1971a462816b0df8bcdc1135b2553c">   56</a></span><a class="code hl_function" href="test___equity_calculator_8cc.html#a8badf8915ba85560da945389113b7351">TEST_F</a>(<a class="code hl_class" href="class_equity_calculator_test.html">EquityCalculatorTest</a>, FindEquity) {</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="comment">// Create a test CSV file</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    std::ofstream testFile(<span class="stringliteral">&quot;preflopEquity.csv&quot;</span>);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    testFile &lt;&lt; <span class="stringliteral">&quot;A,K,true,2,0.6,0.1\n&quot;</span>;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    testFile &lt;&lt; <span class="stringliteral">&quot;Q,J,false,3,0.4,0.05\n&quot;</span>;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    testFile.close();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">// // Test findEquity function</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">// TEST_F(EquityCalculatorTest, FindEquity) {</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">//     // Create a test CSV file</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">//     std::ofstream testFile(&quot;preflopEquity.csv&quot;);</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">//     testFile &lt;&lt; &quot;A,K,true,2,0.6,0.1\n&quot;;</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">//     testFile &lt;&lt; &quot;Q,J,false,3,0.4,0.05\n&quot;;</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">//     testFile.close();</span></div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    std::vector&lt;std::string&gt; searchValues = {<span class="stringliteral">&quot;A&quot;</span>, <span class="stringliteral">&quot;K&quot;</span>, <span class="stringliteral">&quot;true&quot;</span>, <span class="stringliteral">&quot;2&quot;</span>};</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">auto</span> result = <a class="code hl_function" href="test___equity_calculator_8cc.html#ab33709bef8a7d7581ef75b0d6da9bf8e">findEquity</a>(<span class="stringliteral">&quot;preflopEquity.csv&quot;</span>, searchValues);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    EXPECT_EQ(result.size(), 2);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    EXPECT_FLOAT_EQ(result[0], 0.6f);</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    EXPECT_FLOAT_EQ(result[1], 0.1f);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">//     std::vector&lt;std::string&gt; searchValues = {&quot;A&quot;, &quot;K&quot;, &quot;true&quot;, &quot;2&quot;};</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">//     auto result = findEquity(&quot;preflopEquity.csv&quot;, searchValues);</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">//     EXPECT_EQ(result.size(), 2);</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">//     EXPECT_FLOAT_EQ(result[0], 0.6f);</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment">//     EXPECT_FLOAT_EQ(result[1], 0.1f);</span></div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="comment">// Test with non-matching values</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    searchValues = {<span class="stringliteral">&quot;X&quot;</span>, <span class="stringliteral">&quot;Y&quot;</span>, <span class="stringliteral">&quot;false&quot;</span>, <span class="stringliteral">&quot;4&quot;</span>};</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    result = <a class="code hl_function" href="test___equity_calculator_8cc.html#ab33709bef8a7d7581ef75b0d6da9bf8e">findEquity</a>(<span class="stringliteral">&quot;preflopEquity.csv&quot;</span>, searchValues);</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    EXPECT_TRUE(result.empty());</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">//     // Test with non-matching values</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment">//     searchValues = {&quot;X&quot;, &quot;Y&quot;, &quot;false&quot;, &quot;4&quot;};</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment">//     result = findEquity(&quot;preflopEquity.csv&quot;, searchValues);</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment">//     EXPECT_TRUE(result.empty());</span></div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="comment">// Clean up</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    std::remove(<span class="stringliteral">&quot;preflopEquity.csv&quot;</span>);</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
-</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment">//     // Clean up</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">//     std::remove(&quot;preflopEquity.csv&quot;);</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment">// }</span></div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment">// FIXME: Test calculateHandEquity function</span></div>
 <div class="foldopen" id="foldopen00079" data-start="{" data-end="}">
@@ -250,7 +248,7 @@ $(document).ready(function() { init_codefold(0); });
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 11 2024 00:28:09 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Fri Oct 11 2024 00:35:05 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

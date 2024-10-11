@@ -19,6 +19,4 @@ digraph "findEquity"
   Node6 [id="Node000006",label="TEST_F",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$test___player_8cc.html#a58e6b1b83a0b3890240da45b9cfca22b",tooltip=" "];
   Node3 -> Node7 [id="edge6_Node000003_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node7 [id="Node000007",label="TEST_F",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$test___player_8cc.html#ab159003d62d4815baca60d6e6394374e",tooltip=" "];
-  Node1 -> Node8 [id="edge7_Node000001_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node8 [id="Node000008",label="TEST_F",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$test___equity_calculator_8cc.html#a6a1971a462816b0df8bcdc1135b2553c",tooltip=" "];
 }

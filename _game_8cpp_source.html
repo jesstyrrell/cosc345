@@ -367,12 +367,12 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    <a class="code hl_variable" href="class_game.html#a2f39584e65a512530a723f4b927ddc42">atShowdown</a> = count(inGame.begin(), inGame.end(), <span class="keyword">true</span>) &gt; 1;</div>
 <div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    <a class="code hl_function" href="class_g_u_i.html#a8f55dae107a6648458f6eb16608c66d2">GUI::displayGameState</a>();</div>
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    <span class="comment">// sleep for 1 second </span></div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    <span class="comment">// std::this_thread::sleep_for(std::chrono::milliseconds(2000));</span></div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    std::this_thread::sleep_for(std::chrono::milliseconds(1000));</div>
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    <span class="comment">// Award the pot to the winner/s</span></div>
 <div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    this-&gt;<a class="code hl_function" href="class_game.html#ac0b29143b66a8cecb267b54ac84deb06">awardPot</a>(winners, inGame);</div>
 <div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    <a class="code hl_function" href="class_g_u_i.html#a8f55dae107a6648458f6eb16608c66d2">GUI::displayGameState</a>();</div>
 <div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    <span class="comment">// sleep for 1 second </span></div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    <span class="comment">// std::this_thread::sleep_for(std::chrono::milliseconds(2000));</span></div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    std::this_thread::sleep_for(std::chrono::milliseconds(1000));</div>
 <div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    <a class="code hl_variable" href="class_game.html#a2f39584e65a512530a723f4b927ddc42">atShowdown</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    <span class="comment">// Move the button </span></div>
 <div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    this-&gt;<a class="code hl_variable" href="class_game.html#a7d39bde5e072ea39bb620295d2b21935">button</a> = (this-&gt;<a class="code hl_variable" href="class_game.html#a7d39bde5e072ea39bb620295d2b21935">button</a> + 1) % numPlayers;</div>
@@ -455,7 +455,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>    <span class="comment">// TESTING: display game state </span></div>
 <div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>    <a class="code hl_function" href="class_g_u_i.html#a8f55dae107a6648458f6eb16608c66d2">GUI::displayGameState</a>();</div>
 <div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>    <span class="comment">// sleep for 1 second </span></div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>    <span class="comment">// std::this_thread::sleep_for(std::chrono::milliseconds(2000));</span></div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>    std::this_thread::sleep_for(std::chrono::milliseconds(1000));</div>
 <div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span> </div>
 <div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>    <span class="keywordtype">int</span> currentPlayer;</div>
 <div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>    </div>
@@ -497,7 +497,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>            <span class="comment">// Perform the move for the player</span></div>
 <div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span> </div>
 <div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>            <span class="keywordtype">int</span> betSize = <a class="code hl_function" href="class_game.html#a1a44850a64799e17f43f22b560275157">makeMoveForUser</a>(move, this-&gt;<a class="code hl_function" href="class_game.html#a57e5aef2f67e77929842fab7a78404ea">getPlayers</a>()[currentPlayer], currentPlayer, largestBet);</div>
-<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>            <span class="comment">// std::this_thread::sleep_for(std::chrono::milliseconds(2000));</span></div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>            std::this_thread::sleep_for(std::chrono::milliseconds(1000));</div>
 <div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span> </div>
 <div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>            <span class="comment">// If the player has folded, update the inGame vector</span></div>
 <div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>            <span class="keywordflow">if</span> (betSize == -1) {</div>
@@ -511,7 +511,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>                largestBetPlayer = this-&gt;<a class="code hl_function" href="class_game.html#a57e5aef2f67e77929842fab7a78404ea">getPlayers</a>()[currentPlayer];</div>
 <div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>            }</div>
 <div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>             <a class="code hl_function" href="class_g_u_i.html#a8f55dae107a6648458f6eb16608c66d2">GUI::displayGameState</a>();</div>
-<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>            <span class="comment">//  std::this_thread::sleep_for(std::chrono::milliseconds(2000));</span></div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>             std::this_thread::sleep_for(std::chrono::milliseconds(1000));</div>
 <div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>        }</div>
 <div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span> </div>
 <div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>        <span class="comment">// Move to the next player</span></div>
@@ -632,8 +632,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="aclass_deck_html_a14aa4f2f94b6b880cd575cf17af26762"><div class="ttname"><a href="class_deck.html#a14aa4f2f94b6b880cd575cf17af26762">Deck::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdoc">Resets the deck to its initial state with all 52 cards.</div><div class="ttdef"><b>Definition</b> <a href="_deck_8cpp_source.html#l00023">Deck.cpp:23</a></div></div>
 <div class="ttc" id="aclass_deck_html_a16604aabf7fc56dd44a72c4e862758cf"><div class="ttname"><a href="class_deck.html#a16604aabf7fc56dd44a72c4e862758cf">Deck::deal</a></div><div class="ttdeci">Card deal()</div><div class="ttdoc">Deals a card from the top of the deck.</div><div class="ttdef"><b>Definition</b> <a href="_deck_8cpp_source.html#l00050">Deck.cpp:50</a></div></div>
 <div class="ttc" id="aclass_deck_html_ae5a1e52ab00ae5924f2bc6b730dba3eb"><div class="ttname"><a href="class_deck.html#ae5a1e52ab00ae5924f2bc6b730dba3eb">Deck::shuffle</a></div><div class="ttdeci">void shuffle()</div><div class="ttdoc">Shuffles the deck of cards.</div><div class="ttdef"><b>Definition</b> <a href="_deck_8cpp_source.html#l00041">Deck.cpp:41</a></div></div>
-<div class="ttc" id="aclass_g_u_i_html_a65d07a686330670f5567a3fc11fbace1"><div class="ttname"><a href="class_g_u_i.html#a65d07a686330670f5567a3fc11fbace1">GUI::displayPlayerMove</a></div><div class="ttdeci">static void displayPlayerMove(Player *player, string move, int size)</div><div class="ttdoc">Displays a player's move.</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8cpp_source.html#l00594">GUI.cpp:594</a></div></div>
-<div class="ttc" id="aclass_g_u_i_html_a8f55dae107a6648458f6eb16608c66d2"><div class="ttname"><a href="class_g_u_i.html#a8f55dae107a6648458f6eb16608c66d2">GUI::displayGameState</a></div><div class="ttdeci">static void displayGameState()</div><div class="ttdoc">Displays the current state of the game.</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8cpp_source.html#l00526">GUI.cpp:526</a></div></div>
+<div class="ttc" id="aclass_g_u_i_html_a65d07a686330670f5567a3fc11fbace1"><div class="ttname"><a href="class_g_u_i.html#a65d07a686330670f5567a3fc11fbace1">GUI::displayPlayerMove</a></div><div class="ttdeci">static void displayPlayerMove(Player *player, string move, int size)</div><div class="ttdoc">Displays a player's move.</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8cpp_source.html#l00592">GUI.cpp:592</a></div></div>
+<div class="ttc" id="aclass_g_u_i_html_a8f55dae107a6648458f6eb16608c66d2"><div class="ttname"><a href="class_g_u_i.html#a8f55dae107a6648458f6eb16608c66d2">GUI::displayGameState</a></div><div class="ttdeci">static void displayGameState()</div><div class="ttdoc">Displays the current state of the game.</div><div class="ttdef"><b>Definition</b> <a href="_g_u_i_8cpp_source.html#l00524">GUI.cpp:524</a></div></div>
 <div class="ttc" id="aclass_game_html_a018713cb3ce643d8f52e6804903e9d12"><div class="ttname"><a href="class_game.html#a018713cb3ce643d8f52e6804903e9d12">Game::nextStage</a></div><div class="ttdeci">void nextStage()</div><div class="ttdoc">Advances the game to the next stage.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00207">Game.cpp:207</a></div></div>
 <div class="ttc" id="aclass_game_html_a05be7cd941605fe93abe7b5b6c2045df"><div class="ttname"><a href="class_game.html#a05be7cd941605fe93abe7b5b6c2045df">Game::BIG_BLIND</a></div><div class="ttdeci">const int BIG_BLIND</div><div class="ttdef"><b>Definition</b> <a href="_game_8hpp_source.html#l00035">Game.hpp:35</a></div></div>
 <div class="ttc" id="aclass_game_html_a0de5cbe2125b0929a0bc8d2e6cdd64d5"><div class="ttname"><a href="class_game.html#a0de5cbe2125b0929a0bc8d2e6cdd64d5">Game::bettingRound</a></div><div class="ttdeci">bool bettingRound(vector&lt; bool &gt; &amp;inGame, int largestBet, int numPlayers)</div><div class="ttdoc">Conducts a betting round.</div><div class="ttdef"><b>Definition</b> <a href="_game_8cpp_source.html#l00371">Game.cpp:371</a></div></div>
@@ -686,7 +686,7 @@ $(document).ready(function() { init_codefold(0); });
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 11 2024 00:28:09 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Fri Oct 11 2024 00:35:05 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
