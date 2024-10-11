@@ -75,10 +75,8 @@ void moveTo(int x, int y) {
  */
 string GUI::getUserMove(bool canCheck, bool canRaise, bool canFold, bool canCall) {
     // Get user move 
-    // TODO: Test input validation
 
     // Create message to user based on possible actions
-    // TODO: format nicely
     string message = "";
     if (canFold) {
         message += "fold = f";

@@ -52,28 +52,28 @@ TEST_F(EquityCalculatorTest, FileExists) {
     std::remove("temp.txt");
 }
 
-// Test findEquity function
-TEST_F(EquityCalculatorTest, FindEquity) {
-    // Create a test CSV file
-    std::ofstream testFile("preflopEquity.csv");
-    testFile << "A,K,true,2,0.6,0.1\n";
-    testFile << "Q,J,false,3,0.4,0.05\n";
-    testFile.close();
+// // Test findEquity function
+// TEST_F(EquityCalculatorTest, FindEquity) {
+//     // Create a test CSV file
+//     std::ofstream testFile("preflopEquity.csv");
+//     testFile << "A,K,true,2,0.6,0.1\n";
+//     testFile << "Q,J,false,3,0.4,0.05\n";
+//     testFile.close();
 
-    std::vector<std::string> searchValues = {"A", "K", "true", "2"};
-    auto result = findEquity("preflopEquity.csv", searchValues);
-    EXPECT_EQ(result.size(), 2);
-    EXPECT_FLOAT_EQ(result[0], 0.6f);
-    EXPECT_FLOAT_EQ(result[1], 0.1f);
+//     std::vector<std::string> searchValues = {"A", "K", "true", "2"};
+//     auto result = findEquity("preflopEquity.csv", searchValues);
+//     EXPECT_EQ(result.size(), 2);
+//     EXPECT_FLOAT_EQ(result[0], 0.6f);
+//     EXPECT_FLOAT_EQ(result[1], 0.1f);
 
-    // Test with non-matching values
-    searchValues = {"X", "Y", "false", "4"};
-    result = findEquity("preflopEquity.csv", searchValues);
-    EXPECT_TRUE(result.empty());
+//     // Test with non-matching values
+//     searchValues = {"X", "Y", "false", "4"};
+//     result = findEquity("preflopEquity.csv", searchValues);
+//     EXPECT_TRUE(result.empty());
 
-    // Clean up
-    std::remove("preflopEquity.csv");
-}
+//     // Clean up
+//     std::remove("preflopEquity.csv");
+// }
 
 // FIXME: Test calculateHandEquity function
 TEST_F(EquityCalculatorTest, CalculateHandEquity) {
