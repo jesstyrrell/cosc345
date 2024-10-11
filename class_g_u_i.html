@@ -980,7 +980,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  684</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;No hard hands played&quot;</span> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><span class="lineno">  685</span>    }</div>
 <div class="line"><span class="lineno">  686</span> </div>
-<div class="line"><span class="lineno">  687</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;VPIP: &quot;</span> &lt;&lt; player.numHandsVpip/player.totalHandsPlayed &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  687</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;VPIP: &quot;</span> &lt;&lt; (player.numHandsVpip/player.totalHandsPlayed)*100 &lt;&lt; <span class="stringliteral">&quot;%&quot;</span> &lt;&lt;std::endl;</div>
 <div class="line"><span class="lineno">  688</span>    </div>
 <div class="line"><span class="lineno">  689</span> </div>
 <div class="line"><span class="lineno">  690</span>    <span class="keywordflow">return</span>;</div>
@@ -1288,7 +1288,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_g_u_i_8cpp_source.html#l00352">352</a> of file <a class="el" href="_g_u_i_8cpp_source.html">GUI.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  352</span>                          {</div>
-<div class="line"><span class="lineno">  353</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Enter the bot difficulty (1, 2, or 3): &quot;</span>;</div>
+<div class="line"><span class="lineno">  353</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Enter the bot difficulty (Easy (1), Medium (2), Hard (3)): &quot;</span>;</div>
 <div class="line"><span class="lineno">  354</span> </div>
 <div class="line"><span class="lineno">  355</span>    <span class="keywordtype">int</span> difficulty;</div>
 <div class="line"><span class="lineno">  356</span> </div>
@@ -2156,7 +2156,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 11 2024 00:45:48 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Fri Oct 11 2024 00:46:01 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
