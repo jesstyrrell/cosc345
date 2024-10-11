@@ -9,6 +9,7 @@
 #include "GUI.hpp"
 #include "Game.hpp"
 #include "CSVWorker.hpp"
+#include "HandEvaluator.hpp"
 
 // Define and initialize the static member variable
 Game* GUI::game = nullptr;
@@ -499,6 +500,11 @@ string getCardString(Card& card) {
 }
 
 void GUI::displayGameState() {
+    vector<Player*> winners;
+    GUI::displayGameState(winners);
+}
+
+void GUI::displayGameState(vector<Player*> winners) {
     Game game = getGame();
     vector<Player*> players = game.getPlayers();
     vector<Card> communityCards = game.getCommunityCards();
@@ -558,6 +564,15 @@ void GUI::displayGameState() {
          else {
              // Show that they have folded 
          }
+    }
+    if (winners.size() > 0) {
+        string winnersString = winners[0]->get_name();
+        for (int i = 1; i < winners.size(); i++) {
+            winnersString += " and ";
+            winnersString += winners[i]->get_name();
+        }
+        winnersString += " Won the game.";
+        tableContent = addString(tableContent, winnersString, 105 - winnersString.size()/2, 0);
     }
 
     std::cout << tableContent << std::endl;

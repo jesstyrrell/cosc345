@@ -188,6 +188,8 @@ class GUI {
         /**
          * @brief Displays the current state of the game.
          */
+        static void displayGameState(vector<Player*> winners);
+
         static void displayGameState();
 
         /**
