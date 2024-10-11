@@ -12,7 +12,7 @@ digraph "Game::getPot"
   Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="Game::bettingRound",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game.html#a0de5cbe2125b0929a0bc8d2e6cdd64d5",tooltip="Conducts a betting round."];
   Node3 -> Node4 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node4 [id="Node000004",label="Game::playHand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game.html#ab72401c43b303a37dec67f3d6b75a927",tooltip="Plays a single hand of poker."];
+  Node4 [id="Node000004",label="Game::playHand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game.html#a800a564b56220d19d800fba07903070e",tooltip="Plays a single hand of poker."];
   Node4 -> Node5 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node5 [id="Node000005",label="playGame",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8cpp.html#a4cbfdb17bf51e00546880626f7e80429",tooltip=" "];
   Node5 -> Node6 [id="edge5_Node000005_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -28,7 +28,5 @@ digraph "Game::getPot"
   Node1 -> Node9 [id="edge12_Node000001_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node9 [id="Node000009",label="TEST_F",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$test___game_8cc.html#acdc11cf000318d581947c3894c0e5e25",tooltip=" "];
   Node1 -> Node10 [id="edge13_Node000001_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node10 [id="Node000010",label="TEST_F",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$test___game_8cc.html#adf97e005acdc02b38d612eabddf53792",tooltip=" "];
-  Node1 -> Node11 [id="edge14_Node000001_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node11 [id="Node000011",label="TEST_F",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$test___game_8cc.html#a262aae7e83f13ea240bcac01b3276929",tooltip=" "];
+  Node10 [id="Node000010",label="TEST_F",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$test___game_8cc.html#a262aae7e83f13ea240bcac01b3276929",tooltip=" "];
 }

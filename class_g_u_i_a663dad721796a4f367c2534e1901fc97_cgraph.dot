@@ -13,7 +13,7 @@ digraph "GUI::displayEndMessage"
   Node3 [id="Node000003",label="GUI::displayStartScreen",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_g_u_i.html#a0dc53c5a6daa0f01b57c4d4731b4d933",tooltip="Displays the start screen of the game."];
   Node3 -> Node2 [id="edge3_Node000003_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node4 [id="edge4_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
-  Node4 [id="Node000004",label="getFilePathStart",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_g_u_i_8cpp.html#a674e968d1ecb5cf741d6625f58378c95",tooltip=" "];
+  Node4 [id="Node000004",label="GUI::getFilePathStart",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_g_u_i.html#a1b505eb7d9252e68a4c5fa341673f1c2",tooltip=" "];
   Node1 -> Node5 [id="edge5_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
   Node5 [id="Node000005",label="moveTo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_g_u_i_8cpp.html#a0fcdefbd8531ccd32fad2d8d6caa7a76",tooltip=" "];
 }

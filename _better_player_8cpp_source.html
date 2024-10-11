@@ -162,7 +162,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        }</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">return</span> max(min(<a class="code hl_function" href="class_player.html#ae0004d5df21e13f61b795d1c175e873d">bet</a>, maxBet), minBet);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">return</span> max(minBet, min(maxBet, <a class="code hl_function" href="class_player.html#ae0004d5df21e13f61b795d1c175e873d">bet</a>));</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    }</div>
 </div>
@@ -186,13 +186,13 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="aclass_better_player_html_af666d107f5f6e285826055149179432f"><div class="ttname"><a href="class_better_player.html#af666d107f5f6e285826055149179432f">BetterPlayer::BetterPlayer</a></div><div class="ttdeci">BetterPlayer(const std::string &amp;name, int stack)</div><div class="ttdef"><b>Definition</b> <a href="_better_player_8cpp_source.html#l00016">BetterPlayer.cpp:16</a></div></div>
 <div class="ttc" id="aclass_player_html"><div class="ttname"><a href="class_player.html">Player</a></div><div class="ttdoc">Represents a human player in the poker game.</div><div class="ttdef"><b>Definition</b> <a href="_player_8hpp_source.html#l00015">Player.hpp:15</a></div></div>
 <div class="ttc" id="aclass_player_html_a466b156d07fe5acae5adefa9b17a5e5e"><div class="ttname"><a href="class_player.html#a466b156d07fe5acae5adefa9b17a5e5e">Player::stack</a></div><div class="ttdeci">int stack</div><div class="ttdoc">The player's current chip stack.</div><div class="ttdef"><b>Definition</b> <a href="_player_8hpp_source.html#l00019">Player.hpp:19</a></div></div>
-<div class="ttc" id="aclass_player_html_ac40b5f5383aa1b6146a39c74f08254ad"><div class="ttname"><a href="class_player.html#ac40b5f5383aa1b6146a39c74f08254ad">Player::get_equity</a></div><div class="ttdeci">vector&lt; float &gt; get_equity(vector&lt; Card &gt; communityCards, int numPlayers)</div><div class="ttdoc">Returns the equity of the players hand for the current stage of the game.</div><div class="ttdef"><b>Definition</b> <a href="_player_8cpp_source.html#l00102">Player.cpp:102</a></div></div>
+<div class="ttc" id="aclass_player_html_ac40b5f5383aa1b6146a39c74f08254ad"><div class="ttname"><a href="class_player.html#ac40b5f5383aa1b6146a39c74f08254ad">Player::get_equity</a></div><div class="ttdeci">vector&lt; float &gt; get_equity(vector&lt; Card &gt; communityCards, int numPlayers)</div><div class="ttdoc">Returns the equity of the players hand for the current stage of the game.</div><div class="ttdef"><b>Definition</b> <a href="_player_8cpp_source.html#l00100">Player.cpp:100</a></div></div>
 <div class="ttc" id="aclass_player_html_acf0355128a99ee20ad9931b760fb2de1"><div class="ttname"><a href="class_player.html#acf0355128a99ee20ad9931b760fb2de1">Player::name</a></div><div class="ttdeci">string name</div><div class="ttdoc">The name of the player.</div><div class="ttdef"><b>Definition</b> <a href="_player_8hpp_source.html#l00017">Player.hpp:17</a></div></div>
 <div class="ttc" id="aclass_player_html_ae0004d5df21e13f61b795d1c175e873d"><div class="ttname"><a href="class_player.html#ae0004d5df21e13f61b795d1c175e873d">Player::bet</a></div><div class="ttdeci">void bet(int amount)</div><div class="ttdoc">Places a bet by the player.</div><div class="ttdef"><b>Definition</b> <a href="_player_8cpp_source.html#l00014">Player.cpp:14</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 10 2024 22:24:19 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Fri Oct 11 2024 00:14:34 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

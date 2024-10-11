@@ -8,5 +8,18 @@ digraph "GUI::getProfile"
   rankdir="LR";
   Node1 [id="Node000001",label="GUI::getProfile",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Gets the profile of a player from the ./data/profiles.csv file."];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="CSVWorker::readProfiles",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_s_v_worker.html#a29ab2f722ff460150a940e9a2df0f68c",tooltip=" "];
+  Node2 [id="Node000002",label="GUI::getFilePathStart",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_g_u_i.html#a1b505eb7d9252e68a4c5fa341673f1c2",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="CSVWorker::readProfiles",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_s_v_worker.html#a29ab2f722ff460150a940e9a2df0f68c",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="GUI::signInMenu",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_g_u_i.html#acb96e4bfa59c6929e70a33c8c45f795b",tooltip="Prompts the user to sign in."];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="GUI::createProfile",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_g_u_i.html#a9e9d37ed78911ad4b67c1d7fa1c77767",tooltip="Creates a new player profile."];
+  Node5 -> Node6 [id="edge5_Node000005_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="CSVWorker::addProfile",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_s_v_worker.html#ac98b30f76d058e7fff41a92382c7ecb5",tooltip=" "];
+  Node5 -> Node2 [id="edge6_Node000005_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node5 -> Node3 [id="edge7_Node000005_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node5 -> Node7 [id="edge8_Node000005_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="CSVWorker::writeProfiles",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_s_v_worker.html#a8038915113e4cca065f4e825119ec9de",tooltip=" "];
+  Node4 -> Node1 [id="edge9_Node000004_Node000001",color="steelblue1",style="solid",tooltip=" "];
 }

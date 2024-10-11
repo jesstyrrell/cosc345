@@ -18,4 +18,5 @@ digraph "GUI::clearScreen"
   Node5 [id="Node000005",label="GUI::displayStartScreen",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_g_u_i.html#a0dc53c5a6daa0f01b57c4d4731b4d933",tooltip="Displays the start screen of the game."];
   Node5 -> Node2 [id="edge6_Node000005_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node5 -> Node3 [id="edge7_Node000005_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node3 [id="edge8_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

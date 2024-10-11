@@ -321,7 +321,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="lineno">   73</span>                <span class="keywordflow">break</span>;</div>
 <div class="line"><span class="lineno">   74</span>        }</div>
 <div class="line"><span class="lineno">   75</span> </div>
-<div class="line"><span class="lineno">   76</span>        <span class="keywordflow">return</span> max(min(<a class="code hl_function" href="class_player.html#ae0004d5df21e13f61b795d1c175e873d">bet</a>, maxBet), minBet);</div>
+<div class="line"><span class="lineno">   76</span>        <span class="keywordflow">return</span> max(minBet, min(maxBet, <a class="code hl_function" href="class_player.html#ae0004d5df21e13f61b795d1c175e873d">bet</a>));</div>
 <div class="line"><span class="lineno">   77</span> </div>
 <div class="line"><span class="lineno">   78</span>    }</div>
 <div class="ttc" id="aclass_better_player_html_ab20eae7d31253f68394d4d6fb661c018"><div class="ttname"><a href="class_better_player.html#ab20eae7d31253f68394d4d6fb661c018">BetterPlayer::pot</a></div><div class="ttdeci">int pot</div><div class="ttdef"><b>Definition</b> <a href="_better_player_8cpp_source.html#l00013">BetterPlayer.cpp:13</a></div></div>
@@ -453,9 +453,9 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   52</span>        }</div>
 <div class="line"><span class="lineno">   53</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;r&quot;</span>;</div>
 <div class="line"><span class="lineno">   54</span>    }</div>
-<div class="ttc" id="aclass_player_html_ac40b5f5383aa1b6146a39c74f08254ad"><div class="ttname"><a href="class_player.html#ac40b5f5383aa1b6146a39c74f08254ad">Player::get_equity</a></div><div class="ttdeci">vector&lt; float &gt; get_equity(vector&lt; Card &gt; communityCards, int numPlayers)</div><div class="ttdoc">Returns the equity of the players hand for the current stage of the game.</div><div class="ttdef"><b>Definition</b> <a href="_player_8cpp_source.html#l00102">Player.cpp:102</a></div></div>
+<div class="ttc" id="aclass_player_html_ac40b5f5383aa1b6146a39c74f08254ad"><div class="ttname"><a href="class_player.html#ac40b5f5383aa1b6146a39c74f08254ad">Player::get_equity</a></div><div class="ttdeci">vector&lt; float &gt; get_equity(vector&lt; Card &gt; communityCards, int numPlayers)</div><div class="ttdoc">Returns the equity of the players hand for the current stage of the game.</div><div class="ttdef"><b>Definition</b> <a href="_player_8cpp_source.html#l00100">Player.cpp:100</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_player_8cpp_source.html#l00102">Player::get_equity()</a>, and <a class="el" href="_better_player_8cpp_source.html#l00013">pot</a>.</p>
+<p class="reference">References <a class="el" href="_player_8cpp_source.html#l00100">Player::get_equity()</a>, and <a class="el" href="_better_player_8cpp_source.html#l00013">pot</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -523,7 +523,7 @@ Here is the call graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 10 2024 22:24:19 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Fri Oct 11 2024 00:14:34 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

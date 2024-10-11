@@ -1,13 +1,7 @@
 var searchData=
 [
-  ['randomplayer_0',['RandomPlayer',['../class_random_player.html#a3d516ee6f285bbbeb3416be783f675df',1,'RandomPlayer']]],
-  ['readprofiles_1',['readProfiles',['../class_c_s_v_worker.html#a29ab2f722ff460150a940e9a2df0f68c',1,'CSVWorker']]],
-  ['remove_5fcard_2',['remove_card',['../class_deck.html#a61714386178ebc83bfa95b838db0adf1',1,'Deck']]],
-  ['reset_3',['reset',['../class_deck.html#a14aa4f2f94b6b880cd575cf17af26762',1,'Deck']]],
-  ['reset_5fcurrent_5fbet_4',['reset_current_bet',['../class_player.html#a715f618c366e6787c0c9b40f76d9fea8',1,'Player']]],
-  ['reset_5ftotal_5fbet_5',['reset_total_bet',['../class_player.html#abd7fd847a2366e5def25e054016ec457',1,'Player']]],
-  ['resetcommunitycards_6',['resetCommunityCards',['../class_game.html#a884c074f31c3d278f026360fe28ee1c8',1,'Game']]],
-  ['resetplayerbets_7',['resetPlayerBets',['../class_game.html#a69614c930626006cd0b3e644bc9cc613',1,'Game']]],
-  ['resetplayerhands_8',['resetPlayerHands',['../class_game.html#adc54b1823a5d8d5221d7bf74e924e145',1,'Game']]],
-  ['resetplayertotalbets_9',['resetPlayerTotalBets',['../class_game.html#a1882570f0a56d879af6a95e6075ac186',1,'Game']]]
+  ['player_0',['Player',['../class_player.html#af94221777924e4498b535e52f1dd3c44',1,'Player']]],
+  ['playgame_1',['playGame',['../main_8cpp.html#a4cbfdb17bf51e00546880626f7e80429',1,'main.cpp']]],
+  ['playhand_2',['playHand',['../class_game.html#a800a564b56220d19d800fba07903070e',1,'Game']]],
+  ['printprofiles_3',['printProfiles',['../class_c_s_v_worker.html#a89ca1423b53942a8b6299e85a7b8278b',1,'CSVWorker']]]
 ];

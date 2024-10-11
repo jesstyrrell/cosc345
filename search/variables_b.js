@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['rank_0',['rank',['../class_card.html#a49353d2c0122828982490d640d7ebb4c',1,'Card']]],
-  ['ranks_1',['ranks',['../class_equity_calculator.html#af4ca4ac7a7b3fab05ebf9c7119b79cb4',1,'EquityCalculator::ranks'],['../class_hand_evaluator.html#a5a5001f8c7a5af0b74f5173501e5279c',1,'HandEvaluator::ranks']]],
-  ['removedplayercount_2',['removedPlayerCount',['../class_game.html#af4a444aeaddb618cc202c73c35fd157f',1,'Game']]],
-  ['rng_3',['rng',['../class_basic_player.html#a58920def1975e4b16702e1d8f5c0741e',1,'BasicPlayer::rng'],['../class_better_player.html#a4f719a0ab4a85f1ea05dbdd06f7d6d4b',1,'BetterPlayer::rng'],['../class_random_player.html#ae63ce0a196eb8b44a4b83771378bd017',1,'RandomPlayer::rng']]]
+  ['name_0',['name',['../class_player.html#acf0355128a99ee20ad9931b760fb2de1',1,'Player::name'],['../struct_player_profile.html#a1d5cb353888e5c9e045581bfb93c5b43',1,'PlayerProfile::name']]],
+  ['numhandseasy_1',['numHandsEasy',['../struct_player_profile.html#a01de00cbd9b584a1a83e7c57844d4c4c',1,'PlayerProfile']]],
+  ['numhandshard_2',['numHandsHard',['../struct_player_profile.html#a540fad4327907c4b054247291cd53022',1,'PlayerProfile']]],
+  ['numhandsmedium_3',['numHandsMedium',['../struct_player_profile.html#a2c79132cfdf421a16539d54339820179',1,'PlayerProfile']]],
+  ['numhandsvpip_4',['numHandsVpip',['../struct_player_profile.html#a52fd1a579442cce3c475b7d869171e88',1,'PlayerProfile']]]
 ];

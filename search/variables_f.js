@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['x_0',['x',['../struct_point.html#a8c779e11e694b20e0946105a9f5de842',1,'Point']]]
+  ['totalbetthishand_0',['totalBetThisHand',['../class_player.html#a557d556c45d4b75ea7633f1053b9652c',1,'Player']]],
+  ['totalhandsplayed_1',['totalHandsPlayed',['../struct_player_profile.html#a16ac1e76de51af9e191f513d03eaabfe',1,'PlayerProfile']]]
 ];

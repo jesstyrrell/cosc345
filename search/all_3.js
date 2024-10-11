@@ -17,6 +17,7 @@ var searchData=
   ['displayplayerhand_14',['displayPlayerHand',['../class_g_u_i.html#a32e1013b85cfbec2c4578b34aa7c347f',1,'GUI']]],
   ['displayplayermove_15',['displayPlayerMove',['../class_g_u_i.html#a65d07a686330670f5567a3fc11fbace1',1,'GUI']]],
   ['displayplayerstack_16',['displayPlayerStack',['../class_g_u_i.html#ad32a7ec45a881658fe14659ec3ce1ed3',1,'GUI']]],
-  ['displaystartscreen_17',['displayStartScreen',['../class_g_u_i.html#a0dc53c5a6daa0f01b57c4d4731b4d933',1,'GUI']]],
-  ['draw_18',['draw',['../class_equity_calculator.html#a4bb71132fd121dd7dd110dd5b6f5a3e4',1,'EquityCalculator::DRAW'],['../class_hand_evaluator.html#a5f725c4ce7c03fb8ec0ae1cdb4f03503',1,'HandEvaluator::DRAW']]]
+  ['displayplayerstats_17',['displayPlayerStats',['../class_g_u_i.html#a87d629d180139474a648efe907a68ba0',1,'GUI']]],
+  ['displaystartscreen_18',['displayStartScreen',['../class_g_u_i.html#a0dc53c5a6daa0f01b57c4d4731b4d933',1,'GUI']]],
+  ['draw_19',['draw',['../class_equity_calculator.html#a4bb71132fd121dd7dd110dd5b6f5a3e4',1,'EquityCalculator::DRAW'],['../class_hand_evaluator.html#a5f725c4ce7c03fb8ec0ae1cdb4f03503',1,'HandEvaluator::DRAW']]]
 ];

@@ -22,7 +22,7 @@ digraph "Game::bettingRound"
   Node5 -> Node8 [id="edge7_Node000005_Node000008",color="steelblue1",style="solid",tooltip=" "];
   Node8 [id="Node000008",label="getFileContents",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_g_u_i_8cpp.html#a734f170642ae5d075a5f9f98fab8cfdf",tooltip=" "];
   Node5 -> Node9 [id="edge8_Node000005_Node000009",color="steelblue1",style="solid",tooltip=" "];
-  Node9 [id="Node000009",label="getFilePathStart",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_g_u_i_8cpp.html#a674e968d1ecb5cf741d6625f58378c95",tooltip=" "];
+  Node9 [id="Node000009",label="GUI::getFilePathStart",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_g_u_i.html#a1b505eb7d9252e68a4c5fa341673f1c2",tooltip=" "];
   Node2 -> Node10 [id="edge9_Node000002_Node000010",color="steelblue1",style="solid",tooltip=" "];
   Node10 [id="Node000010",label="Game::getCommunityCards",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game.html#ae8d1705be89f97f5ef13ba1a460502f2",tooltip="Gets the community cards on the table."];
   Node2 -> Node8 [id="edge10_Node000002_Node000008",color="steelblue1",style="solid",tooltip=" "];

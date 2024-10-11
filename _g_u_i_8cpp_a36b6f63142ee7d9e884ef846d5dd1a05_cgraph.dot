@@ -14,5 +14,5 @@ digraph "getCardString"
   Node1 -> Node4 [id="edge3_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="getFileContents",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_g_u_i_8cpp.html#a734f170642ae5d075a5f9f98fab8cfdf",tooltip=" "];
   Node1 -> Node5 [id="edge4_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="getFilePathStart",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_g_u_i_8cpp.html#a674e968d1ecb5cf741d6625f58378c95",tooltip=" "];
+  Node5 [id="Node000005",label="GUI::getFilePathStart",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_g_u_i.html#a1b505eb7d9252e68a4c5fa341673f1c2",tooltip=" "];
 }

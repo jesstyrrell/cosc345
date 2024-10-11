@@ -29,7 +29,7 @@ digraph "Deck::shuffle"
   Node1 -> Node11 [id="edge11_Node000001_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node11 [id="Node000011",label="Deck::reset",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_deck.html#a14aa4f2f94b6b880cd575cf17af26762",tooltip="Resets the deck to its initial state with all 52 cards."];
   Node11 -> Node12 [id="edge12_Node000011_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node12 [id="Node000012",label="Game::playHand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game.html#ab72401c43b303a37dec67f3d6b75a927",tooltip="Plays a single hand of poker."];
+  Node12 [id="Node000012",label="Game::playHand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game.html#a800a564b56220d19d800fba07903070e",tooltip="Plays a single hand of poker."];
   Node12 -> Node13 [id="edge13_Node000012_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node13 [id="Node000013",label="playGame",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8cpp.html#a4cbfdb17bf51e00546880626f7e80429",tooltip=" "];
   Node13 -> Node14 [id="edge14_Node000013_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];

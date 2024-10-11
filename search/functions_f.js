@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['win_0',['win',['../class_player.html#ab466284a338277f1c20837e3f4d11b57',1,'Player']]]
+  ['updateprofile_0',['updateProfile',['../class_c_s_v_worker.html#a733653579db25411e701c2243bc7739b',1,'CSVWorker']]]
 ];

@@ -5,7 +5,7 @@ var searchData=
   ['handevaluator_2ecpp_2',['HandEvaluator.cpp',['../_hand_evaluator_8cpp.html',1,'']]],
   ['handevaluator_2ehpp_3',['HandEvaluator.hpp',['../_hand_evaluator_8hpp.html',1,'']]],
   ['handevaluatortest_4',['HandEvaluatorTest',['../class_hand_evaluator_test.html',1,'']]],
-  ['height_5',['height',['../struct_player_profile.html#a10270a8335418ba9f7899d555b49f3d4',1,'PlayerProfile']]],
+  ['hardpnl_5',['hardPnl',['../struct_player_profile.html#ac0eb4baf452528111157df0d2e46d9c4',1,'PlayerProfile']]],
   ['humanplayer_6',['humanplayer',['../class_human_player.html',1,'HumanPlayer'],['../class_human_player.html#aae2029af036081e540ff78c2e62cf8c4',1,'HumanPlayer::HumanPlayer()']]],
   ['humanplayer_2ecpp_7',['HumanPlayer.cpp',['../_human_player_8cpp.html',1,'']]],
   ['humanplayer_2ehpp_8',['HumanPlayer.hpp',['../_human_player_8hpp.html',1,'']]],

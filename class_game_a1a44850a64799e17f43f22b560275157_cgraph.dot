@@ -28,7 +28,7 @@ digraph "Game::makeMoveForUser"
   Node8 -> Node11 [id="edge10_Node000008_Node000011",color="steelblue1",style="solid",tooltip=" "];
   Node11 [id="Node000011",label="getFileContents",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_g_u_i_8cpp.html#a734f170642ae5d075a5f9f98fab8cfdf",tooltip=" "];
   Node8 -> Node12 [id="edge11_Node000008_Node000012",color="steelblue1",style="solid",tooltip=" "];
-  Node12 [id="Node000012",label="getFilePathStart",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_g_u_i_8cpp.html#a674e968d1ecb5cf741d6625f58378c95",tooltip=" "];
+  Node12 [id="Node000012",label="GUI::getFilePathStart",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_g_u_i.html#a1b505eb7d9252e68a4c5fa341673f1c2",tooltip=" "];
   Node5 -> Node13 [id="edge12_Node000005_Node000013",color="steelblue1",style="solid",tooltip=" "];
   Node13 [id="Node000013",label="Game::getCommunityCards",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game.html#ae8d1705be89f97f5ef13ba1a460502f2",tooltip="Gets the community cards on the table."];
   Node5 -> Node11 [id="edge13_Node000005_Node000011",color="steelblue1",style="solid",tooltip=" "];

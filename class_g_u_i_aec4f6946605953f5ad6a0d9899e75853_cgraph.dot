@@ -10,5 +10,5 @@ digraph "GUI::getRandomPlayerName"
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="getFileContents",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_g_u_i_8cpp.html#a734f170642ae5d075a5f9f98fab8cfdf",tooltip=" "];
   Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="getFilePathStart",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_g_u_i_8cpp.html#a674e968d1ecb5cf741d6625f58378c95",tooltip=" "];
+  Node3 [id="Node000003",label="GUI::getFilePathStart",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_g_u_i.html#a1b505eb7d9252e68a4c5fa341673f1c2",tooltip=" "];
 }

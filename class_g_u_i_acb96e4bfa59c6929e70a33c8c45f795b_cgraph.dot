@@ -12,9 +12,14 @@ digraph "GUI::signInMenu"
   Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="CSVWorker::addProfile",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_s_v_worker.html#ac98b30f76d058e7fff41a92382c7ecb5",tooltip=" "];
   Node2 -> Node4 [id="edge3_Node000002_Node000004",color="steelblue1",style="solid",tooltip=" "];
-  Node4 [id="Node000004",label="CSVWorker::writeProfiles",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_s_v_worker.html#a8038915113e4cca065f4e825119ec9de",tooltip=" "];
-  Node1 -> Node5 [id="edge4_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="GUI::getProfile",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_g_u_i.html#a00b431f2af4b04eff9dd33d987d0d772",tooltip="Gets the profile of a player from the ./data/profiles.csv file."];
-  Node5 -> Node6 [id="edge5_Node000005_Node000006",color="steelblue1",style="solid",tooltip=" "];
-  Node6 [id="Node000006",label="CSVWorker::readProfiles",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_s_v_worker.html#a29ab2f722ff460150a940e9a2df0f68c",tooltip=" "];
+  Node4 [id="Node000004",label="GUI::getFilePathStart",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_g_u_i.html#a1b505eb7d9252e68a4c5fa341673f1c2",tooltip=" "];
+  Node2 -> Node5 [id="edge4_Node000002_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="CSVWorker::readProfiles",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_s_v_worker.html#a29ab2f722ff460150a940e9a2df0f68c",tooltip=" "];
+  Node2 -> Node6 [id="edge5_Node000002_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="CSVWorker::writeProfiles",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_s_v_worker.html#a8038915113e4cca065f4e825119ec9de",tooltip=" "];
+  Node1 -> Node7 [id="edge6_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="GUI::getProfile",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_g_u_i.html#a00b431f2af4b04eff9dd33d987d0d772",tooltip="Gets the profile of a player from the ./data/profiles.csv file."];
+  Node7 -> Node4 [id="edge7_Node000007_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node7 -> Node5 [id="edge8_Node000007_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node7 -> Node1 [id="edge9_Node000007_Node000001",color="steelblue1",style="solid",tooltip=" "];
 }
