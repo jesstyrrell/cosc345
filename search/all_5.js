@@ -1,9 +1,13 @@
 var searchData=
 [
-  ['fileexists_80',['fileExists',['../_equity_calculator_8cpp.html#afdd89841220a8b18e39e0844a833a18b',1,'fileExists(const std::string &amp;filename):&#160;EquityCalculator.cpp'],['../test___equity_calculator_8cc.html#afdd89841220a8b18e39e0844a833a18b',1,'fileExists(const std::string &amp;filename):&#160;EquityCalculator.cpp']]],
-  ['filename_81',['filename',['../class_c_s_v_worker.html#aea0d4923f1e5a860612d7bf37ecdc0ab',1,'CSVWorker']]],
-  ['find_5fcard_82',['find_card',['../class_deck.html#a3ad744640638d4a52761525d56004cef',1,'Deck']]],
-  ['findequity_83',['findEquity',['../_equity_calculator_8cpp.html#aad170b93b646c253148f800ac3894ca2',1,'findEquity(const std::string &amp;filename, const std::vector&lt; std::string &gt; &amp;searchValues):&#160;EquityCalculator.cpp'],['../test___equity_calculator_8cc.html#a56980e044f32dbd3ec95d358e0537729',1,'findEquity(const std::string &amp;filename, const std::vector&lt; std::string &gt; &amp;searchValues):&#160;EquityCalculator.cpp']]],
-  ['flop_84',['FLOP',['../_game_8hpp.html#aca8133200c1122e29b87b314d82604ebaabd21521adb8d1952b4a166aa8711f8b',1,'Game.hpp']]],
-  ['fold_85',['FOLD',['../_game_8hpp.html#a19b869a01ca1a58f4164b4f75c2df388a4c06ebc69df9afd471c3044ba969a17f',1,'Game.hpp']]]
+  ['easypnl_71',['easyPnl',['../struct_player_profile.html#a61e1188a92dcf37cb18c2e20749956d9',1,'PlayerProfile']]],
+  ['endofhand_72',['endOfHand',['../class_basic_player.html#af7eb54527c22517c15cc5338cf4dd34d',1,'BasicPlayer::endOfHand()'],['../class_better_player.html#a3251c6f76bb5e1e0e80000c05fc0abc8',1,'BetterPlayer::endOfHand()'],['../class_better_player.html#a3251c6f76bb5e1e0e80000c05fc0abc8',1,'BetterPlayer::endOfHand()'],['../class_human_player.html#a538faef1a022253707d0a63d20c67550',1,'HumanPlayer::endOfHand()'],['../class_human_player.html#a538faef1a022253707d0a63d20c67550',1,'HumanPlayer::endOfHand()'],['../class_player.html#ab9d308303ef68b81db5f4415c8d2aa37',1,'Player::endOfHand()'],['../class_random_player.html#af15ae923a157d4cf86885dff392f6ecf',1,'RandomPlayer::endOfHand()'],['../class_random_player.html#af15ae923a157d4cf86885dff392f6ecf',1,'RandomPlayer::endOfHand()']]],
+  ['endofroundmenu_73',['endOfRoundMenu',['../class_g_u_i.html#ac7211e8e1f154e8e729921afe5d58225',1,'GUI']]],
+  ['equitycalculator_74',['EquityCalculator',['../class_equity_calculator.html',1,'EquityCalculator'],['../class_equity_calculator.html#a27c3e3413c753ca7ff78a9ee0a9fbc2e',1,'EquityCalculator::EquityCalculator()']]],
+  ['equitycalculator_2ecpp_75',['EquityCalculator.cpp',['../_equity_calculator_8cpp.html',1,'']]],
+  ['equitycalculator_2ehpp_76',['EquityCalculator.hpp',['../_equity_calculator_8hpp.html',1,'']]],
+  ['equitycalculatortest_77',['EquityCalculatorTest',['../class_equity_calculator_test.html',1,'']]],
+  ['evaluatehand_78',['evaluateHand',['../class_equity_calculator.html#af315dfcb578ab5889dab4bc970b1d597',1,'EquityCalculator']]],
+  ['evaluatetable_79',['evaluateTable',['../class_hand_evaluator.html#adffa11be48d182f4859ee473dfcdb58e',1,'HandEvaluator']]],
+  ['evaluator_80',['evaluator',['../class_hand_evaluator_test.html#a096b00af6e63c4464bf5f0a21db205f6',1,'HandEvaluatorTest']]]
 ];

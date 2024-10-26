@@ -1,13 +1,10 @@
 var searchData=
 [
-  ['basicplayer_7',['BasicPlayer',['../class_basic_player.html',1,'BasicPlayer'],['../class_basic_player.html#a797e8667cd34d7295eef9f31b4e692f7',1,'BasicPlayer::BasicPlayer()']]],
-  ['basicplayer_2ecpp_8',['BasicPlayer.cpp',['../_basic_player_8cpp.html',1,'']]],
-  ['bet_9',['bet',['../class_player.html#ae0004d5df21e13f61b795d1c175e873d',1,'Player']]],
-  ['betterplayer_10',['BetterPlayer',['../class_better_player.html',1,'BetterPlayer'],['../class_better_player.html#af666d107f5f6e285826055149179432f',1,'BetterPlayer::BetterPlayer(const std::string &amp;name, int stack)'],['../class_better_player.html#af666d107f5f6e285826055149179432f',1,'BetterPlayer::BetterPlayer(const std::string &amp;name, int stack)']]],
-  ['betterplayer_202_2ecpp_11',['BetterPlayer 2.cpp',['../_better_player_012_8cpp.html',1,'']]],
-  ['betterplayer_2ecpp_12',['BetterPlayer.cpp',['../_better_player_8cpp.html',1,'']]],
-  ['bettinground_13',['bettingRound',['../class_game.html#a0de5cbe2125b0929a0bc8d2e6cdd64d5',1,'Game']]],
-  ['big_5fblind_14',['BIG_BLIND',['../class_game.html#a05be7cd941605fe93abe7b5b6c2045df',1,'Game']]],
-  ['buildpreflopequitycsv_15',['buildPreflopEquityCSV',['../class_equity_calculator.html#a5e6d58769d8554960b7434bef984cb28',1,'EquityCalculator']]],
-  ['button_16',['button',['../class_game.html#a7d39bde5e072ea39bb620295d2b21935',1,'Game']]]
+  ['add_5fcard_5fto_5fhand_1',['add_card_to_hand',['../class_player.html#af3998816522aac68efd31d625c367074',1,'Player']]],
+  ['add_5fplayer_2',['add_player',['../class_game.html#a57916fe5cb55a85464371173571cf681',1,'Game']]],
+  ['addblindstopot_3',['addBlindsToPot',['../class_game.html#a2c46bbc0e0acda18575fc9a82481a95a',1,'Game']]],
+  ['addprofile_4',['addProfile',['../class_c_s_v_worker.html#ac98b30f76d058e7fff41a92382c7ecb5',1,'CSVWorker']]],
+  ['addstring_5',['addString',['../_g_u_i_8cpp.html#ae6720e4bc4b25d366b73e9fc9b8afd4b',1,'GUI.cpp']]],
+  ['atshowdown_6',['atShowdown',['../class_game.html#a2f39584e65a512530a723f4b927ddc42',1,'Game']]],
+  ['awardpot_7',['awardPot',['../class_game.html#ac0b29143b66a8cecb267b54ac84deb06',1,'Game']]]
 ];

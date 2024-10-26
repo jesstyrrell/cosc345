@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lose_140',['LOSE',['../class_equity_calculator.html#a355d7b174c2c59cee0654af5a8fe3dd5',1,'EquityCalculator::LOSE()'],['../class_hand_evaluator.html#a262aec40307a03c859213d58b59a27f7',1,'HandEvaluator::LOSE()']]]
+  ['isguest_140',['isGuest',['../struct_player_profile.html#a9037c1ecfee03c76547571c04b07023f',1,'PlayerProfile']]]
 ];
