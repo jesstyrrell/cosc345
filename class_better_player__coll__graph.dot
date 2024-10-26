@@ -18,6 +18,7 @@ digraph "BetterPlayer"
   Node7 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" current_bet\nstack\ntotalBetThisHand" ,fontname="Helvetica"];
   Node7 [label="int",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node5 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" name" ,fontname="Helvetica"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node8 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" rng" ,fontname="Helvetica"];
   Node8 [label="default_random_engine",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node7 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" pot" ,fontname="Helvetica"];
