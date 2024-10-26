@@ -79,7 +79,7 @@ Why do we have them?</h2>
 <h1><a class="anchor" id="autotoc_md3"></a>
 &lt;strong&gt;Team Organization&lt;/strong&gt;</h1>
 <p>A team is at least two people, working towards a common goal, each with specific tasks. A good team is greater than the sum of its parts.</p>
-<p>Should keep teams small (less than 10).</p>
+<p>Should keep teams small (10 or fewer).</p>
 <p>With larger teams communication time increases.</p>
 <p>To be effective a team needs:</p><ul>
 <li>Direction</li>
@@ -94,13 +94,77 @@ Why do we have them?</h2>
 </li>
 <li>Individual roles</li>
 </ul>
-<p>Team Composition:</p>
-<p>A team must have complementary personalities, experience, and technical skills. </p>
+<p>Team Composition: A team must have complementary personalities, experience, and technical skills. People can either be task-oriented or talent oriented.</p>
+<p>A manager is not the same thing as a leader, a manager is responsible for the team's output, while a leader is responsible for the team's direction.</p>
+<p>Team size is particularly important when considering the number of communication channels. If there are n people in a team, there are n(n-1)/2 communication channels, which grows quadratically with the number of people. This causes other issues in teams that are too large.</p>
+<h1><a class="anchor" id="autotoc_md4"></a>
+&lt;strong&gt;Requirements&lt;/strong&gt;</h1>
+<p>• User requirements: These are the requirements that the user sees. They are often written in natural language and are not very detailed.</p>
+<p>• System equirements: Also known as functional specifications, these are the detailed descriptions of the system’s functionality.</p>
+<p>• Functional requirements: Can be either user or system requirements. They describe what the system should do.</p>
+<p>• Non-functional requirements: These are the constraints on the software. They describe how the system should do what it does.</p>
+<p>• Problems There are requirements that are too rigid. They are often written in a way that is too specific and do not allow for any flexibility.</p>
+<p>• Suggestions Should use a standard format for requirements. This will make it easier to understand and will help to avoid any confusion. Seperate desirable and mandatory requirements. Include details of who is responsible for each requirement.</p>
+<h1><a class="anchor" id="autotoc_md5"></a>
+&lt;strong&gt;Project Planning&lt;/strong&gt;</h1>
+<p>Good management does not guarantee success, but bad management guarantees failure. This failure could be late deliverables, cost overruns, or poor quality.</p>
+<p>Every project needs a champion. This is someone who is responsible for the project and who will ensure that it is completed on time and within budget.</p>
+<p>Software management is hard because software is intangible. It is difficult to measure progress and to know when the project is complete.</p>
+<p>With software there is no standard way to measure progress. This is because software is not a physical object and it is difficult to know when it is complete.</p>
+<p>We plan software in terms of milestones (tangible achievements) and deliverables (finished pieces). They must be concrete and measurable, deliverables may consist of many milestones.</p>
+<p>Put the section that need to be planned here!</p>
+<p><b>Estimation Rules of Thumb (Time)</b></p><ul>
+<li>1/3 (33%) Project planning</li>
+<li>1/6 (16%) Coding</li>
+<li>1/4 (25%) Component testing</li>
+<li>1/4 (25%) System testing</li>
+</ul>
+<p><b>Estimate program size</b></p><ul>
+<li>Lines Of Code (LOC) or thousands of LOC (KLOC)</li>
+<li>Industry output about 1000 LOC per developer per year (working, documented, and in production) – About 240 working days per year</li>
+</ul>
+<p>We can use LOC to estimate total time a project will take, using historical data or estimated LOC a developer can produce in a day.</p>
+<p>COCOMO (Constructive Cost Model) is a model for estimating the cost of software development, created from historical data. It gives estimates for effort, time and people, based on the number of lines of code in the software.</p>
+<p>We estimate effort, time, and people needed to complete a project. Effort is measured in person-months, time is measured in months, and people is the number of people needed to complete the project. There are arbitrary constants that are used to calculate these values (previously found from historical data).</p>
+<p>Functional point analysis is a method for estimating the size of a software project. It is based on the number of functions that the software will perform, from the perspective of the user. Multiple functional points being assigned to one function generally indicates that the user percieves the function as more complex, not that it is necessarily more complex to implement.</p>
+<p>Gantt charts are used to show the rasks need to complete a project. Each task is shown as a bar on the chart. The length of the bar shows the duration of the task. The tasks are shown in order of when they need to be completed. The chart is used to show the dependencies between tasks (arrows). Diamonds are used to show milestones.</p>
+<p>The critical path is the shortest path to complete a project.</p>
+<p>PERT (Program Evaluation and Review Technique) Charts are used to show the tasks needed to complete a project. Each task is shown as a node on the chart. The nodes are connected by arrows to show the dependencies between tasks.</p>
+<p>Risks and risk management. ?</p>
+<p><b>Waterfall Model</b></p>
+<p>Why do we have software development models?</p><ul>
+<li>To provide a framework for planning and managing the development of software</li>
+</ul>
+<p>Manufacturing models are not suitable for software development because software is intangible, and the requirements and progress are not always clear.</p>
+<p>Defining waterfall model:</p><ul>
+<li>A linear sequential life cycle model that is used in software development. Each phase must be completed before the next phase can begin.</li>
+</ul>
+<p>The 5 stages of the waterfall model are:</p><ol type="1">
+<li><p class="startli"><b>Requirements</b></p>
+<p class="startli">Engage with clients and stakeholders to understand what the software needs to do. Document all requirements. Should produce a comphrensive requirements document.</p>
+</li>
+<li><p class="startli"><b>Design</b></p>
+<p class="startli">Design the software based on the requirements. Produce a detailed design. Should include a high-level design and a low-level design. Should get a set of design documents that specify the software’s structure, components, data flow, and interactions.</p>
+</li>
+<li><p class="startli"><b>Implementation</b></p>
+<p class="startli">Write the code for the software, according to design plan. Should produce a working software, that meets all requirement in the requirements document. Also involves integrating the software with other systems / with the hardware.</p>
+</li>
+<li><p class="startli"><b>Verification</b></p>
+<p class="startli">Test the software to ensure that it meets the requirements. Get feedback from the client and stakeholders, and fix bugs.</p>
+</li>
+<li><p class="startli"><b>Maintenance</b></p>
+<p class="startli">Maintain the software, fix bugs, and add new features. Maintenance may involve updates to work with dependencies.</p>
+</li>
+</ol>
+<p>"Rabbits dance in vibrant meadows."</p>
+<h1><a class="anchor" id="autotoc_md6"></a>
+&lt;strong&gt;Agile Model&lt;/strong&gt;</h1>
+<p>Agile is a software development methodology that is based on iterative and incremental development. It is a response to the limitations of the waterfall model. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Oct 26 2024 02:31:13 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Sat Oct 26 2024 23:20:42 for Run it Twice by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
