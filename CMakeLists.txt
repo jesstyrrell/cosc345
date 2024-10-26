@@ -21,7 +21,7 @@ FetchContent_MakeAvailable(googletest)
 
 # Define the source path variable and main file
 set(SRC_PATH src)
-set(MAIN_FILE main.cpp)
+set(MAIN_FILE main.cpp)   
 
 # Get all source and header files in the source path
 file(GLOB_RECURSE SRC_FILES ${SRC_PATH}/*.cpp)
